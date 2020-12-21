@@ -36,11 +36,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Xminer koparki kryptowalut`,
-        short_name: `Xminer`,
+        name: `Web Designers from Outer Space`,
+        short_name: `Kryptonum`,
         start_url: `/`,
-        background_color: `#111C3B`,
-        theme_color: `#111C3B`,
+        background_color: `#171717`,
+        theme_color: `#00ef8b`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -69,16 +69,23 @@ module.exports = {
             /* URL to the font CSS file with @font-face definition */
             file: "https://fonts.googleapis.com/css2?family=Poppins",
           },
+          {
+            /* Exact name of the font as defined in @font-face CSS rule */
+            name: "Montserrat",
+            /* URL to the font CSS file with @font-face definition */
+            file: "https://fonts.googleapis.com/css2?family=Montserrat",
+          },
         ],
       },
     },
     // For google analytics add UA tag to ./config/website.js file
-    // {
-    //   resolve: "gatsby-plugin-google-analytics",
-    //   options: {
-    //     trackingId: website.googleAnalyticsID,
-    //   },
-    // }
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: website.googleAnalyticsID,
+        head: true,
+      },
+    },
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
@@ -90,7 +97,7 @@ module.exports = {
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: "standalone",
-        icon: website.favicon,
+        icon: "images/favicon.png",
       },
     },
     {

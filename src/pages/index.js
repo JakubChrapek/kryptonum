@@ -5,7 +5,7 @@ import website from "../../config/website"
 
 const IndexPage = () => (
   <>
-    <SEO title="Xminer" />
+    <SEO title="Kryptonum" />
     <h1 id={website.skipNavId}>Hi people</h1>
   </>
 )
