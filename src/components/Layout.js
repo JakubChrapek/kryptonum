@@ -9,6 +9,7 @@ import SkipNavLink from "./SkipNavLink/SkipNavLink"
 import { AnimatePresence, motion } from "framer-motion"
 import { useLocation } from "@reach/router"
 import styled from "styled-components"
+import { MenuProvider } from "../contexts/menuContext"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
@@ -26,19 +27,17 @@ const Layout = ({ children }) => {
   `)
   let pathname = useLocation().pathname
   return (
-    <>
+    <MenuProvider>
       <GlobalStyles />
       <SkipNavLink />
       <SEO />
-      <Header />
-        <StyledMain
-          key={pathname}
-        >
-          <p>Main content here</p>
-          {children}
-        </StyledMain>
-      <footer>© {new Date().getFullYear()}</footer>
-    </>
+      <StyledMain key={pathname}>
+        <Header />
+        <p>Main content here</p>
+        {children}
+        <footer>© {new Date().getFullYear()}</footer>
+      </StyledMain>
+    </MenuProvider>
   )
 }
 

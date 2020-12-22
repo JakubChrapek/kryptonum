@@ -1,5 +1,6 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, css } from "styled-components"
+import { useMenuState } from "../../contexts/menuContext"
 
 const Global = createGlobalStyle`
   html {
@@ -8,6 +9,7 @@ const Global = createGlobalStyle`
     --dark-bg: #171717;
     --black: #000;
     --white: #fff;
+    --text-gray: #b2b2b2;
     --light-gray: #F7F7F7;
     font-size: 10px;
   }
@@ -21,6 +23,13 @@ const Global = createGlobalStyle`
   body {
     font-size: 1.6rem;
     font-family: "Poppins";
+    ${({ mobileMenuShown }) =>
+      mobileMenuShown &&
+      css`
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      `}
   }
   button {
     cursor: pointer;
@@ -38,7 +47,8 @@ const Global = createGlobalStyle`
 `
 
 const GlobalStyles = () => {
-  return <Global />
+  const { show } = useMenuState()
+  return <Global mobileMenuShown={show} />
 }
 
 export default GlobalStyles
