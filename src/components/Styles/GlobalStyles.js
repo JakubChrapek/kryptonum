@@ -9,6 +9,7 @@ const Global = createGlobalStyle`
     --dark-bg: #171717;
     --black: #000;
     --white: #fff;
+    --gray: #363636;
     --text-gray: #b2b2b2;
     --light-gray: #F7F7F7;
     --lightest-gray: #F7F8FA;
@@ -31,6 +32,10 @@ const Global = createGlobalStyle`
         height: 100vh;
         overflow: hidden;
       `}
+  }
+
+  h1,h2 {
+    font-family: "Libre Baskerville"
   }
   button {
     cursor: pointer;

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
@@ -56,6 +57,7 @@ const HeroFooterStyles = styled.div`
     font-size: 13px;
     line-height: 1.31em;
     position: relative;
+    font-family: "JetBrains Mono";
     &:before {
       content: "";
       position: absolute;
@@ -107,11 +109,10 @@ const HeroFooter = () => {
 }
 
 const SvgStyles = styled.svg`
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  left: 0px;
-  top: 0;
+  grid-column: 1/4;
+  grid-row: 1/8;
+  width: 35vh;
+  height: 50vh;
 `
 
 const GrayLine = () => (
@@ -142,7 +143,22 @@ const Wrapper = styled.div`
   z-index: 1;
   h1 {
     grid-column: 1/7;
-    grid-row: 3/6;
+    grid-row: 3/7;
+    font-family: "Libre Baskerville";
+    font-size: 80px;
+    line-height: 1;
+    color: var(--lightest-gray);
+  }
+  p {
+    grid-column: 5/7;
+    grid-row: 6/8;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: 3.64px;
+    font-weight: 500;
+    color: var(--white);
+    font-family: "JetBrains Mono";
   }
 `
 
@@ -156,6 +172,16 @@ const Hero = ({ bg }) => {
           of business superheroes
         </h1>
         <GrayLine />
+        <motion.p
+          whileHover={{ scale: 1.05, cursor: "pointer" }}
+          whileTap={{ scale: 0.95 }}
+        >
+          See what
+          <br />
+          we're up to
+          <br />
+          <span style={{ fontSize: "32px", lineHeight: "0.7" }}>&rarr;</span>
+        </motion.p>
       </Wrapper>
       <HeroFooter />
       <StyledImage src={bg} />

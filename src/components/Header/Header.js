@@ -324,14 +324,14 @@ const Navigation = ({ mobile, width }) => {
   )
 }
 
-const LogoTitle = styled(motion.span)`
+const LogoTitle = styled(motion.h1)`
   text-transform: uppercase;
   color: ${({ color }) => (color ? color : "var(--black)")};
   padding: 6px 8px;
   font-size: 20px;
   line-height: 1.2em;
   font-weight: 500;
-  font-family: "Montserrat";
+  font-family: "Libre Baskerville";
 `
 
 const Logo = ({ color }) => <LogoTitle color={color}>Kryptonum</LogoTitle>
@@ -363,6 +363,7 @@ const ContactStyles = styled(Link)`
   line-height: 1.29em;
   font-weight: 500;
   padding: 6px 8px;
+  font-family: "JetBrains Mono";
 `
 const Contact = ({ color }) => (
   <ContactStyles color={color} to="/contact">
