@@ -67,7 +67,7 @@ const NavigationStyles = styled(motion.nav)`
   position: absolute;
   right: 0vw;
   top: 0;
-  height: 100%;
+  height: 100vh;
   max-width: 100%;
   background-color: var(--white);
   z-index: 1;
@@ -334,7 +334,7 @@ const LogoTitle = styled(motion.span)`
   font-family: "Montserrat";
 `
 
-const Logo = () => <LogoTitle>Kryptonum</LogoTitle>
+const Logo = ({ color }) => <LogoTitle color={color}>Kryptonum</LogoTitle>
 
 const HeaderStyles = styled(motion.header)`
   display: flex;
@@ -344,6 +344,8 @@ const HeaderStyles = styled(motion.header)`
   width: 100%;
   margin: 0 auto;
   padding: 32px 62px 32px 70px;
+  z-index: 1;
+  position: relative;
   a {
     text-decoration: none;
   }
@@ -362,9 +364,13 @@ const ContactStyles = styled(Link)`
   font-weight: 500;
   padding: 6px 8px;
 `
-const Contact = () => <ContactStyles to="/contact">Contact</ContactStyles>
+const Contact = ({ color }) => (
+  <ContactStyles color={color} to="/contact">
+    Contact
+  </ContactStyles>
+)
 
-const Header = () => {
+const Header = ({ theme }) => {
   let pathname = useLocation().pathname
   const dispatch = useMenuDispatch()
   const { show: mobile } = useMenuState()
@@ -373,12 +379,16 @@ const Header = () => {
 
   return (
     <HeaderStyles>
-      {width > 800 && <Contact />}
+      {width > 800 && (
+        <Contact
+          color={theme === "white" ? "var(--lightest-gray)" : "var(--black)"}
+        />
+      )}
       <Link to="/">
-        <Logo />
+        <Logo color={theme === "white" ? "var(--white)" : "var(--black)"} />
       </Link>
       <NavBurger
-        color={show ? "var(--white)" : "var(--black)"}
+        color={theme === "white" ? "var(--white)" : "var(--black)"}
         onClick={() => {
           setShow(!show)
           dispatch({ type: "TOGGLE_MENU" })

@@ -26,14 +26,18 @@ const Layout = ({ children }) => {
     }
   `)
   let pathname = useLocation().pathname
+  const getThemeFromPathname = name => {
+    if (pathname === "/") {
+      return "white"
+    }
+  }
   return (
     <MenuProvider>
       <GlobalStyles />
       <SkipNavLink />
       <SEO />
       <StyledMain key={pathname}>
-        <Header />
-        <p>Main content here</p>
+        <Header theme={getThemeFromPathname(pathname)} />
         {children}
         <footer>© {new Date().getFullYear()}</footer>
       </StyledMain>
