@@ -7,6 +7,8 @@ const ServicesStyles = styled.section`
   justify-content: center;
   align-items: center;
   padding: 0 123px 133px 141px;
+  max-width: 1366px;
+  margin: 0 auto;
 
   @media only screen and (max-width: 1366px) {
     padding: 0 93px 133px 111px;
