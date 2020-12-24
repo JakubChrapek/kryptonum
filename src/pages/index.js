@@ -7,6 +7,7 @@ import Hero from "../components/HomeComponents/Hero/Hero"
 import MainServices from "../components/HomeComponents/MainServices/MainServices"
 import WhatIsKryptonum from "../components/HomeComponents/WhatIsKryptonum/WhatIsKryptonum"
 import FeaturedSection from "../components/HomeComponents/FeaturedSection/FeaturedSection"
+import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
 
 const IndexPage = () => (
   <>
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <MainServices />
     <WhatIsKryptonum />
     <FeaturedSection />
+    <ProjectsSection />
   </>
 )
 

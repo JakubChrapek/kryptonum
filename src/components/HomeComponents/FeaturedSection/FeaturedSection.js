@@ -71,7 +71,7 @@ const FeaturedWrapper = styled.div`
   flex-direction: column !important;
   align-items: flex-start !important;
   margin: 0 !important;
-  width: 48% !important;
+  width: 50% !important;
 `
 
 const FeaturedSection = () => {

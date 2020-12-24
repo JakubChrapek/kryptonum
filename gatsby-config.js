@@ -103,14 +103,13 @@ module.exports = {
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: "standalone",
-        icon: "images/favicon.png",
+        icon: "./src/images/gatsby-icon.png",
       },
     },
     {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS_READ_API_KEY,
-        environment: `master`,
         previewMode: false,
         disableLiveReload: false,
       },
