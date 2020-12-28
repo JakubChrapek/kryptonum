@@ -8,6 +8,8 @@ import MainServices from "../components/HomeComponents/MainServices/MainServices
 import WhatIsKryptonum from "../components/HomeComponents/WhatIsKryptonum/WhatIsKryptonum"
 import FeaturedSection from "../components/HomeComponents/FeaturedSection/FeaturedSection"
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
+import HowWeWorkSection from "../components/HomeComponents/HowWeWorkSection/HowWeWorkSection"
+import CtaSection from "../components/HomeComponents/CtaSection/CtaSection"
 
 const IndexPage = () => (
   <>
@@ -17,6 +19,8 @@ const IndexPage = () => (
     <WhatIsKryptonum />
     <FeaturedSection />
     <ProjectsSection />
+    <HowWeWorkSection />
+    <CtaSection />
   </>
 )
 
