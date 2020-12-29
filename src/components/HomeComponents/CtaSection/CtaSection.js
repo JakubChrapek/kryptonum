@@ -1,4 +1,4 @@
-import { useStaticQuery } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Button from "../../Button/Button"
@@ -15,7 +15,7 @@ const SectionStyles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 102px 134px;
+  padding: 102px 151px;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
@@ -31,7 +31,7 @@ const SectionStyles = styled.div`
     font-family: "Libre Baskerville";
     font-size: 70px;
     font-weight: normal;
-    line-height: 1.24;
+    line-height: 1.38;
     letter-spacing: -1.75px;
     color: var(--white);
 
@@ -49,17 +49,13 @@ const SectionStyles = styled.div`
       }
     }
   }
-
-  span {
+  a {
+    margin: 48px 0 0;
+    display: inline-block;
+    button {
+      min-width: 290px;
+    }
   }
-`
-
-const FeaturedWrapper = styled.div`
-  display: flex;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  margin: 0 !important;
-  width: 50% !important;
 `
 
 const CtaSection = () => {
@@ -69,7 +65,9 @@ const CtaSection = () => {
         <h2>
           Let's make a wonderful <span>website</span> together
         </h2>
-        <Button>Contact us</Button>
+        <Link to="/contact" className="btn btn__small btn__light">
+          Contact us
+        </Link>
       </SectionStyles>
     </Wrapper>
   )

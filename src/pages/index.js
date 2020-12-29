@@ -10,6 +10,9 @@ import FeaturedSection from "../components/HomeComponents/FeaturedSection/Featur
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
 import HowWeWorkSection from "../components/HomeComponents/HowWeWorkSection/HowWeWorkSection"
 import CtaSection from "../components/HomeComponents/CtaSection/CtaSection"
+import BlogSection from "../components/HomeComponents/BlogSection/BlogSection"
+import TheUltimateSection from "../components/HomeComponents/TheUltimateSection/TheUltimateSection"
+import Footer from "../components/Footer/Footer"
 
 const IndexPage = () => (
   <>
@@ -21,6 +24,9 @@ const IndexPage = () => (
     <ProjectsSection />
     <HowWeWorkSection />
     <CtaSection />
+    <BlogSection />
+    <TheUltimateSection />
+    <Footer />
   </>
 )
 

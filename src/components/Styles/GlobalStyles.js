@@ -13,6 +13,7 @@ const Global = createGlobalStyle`
     --text-gray: #b2b2b2;
     --light-gray: #F7F7F7;
     --lightest-gray: #F7F8FA;
+    --line-gray: #E6E6E6;
     font-size: 10px;
   }
   *,
@@ -49,6 +50,36 @@ const Global = createGlobalStyle`
   }
   img::selection {
     background-color: transparent;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 387px;
+    font-family: "JetBrains Mono";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: 2.57px;
+    color: var(--white);
+    border: 1px solid var(--black);
+    padding: 31px 20px;
+    background-color: var(--black);
+    margin: ${({ margin }) => (margin ? margin : "")};
+    position: relative;
+    left: ${({ left }) => (left ? left : "")};
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .btn__small {
+    padding: 20px;
+    max-width: 290px;
+  } 
+  
+  .btn__light {
+    color: var(--black);
+    background-color: var(--white);
+    border-color: var(--white);
   }
 `
 

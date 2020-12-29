@@ -76,26 +76,9 @@ const ProjectsColumn = styled.ul`
     top: -20px;
   }
 
-  button {
-    width: 100%;
-    max-width: 387px;
-    font-family: "JetBrains Mono";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.28;
-    letter-spacing: 2.57px;
-    color: var(--white);
-    border: 1px solid var(--black);
-    padding: 31px 20px;
-    background-color: var(--black);
-    margin-top: 25px;
-    position: relative;
+  a {
+    margin: 25px 0 0;
     left: -20px;
-
-    a {
-      color: var(--white);
-      text-decoration: none;
-    }
   }
 `
 
@@ -164,9 +147,9 @@ const ProjectsSection = () => {
               {project.projectTitle}
             </motion.li>
           ))}
-          <Button>
-            <Link to="/projects">View all projects</Link>
-          </Button>
+          <Link className="btn" to="/projects">
+            View all projects
+          </Link>
         </ProjectsColumn>
         <ImageColumn>
           <AnimatePresence exitBeforeEnter>
