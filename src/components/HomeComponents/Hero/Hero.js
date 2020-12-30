@@ -108,80 +108,125 @@ const HeroFooter = () => {
   )
 }
 
-const SvgStyles = styled.svg`
-  grid-column: 1/4;
-  grid-row: 1/8;
-  width: 35vh;
-  height: 50vh;
+const SvgStyles = styled(motion.svg)`
+  position: absolute;
+  left: 0;
+  top: 55%;
+  width: 100%;
+  height: 2px;
+  line {
+    stroke: var(--white);
+    stroke-width: 1px;
+  }
 `
 
 const GrayLine = () => (
   <SvgStyles xmlns="http://www.w3.org/2000/svg">
-    <g fill="#00ef8b">
-      <path
-        xmlns="http://www.w3.org/2000/svg"
-        id="svg_1"
-        d="m2.5,250.45313l162,-249"
-        stroke-width="3"
-        stroke="#00ef8b"
-        fill="#00ef8b"
-      />
-    </g>
+    <line x1="100%" y1="0%" x2="0%" y2="100%" />
   </SvgStyles>
+)
+
+const AccentLineStyles = styled(SvgStyles)`
+  left: calc((100vw - 1010px) / 2 + 105px);
+  top: 30%;
+  width: 14%;
+  height: 57%;
+  z-index: 1;
+  line {
+    stroke: var(--accent);
+    stroke-width: 4px;
+  }
+`
+
+const GreenLine = () => (
+  <AccentLineStyles
+    animate={{ rotate: 360 }}
+    transition={{ repeat: Infinity, duration: 60 }}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="100%" y1="0%" x2="0%" y2="100%" />
+  </AccentLineStyles>
 )
 
 const Wrapper = styled.div`
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-  justify-content: center;
-  border: 1px solid var(--white);
+  display: flex;
+  flex-direction: column;
   z-index: 1;
+  width: 90%;
+  max-width: 1010px;
+  margin-top: 12%;
   h1 {
-    grid-column: 1/7;
-    grid-row: 3/7;
     font-family: "Libre Baskerville";
     font-size: 80px;
+    font-weight: normal;
     line-height: 1;
     color: var(--lightest-gray);
   }
-  p {
-    grid-column: 5/7;
-    grid-row: 6/8;
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: 3.64px;
-    font-weight: 500;
-    color: var(--white);
-    font-family: "JetBrains Mono";
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin-top: -100px;
+    margin-right: -50px;
+    width: 296px;
+    height: 296px;
+    padding-left: 70px;
+    text-decoration: none;
+    z-index: 1;
+
+    p {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 1.29;
+      letter-spacing: 3.64px;
+      font-weight: 500;
+      color: var(--white);
+      font-family: "JetBrains Mono";
+    }
+    span {
+      color: var(--white);
+    }
   }
 `
 
 const Hero = ({ bg }) => {
   return (
     <HeroSection>
+      <GrayLine />
+      <GreenLine />
       <Wrapper>
         <h1>
           Join the league
           <br />
           of business superheroes
         </h1>
-        <GrayLine />
-        <motion.p
-          whileHover={{ scale: 1.05, cursor: "pointer" }}
-          whileTap={{ scale: 0.95 }}
+        <motion.a
+          href="#services"
+          whileHover={{
+            borderColor: "var(--accent)",
+            outline: "none",
+          }}
+          whileTap={{ scale: 0.98 }}
+          whileFocus={{ borderColor: "var(--accent)", outline: "none" }}
         >
-          See what
-          <br />
-          we're up to
-          <br />
-          <span style={{ fontSize: "32px", lineHeight: "0.7" }}>&rarr;</span>
-        </motion.p>
+          <motion.p whileHover={{ scale: 1.05, cursor: "pointer" }}>
+            See what
+            <br />
+            we're up to
+            <br />
+            <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
+              &rarr;
+            </motion.span>
+          </motion.p>
+        </motion.a>
       </Wrapper>
       <HeroFooter />
       <StyledImage src={bg} />

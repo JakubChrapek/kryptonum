@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useLocation } from "@reach/router"
 import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
+import Footer from "./Footer/Footer"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
@@ -36,10 +37,10 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <SkipNavLink />
       <SEO />
+      <Header theme={getThemeFromPathname(pathname)} />
       <StyledMain key={pathname}>
-        <Header theme={getThemeFromPathname(pathname)} />
         {children}
-        <footer>© {new Date().getFullYear()}</footer>
+        <Footer />
       </StyledMain>
     </MenuProvider>
   )

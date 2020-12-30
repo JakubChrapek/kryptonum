@@ -111,15 +111,20 @@ const ContentColumn = styled.div`
       &:focus {
         outline: none;
       }
+
+      &.error {
+        border-color: var(--error);
+      }
     }
 
     p {
       font-size: 14px;
       margin-left: 18px;
+      margin-top: 5px;
       color: var(--text-gray);
     }
     .error {
-      color: red;
+      color: var(--error);
     }
 
     button {
@@ -177,6 +182,7 @@ const TheUltimateSection = () => {
   } = useStaticQuery(theUltimateSectionQuery)
   const [inputValue, setInputValue] = useState("")
   const formRef = useRef()
+  const inputRef = useRef()
   const location = useLocation()
   const [feedbackMsg, setFeedbackMsg] = useState("")
   const [error, setError] = useState(false)
@@ -184,30 +190,40 @@ const TheUltimateSection = () => {
   const handleInput = e => {
     e.preventDefault()
     setInputValue(e.target.value)
+    setFeedbackMsg("")
+    if (inputValue.length === 0) {
+      setError(false)
+    }
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     setError(false)
-    let formData = { email: inputValue }
+    if (inputValue.length === 0) {
+      setError(true)
+      setFeedbackMsg("Enter your email, please.")
+      inputRef.current.focus()
+    } else {
+      let formData = { email: inputValue }
 
-    const axiosOptions = {
-      url: location.pathname,
-      method: "post",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      data: qs.stringify(formData),
+      const axiosOptions = {
+        url: location.pathname,
+        method: "post",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        data: qs.stringify(formData),
+      }
+
+      axios(axiosOptions)
+        .then(response => {
+          setFeedbackMsg("Form submitted successfully! 🚀")
+          setError(false)
+          formRef.current.reset()
+        })
+        .catch(err => {
+          setFeedbackMsg("Form could not be submitted. 😬")
+          setError(true)
+        })
     }
-
-    axios(axiosOptions)
-      .then(response => {
-        setFeedbackMsg("Form submitted successfully! 🚀")
-        setError(false)
-        formRef.current.reset()
-      })
-      .catch(err => {
-        setFeedbackMsg("Form could not be submitted. 😬")
-        setError(true)
-      })
   }
 
   return (
@@ -245,16 +261,19 @@ const TheUltimateSection = () => {
               )}
             </AnimatePresence>
             <input
+              ref={inputRef}
               type="email"
               name="email"
               id="email"
               placeholder="Your e-mail here"
               value={inputValue}
               onChange={handleInput}
+              className={error ? "error" : ""}
             />
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.05 }}
+              whileFocus={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Get a copy

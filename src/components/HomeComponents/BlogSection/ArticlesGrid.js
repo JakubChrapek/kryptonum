@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import { AnimatePresence, motion } from "framer-motion"
 import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg"
 
-const ArticlesStyles = styled.section`
+const ArticlesStyles = styled(motion.section)`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, minmax(240px, 1fr));
@@ -182,15 +182,16 @@ const ArticlesGrid = ({ posts }) => {
   const pageLength = 2
   return (
     <AnimatePresence exitBeforeEnter>
-      <ArticlesStyles>
+      <ArticlesStyles key="articles-section">
         {posts
           .slice(currentPage * pageLength, (currentPage + 1) * pageLength)
           .map(post => (
-            <Article article={post} />
+            <Article key={post.id} article={post} />
           ))}
       </ArticlesStyles>
       {posts.length > pageLength && (
         <Pagination
+          key="articles-pagination"
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           length={Math.ceil(posts?.length / pageLength)}

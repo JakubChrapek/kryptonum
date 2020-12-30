@@ -14,6 +14,7 @@ const Global = createGlobalStyle`
     --light-gray: #F7F7F7;
     --lightest-gray: #F7F8FA;
     --line-gray: #E6E6E6;
+    --error: #C32F27;
     font-size: 10px;
   }
   *,

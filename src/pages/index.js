@@ -26,7 +26,6 @@ const IndexPage = () => (
     <CtaSection />
     <BlogSection />
     <TheUltimateSection />
-    <Footer />
   </>
 )
 

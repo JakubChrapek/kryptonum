@@ -124,7 +124,7 @@ const HowWeWorkSection = () => {
       </div>
       <Cards>
         {datoCmsPageHome.cards.map(card => (
-          <li>
+          <li key={card.cardTitle}>
             <h3>{card.cardTitle}</h3>
             <p>{card.cardDescription}</p>
           </li>
