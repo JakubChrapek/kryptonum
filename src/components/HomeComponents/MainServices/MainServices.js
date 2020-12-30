@@ -6,7 +6,7 @@ const ServicesStyles = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 123px 133px 141px;
+  padding: 88px 123px 133px 141px;
   max-width: 1366px;
   margin: 0 auto;
 
@@ -75,7 +75,7 @@ const ServicesWrapper = styled.ul`
 
 const MainServices = () => {
   return (
-    <ServicesStyles>
+    <ServicesStyles id="whatwereupto">
       <h2>Our main services</h2>
       <ServicesWrapper>
         <li>

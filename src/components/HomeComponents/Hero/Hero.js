@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
+import { Link as ScrollLink } from "react-scroll"
 import React from "react"
 import styled from "styled-components"
 
@@ -8,7 +9,6 @@ const HeroSection = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -88px;
   height: 100vh;
   padding-top: 77px;
   z-index: 0;
@@ -132,6 +132,7 @@ const AccentLineStyles = styled(SvgStyles)`
   width: 14%;
   height: 57%;
   z-index: 1;
+  transform-origin: center center;
   line {
     stroke: var(--accent);
     stroke-width: 4px;
@@ -180,6 +181,11 @@ const Wrapper = styled.div`
     padding-left: 70px;
     text-decoration: none;
     z-index: 1;
+    transition: border 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    cursor: pointer;
+    &:hover {
+      border-color: var(--accent);
+    }
 
     p {
       text-align: left;
@@ -208,15 +214,22 @@ const Hero = ({ bg }) => {
           <br />
           of business superheroes
         </h1>
-        <motion.a
-          href="#services"
-          whileHover={{
-            borderColor: "var(--accent)",
-            outline: "none",
-          }}
-          whileTap={{ scale: 0.98 }}
-          whileFocus={{ borderColor: "var(--accent)", outline: "none" }}
+
+        <ScrollLink
+          activeClass="active"
+          to="whatwereupto"
+          spy={true}
+          smooth={true}
+          duration={800}
         >
+          {/* <motion.a
+            whileHover={{
+              borderColor: "var(--accent)",
+              outline: "none",
+            }}
+            whileTap={{ scale: 0.98 }}
+            whileFocus={{ borderColor: "var(--accent)", outline: "none" }}
+          > */}
           <motion.p whileHover={{ scale: 1.05, cursor: "pointer" }}>
             See what
             <br />
@@ -226,7 +239,8 @@ const Hero = ({ bg }) => {
               &rarr;
             </motion.span>
           </motion.p>
-        </motion.a>
+          {/* </motion.a> */}
+        </ScrollLink>
       </Wrapper>
       <HeroFooter />
       <StyledImage src={bg} />

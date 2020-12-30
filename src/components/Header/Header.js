@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { useMenuDispatch, useMenuState } from "../../contexts/menuContext"
 import useWindowSize from "../../utils/getWindowSize"
+import { containerTransition, itemTransition } from "../Styles/Animations"
 
 const NavBurger = styled(motion.button)`
   display: flex;
@@ -136,7 +137,7 @@ const StyledOutLink = styled(motion.a)`
   }
 `
 
-const SocialList = styled.ul`
+const SocialList = styled(motion.ul)`
   margin-top: 36px;
   display: flex;
   flex-direction: column;
@@ -260,67 +261,70 @@ const Navigation = ({ mobile, width }) => {
     },
   ]
   return (
-    <>
-      <NavigationStyles>
-        {width > 800 && (
-          <Flex
-            direction="column"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
-            <div>
-              <p>Social</p>
-              <SocialList>
-                <li>
-                  <StyledOutLink href="https://facebook.com/kryptonum">
-                    Facebook
-                  </StyledOutLink>
-                </li>
-                <li>
-                  <StyledOutLink href="https://instagram.com/kryptonum.studio">
-                    Instagram
-                  </StyledOutLink>
-                </li>
-              </SocialList>
-            </div>
-            <div>
-              <Text margin="0 0 9px 0">Get in touch</Text>
-              <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
-                contact@kryptonum.co.uk
-              </StyledOutLink>
-            </div>
-          </Flex>
-        )}
-        <MenuFlex
+    <NavigationStyles
+      variants={containerTransition}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      {width > 800 && (
+        <Flex
           direction="column"
           alignItems="flex-start"
-          justifyContent="flex-start"
-          margin="0 0 0 56px"
+          justifyContent="space-between"
         >
-          <p>Menu</p>
-          <StyledList>
-            {navItems.map(item => (
-              <StyledLink
-                number={item.number}
-                activeClassName="active"
-                to={item.link}
-                key={item.name}
-              >
-                <StyledItem key={item.name}>{item.name}</StyledItem>
-              </StyledLink>
-            ))}
-          </StyledList>
-          {width <= 800 && (
-            <>
-              <Text margin="0 0 9px 0">Get in touch</Text>
-              <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
-                contact@kryptonum.co.uk
-              </StyledOutLink>
-            </>
-          )}
-        </MenuFlex>
-      </NavigationStyles>
-    </>
+          <div>
+            <motion.p>Social</motion.p>
+            <SocialList>
+              <motion.li>
+                <StyledOutLink href="https://facebook.com/kryptonum">
+                  Facebook
+                </StyledOutLink>
+              </motion.li>
+              <motion.li>
+                <StyledOutLink href="https://instagram.com/kryptonum.studio">
+                  Instagram
+                </StyledOutLink>
+              </motion.li>
+            </SocialList>
+          </div>
+          <div>
+            <Text margin="0 0 9px 0">Get in touch</Text>
+            <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
+              contact@kryptonum.co.uk
+            </StyledOutLink>
+          </div>
+        </Flex>
+      )}
+      <MenuFlex
+        direction="column"
+        alignItems="flex-start"
+        justifyContent="flex-start"
+        margin="0 0 0 56px"
+      >
+        <p>Menu</p>
+        <StyledList>
+          {navItems.map(item => (
+            <StyledLink
+              number={item.number}
+              activeClassName="active"
+              to={item.link}
+              key={item.name}
+            >
+              <StyledItem key={item.name}>{item.name}</StyledItem>
+            </StyledLink>
+          ))}
+        </StyledList>
+        {width <= 800 && (
+          <>
+            <Text margin="0 0 9px 0">Get in touch</Text>
+            <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
+              contact@kryptonum.co.uk
+            </StyledOutLink>
+          </>
+        )}
+      </MenuFlex>
+    </NavigationStyles>
   )
 }
 
@@ -345,7 +349,9 @@ const HeaderStyles = styled(motion.header)`
   margin: 0 auto;
   padding: 32px 62px 32px 70px;
   z-index: 1;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   a {
     text-decoration: none;
   }
@@ -396,11 +402,14 @@ const Header = ({ theme }) => {
           console.log(mobile)
         }}
         className={show ? "active" : null}
+        whileTap={{ scale: 0.9 }}
       >
         <motion.span />
         <motion.span />
       </NavBurger>
-      {show && <Navigation width={width} mobile={mobile} />}
+      <AnimatePresence exitBeforeEnter>
+        {show && <Navigation width={width} mobile={mobile} />}
+      </AnimatePresence>
     </HeaderStyles>
   )
 }

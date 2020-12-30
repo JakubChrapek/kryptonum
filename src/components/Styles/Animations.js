@@ -8,17 +8,17 @@ export const containerTransition = {
     transition: {
       duration: 0.7,
       delayChildren: 0.25,
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
       ease: easing,
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.5,
       duration: 0.7,
       when: "afterChildren",
-      delay: 0.35,
+      delay: 0.25,
       ease: easing,
     },
   },
@@ -26,8 +26,8 @@ export const containerTransition = {
 
 export const itemTransition = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.4, ease: easing } },
-  exit: { opacity: 0, transition: { duration: 0.4, ease: easing } },
+  animate: { opacity: 1, transition: { duration: 0.7, ease: easing } },
+  exit: { opacity: 0, transition: { duration: 0.7, ease: easing } },
 }
 
 export const fadeInUp = {
