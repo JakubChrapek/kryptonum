@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import { Link as ScrollLink } from "react-scroll"
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const HeroSection = styled.section`
   display: flex;
@@ -22,9 +23,19 @@ const HeroSection = styled.section`
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
+  @media (max-width: 683px) {
+    align-items: flex-start;
+    padding-top: 197px;
+    padding: 197px 84px 0 44px;
+
+    &:after {
+      background-color: var(--black);
+    }
+  }
   h1 {
     font-size: 98px;
     line-height: 0.82;
+    font-weight: normal;
     color: var(--lightest-gray);
     z-index: 1;
   }
@@ -114,6 +125,9 @@ const SvgStyles = styled(motion.svg)`
   top: 55%;
   width: 100%;
   height: 2px;
+  @media (max-width: 1101px) {
+    top: 50%;
+  }
   line {
     stroke: var(--white);
     stroke-width: 1px;
@@ -133,21 +147,56 @@ const AccentLineStyles = styled(SvgStyles)`
   height: 57%;
   z-index: 1;
   transform-origin: center center;
+
+  @media (max-width: 1101px) {
+    left: 20%;
+  }
+
+  @media (max-width: 683px) {
+    left: 48px;
+    top: 154px;
+    width: 25%;
+    height: 27%;
+    z-index: -1;
+  }
+
   line {
     stroke: var(--accent);
     stroke-width: 4px;
   }
 `
 
-const GreenLine = () => (
-  <AccentLineStyles
-    animate={{ rotate: 360 }}
-    transition={{ repeat: Infinity, duration: 60 }}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="100%" y1="0%" x2="0%" y2="100%" />
-  </AccentLineStyles>
-)
+const LineStyles = styled.div`
+  z-index: 2;
+  button {
+    border: 2px solid white;
+    width: 200px;
+    height: 100px;
+    z-index: 2;
+  }
+`
+
+const GreenLine = () => {
+  const [showSword, setShowSword] = useState(false)
+
+  return (
+    <LineStyles>
+      <AccentLineStyles
+        // animate={{ rotate: 360, scale: [1, 0.6, 1] }}
+        // transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+        // animate={showSword ? { width: "100%" } : { width: "10%" }}
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ originX: 0.5, originY: 0.5 }}
+      >
+        <line x1="100%" y1="0%" x2="0%" y2="100%" />
+      </AccentLineStyles>
+
+      {/* <button type="button" onClick={() => setShowSword(!showSword)}>
+        Laser sword
+      </button> */}
+    </LineStyles>
+  )
+}
 
 const Wrapper = styled.div`
   position: relative;
@@ -157,12 +206,28 @@ const Wrapper = styled.div`
   width: 90%;
   max-width: 1010px;
   margin-top: 12%;
+
+  @media (max-width: 683px) {
+    width: unset;
+    margin-top: 0;
+  }
   h1 {
     font-family: "Libre Baskerville";
     font-size: 80px;
     font-weight: normal;
     line-height: 1;
     color: var(--lightest-gray);
+
+    @media (max-width: 1101px) {
+      font-size: 64px;
+    }
+    @media (max-width: 868px) {
+      font-size: 50px;
+    }
+    @media (max-width: 683px) {
+      font-size: 36px;
+      line-height: 50px;
+    }
   }
   a {
     display: flex;
@@ -183,7 +248,24 @@ const Wrapper = styled.div`
     z-index: 1;
     transition: border 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     cursor: pointer;
+
+    @media (max-width: 1101px) {
+      margin-right: 20px;
+      margin-top: -80px;
+    }
+
+    @media (max-width: 868px) {
+      width: 242px;
+      height: 242px;
+      padding-left: 40px;
+    }
+
     &:hover {
+      border-color: var(--accent);
+    }
+
+    &:focus,
+    &:active {
       border-color: var(--accent);
     }
 
@@ -204,9 +286,10 @@ const Wrapper = styled.div`
 `
 
 const Hero = ({ bg }) => {
+  const width = useWindowSize()
   return (
     <HeroSection>
-      <GrayLine />
+      {width >= 683 && <GrayLine />}
       <GreenLine />
       <Wrapper>
         <h1>
@@ -215,35 +298,38 @@ const Hero = ({ bg }) => {
           of business superheroes
         </h1>
 
-        <ScrollLink
-          activeClass="active"
-          to="whatwereupto"
-          spy={true}
-          smooth={true}
-          duration={800}
-        >
-          {/* <motion.a
-            whileHover={{
-              borderColor: "var(--accent)",
-              outline: "none",
-            }}
-            whileTap={{ scale: 0.98 }}
-            whileFocus={{ borderColor: "var(--accent)", outline: "none" }}
-          > */}
-          <motion.p whileHover={{ scale: 1.05, cursor: "pointer" }}>
-            See what
-            <br />
-            we're up to
-            <br />
-            <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
-              &rarr;
-            </motion.span>
-          </motion.p>
-          {/* </motion.a> */}
-        </ScrollLink>
+        {width >= 683 && (
+          <ScrollLink
+            activeClass="active"
+            to="whatwereupto"
+            spy={true}
+            smooth={true}
+            duration={800}
+          >
+            {/* <motion.a
+              whileHover={{
+                borderColor: "var(--accent)",
+                outline: "none",
+              }}
+              whileTap={{ scale: 0.98 }}
+              whileFocus={{ borderColor: "var(--accent)", outline: "none" }}
+            > */}
+            <motion.p whileHover={{ scale: 1.05, cursor: "pointer" }}>
+              See what
+              <br />
+              we're up to
+              <br />
+              <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
+                &rarr;
+              </motion.span>
+            </motion.p>
+            {/* </motion.a> */}
+          </ScrollLink>
+        )}
       </Wrapper>
       <HeroFooter />
-      <StyledImage src={bg} />
+
+      {width >= 683 && <StyledImage src={bg} />}
     </HeroSection>
   )
 }

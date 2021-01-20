@@ -166,18 +166,6 @@ const StyledList = styled.ul`
 const StyledItem = styled.li`
   position: relative;
   transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  /* &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    width: 100%;
-    background-color: var(--black);
-    transform: scaleY(0);
-    transform-origin: center bottom;
-    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  } */
 `
 
 const StyledLink = styled(Link)`
@@ -198,9 +186,6 @@ const StyledLink = styled(Link)`
   &.active li,
   &:hover li {
     transform: translateX(32px);
-    /* &:before {
-      transform: scaleY(1);
-    } */
   }
 
   &::after {
@@ -370,6 +355,27 @@ const ContactStyles = styled(Link)`
   font-weight: 500;
   padding: 6px 8px;
   font-family: "JetBrains Mono";
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 8px;
+    width: calc(100% - 24px);
+    height: 1px;
+    transform-origin: center bottom;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+      transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    background-color: ${({ color }) => (color ? color : "var(--black)")};
+  }
+
+  &:hover:after {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 `
 const Contact = ({ color }) => (
   <ContactStyles color={color} to="/contact">

@@ -9,18 +9,8 @@ exports.createPages = async ({ graphql, actions }) => {
       articles: allDatoCmsArticle {
         nodes {
           articleTitle
-          articleCategory
           articleSlug
           id
-          author {
-            name
-            surname
-            photo {
-              fluid {
-                src
-              }
-            }
-          }
         }
       }
     }
