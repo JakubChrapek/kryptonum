@@ -18,14 +18,14 @@ const IndexPage = () => (
   <>
     <SEO title="Kryptonum" />
     <Hero bg={heroBg} />
-    {/* <MainServices /> */}
-    {/* <WhatIsKryptonum />
+    <MainServices />
+    <WhatIsKryptonum />
     <FeaturedSection />
     <ProjectsSection />
     <HowWeWorkSection />
     <CtaSection />
     <BlogSection />
-    <TheUltimateSection /> */}
+    <TheUltimateSection />
   </>
 )
 
