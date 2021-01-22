@@ -44,7 +44,7 @@ export const InTouchColumn = styled.div`
     @media (max-width: 912px) {
       margin-left: 44px;
     }
-    @media (max-width: 795px) {
+    @media (max-width: 857px) {
       margin-left: 0;
       padding: 0 8px;
       max-width: 340px;
@@ -173,18 +173,19 @@ export const RotatedLogo = styled(motion.h1)`
 `
 
 export const CopyrightWrapper = styled.div`
-  padding: 82px 0 0px 57px;
+  padding: 82px 0 0 57px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 795px) {
+  @media (max-width: 861px) {
     padding: 82px 0 0 0;
+  }
+  @media (max-width: 795px) {
     flex-direction: column;
     align-items: center;
   }
   @media (max-width: 550px) {
-    max-width: 200px;
     margin: 0 auto;
   }
   div {
@@ -202,6 +203,16 @@ export const CopyrightWrapper = styled.div`
         line-height: 1.5em;
         letter-spacing: normal;
         color: var(--light-gray);
+      }
+      > span {
+        &::after {
+          display: none;
+        }
+      }
+    }
+    &:last-child {
+      @media (max-width: 795px) {
+        max-width: 200px;
       }
     }
     span {
@@ -244,7 +255,7 @@ export const CopyrightWrapper = styled.div`
       position: relative;
       &:nth-child(2) {
         margin-left: 74px;
-        @media (max-width: 550px) {
+        @media (max-width: 795px) {
           margin-left: 0;
         }
       }
@@ -271,10 +282,3 @@ export const CopyrightWrapper = styled.div`
     }
   }
 `
-// export const GreenLine = styled.span`
-//   width: 50px;
-//   height: 2px;
-//   margin-left: 9px;
-//   background-color: var(--accent);
-//   display: inline-block;
-// `

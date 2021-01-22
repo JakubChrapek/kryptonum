@@ -94,7 +94,7 @@ const Footer = () => {
         <BottomFooterWrapper>
           <CopyrightWrapper>
             <div>
-              <p>All rights reserved &copy; Kryptonum</p>
+              <span>All rights reserved &copy; Kryptonum</span>
             </div>
             <div>
               <span>Connect with us</span>
