@@ -10,8 +10,6 @@ const CtaSection = () => {
         <h2>
           Let's make a wonderful <span>website</span> <span>together</span>
         </h2>
-
-        {/* Let's make a wonderful Website together */}
         <Link to="/contact" className="btn btn__small btn__light">
           Contact us
         </Link>
