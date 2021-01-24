@@ -19,6 +19,8 @@ const MainServices = () => {
         <li>
           <h3>Media</h3>
         </li>
+      </ServicesWrapper>
+      <ServicesWrapper>
         <li>
           <h3>Marketing</h3>
         </li>

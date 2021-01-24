@@ -10,10 +10,18 @@ export const ServicesStyles = styled.section`
   margin: 0 auto;
 
   @media only screen and (max-width: 1366px) {
-    padding: 0 93px 133px 111px;
+    padding: 36px 93px 133px 111px;
   }
   @media only screen and (max-width: 1090px) {
-    padding: 0 60px 110px 80px;
+    padding: 36px 60px 110px 80px;
+  }
+  @media only screen and (max-width: 874px) {
+    padding: 36px 0 110px 0;
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 540px) {
+    padding: 36px 0 77px 0;
+    overflow: hidden;
   }
   h2 {
     text-align: center;
@@ -23,14 +31,19 @@ export const ServicesStyles = styled.section`
     font-family: "JetBrains Mono";
     color: var(--black);
     text-transform: uppercase;
+    padding-bottom: 20px;
+    @media only screen and (max-width: 480px) {
+      font-size: 8px;
+    }
   }
 `
 
 export const ServicesWrapper = styled.ul`
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 43px;
   justify-content: center;
+  @media only screen and (max-width: 874px) {
+    max-width: 796px;
+  }
   li {
     margin: 27px 70px 0 0;
     @media only screen and (max-width: 1366px) {
@@ -38,6 +51,9 @@ export const ServicesWrapper = styled.ul`
     }
     @media only screen and (max-width: 1090px) {
       margin: 27px 40px 0 0;
+    }
+    @media only screen and (max-width: 480px) {
+      margin: 27px 20px 0 0;
     }
     &:last-child {
       margin: 27px 0 0 0;
@@ -50,6 +66,9 @@ export const ServicesWrapper = styled.ul`
     }
     @media only screen and (max-width: 1090px) {
       font-size: 42px;
+    }
+    @media only screen and (max-width: 614px) {
+      font-size: 30px;
     }
     line-height: 1.23;
     letter-spacing: -1.56px;
