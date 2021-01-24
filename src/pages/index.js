@@ -21,10 +21,10 @@ const IndexPage = () => (
     <MainServices />
     <WhatIsKryptonum />
     <FeaturedSection />
-    {/* <ProjectsSection />
-    <HowWeWorkSection />
+    {/* <ProjectsSection /> */}
+    {/* <HowWeWorkSection /> */}
     <CtaSection />
-    <BlogSection />
+    {/* <BlogSection />
     <TheUltimateSection /> */}
   </>
 )
