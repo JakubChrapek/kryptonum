@@ -20,12 +20,12 @@ const IndexPage = () => (
     <Hero bg={heroBg} />
     <MainServices />
     <WhatIsKryptonum />
-    {/* <FeaturedSection /> */}
+    <FeaturedSection />
     {/* <ProjectsSection />
     <HowWeWorkSection />
     <CtaSection />
     <BlogSection />
-    <TheUltimateSection />   */}
+    <TheUltimateSection /> */}
   </>
 )
 

@@ -5,6 +5,9 @@ export const SectionStyles = styled.section`
 `
 export const CreativeSection = styled.div`
   background-color: var(--white);
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
 `
 export const Wrapper = styled.div`
   display: flex;
