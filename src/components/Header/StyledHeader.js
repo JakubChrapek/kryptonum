@@ -12,7 +12,7 @@ export const NavBurger = styled(motion.button)`
   position: relative;
   border: none;
   background-color: transparent;
-  z-index: 2;
+  z-index: 99;
   mix-blend-mode: difference;
 
   @media only screen and (max-width: 800px) {

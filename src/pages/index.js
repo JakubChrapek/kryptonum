@@ -16,16 +16,16 @@ import Footer from "../components/Footer/Footer"
 
 const IndexPage = () => (
   <>
-    <SEO title="Kryptonum" />
-    {/* <Hero bg={heroBg} /> */}
-    {/* <MainServices />
+    {/* <SEO title="Kryptonum" />
+    <Hero bg={heroBg} />
+    <MainServices />
     <WhatIsKryptonum />
-    <FeaturedSection /> */}
-    {/* <ProjectsSection /> */}
-    {/* <HowWeWorkSection /> */}
-    {/* <CtaSection /> */}
-    <BlogSection />
-    {/* <TheUltimateSection /> */}
+    <FeaturedSection />
+    <ProjectsSection />
+    <HowWeWorkSection />
+    <CtaSection />
+    <BlogSection /> */}
+    <TheUltimateSection />
   </>
 )
 
