@@ -10,6 +10,12 @@ export const SectionInfoTextWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 110px 140px;
+  @media only screen and (max-width: 1064px) {
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 892px) {
+    padding: 51px 28px;
+  }
   > h3 {
     font-family: Poppins;
     font-size: 40px;
@@ -21,6 +27,9 @@ export const SectionInfoTextWrapper = styled.div`
     text-align: left;
     color: var(--black);
     position: relative;
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
     &::after {
       content: "";
       width: 110%;
@@ -29,6 +38,9 @@ export const SectionInfoTextWrapper = styled.div`
       position: absolute;
       bottom: 0;
       left: 0;
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
   > p {
@@ -41,6 +53,9 @@ export const SectionInfoTextWrapper = styled.div`
     line-height: 1.28;
     letter-spacing: 2.57px;
     color: var(--dark-bg);
+    @media only screen and (max-width: 1064px) {
+      padding-top: 54px;
+    }
   }
 `
 export const ContentWrapper = styled.section``

@@ -7,6 +7,7 @@ export const StyledImplementationUl = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-top: 33px;
   li {
     font-family: Poppins;
     font-size: 12px;
