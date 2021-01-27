@@ -7,6 +7,9 @@ export const OurWorkflowWrapper = styled.div`
   padding: 0 140px;
   margin: 0 auto;
   max-width: 1366px;
+  @media only screen and (max-width: 892px) {
+    padding: 0 28px;
+  }
   h2 {
     font-family: Poppins;
     font-size: 40px;
@@ -18,6 +21,10 @@ export const OurWorkflowWrapper = styled.div`
     color: var(--black);
     position: relative;
     margin-bottom: 124px;
+    @media only screen and (max-width: 710px) {
+      margin-bottom: 55px;
+      font-size: 30px;
+    }
     &:after {
       content: "";
       height: 2.8px;

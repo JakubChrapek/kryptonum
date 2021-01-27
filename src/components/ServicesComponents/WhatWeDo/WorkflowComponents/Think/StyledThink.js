@@ -2,6 +2,16 @@ import styled from "styled-components"
 
 export const StyledIdeaBox = styled.div`
   margin-left: 140px;
+  @media only screen and (max-width: 1200px) {
+    margin-left: 60px;
+  }
+  @media only screen and (max-width: 1200px) {
+    margin-left: 60px;
+  }
+  @media only screen and (max-width: 1200px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   p {
     width: 269px;
     height: 269px;
@@ -18,10 +28,28 @@ export const StyledIdeaBox = styled.div`
     align-items: center;
     border-radius: 50%;
     background-color: var(--accent);
+    @media only screen and (max-width: 1200px) {
+      width: 209px;
+      height: 209px;
+    }
+    @media only screen and (max-width: 892px) {
+      width: 269px;
+      height: 269px;
+    }
+    @media only screen and (max-width: 816px) {
+      margin: 35px 0 57px 0;
+    }
+    @media only screen and (max-width: 400px) {
+      width: 239px;
+      height: 239px;
+    }
   }
 `
 export const ThinkTextWrapper = styled.div`
   max-width: 300px;
+  @media only screen and (max-width: 816px) {
+    margin-bottom: 70px;
+  }
   h3 {
     font-family: LibreBaskerville;
     font-size: 36px;

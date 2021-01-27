@@ -18,10 +18,15 @@ import {
 
 const Implementation = () => {
   return (
-    <WorkflowComponentWrapper hasAlignItems={true} hasPaddingTop={78}>
+    <WorkflowComponentWrapper
+      mediaQueriesDirection={true}
+      hasAlignItems={true}
+      hasPaddingTop={78}
+      mediaQueriesAlign={true}
+    >
       <div>
-        <StyledGreenSpan>(01)</StyledGreenSpan>
-        <StyledHeading>Implementation</StyledHeading>
+        <StyledGreenSpan implementation={true}>(01)</StyledGreenSpan>
+        <StyledHeading hasMediaQueryFont={true}>Implementation</StyledHeading>
       </div>
       <StyledListWrapper>
         <StyledImplementationUl>

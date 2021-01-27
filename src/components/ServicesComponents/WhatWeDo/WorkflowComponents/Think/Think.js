@@ -15,6 +15,8 @@ const Think = () => {
       hasAlignItems={true}
       hasJustifyContent={true}
       hasPaddingTop={94}
+      mediaQueriesDirection={true}
+      mediaQueriesAlign={true}
     >
       <div>
         <StyledGreenSpan>(01)</StyledGreenSpan>

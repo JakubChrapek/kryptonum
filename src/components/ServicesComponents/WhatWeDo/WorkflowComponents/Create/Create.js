@@ -19,6 +19,8 @@ const Create = () => {
       hasAlignItems={true}
       hasPaddingTop={156}
       hasJustifyContent={true}
+      mediaQueriesDirection={true}
+      mediaQueriesAlign={true}
     >
       <div>
         <StyledGreenSpan>(01)</StyledGreenSpan>

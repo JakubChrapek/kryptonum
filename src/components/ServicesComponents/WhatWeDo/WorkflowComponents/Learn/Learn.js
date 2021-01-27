@@ -15,7 +15,10 @@ import {
 
 const Learn = () => {
   return (
-    <WorkflowComponentWrapper>
+    <WorkflowComponentWrapper
+      mediaQueriesAlign={true}
+      mediaQueriesDirection={true}
+    >
       <LearnWrapper>
         <HeadingWrapper>
           <StyledGreenSpan>(01)</StyledGreenSpan>
