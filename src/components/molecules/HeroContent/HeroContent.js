@@ -2,11 +2,11 @@ import React from "react"
 
 import { HeroSection, Wrapper } from "./StyledHeroContent"
 
-const HeroContent = () => {
+const HeroContent = ({ content }) => {
   return (
     <HeroSection>
       <Wrapper>
-        <h1>Good design makes life better</h1>
+        <h1>{content}</h1>
       </Wrapper>
     </HeroSection>
   )
