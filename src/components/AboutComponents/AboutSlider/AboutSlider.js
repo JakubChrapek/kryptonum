@@ -10,7 +10,7 @@ const AboutSlider = () => {
   return (
     <StyledAboutSliderWrapper>
       <TextContentWrapper>
-        <StyledFeaturedWrapper hasDeclaredWidth={true}>
+        <StyledFeaturedWrapper hasDeclaredWidth={true} aboutSlider={true}>
           <span>Multiple personalities</span>
           <span>no egos</span>
         </StyledFeaturedWrapper>

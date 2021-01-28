@@ -5,6 +5,13 @@ export const StyledOurVisionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 122px;
+  @media only screen and (max-width: 849px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media only screen and (max-width: 660px) {
+    padding-bottom: 80px;
+  }
 `
 export const OurVisionLogoTextWrapper = styled.div`
   h2 {
@@ -18,6 +25,12 @@ export const OurVisionLogoTextWrapper = styled.div`
     letter-spacing: -1.3px;
     color: var(--accent);
     padding-right: 174px;
+    @media only screen and (max-width: 1225px) {
+      padding-right: 70px;
+    }
+    @media only screen and (max-width: 1121px) {
+      padding-right: 20px;
+    }
     span {
       font-family: JetBrainsMono;
       font-size: 14px;
@@ -28,6 +41,8 @@ export const OurVisionLogoTextWrapper = styled.div`
       letter-spacing: 5px;
       color: var(--accent);
       display: block;
+      padding-right: 9px;
+      transform: translateY(-18px);
     }
   }
 `
@@ -42,4 +57,7 @@ export const RightBoxParagraph = styled.p`
   line-height: 1.5;
   letter-spacing: 2.67px;
   color: var(--white);
+  @media only screen and (max-width: 849px) {
+    padding-top: 41px;
+  }
 `

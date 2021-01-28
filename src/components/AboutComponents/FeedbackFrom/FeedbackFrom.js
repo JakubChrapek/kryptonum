@@ -1,7 +1,7 @@
 import React from "react"
 
 const FeedbackFrom = () => {
-  return <div></div>
+  return <div>slider feedback from</div>
 }
 
 export default FeedbackFrom

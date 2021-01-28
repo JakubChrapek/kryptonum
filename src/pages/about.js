@@ -3,6 +3,7 @@ import React from "react"
 import AboutContent from "../components/AboutComponents/AboutContent/AboutContent"
 import AboutSlider from "../components/AboutComponents/AboutSlider/AboutSlider"
 import BestWay from "../components/AboutComponents/BestWay/BestWay"
+import FeedbackFrom from "../components/AboutComponents/FeedbackFrom/FeedbackFrom"
 import OurVision from "../components/AboutComponents/OurVision/OurVision"
 
 const About = () => {
@@ -18,6 +19,7 @@ const About = () => {
       />
       <AboutSlider />
       <OurVision />
+      <FeedbackFrom />
     </div>
   )
 }
