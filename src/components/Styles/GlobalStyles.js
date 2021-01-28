@@ -8,6 +8,7 @@ const Global = createGlobalStyle`
     --accent: #00EF8B;
     --dark-bg: #171717;
     --black: #000;
+    --black-font: #090909;
     --white: #fff;
     --gray: #363636;
     --text-gray: #b2b2b2;

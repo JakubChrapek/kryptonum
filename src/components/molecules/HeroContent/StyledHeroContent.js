@@ -5,6 +5,8 @@ export const HeroSection = styled.section`
   background-color: #fff;
   display: flex;
   align-items: center;
+  max-width: 1366px;
+  margin: 0 auto;
 `
 
 export const Wrapper = styled.div`
