@@ -7,6 +7,7 @@ const website = require("./config/website")
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
 
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
     pathPrefix,

@@ -1,7 +1,13 @@
 import React from "react"
 
+import FAQMain from "../components/FAQComponents/FAQMain"
+
 const Faq = () => {
-  return <div>To make everyone's life easier</div>
+  return (
+    <div>
+      <FAQMain />
+    </div>
+  )
 }
 
 export default Faq
