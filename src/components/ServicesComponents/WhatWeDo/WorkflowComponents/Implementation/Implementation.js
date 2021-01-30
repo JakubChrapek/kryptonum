@@ -45,7 +45,7 @@ const Implementation = () => {
         <LongLastingWrapper>
           <ArrowWrapper>
             <StyledArrow
-              size="82px"
+              size="62px"
               title="Arrow pointing down"
               color="#00EF8B"
             />

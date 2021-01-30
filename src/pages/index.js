@@ -3,21 +3,21 @@ import Layout from "../layouts/Layout"
 import SEO from "../components/SEO/SEO"
 import website from "../../config/website"
 import heroBg from "../images/home-bg.jpg"
-import Hero from "../components/HomeComponents/Hero/Hero"
-import MainServices from "../components/HomeComponents/MainServices/MainServices"
-import WhatIsKryptonum from "../components/HomeComponents/WhatIsKryptonum/WhatIsKryptonum"
-import FeaturedSection from "../components/HomeComponents/FeaturedSection/FeaturedSection"
-import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
-import HowWeWorkSection from "../components/HomeComponents/HowWeWorkSection/HowWeWorkSection"
-import CtaSection from "../components/HomeComponents/CtaSection/CtaSection"
-import BlogSection from "../components/HomeComponents/BlogSection/BlogSection"
-import TheUltimateSection from "../components/HomeComponents/TheUltimateSection/TheUltimateSection"
+import HomeHero from "../components/organisms/HomeHero/HomeHero"
+import MainServices from "../components/molecules/MainServices/MainServices"
+import WhatIsKryptonum from "../components/molecules/WhatIsKryptonum/WhatIsKryptonum"
+import FeaturedSection from "../components/molecules/FeaturedSection/FeaturedSection"
+import ProjectsSection from "../components/organisms/ProjectsSection/ProjectsSection"
+import HowWeWorkSection from "../components/molecules/HoweWeWorkSection/HowWeWorkSection"
+import CtaSection from "../components/molecules/CtaSection/CtaSection"
+import BlogSection from "../components/organisms/BlogSection/BlogSection"
+import TheUltimateSection from "../components/organisms/TheUltimateSection/TheUltimateSection"
 import Footer from "../components/Footer/Footer"
 
 const IndexPage = () => (
   <>
     <SEO title="Kryptonum" />
-    <Hero bg={heroBg} />
+    <HomeHero bg={heroBg} />
     <MainServices />
     <WhatIsKryptonum />
     <FeaturedSection />

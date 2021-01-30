@@ -1,6 +1,6 @@
 import React from "react"
 
-import { HeroImageWrapper } from "./StyledHeroImage"
+import { HeroImageWrapper } from "../../atoms/HeroImage/StyledHeroImage"
 
 const HeroImage = ({ image }) => {
   return (

@@ -1,10 +1,10 @@
 import React from "react"
 
-import AboutContent from "../components/AboutComponents/AboutContent/AboutContent"
-import AboutSlider from "../components/AboutComponents/AboutSlider/AboutSlider"
-import BestWay from "../components/AboutComponents/BestWay/BestWay"
-import FeedbackFrom from "../components/AboutComponents/FeedbackFrom/FeedbackFrom"
-import OurVision from "../components/AboutComponents/OurVision/OurVision"
+import AboutContent from "../components/molecules/AboutContent/AboutContent"
+import AboutSlider from "../components/organisms/AboutSlider/AboutSlider"
+import BestWay from "../components/molecules/BestWay/BestWay"
+import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
+import OurVision from "../components/molecules/OurVision/OurVision"
 
 const About = () => {
   return (
