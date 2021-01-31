@@ -25,27 +25,25 @@ const Header = ({ theme }) => {
     <StyledHeader>
       {width > 800 && (
         <Contact
-          color={theme === "white" ? "var(--lightest-gray)" : "var(--black)"}
+          color={theme === "/" ? "var(--lightest-gray)" : "var(--black)"}
         />
       )}
       <StyledHeaderLink to="/">
-        <Logo color={theme === "white" ? "var(--white)" : "var(--black)"} />
+        <Logo color={theme === "/" ? "var(--white)" : "var(--black)"} />
       </StyledHeaderLink>
       <StyledNavBurger
-        color={theme === "white" ? "var(--white)" : "var(--black)"}
         onClick={() => {
           setShow(!show)
           dispatch({ type: "TOGGLE_MENU" })
-          console.log(mobile)
         }}
         className={show ? "active" : null}
         whileTap={{ scale: 0.9 }}
       >
-        <StyledNavBurgerSpan color={theme} />
-        <StyledNavBurgerSpan color={theme} />
+        <StyledNavBurgerSpan color={theme} mobile={mobile} />
+        <StyledNavBurgerSpan color={theme} mobile={mobile} />
       </StyledNavBurger>
       <AnimatePresence exitBeforeEnter>
-        {show && <Navigation width={width} mobile={mobile} />}
+        {show && <Navigation width={width} />}
       </AnimatePresence>
     </StyledHeader>
   )
