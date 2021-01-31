@@ -1,0 +1,16 @@
+import styled from "styled-components"
+import { motion } from "framer-motion"
+
+export const StyledNavBurgerSpan = styled(motion.span)`
+  width: 100%;
+  height: 2px;
+  /* background-color: ${({ color }) => (color ? color : "var(--black)")}; */
+  background-color: ${({ color }) => (color ? color : "var(--white)")};
+  transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  &:first-child {
+    transform: translateY(-3px);
+  }
+  &:last-child {
+    transform: translateY(3px);
+  }
+`

@@ -2,7 +2,7 @@ import React from "react"
 
 import HeroContent from "../components/molecules/HeroContent/HeroContent"
 import HeroImage from "../components/molecules/HeroImage/HeroImage"
-import WhatWeDo from "../components/ServicesComponents/WhatWeDo/WhatWeDo"
+import WhatWeDo from "../components/molecules/Services/WhatWeDo"
 
 const Services = () => {
   return (

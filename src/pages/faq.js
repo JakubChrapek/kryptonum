@@ -1,6 +1,6 @@
 import React from "react"
 
-import FAQMain from "../components/FAQComponents/FAQMain"
+import FAQMain from "../components/molecules/FAQ/FAQMain"
 
 const Faq = () => {
   return (

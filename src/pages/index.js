@@ -12,7 +12,7 @@ import HowWeWorkSection from "../components/molecules/HoweWeWorkSection/HowWeWor
 import CtaSection from "../components/molecules/CtaSection/CtaSection"
 import BlogSection from "../components/organisms/BlogSection/BlogSection"
 import TheUltimateSection from "../components/organisms/TheUltimateSection/TheUltimateSection"
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/organisms/Footer/Footer"
 
 const IndexPage = () => (
   <>

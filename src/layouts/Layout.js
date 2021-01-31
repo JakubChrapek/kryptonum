@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../components/Header/Header"
+import Header from "../components/organisms/Header/Header"
 import SEO from "../components//SEO"
 import GlobalStyles from "../Components/Styles/GlobalStyles"
-import SkipNavLink from "../components/SkipNavLink/SkipNavLink"
-import { AnimatePresence, motion } from "framer-motion"
+import SkipNavLink from "../components/atoms/SkipNavLink/SkipNavLink"
+import { motion } from "framer-motion"
 import { useLocation } from "@reach/router"
 import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/organisms/Footer/Footer"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;

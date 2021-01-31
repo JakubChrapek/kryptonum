@@ -1,6 +1,6 @@
 import React from "react"
 
-import Privacy from "../components/PrivacyPolicy/Privacy"
+import Privacy from "../components/molecules/Privacy/Privacy"
 
 const PrivacyPolicy = () => {
   return (
