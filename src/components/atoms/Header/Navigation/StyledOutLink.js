@@ -5,9 +5,14 @@ export const StyledOutLink = styled(motion.a)`
   font-size: 15px;
   line-height: 1.47em;
   color: var(--black);
-  padding: 6px 8px;
+  padding: 6px 0;
   position: relative;
   text-decoration: none;
+
+  @media only screen and (max-width: 800px) {
+    padding: 0 8px;
+  }
+
   &:before {
     content: "";
     position: absolute;

@@ -41,8 +41,8 @@ const Header = ({ theme }) => {
         className={show ? "active" : null}
         whileTap={{ scale: 0.9 }}
       >
-        <StyledNavBurgerSpan />
-        <StyledNavBurgerSpan />
+        <StyledNavBurgerSpan color={theme} />
+        <StyledNavBurgerSpan color={theme} />
       </StyledNavBurger>
       <AnimatePresence exitBeforeEnter>
         {show && <Navigation width={width} mobile={mobile} />}
