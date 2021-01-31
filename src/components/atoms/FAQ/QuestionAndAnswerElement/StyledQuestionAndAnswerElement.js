@@ -6,4 +6,7 @@ export const StyledQuestionAndAnswerElement = styled.div`
   border-top: solid 1px var(--accent);
   padding: 28px 10px;
   margin: 0 auto;
+  @media only screen and (max-width: 330px) {
+    padding: 28px 0;
+  }
 `

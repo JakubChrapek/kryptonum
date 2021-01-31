@@ -119,6 +119,7 @@ const Footer = () => {
                 href="https://instagram.com/kryptonum.studio"
                 target="_blank"
                 rel="noreferrer noopener"
+                instagram={true}
               >
                 Instagram
               </StyledMenuColumnLink>

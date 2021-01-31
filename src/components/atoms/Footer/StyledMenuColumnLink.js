@@ -12,9 +12,14 @@ export const StyledMenuColumnLink = styled(Link)`
     copyrightWrapper ? "2px" : "normal"};
   color: var(--white);
   position: relative;
-  padding: ${({ copyrightWrapper }) =>
-    copyrightWrapper ? "0 8px" : "6px 8px"};
+  display: inline-block;
+  padding: ${({ copyrightWrapper }) => (copyrightWrapper ? "0 8px" : "0 8px")};
   margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "21px" : "0")};
+
+  @media (max-width: 795px) {
+    margin-left: ${({ instagram }) => (instagram ? "0" : "0")};
+  }
+
   &:nth-child(2) {
     margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "74px" : "0")};
     @media (max-width: 795px) {

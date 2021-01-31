@@ -13,8 +13,10 @@ export const StyledMenuColumnUl = styled.ul`
   @media (max-width: 795px) {
     margin-top: 18px;
   }
+  @media (max-width: 413px) {
+    margin: 41px 38px 41px 0;
+  }
   &:last-child {
-    margin-right: 122px;
     @media (max-width: 1154px) {
       margin-right: 80px;
     }

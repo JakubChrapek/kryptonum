@@ -20,7 +20,8 @@ const OurVision = () => {
         </StyledOurVisionHeroTextWrapper>
         <div>
           <OurVisionElement
-            leftBoxText="From start to finish"
+            leftBoxText="From start
+             to finish"
             rightBoxText="We provide value to our clients through 
             design thinking and customized tech stacks. Our designers, 
             full-stack developers, project managers and strategists 

@@ -7,6 +7,9 @@ export const StyledAddIcon = styled.div`
   transition: transform 100ms ease-in-out;
   cursor: pointer;
   @media only screen and (max-width: 563px) {
-    margin-right: 43px;
+    margin-right: 23px;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-right: 0;
   }
 `

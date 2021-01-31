@@ -11,6 +11,12 @@ export const StyledCopyrightWrapperDivSpan = styled.span`
   color: var(--light-gray);
   letter-spacing: 2px;
   position: relative;
+  @media (max-width: 802px) {
+    font-size: 10px;
+  }
+  @media (max-width: 795px) {
+    font-size: 12px;
+  }
   &::after {
     content: "";
     width: 50px;

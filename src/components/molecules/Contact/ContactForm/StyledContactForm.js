@@ -26,6 +26,8 @@ export const StyledForm = styled.form`
     padding: 20px;
     border: solid 1px #707070;
     outline: none;
+    font-family: "Poppins";
+    font-size: 16px;
   }
   > textarea {
     resize: none;
@@ -33,6 +35,8 @@ export const StyledForm = styled.form`
     height: 115px;
     border: solid 1px #707070;
     padding: 15px;
+    font-family: "Poppins";
+    font-size: 16px;
     &::placeholder {
       font-family: Poppins;
       font-size: 15px;
