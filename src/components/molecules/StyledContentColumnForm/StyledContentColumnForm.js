@@ -17,6 +17,10 @@ export const StyledContentColumnForm = styled.form`
   @media only screen and (max-width: 570px) {
     padding: 0 20px;
   }
+  @media only screen and (max-width: 384px) {
+    width: 320px;
+    padding: 0;
+  }
   label {
     position: absolute;
     top: -20px;

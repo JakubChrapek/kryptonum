@@ -4,16 +4,17 @@ import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyl
 import { FeaturedSectionH2 } from "../../atoms/FeaturedSection/FeaturedSectionH2"
 import { FeaturedSectionWrapper } from "../../atoms/FeaturedSection/FeaturedSectionWrapper"
 import { FeaturedSectionUl } from "../../atoms/FeaturedSection/FeaturedSectionUl"
+import { StyledFeaturedWrapper } from "./FeaturedWrapper/StyledFeaturedWrapper"
 
 const FeaturedSection = () => {
   return (
     <ServicesStyles featuredSection={true}>
       <FeaturedSectionH2>Works</FeaturedSectionH2>
       <FeaturedSectionWrapper>
-        <div>
+        <StyledFeaturedWrapper>
           <span>Featured</span>
           <span>Projects</span>
-        </div>
+        </StyledFeaturedWrapper>
         <FeaturedSectionUl>
           <li>Design</li>
           <li>Development</li>

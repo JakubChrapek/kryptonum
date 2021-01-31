@@ -22,16 +22,10 @@ export const StyledFeaturedWrapper = styled.div`
       position: absolute;
       bottom: -3px;
       left: 0;
-      width: ${({ hasDeclaredWidth }) =>
-        hasDeclaredWidth ? "100%" : "calc(100% + 28px)"};
+      width: 100%;
       background-color: var(--black);
       height: 3px;
       z-index: -1;
-    }
-
-    &:last-child:after {
-      width: ${({ hasDeclaredWidth }) =>
-        hasDeclaredWidth ? "50%" : "calc(100% + 28px)"};
     }
   }
 `

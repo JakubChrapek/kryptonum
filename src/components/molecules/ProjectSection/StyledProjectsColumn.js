@@ -7,7 +7,9 @@ export const StyledProjectsColumn = styled.ul`
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 124px;
-
+  @media only screen and (max-width: 870px) {
+    display: none;
+  }
   li {
     font-family: "Libre Baskerville";
     font-size: 70px;
@@ -19,6 +21,15 @@ export const StyledProjectsColumn = styled.ul`
     margin-bottom: 48px;
     cursor: pointer;
     color: #030303;
+    @media only screen and (max-width: 1127px) {
+      font-size: 60px;
+    }
+    @media only screen and (max-width: 994px) {
+      font-size: 48px;
+    }
+    @media only screen and (max-width: 902px) {
+      font-size: 36px;
+    }
     &.active {
       color: var(--accent);
     }
@@ -38,5 +49,8 @@ export const StyledProjectsColumn = styled.ul`
   a {
     margin: 25px 0 0;
     left: -20px;
+    @media only screen and (max-width: 902px) {
+      padding: 20px;
+    }
   }
 `

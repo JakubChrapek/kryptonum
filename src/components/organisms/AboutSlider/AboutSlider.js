@@ -1,6 +1,6 @@
 import React from "react"
 
-import { StyledFeaturedWrapper } from "../../atoms/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
+import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import { StyledAboutSliderWrapper } from "../../atoms/AboutSlider/StyledAboutSliderWrapper"
 import { StyledTextContentWrapper } from "../../atoms/AboutSlider/StyledTextContentWrapper"
 import { StyledAboutSliderHeroP } from "../../atoms/AboutSlider/StyledAboutSliderHeroP"

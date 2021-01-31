@@ -5,6 +5,7 @@ export const FeaturedSectionWrapper = styled.div`
   align-items: center;
   margin-top: 50px;
   width: 100%;
+  justify-content: space-between;
   @media only screen and (max-width: 738px) {
     flex-direction: column;
     align-items: flex-start;

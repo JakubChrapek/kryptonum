@@ -3,7 +3,7 @@ import React from "react"
 import ArticlesGrid from "../ArticleGrid/ArticlesGrid"
 
 import { SectionStyles } from "../../atoms/BlogSection/StyledBlogSection"
-import { StyledFeaturedWrapper } from "../../atoms/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
+import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 
 const blogSectionQuery = graphql`
   query LastArticles {
@@ -31,7 +31,7 @@ const BlogSection = () => {
     <SectionStyles>
       <div>
         <StyledFeaturedWrapper>
-          <span>New on</span>
+          <span longer={true}>New on</span>
           <span>the blog</span>
         </StyledFeaturedWrapper>
       </div>

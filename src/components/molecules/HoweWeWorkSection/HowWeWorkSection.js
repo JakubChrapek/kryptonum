@@ -1,7 +1,7 @@
 import { useStaticQuery } from "gatsby"
 import React from "react"
 
-import { StyledFeaturedWrapper } from "../../atoms/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
+import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 
 import { Cards } from "../../atoms/HowWeWorkSection/StyledCards"
 import { FeaturedSectionH2 } from "../../atoms/FeaturedSection/FeaturedSectionH2"
