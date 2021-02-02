@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledWhatWeDoP = styled.p`
   max-width: 506px;
-  font-family: JetBrainsMono;
+  font-family: "JetBrains Mono";
   font-size: 18px;
   font-weight: 500;
   font-stretch: normal;

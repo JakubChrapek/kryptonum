@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledOurVisionLogoTextSpan = styled.span`
-  font-family: JetBrainsMono;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: normal;
   font-stretch: normal;

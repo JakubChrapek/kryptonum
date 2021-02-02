@@ -30,8 +30,12 @@ const BlogSection = () => {
   return (
     <SectionStyles>
       <div>
-        <StyledFeaturedWrapper>
-          <span longer={true}>New on</span>
+        <StyledFeaturedWrapper
+          firstSpanLength="110%"
+          secondSpanLength="140%"
+          hasMarginLeft={true}
+        >
+          <span>New on</span>
           <span>the blog</span>
         </StyledFeaturedWrapper>
       </div>

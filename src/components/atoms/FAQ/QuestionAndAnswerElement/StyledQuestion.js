@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledQuestion = styled.h4`
-  font-family: JetBrainsMono;
+  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;

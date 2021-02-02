@@ -20,7 +20,7 @@ const OurVision = () => {
         </StyledOurVisionHeroTextWrapper>
         <div>
           <OurVisionElement
-            leftBoxText="From start
+            leftBoxText="From start <br />
              to finish"
             rightBoxText="We provide value to our clients through 
             design thinking and customized tech stacks. Our designers, 
@@ -29,7 +29,8 @@ const OurVision = () => {
             elementNumber={1}
           />
           <OurVisionElement
-            leftBoxText="Driven by Insights
+            leftBoxText="Driven by <br />
+             Insights
             "
             rightBoxText="We truly believe that good research leads to 
             effective design, robust tech stacks and tailor-made outcomes. 
@@ -37,7 +38,7 @@ const OurVision = () => {
             elementNumber={2}
           />
           <OurVisionElement
-            leftBoxText="Powered by Creativity"
+            leftBoxText="Powered by <br /> Creativity"
             rightBoxText="At Kryptonum, creativity is what drives the agency.
              It manifests itself through our management approach, 
              creation process and technological development.
@@ -45,7 +46,7 @@ const OurVision = () => {
             elementNumber={3}
           />
           <OurVisionElement
-            leftBoxText="Obsessed with results"
+            leftBoxText="Obsessed with <br /> results"
             rightBoxText="We develop digital solutions, platforms and modules
              that have a real impact for our customers. We firmly believe that
               creating tailor-made digital projects is essential 

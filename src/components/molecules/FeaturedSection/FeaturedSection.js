@@ -11,7 +11,11 @@ const FeaturedSection = () => {
     <ServicesStyles featuredSection={true}>
       <FeaturedSectionH2>Works</FeaturedSectionH2>
       <FeaturedSectionWrapper>
-        <StyledFeaturedWrapper>
+        <StyledFeaturedWrapper
+          firstSpanLength="92%"
+          secondSpanLength="130%"
+          hasMarginLeft={false}
+        >
           <span>Featured</span>
           <span>Projects</span>
         </StyledFeaturedWrapper>

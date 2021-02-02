@@ -10,7 +10,7 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
       <div>
         <StyledOurVisionLogoTextH2>
           <StyledOurVisionLogoTextSpan>{`(${elementNumber})`}</StyledOurVisionLogoTextSpan>
-          {leftBoxText}
+          <span dangerouslySetInnerHTML={{ __html: leftBoxText }} />
         </StyledOurVisionLogoTextH2>
       </div>
       <StyledRightBoxParagraph>{rightBoxText}</StyledRightBoxParagraph>

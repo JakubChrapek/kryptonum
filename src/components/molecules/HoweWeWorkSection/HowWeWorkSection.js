@@ -24,7 +24,7 @@ const HowWeWorkSection = () => {
     <StyledHowWeWorkSection howWeWorkSection={true}>
       <FeaturedSectionH2 howWeWorkSection={true}>How we work</FeaturedSectionH2>
       <div>
-        <StyledFeaturedWrapper>
+        <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="72%">
           <span>Our design</span>
           <span>process</span>
         </StyledFeaturedWrapper>

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledAboutSliderHeroP = styled.p`
-  font-family: JetBrainsMono;
+  font-family: "JetBrains Mono";
   font-size: 18px;
   font-weight: 500;
   font-stretch: normal;

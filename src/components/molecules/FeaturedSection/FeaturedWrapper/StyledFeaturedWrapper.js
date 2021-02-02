@@ -7,7 +7,7 @@ export const StyledFeaturedWrapper = styled.div`
     font-size: 40px;
     line-height: 1.5em;
     position: relative;
-    margin-left: ${({ aboutSlider }) => (aboutSlider ? "0" : "57px")};
+    margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "57px" : "0")};
     @media only screen and (max-width: 1183px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "40px")};
     }
@@ -22,10 +22,16 @@ export const StyledFeaturedWrapper = styled.div`
       position: absolute;
       bottom: -3px;
       left: 0;
-      width: 100%;
+      width: ${({ firstSpanLength }) =>
+        firstSpanLength ? firstSpanLength : "100%"};
       background-color: var(--black);
       height: 3px;
       z-index: -1;
+    }
+
+    &:nth-child(2):after {
+      width: ${({ secondSpanLength }) =>
+        secondSpanLength ? secondSpanLength : "100%"};
     }
   }
 `

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledContactInfoList = styled.ul`
   li {
-    font-family: JetBrainsMono;
+    font-family: "JetBrains Mono";
     color: #727272;
     padding-bottom: 8px;
 
