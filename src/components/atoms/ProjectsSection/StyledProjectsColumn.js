@@ -17,6 +17,7 @@ export const StyledProjectsColumn = styled.ul`
     position: relative;
     padding-left: 8px;
     margin-bottom: 48px;
+    text-transform: uppercase;
     cursor: pointer;
     color: #030303;
     &.active {
@@ -29,10 +30,10 @@ export const StyledProjectsColumn = styled.ul`
     font-weight: normal;
     line-height: 2.14;
     letter-spacing: 5px;
-    color: var(--accent);
     position: absolute;
     left: -16px;
     top: -20px;
+    font-family: "JetBrains Mono";
   }
 
   a {
