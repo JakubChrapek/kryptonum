@@ -1,11 +1,10 @@
 import React from "react"
-import { motion } from "framer-motion"
 
 import { StyledArticleStyles } from "../../atoms/BlogSection/StyledArticleStyles"
-import { StyledArticleH3 } from "../../atoms/BlogSection/StyledArticleH3"
-import { StyledArticleImg } from "../../atoms/BlogSection/StyledArticleImg"
-import { StyledArticleP } from "../../atoms/BlogSection/StyledArticleP"
+import { StyledArticleImg } from "../BlogSection/StyledArticleImg"
 import { StyledArticleGridDiv } from "../../atoms/BlogSection/StyledArticleGridDiv"
+
+import { TextStyles } from "../../atoms/Text/Text"
 
 const Article = ({ article }) => {
   const year = article.dateOfPublication.split("-")[0].slice(2)
@@ -19,7 +18,14 @@ const Article = ({ article }) => {
         style={{ marginLeft: 0 }}
       >
         <StyledArticleImg fluid={article.articleFeaturedImage.fluid} />
-        <StyledArticleH3
+        <TextStyles
+          declaredPadding="11px 0 0 0"
+          declaredBorderTop="2px solid var(--black)"
+          declaredMargin="15px 0 0 0"
+          declaredWidth="100%"
+          fontFamily="Poppins"
+          lineHeight="1.38em"
+          fontSize="16px"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -28,15 +34,21 @@ const Article = ({ article }) => {
           exit={{ opacity: 0 }}
         >
           {article.articleTitle}
-        </StyledArticleH3>
-        <StyledArticleP
+        </TextStyles>
+        <TextStyles
+          fontSize="10px"
+          lineHeight="1.3em"
+          letterSpaccing="0.8px"
+          fontFamily="Poppins"
+          declaredMargin="26px 0 0 0"
+          declaredPadding="0 0 13px 0"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             transition: { delay: 0.4, duration: 0.6 },
           }}
           exit={{ opacity: 0 }}
-        >{`${month}/${year}`}</StyledArticleP>
+        >{`${month}/${year}`}</TextStyles>
       </StyledArticleGridDiv>
     </StyledArticleStyles>
   )

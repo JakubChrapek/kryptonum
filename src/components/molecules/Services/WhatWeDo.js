@@ -13,8 +13,26 @@ const WhatWeDo = () => {
   return (
     <StyledWhatWeDoSection>
       <StyledWhatWeDoInfoTextWrapper>
-        <StyledWhatWeDoH3>What we do</StyledWhatWeDoH3>
-        <StyledWhatWeDoP>
+        <StyledWhatWeDoH3
+          fontFamily="Poppins"
+          fontSize="40px"
+          lineHeight="1.28"
+          letterSpacing="2px"
+          color="var(--black)"
+          declaredDisplay="block"
+          letterSpacing="normal"
+        >
+          What we do
+        </StyledWhatWeDoH3>
+        <StyledWhatWeDoP
+          fontFamily="JetBrains Mono"
+          fontSize="18px"
+          lineHeight="1.28"
+          letterSpacing="2px"
+          color="var(--dark-bg)"
+          letterSpacing="2.57px"
+          fontWeight="500"
+        >
           A strategic and tactical approach is essential for long-term goals,
           but what’s even more important is keeping deadlines and promises. Our
           work gets results and we never hide behind paperwork.

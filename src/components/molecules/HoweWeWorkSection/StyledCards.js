@@ -19,16 +19,6 @@ export const Cards = styled(motion.ul)`
     &:last-child {
       margin-right: 0;
     }
-    h3 {
-      font-family: "Poppins";
-      font-size: 28px;
-      font-weight: normal;
-      line-height: 1.36;
-      letter-spacing: normal;
-      color: #090909;
-      text-transform: none;
-    }
-
     p {
       font-family: 16px;
       line-height: 1.38;

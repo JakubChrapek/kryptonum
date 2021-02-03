@@ -20,10 +20,10 @@ export const Works = styled.div`
     margin-bottom: 62px;
   }
   @media only screen and (max-width: 893px) {
-    margin-bottom: 28px;
     padding-top: 120px;
   }
   @media only screen and (max-width: 797px) {
+    margin-bottom: 28px;
     padding-top: 78px;
   }
   span {

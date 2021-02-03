@@ -1,16 +1,9 @@
 import styled from "styled-components"
+import { TextStyles } from "../../Text/Text"
 
-export const StyledOurWorkflowWrapperH2 = styled.h2`
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.28;
-  letter-spacing: normal;
-  color: var(--black);
+export const StyledOurWorkflowWrapperH2 = styled(TextStyles)`
   position: relative;
-  margin-bottom: 124px;
+
   @media only screen and (max-width: 710px) {
     margin-bottom: 55px;
     font-size: 30px;

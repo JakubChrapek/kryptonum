@@ -14,6 +14,8 @@ import { StyledRotatedLogo } from "../../atoms/Footer/StyledRotatedLogo"
 import { StyledCopyrightWrapperDiv } from "../../atoms/Footer/StyledCopyrightWrapperDiv"
 import { StyledCopyrightWrapperDivSpan } from "../../atoms/Footer/StyledCopyrightWrapperDivSpan"
 
+import { TextStyles } from "../../atoms/Text/Text"
+
 const Footer = () => {
   const footerNavigation = [
     {
@@ -74,16 +76,40 @@ const Footer = () => {
         <StyledTopFooterWrapper>
           <StyledRotatedLogo>Kryptonum</StyledRotatedLogo>
           <StyledInTouchColumn>
-            <h3>Get in touch!</h3>
-            <p>
+            <TextStyles
+              fontFamily="Poppins"
+              fontSize="42px"
+              declaredDisplay="block"
+              color="var(--white)"
+              lineHeight="1.5"
+            >
+              Get in touch!
+            </TextStyles>
+            <TextStyles
+              fontFamily="JetBrains Mono"
+              declaredMargin="40px 0 0 0"
+              declaredDisplay="block"
+              fontSize="14px"
+              letterSpacing="5px"
+              color="var(--white)"
+              lineHeight="2.14"
+            >
               Got interested? Have any questions? Or do you want to get straight
               to work? No matter the reason, we can’t wait to hear from you!
-            </p>
+            </TextStyles>
           </StyledInTouchColumn>
           <StyledMenuColumn>
             {footerNavigation.map(column => (
               <StyledMenuColumnUl key={column.name}>
-                <StyledMenuColumnUlP>{column.name}</StyledMenuColumnUlP>
+                <StyledMenuColumnUlP
+                  color="var(--text-gray)"
+                  fontFamily="Poppins"
+                  fontSize="15px"
+                  lineHeight="1.47"
+                  declaredPadding="0 8px 39px 8px"
+                >
+                  {column.name}
+                </StyledMenuColumnUlP>
                 {column.items.map(item => (
                   <li key={item.name}>
                     <StyledMenuColumnLink to={item.link}>
@@ -98,12 +124,24 @@ const Footer = () => {
         <StyledBottomFooterWrapper>
           <StyledCopyrightWrapper>
             <StyledCopyrightWrapperDiv>
-              <StyledCopyrightWrapperDivSpan>
+              <StyledCopyrightWrapperDivSpan
+                fontSize="12px"
+                fontFamily="Poppins"
+                lineHeight="1.5em"
+                color="var(--light-gray)"
+                letterSpacing="2px"
+              >
                 All rights reserved &copy; Kryptonum
               </StyledCopyrightWrapperDivSpan>
             </StyledCopyrightWrapperDiv>
             <StyledCopyrightWrapperDiv>
-              <StyledCopyrightWrapperDivSpan>
+              <StyledCopyrightWrapperDivSpan
+                fontSize="12px"
+                fontFamily="Poppins"
+                lineHeight="1.5em"
+                color="var(--light-gray)"
+                letterSpacing="2px"
+              >
                 Connect with us
               </StyledCopyrightWrapperDivSpan>
               <StyledMenuColumnLink

@@ -10,13 +10,32 @@ import { StyledWhatWeDoElementWrapper } from "../../atoms/Services/WhatWeDoEleme
 const WhatWeDoElement = ({ title, image, content, swap }) => {
   return (
     <StyledWhatWeDoElementWrapper>
-      <StyledWhatWeDoElementH2>{title}</StyledWhatWeDoElementH2>
+      <StyledWhatWeDoElementH2
+        fontFamily="Poppins"
+        fontSize="76px"
+        textAlign="center"
+        lineHeight="1.51"
+        color="var(--black)"
+        declaredMargin="0 0 114px 0"
+        letterSpacing="normal"
+        declaredDisplay="block"
+      >
+        {title}
+      </StyledWhatWeDoElementH2>
       <StyledWhatWeDoElementImageWrapper>
         <StyledWhatWeDoElementLeftBar swap={swap}>
           <img src={image} />
         </StyledWhatWeDoElementLeftBar>
         <StyledWhatWeDoElementRightBar swap={swap}>
-          <StyledWhatWeDoElementRightBarH3>
+          <StyledWhatWeDoElementRightBarH3
+            swap={swap}
+            fontFamily="Poppins"
+            fontSize="28px"
+            lineHeight="1.71"
+            color="var(--black)"
+            letterSpacing="normal"
+            declaredDisplay="block"
+          >
             {content}
           </StyledWhatWeDoElementRightBarH3>
         </StyledWhatWeDoElementRightBar>

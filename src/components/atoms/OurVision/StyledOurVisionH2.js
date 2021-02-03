@@ -1,16 +1,8 @@
 import styled from "styled-components"
+import { TextStyles } from "../Text/Text"
 
-export const StyledOurVisionH2 = styled.h2`
-  display: block;
+export const StyledOurVisionH2 = styled(TextStyles)`
   max-width: 210px;
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.28;
-  letter-spacing: normal;
-  color: var(--white);
   position: relative;
   padding-bottom: 2px;
   @media only screen and (max-width: 660px) {

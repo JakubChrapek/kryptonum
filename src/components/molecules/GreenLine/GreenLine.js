@@ -1,6 +1,9 @@
 import React from "react"
 
-import { LineStyles, AccentLineStyles } from "./StyledGreenLine"
+import {
+  LineStyles,
+  AccentLineStyles,
+} from "../../atoms/GreenLine/StyledGreenLine"
 
 const GreenLine = () => {
   return (

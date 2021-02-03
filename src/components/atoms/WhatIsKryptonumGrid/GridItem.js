@@ -12,7 +12,6 @@ export const GridItem = styled.div`
     line-height: 0.95em;
     color: transparent;
     -webkit-text-stroke: 1px var(--black);
-    font-weight: normal;
     align-self: flex-end;
   }
   h3 {

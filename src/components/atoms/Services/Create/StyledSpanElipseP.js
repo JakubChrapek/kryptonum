@@ -1,14 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../../Text/Text"
 
-export const StyledSpanElipseP = styled.p`
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.71;
-  letter-spacing: normal;
-  color: #090909;
+export const StyledSpanElipseP = styled(TextStyles)`
   transform: translateX(-58px);
   @media only screen and (max-width: 400px) {
     font-size: 26px;

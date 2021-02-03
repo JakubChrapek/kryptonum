@@ -1,15 +1,25 @@
 import React from "react"
 
 import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
-import { FeaturedSectionH2 } from "../../atoms/FeaturedSection/FeaturedSectionH2"
 import { FeaturedSectionWrapper } from "../../atoms/FeaturedSection/FeaturedSectionWrapper"
 import { FeaturedSectionUl } from "../../atoms/FeaturedSection/FeaturedSectionUl"
 import { StyledFeaturedWrapper } from "./FeaturedWrapper/StyledFeaturedWrapper"
 
+import { TextStyles } from "../../atoms/Text/Text"
+
 const FeaturedSection = () => {
   return (
     <ServicesStyles featuredSection={true}>
-      <FeaturedSectionH2>Works</FeaturedSectionH2>
+      <TextStyles
+        fontSize="8px"
+        lineHeight="1.5em"
+        letterSpacing="1.33px"
+        fontFamily="Poppins"
+        textTransform="uppercase"
+        fontWeight="bold"
+      >
+        Works
+      </TextStyles>
       <FeaturedSectionWrapper>
         <StyledFeaturedWrapper
           firstSpanLength="92%"

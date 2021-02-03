@@ -1,15 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../../Text/Text"
 
-export const StyledWhatWeDoElementH2 = styled.h2`
-  text-align: center;
-  font-family: Poppins;
-  font-size: 76px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.51;
-  letter-spacing: normal;
-  margin: 0 0 114px 0;
+export const StyledWhatWeDoElementH2 = styled(TextStyles)`
   @media only screen and (max-width: 1064px) {
     font-size: 56px;
     margin-bottom: 74px;

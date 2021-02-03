@@ -1,16 +1,9 @@
 import styled from "styled-components"
+import { TextStyles } from "../../Text/Text"
 
-export const StyledIdeaBoxP = styled.p`
+export const StyledIdeaBoxP = styled(TextStyles)`
   width: 269px;
   height: 269px;
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 2.48;
-  letter-spacing: normal;
-  color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;

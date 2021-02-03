@@ -1,15 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../../Text/Text"
 
-export const StyledWhatWeDoH3 = styled.h3`
-  font-family: Poppins;
-  font-size: 40px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.28;
-  letter-spacing: normal;
-  text-align: left;
-  color: var(--black);
+export const StyledWhatWeDoH3 = styled(TextStyles)`
   position: relative;
   @media only screen and (max-width: 600px) {
     width: 100%;

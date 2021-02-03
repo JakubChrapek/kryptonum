@@ -23,13 +23,40 @@ const Create = () => {
       mediaQueriesAlign={true}
     >
       <div>
-        <StyledWorkflowComponentGreenSpan>
+        <StyledWorkflowComponentGreenSpan
+          fontFamily="JetBrains Mono"
+          fontSize="18px"
+          lineHeight="1.28"
+          color="var(--accent)"
+          letterSpacing="2.57px"
+          fontWeight="500"
+        >
           (01)
         </StyledWorkflowComponentGreenSpan>
-        <StyledWorkflowComponentHeading>Create</StyledWorkflowComponentHeading>
+        <StyledWorkflowComponentHeading
+          fontFamily="LibreBaskerville"
+          fontSize="70px"
+          lineHeight="1.24"
+          color="var(--gray)"
+          letterSpacing="-1.75px"
+          fontWeight="500"
+          fontStretch="normal"
+          declaredDisplay="block"
+        >
+          Create
+        </StyledWorkflowComponentHeading>
       </div>
       <StyledCreateTextWrapper>
-        <StyledCreateTextH3>
+        <StyledCreateTextH3
+          fontFamily="LibreBaskerville"
+          declaredPadding="0 84px 42px 0"
+          fontSize="36px"
+          lineHeight="1.25"
+          letterSpacing="-0.94px"
+          color="var(--gray)"
+          declaredMargin="0 auto"
+          declaredDisplay="block"
+        >
           Digital, Brand, Content, UX Strategy
           <span>
             <StyledBsTriangle hasMarginLeft={12}></StyledBsTriangle>
@@ -39,7 +66,15 @@ const Create = () => {
           </span>
         </StyledCreateTextH3>
 
-        <StyledCreateTextP>
+        <StyledCreateTextP
+          declaredPadding="0 60px 58px 0"
+          fontFamily="Poppins"
+          fontSize="12px"
+          lineHeight="1.5"
+          letterSpacing="2px"
+          color="var(--black)"
+          declaredDisplay="block"
+        >
           To succeed, every digital product has to be aesthetically appealing,
           functional, robust, distinctive and memorable. To ensure that the
           right balance of these components is maintained we alway stain in
@@ -47,7 +82,14 @@ const Create = () => {
         </StyledCreateTextP>
         <StyledSpanElipseWrapper>
           <StyledSpanElipse></StyledSpanElipse>
-          <StyledSpanElipseP>Product creating</StyledSpanElipseP>
+          <StyledSpanElipseP
+            fontFamily="Poppins"
+            fontSize="28px"
+            lineHeight="1.71"
+            color="#090909"
+          >
+            Product creating
+          </StyledSpanElipseP>
         </StyledSpanElipseWrapper>
       </StyledCreateTextWrapper>
     </StyledWorkflowComponentWrapper>

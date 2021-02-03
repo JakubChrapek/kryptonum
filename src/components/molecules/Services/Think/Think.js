@@ -8,7 +8,8 @@ import { StyledIdeaBox } from "../../../atoms/Services/Think/StyledIdeaBox"
 import { StyledIdeaBoxP } from "../../../atoms/Services/Think/StyledIdeaBoxP"
 import { StyledThinkTextWrapper } from "../../../atoms/Services/Think/StyledThinkTextWrapper"
 import { StyledThinkTextWrapperH3 } from "../../../atoms/Services/Think/StyledThinkTextWrapperH3"
-import { StyledThinkTextWrapperP } from "../../../atoms/Services/Think/StyledThinkTextWrapperP"
+import { TextStyles } from "../../../atoms/Text/Text"
+
 const Think = () => {
   return (
     <StyledWorkflowComponentWrapper
@@ -20,29 +21,76 @@ const Think = () => {
       mediaQueriesAlign={true}
     >
       <div>
-        <StyledWorkflowComponentGreenSpan>
+        <StyledWorkflowComponentGreenSpan
+          fontFamily="JetBrains Mono"
+          fontSize="18px"
+          lineHeight="1.28"
+          color="var(--accent)"
+          letterSpacing="2.57px"
+          fontWeight="500"
+        >
           (01)
         </StyledWorkflowComponentGreenSpan>
-        <StyledWorkflowComponentHeading>Think</StyledWorkflowComponentHeading>
+        <StyledWorkflowComponentHeading
+          fontFamily="LibreBaskerville"
+          fontSize="70px"
+          lineHeight="1.24"
+          color="var(--gray)"
+          letterSpacing="-1.75px"
+          fontWeight="500"
+          fontStretch="normal"
+          declaredDisplay="block"
+        >
+          Think
+        </StyledWorkflowComponentHeading>
       </div>
       <StyledIdeaBox>
-        <StyledIdeaBoxP>Idea</StyledIdeaBoxP>
+        <StyledIdeaBoxP
+          fontFamily="Poppins"
+          fontSize="40px"
+          lineHeight="2.48"
+          color="var(--black)"
+        >
+          Idea
+        </StyledIdeaBoxP>
       </StyledIdeaBox>
       <StyledThinkTextWrapper>
-        <StyledThinkTextWrapperH3>
+        <StyledThinkTextWrapperH3
+          fontFamily="LibreBaskerville"
+          fontSize="36px"
+          lineHeight="1.25"
+          color="var(--gray)"
+          letterSpacing="-0.94px"
+        >
           Thinking <span>Process</span>
         </StyledThinkTextWrapperH3>
 
-        <StyledThinkTextWrapperP>
+        <TextStyles
+          fontFamily="Poppins"
+          fontSize="12px"
+          lineHeight="1.5"
+          color="var(--black)"
+          letterSpacing="2px"
+          declaredMargin="27px 0 0 0"
+          declaredDisplay="block"
+        >
           Our ultimate goal with every project us to come up with a solution
           based design approach to help our clients solve real cases and achieve
           business needs.
-        </StyledThinkTextWrapperP>
-        <StyledThinkTextWrapperP>
+        </TextStyles>
+        <TextStyles
+          fontFamily="Poppins"
+          fontSize="12px"
+          lineHeight="1.5"
+          color="var(--black)"
+          letterSpacing="2px"
+          declaredMargin="27px 0 0 0"
+          declaredDisplay="block"
+        >
           For this to happen, many ideas and hypotheses need to be generated and
           integrated upon. Creative thinking inspires ideas while ideas empower
           change.
-        </StyledThinkTextWrapperP>
+        </TextStyles>
       </StyledThinkTextWrapper>
     </StyledWorkflowComponentWrapper>
   )

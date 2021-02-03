@@ -4,20 +4,32 @@ import { StyledPrivacyHeaderTextWrapper } from "../../atoms/Privacy/StyledPrivac
 import { StyledPrivacyHeaderTextWrapperH1 } from "../../atoms/Privacy/StyledPrivacyHeaderTextWrapperH1"
 import { StyledPrivacyMain } from "../../atoms/Privacy/StyledPrivacyMain"
 import { StyledPrivacyMainTextWrapper } from "../../atoms/Privacy/StyledPrivacyMainTextWrapper"
-import { StyledPrivacyMainTextWrapperP } from "../../atoms/Privacy/StyledPrivacyMainTextWrapperP"
 import { StyledPrivacyPolicyWrapper } from "../../atoms/Privacy/StyledPrivacyPolicyWrapper"
+
+import { TextStyles } from "../../atoms/Text/Text"
 
 const Privacy = () => {
   return (
     <StyledPrivacyPolicyWrapper>
       <StyledPrivacyHeaderTextWrapper>
-        <StyledPrivacyHeaderTextWrapperH1>
+        <StyledPrivacyHeaderTextWrapperH1
+          fontFamily="Poppins"
+          fontSize="76px"
+          lineHeight="1.3"
+          color="var(--black)"
+        >
           Because your privacy is important to us
         </StyledPrivacyHeaderTextWrapperH1>
       </StyledPrivacyHeaderTextWrapper>
       <StyledPrivacyMain>
         <StyledPrivacyMainTextWrapper>
-          <StyledPrivacyMainTextWrapperP>
+          <TextStyles
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+            declaredPadding="0 0 80px 0"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -31,8 +43,14 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
-          <StyledPrivacyMainTextWrapperP>
+          </TextStyles>
+          <TextStyles
+            declaredPadding="0 0 20px 0"
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -46,8 +64,14 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
-          <StyledPrivacyMainTextWrapperP>
+          </TextStyles>
+          <TextStyles
+            declaredPadding="0 0 20px 0"
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -61,10 +85,16 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
+          </TextStyles>
         </StyledPrivacyMainTextWrapper>
         <StyledPrivacyMainTextWrapper>
-          <StyledPrivacyMainTextWrapperP>
+          <TextStyles
+            declaredPadding="0 0 20px 0"
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -78,8 +108,14 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
-          <StyledPrivacyMainTextWrapperP>
+          </TextStyles>
+          <TextStyles
+            declaredPadding="0 0 20px 0"
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -93,8 +129,14 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
-          <StyledPrivacyMainTextWrapperP>
+          </TextStyles>
+          <TextStyles
+            declaredPadding="0 0 20px 0"
+            fontFamily="Poppins"
+            fontSize="16px"
+            lineHeight="1.38"
+            color="var(--dark-bg)"
+          >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
@@ -108,7 +150,7 @@ const Privacy = () => {
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
             voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-          </StyledPrivacyMainTextWrapperP>
+          </TextStyles>
         </StyledPrivacyMainTextWrapper>
       </StyledPrivacyMain>
     </StyledPrivacyPolicyWrapper>

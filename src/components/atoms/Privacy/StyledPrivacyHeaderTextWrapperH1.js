@@ -1,14 +1,6 @@
 import styled from "styled-components"
-
-export const StyledPrivacyHeaderTextWrapperH1 = styled.h1`
-  font-family: Poppins;
-  font-size: 76px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  color: var(--black);
+import { TextStyles } from "../Text/Text"
+export const StyledPrivacyHeaderTextWrapperH1 = styled(TextStyles)`
   @media only screen and (max-width: 1060px) {
     font-size: 68px;
   }

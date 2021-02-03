@@ -13,7 +13,7 @@ import { StyledContentColumn } from "../../atoms/TheUltimateSection/StyledConten
 import { StyledContentColumnH2 } from "../../atoms/TheUltimateSection/StyledContentColumnH2"
 import { StyledContentColumnSpan } from "../../atoms/TheUltimateSection/StyledContentColumnSpan"
 import { StyledContentColumnForm } from "../../molecules/StyledContentColumnForm/StyledContentColumnForm"
-
+import { StyledContentColumnLastParagraph } from "../../atoms/TheUltimateSection/StyledContentColumnLastParagraph"
 const theUltimateSectionQuery = graphql`
   query ultimateImage {
     datoCmsPageHome {
@@ -80,14 +80,37 @@ const TheUltimateSection = () => {
     <StyledUltimateSectionWrapper>
       <StyledUltimateSectionStyles>
         <StyledContentColumn>
-          <StyledContentColumnSpan>Handbook for you</StyledContentColumnSpan>
-          <StyledContentColumnH2>
+          <StyledContentColumnSpan
+            fontFamily="Poppins"
+            fontSize="14px"
+            lineHeight="1.58em"
+            color="var(--black)"
+            declaredPadding="4px 17px"
+            declaredMargin="0 0 24px 0"
+            letterSpacing="normal"
+          >
+            Handbook for you
+          </StyledContentColumnSpan>
+          <StyledContentColumnH2
+            fontFamily="Poppins"
+            letterSpacing="normal"
+            lineHeight="1.31em"
+            fontSize="62px"
+            color="var(--white)"
+          >
             The ultimate content checklist.
           </StyledContentColumnH2>
-          <p>
+          <StyledContentColumnLastParagraph
+            fontFamily="Poppins"
+            fontSize="18px"
+            lineHeight="1.44"
+            color="var(--white)"
+            letterSpacing="normal"
+            declaredMargin="28px 0 0 0"
+          >
             Curious about what to look out for in 2021 to stay relevant in the
             online space? We combined all the useful tips to help you out.
-          </p>
+          </StyledContentColumnLastParagraph>
           <StyledContentColumnForm
             ref={formRef}
             name="Kryptonum homepage Ultimate Content Checklist"

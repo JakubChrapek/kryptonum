@@ -12,7 +12,15 @@ import { StyledOurWorkflowWrapperH2 } from "../../atoms/Services/OurWorkflow/Sty
 const OurWorkflow = () => {
   return (
     <StyledOurWorkflowWrapper>
-      <StyledOurWorkflowWrapperH2>Our workflow</StyledOurWorkflowWrapperH2>
+      <StyledOurWorkflowWrapperH2
+        fontFamily="Poppins"
+        fontSize="40px"
+        lineHeight="1.28"
+        color="var(--black)"
+        declaredMargin="0 0 124px 0"
+      >
+        Our workflow
+      </StyledOurWorkflowWrapperH2>
       <StyledOurWorkflowWrapperDiv>
         <Learn />
         <Think />

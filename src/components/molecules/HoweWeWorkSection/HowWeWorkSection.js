@@ -2,10 +2,10 @@ import { useStaticQuery } from "gatsby"
 import React from "react"
 
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
-
-import { Cards } from "../../atoms/HowWeWorkSection/StyledCards"
-import { FeaturedSectionH2 } from "../../atoms/FeaturedSection/FeaturedSectionH2"
+import { Cards } from "./StyledCards"
 import { StyledHowWeWorkSection } from "../../atoms/HowWeWorkSection/HowWeWorkSectionStyles"
+import { TextStyles } from "../../atoms/Text/Text"
+
 const query = graphql`
   query {
     datoCmsPageHome {
@@ -22,7 +22,17 @@ const HowWeWorkSection = () => {
   const { datoCmsPageHome } = useStaticQuery(query)
   return (
     <StyledHowWeWorkSection howWeWorkSection={true}>
-      <FeaturedSectionH2 howWeWorkSection={true}>How we work</FeaturedSectionH2>
+      <TextStyles
+        fontSize="8px"
+        lineHeight="1.5em"
+        letterSpacing="1.33px"
+        fontFamily="Poppins"
+        textTransform="uppercase"
+        fontWeight="bold"
+        howWeWorkSection={true}
+      >
+        How we work
+      </TextStyles>
       <div>
         <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="72%">
           <span>Our design</span>
@@ -36,7 +46,15 @@ const HowWeWorkSection = () => {
       >
         {datoCmsPageHome.cards.map(card => (
           <li key={card.cardTitle}>
-            <h3>{card.cardTitle}</h3>
+            <TextStyles
+              fontSize="28px"
+              lineHeight="1.5em"
+              letterSpacing="normall"
+              fontFamily="Poppins"
+              color="#090909"
+            >
+              {card.cardTitle}
+            </TextStyles>
             <p>{card.cardDescription}</p>
           </li>
         ))}

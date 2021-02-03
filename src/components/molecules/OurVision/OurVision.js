@@ -12,9 +12,22 @@ const OurVision = () => {
   return (
     <StyledOurVisionSection>
       <StyledOurVisionWrapper>
-        <StyledOurVisionH2>Our Vision</StyledOurVisionH2>
+        <StyledOurVisionH2
+          fontSize="40px"
+          lineHeight="1.28"
+          color="var(--white)"
+          declaredPadding="0 0 2px 0"
+          fontFamily="Poppins"
+        >
+          Our Vision
+        </StyledOurVisionH2>
         <StyledOurVisionHeroTextWrapper>
-          <StyledOurVisionHeroTextP>
+          <StyledOurVisionHeroTextP
+            fontFamily="Poppins"
+            fontSize="40px"
+            lineHeight="2.48"
+            color="var(--white)"
+          >
             Smaller multidisciplinary dedicated teams for bigger impact
           </StyledOurVisionHeroTextP>
         </StyledOurVisionHeroTextWrapper>

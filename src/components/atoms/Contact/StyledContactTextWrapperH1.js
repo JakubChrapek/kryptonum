@@ -1,16 +1,9 @@
 import styled from "styled-components"
+import { TextStyles } from "../Text/Text"
 
-export const StyledContactTextWrapperH1 = styled.h1`
+export const StyledContactTextWrapperH1 = styled(TextStyles)`
     margin: 0 auto;
     max-width: 1200px;
-    font-family: Poppins;
-    font-size: 76px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.3;
-    letter-spacing: normal;
-    color: var(--black);
     @media only screen and (max-width: 1037px) {
       font-size: 66px;
     }

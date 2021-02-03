@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 import useWindowSize from "../../../utils/getWindowSize"
 import HeroFooter from "../../molecules/HomeHeroFooter/HeroFooter"
-import GreenLine from "../../atoms/GreenLine/GreenLine"
+import GreenLine from "../../molecules/GreenLine/GreenLine"
 import GrayLine from "../../atoms/GrayLine/GrayLine"
 
 import { Wrapper } from "../../atoms/StyledHeroHomeWrapper/StyledHeroHomeWrapper"

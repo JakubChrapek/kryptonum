@@ -8,7 +8,14 @@ const HeroContent = ({ content }) => {
   return (
     <StyledHeroSection>
       <StyledHeroWrapper>
-        <StyledHeroContentH1>{content}</StyledHeroContentH1>
+        <StyledHeroContentH1
+          fontSize="76px"
+          fontFamily="Poppins"
+          lineHeight="1.5"
+          color="var(--black)"
+        >
+          {content}
+        </StyledHeroContentH1>
       </StyledHeroWrapper>
     </StyledHeroSection>
   )

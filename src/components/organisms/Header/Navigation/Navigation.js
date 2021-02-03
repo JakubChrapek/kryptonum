@@ -8,10 +8,11 @@ import { StyledLink } from "../../../atoms/Header/Navigation/StyledLink"
 import { StyledList } from "../../../molecules/Header/Navigation/StyledList"
 import { StyledNavigationFlexDiv } from "../../../atoms/Header/Navigation/StyledNavigationFlexDiv"
 import { StyledNavigationMenuFlex } from "../../../atoms/Header/Navigation/StyledNavigationMenuFlex"
-import { StyledNavigationStylesP } from "../../../atoms/Header/Navigation/StyledNavigationStylesP"
 import { StyledOutLink } from "../../../atoms/Header/Navigation/StyledOutLink"
 import { StyledSocialList } from "../../../molecules/Header/Navigation/StyledSocialList"
 import { StyledTextP } from "../../../atoms/Header/Navigation/StyledTextP"
+
+import { TextStyles } from "../../../atoms/Text/Text"
 
 const Navigation = ({ mobile, width }) => {
   const navItems = [
@@ -88,7 +89,14 @@ const Navigation = ({ mobile, width }) => {
         justifyContent="flex-start"
         margin="0 0 0 56px"
       >
-        <StyledNavigationStylesP>Menu</StyledNavigationStylesP>
+        <TextStyles
+          fontSize="15px"
+          lineHeight="1.47em"
+          color="var(--text-gray)"
+          declaredMargin="0 0 0 8px"
+        >
+          Menu
+        </TextStyles>
         <StyledList>
           {navItems.map(item => (
             <StyledLink

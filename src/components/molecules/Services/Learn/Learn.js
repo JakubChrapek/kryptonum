@@ -22,13 +22,38 @@ const Learn = () => {
     >
       <StyledLearnWrapper>
         <StyledHeadingWrapper>
-          <StyledWorkflowComponentGreenSpan>
+          <StyledWorkflowComponentGreenSpan
+            fontFamily="JetBrains Mono"
+            fontSize="18px"
+            lineHeight="1.28"
+            color="var(--accent)"
+            letterSpacing="2.57px"
+            fontWeight="500"
+          >
             (01)
           </StyledWorkflowComponentGreenSpan>
-          <StyledWorkflowComponentHeading>Learn</StyledWorkflowComponentHeading>
+          <StyledWorkflowComponentHeading
+            fontFamily="LibreBaskerville"
+            fontSize="70px"
+            lineHeight="1.24"
+            color="var(--gray)"
+            letterSpacing="-1.75px"
+            fontWeight="500"
+            fontStretch="normal"
+            declaredDisplay="block"
+          >
+            Learn
+          </StyledWorkflowComponentHeading>
         </StyledHeadingWrapper>
         <StyledLearnTextWrapper>
-          <StyledLearnTextWrapperH3>
+          <StyledLearnTextWrapperH3
+            fontFamily="LibreBaskerville"
+            fontSize="36px"
+            lineHeight="1.25"
+            color="var(--gray)"
+            declaredPadding="43px 0 0 0"
+            letterSpacing="-0.94px"
+          >
             <span>Briefing</span> Research
           </StyledLearnTextWrapperH3>
 

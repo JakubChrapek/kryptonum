@@ -23,10 +23,28 @@ const Implementation = () => {
       mediaQueriesAlign={true}
     >
       <div>
-        <StyledWorkflowComponentGreenSpan implementation={true}>
+        <StyledWorkflowComponentGreenSpan
+          fontFamily="JetBrains Mono"
+          fontSize="18px"
+          lineHeight="1.28"
+          color="var(--accent)"
+          letterSpacing="2.57px"
+          fontWeight="500"
+          implementation={true}
+        >
           (01)
         </StyledWorkflowComponentGreenSpan>
-        <StyledWorkflowComponentHeading hasMediaQueryFont={true}>
+        <StyledWorkflowComponentHeading
+          fontFamily="LibreBaskerville"
+          fontSize="70px"
+          lineHeight="1.24"
+          color="var(--gray)"
+          letterSpacing="-1.75px"
+          fontWeight="500"
+          fontStretch="normal"
+          declaredDisplay="block"
+          hasMediaQueryFont={true}
+        >
           Implementation
         </StyledWorkflowComponentHeading>
       </div>
@@ -42,7 +60,13 @@ const Implementation = () => {
       </StyledListWrapper>
       <StyledImplementationContentWrapper>
         <StyledCommunicationWithTheClient>
-          <StyledCommunicationWithTheClientP>
+          <StyledCommunicationWithTheClientP
+            fontFamily="Poppins"
+            fontSize="28px"
+            lineHeight="1.71"
+            color="#090909"
+            declaredDisplay="block"
+          >
             Communication with the client during whole process
           </StyledCommunicationWithTheClientP>
         </StyledCommunicationWithTheClient>
@@ -64,7 +88,13 @@ const Implementation = () => {
               color="#00EF8B"
             />
           </StyledArrowWrapper>
-          <StyledLongLastingWrapperP>
+          <StyledLongLastingWrapperP
+            fontFamily="Poppins"
+            fontSize="40px"
+            lineHeight="2.48"
+            color="var(--black)"
+            declaredDisplay="block"
+          >
             Long-lasting Collaboration
           </StyledLongLastingWrapperP>
         </StyledLongLastingWrapper>

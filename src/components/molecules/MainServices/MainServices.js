@@ -6,7 +6,19 @@ import { ServicesStylesH2 } from "../../atoms/Services/ServicesStyles/ServicesSt
 const MainServices = () => {
   return (
     <ServicesStyles id="whatwereupto">
-      <ServicesStylesH2>Our main services</ServicesStylesH2>
+      <ServicesStylesH2
+        fontFamily="JetBrains Mono"
+        fontSize="14px"
+        lineHeight="1.25"
+        color="var(--black)"
+        textAlign="center"
+        letterSpacing="2.29px"
+        textTransform="uppercase"
+        declaredPadding="0 0 20px 0"
+        fontWeight="bold"
+      >
+        Our main services
+      </ServicesStylesH2>
       <ServicesWrapper>
         <li>
           <h3>Design</h3>

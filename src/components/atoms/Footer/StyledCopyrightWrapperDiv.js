@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const StyledCopyrightWrapperDiv = styled.div`
+  display: flex;
   &:first-child {
     @media (max-width: 795px) {
       margin-top: 66px;

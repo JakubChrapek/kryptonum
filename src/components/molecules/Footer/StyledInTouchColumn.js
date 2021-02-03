@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const StyledInTouchColumn = styled.div`
-  > h3,
   > p {
     margin-left: 169px;
     max-width: 270px;
@@ -17,22 +16,5 @@ export const StyledInTouchColumn = styled.div`
       padding: 0 8px;
       max-width: 340px;
     }
-  }
-
-  h3 {
-    font-family: "Poppins";
-    font-size: 42px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: var(--white);
-  }
-
-  p {
-    margin-top: 40px;
-    font-family: "JetBrains Mono";
-    font-size: 14px;
-    line-height: 2.14;
-    letter-spacing: 5px;
-    color: var(--white);
   }
 `

@@ -1,12 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../Text/Text"
 
-export const StyledCtaH2 = styled.h2`
-  font-family: "Libre Baskerville";
-  font-size: 70px;
-  font-weight: normal;
-  line-height: 1.38;
-  letter-spacing: -1.75px;
-  color: var(--white);
+export const StyledCtaH2 = styled(TextStyles)`
   @media only screen and (max-width: 970px) {
     font-size: 6vw;
   }

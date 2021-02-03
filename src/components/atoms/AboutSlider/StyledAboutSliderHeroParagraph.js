@@ -1,15 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../../atoms/Text/Text"
 
-export const StyledAboutSliderHeroP = styled.p`
-  font-family: "JetBrains Mono";
-  font-size: 18px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.28;
-  letter-spacing: 2.57px;
-  text-align: left;
-  color: var(--dark-bg);
+export const StyledAboutSliderHeroParagraph = styled(TextStyles)`
   @media only screen and (max-width: 1183px) {
     font-size: 16px;
   }

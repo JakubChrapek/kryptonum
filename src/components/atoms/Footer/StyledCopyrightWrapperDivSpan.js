@@ -1,15 +1,7 @@
 import styled from "styled-components"
+import { TextStyles } from "../Text/Text"
 
-export const StyledCopyrightWrapperDivSpan = styled.span`
-  font-family: "Poppins";
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5em;
-  letter-spacing: normal;
-  color: var(--light-gray);
-  letter-spacing: 2px;
+export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
   position: relative;
   @media (max-width: 802px) {
     font-size: 10px;
