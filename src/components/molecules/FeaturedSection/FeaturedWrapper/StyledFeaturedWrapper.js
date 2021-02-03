@@ -17,8 +17,17 @@ export const StyledFeaturedWrapper = styled.div`
     @media only screen and (max-width: 559px) {
       margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "27px" : "0")};
     }
-    @media only screen and (max-width: 374px) {
-      font-size: ${({ aboutSlider }) => (aboutSlider ? "24px" : "40px")};
+    @media only screen and (max-width: 484px) {
+      font-size: ${({ hasSmalFontSize }) =>
+        hasSmalFontSize ? "32px" : "40px"};
+    }
+    @media only screen and (max-width: 399px) {
+      font-size: ${({ hasSmalFontSize }) =>
+        hasSmalFontSize ? "26px" : "40px"};
+    }
+    @media only screen and (max-width: 360px) {
+      font-size: ${({ hasSmalFontSize }) =>
+        hasSmalFontSize ? "22px" : "40px"};
     }
     &:after {
       content: "";

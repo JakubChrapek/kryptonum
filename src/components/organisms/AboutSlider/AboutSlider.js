@@ -14,6 +14,7 @@ const AboutSlider = () => {
           firstSpanLength="100%"
           secondSpanLength="55%"
           hasMarginLeft={false}
+          hasSmalFontSize={true}
         >
           <span>Multiple personalities</span>
           <span>no egos</span>

@@ -17,4 +17,10 @@ export const StyledOurVisionLogoTextH2 = styled.h2`
   @media only screen and (max-width: 1121px) {
     padding-right: 20px;
   }
+  @media only screen and (max-width: 401px) {
+    font-size: 42px;
+  }
+  @media only screen and (max-width: 353px) {
+    font-size: 36px;
+  }
 `

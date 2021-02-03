@@ -12,4 +12,7 @@ export const StyledOurVisionElement = styled.div`
   @media only screen and (max-width: 660px) {
     padding-bottom: 80px;
   }
+  @media only screen and (max-width: 533px) {
+    align-items: flex-start;
+  }
 `
