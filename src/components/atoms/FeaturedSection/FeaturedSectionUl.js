@@ -19,7 +19,7 @@ export const FeaturedSectionUl = styled.ul`
   }
   @media only screen and (max-width: 738px) {
     padding-top: 40px;
-    margin-left: 57px;
+    margin-left: 0;
   }
   @media only screen and (max-width: 500px) {
     display: none;

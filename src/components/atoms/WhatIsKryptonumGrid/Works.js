@@ -9,14 +9,22 @@ export const Works = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 912px) {
+  @media only screen and (max-width: 1111px) {
+    padding-top: 88px;
+  }
+  @media only screen and (max-width: 912px) {
     position: relative;
     transform: translate(0, 0);
     left: 0;
     top: 0;
-    margin-top: 72px;
-    margin-bottom: 91px;
+    margin-bottom: 62px;
+  }
+  @media only screen and (max-width: 893px) {
+    margin-bottom: 28px;
+    padding-top: 120px;
+  }
+  @media only screen and (max-width: 797px) {
+    padding-top: 78px;
   }
   span {
     color: var(--accent);

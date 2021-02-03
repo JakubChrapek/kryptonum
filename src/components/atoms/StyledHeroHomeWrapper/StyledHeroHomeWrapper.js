@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 2;
   width: 90%;
   max-width: 1010px;
   margin-top: 12%;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     width: unset;
     margin-top: 0;
   }
-  h1 {
+  span {
     font-family: "Libre Baskerville";
     font-size: 80px;
     font-weight: normal;

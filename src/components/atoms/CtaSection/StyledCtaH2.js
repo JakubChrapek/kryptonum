@@ -16,6 +16,9 @@ export const StyledCtaH2 = styled.h2`
   @media only screen and (max-width: 670px) {
     font-size: 30px;
   }
+  @media only screen and (max-width: 360px) {
+    font-size: 24px;
+  }
   span {
     @media only screen and (max-width: 570px) {
       line-height: 2em;

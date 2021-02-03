@@ -1,28 +1,44 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import { HeroFooterStyles } from "./StyledHeroFooter"
+import { StyledLink } from "./StyledLink"
 
 const HeroFooter = () => {
   return (
     <HeroFooterStyles>
       <div>
-        <a
+        <StyledLink
           href="https://facebook.com/kryptonum"
           target="_blank"
           rel="noreferrer"
+          declaredFontSize="10px"
+          declaredLineHeight="1.3"
+          declaredFontColor="var(--white)"
+          declaredFontFamily="JetBrains Mono"
         >
           Facebook
-        </a>
-        <a
+        </StyledLink>
+        <StyledLink
           href="https://instagram.com/kryptonum.studio"
           target="_blank"
           rel="noreferrer"
+          declaredFontSize="10px"
+          declaredLineHeight="1.3"
+          declaredFontColor="var(--white)"
+          declaredFontFamily="JetBrains Mono"
         >
           Instagram
-        </a>
+        </StyledLink>
       </div>
-      <Link to="/blog">Blog</Link>
+      <StyledLink
+        to="/blog"
+        declaredFontSize="10px"
+        declaredLineHeight="1.3"
+        declaredFontColor="var(--white)"
+        declaredFontFamily="JetBrains Mono"
+      >
+        Blog
+      </StyledLink>
     </HeroFooterStyles>
   )
 }

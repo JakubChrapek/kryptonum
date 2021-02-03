@@ -7,7 +7,8 @@ export const SvgStyles = styled(motion.svg)`
   top: 55%;
   width: 100%;
   height: 2px;
-  @media (max-width: 1101px) {
+  z-index: 0;
+  @media only screen and (max-width: 1101px) {
     top: 50%;
   }
   line {

@@ -14,6 +14,9 @@ export const StyledFeaturedWrapper = styled.div`
     @media only screen and (max-width: 759px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "40px")};
     }
+    @media only screen and (max-width: 559px) {
+      margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "27px" : "0")};
+    }
     @media only screen and (max-width: 374px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "24px" : "40px")};
     }

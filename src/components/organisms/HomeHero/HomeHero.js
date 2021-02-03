@@ -18,11 +18,11 @@ const HomeHero = ({ bg }) => {
       {width >= 683 && <GrayLine />}
       <GreenLine />
       <Wrapper>
-        <h1>
+        <span>
           Join the league
           <br />
           of business superheroes
-        </h1>
+        </span>
 
         {width >= 683 && (
           <StyledScrollLink

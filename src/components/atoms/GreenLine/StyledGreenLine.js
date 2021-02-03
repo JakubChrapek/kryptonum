@@ -30,7 +30,12 @@ export const AccentLineStyles = styled(SvgStyles)`
     height: 27%;
     z-index: -1;
   }
-
+  @media (max-width: 565px) {
+    top: 122px;
+  }
+  @media (max-width: 399px) {
+    top: 172px;
+  }
   line {
     stroke: var(--accent);
     stroke-width: 4px;
