@@ -4,19 +4,25 @@ var slugify = require("slugify")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/layouts/post.js`)
-  const result = await graphql(`
-    query allArticlesAndLessons {
+  const projectTemplate = path.resolve(`src/layouts/project.js`)
+  const articles = await graphql(`
+    query allArticles {
       articles: allDatoCmsArticle {
         nodes {
-          articleTitle
           articleSlug
+          id
+        }
+      }
+      projects: allDatoCmsProject {
+        nodes {
+          projectSlug
           id
         }
       }
     }
   `)
 
-  result.data.articles.nodes.forEach(article => {
+  articles.data.articles.nodes.forEach(article => {
     const slugifiedTitle = slugify(article.articleSlug, {
       lower: true,
     })
@@ -25,6 +31,18 @@ exports.createPages = async ({ graphql, actions }) => {
       component: blogPostTemplate,
       context: {
         articleId: article.id,
+      },
+    })
+  })
+  articles.data.projects.nodes.forEach(project => {
+    const slugifiedTitle = slugify(project.projectSlug, {
+      lower: true,
+    })
+    createPage({
+      path: `projects/${slugifiedTitle}`,
+      component: projectTemplate,
+      context: {
+        projectId: project.id,
       },
     })
   })

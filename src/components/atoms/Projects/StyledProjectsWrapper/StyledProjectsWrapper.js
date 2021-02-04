@@ -24,12 +24,12 @@ export const ProjectsStyles = styled(motion.section)`
 
   a {
     text-decoration: none;
+    position: relative;
   }
 
   li {
     --gap-width: 80px;
     flex-basis: calc(50% - var(--gap-width));
-    position: relative;
     list-style-type: none;
     margin-top: var(--gap-width);
     display: flex;
@@ -44,16 +44,7 @@ export const ProjectsStyles = styled(motion.section)`
     }
 
     &.active {
-      transform: translate3d(4px, -2px, -2px);
-      span {
-        color: var(--accent);
-      }
-    }
-
-    &:hover {
-      p {
-        color: var(--accent);
-      }
+      z-index: 2;
       span {
         color: var(--accent);
       }
