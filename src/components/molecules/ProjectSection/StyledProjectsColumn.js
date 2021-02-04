@@ -22,7 +22,7 @@ export const StyledProjectsColumn = styled.ul`
     text-transform: uppercase;
     cursor: pointer;
     color: #030303;
-    @media only screen and (max-width: 1127px) {
+    @media only screen and (max-width: 1292px) {
       font-size: 60px;
     }
     @media only screen and (max-width: 994px) {

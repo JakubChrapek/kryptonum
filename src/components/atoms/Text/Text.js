@@ -20,7 +20,7 @@ export const TextStyles = styled(motion.p)`
   margin: ${({ declaredMargin }) => (declaredMargin ? declaredMargin : "0")};
   width: ${({ declaredWidth }) => (declaredWidth ? declaredWidth : "auto")};
   display: ${({ declaredDisplay }) =>
-    declaredDisplay ? declaredDisplay : "inline"};
+    declaredDisplay ? declaredDisplay : "block"};
   transform: ${({ declaredTransform }) =>
     declaredTransform ? declaredTransform : "translate(0,0)"};
   @media only screen and (max-width: 890px) {
@@ -36,7 +36,6 @@ export const TextStyles = styled(motion.p)`
       styledAboutBestWayWrapper ? "16px" : fontSize};
   }
   @media only screen and (max-width: 500px) {
-    display: ${({ howWeWorkSection }) =>
-      howWeWorkSection ? "none" : "inline"};
+    display: ${({ howWeWorkSection }) => (howWeWorkSection ? "none" : "block")};
   }
 `

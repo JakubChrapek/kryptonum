@@ -1,11 +1,10 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import { AnimatePresence, motion } from "framer-motion"
-import { fadeInUp, stagger } from "../../Styles/Animations"
-import { StyledImageColumnSmallWidth } from "./StyledImageColumnSmallWidth"
-import { StyledCategoriesListSmallWidth } from "./StyledCategoriesListSmallWidth"
-import { StyledImageColumnSmallWidthPost } from "./StyledImageColumnSmallWidthPost"
+import { fadeInUp } from "../../Styles/Animations"
+import { StyledImageColumnSmallWidth } from "../../atoms/ProjectsSection/StyledImageColumnSmallWidth"
+import { StyledCategoriesListSmallWidth } from "../../atoms/ProjectsSection/StyledCategoriesListSmallWidth"
+import { StyledImageColumnSmallWidthPost } from "../../atoms/ProjectsSection/StyledImageColumnSmallWidthPost"
 
 const ImageColumnSmallWidth = ({ dataName }) => {
   return (
