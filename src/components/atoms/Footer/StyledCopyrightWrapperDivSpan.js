@@ -9,7 +9,7 @@ export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
   @media (max-width: 795px) {
     font-size: 12px;
   }
-  &::after {
+  &.withAfter::after {
     content: "";
     width: 50px;
     height: 2px;
@@ -20,4 +20,7 @@ export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
     top: 50%;
     transform: translateY(-50%);
   }
+  /* &.withAfter::after{
+
+  } */
 `

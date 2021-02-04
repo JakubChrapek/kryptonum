@@ -141,6 +141,7 @@ const Footer = () => {
                 lineHeight="1.5em"
                 color="var(--light-gray)"
                 letterSpacing="2px"
+                className="withAfter"
               >
                 Connect with us
               </StyledCopyrightWrapperDivSpan>
