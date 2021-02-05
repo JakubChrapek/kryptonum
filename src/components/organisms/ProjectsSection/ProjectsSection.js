@@ -15,7 +15,7 @@ import { StyledProjectsStyles } from "../../atoms/ProjectsSection/StyledProjects
 
 const query = graphql`
   query ProjectsQuery {
-    allDatoCmsProject {
+    allDatoCmsProject(limit: 5) {
       nodes {
         projectTitle
         projectType
