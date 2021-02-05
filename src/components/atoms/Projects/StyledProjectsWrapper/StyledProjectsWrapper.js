@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
-import { Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
+import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
-  padding: 139px 140px 97px;
+  padding: 0 140px;
   width: 100%;
   flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
 
   span {
     font-size: 14px;
@@ -43,12 +47,23 @@ export const ProjectsStyles = styled(motion.section)`
       justify-content: flex-end;
     }
 
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      margin-top: 0;
+    }
+
     &.active {
       z-index: 2;
       span {
         color: var(--accent);
       }
     }
+  }
+`
+
+const ProjectsTextStyles = styled(TextStyles)`
+  @media (max-width: 1440px) {
+    font-size: 80px;
   }
 `
 
@@ -61,8 +76,10 @@ const StyledProjectsWrapper = ({
     setActiveProject(iterator)
   }
 
+  const containerRef = useRef()
+
   return (
-    <ProjectsStyles>
+    <ProjectsStyles ref={containerRef}>
       {projects.map((project, iterator) => (
         <motion.li
           key={project.projectTitle}
@@ -76,8 +93,8 @@ const StyledProjectsWrapper = ({
         >
           <Link to={project.projectSlug}>
             <span>{`(${iterator + 1})`}</span>
-            <TextStyles
-              fontSize="88px"
+            <ProjectsTextStyles
+              fontSize="86px"
               lineHeight="1.24em"
               letterSpacing="-2.2px"
               color={
@@ -89,10 +106,15 @@ const StyledProjectsWrapper = ({
               textTransform="uppercase"
             >
               {project.projectTitle}
-            </TextStyles>
+            </ProjectsTextStyles>
           </Link>
         </motion.li>
       ))}
+      <StyledVerticalLine
+        activeProject={activeProject}
+        numberOfProjects={projects.length}
+        ref={containerRef}
+      />
     </ProjectsStyles>
   )
 }

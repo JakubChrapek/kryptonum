@@ -6,6 +6,11 @@ import { graphql } from "gatsby"
 
 const ProjectsStyles = styled.div`
   position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  align-items: center;
 `
 
 const Projects = ({ data }) => {
