@@ -29,7 +29,6 @@ const StyledVerticalLine = React.forwardRef(
           ref.current.clientHeight) /
           numberOfRows
       )
-      x.set(isRight ? ref.current.clientWidth : 30)
     }, [activeProject])
 
     useEffect(() => {
@@ -40,7 +39,7 @@ const StyledVerticalLine = React.forwardRef(
       <>
         {ref && ref.current && (
           <LineStyles
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1 }}
             style={{
               y,

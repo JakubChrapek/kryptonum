@@ -1,9 +1,11 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import slugify from "slugify"
 import { TextStyles } from "../../Text/Text"
+import Img from "gatsby-image"
+import { projectTransition } from "../../../Styles/Animations"
 
 const CardStyles = styled.div`
   position: absolute;
@@ -17,6 +19,14 @@ const CardStyles = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    left: 0;
+    top: 0;
+  }
 `
 
 const CircleStyles = styled(motion.div)`
@@ -24,6 +34,7 @@ const CircleStyles = styled(motion.div)`
   height: 140px;
   border-radius: 50%;
   background-color: var(--accent);
+  position: absolute;
 `
 
 const LinkStyles = styled(Link)`
@@ -37,9 +48,34 @@ const LinkStyles = styled(Link)`
   align-items: center;
 `
 
-const StyledCaseStudyCard = ({ activeProject }) => {
+const ImageLink = styled(Link)`
+  width: 100%;
+  height: 100%;
+`
+
+const StyledCaseStudyCard = ({ projects, activeProject }) => {
   return (
     <CardStyles>
+      <AnimatePresence exitBeforeEnter>
+        {projects
+          .filter(project => project.projectSlug === activeProject.projectSlug)
+          .map(project => (
+            <motion.div
+              key={project.projectSlug}
+              variants={projectTransition}
+              initial="initial"
+              exit="exit"
+              animate="animate"
+            >
+              <ImageLink to={`/projects/${activeProject.projectSlug}`}>
+                <Img
+                  fluid={project.projectFeaturedImage.fluid}
+                  alt={project.projectTitle}
+                />
+              </ImageLink>
+            </motion.div>
+          ))}
+      </AnimatePresence>
       <CircleStyles whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
           <TextStyles

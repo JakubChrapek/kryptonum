@@ -30,6 +30,12 @@ export const itemTransition = {
   exit: { opacity: 0, transition: { duration: 0.7, ease: easing } },
 }
 
+export const projectTransition = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.4, ease: easing } },
+  exit: { opacity: 0, transition: { duration: 0.4, ease: easing } },
+}
+
 export const fadeInUp = {
   initial: {
     y: 4,
@@ -44,6 +50,7 @@ export const fadeInUp = {
       ease: easing,
     },
   },
+  exit: { y: -4, opacity: 0, transition: { duration: 0.4, ease: easing } },
 }
 
 export const stagger = {

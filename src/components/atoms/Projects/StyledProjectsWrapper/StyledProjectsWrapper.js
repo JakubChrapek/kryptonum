@@ -12,7 +12,6 @@ export const ProjectsStyles = styled(motion.section)`
   flex-wrap: wrap;
   max-width: 1440px;
   margin: 0 auto;
-  position: relative;
 
   span {
     font-size: 14px;
@@ -76,10 +75,8 @@ const StyledProjectsWrapper = ({
     setActiveProject(iterator)
   }
 
-  const containerRef = useRef()
-
   return (
-    <ProjectsStyles ref={containerRef}>
+    <ProjectsStyles>
       {projects.map((project, iterator) => (
         <motion.li
           key={project.projectTitle}
@@ -110,11 +107,6 @@ const StyledProjectsWrapper = ({
           </Link>
         </motion.li>
       ))}
-      <StyledVerticalLine
-        activeProject={activeProject}
-        numberOfProjects={projects.length}
-        ref={containerRef}
-      />
     </ProjectsStyles>
   )
 }
