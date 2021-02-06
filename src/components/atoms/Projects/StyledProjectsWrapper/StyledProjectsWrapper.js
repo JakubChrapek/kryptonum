@@ -13,6 +13,33 @@ export const ProjectsStyles = styled(motion.section)`
   max-width: 1440px;
   margin: 0 auto;
 
+  @media (min-width: 1800px) {
+    max-width: 1520px;
+  }
+
+  @media (min-width: 1910px) {
+    max-width: 1630px;
+  }
+
+  @media (min-width: 2200px) {
+    max-width: 1920px;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 100%;
+    padding: 0 120px;
+  }
+  @media (max-width: 1366px) {
+    padding: 0 100px;
+  }
+  @media (max-width: 1190px) {
+    padding: 0 70px 0 86px;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 140px 70px 120px 86px;
+  }
+
   span {
     font-size: 14px;
     font-weight: normal;
@@ -31,7 +58,17 @@ export const ProjectsStyles = styled(motion.section)`
   }
 
   li {
+    a {
+      width: 100%;
+      height: 100%;
+    }
     --gap-width: 80px;
+    @media (max-width: 1366px) {
+      --gap-width: 60px;
+    }
+    @media (max-width: 1190px) {
+      --gap-width: 50px;
+    }
     flex-basis: calc(50% - var(--gap-width));
     list-style-type: none;
     margin-top: var(--gap-width);
@@ -43,12 +80,28 @@ export const ProjectsStyles = styled(motion.section)`
 
     &:nth-of-type(even) {
       margin-left: var(--gap-width);
-      justify-content: flex-end;
+      a {
+        text-align: right;
+      }
     }
 
     &:nth-of-type(1),
     &:nth-of-type(2) {
       margin-top: 0;
+    }
+
+    @media (max-width: 1100px) {
+      --gap-width: 0px;
+      flex-basis: 100%;
+      margin-top: 32px;
+      &:nth-of-type(2) {
+        margin-top: 32px;
+      }
+      &:nth-of-type(even) {
+        a {
+          text-align: left;
+        }
+      }
     }
 
     &.active {
@@ -63,6 +116,12 @@ export const ProjectsStyles = styled(motion.section)`
 const ProjectsTextStyles = styled(TextStyles)`
   @media (max-width: 1440px) {
     font-size: 80px;
+  }
+  @media (max-width: 1366px) {
+    font-size: 72px;
+  }
+  @media (max-width: 1190px) {
+    font-size: 68px;
   }
 `
 

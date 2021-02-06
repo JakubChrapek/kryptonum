@@ -20,14 +20,19 @@ const StyledVerticalLine = React.forwardRef(
     const y = useSpring(0, { stiffness: 500, damping: 50 })
     const x = useSpring(0, { stiffness: 500, damping: 50 })
     const isRight = activeProject % 2
-    const numberOfProjectsInRow = 2
+    const numberOfProjectsInRow = width < 1100 ? 1 : 2
     const numberOfRows = numberOfProjects / numberOfProjectsInRow
 
     useEffect(() => {
       y.set(
-        (Math.floor(activeProject / numberOfProjectsInRow) *
-          ref.current.clientHeight) /
-          numberOfRows
+        width < 1100
+          ? 110 +
+              (Math.floor(activeProject / numberOfProjectsInRow) *
+                (ref.current.clientHeight - 260)) /
+                numberOfRows
+          : (Math.floor(activeProject / numberOfProjectsInRow) *
+              ref.current.clientHeight) /
+              numberOfRows
       )
     }, [activeProject])
 

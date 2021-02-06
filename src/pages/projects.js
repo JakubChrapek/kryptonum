@@ -4,20 +4,23 @@ import StyledCaseStudyCard from "../components/atoms/Projects/StyledCaseStudyCar
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import StyledVerticalLine from "../components/atoms/Projects/StyledVerticalLine/StyledVerticalLine"
+import useWindowSize from "../utils/getWindowSize"
 
 const ProjectsStyles = styled.div`
   /* position: fixed; */
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
   background-color: rgb(247, 247, 247);
   display: flex;
   align-items: center;
+  position: relative;
 `
 
 const Projects = ({ data }) => {
   const [activeProject, setActiveProject] = useState(0)
   const containerRef = useRef()
+  const width = useWindowSize()
   return (
     <ProjectsStyles ref={containerRef}>
       <StyledProjectsWrapper

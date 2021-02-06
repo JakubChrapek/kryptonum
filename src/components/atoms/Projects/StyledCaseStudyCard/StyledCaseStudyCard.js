@@ -20,6 +20,28 @@ const CardStyles = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 1800px) {
+    width: 400px;
+    height: 570px;
+  }
+
+  @media (min-width: 1910px) {
+    width: 440px;
+    height: 627px;
+  }
+
+  @media (min-width: 2200px) {
+    width: 580px;
+    height: 826px;
+  }
+  @media (max-width: 1100px) {
+    /* TODO */
+    /* position: sticky;
+    left: unset;
+    right: 0;
+    top: 0; */
+  }
+
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
