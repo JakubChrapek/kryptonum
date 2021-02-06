@@ -150,6 +150,7 @@ const Footer = () => {
                 href="https://facebook.com/kryptonum"
                 target="_blank"
                 rel="noreferrer noopener"
+                facebook={true}
               >
                 Facebook
               </StyledMenuColumnLink>

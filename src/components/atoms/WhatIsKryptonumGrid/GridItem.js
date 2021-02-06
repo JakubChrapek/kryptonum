@@ -13,6 +13,9 @@ export const GridItem = styled.div`
     color: transparent;
     -webkit-text-stroke: 1px var(--black);
     align-self: flex-end;
+    @media only screen and (max-width: 1035px) {
+      font-size: 110px;
+    }
   }
   h3 {
     text-transform: uppercase;
@@ -20,13 +23,19 @@ export const GridItem = styled.div`
     font-size: 16px;
     line-height: 1em;
     margin: 20px 0 0 16px;
+    @media only screen and (max-width: 1035px) {
+      font-size: 15px;
+    }
   }
   p {
     font-family: "JetBrains Mono";
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.67;
     letter-spacing: 4.29px;
     color: var(--black);
     margin: 6px 22px 16px 16px;
+    @media only screen and (max-width: 1035px) {
+      font-size: 10px;
+    }
   }
 `

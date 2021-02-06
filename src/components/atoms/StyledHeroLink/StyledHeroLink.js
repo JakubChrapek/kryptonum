@@ -20,7 +20,6 @@ export const StyledScrollLink = styled(ScrollLink)`
   z-index: 1;
   transition: border 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   cursor: pointer;
-
   @media (max-width: 1101px) {
     margin-right: 20px;
     margin-top: -80px;
@@ -50,6 +49,9 @@ export const StyledScrollLink = styled(ScrollLink)`
     font-weight: 500;
     color: var(--white);
     font-family: "JetBrains Mono";
+    @media only screen and (min-width: 1920px) {
+      font-size: 18px;
+    }
   }
   span {
     color: var(--white);

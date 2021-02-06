@@ -20,9 +20,14 @@ export const HomeHeroSection = styled.section`
   }
   @media (max-width: 683px) {
     align-items: flex-start;
-    padding-top: 197px;
     padding: 197px 84px 0 44px;
 
+    &:after {
+      background-color: var(--black);
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 197px 82px 0 42px;
     &:after {
       background-color: var(--black);
     }

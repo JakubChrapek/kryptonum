@@ -9,7 +9,7 @@ export const StyledHowWeWorkSection = styled(ServicesStyles)`
   @media only screen and (max-width: 1090px) {
     padding: 100px 40px 110px 80px;
   }
-  @media only screen and (max-width: 758px) {
-    padding: 100px 28px 110px 28px;
+  @media only screen and (max-width: 767px) {
+    padding: 100px 20px 110px 20px;
   }
 `

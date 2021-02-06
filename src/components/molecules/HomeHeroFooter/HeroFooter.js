@@ -11,7 +11,7 @@ const HeroFooter = () => {
           href="https://facebook.com/kryptonum"
           target="_blank"
           rel="noreferrer"
-          declaredFontSize="10px"
+          declaredFontSize="14px"
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
           declaredFontFamily="JetBrains Mono"
@@ -22,7 +22,7 @@ const HeroFooter = () => {
           href="https://instagram.com/kryptonum.studio"
           target="_blank"
           rel="noreferrer"
-          declaredFontSize="10px"
+          declaredFontSize="14px"
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
           declaredFontFamily="JetBrains Mono"
@@ -32,10 +32,12 @@ const HeroFooter = () => {
       </div>
       <StyledLink
         to="/blog"
-        declaredFontSize="10px"
+        declaredFontSize="14px"
         declaredLineHeight="1.3"
         declaredFontColor="var(--white)"
         declaredFontFamily="JetBrains Mono"
+        declaredMarginRight="0"
+        declaredPadding="0 0 0 8px"
       >
         Blog
       </StyledLink>

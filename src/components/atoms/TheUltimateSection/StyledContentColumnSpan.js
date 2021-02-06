@@ -6,10 +6,10 @@ export const StyledContentColumnSpan = styled(TextStyles)`
   width: 100%;
   max-width: 310px;
   background-color: var(--accent);
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 767px) {
     max-width: 374px;
   }
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 571px) {
     max-width: none;
   }
 `

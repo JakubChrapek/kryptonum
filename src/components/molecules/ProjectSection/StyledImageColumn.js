@@ -3,27 +3,23 @@ import styled from "styled-components"
 export const StyledImageColumn = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
   justify-content: flex-start;
-  @media only screen and (max-width: 1127px) {
-    transform: translateY(100px);
-    margin-left: 48px;
-  }
-  @media only screen and (max-width: 994px) {
-    transform: translateY(150px);
-  }
-  @media only screen and (max-width: 902px) {
-    transform: translateY(170px);
-  }
-  @media only screen and (max-width: 870px) {
-    transform: translateY(0);
-    align-items: center;
-    width: 100%;
-  }
   .gatsby-image-wrapper {
-    max-width: 524px;
-    max-height: 617px;
-    @media only screen and (max-width: 870px) {
+    width: 524px;
+    height: 617px;
+    @media only screen and (max-width: 1200px) {
+      width: 474px;
+      height: 577px;
+    }
+    @media only screen and (max-width: 1033px) {
+      width: 444px;
+      height: 547px;
+    }
+    @media only screen and (max-width: 821px) {
+      width: 414px;
+      height: 517px;
+    }
+    @media only screen and (max-width: 767px) {
       width: 100%;
     }
     picture,
