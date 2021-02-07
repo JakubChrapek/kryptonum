@@ -21,7 +21,9 @@ const HomeHero = ({ bg }) => {
         <span>
           Join the league
           <br />
-          of business superheroes
+          of business
+          {width < 683 ? <br /> : null}
+          superheroes
         </span>
 
         {width >= 683 && (

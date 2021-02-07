@@ -23,7 +23,6 @@ const Article = ({ article }) => {
           declaredBorderTop="2px solid var(--black)"
           declaredMargin="15px 0 0 0"
           declaredWidth="100%"
-          fontFamily="Poppins"
           lineHeight="1.38em"
           fontSize="16px"
           initial={{ opacity: 0 }}
@@ -39,7 +38,6 @@ const Article = ({ article }) => {
           fontSize="10px"
           lineHeight="1.3em"
           letterSpaccing="0.8px"
-          fontFamily="Poppins"
           declaredMargin="26px 0 0 0"
           declaredPadding="0 0 13px 0"
           initial={{ opacity: 0 }}

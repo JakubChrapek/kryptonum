@@ -4,7 +4,7 @@ export const StyledTopFooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 795px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     align-items: center;
   }

@@ -24,13 +24,16 @@ export const ServicesStyles = styled.section`
     padding: ${({ featuredSection }) =>
       featuredSection ? "0 60px 110px 80px" : "36px 0 110px 0"};
   }
-  @media only screen and (max-width: 738px) {
+  @media only screen and (max-width: 767px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 60px 80px 80px" : "36px 0 110px 0"};
+      featuredSection ? "55px 60px 80px 80px" : "36px 0 110px 0"};
+    > p {
+      display: ${({ featuredSection }) => (featuredSection ? "none" : "block")};
+    }
   }
   @media only screen and (max-width: 540px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 60px 80px 80px" : "36px 0 77px 0"};
+      featuredSection ? "55px 60px 80px 80px" : "36px 0 77px 0"};
   }
   @media only screen and (max-width: 500px) {
     padding: ${({ featuredSection }) =>

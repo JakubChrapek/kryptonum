@@ -10,21 +10,10 @@ export const Works = styled.div`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 1111px) {
-    padding-top: 88px;
+    padding-top: 180px;
   }
-  @media only screen and (max-width: 912px) {
-    position: relative;
-    transform: translate(0, 0);
-    left: 0;
-    top: 0;
-    margin-bottom: 62px;
-  }
-  @media only screen and (max-width: 893px) {
+  @media only screen and (max-width: 767px) {
     padding-top: 120px;
-  }
-  @media only screen and (max-width: 797px) {
-    margin-bottom: 28px;
-    padding-top: 78px;
   }
   span {
     color: var(--accent);

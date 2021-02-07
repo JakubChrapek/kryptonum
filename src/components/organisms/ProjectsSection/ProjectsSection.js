@@ -35,6 +35,7 @@ const ProjectsSection = () => {
   const width = useWindowSize()
   const data = useStaticQuery(query)
   const [activeProject, setActiveProject] = useState(0)
+
   const handleClick = iterator => {
     setActiveProject(iterator)
   }
@@ -65,7 +66,7 @@ const ProjectsSection = () => {
             View all projects
           </Link>
         </StyledProjectsColumn>
-        {width > 870 ? (
+        {width > 767 ? (
           <MaxWidthSlider dataName={data.allDatoCmsProject} />
         ) : (
           <ImageColumnSmallWidth dataName={data.allDatoCmsProject} />

@@ -3,12 +3,7 @@ import { TextStyles } from "../Text/Text"
 
 export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
   position: relative;
-  @media (max-width: 802px) {
-    font-size: 10px;
-  }
-  @media (max-width: 795px) {
-    font-size: 12px;
-  }
+
   &.withAfter::after {
     content: "";
     width: 50px;
@@ -20,7 +15,4 @@ export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
     top: 50%;
     transform: translateY(-50%);
   }
-  /* &.withAfter::after{
-
-  } */
 `

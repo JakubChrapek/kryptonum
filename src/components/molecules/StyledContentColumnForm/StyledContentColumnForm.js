@@ -1,25 +1,22 @@
 import styled from "styled-components"
 
 export const StyledContentColumnForm = styled.form`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 15px;
-  grid-auto-rows: minmax(min-content, max-content);
+  display: flex;
+  justify-content: flex-start;
   position: relative;
   margin-top: 44px;
-  @media only screen and (max-width: 890px) {
-    grid-gap: 0;
+  @media only screen and (max-width: 912px) {
+    flex-direction: column;
   }
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 767px) {
     display: block;
     width: 374px;
   }
   @media only screen and (max-width: 570px) {
     padding: 0 20px;
   }
-  @media only screen and (max-width: 384px) {
-    width: 320px;
-    padding: 0;
+  @media only screen and (max-width: 380px) {
+    width: 100%;
   }
   label {
     position: absolute;
@@ -33,6 +30,8 @@ export const StyledContentColumnForm = styled.form`
 
   input {
     padding: 18px;
+    width: 310px;
+    margin-right: 15px;
     font-family: "JetBrains Mono";
     font-size: 18px;
     font-weight: 500;
@@ -40,14 +39,24 @@ export const StyledContentColumnForm = styled.form`
     color: var(--dark-bg);
     border: 2px solid var(--white);
     transition: border-color 0.1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    @media only screen and (max-width: 890px) {
-      width: 95%;
+    @media only screen and (max-width: 934px) {
+      width: 300px;
     }
-    @media only screen and (max-width: 760px) {
+    @media only screen and (max-width: 930px) {
+      width: 280px;
+    }
+    @media only screen and (max-width: 912px) {
+      width: 310px;
+    }
+    @media only screen and (max-width: 767px) {
       width: 100%;
+      margin-right: 0;
     }
     &::placeholder {
       color: var(--text-gray);
+      @media only screen and (max-width: 767px) {
+        text-align: center;
+      }
     }
 
     &:hover,
@@ -84,7 +93,12 @@ export const StyledContentColumnForm = styled.form`
     line-height: 1.22;
     color: var(--black);
     background-color: var(--accent);
-    @media only screen and (max-width: 760px) {
+    width: 155px;
+    @media only screen and (max-width: 912px) {
+      width: 310px;
+      margin-top: 19px;
+    }
+    @media only screen and (max-width: 767px) {
       width: 100%;
       margin-top: 19px;
     }

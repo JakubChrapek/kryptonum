@@ -7,17 +7,22 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   padding: ${({ declaredPadding }) =>
     declaredPadding ? declaredPadding : "6px 8px"};
-  margin-right: ${({ declaredMarginRightg }) =>
-    declaredMarginRightg ? declaredMarginRightg : "23px"};
-  margin-right: ${({ declaredLineHeight }) =>
+  margin-right: ${({ declaredMarginRight }) =>
+    declaredMarginRight ? declaredMarginRight : "23px"};
+  line-height: ${({ declaredLineHeight }) =>
     declaredLineHeight ? declaredLineHeight : "1.31em"};
-  margin-right: ${({ declaredFontFamily }) =>
+  font-family: ${({ declaredFontFamily }) =>
     declaredFontFamily ? declaredFontFamily : "JetBrains Mono"};
   color: ${({ declaredFontColor }) =>
     declaredFontColor ? declaredFontColor : "var(--lightest-gray)"};
   position: relative;
-
-  @media only screen and (max-width: 340px) {
+  @media only screen and (min-width: 1920px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 684px) {
+    padding-left: 0;
+  }
+  @media only screen and (max-width: 475px) {
     padding-right: 0;
   }
 

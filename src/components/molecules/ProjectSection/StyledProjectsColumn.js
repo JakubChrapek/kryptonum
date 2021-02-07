@@ -7,7 +7,15 @@ export const StyledProjectsColumn = styled.ul`
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 124px;
-  @media only screen and (max-width: 870px) {
+  padding-right: 40px;
+  @media only screen and (max-width: 1041px) {
+    padding-right: 0;
+  }
+  @media only screen and (max-width: 971px) {
+    width: 45%;
+    padding-left: 20px;
+  }
+  @media only screen and (max-width: 767px) {
     display: none;
   }
   li {
@@ -22,8 +30,14 @@ export const StyledProjectsColumn = styled.ul`
     text-transform: uppercase;
     cursor: pointer;
     color: #030303;
+    @media only screen and (max-width: 1357px) {
+      font-size: 64px;
+    }
     @media only screen and (max-width: 1292px) {
       font-size: 60px;
+    }
+    @media only screen and (max-width: 1217px) {
+      font-size: 54px;
     }
     @media only screen and (max-width: 994px) {
       font-size: 48px;

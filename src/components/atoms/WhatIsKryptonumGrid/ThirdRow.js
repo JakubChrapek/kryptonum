@@ -7,7 +7,8 @@ export const ThirdRow = styled.div`
   justify-content: flex-end;
   margin-top: -7%;
 
-  @media (max-width: 912px) {
+  @media (max-width: 767px) {
     justify-content: center;
+    padding-bottom: 80px;
   }
 `

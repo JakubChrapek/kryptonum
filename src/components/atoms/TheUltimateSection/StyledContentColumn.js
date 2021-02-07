@@ -8,7 +8,7 @@ export const StyledContentColumn = styled.div`
   @media only screen and (max-width: 860px) {
     margin-right: 20px;
   }
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 767px) {
     align-items: center;
     margin-right: 0;
   }

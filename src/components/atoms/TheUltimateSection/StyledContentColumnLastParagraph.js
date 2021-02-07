@@ -6,7 +6,7 @@ export const StyledContentColumnLastParagraph = styled(TextStyles)`
   @media only screen and (max-width: 960px) {
     font-size: 16px;
   }
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 767px) {
     max-width: 374px;
     width: 100%;
   }

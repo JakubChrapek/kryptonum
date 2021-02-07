@@ -11,17 +11,22 @@ export const FeaturedSectionUl = styled.ul`
     font-weight: bold;
     font-family: "JetBrains Mono";
   }
-  @media only screen and (max-width: 1053px) {
-    padding-right: 130px;
+  @media only screen and (max-width: 1294px) {
+    padding-right: 220px;
   }
-  @media only screen and (max-width: 831px) {
-    padding-right: 0;
+  @media only screen and (max-width: 1216px) {
+    padding-right: 190px;
   }
-  @media only screen and (max-width: 738px) {
-    padding-top: 40px;
-    margin-left: 0;
+  @media only screen and (max-width: 1126px) {
+    padding-right: 110px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1028px) {
+    padding-right: 40px;
+  }
+  @media only screen and (max-width: 914px) {
+    padding-right: 20px;
+  }
+  @media only screen and (max-width: 767px) {
     display: none;
   }
 `

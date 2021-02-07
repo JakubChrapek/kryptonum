@@ -16,13 +16,20 @@ export const StyledMenuColumnLink = styled(Link)`
   padding: ${({ copyrightWrapper }) => (copyrightWrapper ? "0 8px" : "0 8px")};
   margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "21px" : "0")};
 
-  @media (max-width: 795px) {
+  @media only screen and (max-width: 822px) {
+    padding-right: 0;
+  }
+  @media only screen and (max-width: 767px) {
     margin-left: ${({ instagram }) => (instagram ? "0" : "0")};
   }
-
+  @media only screen and (max-width: 767px) {
+    margin: 0;
+    padding: ${({ instagram, facebook }) =>
+      instagram || facebook ? "0 8px" : "0"};
+  }
   &:nth-child(2) {
     margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "74px" : "0")};
-    @media (max-width: 795px) {
+    @media (max-width: 767px) {
       margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "0" : "0")};
     }
   }

@@ -10,8 +10,18 @@ export const Creativity = styled(GridItem)`
   }
   p {
     margin: 10px 61px 70px 16px;
+    @media only screen and (max-width: 1035px) {
+      margin: 10px 61px 40px 16px;
+    }
   }
-  @media (max-width: 912px) {
+  @media only screen and (max-width: 1111px) {
+    transform: ${({ hasDeclaredTransform }) =>
+      hasDeclaredTransform ? "translateY(110px)" : "none"};
+  }
+  @media only screen and (max-width: 1035px) {
+    width: 225px;
+  }
+  @media only screen and (max-width: 767px) {
     display: none;
   }
 `
