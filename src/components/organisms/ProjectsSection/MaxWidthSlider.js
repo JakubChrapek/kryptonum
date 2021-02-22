@@ -6,8 +6,7 @@ import { fadeInUp, stagger } from "../../Styles/Animations"
 import { StyledImageColumn } from "../../molecules/ProjectSection/StyledImageColumn"
 import { StyledCategoriesList } from "../../atoms/ProjectsSection/StyledCategoriesList"
 
-const MaxWidthSlider = ({ dataName }) => {
-  const [activeProject, setActiveProject] = useState(0)
+const MaxWidthSlider = ({ dataName, activeProject }) => {
   return (
     <StyledImageColumn>
       <AnimatePresence exitBeforeEnter>

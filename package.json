@@ -23,6 +23,7 @@
     "gatsby-source-datocms": "^2.5.7",
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-sharp": "^2.6.0",
+    "gsap": "^3.6.0",
     "locomotive-scroll": "^4.1.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.7",

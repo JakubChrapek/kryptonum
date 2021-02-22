@@ -6,3 +6,9 @@ exports.wrapPageElement = ({ element, props }) => {
   // including location, data, etc - you don't need to pass it
   return <Layout {...props}>{element}</Layout>
 }
+
+exports.onRenderBody = ({ setBodyAttributes }) => {
+  setBodyAttributes({
+    className: "no-js",
+  })
+}

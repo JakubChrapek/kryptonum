@@ -7830,6 +7830,11 @@
   dependencies:
     "iterall" "^1.2.2"
 
+"gsap@^3.6.0":
+  "integrity" "sha512-0P3syv1TmYr+A/VZ8UMFzw+s0XoaKSzzDFs8NqkXiJTXI4E/VTi0zRjPgxaPBpiUPPycgRnFjLDe0Tb4dRRf+w=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.6.0.tgz"
+  "version" "3.6.0"
+
 "gud@^1.0.0":
   "integrity" "sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw=="
   "resolved" "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz"

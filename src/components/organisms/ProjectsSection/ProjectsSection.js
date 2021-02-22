@@ -67,7 +67,10 @@ const ProjectsSection = () => {
           </Link>
         </StyledProjectsColumn>
         {width > 767 ? (
-          <MaxWidthSlider dataName={data.allDatoCmsProject} />
+          <MaxWidthSlider
+            activeProject={activeProject}
+            dataName={data.allDatoCmsProject}
+          />
         ) : (
           <ImageColumnSmallWidth dataName={data.allDatoCmsProject} />
         )}

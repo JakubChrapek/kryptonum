@@ -77,8 +77,8 @@ const ImageLink = styled(Link)`
 
 const StyledCaseStudyCard = ({ projects, activeProject }) => {
   return (
-    <CardStyles>
-      <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter>
+      <CardStyles>
         {projects
           .filter(project => project.projectSlug === activeProject.projectSlug)
           .map(project => (
@@ -97,23 +97,23 @@ const StyledCaseStudyCard = ({ projects, activeProject }) => {
               </ImageLink>
             </motion.div>
           ))}
-      </AnimatePresence>
-      <CircleStyles whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-        <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
-          <TextStyles
-            fontSize="12px"
-            fontWeight="600"
-            color="var(--black)"
-            lineHeight="1.5"
-            letterSpacing="2px"
-            fontFamily="Poppins"
-            textAlign="center"
-          >
-            View case study
-          </TextStyles>
-        </LinkStyles>
-      </CircleStyles>
-    </CardStyles>
+        <CircleStyles whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
+            <TextStyles
+              fontSize="12px"
+              fontWeight="600"
+              color="var(--black)"
+              lineHeight="1.5"
+              letterSpacing="2px"
+              fontFamily="Poppins"
+              textAlign="center"
+            >
+              View case study
+            </TextStyles>
+          </LinkStyles>
+        </CircleStyles>
+      </CardStyles>
+    </AnimatePresence>
   )
 }
 

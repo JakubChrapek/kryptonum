@@ -59,8 +59,9 @@ export const ProjectsStyles = styled(motion.section)`
 
   li {
     a {
-      width: 100%;
+      position: relative;
       height: 100%;
+      display: inline-flex;
     }
     --gap-width: 80px;
     @media (max-width: 1366px) {
@@ -80,9 +81,7 @@ export const ProjectsStyles = styled(motion.section)`
 
     &:nth-of-type(even) {
       margin-left: var(--gap-width);
-      a {
-        text-align: right;
-      }
+      justify-content: flex-end;
     }
 
     &:nth-of-type(1),
