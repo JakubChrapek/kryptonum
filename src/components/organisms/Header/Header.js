@@ -17,30 +17,34 @@ import { StyledHeaderLink } from "../../atoms/Header/StyledHeaderLink"
 const Header = ({ theme }) => {
   let pathname = useLocation().pathname
   const dispatch = useMenuDispatch()
-  const { show: mobile } = useMenuState()
-  const [show, setShow] = useState(false)
+  const { show } = useMenuState()
   const width = useWindowSize()
 
   return (
     <StyledHeader>
       {width > 800 && (
         <Contact
-          color={theme === "/" ? "var(--lightest-gray)" : "var(--black)"}
+          color={theme === "light" ? "var(--lightest-gray)" : "var(--black)"}
         />
       )}
       <StyledHeaderLink to="/">
-        <Logo color={theme === "/" ? "var(--white)" : "var(--black)"} />
+        <Logo color={theme === "light" ? "var(--white)" : "var(--black)"} />
       </StyledHeaderLink>
       <StyledNavBurger
         onClick={() => {
-          setShow(!show)
           dispatch({ type: "TOGGLE_MENU" })
         }}
         className={show ? "active" : null}
         whileTap={{ scale: 0.9 }}
       >
-        <StyledNavBurgerSpan color={theme} mobile={mobile} />
-        <StyledNavBurgerSpan color={theme} mobile={mobile} />
+        <StyledNavBurgerSpan
+          color={theme && pathname !== "/projects" ? "light" : "dark"}
+          mobile={show}
+        />
+        <StyledNavBurgerSpan
+          color={theme && pathname !== "/projects" ? "light" : "dark"}
+          mobile={show}
+        />
       </StyledNavBurger>
       <AnimatePresence exitBeforeEnter>
         {show && <Navigation width={width} />}

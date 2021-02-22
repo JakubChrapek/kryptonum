@@ -6,6 +6,7 @@ export const HomeHeroSection = styled.section`
   align-items: center;
   position: relative;
   height: 100vh;
+  overflow: hidden;
   padding-top: 77px;
   z-index: 0;
   &:after {

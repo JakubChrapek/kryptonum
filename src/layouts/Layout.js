@@ -28,8 +28,10 @@ const Layout = ({ children }) => {
   `)
   let pathname = useLocation().pathname
   const getThemeFromPathname = name => {
-    if (pathname === "/") {
-      return pathname
+    if (name === "/" || name === "/projects") {
+      return "light"
+    } else {
+      return "dark"
     }
   }
   return (
@@ -40,7 +42,7 @@ const Layout = ({ children }) => {
       <Header theme={getThemeFromPathname(pathname)} />
       <StyledMain key={pathname}>
         {children}
-        <Footer />
+        {pathname !== "/projects" && <Footer />}
       </StyledMain>
     </MenuProvider>
   )

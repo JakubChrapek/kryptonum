@@ -30,6 +30,15 @@ export const itemTransition = {
   exit: { opacity: 0, transition: { duration: 0.7, ease: easing } },
 }
 
+export const overlayTransition = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.7, ease: easing },
+  },
+  exit: { opacity: 0, transition: { duration: 0.7, delay: 0.3, ease: easing } },
+}
+
 export const projectTransition = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.4, ease: easing } },
