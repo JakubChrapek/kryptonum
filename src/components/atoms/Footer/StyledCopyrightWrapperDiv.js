@@ -2,8 +2,11 @@ import styled from "styled-components"
 
 export const StyledCopyrightWrapperDiv = styled.div`
   display: flex;
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
   &:first-child {
-    @media (max-width: 795px) {
+    @media (max-width: 767px) {
       margin-top: 66px;
       order: 2;
     }
@@ -14,7 +17,7 @@ export const StyledCopyrightWrapperDiv = styled.div`
     }
   }
   &:last-child {
-    @media (max-width: 795px) {
+    @media (max-width: 767px) {
       max-width: 200px;
     }
   }

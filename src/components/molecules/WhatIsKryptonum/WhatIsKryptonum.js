@@ -61,7 +61,7 @@ const WhatIsKryptonum = () => {
                 color="rgba(178,178,178,0.2)"
               />
             </Works>
-            <Creativity>
+            <Creativity hasDeclaredTransform={true}>
               <span>Cr</span>
               <div>
                 <h3>Creativity</h3>
@@ -73,7 +73,7 @@ const WhatIsKryptonum = () => {
       <CreativeSection>
         <WhatIsKryptonumWrapper>
           <CreativeRow>
-            <Creativity>
+            <Creativity hasDeclaredTransform={false}>
               <div>
                 <p>Boredom is our worst enemy.</p>
               </div>

@@ -8,13 +8,15 @@ export const StyledImageColumnSmallWidth = styled(StyledImageColumn)`
   justify-content: center;
   margin: 0 auto;
   background-color: var(--white);
-
+  align-items: center;
   a {
     @media only screen and (max-width: 430px) {
       width: 320px;
+      padding: 18px 9px;
+      font-size: 14px;
     }
-    @media only screen and (max-width: 320px) {
-      width: 300px;
+    @media only screen and (max-width: 371px) {
+      width: 260px;
       padding: 22px;
     }
   }

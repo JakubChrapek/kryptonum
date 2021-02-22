@@ -5,7 +5,7 @@ export const WhatIsKryptonumWrapper = styled.div`
   flex-direction: column;
   max-width: 1366px;
   margin: 0 auto;
-  @media (max-width: 912px) {
+  @media (max-width: 768px) {
     height: auto;
     padding: 40px 29px 29px 29px;
   }
@@ -21,7 +21,7 @@ export const WhatIsKryptonumWrapper = styled.div`
   }
 
   p {
-    color: var(--white);
+    color: var(--black);
     z-index: 1;
     font-size: 16px;
     line-height: 1.88;

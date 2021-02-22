@@ -26,6 +26,7 @@ const AboutSlider = () => {
             fontWeight="500"
             lineHeight="1.28"
             letterSpacing="2.57px"
+            declaredDisplay="block"
           >
             We’re a unique team of insanely creative people, with years of
             experience in complex website design, and more. Kryptonum began as a

@@ -27,6 +27,7 @@ const OurVision = () => {
             fontSize="40px"
             lineHeight="2.48"
             color="var(--white)"
+            textAlign="center"
           >
             Smaller multidisciplinary dedicated teams for bigger impact
           </StyledOurVisionHeroTextP>

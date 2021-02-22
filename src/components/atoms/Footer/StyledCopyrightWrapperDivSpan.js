@@ -3,13 +3,8 @@ import { TextStyles } from "../Text/Text"
 
 export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
   position: relative;
-  @media (max-width: 802px) {
-    font-size: 10px;
-  }
-  @media (max-width: 795px) {
-    font-size: 12px;
-  }
-  &::after {
+
+  &.withAfter::after {
     content: "";
     width: 50px;
     height: 2px;

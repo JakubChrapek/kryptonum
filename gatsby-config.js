@@ -54,7 +54,6 @@ module.exports = {
       options: {
         enableListener: true,
         /* Preconnect URL-s. This example is for Google Fonts */
-        preconnect: ["https://fonts.gstatic.com"],
 
         /* Font listener interval (in ms). Default is 300ms. Recommended: >=300ms */
         interval: 500,

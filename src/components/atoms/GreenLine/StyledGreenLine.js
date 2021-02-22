@@ -24,15 +24,14 @@ export const AccentLineStyles = styled(SvgStyles)`
   }
 
   @media (max-width: 683px) {
-    left: 48px;
-    top: 154px;
-    width: 25%;
+    left: 70px;
+    top: 200px;
+    width: 50%;
     height: 27%;
     z-index: -1;
+    transform: rotate(-20deg);
   }
-  @media (max-width: 565px) {
-    top: 122px;
-  }
+
   @media (max-width: 399px) {
     top: 172px;
   }

@@ -23,7 +23,7 @@ const FeaturedSection = () => {
       <FeaturedSectionWrapper>
         <StyledFeaturedWrapper
           firstSpanLength="92%"
-          secondSpanLength="130%"
+          secondSpanLength="120%"
           hasMarginLeft={false}
         >
           <span>Featured</span>
