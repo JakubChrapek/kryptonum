@@ -4,14 +4,13 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../components/organisms/Header/Header"
 import SEO from "../components//SEO"
-import GlobalStyles from "../Components/Styles/GlobalStyles"
+import GlobalStyles from "../components/Styles/GlobalStyles"
 import SkipNavLink from "../components/atoms/SkipNavLink/SkipNavLink"
 import { motion } from "framer-motion"
 import { useLocation } from "@reach/router"
 import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
 import Footer from "../components/organisms/Footer/Footer"
-// import Scroll from "../components/locomotiveScroll"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
