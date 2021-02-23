@@ -7,18 +7,26 @@ import { TextStyles } from "../../Text/Text"
 import Img from "gatsby-image"
 import { projectTransition } from "../../../Styles/Animations"
 
-const CardStyles = styled.div`
-  position: absolute;
+const CardStyles = styled(motion.div)`
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--white);
-  border: 1px solid var(--black);
   width: 344px;
   height: 490px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media (min-width: 1800px) {
     width: 400px;
@@ -56,7 +64,8 @@ const CircleStyles = styled(motion.div)`
   height: 140px;
   border-radius: 50%;
   background-color: var(--accent);
-  position: absolute;
+  position: relative;
+  z-index: 2;
 `
 
 const LinkStyles = styled(Link)`
@@ -73,47 +82,63 @@ const LinkStyles = styled(Link)`
 const ImageLink = styled(Link)`
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 `
 
 const StyledCaseStudyCard = ({ projects, activeProject }) => {
   return (
-    <AnimatePresence exitBeforeEnter>
-      <CardStyles>
-        {projects
-          .filter(project => project.projectSlug === activeProject.projectSlug)
-          .map(project => (
-            <motion.div
-              key={project.projectSlug}
-              variants={projectTransition}
-              initial="initial"
-              exit="exit"
-              animate="animate"
+    <CardStyles>
+      {projects
+        .filter(project => project.projectSlug === activeProject?.projectSlug)
+        .map(project => (
+          <motion.div
+            key={project.projectSlug}
+            initial={{ opacity: 0, y: 200, scaleY: 1.2 }}
+            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            exit={{ opacity: 0, y: -200, transition: { duration: 1 } }}
+            transition={{ duration: 1.2, ease: [0.6, -0.05, 0.01, 0.99] }}
+            className="card"
+          >
+            <ImageLink to={`/projects/${activeProject.projectSlug}`}>
+              <Img
+                fluid={project.projectFeaturedImage.fluid}
+                alt={project.projectTitle}
+              />
+            </ImageLink>
+            <CircleStyles
+              key={`${project.projectSlug}-link`}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.15, delay: 0 },
+              }}
+              whileTap={{
+                scale: 0.95,
+                transition: { duration: 0.15, delay: 0 },
+              }}
+              initial={{ opacity: 0, scale: 0.5, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              exit={{ opacity: 0, scale: 0, y: 40 }}
             >
-              <ImageLink to={`/projects/${activeProject.projectSlug}`}>
-                <Img
-                  fluid={project.projectFeaturedImage.fluid}
-                  alt={project.projectTitle}
-                />
-              </ImageLink>
-            </motion.div>
-          ))}
-        <CircleStyles whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
-            <TextStyles
-              fontSize="12px"
-              fontWeight="600"
-              color="var(--black)"
-              lineHeight="1.5"
-              letterSpacing="2px"
-              fontFamily="Poppins"
-              textAlign="center"
-            >
-              View case study
-            </TextStyles>
-          </LinkStyles>
-        </CircleStyles>
-      </CardStyles>
-    </AnimatePresence>
+              <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
+                <TextStyles
+                  fontSize="12px"
+                  fontWeight="600"
+                  color="var(--black)"
+                  lineHeight="1.5"
+                  letterSpacing="2px"
+                  fontFamily="Poppins"
+                  textAlign="center"
+                >
+                  View case study
+                </TextStyles>
+              </LinkStyles>
+            </CircleStyles>
+          </motion.div>
+        ))}
+    </CardStyles>
   )
 }
 

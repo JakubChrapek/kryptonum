@@ -2,28 +2,18 @@ const React = require("react")
 const Layout = require("./src/layouts/Layout").default
 const gsap = require("gsap").gsap
 
-exports.shouldUpdateScroll = ({
-  routerProps: { location },
-  getSavedScrollPosition,
-}) => {
-  // if (location.action === "PUSH") {
-  //   window.setTimeout(() => gsap.to(window, { y: 0 }), 300)
-  // } else {
-  //   const savedPosition = getSavedScrollPosition(location)
-  //   window.setTimeout(
-  //     () => gsap.to(window, savedPosition ? { y: savedPosition[1] } : { y: 0 }),
-  //     300
-  //   )
-  // }
-  // return false
-  if (location.action === "PUSH") {
-    window.setTimeout(() => window.scrollTo(0, 0), 300)
-  } else {
-    const savedPosition = getSavedScrollPosition(location)
-    window.setTimeout(() => window.scrollTo(...(savedPosition || [0, 0])), 300)
-  }
-  return false
-}
+// exports.shouldUpdateScroll = ({
+//   routerProps: { location },
+//   getSavedScrollPosition,
+// }) => {
+//   if (location.action === "PUSH") {
+//     window.setTimeout(() => window.scrollTo(0, 0), 300)
+//   } else {
+//     const savedPosition = getSavedScrollPosition(location)
+//     window.setTimeout(() => window.scrollTo(...(savedPosition || [0, 0])), 300)
+//   }
+//   return false
+// }
 
 exports.wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get

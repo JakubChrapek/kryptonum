@@ -8,48 +8,35 @@ const LineStyles = styled(motion.span)`
   width: 5px;
   height: 350px;
   background-color: var(--accent);
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 `
 
 const StyledVerticalLine = React.forwardRef(
-  ({ activeProject, numberOfProjects }, ref) => {
-    // const height = useWindowHeight()
+  (
+    { activeProject, numberOfProjects, activeSection, numberOfSections },
+    ref
+  ) => {
+    const windowHeight = useWindowHeight()
     const width = useWindowSize()
     const y = useSpring(0, { stiffness: 500, damping: 50 })
     const x = useSpring(0, { stiffness: 500, damping: 50 })
-    const isRight = activeProject % 2
-    const numberOfProjectsInRow = width < 1100 ? 1 : 2
-    const numberOfRows = numberOfProjects / numberOfProjectsInRow
 
     useEffect(() => {
-      y.set(
-        width < 1100
-          ? 110 +
-              (Math.floor(activeProject / numberOfProjectsInRow) *
-                (ref.current.clientHeight - 260)) /
-                numberOfRows
-          : (Math.floor(activeProject / numberOfProjectsInRow) *
-              ref.current.clientHeight) /
-              numberOfRows
-      )
-    }, [activeProject])
-
-    useEffect(() => {
-      console.log(ref)
-    }, [])
+      y.set((activeSection * windowHeight) / numberOfSections)
+    }, [activeSection])
 
     return (
       <>
         {ref && ref.current && (
           <LineStyles
-            initial={{ opacity: 0, x: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scaleY: 0, originY: 0 }}
+            animate={{ opacity: 1, scaleY: 1, originY: 0 }}
             style={{
               y,
               x,
-              height: ref.current.clientHeight / numberOfRows,
+              height: windowHeight / numberOfSections,
             }}
           />
         )}

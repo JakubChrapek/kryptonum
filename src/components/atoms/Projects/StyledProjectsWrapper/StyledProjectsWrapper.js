@@ -12,6 +12,11 @@ export const ProjectsStyles = styled(motion.section)`
   flex-wrap: wrap;
   max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 
   @media (min-width: 1800px) {
     max-width: 1520px;
@@ -140,6 +145,7 @@ const StyledProjectsWrapper = ({
           key={project.projectTitle}
           onClick={() => handleClick(iterator)}
           onMouseOver={() => setActiveProject(iterator)}
+          // onMouseOut={() => setActiveProject(0)}
           className={iterator === activeProject ? "active" : null}
           whileTap={{
             scale: 0.95,

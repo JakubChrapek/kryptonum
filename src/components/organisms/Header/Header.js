@@ -24,7 +24,13 @@ const Header = ({ theme }) => {
     <StyledHeader>
       {width > 800 && (
         <Contact
-          color={theme === "light" ? "var(--lightest-gray)" : "var(--black)"}
+          color={
+            pathname === "/projects"
+              ? "var(--black)"
+              : theme === "light"
+              ? "var(--lightest-gray)"
+              : "var(--black)"
+          }
         />
       )}
       <StyledHeaderLink to="/">

@@ -11,7 +11,7 @@ import { useLocation } from "@reach/router"
 import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
 import Footer from "../components/organisms/Footer/Footer"
-import Scroll from "../components/locomotiveScroll"
+// import Scroll from "../components/locomotiveScroll"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
   return (
     <MenuProvider>
       <GlobalStyles />
-      <Scroll />
+      {/* <Scroll /> */}
       <SkipNavLink />
       <SEO />
       <Header theme={getThemeFromPathname(pathname)} />
