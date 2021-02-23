@@ -63,16 +63,7 @@ const Projects = ({ data }) => {
     return () => ScrollTrigger.kill()
   }, [])
 
-  useEffect(() => {
-    console.log(
-      "ACTIVE SECTION: ",
-      activeSection,
-      "NUMBER OF SEC: ",
-      numberOfSections,
-      "HEIGHT: ",
-      containerRef.current.clientHeight
-    )
-  }, [activeSection])
+  useEffect(() => {}, [activeSection])
 
   return (
     <ProjectsStyles ref={containerRef}>
