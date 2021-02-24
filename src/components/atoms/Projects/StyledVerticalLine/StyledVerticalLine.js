@@ -20,8 +20,7 @@ const StyledVerticalLine = React.forwardRef(
   ) => {
     const windowHeight = useWindowHeight()
     const width = useWindowSize()
-    const y = useSpring(0, { stiffness: 500, damping: 50 })
-    const x = useSpring(0, { stiffness: 500, damping: 50 })
+    const y = useSpring(0, { stiffness: 750, damping: 20, duration: 800 })
 
     useEffect(() => {
       y.set((activeSection * windowHeight) / numberOfSections)
@@ -34,8 +33,8 @@ const StyledVerticalLine = React.forwardRef(
             initial={{ opacity: 0, scaleY: 0, originY: 0 }}
             animate={{ opacity: 1, scaleY: 1, originY: 0 }}
             style={{
+              x: 0,
               y,
-              x,
               height: windowHeight / numberOfSections,
             }}
           />

@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   `)
   let pathname = useLocation().pathname
   const getThemeFromPathname = name => {
-    if (name === "/" || name === "/projects") {
+    if (name === "/") {
       return "light"
     } else {
       return "dark"

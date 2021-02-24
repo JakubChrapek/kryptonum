@@ -87,11 +87,11 @@ const ImageLink = styled(Link)`
   top: 0;
 `
 
-const StyledCaseStudyCard = ({ projects, activeProject }) => {
+const StyledCaseStudyCard = ({ projects, activeProjectId }) => {
   return (
     <CardStyles>
       {projects
-        .filter(project => project.projectSlug === activeProject?.projectSlug)
+        .filter(project => project.id === activeProjectId)
         .map(project => (
           <motion.div
             key={project.projectSlug}
@@ -101,7 +101,7 @@ const StyledCaseStudyCard = ({ projects, activeProject }) => {
             transition={{ duration: 1.2, ease: [0.6, -0.05, 0.01, 0.99] }}
             className="card"
           >
-            <ImageLink to={`/projects/${activeProject.projectSlug}`}>
+            <ImageLink to={`/projects/${project.projectSlug}`}>
               <Img
                 fluid={project.projectFeaturedImage.fluid}
                 alt={project.projectTitle}
@@ -122,7 +122,7 @@ const StyledCaseStudyCard = ({ projects, activeProject }) => {
               transition={{ duration: 0.4, delay: 0.4 }}
               exit={{ opacity: 0, scale: 0, y: 40 }}
             >
-              <LinkStyles to={`/projects/${activeProject.projectSlug}`}>
+              <LinkStyles to={`/projects/${project.projectSlug}`}>
                 <TextStyles
                   fontSize="12px"
                   fontWeight="600"

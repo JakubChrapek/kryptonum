@@ -7,7 +7,7 @@ import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
-  padding: 0 140px;
+  padding: 200px 140px 140px;
   width: 100%;
   flex-wrap: wrap;
   max-width: 1440px;
@@ -17,33 +17,6 @@ export const ProjectsStyles = styled(motion.section)`
   height: 100vh;
   position: sticky;
   top: 0;
-
-  @media (min-width: 1800px) {
-    max-width: 1520px;
-  }
-
-  @media (min-width: 1910px) {
-    max-width: 1630px;
-  }
-
-  @media (min-width: 2200px) {
-    max-width: 1920px;
-  }
-
-  @media (max-width: 1440px) {
-    max-width: 100%;
-    padding: 0 120px;
-  }
-  @media (max-width: 1366px) {
-    padding: 0 100px;
-  }
-  @media (max-width: 1190px) {
-    padding: 0 70px 0 86px;
-  }
-
-  @media (max-width: 1100px) {
-    padding: 140px 70px 120px 86px;
-  }
 
   span {
     font-size: 14px;
@@ -69,6 +42,9 @@ export const ProjectsStyles = styled(motion.section)`
       display: inline-flex;
     }
     --gap-width: 80px;
+    @media (max-width: 1920px) {
+      --gap-width: 50px;
+    }
     @media (max-width: 1366px) {
       --gap-width: 60px;
     }
@@ -96,15 +72,13 @@ export const ProjectsStyles = styled(motion.section)`
 
     @media (max-width: 1100px) {
       --gap-width: 0px;
-      flex-basis: 100%;
+      flex-basis: unset;
       margin-top: 32px;
       &:nth-of-type(2) {
         margin-top: 32px;
       }
       &:nth-of-type(even) {
-        a {
-          text-align: left;
-        }
+        justify-content: flex-start;
       }
     }
 
@@ -115,10 +89,73 @@ export const ProjectsStyles = styled(motion.section)`
       }
     }
   }
+
+  @media (min-width: 1800px) {
+    max-width: 1520px;
+  }
+
+  @media (min-width: 1910px) {
+    max-width: 1630px;
+  }
+
+  @media (min-width: 2200px) {
+    max-width: 1920px;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 100%;
+    padding: 180px 120px 120px;
+  }
+  @media (max-width: 1366px) {
+    padding: 160px 100px 100px;
+  }
+  @media (max-width: 1190px) {
+    padding: 140px 70px 80px 86px;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 120px 70px 120px 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: ${({ lessProjects }) =>
+      lessProjects ? "flex-start" : "center"};
+
+    span {
+      top: unset;
+      bottom: 10px;
+      left: -48px;
+    }
+  }
+  @media (max-width: 778px) {
+    padding: 80px 70px 30px 100px;
+    span {
+      font-size: 10px;
+      bottom: 4px;
+      left: -36px;
+    }
+  }
+  @media (max-width: 600px) {
+    padding: 80px 60px 30px 90px;
+  }
+  @media (max-width: 500px) {
+    padding: 80px 50px 20px 80px;
+  }
+  @media (max-width: 350px) {
+    padding: 80px 40px 20px 70px;
+  }
 `
 
 const ProjectsTextStyles = styled(TextStyles)`
-  @media (max-width: 1440px) {
+  @media (max-width: 2600px) {
+    font-size: 120px;
+  }
+  @media (max-width: 2208px) {
+    font-size: 100px;
+  }
+  @media (max-width: 1920px) {
+    font-size: 92px;
+  }
+  @media (max-width: 1460px) {
     font-size: 80px;
   }
   @media (max-width: 1366px) {
@@ -127,26 +164,42 @@ const ProjectsTextStyles = styled(TextStyles)`
   @media (max-width: 1190px) {
     font-size: 68px;
   }
+  @media (max-width: 1100px) {
+    font-size: 90px;
+  }
+  @media (max-width: 778px) {
+    font-size: 70px;
+  }
+  @media (max-width: 600px) {
+    font-size: 48px;
+  }
+  @media (max-width: 500px) {
+    font-size: 40px;
+  }
+  @media (max-width: 350px) {
+    font-size: 34px;
+  }
 `
 
 const StyledProjectsWrapper = ({
   projects,
-  activeProject,
-  setActiveProject,
+  projectsPerPage,
+  activeProjectId,
+  setActiveProjectId,
 }) => {
   const handleClick = iterator => {
-    setActiveProject(iterator)
+    setActiveProjectId(iterator)
   }
 
   return (
-    <ProjectsStyles>
+    <ProjectsStyles lessProjects={projects.length < projectsPerPage - 1}>
       {projects.map((project, iterator) => (
         <motion.li
           key={project.projectTitle}
-          onClick={() => handleClick(iterator)}
-          onMouseOver={() => setActiveProject(iterator)}
+          onClick={() => handleClick(project.id)}
+          onMouseOver={() => setActiveProjectId(project.id)}
           // onMouseOut={() => setActiveProject(0)}
-          className={iterator === activeProject ? "active" : null}
+          className={project.id === activeProjectId ? "active" : null}
           whileTap={{
             scale: 0.95,
             transition: { duration: 0.3 },
@@ -159,7 +212,7 @@ const StyledProjectsWrapper = ({
               lineHeight="1.24em"
               letterSpacing="-2.2px"
               color={
-                iterator === activeProject
+                project.id === activeProjectId
                   ? "var(--accent)"
                   : "var(--light-accent)"
               }

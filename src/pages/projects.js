@@ -22,11 +22,13 @@ const ProjectsStyles = styled.div`
 `
 
 const Projects = ({ data }) => {
-  const [activeProject, setActiveProject] = useState(0)
+  const [activeProjectId, setActiveProjectId] = useState(
+    data?.allDatoCmsProject?.nodes[0]?.id
+  )
   const [activeSection, setActiveSection] = useState(0)
   const containerRef = useRef()
   const numberOfProjects = data.allDatoCmsProject.nodes.length
-  const projectsPerPage = 4
+  const projectsPerPage = 6
   const numberOfSections = Math.ceil(numberOfProjects / projectsPerPage)
   const width = useWindowSize()
 
@@ -44,6 +46,7 @@ const Projects = ({ data }) => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      console.log("Test")
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
       gsap.utils.toArray("section").forEach(section => {
         ScrollTrigger.create({
@@ -60,7 +63,10 @@ const Projects = ({ data }) => {
     }
     setActiveSection(0)
 
-    return () => ScrollTrigger.kill()
+    return () => {
+      ScrollTrigger.kill()
+      ScrollToPlugin.kill()
+    }
   }, [])
 
   useEffect(() => {}, [activeSection])
@@ -68,21 +74,28 @@ const Projects = ({ data }) => {
   return (
     <ProjectsStyles ref={containerRef}>
       <StyledProjectsWrapper
-        projects={data.allDatoCmsProject.nodes}
-        activeProject={activeProject}
-        setActiveProject={setActiveProject}
+        projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
+        projectsPerPage={projectsPerPage}
+        activeProjectId={activeProjectId}
+        setActiveProjectId={setActiveProjectId}
       />
       <StyledProjectsWrapper
-        projects={data.allDatoCmsProject.nodes}
-        activeProject={activeProject}
-        setActiveProject={setActiveProject}
+        projects={data.allDatoCmsProject.nodes.slice(
+          projectsPerPage,
+          2 * projectsPerPage
+        )}
+        projectsPerPage={projectsPerPage}
+        activeProjectId={activeProjectId}
+        setActiveProjectId={setActiveProjectId}
       />
-      <StyledCaseStudyCard
-        projects={data.allDatoCmsProject.nodes}
-        activeProject={data.allDatoCmsProject.nodes[activeProject]}
-      />
+      {width > 1100 && (
+        <StyledCaseStudyCard
+          projects={data.allDatoCmsProject.nodes}
+          activeProjectId={activeProjectId}
+        />
+      )}
       <StyledVerticalLine
-        activeProject={activeProject}
+        activeProject={activeProjectId}
         activeSection={activeSection}
         numberOfSections={numberOfSections}
         numberOfProjects={numberOfProjects}
@@ -96,6 +109,7 @@ export const query = graphql`
   query ProjectsListingQuery {
     allDatoCmsProject {
       nodes {
+        id
         projectTitle
         projectSlug
         projectFeaturedImage {
