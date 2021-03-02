@@ -13,6 +13,7 @@ import { StyledHeader } from "../../atoms/Header/StyledHeader"
 import { StyledNavBurger } from "../../atoms/Header/StyledNavBurger"
 import { StyledNavBurgerSpan } from "../../atoms/Header/StyledNavBurgerSpan"
 import { StyledHeaderLink } from "../../atoms/Header/StyledHeaderLink"
+import { StyledHeaderWrapper } from "../../atoms/Header/StyledHeaderWrapper"
 
 const Header = ({ theme }) => {
   let pathname = useLocation().pathname
@@ -21,41 +22,43 @@ const Header = ({ theme }) => {
   const width = useWindowSize()
 
   return (
-    <StyledHeader>
-      {width > 800 && (
-        <Contact
-          color={
-            pathname === "/projects"
-              ? "var(--black)"
-              : theme === "light"
-              ? "var(--lightest-gray)"
-              : "var(--black)"
-          }
-        />
-      )}
-      <StyledHeaderLink to="/">
-        <Logo color={theme === "light" ? "var(--white)" : "var(--black)"} />
-      </StyledHeaderLink>
-      <StyledNavBurger
-        onClick={() => {
-          dispatch({ type: "TOGGLE_MENU" })
-        }}
-        className={show ? "active" : null}
-        whileTap={{ scale: 0.9 }}
-      >
-        <StyledNavBurgerSpan
-          color={theme && pathname !== "/projects" ? "light" : "dark"}
-          mobile={show}
-        />
-        <StyledNavBurgerSpan
-          color={theme && pathname !== "/projects" ? "light" : "dark"}
-          mobile={show}
-        />
-      </StyledNavBurger>
-      <AnimatePresence exitBeforeEnter>
-        {show && <Navigation width={width} />}
-      </AnimatePresence>
-    </StyledHeader>
+    <StyledHeaderWrapper>
+      <StyledHeader>
+        {width > 800 && (
+          <Contact
+            color={
+              pathname === "/projects"
+                ? "var(--black)"
+                : theme === "light"
+                ? "var(--lightest-gray)"
+                : "var(--black)"
+            }
+          />
+        )}
+        <StyledHeaderLink to="/">
+          <Logo color={theme === "light" ? "var(--white)" : "var(--black)"} />
+        </StyledHeaderLink>
+        <StyledNavBurger
+          onClick={() => {
+            dispatch({ type: "TOGGLE_MENU" })
+          }}
+          className={show ? "active" : null}
+          whileTap={{ scale: 0.9 }}
+        >
+          <StyledNavBurgerSpan
+            color={theme && pathname !== "/projects" ? "light" : "dark"}
+            mobile={show}
+          />
+          <StyledNavBurgerSpan
+            color={theme && pathname !== "/projects" ? "light" : "dark"}
+            mobile={show}
+          />
+        </StyledNavBurger>
+        <AnimatePresence exitBeforeEnter>
+          {show && <Navigation width={width} />}
+        </AnimatePresence>
+      </StyledHeader>
+    </StyledHeaderWrapper>
   )
 }
 

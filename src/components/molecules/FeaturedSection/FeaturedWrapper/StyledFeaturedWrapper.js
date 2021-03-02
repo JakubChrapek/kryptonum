@@ -4,8 +4,8 @@ export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
   span {
-    font-size: 40px;
-    line-height: 1.5em;
+    font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
+    line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
     position: relative;
     margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "57px" : "0")};
     @media only screen and (max-width: 1183px) {
