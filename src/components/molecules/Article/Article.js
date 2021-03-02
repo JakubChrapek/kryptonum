@@ -6,11 +6,15 @@ import { StyledArticleGridDiv } from "../../atoms/BlogSection/StyledArticleGridD
 
 import { TextStyles } from "../../atoms/Text/Text"
 
-const Article = ({ article }) => {
+const Article = ({ article, full }) => {
   const year = article.dateOfPublication.split("-")[0].slice(2)
   const month = article.dateOfPublication.split("-")[1]
   return (
-    <StyledArticleStyles key={article.id} to={`/blog/${article.articleSlug}`}>
+    <StyledArticleStyles
+      full={full}
+      key={article.id}
+      to={`/blog/${article.articleSlug}`}
+    >
       <StyledArticleGridDiv
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -38,7 +42,7 @@ const Article = ({ article }) => {
           fontSize="10px"
           lineHeight="1.3em"
           letterSpaccing="0.8px"
-          declaredMargin="26px 0 0 0"
+          declaredMargin={full ? "9px 0 0" : "26px 0 0 0"}
           declaredPadding="0 0 13px 0"
           initial={{ opacity: 0 }}
           animate={{

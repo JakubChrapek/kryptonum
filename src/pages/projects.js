@@ -45,22 +45,20 @@ const Projects = ({ data }) => {
   }
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      console.log("Test")
-      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
-      gsap.utils.toArray("section").forEach(section => {
-        ScrollTrigger.create({
-          trigger: section,
-          onEnter: () => goToSection(section, false),
-        })
-
-        ScrollTrigger.create({
-          trigger: section,
-          start: "bottom bottom",
-          onEnterBack: () => goToSection(section, true),
-        })
+    // if (typeof window !== "undefined") {
+    gsap.utils.toArray("section").forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        onEnter: () => goToSection(section, false),
       })
-    }
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "bottom bottom",
+        onEnterBack: () => goToSection(section, true),
+      })
+    })
+    // }
     setActiveSection(0)
 
     return () => {
@@ -68,8 +66,6 @@ const Projects = ({ data }) => {
       ScrollToPlugin.kill()
     }
   }, [])
-
-  useEffect(() => {}, [activeSection])
 
   return (
     <ProjectsStyles ref={containerRef}>

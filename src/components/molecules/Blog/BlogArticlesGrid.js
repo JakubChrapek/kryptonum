@@ -1,6 +1,7 @@
 import React from "react"
 import Masonry from "react-masonry-css"
 import Article from "../Article/Article"
+import BlogQuote from "./BlogQuote"
 
 const BlogArticlesGrid = ({ posts }) => {
   return (
@@ -13,12 +14,29 @@ const BlogArticlesGrid = ({ posts }) => {
         if (iterator === 1) {
           return (
             <>
-              <p>{iterator}</p>
-              <Article article={post} key={post.id} />
+              <BlogQuote
+                text="“Your company shows great design which is important for us at Apple”"
+                author="Daniel Morrison"
+                position="Apple"
+                margin="34px 0 0"
+              />
+              <Article full article={post} key={post.id} />
+            </>
+          )
+        } else if (iterator === 2) {
+          return (
+            <>
+              <Article full article={post} key={post.id} />
+              <BlogQuote
+                text="“Your company shows great design which is important for us at Apple”"
+                author="Daniel Morrison"
+                position="Apple"
+                margin="66px 0 0"
+              />
             </>
           )
         }
-        return <Article article={post} key={post.id} />
+        return <Article full article={post} key={post.id} />
       })}
     </Masonry>
   )

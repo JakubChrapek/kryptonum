@@ -13,10 +13,12 @@ const Global = createGlobalStyle`
     --white: #fff;
     --gray: #363636;
     --text-gray: #b2b2b2;
+    --text-light-gray: #c0c0c0;
     --light-gray: #F7F7F7;
     --lightest-gray: #F7F8FA;
     --line-gray: #E6E6E6;
     --error: #C32F27;
+    --masonry-gap: 64px;
     font-size: 10px;
   }
   *,
@@ -150,18 +152,17 @@ const Global = createGlobalStyle`
   /* Masonry grid styles */
   .my-masonry-grid {
     display: flex;
-    margin-left: -30px; /* gutter size offset */
+    margin-left: calc(-1 * var(--masonry-gap)); /* gutter size offset */
     width: auto;
   }
   .my-masonry-grid_column {
-    padding-left: 30px; /* gutter size */
+    padding-left: var(--masonry-gap); /* gutter size */
     background-clip: padding-box;
   }
 
   /* Style your items */
   .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-    background: grey;
-    margin-bottom: 30px;
+    
   }
 
 `

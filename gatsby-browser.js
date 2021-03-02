@@ -1,6 +1,10 @@
 const React = require("react")
 const Layout = require("./src/layouts/Layout").default
 const gsap = require("gsap").gsap
+const ScrollTrigger = require("gsap/ScrollTrigger")
+const ScrollToPlugin = require("gsap/ScrollToPlugin")
+const CSSPlugin = require("gsap/CSSPlugin")
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSPlugin)
 
 // exports.shouldUpdateScroll = ({
 //   routerProps: { location },

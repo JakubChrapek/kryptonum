@@ -6,7 +6,7 @@ import useWindowSize from "../../../../utils/getWindowSize"
 
 const LineStyles = styled(motion.span)`
   width: 5px;
-  height: 350px;
+  /* height: 350px; */
   background-color: var(--accent);
   position: fixed;
   left: 0;
@@ -26,11 +26,15 @@ const StyledVerticalLine = React.forwardRef(
       y.set((activeSection * windowHeight) / numberOfSections)
     }, [activeSection])
 
+    useEffect(() => {
+      y.set(0)
+    }, [])
+
     return (
       <>
         {ref && ref.current && (
           <LineStyles
-            initial={{ opacity: 0, scaleY: 0, originY: 0 }}
+            initial={{ opacity: 1, scaleY: 1, originY: 0 }}
             animate={{ opacity: 1, scaleY: 1, originY: 0 }}
             style={{
               x: 0,
