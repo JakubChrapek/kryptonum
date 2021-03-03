@@ -6,6 +6,7 @@ const Global = createGlobalStyle`
   html {
     box-sizing: border-box;
     --accent: #00EF8B;
+    --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
     --dark-bg: #171717;
     --black: #000;
@@ -19,6 +20,7 @@ const Global = createGlobalStyle`
     --line-gray: #E6E6E6;
     --error: #C32F27;
     --masonry-gap: 64px;
+    --transition-bezier-curve: cubic-bezier(0.6, -0.05, 0.01, 0.99);
     font-size: 10px;
   }
   *,
