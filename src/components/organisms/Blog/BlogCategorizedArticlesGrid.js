@@ -1,5 +1,6 @@
+import { AnimateSharedLayout } from "framer-motion"
 import { useStaticQuery } from "gatsby"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Container } from "../../atoms/Container/Container"
 import { Wrapper } from "../../atoms/Wrapper/Wrapper"
 
@@ -36,26 +37,70 @@ const AllArticlesQuery = graphql`
 
 const BlogCategorizedArticlesGrid = () => {
   const [activeCategory, setActiveCategory] = useState("All")
+  const [articleCategories, setArticleCategories] = useState([])
+  const [pages, setPages] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
+
   const ArticlesPerPage = 4
   const {
     allDatoCmsArticle: { nodes },
     allDatoCmsArticlecategory,
   } = useStaticQuery(AllArticlesQuery)
 
+  const [filteredArticles, setFilteredArticles] = useState(nodes)
+
+  // Updating categories listing based on the actual posts from the datoCMS
+  useEffect(() => {
+    const categoriesList = []
+    nodes.forEach(article => {
+      categoriesList.push(JSON.stringify(article.articleCategory))
+    })
+
+    let uniqueCategoriesSet = new Set(categoriesList)
+    setArticleCategories(
+      Array.from(uniqueCategoriesSet).map(item => item.replaceAll('"', ""))
+    )
+  }, [nodes])
+
+  useEffect(() => {
+    const filteredNodes = nodes.filter(node =>
+      activeCategory !== "All" ? node.articleCategory === activeCategory : true
+    )
+    setFilteredArticles(
+      filteredNodes.slice(
+        ArticlesPerPage * (currentPage - 1),
+        ArticlesPerPage * currentPage
+      )
+    )
+    setPages(Math.ceil(filteredNodes.length / ArticlesPerPage))
+  }, [activeCategory, pages, currentPage])
+
   return (
     <Container bg={"var(--light-gray)"}>
       <Wrapper direction="column" padding="75px 146px 87px 136px">
-        <BlogCategories
-          categories={allDatoCmsArticlecategory.nodes}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <BlogArticlesGrid
-          posts={nodes}
-          ArticlesPerPage={ArticlesPerPage}
-          activeCategory={activeCategory}
-        />
-        <BlogArticlesGridPagination ArticlesPerPage={ArticlesPerPage} />
+        <AnimateSharedLayout type="crossfade">
+          <BlogCategories
+            categories={articleCategories}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            setCurrentPage={setCurrentPage}
+            layout
+          />
+          <BlogArticlesGrid
+            posts={filteredArticles}
+            ArticlesPerPage={ArticlesPerPage}
+            activeCategory={activeCategory}
+            layout
+          />
+          <BlogArticlesGridPagination
+            ArticlesPerPage={ArticlesPerPage}
+            numberOfArticles={filteredArticles.length}
+            pages={pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            layout
+          />
+        </AnimateSharedLayout>
       </Wrapper>
     </Container>
   )

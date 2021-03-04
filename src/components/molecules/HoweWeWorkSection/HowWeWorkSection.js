@@ -7,6 +7,7 @@ import { StyledHowWeWorkSection } from "../../atoms/HowWeWorkSection/HowWeWorkSe
 import { TextStyles } from "../../atoms/Text/Text"
 import { element } from "prop-types"
 import { motion, useMotionValue } from "framer-motion"
+import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 
 const query = graphql`
   query {
@@ -69,53 +70,55 @@ const HowWeWorkSection = () => {
   }, [sliderChildrenWidth, sliderRef, sliderWidth])
 
   return (
-    <StyledHowWeWorkSection howWeWorkSection={true}>
-      <TextStyles
-        fontSize="8px"
-        lineHeight="1.5em"
-        letterSpacing="1.33px"
-        fontFamily="Poppins"
-        textTransform="uppercase"
-        fontWeight="bold"
-        howWeWorkSection={true}
-      >
-        How we work
-      </TextStyles>
-      <div>
-        <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="72%">
-          <span>Our design</span>
-          <span>process</span>
-        </StyledFeaturedWrapper>
-      </div>
-      <motion.div style={{ width: "100%" }}>
-        <Cards
-          drag={"x"}
-          dragConstraints={{
-            left: -sliderConstarint,
-            right: 0,
-          }}
-          style={{ x }}
-          initial={{ x: 30 }}
-          dragElastic={0.05}
-          ref={sliderRef}
+    <BgColourWrapper bg="var(--white)">
+      <StyledHowWeWorkSection howWeWorkSection={true}>
+        <TextStyles
+          fontSize="8px"
+          lineHeight="1.5em"
+          letterSpacing="1.33px"
+          fontFamily="Poppins"
+          textTransform="uppercase"
+          fontWeight="bold"
+          howWeWorkSection={true}
         >
-          {datoCmsPageHome.cards.map(card => (
-            <li key={card.cardTitle}>
-              <TextStyles
-                fontSize="28px"
-                lineHeight="1.5em"
-                letterSpacing="normall"
-                fontFamily="Poppins"
-                color="#090909"
-              >
-                {card.cardTitle}
-              </TextStyles>
-              <p>{card.cardDescription}</p>
-            </li>
-          ))}
-        </Cards>
-      </motion.div>
-    </StyledHowWeWorkSection>
+          How we work
+        </TextStyles>
+        <div>
+          <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="72%">
+            <span>Our design</span>
+            <span>process</span>
+          </StyledFeaturedWrapper>
+        </div>
+        <motion.div style={{ width: "100%" }}>
+          <Cards
+            drag={"x"}
+            dragConstraints={{
+              left: -sliderConstarint,
+              right: 0,
+            }}
+            style={{ x }}
+            initial={{ x: 30 }}
+            dragElastic={0.05}
+            ref={sliderRef}
+          >
+            {datoCmsPageHome.cards.map(card => (
+              <li key={card.cardTitle}>
+                <TextStyles
+                  fontSize="28px"
+                  lineHeight="1.5em"
+                  letterSpacing="normall"
+                  fontFamily="Poppins"
+                  color="#090909"
+                >
+                  {card.cardTitle}
+                </TextStyles>
+                <p>{card.cardDescription}</p>
+              </li>
+            ))}
+          </Cards>
+        </motion.div>
+      </StyledHowWeWorkSection>
+    </BgColourWrapper>
   )
 }
 

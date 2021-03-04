@@ -8,3 +8,7 @@ export const Wrapper = styled.div`
   max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "1366px")};
   padding: ${({ padding }) => (padding ? padding : "0")};
 `
+
+export const BgColourWrapper = styled.div`
+  background-color: ${({ bg }) => bg};
+`

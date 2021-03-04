@@ -4,6 +4,7 @@ import ArticlesGrid from "../ArticleGrid/ArticlesGrid"
 
 import { SectionStyles } from "../../atoms/BlogSection/StyledBlogSection"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
+import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 
 const blogSectionQuery = graphql`
   query LastArticles {
@@ -28,19 +29,21 @@ const BlogSection = () => {
     allDatoCmsArticle: { nodes },
   } = useStaticQuery(blogSectionQuery)
   return (
-    <SectionStyles>
-      <div>
-        <StyledFeaturedWrapper
-          firstSpanLength="110%"
-          secondSpanLength="140%"
-          hasMarginLeft={true}
-        >
-          <span>New on</span>
-          <span>the blog</span>
-        </StyledFeaturedWrapper>
-      </div>
-      <ArticlesGrid posts={nodes} />
-    </SectionStyles>
+    <BgColourWrapper bg="var(--white)">
+      <SectionStyles>
+        <div>
+          <StyledFeaturedWrapper
+            firstSpanLength="110%"
+            secondSpanLength="140%"
+            hasMarginLeft={true}
+          >
+            <span>New on</span>
+            <span>the blog</span>
+          </StyledFeaturedWrapper>
+        </div>
+        <ArticlesGrid posts={nodes} />
+      </SectionStyles>
+    </BgColourWrapper>
   )
 }
 

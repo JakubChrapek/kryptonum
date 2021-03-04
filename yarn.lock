@@ -1603,6 +1603,13 @@
     "prop-types" "^15.6.1"
     "react-lifecycles-compat" "^3.0.4"
 
+"@rehooks/window-scroll-position@^1.0.1":
+  "integrity" "sha512-+7uUcU2DBzXW4ygKTCqjCrtT4Nq0f+hNxQvAw69pXSBc7DbqmzfpxrYu27dT4tXrUKSQPFPpo5AdMv2oUJVM7g=="
+  "resolved" "https://registry.npmjs.org/@rehooks/window-scroll-position/-/window-scroll-position-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "lodash.throttle" "^4.1.1"
+
 "@sideway/address@^4.1.0":
   "integrity" "sha512-wAH/JYRXeIFQRsxerIuLjgUu2Xszam+O5xKeatJ4oudShOOirfmsQ1D6LL54XOU2tizpCYku+s1wmU0SYdpoSA=="
   "resolved" "https://registry.npmjs.org/@sideway/address/-/address-4.1.0.tgz"
@@ -12511,7 +12518,7 @@
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.1.tgz"
   "version" "2.1.1"
 
-"react@^16.0.0", "react@^16.12.0":
+"react@^16.0.0", "react@^16.12.0", "react@^16.7.0-alpha.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
