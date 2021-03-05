@@ -25,7 +25,7 @@ export const StyledMenuColumnLink = styled(Link)`
   @media only screen and (max-width: 767px) {
     margin: 0;
     padding: ${({ instagram, facebook }) =>
-      instagram || facebook ? "0 8px" : "0"};
+      instagram || facebook ? "8px" : "0"};
   }
   &:nth-child(2) {
     margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "74px" : "0")};

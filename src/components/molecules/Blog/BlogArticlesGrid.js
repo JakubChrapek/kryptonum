@@ -7,13 +7,23 @@ import BlogQuote from "./BlogQuote"
 
 const StyledMasonry = styled(Masonry)`
   margin-top: 90px;
+  @media (max-width: 767px) {
+    margin-top: 40px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 32px;
+  }
 `
 
 const BlogArticlesGrid = ({ posts, activeCategory }) => {
+  const breakpointColumnsObj = {
+    default: 2,
+    767: 1,
+  }
   return (
     <motion.div>
       <StyledMasonry
-        breakpointCols={2}
+        breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
@@ -31,7 +41,7 @@ const BlogArticlesGrid = ({ posts, activeCategory }) => {
                     text="“Your company shows great design which is important for us at Apple”"
                     author="Daniel Morrison"
                     position="Apple"
-                    margin="34px 0 0"
+                    margin="44px 0 0"
                   />
                   <Article full article={post} key={post.id} />
                 </>

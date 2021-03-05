@@ -156,10 +156,16 @@ const Global = createGlobalStyle`
     display: flex;
     margin-left: calc(-1 * var(--masonry-gap)); /* gutter size offset */
     width: auto;
+    @media (max-width: 768px) {
+      --masonry-gap: 40px;
+    }
   }
   .my-masonry-grid_column {
     padding-left: var(--masonry-gap); /* gutter size */
     background-clip: padding-box;
+    @media (max-width: 768px) {
+      --masonry-gap: 40px;
+    }
   }
 
   /* Style your items */

@@ -9,6 +9,10 @@ export const StyledArticleImg = styled(Img)`
   @media only screen and (max-width: 560px) {
     height: 236px;
   }
+  @media only screen and (max-width: 500px) {
+    width: ${({ variant }) => variant === "blog" && "calc(100% - 14px)"};
+  }
+
   picture,
   img {
     width: 100%;

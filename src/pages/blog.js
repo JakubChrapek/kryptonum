@@ -7,12 +7,14 @@ import SEO from "../components/SEO/SEO"
 import HeroContent from "../components/molecules/HeroContent/HeroContent"
 import { StyledFeaturedWrapper } from "../components/molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import BlogCategorizedArticlesGrid from "../components/organisms/Blog/BlogCategorizedArticlesGrid"
+import styled from "styled-components"
 
 const BlogLinks = () => (
   <StyledFeaturedWrapper
     mainHeader
     firstSpanLength="145%"
     secondSpanLength="190%"
+    hasSmalFontSize
   >
     <span>Blog</span>
     <span>Posts</span>
@@ -23,7 +25,7 @@ const Blog = () => {
   return (
     <>
       <SEO title="Blog" />
-      <HeroContent content={<BlogLinks />} />
+      <HeroContent variant="blog" content={<BlogLinks />} />
       <BlogCategorizedArticlesGrid />
     </>
   )

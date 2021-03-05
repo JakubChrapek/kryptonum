@@ -1,10 +1,11 @@
-import React from "react"
-import useWindowScrollPosition from "@rehooks/window-scroll-position"
+import React, { useState } from "react"
 import { AnimatePresence, motion, transform } from "framer-motion"
 import styled from "styled-components"
 import { VscArrowLeft } from "react-icons/vsc"
 import { TextStyles } from "../../atoms/Text/Text"
 import { animateScroll } from "react-scroll"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const ScrollToTopStyles = styled(motion.button)`
   display: flex;
@@ -15,33 +16,51 @@ const ScrollToTopStyles = styled(motion.button)`
   mix-blend-mode: difference;
   background-color: transparent;
   border: 0;
+  z-index: 5;
+
+  @media (max-width: 1025px) {
+    right: -20px;
+    bottom: 80px;
+  }
 
   &:focus,
   &:active {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
+    @media (max-width: 1025px) {
+      outline-offset: 0;
+    }
   }
 
   span {
     width: 32px;
     height: 32px;
     margin: 0 10px 1px 0;
+    @media (max-width: 1025px) {
+      width: 24px;
+      height: 24px;
+      margin: 0 15px 3px 0;
+    }
   }
 
   p {
     color: #fff;
+    font-weight: 300;
+  }
+  @media (max-width: 1025px) {
+    p {
+      font-size: 10px;
+    }
   }
 `
 
 const ScrollToTop = () => {
-  const options = {
-    throttle: 100,
-  }
-  let position = useWindowScrollPosition(options)
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
+  let width = useWindowSize()
   const variants = {
-    animate: { opacity: 1, transition: { staggerChildren: 0.2 } },
-    initial: { opacity: 0, rotate: 90 },
-    exit: { opacity: 0 },
+    animate: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
+    initial: { opacity: 0, y: 4, rotate: 90 },
+    exit: { opacity: 0, y: 4 },
   }
   const item = {
     initial: { opacity: 0 },
@@ -49,9 +68,17 @@ const ScrollToTop = () => {
     exit: { opacity: 0 },
   }
 
+  useScrollPosition(({ prevPos, currPos }) => {
+    if (currPos.y < -500) {
+      setShowScrollToTop(true)
+    } else {
+      setShowScrollToTop(false)
+    }
+  })
+
   return (
     <AnimatePresence>
-      {position.y > 500 && (
+      {showScrollToTop && (
         <ScrollToTopStyles
           role="button"
           initial="initial"
@@ -69,7 +96,10 @@ const ScrollToTop = () => {
           onClick={() => animateScroll.scrollToTop()}
         >
           <motion.span variants={item}>
-            <VscArrowLeft size="32px" color="var(--white)" />
+            <VscArrowLeft
+              size={width > 1025 ? "32px" : "24px"}
+              color="var(--white)"
+            />
           </motion.span>
           <TextStyles
             variants={item}

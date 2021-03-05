@@ -6,11 +6,12 @@ import { StyledArticleGridDiv } from "../../atoms/BlogSection/StyledArticleGridD
 
 import { TextStyles } from "../../atoms/Text/Text"
 
-const Article = ({ article, full }) => {
+const Article = ({ article, full, layout }) => {
   const year = article.dateOfPublication.split("-")[0].slice(2)
   const month = article.dateOfPublication.split("-")[1]
   return (
     <StyledArticleStyles
+      layout={layout}
       full={full}
       key={article.id}
       to={`/blog/${article.articleSlug}`}
@@ -21,7 +22,11 @@ const Article = ({ article, full }) => {
         exit={{ opacity: 0 }}
         style={{ marginLeft: 0 }}
       >
-        <StyledArticleImg fluid={article.articleFeaturedImage.fluid} />
+        <StyledArticleImg
+          variant={full && "blog"}
+          layout
+          fluid={article.articleFeaturedImage.fluid}
+        />
         <TextStyles
           declaredPadding="11px 0 0 0"
           declaredBorderTop="2px solid var(--black)"

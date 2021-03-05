@@ -19,4 +19,10 @@ export const StyledArticleStyles = styled(Link)`
   &:nth-child(1) {
     margin-top: ${({ full }) => full && "0"};
   }
+  @media only screen and (max-width: 767px) {
+    margin-top: ${({ full }) => full && "44px"};
+    &:nth-child(1) {
+      margin-top: ${({ full }) => full && "0"};
+    }
+  }
 `

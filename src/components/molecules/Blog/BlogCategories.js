@@ -5,6 +5,7 @@ import styled from "styled-components"
 const CategoriesStyles = styled(motion.ul)`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 
   button {
     margin-right: 13px;
@@ -31,6 +32,15 @@ const CategoriesStyles = styled(motion.ul)`
       transform: scaleX(0);
       transform-origin: left center;
       transition: transform 0.2s var(--transition-bezier-curve);
+    }
+
+    @media (max-width: 787px) {
+      padding: 7px 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 12px;
     }
 
     &:hover:after,
@@ -64,6 +74,17 @@ const CategoriesStyles = styled(motion.ul)`
     &:last-of-type {
       margin-right: 0;
     }
+    @media (max-width: 768px) {
+      &:after {
+        left: 12px;
+      }
+      &:first-of-type {
+        padding-left: 12px;
+        &:after {
+          left: 12px;
+        }
+      }
+    }
   }
 `
 
@@ -73,9 +94,11 @@ const BlogCategories = ({
   setActiveCategory,
   setCurrentPage,
 }) => {
-  function handleClickCategory(category) {
+  function handleClickCategory(e, category) {
+    e.preventDefault()
     setActiveCategory(category)
     setCurrentPage(1)
+    return false
   }
 
   return (
@@ -88,10 +111,9 @@ const BlogCategories = ({
             key={category}
             whileHover={{ y: -4 }}
             whileTap={!isCategoryActive && { scale: 0.98 }}
-            whileFocus={{ y: -4 }}
             transition={{ ease: [0.6, -0.05, 0.01, 0.99], duration: 0.3 }}
             className={isCategoryActive ? "active" : undefined}
-            onClick={() => handleClickCategory(category)}
+            onClick={e => handleClickCategory(e, category)}
           >
             {category}
           </motion.button>

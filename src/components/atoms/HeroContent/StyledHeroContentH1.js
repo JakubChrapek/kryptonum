@@ -9,6 +9,9 @@ export const StyledHeroContentH1 = styled(TextStyles)`
   @media only screen and (max-width: 558px) {
     font-size: 40px;
   }
+  @media only screen and (max-width: 500px) {
+    font-size: ${({ variant }) => (variant === "blog" ? "24px" : "")};
+  }
   @media only screen and (max-width: 394px) {
     font-size: 32px;
   }

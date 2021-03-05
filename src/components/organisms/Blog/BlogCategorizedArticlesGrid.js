@@ -1,4 +1,4 @@
-import { AnimateSharedLayout } from "framer-motion"
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import { useStaticQuery } from "gatsby"
 import React, { useEffect, useState } from "react"
 import { Container } from "../../atoms/Container/Container"
@@ -77,29 +77,32 @@ const BlogCategorizedArticlesGrid = () => {
 
   return (
     <Container bg={"var(--light-gray)"}>
-      <Wrapper direction="column" padding="75px 146px 87px 136px">
+      <Wrapper
+        variant="blog"
+        direction="column"
+        padding="75px 146px 87px 124px"
+      >
+        <BlogCategories
+          categories={articleCategories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          setCurrentPage={setCurrentPage}
+        />
         <AnimateSharedLayout type="crossfade">
-          <BlogCategories
-            categories={articleCategories}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-            setCurrentPage={setCurrentPage}
-            layout
-          />
-          <BlogArticlesGrid
-            posts={filteredArticles}
-            ArticlesPerPage={ArticlesPerPage}
-            activeCategory={activeCategory}
-            layout
-          />
-          <BlogArticlesGridPagination
-            ArticlesPerPage={ArticlesPerPage}
-            numberOfArticles={filteredArticles.length}
-            pages={pages}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            layout
-          />
+          <AnimatePresence exitBeforeEnter>
+            <BlogArticlesGrid
+              posts={filteredArticles}
+              ArticlesPerPage={ArticlesPerPage}
+              activeCategory={activeCategory}
+            />
+            <BlogArticlesGridPagination
+              ArticlesPerPage={ArticlesPerPage}
+              numberOfArticles={filteredArticles.length}
+              pages={pages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          </AnimatePresence>
         </AnimateSharedLayout>
       </Wrapper>
     </Container>

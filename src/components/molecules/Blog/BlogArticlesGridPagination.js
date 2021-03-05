@@ -2,12 +2,19 @@ import { motion } from "framer-motion"
 import React from "react"
 import styled from "styled-components"
 import { VscArrowRight, VscArrowLeft } from "react-icons/vsc"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const PaginationStyles = styled(motion.div)`
   display: flex;
   width: 100%;
   margin-top: 84px;
   justify-content: center;
+  @media (max-width: 768px) {
+    margin-top: 78px;
+  }
+  @media (max-width: 600px) {
+    margin-top: 64px;
+  }
 `
 
 const PaginationList = styled(motion.ul)`
@@ -23,6 +30,12 @@ const PaginationList = styled(motion.ul)`
     color: var(--black);
     padding: 8px;
     margin: 0 9px;
+
+    @media (max-width: 500px) {
+      font-size: 15px;
+      padding: 6px;
+      margin: 0 6px;
+    }
 
     &:not(.arrow) {
       position: relative;
@@ -93,6 +106,18 @@ const BlogArticlesGridPagination = ({
   currentPage,
   setCurrentPage,
 }) => {
+  function handleNextPageClick(e) {
+    e.preventDefault()
+    setCurrentPage(currentPage + 1)
+  }
+
+  function handlePrevPageClick(e) {
+    e.preventDefault()
+    setCurrentPage(currentPage - 1)
+  }
+
+  let width = useWindowSize()
+
   return (
     <motion.div>
       {pages > 1 && (
@@ -105,13 +130,16 @@ const BlogArticlesGridPagination = ({
             <motion.button
               role="button"
               disabled={currentPage === 1}
-              onClick={() => setCurrentPage(currentPage - 1)}
+              onClick={handlePrevPageClick}
               whileHover={currentPage !== 1 && { x: -4 }}
-              whileTap={currentPage !== 1 && { x: -6 }}
+              whileTap={currentPage !== 1 && { scale: 0.98, x: -6 }}
               className="arrow"
-              style={{ marginRight: 24 }}
+              style={width > 500 ? { marginRight: 24 } : { marginRight: 18 }}
             >
-              <VscArrowLeft size="30px" color="var(--black)" />
+              <VscArrowLeft
+                size={width > 500 ? "30px" : "24px"}
+                color="var(--black)"
+              />
             </motion.button>
             {Array.from(Array(pages).keys()).map(pageNumber => (
               <motion.button
@@ -125,13 +153,16 @@ const BlogArticlesGridPagination = ({
             <motion.button
               role="button"
               disabled={currentPage >= pages}
-              onClick={() => setCurrentPage(currentPage + 1)}
-              whileHover={currentPage < pages && { scale: 1.02, x: 4 }}
+              onClick={handleNextPageClick}
+              whileHover={currentPage < pages && { x: 4 }}
               whileTap={currentPage < pages && { scale: 0.98, x: 6 }}
               className="arrow"
-              style={{ marginLeft: 24 }}
+              style={width > 500 ? { marginLeft: 24 } : { marginLeft: 18 }}
             >
-              <VscArrowRight size="30px" color="var(--black)" />
+              <VscArrowRight
+                size={width > 500 ? "30px" : "24px"}
+                color="var(--black)"
+              />
             </motion.button>
           </PaginationList>
         </PaginationStyles>
