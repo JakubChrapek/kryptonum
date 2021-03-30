@@ -9,8 +9,4 @@ export const StyledLogoTitle = styled(motion.h1)`
   line-height: 1.2em;
   font-weight: 500;
   font-family: "Libre Baskerville";
-  transform: translateX(-34%);
-  @media only screen and (max-width: 800px) {
-    transform: translateX(0);
-  }
 `

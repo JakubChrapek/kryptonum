@@ -6,10 +6,13 @@ const MenuDispatchContext = React.createContext()
 function MenuReducer(state, action) {
   switch (action.type) {
     case "TOGGLE_MENU": {
-      return { show: !state.show }
+      return { ...state, show: !state.show }
     }
     case "CLOSE_MENU": {
-      return { show: false }
+      return { ...state, show: false }
+    }
+    case "SET_DISABLED": {
+      return { ...state, disabled: action.disabled }
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`)
@@ -17,7 +20,10 @@ function MenuReducer(state, action) {
   }
 }
 function MenuProvider({ children }) {
-  const [state, dispatch] = React.useReducer(MenuReducer, { show: false })
+  const [state, dispatch] = React.useReducer(MenuReducer, {
+    show: false,
+    disabled: false,
+  })
   return (
     <MenuStateContext.Provider value={state}>
       <MenuDispatchContext.Provider value={dispatch}>

@@ -8,9 +8,8 @@ export const StyledHeader = styled(motion.header)`
   height: 88px;
   width: 100%;
   margin: 0 auto;
-  max-width: 1366px;
   margin: 0 auto;
-  padding: 32px 62px 32px 62px;
+  padding: 35px 70px;
   z-index: 3;
 
   @media only screen and (max-width: 800px) {

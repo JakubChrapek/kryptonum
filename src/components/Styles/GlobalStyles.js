@@ -89,6 +89,19 @@ const Global = createGlobalStyle`
     border-color: var(--white);
   }
 
+    html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--white);
+    }
+    body::-webkit-scrollbar-track {
+      background: var(--white);
+    }
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--accent) ;
+      border-radius: 6px;
+      border: 3px solid var(--white);
+    }
+
   /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
   html.has-scroll-smooth {
     overflow: hidden;

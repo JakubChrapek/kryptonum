@@ -13,7 +13,6 @@ export const StyledNavBurger = styled(motion.button)`
   border: none;
   background-color: transparent;
   z-index: 99;
-  mix-blend-mode: difference;
 
   @media only screen and (max-width: 800px) {
     position: absolute;
@@ -26,13 +25,18 @@ export const StyledNavBurger = styled(motion.button)`
     outline: none;
   }
 
-  &::focus-visible {
+  &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #000;
+    box-shadow: 0 0 0 2px #fff;
   }
 
   &.active {
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px #181818;
+    }
     span {
+      background-color: var(--black);
       margin: 0;
       &:first-child {
         transform: rotate(45deg) translate(1px, 0px);

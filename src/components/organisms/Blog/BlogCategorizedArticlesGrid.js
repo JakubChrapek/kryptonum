@@ -1,5 +1,5 @@
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import { Container } from "../../atoms/Container/Container"
 import { Wrapper } from "../../atoms/Wrapper/Wrapper"

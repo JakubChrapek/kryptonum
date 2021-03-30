@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import {
   containerTransition,
@@ -20,6 +20,9 @@ import { TextStyles } from "../../../atoms/Text/Text"
 
 //Contexts
 import { useMenuDispatch, useMenuState } from "../../../../contexts/menuContext"
+
+//Helpers
+import useOutsideRefClick from "../../../../utils/useOutsideRefClick"
 
 const Navigation = ({ mobile, width }) => {
   const navItems = [
@@ -56,6 +59,8 @@ const Navigation = ({ mobile, width }) => {
   ]
 
   const dispatch = useMenuDispatch()
+  const menuWrapperRef = useRef(null)
+  useOutsideRefClick(menuWrapperRef, () => dispatch({ type: "CLOSE_MENU" }))
 
   useEffect(() => {
     function handleKeyPress(event) {
@@ -76,6 +81,7 @@ const Navigation = ({ mobile, width }) => {
         exit="exit"
       />
       <StyledNavigationStyles
+        ref={menuWrapperRef}
         variants={containerTransition}
         initial="initial"
         animate="animate"
@@ -88,7 +94,14 @@ const Navigation = ({ mobile, width }) => {
             justifyContent="space-between"
           >
             <div>
-              <motion.p>Social</motion.p>
+              <TextStyles
+                fontSize="15px"
+                lineHeight="1.47em"
+                color="var(--text-gray)"
+                declaredMargin="0 0 0 8px"
+              >
+                Social
+              </TextStyles>
               <StyledSocialList>
                 <motion.li>
                   <StyledOutLink href="https://facebook.com/kryptonum">

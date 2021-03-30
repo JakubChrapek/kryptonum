@@ -1,4 +1,4 @@
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import React, { useRef, useState } from "react"
 import Img from "gatsby-image"
 import { useLocation } from "@reach/router"

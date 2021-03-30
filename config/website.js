@@ -7,9 +7,9 @@ module.exports = {
     "🚀We create websites you can see from outer space ⭐️ Give you the best business advice ☄️ All that to help your business reach the stars!",
   headline: "Kryptonum - web designers from outer space", // Headline for schema.org JSONLD
   url: "https://www.kryptonum.co.uk", // Domain of your site. No trailing slash!
-  siteLanguage: "en", // Language Tag on <html> element
+  siteLanguage: "pl", // Language Tag on <html> element
   logo: "/images/gatsby-astronaut.png", // Used for SEO
-  ogLanguage: "en_EN", // Facebook Language
+  ogLanguage: "pl_PL", // Facebook Language
 
   // JSONLD / Manifest
   favicon: "images/favicon.png", // Used for manifest favicon generation

@@ -18,7 +18,7 @@ import { StyledHeaderWrapper } from "../../atoms/Header/StyledHeaderWrapper"
 const Header = ({ theme }) => {
   let pathname = useLocation().pathname
   const dispatch = useMenuDispatch()
-  const { show } = useMenuState()
+  const { show, disabled } = useMenuState()
   const width = useWindowSize()
 
   return (
@@ -39,20 +39,14 @@ const Header = ({ theme }) => {
           <Logo color={theme === "light" ? "var(--white)" : "var(--black)"} />
         </StyledHeaderLink>
         <StyledNavBurger
-          onClick={() => {
-            dispatch({ type: "TOGGLE_MENU" })
-          }}
+          id="menuHamburgerBtn"
+          onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+          disabled={disabled}
           className={show ? "active" : null}
           whileTap={{ scale: 0.9 }}
         >
-          <StyledNavBurgerSpan
-            color={theme && pathname !== "/projects" ? "light" : "dark"}
-            mobile={show}
-          />
-          <StyledNavBurgerSpan
-            color={theme && pathname !== "/projects" ? "light" : "dark"}
-            mobile={show}
-          />
+          <StyledNavBurgerSpan color={theme} mobile={show} />
+          <StyledNavBurgerSpan color={theme} mobile={show} />
         </StyledNavBurger>
         <AnimatePresence exitBeforeEnter>
           {show && <Navigation width={width} />}
