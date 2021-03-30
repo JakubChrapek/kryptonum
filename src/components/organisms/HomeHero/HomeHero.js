@@ -10,11 +10,28 @@ import { Wrapper } from "../../atoms/StyledHeroHomeWrapper/StyledHeroHomeWrapper
 import { HomeHeroSection } from "../../atoms/StyledHomeHeroSection/StyledHomeHeroSection"
 import { StyledFullPageResponsieImage } from "../../atoms/StyledFullPageResponsieImage/StyledFullPageResponsieImage"
 import { StyledScrollLink } from "../../atoms/StyledHeroLink/StyledHeroLink"
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+} from "../../../contexts/cursorContext"
 
 const HomeHero = ({ bg }) => {
   const width = useWindowSize()
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <HomeHeroSection>
+    <HomeHeroSection
+      onMouseOver={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.LIGHT,
+        })
+      }}
+    >
       {width >= 683 && <GrayLine />}
       <GreenLine />
       <Wrapper>

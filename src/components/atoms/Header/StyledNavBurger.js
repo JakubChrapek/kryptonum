@@ -27,13 +27,13 @@ export const StyledNavBurger = styled(motion.button)`
 
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px ${({ color }) => color};
   }
 
   &.active {
     &:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 2px #181818;
+      box-shadow: 0 0 0 2px var(--black);
     }
     span {
       background-color: var(--black);

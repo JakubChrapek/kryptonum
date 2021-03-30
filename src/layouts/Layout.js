@@ -1,7 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "../components/organisms/Header/Header"
 import SEO from "../components//SEO"
 import GlobalStyles from "../components/Styles/GlobalStyles"
@@ -12,22 +10,28 @@ import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
 import Footer from "../components/organisms/Footer/Footer"
 import ScrollToTop from "../components/organisms/ScrollToTop/ScrollToTop"
+import useMousePosition from "../utils/useMousePosition"
+import useWindowSize from "../utils/getWindowSize"
+import {
+  useCursorDispatchContext,
+  useCursorStateContext,
+} from "../contexts/cursorContext"
+import Cursor from "../components/organisms/Cursor/Cursor"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const {
+    cursorShow,
+    cursorType,
+    cursorColor,
+    cursorSize,
+  } = useCursorStateContext()
+  const width = useWindowSize()
   let pathname = useLocation().pathname
+
   const getThemeFromPathname = name => {
     if (name === "/") {
       return "light"
@@ -35,10 +39,20 @@ const Layout = ({ children }) => {
       return "dark"
     }
   }
+
   return (
     <MenuProvider>
       <GlobalStyles />
       {/* <Scroll /> */}
+      {/* Cursor */}
+      {width > 1024 && (
+        <Cursor
+          show={cursorShow}
+          type={cursorType}
+          color={cursorColor}
+          size={cursorSize}
+        />
+      )}
       <SkipNavLink />
       <SEO />
       <ScrollToTop />

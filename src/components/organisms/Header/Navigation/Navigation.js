@@ -23,8 +23,15 @@ import { useMenuDispatch, useMenuState } from "../../../../contexts/menuContext"
 
 //Helpers
 import useOutsideRefClick from "../../../../utils/useOutsideRefClick"
+//Contexts
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+} from "../../../../contexts/cursorContext"
 
 const Navigation = ({ mobile, width }) => {
+  const dispatchCursor = useCursorDispatchContext()
   const navItems = [
     {
       number: "01",
@@ -81,6 +88,26 @@ const Navigation = ({ mobile, width }) => {
         exit="exit"
       />
       <StyledNavigationStyles
+        onMouseOver={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+        }}
+        onMouseOut={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+        }}
         ref={menuWrapperRef}
         variants={containerTransition}
         initial="initial"

@@ -21,6 +21,8 @@ const Global = createGlobalStyle`
     --error: #C32F27;
     --masonry-gap: 64px;
     --transition-bezier-curve: cubic-bezier(0.6, -0.05, 0.01, 0.99);
+    --cursor-full: var(--dark-bg);
+    --cursor-light: var(--lightest-gray);
     font-size: 10px;
   }
   *,
@@ -89,77 +91,6 @@ const Global = createGlobalStyle`
     border-color: var(--white);
   }
 
-    html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) var(--white);
-    }
-    body::-webkit-scrollbar-track {
-      background: var(--white);
-    }
-    body::-webkit-scrollbar-thumb {
-      background-color: var(--accent) ;
-      border-radius: 6px;
-      border: 3px solid var(--white);
-    }
-
-  /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
-  html.has-scroll-smooth {
-    overflow: hidden;
-  }
-
-  html.has-scroll-dragging {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .has-scroll-smooth body {
-    overflow: hidden;
-  }
-
-  /* Specifying the scroll container manually */
-  .has-scroll-smooth #___gatsby,
-  .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh;
-  }
-
-  .c-scrollbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 15px;
-    height: 100vh;
-    transform-origin: center right;
-    transition: transform 0.3s, opacity 0.3s;
-    opacity: 0;
-  }
-  .c-scrollbar:hover {
-    transform: scaleX(1.6);
-  }
-  .c-scrollbar:hover,
-  .has-scroll-scrolling .c-scrollbar,
-  .has-scroll-dragging .c-scrollbar {
-    opacity: 1;
-  }
-
-  .c-scrollbar_thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--white) 100%);
-    opacity: 0.5;
-    width: 7px;
-    border-radius: 15px;
-    margin: 2px;
-    cursor: -webkit-grab;
-    cursor: grab;
-  }
-  .has-scroll-dragging .c-scrollbar_thumb {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-  }
-
   .body-lock {
   overflow-y: hidden;
   }
@@ -180,12 +111,6 @@ const Global = createGlobalStyle`
       --masonry-gap: 40px;
     }
   }
-
-  /* Style your items */
-  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-    
-  }
-
 `
 
 const GlobalStyles = () => {

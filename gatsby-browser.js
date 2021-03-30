@@ -5,6 +5,7 @@ const ScrollTrigger = require("gsap/ScrollTrigger")
 const ScrollToPlugin = require("gsap/ScrollToPlugin")
 const CSSPlugin = require("gsap/CSSPlugin")
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSPlugin)
+const CursorProvider = require("./src/contexts/cursorContext").CursorProvider
 
 // exports.shouldUpdateScroll = ({
 //   routerProps: { location },
@@ -22,7 +23,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSPlugin)
 exports.wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
-  return <Layout {...props}>{element}</Layout>
+  return (
+    <CursorProvider>
+      <Layout {...props}>{element}</Layout>
+    </CursorProvider>
+  )
 }
 
 exports.onClientEntry = () => {

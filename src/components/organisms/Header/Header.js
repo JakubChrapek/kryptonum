@@ -14,10 +14,12 @@ import { StyledNavBurger } from "../../atoms/Header/StyledNavBurger"
 import { StyledNavBurgerSpan } from "../../atoms/Header/StyledNavBurgerSpan"
 import { StyledHeaderLink } from "../../atoms/Header/StyledHeaderLink"
 import { StyledHeaderWrapper } from "../../atoms/Header/StyledHeaderWrapper"
+import { useCursorDispatchContext } from "../../../contexts/cursorContext"
 
 const Header = ({ theme }) => {
   let pathname = useLocation().pathname
   const dispatch = useMenuDispatch()
+  const dispatchCursor = useCursorDispatchContext()
   const { show, disabled } = useMenuState()
   const width = useWindowSize()
 
@@ -40,10 +42,13 @@ const Header = ({ theme }) => {
         </StyledHeaderLink>
         <StyledNavBurger
           id="menuHamburgerBtn"
-          onClick={() => dispatch({ type: "TOGGLE_MENU" })}
+          onClick={() => {
+            dispatch({ type: "TOGGLE_MENU" })
+          }}
           disabled={disabled}
           className={show ? "active" : null}
           whileTap={{ scale: 0.9 }}
+          color={theme === "light" ? "var(--white)" : "var(--black)"} // !!!!!!!!!!!!!!
         >
           <StyledNavBurgerSpan color={theme} mobile={show} />
           <StyledNavBurgerSpan color={theme} mobile={show} />
