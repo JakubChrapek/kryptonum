@@ -43,16 +43,12 @@ const Layout = ({ children }) => {
   return (
     <MenuProvider>
       <GlobalStyles />
-      {/* <Scroll /> */}
-      {/* Cursor */}
-      {width > 1024 && (
-        <Cursor
-          show={cursorShow}
-          type={cursorType}
-          color={cursorColor}
-          size={cursorSize}
-        />
-      )}
+      <Cursor
+        show={cursorShow}
+        type={cursorType}
+        color={cursorColor}
+        size={cursorSize}
+      />
       <SkipNavLink />
       <SEO />
       <ScrollToTop />

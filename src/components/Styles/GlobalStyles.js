@@ -35,6 +35,7 @@ const Global = createGlobalStyle`
   body {
     font-size: 1.6rem;
     font-family: "Poppins";
+    overflow-x: hidden;
     ${({ mobileMenuShown }) =>
       mobileMenuShown &&
       css`

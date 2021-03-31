@@ -8,6 +8,12 @@ import ImageColumnSmallWidth from "./ImageColumnSmallWidth"
 import { StyledProjectSectionWrapper } from "../../atoms/ProjectsSection/StyledProjectSectionWrapper"
 import { StyledProjectsColumn } from "../../molecules/ProjectSection/StyledProjectsColumn"
 import { StyledProjectsStyles } from "../../atoms/ProjectsSection/StyledProjectsStyles"
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+} from "../../../contexts/cursorContext"
 
 import MaxWidthSlider from "./MaxWidthSlider"
 
@@ -34,6 +40,7 @@ const query = graphql`
 const ProjectsSection = () => {
   const width = useWindowSize()
   const data = useStaticQuery(query)
+  const dispatchCursor = useCursorDispatchContext()
   const [activeProject, setActiveProject] = useState(0)
 
   const handleClick = iterator => {
@@ -41,13 +48,52 @@ const ProjectsSection = () => {
   }
 
   return (
-    <StyledProjectSectionWrapper>
+    <StyledProjectSectionWrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+      }}
+    >
       <StyledProjectsStyles>
         <StyledProjectsColumn>
           {data.allDatoCmsProject.nodes.map((project, iterator) => (
             <motion.li
               key={project.projectTitle}
               onClick={() => handleClick(iterator)}
+              onMouseEnter={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.ACCENT,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.BIGGER,
+                })
+              }}
+              onMouseLeave={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.DARK,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
               className={iterator === activeProject ? "active" : null}
               whileHover={{
                 scale: 1.02,
@@ -62,7 +108,38 @@ const ProjectsSection = () => {
               {project.projectTitle}
             </motion.li>
           ))}
-          <Link className="btn" to="/projects">
+          <Link
+            onMouseEnter={() => {
+              dispatchCursor({
+                type: "CHANGE_CURSOR_TYPE",
+                cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_COLOR",
+                cursorColor: CURSOR_COLORS.ACCENT,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_SIZE",
+                cursorSize: CURSOR_SIZES.BIGGER,
+              })
+            }}
+            onMouseLeave={() => {
+              dispatchCursor({
+                type: "CHANGE_CURSOR_TYPE",
+                cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_COLOR",
+                cursorColor: CURSOR_COLORS.DARK,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_SIZE",
+                cursorSize: CURSOR_SIZES.DEFAULT,
+              })
+            }}
+            className="btn"
+            to="/projects"
+          >
             View all projects
           </Link>
         </StyledProjectsColumn>

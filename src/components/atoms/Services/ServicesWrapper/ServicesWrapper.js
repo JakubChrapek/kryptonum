@@ -49,7 +49,7 @@ export const ServicesWrapper = styled.ul`
         width: calc(100% - 15px);
         height: 3px;
         background-color: var(--accent);
-        z-index: -1;
+        /* z-index: -1; */
       }
     }
   }

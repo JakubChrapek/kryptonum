@@ -6,6 +6,12 @@ import { TextStyles } from "../../atoms/Text/Text"
 import { animateScroll } from "react-scroll"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import useWindowSize from "../../../utils/getWindowSize"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const ScrollToTopStyles = styled(motion.button)`
   display: flex;
@@ -55,6 +61,7 @@ const ScrollToTopStyles = styled(motion.button)`
 `
 
 const ScrollToTop = () => {
+  const dispatchCursor = useCursorDispatchContext()
   const [showScrollToTop, setShowScrollToTop] = useState(false)
   let width = useWindowSize()
   const variants = {
@@ -94,6 +101,18 @@ const ScrollToTop = () => {
             },
           }}
           onClick={() => animateScroll.scrollToTop()}
+          onMouseEnter={() => {
+            dispatchCursor({
+              type: "CHANGE_CURSOR_SIZE",
+              cursorSize: CURSOR_SIZES.SMALLER,
+            })
+          }}
+          onMouseLeave={() => {
+            dispatchCursor({
+              type: "CHANGE_CURSOR_SIZE",
+              cursorSize: CURSOR_SIZES.DEFAULT,
+            })
+          }}
         >
           <motion.span variants={item}>
             <VscArrowLeft

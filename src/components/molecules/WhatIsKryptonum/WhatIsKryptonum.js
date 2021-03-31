@@ -13,11 +13,28 @@ import { FirstRow } from "../../atoms/WhatIsKryptonumGrid/FirstRow"
 import { SecondRow } from "../../atoms/WhatIsKryptonumGrid/SecondRow"
 import { ThirdRow } from "../../atoms/WhatIsKryptonumGrid/ThirdRow"
 import { CreativeRow } from "../../atoms/WhatIsKryptonumGrid/CreativeRow"
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+} from "../../../contexts/cursorContext"
 
 const WhatIsKryptonum = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
     <>
-      <SectionStyles>
+      <SectionStyles
+        onMouseOver={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+        }}
+      >
         <WhatIsKryptonumWrapper>
           <FirstRow>
             <h2>
@@ -70,7 +87,18 @@ const WhatIsKryptonum = () => {
           </ThirdRow>
         </WhatIsKryptonumWrapper>
       </SectionStyles>
-      <CreativeSection>
+      <CreativeSection
+        onMouseOver={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+        }}
+      >
         <WhatIsKryptonumWrapper>
           <CreativeRow>
             <Creativity hasDeclaredTransform={false}>

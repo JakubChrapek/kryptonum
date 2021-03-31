@@ -4,10 +4,32 @@ import { SectionStyles } from "../../atoms/CtaSection/StyledCtaSection"
 import { Wrapper } from "../../atoms/CtaSection/StyledCtaWrapper"
 import { StyledCtaH2 } from "../../atoms/CtaSection/StyledCtaH2"
 import { StyledCtaLink } from "../../atoms/CtaSection/StyledCtaLink"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const CtaSection = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <Wrapper>
+    <Wrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.LIGHT,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.DEFAULT,
+        })
+      }}
+    >
       <SectionStyles>
         <StyledCtaH2
           fontSize="70px"
@@ -18,7 +40,38 @@ const CtaSection = () => {
         >
           Let's make a wonderful <span>website</span> <span>together</span>
         </StyledCtaH2>
-        <StyledCtaLink to="/contact" className="btn btn__small btn__light">
+        <StyledCtaLink
+          onMouseEnter={() => {
+            dispatchCursor({
+              type: "CHANGE_CURSOR_TYPE",
+              cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            })
+            dispatchCursor({
+              type: "CHANGE_CURSOR_COLOR",
+              cursorColor: CURSOR_COLORS.ACCENT,
+            })
+            dispatchCursor({
+              type: "CHANGE_CURSOR_SIZE",
+              cursorSize: CURSOR_SIZES.BIGGER,
+            })
+          }}
+          onMouseLeave={() => {
+            dispatchCursor({
+              type: "CHANGE_CURSOR_TYPE",
+              cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            })
+            dispatchCursor({
+              type: "CHANGE_CURSOR_COLOR",
+              cursorColor: CURSOR_COLORS.LIGHT,
+            })
+            dispatchCursor({
+              type: "CHANGE_CURSOR_SIZE",
+              cursorSize: CURSOR_SIZES.DEFAULT,
+            })
+          }}
+          to="/contact"
+          className="btn btn__small btn__light"
+        >
           Contact us
         </StyledCtaLink>
       </SectionStyles>

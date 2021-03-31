@@ -15,8 +15,15 @@ import { StyledCopyrightWrapperDiv } from "../../atoms/Footer/StyledCopyrightWra
 import { StyledCopyrightWrapperDivSpan } from "../../atoms/Footer/StyledCopyrightWrapperDivSpan"
 
 import { TextStyles } from "../../atoms/Text/Text"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const Footer = () => {
+  const dispatchCursor = useCursorDispatchContext()
   const footerNavigation = [
     {
       name: "Explore",
@@ -71,7 +78,22 @@ const Footer = () => {
     },
   ]
   return (
-    <StyledFooterWrapper>
+    <StyledFooterWrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.LIGHT,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.DEFAULT,
+        })
+      }}
+    >
       <StyledFooterSectionStyles>
         <StyledTopFooterWrapper>
           <StyledRotatedLogo>Kryptonum</StyledRotatedLogo>
@@ -112,7 +134,37 @@ const Footer = () => {
                 </StyledMenuColumnUlP>
                 {column.items.map(item => (
                   <li key={item.name}>
-                    <StyledMenuColumnLink to={item.link}>
+                    <StyledMenuColumnLink
+                      onMouseEnter={() => {
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_TYPE",
+                          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                        })
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_COLOR",
+                          cursorColor: CURSOR_COLORS.ACCENT,
+                        })
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_SIZE",
+                          cursorSize: CURSOR_SIZES.DEFAULT,
+                        })
+                      }}
+                      onMouseLeave={() => {
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_TYPE",
+                          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                        })
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_COLOR",
+                          cursorColor: CURSOR_COLORS.LIGHT,
+                        })
+                        dispatchCursor({
+                          type: "CHANGE_CURSOR_SIZE",
+                          cursorSize: CURSOR_SIZES.DEFAULT,
+                        })
+                      }}
+                      to={item.link}
+                    >
                       {item.name}
                     </StyledMenuColumnLink>
                   </li>

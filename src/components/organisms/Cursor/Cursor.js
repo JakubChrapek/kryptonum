@@ -10,13 +10,10 @@ import {
 
 const CursorStyles = styled(motion.div)`
   cursor: pointer;
-  height: 4.2rem;
-  width: 4.2rem;
   position: absolute;
   z-index: 10;
   top: 0;
   opacity: 0.2;
-  border-radius: 100%;
   pointer-events: none;
   border: 2px solid;
   transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -34,37 +31,35 @@ const CursorStyles = styled(motion.div)`
           background-color: transparent;
           border-color: ${color};
         `
-      : `
-          opacity: 0;
-        `}
-
-  &--full {
-    background: var(--cursor-full);
-  }
-
-  &--outline {
-    background: transparent;
-    border: 2px solid var(--black);
-  }
-  &--light {
-    background: var(--cursor-light);
-  }
-  &--smaller {
-    width: 2.6rem;
-    height: 2.6rem;
-  }
+      : type === CURSOR_TYPES.INPUT_CURSOR
+      ? `
+          background-color: ${color};
+          border: 0;
+          border-radius: 0;
+          width: 0.3rem;
+        `
+      : ``}
 `
 
 const Cursor = ({ show, type, color, size }) => {
   const { x, y } = useMousePosition()
+
   return (
     <CursorStyles
       initial={{ scale: 0, opacity: 0 }}
       animate={{
-        x: x - 21,
+        x: type === CURSOR_TYPES.INPUT_CURSOR ? x : x - 21,
         y: y - 21,
-        scale: show ? 1.2 : 1,
+        scale:
+          size === CURSOR_SIZES.BIGGER
+            ? 1.5
+            : size === CURSOR_SIZES.SMALLER
+            ? 0.75
+            : 1,
         opacity: show ? 1 : 0,
+        width: type === CURSOR_TYPES.INPUT_CURSOR ? "0.4rem" : "4.2rem",
+        height: "4.2rem",
+        borderRadius: type === CURSOR_TYPES.INPUT_CURSOR ? "0%" : "100%",
       }}
       transition={{
         ease: "linear",

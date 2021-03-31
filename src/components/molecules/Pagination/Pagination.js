@@ -5,8 +5,15 @@ import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg"
 import { PaginationStyles } from "../../atoms/BlogSection/StyledPagination"
 import { StyledLine } from "../../atoms/BlogSection/StyledLine"
 import { StyledButtonPagination } from "../../atoms/BlogSection/StyledButtonPagination"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const Pagination = ({ length, currentPage, setCurrentPage }) => {
+  const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
   const nextDisabled = currentPage >= length - 1
   return (
@@ -18,6 +25,34 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
         style={{ marginRight: "6px" }}
         onClick={!prevDisabled ? () => setCurrentPage(currentPage - 1) : null}
         disabled={prevDisabled}
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.ACCENT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.BIGGER,
+          })
+        }}
+        onMouseLeave={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.DEFAULT,
+          })
+        }}
       >
         <CgArrowLongLeft
           size="40px"
@@ -31,6 +66,34 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
         style={{ marginLeft: "6px" }}
         onClick={!nextDisabled ? () => setCurrentPage(currentPage + 1) : null}
         disabled={nextDisabled}
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.ACCENT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.BIGGER,
+          })
+        }}
+        onMouseLeave={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.DEFAULT,
+          })
+        }}
       >
         <CgArrowLongRight
           size="40px"

@@ -8,6 +8,12 @@ import { TextStyles } from "../../atoms/Text/Text"
 import { element } from "prop-types"
 import { motion, useMotionValue } from "framer-motion"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const query = graphql`
   query {
@@ -28,6 +34,7 @@ const HowWeWorkSection = () => {
   const [sliderChildrenWidth, setSliderChildrenWidth] = useState(0)
   const [sliderConstraint, setSliderConstraint] = useState(0)
   const sliderRef = useRef(null)
+  const dispatchCursor = useCursorDispatchContext()
 
   const elementsWidth = () => {
     let sum = 0
@@ -70,7 +77,23 @@ const HowWeWorkSection = () => {
   }, [sliderChildrenWidth, sliderRef, sliderWidth])
 
   return (
-    <BgColourWrapper bg="var(--white)">
+    <BgColourWrapper
+      onMouseOver={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.DEFAULT,
+        })
+      }}
+      bg="var(--white)"
+    >
       <StyledHowWeWorkSection howWeWorkSection={true}>
         <TextStyles
           fontSize="8px"

@@ -4,9 +4,28 @@ import { ServicesWrapper } from "../../atoms/Services/ServicesWrapper/ServicesWr
 import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
 import { ServicesStylesH2 } from "../../atoms/Services/ServicesStyles/ServicesStylesH2"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+} from "../../../contexts/cursorContext"
+
 const MainServices = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <BgColourWrapper bg="var(--white)">
+    <BgColourWrapper
+      onMouseOver={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+      }}
+      bg="var(--white)"
+    >
       <ServicesStyles id="whatwereupto">
         <ServicesStylesH2
           fontFamily="JetBrains Mono"

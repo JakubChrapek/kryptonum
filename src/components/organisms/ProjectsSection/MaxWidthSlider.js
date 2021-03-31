@@ -5,8 +5,15 @@ import Img from "gatsby-image"
 import { fadeInUp, stagger } from "../../Styles/Animations"
 import { StyledImageColumn } from "../../molecules/ProjectSection/StyledImageColumn"
 import { StyledCategoriesList } from "../../atoms/ProjectsSection/StyledCategoriesList"
+import {
+  CURSOR_COLORS,
+  CURSOR_TYPES,
+  CURSOR_SIZES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const MaxWidthSlider = ({ dataName, activeProject }) => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
     <StyledImageColumn>
       <AnimatePresence exitBeforeEnter>
@@ -16,6 +23,34 @@ const MaxWidthSlider = ({ dataName, activeProject }) => {
             <motion.div
               key={`${project.projectTitle}-${project.projectSlug}`}
               variants={stagger}
+              onMouseEnter={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.BIGGER,
+                })
+              }}
+              onMouseLeave={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.DARK,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
             >
               <motion.div
                 key={`${project.projectTitle}-${project.projectSlug}-img-wrapper`}

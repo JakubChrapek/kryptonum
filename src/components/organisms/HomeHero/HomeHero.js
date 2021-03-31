@@ -14,6 +14,7 @@ import {
   useCursorDispatchContext,
   CURSOR_TYPES,
   CURSOR_COLORS,
+  CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 
 const HomeHero = ({ bg }) => {
@@ -21,7 +22,7 @@ const HomeHero = ({ bg }) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <HomeHeroSection
-      onMouseOver={() => {
+      onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
           cursorType: CURSOR_TYPES.OUTLINED_CURSOR,

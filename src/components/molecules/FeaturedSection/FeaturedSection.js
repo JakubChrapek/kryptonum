@@ -7,10 +7,28 @@ import { StyledFeaturedWrapper } from "./FeaturedWrapper/StyledFeaturedWrapper"
 
 import { TextStyles } from "../../atoms/Text/Text"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
+import {
+  useCursorDispatchContext,
+  CURSOR_TYPES,
+  CURSOR_COLORS,
+} from "../../../contexts/cursorContext"
 
 const FeaturedSection = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <BgColourWrapper bg="var(--white)">
+    <BgColourWrapper
+      onMouseOver={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+      }}
+      bg="var(--white)"
+    >
       <ServicesStyles featuredSection={true}>
         <TextStyles
           fontSize="8px"

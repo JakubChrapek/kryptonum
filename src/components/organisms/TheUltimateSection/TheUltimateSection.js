@@ -14,6 +14,13 @@ import { StyledContentColumnH2 } from "../../atoms/TheUltimateSection/StyledCont
 import { StyledContentColumnSpan } from "../../atoms/TheUltimateSection/StyledContentColumnSpan"
 import { StyledContentColumnForm } from "../../molecules/StyledContentColumnForm/StyledContentColumnForm"
 import { StyledContentColumnLastParagraph } from "../../atoms/TheUltimateSection/StyledContentColumnLastParagraph"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
+
 const theUltimateSectionQuery = graphql`
   query ultimateImage {
     datoCmsPageHome {
@@ -27,6 +34,7 @@ const theUltimateSectionQuery = graphql`
 `
 
 const TheUltimateSection = () => {
+  const dispatchCursor = useCursorDispatchContext()
   const {
     datoCmsPageHome: { theUltimateContentChecklistImage },
   } = useStaticQuery(theUltimateSectionQuery)
@@ -77,7 +85,22 @@ const TheUltimateSection = () => {
   }
 
   return (
-    <StyledUltimateSectionWrapper>
+    <StyledUltimateSectionWrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.LIGHT,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.DEFAULT,
+        })
+      }}
+    >
       <StyledUltimateSectionStyles>
         <StyledContentColumn>
           <StyledContentColumnSpan
@@ -144,12 +167,68 @@ const TheUltimateSection = () => {
               value={inputValue}
               onChange={handleInput}
               className={error ? "error" : ""}
+              onMouseEnter={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.INPUT_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.DARK,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
+              onMouseLeave={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.LIGHT,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
             />
             <motion.button
               type="submit"
               whileHover={{ scale: 1.05 }}
               whileFocus={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onMouseEnter={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.DARK,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
+              onMouseLeave={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_COLOR",
+                  cursorColor: CURSOR_COLORS.LIGHT,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.DEFAULT,
+                })
+              }}
             >
               Get a copy
             </motion.button>

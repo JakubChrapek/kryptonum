@@ -5,6 +5,12 @@ import ArticlesGrid from "../ArticleGrid/ArticlesGrid"
 import { SectionStyles } from "../../atoms/BlogSection/StyledBlogSection"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const blogSectionQuery = graphql`
   query LastArticles {
@@ -25,11 +31,28 @@ const blogSectionQuery = graphql`
 `
 
 const BlogSection = () => {
+  const dispatchCursor = useCursorDispatchContext()
   const {
     allDatoCmsArticle: { nodes },
   } = useStaticQuery(blogSectionQuery)
   return (
-    <BgColourWrapper bg="var(--white)">
+    <BgColourWrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.DEFAULT,
+        })
+      }}
+      bg="var(--white)"
+    >
       <SectionStyles>
         <div>
           <StyledFeaturedWrapper
