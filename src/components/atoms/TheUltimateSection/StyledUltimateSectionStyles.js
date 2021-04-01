@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledUltimateSectionStyles = styled.div`
   display: flex;
-  padding: 113px 108px 83px 138px;
+  padding: 113px 108px 39px 138px;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;

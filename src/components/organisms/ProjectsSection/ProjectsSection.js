@@ -19,7 +19,7 @@ import MaxWidthSlider from "./MaxWidthSlider"
 
 const query = graphql`
   query ProjectsQuery {
-    allDatoCmsProject(limit: 5) {
+    allDatoCmsProject(limit: 5, filter: { locale: { eq: "pl" } }) {
       nodes {
         projectTitle
         projectType
@@ -112,11 +112,11 @@ const ProjectsSection = () => {
             onMouseEnter={() => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                cursorType: CURSOR_TYPES.FULL_CURSOR,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.ACCENT,
+                cursorColor: CURSOR_COLORS.LIGHT_TRANSPARENT,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
                 cursorSize: CURSOR_SIZES.DEFAULT,
               })
             }}
-            className="btn"
+            className="btn btn__dark"
             to="/projects"
           >
             View all projects

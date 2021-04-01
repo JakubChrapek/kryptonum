@@ -6,6 +6,7 @@ import {
   overlayTransition,
 } from "../../../Styles/Animations"
 
+import { useLocation } from "@reach/router"
 import { StyledNavigationStyles } from "../../../atoms/Header/Navigation/StyledNavigationStyles"
 import { StyledItem } from "../../../atoms/Header/Navigation/StyledItem"
 import { StyledLink } from "../../../atoms/Header/Navigation/StyledLink"
@@ -28,9 +29,10 @@ import {
   useCursorDispatchContext,
   CURSOR_TYPES,
   CURSOR_COLORS,
+  CURSOR_SIZES,
 } from "../../../../contexts/cursorContext"
 
-const Navigation = ({ mobile, width }) => {
+const Navigation = ({ mobile, width, pointerEvents }) => {
   const dispatchCursor = useCursorDispatchContext()
   const navItems = [
     {
@@ -79,6 +81,37 @@ const Navigation = ({ mobile, width }) => {
     return () => document.removeEventListener("keydown", handleKeyPress)
   }, [])
 
+  let pathname = useLocation().pathname
+  const handleOnMouseEnterForLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+
+  const handleOnMouseLeaveForLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
+
   return (
     <>
       <StyledNavigationOverlay
@@ -88,7 +121,8 @@ const Navigation = ({ mobile, width }) => {
         exit="exit"
       />
       <StyledNavigationStyles
-        onMouseOver={() => {
+        pointerEvents={pointerEvents}
+        onMouseEnter={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
             cursorType: CURSOR_TYPES.FULL_CURSOR,
@@ -97,15 +131,23 @@ const Navigation = ({ mobile, width }) => {
             type: "CHANGE_CURSOR_COLOR",
             cursorColor: CURSOR_COLORS.DARK,
           })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
         }}
-        onMouseOut={() => {
+        onMouseLeave={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_COLOR",
             cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
           })
         }}
         ref={menuWrapperRef}
@@ -131,12 +173,20 @@ const Navigation = ({ mobile, width }) => {
               </TextStyles>
               <StyledSocialList>
                 <motion.li>
-                  <StyledOutLink href="https://facebook.com/kryptonum">
+                  <StyledOutLink
+                    onPointerEnter={handleOnMouseEnterForLink}
+                    onPointerLeave={handleOnMouseLeaveForLink}
+                    href="https://facebook.com/kryptonum"
+                  >
                     Facebook
                   </StyledOutLink>
                 </motion.li>
                 <motion.li>
-                  <StyledOutLink href="https://instagram.com/kryptonum.studio">
+                  <StyledOutLink
+                    onPointerEnter={handleOnMouseEnterForLink}
+                    onPointerLeave={handleOnMouseLeaveForLink}
+                    href="https://instagram.com/kryptonum.studio"
+                  >
                     Instagram
                   </StyledOutLink>
                 </motion.li>
@@ -144,7 +194,11 @@ const Navigation = ({ mobile, width }) => {
             </div>
             <div>
               <StyledTextP margin="0 0 9px 0">Get in touch</StyledTextP>
-              <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
+              <StyledOutLink
+                onPointerEnter={handleOnMouseEnterForLink}
+                onPointerLeave={handleOnMouseLeaveForLink}
+                href="mailto:kuba@kryptonumstudio.com"
+              >
                 contact@kryptonum.co.uk
               </StyledOutLink>
             </div>
@@ -171,6 +225,8 @@ const Navigation = ({ mobile, width }) => {
                 activeClassName="active"
                 to={item.link}
                 key={item.name}
+                onPointerEnter={handleOnMouseEnterForLink}
+                onPointerLeave={handleOnMouseLeaveForLink}
               >
                 <StyledItem key={item.name}>{item.name}</StyledItem>
               </StyledLink>

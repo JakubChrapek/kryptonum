@@ -17,6 +17,7 @@ const FeaturedSection = () => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <BgColourWrapper
+      id="featuredProjects"
       onMouseOver={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
@@ -31,20 +32,21 @@ const FeaturedSection = () => {
     >
       <ServicesStyles featuredSection={true}>
         <TextStyles
-          fontSize="8px"
-          lineHeight="1.5em"
-          letterSpacing="1.33px"
-          fontFamily="Poppins"
+          fontSize="9px"
+          lineHeight="1.33em"
+          letterSpacing="2.57px"
+          fontFamily="JetBrains Mono"
           textTransform="uppercase"
-          fontWeight="bold"
+          fontWeight="500"
         >
           Works
         </TextStyles>
         <FeaturedSectionWrapper>
           <StyledFeaturedWrapper
             firstSpanLength="92%"
-            secondSpanLength="120%"
+            secondSpanLength="125%"
             hasMarginLeft={false}
+            mainHeader
           >
             <span>Featured</span>
             <span>Projects</span>

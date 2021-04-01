@@ -16,10 +16,10 @@ export const StyledOutLink = styled(motion.a)`
   &:before {
     content: "";
     position: absolute;
-    left: 8px;
+    left: 0;
     bottom: 3px;
     height: 1px;
-    width: calc(100% - 16px);
+    width: 100%;
     background-color: var(--black);
     transform: scaleY(0);
     transform-origin: center bottom;

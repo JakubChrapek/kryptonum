@@ -64,13 +64,16 @@ export const StyledContentColumnForm = styled.form`
     &:focus {
       border: 2px solid var(--accent);
     }
-    &:active,
-    &:focus {
-      outline: none;
-    }
 
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid var(--accent);
+    }
     &.error {
       border-color: var(--error);
+      &:focus {
+        outline-color: var(--error);
+      }
     }
   }
 
@@ -80,8 +83,16 @@ export const StyledContentColumnForm = styled.form`
     margin-top: 5px;
     color: var(--text-gray);
   }
-  .error {
+  .error,
+  .msg__error {
     color: var(--error);
+  }
+
+  .msg,
+  .msg__error {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
   }
 
   button {
@@ -106,6 +117,10 @@ export const StyledContentColumnForm = styled.form`
     &:active,
     &:hover {
       outline: none;
+    }
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid var(--accent);
     }
   }
 `

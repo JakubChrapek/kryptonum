@@ -11,6 +11,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import { LeftArrowPagination } from "../../atoms/Icons/arrows"
 
 const Pagination = ({ length, currentPage, setCurrentPage }) => {
   const dispatchCursor = useCursorDispatchContext()
@@ -28,11 +29,11 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
         onMouseEnter={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.ACCENT,
+            cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",
@@ -58,6 +59,7 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
           size="40px"
           color={prevDisabled ? "var(--text-gray)" : "var(--black)"}
         />
+        <LeftArrowPagination />
       </StyledButtonPagination>
       <StyledButtonPagination
         type="button"
@@ -69,11 +71,11 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
         onMouseEnter={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.ACCENT,
+            cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",

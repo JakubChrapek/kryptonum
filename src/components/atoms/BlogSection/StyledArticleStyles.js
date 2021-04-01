@@ -10,9 +10,9 @@ export const StyledArticleStyles = styled(Link)`
     width: 100%;
   }
   &:nth-child(2) {
-    padding-left: ${({ full }) => (full ? "0" : "26px")};
+    margin-left: ${({ full }) => (full ? "0" : "26px")};
     @media only screen and (max-width: 740px) {
-      padding-left: 0;
+      margin-left: 0;
     }
   }
   margin-top: ${({ full }) => full && "66px"};
@@ -24,5 +24,9 @@ export const StyledArticleStyles = styled(Link)`
     &:nth-child(1) {
       margin-top: ${({ full }) => full && "0"};
     }
+  }
+  &:focus {
+    outline-offset: 0px;
+    outline: 2px solid var(--black);
   }
 `

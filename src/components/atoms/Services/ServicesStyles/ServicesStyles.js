@@ -10,11 +10,11 @@ export const ServicesStyles = styled.section`
   align-items: ${({ featuredSection, howWeWorkSection }) =>
     featuredSection || howWeWorkSection ? "flex-start" : "center"};
   padding: ${({ featuredSection }) =>
-    featuredSection ? "0 123px 133px 141px" : "88px 123px 133px 141px"};
+    featuredSection ? "0 123px 133px 141px" : "88px 82px 133px 82px"};
 
   @media only screen and (max-width: 1366px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 93px 133px 111px" : "36px 93px 133px 111px"};
+      featuredSection ? "0 93px 133px 111px" : "36px 82px 133px 82px"};
   }
   @media only screen and (max-width: 1090px) {
     padding: ${({ featuredSection }) =>

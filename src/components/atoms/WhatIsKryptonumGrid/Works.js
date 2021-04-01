@@ -21,6 +21,6 @@ export const Works = styled.div`
     font-size: 8px;
     line-height: 1.5em;
     letter-spacing: 1.33px;
-    margin-bottom: 12px;
+    margin-bottom: 43px;
   }
 `

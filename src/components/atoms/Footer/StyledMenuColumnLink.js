@@ -54,4 +54,9 @@ export const StyledMenuColumnLink = styled(Link)`
       transform: scaleY(1);
     }
   }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 2px solid var(--white);
+  }
 `

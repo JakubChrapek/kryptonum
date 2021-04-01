@@ -96,7 +96,7 @@ const Footer = () => {
     >
       <StyledFooterSectionStyles>
         <StyledTopFooterWrapper>
-          <StyledRotatedLogo>Kryptonum</StyledRotatedLogo>
+          <StyledRotatedLogo to="/">Kryptonum</StyledRotatedLogo>
           <StyledInTouchColumn>
             <TextStyles
               fontFamily="Poppins"

@@ -21,5 +21,5 @@ module.exports = {
   facebook: "kryptonum", // Facebook Site Name
   googleAnalyticsID: "UA-143585485-1",
 
-  skipNavId: "skip-nav", // ID for the "Skip to content" a11y feature
+  skipNavId: "whatwereupto", // ID for the "Skip to content" a11y feature
 }

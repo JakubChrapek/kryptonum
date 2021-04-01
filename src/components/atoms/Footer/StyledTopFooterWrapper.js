@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyledTopFooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   @media (max-width: 767px) {
     flex-direction: column;

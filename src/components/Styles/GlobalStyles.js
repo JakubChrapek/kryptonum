@@ -79,17 +79,29 @@ const Global = createGlobalStyle`
     left: ${({ left }) => (left ? left : "")};
     text-decoration: none;
     text-align: center;
-  }
+    &__dark {
+      color: var(--white);
+      border: 1px solid var(--black);
+      padding: 31px 20px;
+      background-color: var(--black);
+      &:focus {
+        outline-offset: 2px;
+        outline: 2px solid var(--black);
+      }
+    }
 
-  .btn__small {
-    padding: 20px;
-    max-width: 290px;
-  } 
-  
-  .btn__light {
-    color: var(--black);
-    background-color: var(--white);
-    border-color: var(--white);
+    &__light {
+      color: var(--black);
+      background-color: var(--white);
+      border-color: var(--white);&:focus {
+        outline-offset: 2px;
+        outline: 2px solid var(--white);
+      }
+    }
+    &__small {
+      padding: 20px;
+      max-width: 290px;
+    }
   }
 
   .body-lock {

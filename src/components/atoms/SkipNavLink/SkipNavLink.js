@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 const StyledLink = styled.a`
   position: absolute;
-  left: 60px;
+  left: 220px;
   top: 0;
   background-color: var(--white);
   color: var(--dark);
@@ -16,11 +16,21 @@ const StyledLink = styled.a`
   border-radius: 10px;
   text-decoration: none;
   transform: translateY(-100%);
+  z-index: 1;
   &:focus,
   &:active {
     outline: none;
     border-color: var(--dark);
     transform: translateY(0);
+  }
+  @media (max-width: 767px) {
+    left: 120px;
+  }
+  @media (max-width: 520px) {
+    left: 60px;
+  }
+  @media (max-width: 420px) {
+    left: 30px;
   }
 `
 const SkipNavLink = ({ children, ...props }) => (

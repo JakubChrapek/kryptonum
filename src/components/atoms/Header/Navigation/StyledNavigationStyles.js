@@ -7,11 +7,13 @@ export const StyledNavigationStyles = styled(motion.nav)`
   top: 0;
   height: 100vh;
   max-width: 100%;
-  background-color: var(--white);
+  background-color: ${({ pointerEvents }) =>
+    pointerEvents ? "var(--black)" : "var(--white)"};
   z-index: 1;
   display: flex;
   justify-content: space-between;
   padding: 94px 116px 38px 104px;
+  pointer-events: ${({ pointerEvents }) => pointerEvents};
 
   @media only screen and (max-width: 800px) {
     height: 100vh;

@@ -60,8 +60,8 @@ export const CursorProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CursorReducer, {
     cursorShow: true,
     cursorColor: CURSOR_COLORS.LIGHT,
-    cursorSize: CURSOR_SIZES.DEFAULT,
-    cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+    cursorSize: CURSOR_SIZES.SMALLER,
+    cursorType: CURSOR_TYPES.FULL_CURSOR,
     cursorTypes: CURSOR_TYPES,
     cursorSizes: CURSOR_SIZES,
   })

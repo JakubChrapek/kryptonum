@@ -170,7 +170,7 @@ const TheUltimateSection = () => {
               onMouseEnter={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.INPUT_CURSOR,
+                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
@@ -198,8 +198,6 @@ const TheUltimateSection = () => {
             />
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.05 }}
-              whileFocus={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onMouseEnter={() => {
                 dispatchCursor({
@@ -238,7 +236,7 @@ const TheUltimateSection = () => {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={error ? "error" : ""}
+                  className={error ? "msg__error" : "msg"}
                 >
                   {feedbackMsg}
                 </motion.p>

@@ -2,6 +2,7 @@ import React from "react"
 import tmp from "../../../images/home-bg.jpg"
 import { IoIosArrowRoundDown } from "react-icons/io"
 
+import { Link as ScrollLink } from "react-scroll"
 import { SectionStyles } from "../../atoms/WhatIsKryptonumGrid/SectionStyles"
 import { CreativeSection } from "../../atoms/WhatIsKryptonumGrid/CreativeSection"
 import { WhatIsKryptonumWrapper } from "../../atoms/WhatIsKryptonumGrid/WhatIsKryptonumWrapper"
@@ -17,21 +18,43 @@ import {
   useCursorDispatchContext,
   CURSOR_TYPES,
   CURSOR_COLORS,
+  CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
+import { DownArrow } from "../../atoms/Icons/arrows"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const WhatIsKryptonum = () => {
   const dispatchCursor = useCursorDispatchContext()
+  const width = useWindowSize()
   return (
     <>
       <SectionStyles
-        onMouseOver={() => {
+        onMouseEnter={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_COLOR",
             cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+        onMouseLeave={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
           })
         }}
       >
@@ -72,11 +95,44 @@ const WhatIsKryptonum = () => {
           <ThirdRow>
             <Works>
               <span>Works</span>
-              <IoIosArrowRoundDown
-                size="112px"
-                title="Arrow pointing down"
-                color="rgba(178,178,178,0.2)"
-              />
+              <ScrollLink
+                activeClass="active"
+                to="featuredProjects"
+                spy={true}
+                offset={width <= 767 ? 0 : -122}
+                smooth={true}
+                duration={800}
+                onMouseEnter={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.BIGGER,
+                  })
+                }}
+                onMouseLeave={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.LIGHT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.SMALLER,
+                  })
+                }}
+              >
+                <DownArrow />
+              </ScrollLink>
             </Works>
             <Creativity hasDeclaredTransform={true}>
               <span>Cr</span>

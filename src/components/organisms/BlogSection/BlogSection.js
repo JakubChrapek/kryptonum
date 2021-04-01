@@ -14,7 +14,7 @@ import {
 
 const blogSectionQuery = graphql`
   query LastArticles {
-    allDatoCmsArticle(limit: 10) {
+    allDatoCmsArticle(limit: 10, filter: { locale: { eq: "pl" } }) {
       nodes {
         articleTitle
         dateOfPublication

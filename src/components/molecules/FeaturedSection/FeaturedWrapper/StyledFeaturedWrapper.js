@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding-left: 41px;
   span {
     font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
     line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
@@ -38,7 +39,7 @@ export const StyledFeaturedWrapper = styled.div`
         firstSpanLength ? firstSpanLength : "100%"};
       background-color: var(--black);
       height: 3px;
-      z-index: -1;
+      z-index: 0;
     }
 
     &:nth-child(2):after {

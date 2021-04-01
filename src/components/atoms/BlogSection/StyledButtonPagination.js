@@ -10,4 +10,8 @@ export const StyledButtonPagination = styled(motion.button)`
   &[disabled] {
     cursor: default;
   }
+  &:focus {
+    outline-offset: 2px;
+    outline: 2px solid var(--black);
+  }
 `

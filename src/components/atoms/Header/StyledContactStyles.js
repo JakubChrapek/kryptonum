@@ -27,6 +27,11 @@ export const StyledContactStyles = styled(Link)`
     background-color: ${({ color }) => (color ? color : "var(--black)")};
   }
 
+  &:focus {
+    outline-offset: 1px;
+    outline: 2px solid ${({ color }) => (color ? color : "var(--black)")};
+  }
+
   &:hover:after {
     transform: scaleY(1);
     opacity: 1;

@@ -1,7 +1,7 @@
 import React from "react"
-
+import { useLocation } from "@reach/router"
 import { HeroFooterStyles } from "./StyledHeroFooter"
-import { StyledLink } from "./StyledLink"
+import StyledLink from "./StyledLink"
 import {
   useCursorDispatchContext,
   CURSOR_TYPES,
@@ -11,6 +11,51 @@ import {
 
 const HeroFooter = () => {
   const dispatchCursor = useCursorDispatchContext()
+  let pathname = useLocation().pathname
+  const handleOnMouseEnterForLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+
+  const handleOnMouseLeaveForLink = () => {
+    if (pathname === "/") {
+      dispatchCursor({
+        type: "CHANGE_CURSOR_TYPE",
+        cursorType: CURSOR_TYPES.FULL_CURSOR,
+      })
+      dispatchCursor({
+        type: "CHANGE_CURSOR_COLOR",
+        cursorColor: CURSOR_COLORS.LIGHT,
+      })
+      dispatchCursor({
+        type: "CHANGE_CURSOR_SIZE",
+        cursorSize: CURSOR_SIZES.SMALLER,
+      })
+    } else {
+      dispatchCursor({
+        type: "CHANGE_CURSOR_TYPE",
+        cursorType: CURSOR_TYPES.FULL_CURSOR,
+      })
+      dispatchCursor({
+        type: "CHANGE_CURSOR_COLOR",
+        cursorColor: CURSOR_COLORS.DARK,
+      })
+      dispatchCursor({
+        type: "CHANGE_CURSOR_SIZE",
+        cursorSize: CURSOR_SIZES.SMALLER,
+      })
+    }
+  }
   return (
     <HeroFooterStyles>
       <div>
@@ -22,26 +67,8 @@ const HeroFooter = () => {
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
           declaredFontFamily="JetBrains Mono"
-          onMouseEnter={() => {
-            dispatchCursor({
-              type: "CHANGE_CURSOR_COLOR",
-              cursorColor: CURSOR_COLORS.ACCENT,
-            })
-            dispatchCursor({
-              type: "CHANGE_CURSOR_SIZE",
-              cursorSize: CURSOR_SIZES.SMALLER,
-            })
-          }}
-          onMouseLeave={() => {
-            dispatchCursor({
-              type: "CHANGE_CURSOR_COLOR",
-              cursorColor: CURSOR_COLORS.LIGHT,
-            })
-            dispatchCursor({
-              type: "CHANGE_CURSOR_SIZE",
-              cursorSize: CURSOR_SIZES.DEFAULT,
-            })
-          }}
+          onMouseEnter={handleOnMouseEnterForLink}
+          onMouseLeave={handleOnMouseLeaveForLink}
         >
           Facebook
         </StyledLink>
@@ -53,6 +80,8 @@ const HeroFooter = () => {
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
           declaredFontFamily="JetBrains Mono"
+          onMouseEnter={handleOnMouseEnterForLink}
+          onMouseLeave={handleOnMouseLeaveForLink}
         >
           Instagram
         </StyledLink>
@@ -64,7 +93,8 @@ const HeroFooter = () => {
         declaredFontColor="var(--white)"
         declaredFontFamily="JetBrains Mono"
         declaredMarginRight="0"
-        declaredPadding="0 0 0 8px"
+        onMouseEnter={handleOnMouseEnterForLink}
+        onMouseLeave={handleOnMouseLeaveForLink}
       >
         Blog
       </StyledLink>

@@ -1,7 +1,8 @@
+import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export const StyledLink = styled(Link)`
+const LinkStyles = styled(Link)`
   font-size: ${({ declaredFontSize }) =>
     declaredFontSize ? declaredFontSize : "14px"};
   text-decoration: none;
@@ -46,4 +47,45 @@ export const StyledLink = styled(Link)`
       transform: scaleY(1);
     }
   }
+  &:focus {
+    outline-offset: 1px;
+    outline: 2px solid
+      ${({ declaredFontColor }) =>
+        declaredFontColor ? declaredFontColor : "var(--black)"};
+  }
 `
+
+const StyledLink = ({
+  props,
+  children,
+  href,
+  declaredFontSize,
+  declaredFontColor,
+  declaredFontFamily,
+  declaredLineHeight,
+  declaredMarginRight,
+  declaredPadding,
+  onMouseEnter,
+  onMouseLeave,
+  to,
+}) => {
+  return (
+    <LinkStyles
+      {...props}
+      to={to}
+      href={href}
+      declaredFontSize={declaredFontSize}
+      declaredFontColor={declaredFontColor}
+      declaredFontFamily={declaredFontFamily}
+      declaredLineHeight={declaredLineHeight}
+      declaredMarginRight={declaredMarginRight}
+      declaredPadding={declaredPadding}
+      onPointerEnter={onMouseEnter}
+      onPointerLeave={onMouseLeave}
+    >
+      {children}
+    </LinkStyles>
+  )
+}
+
+export default StyledLink

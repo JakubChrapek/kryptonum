@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import { Cards } from "./StyledCards"
 import { StyledHowWeWorkSection } from "../../atoms/HowWeWorkSection/HowWeWorkSectionStyles"
+import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
 import { TextStyles } from "../../atoms/Text/Text"
 import { element } from "prop-types"
 import { motion, useMotionValue } from "framer-motion"
@@ -36,36 +37,42 @@ const HowWeWorkSection = () => {
   const sliderRef = useRef(null)
   const dispatchCursor = useCursorDispatchContext()
 
-  const elementsWidth = () => {
+  const getElementsWidth = () => {
     let sum = 0
-
-    sliderRef.current.childNodes.forEach(
-      element => (sum += element.clientWidth)
-    )
+    sliderRef &&
+      sliderRef.current &&
+      sliderRef.current.childNodes &&
+      sliderRef.current.childNodes.length > 0 &&
+      sliderRef.current.childNodes.forEach(
+        element => (sum += element.clientWidth)
+      )
     setSliderChildrenWidth(sum)
+    console.log("elements width: ", sum)
   }
 
-  const clacSliderWidth = () => {
+  const calculateSliderWidth = () => {
     setSliderWidth(sliderRef?.current?.clientWidth)
+    console.log("slider width: ", sliderRef.current.clientWidth)
   }
 
-  const sliderConstarint = () => {
+  const calculateSliderConstraint = () => {
     setSliderConstraint(sliderChildrenWidth - sliderWidth)
+    console.log("slider constraint: ", sliderChildrenWidth - sliderWidth)
   }
 
   useEffect(() => {
     let timeoutId = null
 
-    elementsWidth()
-    clacSliderWidth()
-    sliderConstarint()
+    getElementsWidth()
+    calculateSliderWidth()
+    calculateSliderConstraint()
 
     const resizeListener = () => {
       clearTimeout(timeoutId)
       timeoutId = setTimeout(() => {
-        elementsWidth()
-        clacSliderWidth()
-        sliderConstarint()
+        getElementsWidth()
+        calculateSliderWidth()
+        calculateSliderConstraint()
       }, 100)
     }
 
@@ -94,31 +101,40 @@ const HowWeWorkSection = () => {
       }}
       bg="var(--white)"
     >
-      <StyledHowWeWorkSection howWeWorkSection={true}>
+      <ServicesStyles howWeWorkSection={true}>
         <TextStyles
-          fontSize="8px"
-          lineHeight="1.5em"
-          letterSpacing="1.33px"
-          fontFamily="Poppins"
+          fontSize="9px"
+          lineHeight="1.33em"
+          letterSpacing="2.57px"
+          declaredMargin="0 0 53px 41px"
+          fontFamily="JetBrains Mono"
           textTransform="uppercase"
-          fontWeight="bold"
+          fontWeight="500"
           howWeWorkSection={true}
         >
           How we work
         </TextStyles>
         <div>
-          <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="72%">
+          <StyledFeaturedWrapper
+            mainHeader
+            firstSpanLength="100%"
+            secondSpanLength="74%"
+          >
             <span>Our design</span>
             <span>process</span>
           </StyledFeaturedWrapper>
         </div>
         <motion.div style={{ width: "100%" }}>
           <Cards
-            drag={"x"}
-            dragConstraints={{
-              left: -sliderConstarint,
-              right: 0,
-            }}
+            drag={sliderConstraint > 0 ? "x" : null}
+            dragConstraints={
+              sliderConstraint > 0
+                ? {
+                    left: sliderConstraint,
+                    right: 0,
+                  }
+                : null
+            }
             style={{ x }}
             initial={{ x: 30 }}
             dragElastic={0.05}
@@ -129,7 +145,8 @@ const HowWeWorkSection = () => {
                 <TextStyles
                   fontSize="28px"
                   lineHeight="1.5em"
-                  letterSpacing="normall"
+                  letterSpacing="normal"
+                  fontWeight="normal"
                   fontFamily="Poppins"
                   color="#090909"
                 >
@@ -140,7 +157,7 @@ const HowWeWorkSection = () => {
             ))}
           </Cards>
         </motion.div>
-      </StyledHowWeWorkSection>
+      </ServicesStyles>
     </BgColourWrapper>
   )
 }

@@ -57,13 +57,13 @@ export const StyledProjectsColumn = styled.ul`
     letter-spacing: 5px;
     position: absolute;
     left: -16px;
-    top: -20px;
+    top: -32px;
     font-family: "JetBrains Mono";
   }
 
   a {
     margin: 25px 0 0;
-    left: -20px;
+    left: -12px;
     @media only screen and (max-width: 902px) {
       padding: 20px;
     }

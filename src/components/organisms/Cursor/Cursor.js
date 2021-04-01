@@ -52,10 +52,10 @@ const Cursor = ({ show, type, color, size }) => {
         y: y - 21,
         scale:
           size === CURSOR_SIZES.BIGGER
-            ? 1.5
+            ? 1.2
             : size === CURSOR_SIZES.SMALLER
-            ? 0.75
-            : 1,
+            ? 0.35
+            : 0.6,
         opacity: show ? 1 : 0,
         width: type === CURSOR_TYPES.INPUT_CURSOR ? "0.4rem" : "4.2rem",
         height: "4.2rem",

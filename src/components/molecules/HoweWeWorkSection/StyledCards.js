@@ -21,6 +21,7 @@ export const Cards = styled(motion.ul)`
     grid-gap: 30px;
     margin: 83px 0 0;
   }
+
   li {
     display: grid;
     grid-template-columns: 1fr;
@@ -33,6 +34,15 @@ export const Cards = styled(motion.ul)`
     p {
       font-family: 16px;
       line-height: 1.38;
+    }
+  }
+
+  @media (max-width: 1379px) {
+    display: flex;
+    gap: 56px;
+
+    li {
+      width: 258px;
     }
   }
 `

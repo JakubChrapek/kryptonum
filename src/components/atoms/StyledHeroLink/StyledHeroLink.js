@@ -53,6 +53,12 @@ export const StyledScrollLink = styled(ScrollLink)`
       font-size: 18px;
     }
   }
+
+  svg {
+    fill: var(--white);
+    margin-top: 4px;
+    width: 28px;
+  }
   span {
     color: var(--white);
   }
