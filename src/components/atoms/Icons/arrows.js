@@ -40,35 +40,86 @@ export const DownArrow = () => (
   </svg>
 )
 
-export const LeftArrowPagination = () => (
+export const LeftArrowPagination = ({ color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="47.792"
-    height="7.72"
-    viewBox="0 0 47.792 7.72"
+    width="40.681"
+    height="13.232"
+    viewBox="0 0 40.681 13.232"
   >
-    <g
-      id="leftArrow"
-      data-name="leftArrow"
-      transform="translate(-396.708 -297.825)"
-    >
+    <g id="arrow-left" transform="translate(-395.819 -294.826)">
       <line
-        id="leftArrowLine"
-        data-name="leftArrowLine"
-        x2="47"
+        id="arrow-body"
+        x2="39"
         transform="translate(397.5 301.651)"
         fill="none"
-        stroke="#171717"
-        stroke-width="1"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
       />
       <path
-        id="leftArrowPath"
-        data-name="leftArrowPath"
-        d="M401.057,299.607l-3.629,3.489,3.629,3.511"
+        id="arrow-front"
+        d="M404.782,297.019l-7.353,6.077,7.353,5.588"
         transform="translate(0 -1.422)"
         fill="none"
-        stroke="#171717"
-        stroke-width="1"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
+      />
+    </g>
+  </svg>
+)
+
+export const RightArrowPagination = ({ color }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="40.681"
+    height="13.232"
+    viewBox="0 0 40.681 13.232"
+  >
+    <g id="arrow-right" transform="translate(436.5 308.059) rotate(180)">
+      <line
+        id="arrow-body"
+        x2="39"
+        transform="translate(397.5 301.651)"
+        fill="none"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
+      />
+      <path
+        id="arrow-front"
+        d="M404.782,297.019l-7.353,6.077,7.353,5.588"
+        transform="translate(0 -1.422)"
+        fill="none"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
+      />
+    </g>
+  </svg>
+)
+
+export const TopArrowGoUp = ({ color }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="13.232"
+    height="40.681"
+    viewBox="0 0 13.232 40.681"
+    style={{ transform: "rotate(-90deg)" }}
+  >
+    <g id="arrow-top" transform="translate(308.059 -395.819) rotate(90)">
+      <line
+        id="arrow-body"
+        x2="39"
+        transform="translate(397.5 301.651)"
+        fill="none"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
+      />
+      <path
+        id="arrow-front"
+        d="M404.782,297.019l-7.353,6.077,7.353,5.588"
+        transform="translate(0 -1.422)"
+        fill="none"
+        stroke={color ? color : "#171717"}
+        stroke-width="2"
       />
     </g>
   </svg>

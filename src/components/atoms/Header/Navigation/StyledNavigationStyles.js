@@ -19,10 +19,14 @@ export const StyledNavigationStyles = styled(motion.nav)`
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    padding: 90px 60px 0 40px;
-    justify-content: flex-start;
+    padding: 90px 60px 0 60px;
+    justify-content: center;
+    align-items: center;
   }
   @media only screen and (max-width: 540px) {
-    padding: 60px 50px 0 30px;
+    padding: 60px 40px 0 40px;
+  }
+  @media only screen and (max-width: 374px) {
+    padding: 40px 30px 0 30px;
   }
 `

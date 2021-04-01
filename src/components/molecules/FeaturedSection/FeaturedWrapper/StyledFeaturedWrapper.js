@@ -4,6 +4,10 @@ export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 41px;
+  @media only screen and (max-width: 759px) {
+    padding-left: ${({ howWeWorkHeader }) => (howWeWorkHeader ? "20px" : "0")};
+    margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
+  }
   span {
     font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
     line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
@@ -18,17 +22,21 @@ export const StyledFeaturedWrapper = styled.div`
     @media only screen and (max-width: 559px) {
       margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "27px" : "0")};
     }
+    @media only screen and (max-width: 540px) {
+      font-size: ${({ aboutSlider, mainHeader }) =>
+        aboutSlider ? "30px" : mainHeader ? "52px" : "40px"};
+    }
     @media only screen and (max-width: 484px) {
-      font-size: ${({ hasSmalFontSize }) =>
-        hasSmalFontSize ? "32px" : "40px"};
+      font-size: ${({ hasSmalFontSize, mainHeader }) =>
+        hasSmalFontSize ? "32px" : mainHeader ? "52px" : "40px"};
     }
     @media only screen and (max-width: 399px) {
-      font-size: ${({ hasSmalFontSize }) =>
-        hasSmalFontSize ? "26px" : "40px"};
+      font-size: ${({ hasSmalFontSize, mainHeader }) =>
+        hasSmalFontSize ? "26px" : mainHeader ? "46px" : "40px"};
     }
     @media only screen and (max-width: 360px) {
-      font-size: ${({ hasSmalFontSize }) =>
-        hasSmalFontSize ? "22px" : "40px"};
+      font-size: ${({ hasSmalFontSize, mainHeader }) =>
+        hasSmalFontSize ? "22px" : mainHeader ? "46px" : "40px"};
     }
     &:after {
       content: "";

@@ -117,6 +117,7 @@ const HowWeWorkSection = () => {
         <div>
           <StyledFeaturedWrapper
             mainHeader
+            howWeWorkHeader
             firstSpanLength="100%"
             secondSpanLength="74%"
           >

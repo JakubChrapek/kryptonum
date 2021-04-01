@@ -1,7 +1,5 @@
 import React from "react"
 
-import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg"
-
 import { PaginationStyles } from "../../atoms/BlogSection/StyledPagination"
 import { StyledLine } from "../../atoms/BlogSection/StyledLine"
 import { StyledButtonPagination } from "../../atoms/BlogSection/StyledButtonPagination"
@@ -11,12 +9,16 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
-import { LeftArrowPagination } from "../../atoms/Icons/arrows"
+import {
+  LeftArrowPagination,
+  RightArrowPagination,
+} from "../../atoms/Icons/arrows"
 
 const Pagination = ({ length, currentPage, setCurrentPage }) => {
   const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
   const nextDisabled = currentPage >= length - 1
+  console.log(length, currentPage)
   return (
     <PaginationStyles>
       <StyledButtonPagination
@@ -55,11 +57,9 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
           })
         }}
       >
-        <CgArrowLongLeft
-          size="40px"
+        <LeftArrowPagination
           color={prevDisabled ? "var(--text-gray)" : "var(--black)"}
         />
-        <LeftArrowPagination />
       </StyledButtonPagination>
       <StyledButtonPagination
         type="button"
@@ -97,14 +97,13 @@ const Pagination = ({ length, currentPage, setCurrentPage }) => {
           })
         }}
       >
-        <CgArrowLongRight
-          size="40px"
+        <RightArrowPagination
           color={nextDisabled ? "var(--text-gray)" : "var(--black)"}
         />
       </StyledButtonPagination>
       <StyledLine
         width={
-          currentPage === 0 ? 0 : length > 2 ? currentPage / (length - 1) : 1
+          currentPage === 0 ? 0 : length > 1 ? currentPage / (length - 1) : 1
         }
       />
     </PaginationStyles>

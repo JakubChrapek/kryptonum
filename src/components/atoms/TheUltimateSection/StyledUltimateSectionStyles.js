@@ -11,12 +11,12 @@ export const StyledUltimateSectionStyles = styled.div`
     padding: 102px 114px;
   }
   @media only screen and (max-width: 1090px) {
-    padding: 102px 90px;
+    padding: 102px 90px 0;
   }
   @media only screen and (max-width: 767px) {
     flex-direction: column;
   }
   @media only screen and (max-width: 570px) {
-    padding: 46px 0;
+    padding: 46px 0 0;
   }
 `

@@ -64,7 +64,7 @@ const Article = ({ article, full, layout }) => {
         />
         <TextStyles
           declaredPadding="11px 0 0 0"
-          declaredBorderTop="2px solid var(--black)"
+          // declaredBorderTop="2px solid var(--black)"
           declaredMargin="15px 0 0 0"
           declaredWidth="100%"
           lineHeight="1.38em"

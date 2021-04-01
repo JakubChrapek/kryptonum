@@ -17,6 +17,9 @@ const CursorStyles = styled(motion.div)`
   pointer-events: none;
   border: 2px solid;
   transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @media (max-width: 767px) {
+    display: none !important;
+  }
 
   ${({ type, color }) =>
     type === CURSOR_TYPES.FULL_CURSOR

@@ -101,6 +101,10 @@ const Global = createGlobalStyle`
     &__small {
       padding: 20px;
       max-width: 290px;
+      @media (max-width: 540px) {
+      max-width: calc(100vw - 120px);
+      width: 100vw;
+      }
     }
   }
 

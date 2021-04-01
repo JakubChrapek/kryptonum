@@ -11,9 +11,23 @@ export const StyledLink = styled(Link)`
   position: relative;
   text-decoration: none;
   @media only screen and (max-width: 540px) {
-    font-size: 38px;
-    margin-bottom: 2px;
+    font-size: 50px;
+    margin-bottom: 16px;
     padding: 4px 8px;
+  }
+  @media only screen and (max-width: 410px) {
+    font-size: 46px;
+    margin-bottom: 14px;
+    padding: 4px 8px;
+  }
+  @media only screen and (max-width: 374px) {
+    font-size: 40px;
+    margin-bottom: 12px;
+    padding: 3px 8px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 
   &.active li,

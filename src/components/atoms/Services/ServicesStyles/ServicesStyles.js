@@ -28,7 +28,8 @@ export const ServicesStyles = styled.section`
     padding: ${({ featuredSection }) =>
       featuredSection ? "55px 60px 80px 80px" : "36px 0 110px 0"};
     > p {
-      display: ${({ featuredSection }) => (featuredSection ? "none" : "block")};
+      display: ${({ featuredSection, howWeWorkSection }) =>
+        featuredSection || howWeWorkSection ? "none" : "block"};
     }
   }
   @media only screen and (max-width: 540px) {

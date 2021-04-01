@@ -11,8 +11,8 @@ export const StyledImageColumnSmallWidth = styled(StyledImageColumn)`
   align-items: center;
   a {
     @media only screen and (max-width: 430px) {
-      width: 320px;
-      padding: 18px 9px;
+      width: calc(100% - 40px);
+      padding: 32px 9px;
       font-size: 14px;
     }
     @media only screen and (max-width: 371px) {

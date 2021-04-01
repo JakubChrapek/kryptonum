@@ -28,6 +28,9 @@ export const SecondRow = styled.div`
       max-width: 357px;
       margin: 80px 0 100px 0;
     }
+    @media only screen and (max-width: 540px) {
+      margin: 72px 0 24px 0;
+    }
   }
   .img-wrapper {
     z-index: 0;

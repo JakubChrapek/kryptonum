@@ -12,13 +12,14 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import { TopArrowGoUp } from "../../atoms/Icons/arrows"
 
 const ScrollToTopStyles = styled(motion.button)`
   display: flex;
   align-items: center;
   position: fixed;
   bottom: 120px;
-  right: 60px;
+  right: 40px;
   mix-blend-mode: difference;
   background-color: transparent;
   border: 0;
@@ -41,7 +42,10 @@ const ScrollToTopStyles = styled(motion.button)`
   span {
     width: 32px;
     height: 32px;
-    margin: 0 10px 1px 0;
+    margin: 0 20px 1px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 1025px) {
       width: 24px;
       height: 24px;
@@ -131,10 +135,7 @@ const ScrollToTop = () => {
           }}
         >
           <motion.span variants={item}>
-            <VscArrowLeft
-              size={width > 1025 ? "32px" : "24px"}
-              color="var(--white)"
-            />
+            <TopArrowGoUp color="var(--white)" />
           </motion.span>
           <TextStyles
             variants={item}
