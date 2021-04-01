@@ -225,6 +225,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                 activeClassName="active"
                 to={item.link}
                 key={item.name}
+                onClick={() => dispatch({ type: "CLOSE_MENU" })}
+                onPointerDown={() => dispatch({ type: "CLOSE_MENU" })}
                 onPointerEnter={handleOnMouseEnterForLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
               >
