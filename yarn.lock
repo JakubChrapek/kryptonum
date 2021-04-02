@@ -9,6 +9,13 @@
   dependencies:
     tslib "~2.0.1"
 
+"@ashthornton/asscroll@^1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@ashthornton/asscroll/-/asscroll-1.7.6.tgz#41a3a424035634e807e6823d77de434190dcd3e3"
+  integrity sha512-rhxeEvyj00T9JnJwTDEh0g+zDB/Pcmt24AP54hyxNzTURWR52rsXn2ZIP1ahhJV7L931nWfRm/cufOiaZOx9KQ==
+  dependencies:
+    "@unseenco/e" "^1.7.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
@@ -1958,6 +1965,13 @@
     lodash "^4.17.15"
     semver "^7.3.2"
     tsutils "^3.17.1"
+
+"@unseenco/e@^1.7.0":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@unseenco/e/-/e-1.8.2.tgz#757f90316156a236f85bc2b2eaabd831fc92eb0f"
+  integrity sha512-LbofiiDl2b7DSsTeokQMnmIKmBzwUS9H7MYnjK864J30ZLcL8B1VSu/aCBxOB5NlyNkmRx71+Sj0k7c4DAf/MQ==
+  dependencies:
+    selector-set "^1.1.5"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -12951,6 +12965,11 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
+
+selector-set@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/selector-set/-/selector-set-1.1.5.tgz#60c135aea482b6f46a2d95ad72058927690a8634"
+  integrity sha512-6SQw6yMew5iOZ8/cDHDEnJWRM4ot2mxP6szZyF5ptrBogw4AcS4EXRj/8BUfgAMwVfdL84qpModlBMOl2NVrsQ==
 
 selfsigned@^1.10.8:
   version "1.10.8"

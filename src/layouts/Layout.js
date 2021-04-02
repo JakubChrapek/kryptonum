@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Header from "../components/organisms/Header/Header"
 import SEO from "../components//SEO"
@@ -29,9 +29,11 @@ const Layout = ({ children }) => {
     cursorColor,
     cursorSize,
   } = useCursorStateContext()
-  const width = useWindowSize()
   let pathname = useLocation().pathname
-
+  // const smoothScroll = new ASScroll({
+  //   ease: 0.075,
+  //   disableNativeScrollbar: false,
+  // })
   const getThemeFromPathname = name => {
     if (name === "/") {
       return "light"

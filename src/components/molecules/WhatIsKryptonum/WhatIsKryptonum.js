@@ -1,7 +1,4 @@
 import React from "react"
-import tmp from "../../../images/home-bg.jpg"
-import { IoIosArrowRoundDown } from "react-icons/io"
-
 import { Link as ScrollLink } from "react-scroll"
 import { SectionStyles } from "../../atoms/WhatIsKryptonumGrid/SectionStyles"
 import { CreativeSection } from "../../atoms/WhatIsKryptonumGrid/CreativeSection"
@@ -14,6 +11,7 @@ import { FirstRow } from "../../atoms/WhatIsKryptonumGrid/FirstRow"
 import { SecondRow } from "../../atoms/WhatIsKryptonumGrid/SecondRow"
 import { ThirdRow } from "../../atoms/WhatIsKryptonumGrid/ThirdRow"
 import { CreativeRow } from "../../atoms/WhatIsKryptonumGrid/CreativeRow"
+import useWindowSize from "../../../utils/getWindowSize"
 import {
   useCursorDispatchContext,
   CURSOR_TYPES,
@@ -21,7 +19,7 @@ import {
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 import { DownArrow } from "../../atoms/Icons/arrows"
-import useWindowSize from "../../../utils/getWindowSize"
+import tmp from "../../../images/hero-bg.jpeg"
 
 const WhatIsKryptonum = () => {
   const dispatchCursor = useCursorDispatchContext()

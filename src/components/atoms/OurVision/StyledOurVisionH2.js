@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { TextStyles } from "../Text/Text"
 
 export const StyledOurVisionH2 = styled(TextStyles)`
-  max-width: 210px;
+  max-width: 300px;
   position: relative;
   padding-bottom: 2px;
   @media only screen and (max-width: 660px) {
@@ -11,7 +11,7 @@ export const StyledOurVisionH2 = styled(TextStyles)`
   }
   &::after {
     content: "";
-    height: 2.8px;
+    height: 3px;
     width: 110%;
     background-color: var(--white);
     position: absolute;

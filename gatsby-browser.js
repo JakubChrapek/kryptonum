@@ -32,6 +32,7 @@ exports.onClientEntry = () => {
   window.addEventListener("load", () => {
     const body = document.querySelector("body")
     body.className = document.body.className.replace(/\bno-js\b/, "")
+    body.classList.add("asscroll-container")
     gsap.from(body, { opacity: 0, duration: 1, ease: "Power3.easeInOut" })
   })
 }

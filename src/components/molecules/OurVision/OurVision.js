@@ -19,7 +19,7 @@ const OurVision = () => {
           declaredPadding="0 0 2px 0"
           fontFamily="Poppins"
         >
-          Our Vision
+          Nasze wartości
         </StyledOurVisionH2>
         <StyledOurVisionHeroTextWrapper>
           <StyledOurVisionHeroTextP
@@ -29,26 +29,19 @@ const OurVision = () => {
             color="var(--white)"
             textAlign="center"
           >
-            Smaller multidisciplinary dedicated teams for bigger impact
+            Czyli to, co sprawia, że wyskakujemy rano z&nbsp;łóżka myśląc
+            o&nbsp;kolejnym dniu w&nbsp;pracy. Naprawdę!
           </StyledOurVisionHeroTextP>
         </StyledOurVisionHeroTextWrapper>
         <div>
           <OurVisionElement
-            leftBoxText="From start <br />
-             to finish"
-            rightBoxText="We provide value to our clients through 
-            design thinking and customized tech stacks. Our designers, 
-            full-stack developers, project managers and strategists 
-            are working in closely-knit teams throughout the project."
+            leftBoxText="Punktualność"
+            rightBoxText="Stosujemy prostą zasadę - deadline rzecz święta. Rozumiemy, że własna strona internetowa jest ważnym narzędziem w&nbsp;twojej strategii marketingowej i&nbsp;że potrzebujesz jej jak najszybciej. Dlatego zawsze wywiązujemy się z&nbsp;terminów."
             elementNumber={1}
           />
           <OurVisionElement
-            leftBoxText="Driven by <br />
-             Insights
-            "
-            rightBoxText="We truly believe that good research leads to 
-            effective design, robust tech stacks and tailor-made outcomes. 
-            Powerful concepts are driven by stirring insights."
+            leftBoxText="Feedback. Więcej feedbacku!"
+            rightBoxText="Wiemy, że nie każdy design lub projekt jest od samego początku idealny i&nbsp;jesteśmy ludźmi - czasem popełniamy błędy. Dlatego bardzo doceniamy Twoje komentarze. Dzięki nim każdy następny projekt strony internetowej jest jeszcze lepszy!"
             elementNumber={2}
           />
           <OurVisionElement

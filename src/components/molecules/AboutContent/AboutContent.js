@@ -6,7 +6,7 @@ import HeroImage from "../HeroImage/HeroImage"
 const AboutContent = () => {
   return (
     <div>
-      <HeroContent content="Good design makes life better" />
+      <HeroContent content="Kim są nasi superbohaterowie?" />
       <HeroImage />
     </div>
   )

@@ -79,7 +79,6 @@ export const StyledContentColumnForm = styled.form`
 
   p {
     font-size: 14px;
-    margin-left: 18px;
     margin-top: 5px;
     color: var(--text-gray);
   }

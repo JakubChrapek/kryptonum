@@ -12,12 +12,13 @@ const AboutSlider = () => {
       <StyledTextContentWrapper>
         <StyledFeaturedWrapper
           firstSpanLength="100%"
-          secondSpanLength="55%"
+          secondSpanLength="110%"
           hasMarginLeft={false}
           hasSmalFontSize={true}
+          style={{ paddingLeft: "0" }}
         >
-          <span>Multiple personalities</span>
-          <span>no egos</span>
+          <span style={{ maxWidth: "max-content" }}>To maraton,</span>
+          <span style={{ maxWidth: "max-content" }}>nie sprint</span>
         </StyledFeaturedWrapper>
         <StyledAboutSliderHeroText>
           <StyledAboutSliderHeroParagraph
@@ -28,11 +29,12 @@ const AboutSlider = () => {
             letterSpacing="2.57px"
             declaredDisplay="block"
           >
-            We’re a unique team of insanely creative people, with years of
-            experience in complex website design, and more. Kryptonum began as a
-            small project created by us. Two brothers from Poland, Jakub, and
-            Michał. Now, our team consists of a dozen specialists from all over
-            the world!
+            Każdy superbohater ma jakąś słabość. U&nbsp;Supermana był to
+            kryptonit, a&nbsp;u&nbsp;każdego z&nbsp;nas - coś innego. Dlatego
+            głęboko wierzymy w&nbsp;to, że nie warto zmuszać nikogo do pracy,
+            w&nbsp;której nie czuje się dobrze i&nbsp;staramy się rozwijać nasze
+            strefy geniuszu. Dlatego nie zaczniemy pracy nad projektem, zanim
+            nie zajaramy się jak pochodnie!
           </StyledAboutSliderHeroParagraph>
         </StyledAboutSliderHeroText>
       </StyledTextContentWrapper>
