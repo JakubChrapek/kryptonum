@@ -41,7 +41,9 @@ const CursorStyles = styled(motion.div)`
           border-radius: 0;
           width: 0.3rem;
         `
-      : ``}
+      : ``}/* cool difference effect
+    background-color: var(--white);
+    mix-blend-mode: difference; */
 `
 
 const Cursor = ({ show, type, color, size }) => {

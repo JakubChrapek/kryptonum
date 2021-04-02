@@ -12,7 +12,6 @@ export const StyledFeaturedWrapper = styled.div`
     font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
     line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
     position: relative;
-    margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "57px" : "0")};
     @media only screen and (max-width: 1183px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "40px")};
     }

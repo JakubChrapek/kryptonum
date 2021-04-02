@@ -7,18 +7,19 @@ export const Cards = styled(motion.ul)`
   grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
   grid-gap: 56px;
   width: 100%;
-  @media only screen and (max-width: 1323px) {
-    grid-gap: 24px;
+  @media only screen and (max-width: 1379px) {
+    grid-gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+    /* grid-template-columns: repeat(4, 256px); */
   }
-  @media only screen and (max-width: 1225px) {
-    grid-gap: 6px;
-  }
-  @media only screen and (max-width: 1189px) {
+  @media only screen and (max-width: 1255px) {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
+  @media only screen and (max-width: 1189px) {
+    grid-template-columns: repeat(4, 256px);
+    grid-gap: 56px;
+  }
   @media only screen and (max-width: 1100px) {
-    grid-template-columns: repeat(4, 258px);
-    grid-gap: 30px;
     margin: 83px 0 0;
   }
 
@@ -35,14 +36,9 @@ export const Cards = styled(motion.ul)`
       font-family: 16px;
       line-height: 1.38;
     }
-  }
 
-  @media (max-width: 1379px) {
-    display: flex;
-    gap: 56px;
-
-    li {
-      width: 258px;
+    @media only screen and (max-width: 1379px) {
+      padding: 50px 26px;
     }
   }
 `

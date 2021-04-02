@@ -40,7 +40,7 @@ const BlogSection = () => {
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_COLOR",
@@ -48,7 +48,7 @@ const BlogSection = () => {
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
-          cursorSize: CURSOR_SIZES.DEFAULT,
+          cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
       bg="var(--white)"

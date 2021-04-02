@@ -52,11 +52,15 @@ const ProjectsSection = () => {
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_COLOR",
           cursorColor: CURSOR_COLORS.DARK,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
     >
@@ -69,11 +73,11 @@ const ProjectsSection = () => {
               onMouseEnter={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.ACCENT,
+                  cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
@@ -83,7 +87,7 @@ const ProjectsSection = () => {
               onMouseLeave={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
@@ -91,7 +95,7 @@ const ProjectsSection = () => {
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.DEFAULT,
+                  cursorSize: CURSOR_SIZES.SMALLER,
                 })
               }}
               className={iterator === activeProject ? "active" : null}
@@ -116,7 +120,7 @@ const ProjectsSection = () => {
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.LIGHT_TRANSPARENT,
+                cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
@@ -126,7 +130,7 @@ const ProjectsSection = () => {
             onMouseLeave={() => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                cursorType: CURSOR_TYPES.FULL_CURSOR,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_COLOR",
@@ -134,7 +138,7 @@ const ProjectsSection = () => {
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
-                cursorSize: CURSOR_SIZES.DEFAULT,
+                cursorSize: CURSOR_SIZES.SMALLER,
               })
             }}
             className="btn btn__dark"

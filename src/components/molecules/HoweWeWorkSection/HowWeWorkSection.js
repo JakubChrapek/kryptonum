@@ -15,6 +15,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import { DragSliderWrapper } from "../../atoms/DragSliderWrapper/DragSliderWrapper"
 
 const query = graphql`
   query {
@@ -39,25 +40,30 @@ const HowWeWorkSection = () => {
 
   const getElementsWidth = () => {
     let sum = 0
+    const gapBetweenEachItem =
+      sliderRef.current &&
+      getComputedStyle(sliderRef.current).gridColumnGap.replace("px", "")
+    const numberOfItems =
+      sliderRef.current && sliderRef.current.childNodes.length
     sliderRef &&
       sliderRef.current &&
       sliderRef.current.childNodes &&
       sliderRef.current.childNodes.length > 0 &&
-      sliderRef.current.childNodes.forEach(
-        element => (sum += element.clientWidth)
-      )
+      sliderRef.current.childNodes.forEach((element, i) => {
+        sum += element.clientWidth
+        if (i < numberOfItems - 1) {
+          sum += parseInt(gapBetweenEachItem)
+        }
+      })
     setSliderChildrenWidth(sum)
-    console.log("elements width: ", sum)
   }
 
   const calculateSliderWidth = () => {
     setSliderWidth(sliderRef?.current?.clientWidth)
-    console.log("slider width: ", sliderRef.current.clientWidth)
   }
 
   const calculateSliderConstraint = () => {
     setSliderConstraint(sliderChildrenWidth - sliderWidth)
-    console.log("slider constraint: ", sliderChildrenWidth - sliderWidth)
   }
 
   useEffect(() => {
@@ -73,6 +79,9 @@ const HowWeWorkSection = () => {
         getElementsWidth()
         calculateSliderWidth()
         calculateSliderConstraint()
+        if (x.current < sliderConstraint) {
+          x.set(0)
+        }
       }, 100)
     }
 
@@ -88,7 +97,7 @@ const HowWeWorkSection = () => {
       onMouseOver={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_COLOR",
@@ -96,7 +105,7 @@ const HowWeWorkSection = () => {
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
-          cursorSize: CURSOR_SIZES.DEFAULT,
+          cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
       bg="var(--white)"
@@ -125,22 +134,26 @@ const HowWeWorkSection = () => {
             <span>process</span>
           </StyledFeaturedWrapper>
         </div>
-        <motion.div style={{ width: "100%" }}>
-          <Cards
-            drag={sliderConstraint > 0 ? "x" : null}
-            dragConstraints={
-              sliderConstraint > 0
-                ? {
-                    left: sliderConstraint,
-                    right: 0,
-                  }
-                : null
-            }
-            style={{ x }}
-            initial={{ x: 30 }}
-            dragElastic={0.05}
-            ref={sliderRef}
-          >
+        <DragSliderWrapper
+          drag={sliderConstraint > 0 ? "x" : null}
+          dragConstraints={
+            sliderConstraint > 0
+              ? {
+                  left: -sliderConstraint,
+                  right: 0,
+                }
+              : null
+          }
+          style={{ x, width: "100%" }}
+          initial={{ x: 0 }}
+          dragElastic={0.005}
+          dragTransition={{
+            bounceStiffness: 400,
+            bounceDamping: 50,
+            timeConstant: 400,
+          }}
+        >
+          <Cards ref={sliderRef}>
             {datoCmsPageHome.cards.map(card => (
               <li key={card.cardTitle}>
                 <TextStyles
@@ -157,7 +170,7 @@ const HowWeWorkSection = () => {
               </li>
             ))}
           </Cards>
-        </motion.div>
+        </DragSliderWrapper>
       </ServicesStyles>
     </BgColourWrapper>
   )

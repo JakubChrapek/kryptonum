@@ -89,7 +89,7 @@ const TheUltimateSection = () => {
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_COLOR",
@@ -97,7 +97,7 @@ const TheUltimateSection = () => {
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
-          cursorSize: CURSOR_SIZES.DEFAULT,
+          cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
     >
@@ -170,21 +170,21 @@ const TheUltimateSection = () => {
               onMouseEnter={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.DARK,
+                  cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.DEFAULT,
+                  cursorSize: CURSOR_SIZES.BIGGER,
                 })
               }}
               onMouseLeave={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
@@ -192,7 +192,7 @@ const TheUltimateSection = () => {
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.DEFAULT,
+                  cursorSize: CURSOR_SIZES.SMALLER,
                 })
               }}
             />
@@ -202,21 +202,21 @@ const TheUltimateSection = () => {
               onMouseEnter={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.DARK,
+                  cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.DEFAULT,
+                  cursorSize: CURSOR_SIZES.BIGGER,
                 })
               }}
               onMouseLeave={() => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_COLOR",
@@ -224,7 +224,7 @@ const TheUltimateSection = () => {
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.DEFAULT,
+                  cursorSize: CURSOR_SIZES.SMALLER,
                 })
               }}
             >

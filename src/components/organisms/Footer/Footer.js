@@ -82,7 +82,7 @@ const Footer = () => {
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_COLOR",
@@ -90,7 +90,7 @@ const Footer = () => {
         })
         dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
-          cursorSize: CURSOR_SIZES.DEFAULT,
+          cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
     >
@@ -138,11 +138,11 @@ const Footer = () => {
                       onMouseEnter={() => {
                         dispatchCursor({
                           type: "CHANGE_CURSOR_TYPE",
-                          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                          cursorType: CURSOR_TYPES.FULL_CURSOR,
                         })
                         dispatchCursor({
                           type: "CHANGE_CURSOR_COLOR",
-                          cursorColor: CURSOR_COLORS.ACCENT,
+                          cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
                         })
                         dispatchCursor({
                           type: "CHANGE_CURSOR_SIZE",
@@ -152,7 +152,7 @@ const Footer = () => {
                       onMouseLeave={() => {
                         dispatchCursor({
                           type: "CHANGE_CURSOR_TYPE",
-                          cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                          cursorType: CURSOR_TYPES.FULL_CURSOR,
                         })
                         dispatchCursor({
                           type: "CHANGE_CURSOR_COLOR",
@@ -160,7 +160,7 @@ const Footer = () => {
                         })
                         dispatchCursor({
                           type: "CHANGE_CURSOR_SIZE",
-                          cursorSize: CURSOR_SIZES.DEFAULT,
+                          cursorSize: CURSOR_SIZES.SMALLER,
                         })
                       }}
                       to={item.link}
@@ -203,6 +203,34 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 facebook={true}
+                onPointerEnter={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.DEFAULT,
+                  })
+                }}
+                onPointerLeave={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.LIGHT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.SMALLER,
+                  })
+                }}
               >
                 Facebook
               </StyledMenuColumnLink>
@@ -212,6 +240,34 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer noopener"
                 instagram={true}
+                onPointerEnter={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.DEFAULT,
+                  })
+                }}
+                onPointerLeave={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.LIGHT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.SMALLER,
+                  })
+                }}
               >
                 Instagram
               </StyledMenuColumnLink>
