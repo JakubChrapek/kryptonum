@@ -5,8 +5,28 @@ import { StyledAboutSliderWrapper } from "../../atoms/AboutSlider/StyledAboutSli
 import { StyledTextContentWrapper } from "../../atoms/AboutSlider/StyledTextContentWrapper"
 import { StyledAboutSliderHeroParagraph } from "../../atoms/AboutSlider/StyledAboutSliderHeroParagraph"
 import { StyledAboutSliderHeroText } from "../../atoms/AboutSlider/StyledAboutSliderHeroText"
+import TeamSlider from "./TeamSlider"
+import { useStaticQuery } from "gatsby"
 
 const AboutSlider = () => {
+  const data = useStaticQuery(graphql`
+    query AboutTeamSlider {
+      allDatoCmsAuthor(filter: { locale: { eq: "pl" } }) {
+        nodes {
+          name
+          specialty
+          biography
+          id
+          photo {
+            alt
+            fluid(maxWidth: 518, maxHeight: 326) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <StyledAboutSliderWrapper>
       <StyledTextContentWrapper>
@@ -38,7 +58,7 @@ const AboutSlider = () => {
           </StyledAboutSliderHeroParagraph>
         </StyledAboutSliderHeroText>
       </StyledTextContentWrapper>
-      <div>slider</div>
+      <TeamSlider members={data.allDatoCmsAuthor.nodes} />
     </StyledAboutSliderWrapper>
   )
 }

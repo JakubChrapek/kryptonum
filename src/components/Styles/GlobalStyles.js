@@ -13,6 +13,7 @@ const Global = createGlobalStyle`
     --black-font: #090909;
     --white: #fff;
     --gray: #363636;
+    --slide-specialty: #aeaeae;
     --text-gray: #b2b2b2;
     --text-light-gray: #c0c0c0;
     --light-gray: #F7F7F7;

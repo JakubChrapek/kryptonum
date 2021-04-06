@@ -45,20 +45,9 @@ const OurVision = () => {
             elementNumber={2}
           />
           <OurVisionElement
-            leftBoxText="Powered by <br /> Creativity"
-            rightBoxText="At Kryptonum, creativity is what drives the agency.
-             It manifests itself through our management approach, 
-             creation process and technological development.
-              This is why each web project is unique, just like you."
+            leftBoxText="Kreatywny flow"
+            rightBoxText="Kochamy kreatywność i&nbsp;to ona napędza większość naszych działań. Bez kreatywności nie mielibyśmy pojęcia jak stworzyć stronę internetową. Siedzielibyśmy tylko nad pustą kartką papieru czy przed białym ekranem komputera. Ale - o&nbsp;kreatywność trzeba dbać, dlatego wciąż szukamy nowych inspiracji, które pozwalają nam wyjść poza naszą strefę komfortu."
             elementNumber={3}
-          />
-          <OurVisionElement
-            leftBoxText="Obsessed with <br /> results"
-            rightBoxText="We develop digital solutions, platforms and modules
-             that have a real impact for our customers. We firmly believe that
-              creating tailor-made digital projects is essential 
-              to the success of tomorrow’s thriving businesses."
-            elementNumber={4}
           />
         </div>
       </StyledOurVisionWrapper>
