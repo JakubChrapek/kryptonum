@@ -49,14 +49,13 @@ const SlideHeaderWrapper = styled(motion.div)`
 
 const TeamSlide = ({ slide }) => {
   return (
-    <SlideWrapper
-      key={slide.id}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99] }}
-    >
-      <ImageWrapper>
+    <SlideWrapper key={slide.id}>
+      <ImageWrapper
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99] }}
+      >
         <Img fluid={slide.photo.fluid} />
       </ImageWrapper>
       <TextWrapper
@@ -64,28 +63,28 @@ const TeamSlide = ({ slide }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{
-          delay: 0.1,
           staggerChildren: 0.1,
-          duration: 0.7,
+          duration: 0.4,
           ease: [0.6, -0.05, 0.01, 0.99],
         }}
       >
-        <SlideHeaderWrapper
-          initial={{ opacity: 0, y: 8, skewX: 7 }}
-          animate={{ opacity: 1, y: 0, skewX: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{
-            duration: 0.7,
-            ease: [1, 0, 0, 1],
-          }}
-        >
-          <Line />
+        <SlideHeaderWrapper>
+          <Line
+            initial={{ opacity: 0, scaleX: 0, originX: 0 }}
+            animate={{ opacity: 1, scaleX: 1, originX: 0 }}
+            exit={{ opacity: 0, originX: 1 }}
+            transition={{ delay: 0.38, duration: 0.4 }}
+          />
           <div>
             <TextStyles
               fontFamily="Poppins"
               fontSize="16px"
               fontWeight="400"
               lineHeight="1.38"
+              initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, filter: "blur(3px)" }}
+              transition={{ delay: 0.65, duration: 0.4 }}
             >
               {slide.name}
             </TextStyles>
@@ -96,6 +95,10 @@ const TeamSlide = ({ slide }) => {
               lineHeight="1.29"
               color="var(--slide-specialty)"
               declaredMargin="2px 0 0"
+              initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, filter: "blur(3px)" }}
+              transition={{ delay: 0.95, duration: 0.4 }}
             >
               {slide.specialty}
             </TextStyles>
@@ -108,13 +111,13 @@ const TeamSlide = ({ slide }) => {
           lineHeight="1.71"
           color="var(--black-font)"
           declaredMargin="36px 0 0"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{
+            delay: 1.25,
             duration: 0.7,
-            delay: 0.2,
-            ease: [1, 0, 0, 1],
+            ease: [0.5, -0.04, 0.36, 0.93],
           }}
         >
           {slide.biography}
