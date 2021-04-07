@@ -6,7 +6,7 @@ import { StyledTextContentWrapper } from "../../atoms/AboutSlider/StyledTextCont
 import { StyledAboutSliderHeroParagraph } from "../../atoms/AboutSlider/StyledAboutSliderHeroParagraph"
 import { StyledAboutSliderHeroText } from "../../atoms/AboutSlider/StyledAboutSliderHeroText"
 import TeamSlider from "./TeamSlider"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const AboutSlider = () => {
   const data = useStaticQuery(graphql`

@@ -30,7 +30,9 @@ const OurVision = () => {
             textAlign="center"
           >
             Czyli to, co sprawia, że wyskakujemy rano z&nbsp;łóżka myśląc
-            o&nbsp;kolejnym dniu w&nbsp;pracy. Naprawdę!
+            o&nbsp;kolejnym dniu
+            <br />
+            w&nbsp;pracy. Naprawdę!
           </StyledOurVisionHeroTextP>
         </StyledOurVisionHeroTextWrapper>
         <div>

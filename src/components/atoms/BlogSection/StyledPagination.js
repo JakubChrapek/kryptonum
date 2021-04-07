@@ -6,4 +6,5 @@ export const PaginationStyles = styled(motion.div)`
   width: 100%;
   align-items: center;
   padding-top: 40px;
+  grid-area: ${({ gridArea }) => gridArea};
 `

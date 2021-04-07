@@ -19,7 +19,7 @@ export const StyledLine = styled(motion.span)`
     height: 2px;
     bottom: 0;
     left: 0;
-    width: calc(100% + 28px);
+    width: 100%;
     background-color: var(--black);
     z-index: 1;
     transform-origin: left center;

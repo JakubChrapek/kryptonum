@@ -14,13 +14,30 @@ import {
   RightArrowPagination,
 } from "../../atoms/Icons/arrows"
 
-const Pagination = ({ length, currentPage, setCurrentPage }) => {
+const Pagination = ({
+  length,
+  currentPage,
+  setCurrentPage,
+  gridArea,
+  layout,
+  initial,
+  animate,
+  exit,
+  transition,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
   const nextDisabled = currentPage >= length - 1
   console.log(length, currentPage)
   return (
-    <PaginationStyles>
+    <PaginationStyles
+      initial={initial}
+      animate={animate}
+      exit={exit}
+      transition={transition}
+      layout={layout}
+      gridArea={gridArea}
+    >
       <StyledButtonPagination
         type="button"
         whileHover={!prevDisabled ? { x: -2 } : {}}

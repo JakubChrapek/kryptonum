@@ -8,7 +8,7 @@ import OurVision from "../components/molecules/OurVision/OurVision"
 
 const About = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "var(--white)" }}>
       <AboutContent />
       <AboutBestWay
         textContent="W&nbsp;Kryptonum polecimy na księżyc i&nbsp;z&nbsp;powrotem, żeby znaleźć najlepszy projekt strony internetowej. A&nbsp;jak starczy czasu, to przyniesiemy Ci w&nbsp;gratisie kamień księżycowy 😉 
