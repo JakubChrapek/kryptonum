@@ -36,6 +36,7 @@ const TeamSlider = ({ members }) => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           length={Math.ceil(members?.length / pageLength)}
+          variant="teamSlider"
         />
       )}
     </AnimatePresence>

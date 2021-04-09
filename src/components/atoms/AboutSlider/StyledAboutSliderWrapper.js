@@ -9,9 +9,9 @@ export const StyledAboutSliderWrapper = styled.div`
   margin: 0 auto 30px;
 
   @media only screen and (max-width: 1140px) {
-    padding: 60px 60px 20px 60px;
+    padding: 60px;
   }
   @media only screen and (max-width: 574px) {
-    padding: 30px 28px 20px 28px;
+    padding: 30px 28px 60px 28px;
   }
 `

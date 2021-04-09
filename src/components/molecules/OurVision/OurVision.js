@@ -51,7 +51,7 @@ const OurVision = () => {
             color="var(--white)"
             textAlign="center"
           >
-            Czyli to, co sprawia, że wyskakujemy rano z&nbsp;łóżka myśląc
+            Czyli to, co sprawia, że wyskakujemy rano z&nbsp;łóżka, myśląc
             o&nbsp;kolejnym dniu
             <br />
             w&nbsp;pracy. Naprawdę!
@@ -59,17 +59,17 @@ const OurVision = () => {
         </StyledOurVisionHeroTextWrapper>
         <div>
           <OurVisionElement
-            leftBoxText="Punktualność"
+            leftBoxText="Punktualność<br/>ma znaczenie"
             rightBoxText="Stosujemy prostą zasadę - deadline rzecz święta. Rozumiemy, że własna strona internetowa jest ważnym narzędziem w&nbsp;twojej strategii marketingowej i&nbsp;że potrzebujesz jej jak najszybciej. Dlatego zawsze wywiązujemy się z&nbsp;terminów."
             elementNumber={1}
           />
           <OurVisionElement
-            leftBoxText="Feedback. Więcej feedbacku!"
+            leftBoxText="Feedback.<br/>Więcej feedbacku!"
             rightBoxText="Wiemy, że nie każdy design lub projekt jest od samego początku idealny i&nbsp;jesteśmy ludźmi - czasem popełniamy błędy. Dlatego bardzo doceniamy Twoje komentarze. Dzięki nim każdy następny projekt strony internetowej jest jeszcze lepszy!"
             elementNumber={2}
           />
           <OurVisionElement
-            leftBoxText="Kreatywny flow"
+            leftBoxText="Kreatywny<br/>flow"
             rightBoxText="Kochamy kreatywność i&nbsp;to ona napędza większość naszych działań. Bez kreatywności nie mielibyśmy pojęcia jak stworzyć stronę internetową. Siedzielibyśmy tylko nad pustą kartką papieru czy przed białym ekranem komputera. Ale - o&nbsp;kreatywność trzeba dbać, dlatego wciąż szukamy nowych inspiracji, które pozwalają nam wyjść poza naszą strefę komfortu."
             elementNumber={3}
           />

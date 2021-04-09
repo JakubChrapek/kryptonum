@@ -12,7 +12,7 @@ const About = () => {
       <AboutContent />
       <AboutBestWay
         textContent="W&nbsp;Kryptonum polecimy na księżyc i&nbsp;z&nbsp;powrotem, żeby znaleźć najlepszy projekt strony internetowej. A&nbsp;jak starczy czasu, to przyniesiemy Ci w&nbsp;gratisie kamień księżycowy 😉 
-Wierzymy, że każdy jest specjalistą w&nbsp;swojej dziedzinie i&nbsp;razem możemy osiągnąć więcej niż osobno. Właśnie dlatego współpracujemy z&nbsp;zespołem ekspertów w&nbsp;projektowaniu, tworzeniu stron internetowych, marketingu, SEO i&nbsp;nie tylko.
+Ale do tego trzeba specjalistów. Właśnie dlatego współpracujemy z&nbsp;zespołem ekspertów w&nbsp;projektowaniu, tworzeniu stron internetowych, marketingu, SEO i&nbsp;nie tylko.
 Zbyt piękne, żeby mogło być prawdziwe? Dopiero się rozgrzewamy!"
       />
       <AboutSlider />

@@ -15,7 +15,7 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
         lineHeight="1.26"
         letterSpacing="-1.3px"
         color="var(--accent)"
-        declaredPadding="0 174px 0 0"
+        accentedHeading
       >
         <TextStyles
           fontFamily="JetBrains Mono"

@@ -1,11 +1,16 @@
 import styled from "styled-components"
 
 export const StyledTextContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 64px;
   width: 100%;
+  @media (max-width: 1080px) {
+    grid-gap: 50px;
+    grid-template-columns: 2fr 3fr;
+  }
   @media only screen and (max-width: 706px) {
-    flex-direction: column;
-    justify-content: flex-start;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
   }
 `

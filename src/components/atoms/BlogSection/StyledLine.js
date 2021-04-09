@@ -10,7 +10,7 @@ export const StyledLine = styled(motion.span)`
   margin-left: 33px;
   display: inline-block;
   @media (max-width: 540px) {
-    display: none;
+    display: ${({ show }) => (show ? "inline" : "none")};
   }
 
   &:after {

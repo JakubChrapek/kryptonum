@@ -21,6 +21,10 @@ const SlideWrapper = styled(motion.div)`
   @media (max-width: 880px) {
     grid-gap: 40px;
   }
+  @media (max-width: 760px) {
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+  }
 `
 
 const ImageWrapper = styled(motion.div)`
@@ -34,6 +38,10 @@ const ImageWrapper = styled(motion.div)`
     @media (max-width: 880px) {
       max-height: 246px;
       height: 246px;
+    }
+    @media (max-width: 760px) {
+      max-height: unset;
+      height: auto;
     }
   }
 `
@@ -50,6 +58,9 @@ const Line = styled(motion.span)`
   display: inline-block;
   margin-right: 22px;
   margin-bottom: 20px;
+  @media (max-width: 760px) {
+    width: 47px;
+  }
 `
 
 const SlideHeaderWrapper = styled(motion.div)`
@@ -100,6 +111,7 @@ const TeamSlide = ({ slide }) => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
               transition={{ delay: 0.55, duration: 0.3 }}
+              name
             >
               {slide.name}
             </TextStyles>
@@ -114,6 +126,7 @@ const TeamSlide = ({ slide }) => {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
               transition={{ delay: 0.85, duration: 0.3 }}
+              specialty
             >
               {slide.specialty}
             </TextStyles>

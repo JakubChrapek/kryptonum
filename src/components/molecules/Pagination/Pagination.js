@@ -24,6 +24,7 @@ const Pagination = ({
   animate,
   exit,
   transition,
+  variant,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
@@ -119,6 +120,7 @@ const Pagination = ({
         />
       </StyledButtonPagination>
       <StyledLine
+        show={variant === "teamSlider"}
         width={
           currentPage === 0 ? 0 : length > 1 ? currentPage / (length - 1) : 1
         }
