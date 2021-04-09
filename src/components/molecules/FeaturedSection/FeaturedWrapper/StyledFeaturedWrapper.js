@@ -13,10 +13,10 @@ export const StyledFeaturedWrapper = styled.div`
     line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
     position: relative;
     @media only screen and (max-width: 1183px) {
-      font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "40px")};
+      font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "36px")};
     }
     @media only screen and (max-width: 759px) {
-      font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "44px")};
+      font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "32px")};
     }
     @media only screen and (max-width: 559px) {
       margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "27px" : "0")};
@@ -27,7 +27,7 @@ export const StyledFeaturedWrapper = styled.div`
     }
     @media only screen and (max-width: 484px) {
       font-size: ${({ hasSmalFontSize, mainHeader }) =>
-        hasSmalFontSize ? "32px" : mainHeader ? "52px" : "40px"};
+        hasSmalFontSize ? "28px" : mainHeader ? "52px" : "40px"};
     }
     @media only screen and (max-width: 399px) {
       font-size: ${({ hasSmalFontSize, mainHeader }) =>
@@ -35,7 +35,7 @@ export const StyledFeaturedWrapper = styled.div`
     }
     @media only screen and (max-width: 360px) {
       font-size: ${({ hasSmalFontSize, mainHeader }) =>
-        hasSmalFontSize ? "22px" : mainHeader ? "46px" : "40px"};
+        hasSmalFontSize ? "26px" : mainHeader ? "46px" : "38px"};
     }
     &:after {
       content: "";

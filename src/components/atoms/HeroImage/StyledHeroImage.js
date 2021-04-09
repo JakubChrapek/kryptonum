@@ -7,7 +7,7 @@ export const HeroImageWrapper = styled.div`
   img {
     object-fit: cover;
   }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 1366px) {
     height: 420px;
   }
   @media only screen and (max-width: 812px) {

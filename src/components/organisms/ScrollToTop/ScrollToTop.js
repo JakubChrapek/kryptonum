@@ -25,6 +25,11 @@ const ScrollToTopStyles = styled(motion.button)`
   border: 0;
   z-index: 5;
 
+  @media (max-width: 1600px) {
+    right: 0px;
+    bottom: 100px;
+  }
+
   @media (max-width: 1025px) {
     right: -20px;
     bottom: 80px;

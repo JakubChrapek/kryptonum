@@ -6,10 +6,17 @@ export const StyledAboutSliderHeroParagraph = styled(TextStyles)`
     font-size: 16px;
   }
   @media only screen and (max-width: 1063px) {
-    padding-top: 37px;
+    /* padding-top: 37px; */
   }
   @media only screen and (max-width: 759px) {
     font-size: 15px;
-    padding-bottom: 89px;
+  }
+  @media only screen and (max-width: 706px) {
+    line-height: 1.33;
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 574px) {
+    line-height: 1.33;
+    font-size: 15px;
   }
 `

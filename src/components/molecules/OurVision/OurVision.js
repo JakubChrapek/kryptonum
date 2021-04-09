@@ -7,10 +7,32 @@ import { StyledOurVisionHeroTextP } from "../../atoms/OurVision/StyledOurVisionH
 import { StyledOurVisionHeroTextWrapper } from "../../atoms/OurVision/StyledOurVisionHeroTextWrapper"
 import { StyledOurVisionSection } from "../../atoms/OurVision/StyledOurVisionSection"
 import { StyledOurVisionWrapper } from "../../atoms/OurVision/StyledOurVisionWrapper"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const OurVision = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <StyledOurVisionSection>
+    <StyledOurVisionSection
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.LIGHT,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <StyledOurVisionWrapper>
         <StyledOurVisionH2
           fontSize="40px"

@@ -15,12 +15,26 @@ const SlideWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 64px;
+  @media (max-width: 1080px) {
+    grid-gap: 50px;
+  }
+  @media (max-width: 880px) {
+    grid-gap: 40px;
+  }
 `
 
 const ImageWrapper = styled(motion.div)`
   > .gatsby-image-wrapper {
     max-height: 326px;
     height: 326px;
+    @media (max-width: 1080px) {
+      max-height: 286px;
+      height: 286px;
+    }
+    @media (max-width: 880px) {
+      max-height: 246px;
+      height: 246px;
+    }
   }
 `
 
@@ -49,12 +63,13 @@ const SlideHeaderWrapper = styled(motion.div)`
 
 const TeamSlide = ({ slide }) => {
   return (
-    <SlideWrapper key={slide.id}>
+    <SlideWrapper>
       <ImageWrapper
+        key={slide.id}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99] }}
+        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] }}
       >
         <Img fluid={slide.photo.fluid} />
       </ImageWrapper>
@@ -64,7 +79,7 @@ const TeamSlide = ({ slide }) => {
         exit={{ opacity: 0 }}
         transition={{
           staggerChildren: 0.1,
-          duration: 0.4,
+          duration: 0.3,
           ease: [0.6, -0.05, 0.01, 0.99],
         }}
       >
@@ -73,7 +88,7 @@ const TeamSlide = ({ slide }) => {
             initial={{ opacity: 0, scaleX: 0, originX: 0 }}
             animate={{ opacity: 1, scaleX: 1, originX: 0 }}
             exit={{ opacity: 0, originX: 1 }}
-            transition={{ delay: 0.38, duration: 0.4 }}
+            transition={{ delay: 0.32, duration: 0.35 }}
           />
           <div>
             <TextStyles
@@ -84,7 +99,7 @@ const TeamSlide = ({ slide }) => {
               initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
-              transition={{ delay: 0.65, duration: 0.4 }}
+              transition={{ delay: 0.55, duration: 0.3 }}
             >
               {slide.name}
             </TextStyles>
@@ -98,7 +113,7 @@ const TeamSlide = ({ slide }) => {
               initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
-              transition={{ delay: 0.95, duration: 0.4 }}
+              transition={{ delay: 0.85, duration: 0.3 }}
             >
               {slide.specialty}
             </TextStyles>
@@ -115,10 +130,11 @@ const TeamSlide = ({ slide }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{
-            delay: 1.25,
-            duration: 0.7,
+            delay: 1,
+            duration: 0.5,
             ease: [0.5, -0.04, 0.36, 0.93],
           }}
+          slideText
         >
           {slide.biography}
         </TextStyles>

@@ -1,14 +1,55 @@
 import React from "react"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
+import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 
 import HeroContent from "../HeroContent/HeroContent"
 import HeroImage from "../HeroImage/HeroImage"
 
 const AboutContent = () => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
-    <div>
-      <HeroContent content="Kim są nasi superbohaterowie?" />
-      <HeroImage />
-    </div>
+    <>
+      <BgColourWrapper
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+        bg="var(--white)"
+      >
+        <HeroContent content="Kim są nasi superbohaterowie?" />
+      </BgColourWrapper>
+      <HeroImage
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+      />
+    </>
   )
 }
 

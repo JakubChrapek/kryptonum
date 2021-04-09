@@ -2,6 +2,12 @@ import { AnimateSharedLayout, motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 import { TextStyles } from "../../atoms/Text/Text"
 import FeedbackSlider from "./FeedbackSlider"
 
@@ -43,6 +49,7 @@ const TitleWrapper = styled(motion.div)`
 `
 
 const FeedbackFrom = () => {
+  const dispatchCursor = useCursorDispatchContext()
   const data = useStaticQuery(graphql`
     query FeedbackQuery {
       allDatoCmsFeedbackFromClient(filter: { locale: { eq: "pl" } }) {
@@ -60,7 +67,22 @@ const FeedbackFrom = () => {
   `)
 
   return (
-    <FeedbackFromWrapper>
+    <FeedbackFromWrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_COLOR",
+          cursorColor: CURSOR_COLORS.DARK,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <AnimateSharedLayout type="crossfade">
         <FeedbackWrapper>
           <TitleWrapper>

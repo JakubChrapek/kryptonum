@@ -2,9 +2,9 @@ import React from "react"
 
 import { HeroImageWrapper } from "../../atoms/HeroImage/StyledHeroImage"
 
-const HeroImage = ({ image }) => {
+const HeroImage = ({ image, onMouseEnter }) => {
   return (
-    <HeroImageWrapper>
+    <HeroImageWrapper onMouseEnter={onMouseEnter}>
       <img src={image} />
     </HeroImageWrapper>
   )
