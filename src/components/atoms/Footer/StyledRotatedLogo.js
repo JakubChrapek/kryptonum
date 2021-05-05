@@ -14,7 +14,7 @@ export const StyledRotatedLogo = styled(Link)`
   transform: rotate(-90deg);
   left: -50px;
   top: 50%;
-  @media (max-width: 912px) {
+  @media (max-width: 918px) {
     display: none;
   }
 `

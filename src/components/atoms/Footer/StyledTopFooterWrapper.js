@@ -6,7 +6,8 @@ export const StyledTopFooterWrapper = styled.div`
 
   @media (max-width: 767px) {
     flex-direction: column;
-    /* align-items: center; */
+    max-width: 373px;
+    margin: 0 auto;
   }
   @media (max-width: 520px) {
     /* align-items: flex-start; */

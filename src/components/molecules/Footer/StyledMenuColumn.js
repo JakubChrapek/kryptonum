@@ -18,9 +18,13 @@ export const StyledMenuColumn = styled(StyledInTouchColumn)`
   @media (max-width: 1200px) {
     margin-left: 6%;
   }
+  @media (max-width: 918px) {
+    margin-left: 2%;
+  }
   @media (max-width: 767px) {
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 4rem 0 0;
   }
 
   p {

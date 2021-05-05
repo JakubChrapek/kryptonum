@@ -7,4 +7,16 @@ export const StyledInTouchColumn = styled.div`
   @media (max-width: 1200px) {
     padding-left: 100px;
   }
+  @media (max-width: 918px) {
+    padding-left: 0;
+  }
+  @media (max-width: 767px) {
+    width: unset;
+    max-width: 100%;
+  }
+  @media (max-width: 343px) {
+    > p:first-of-type {
+      font-size: 38px;
+    }
+  }
 `

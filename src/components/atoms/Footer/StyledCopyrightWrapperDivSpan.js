@@ -3,6 +3,7 @@ import { TextStyles } from "../Text/Text"
 
 export const StyledCopyrightWrapperDivSpan = styled(TextStyles)`
   position: relative;
+  text-align: center;
 
   &.withAfter::after {
     content: "";
