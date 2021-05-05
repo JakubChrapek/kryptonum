@@ -15,7 +15,7 @@ export const StyledHeroContentH1 = styled(TextStyles)`
   @media only screen and (max-width: 494px) {
     font-size: 32px;
   }
-  @media only screen and (max-width: 390px) {
+  /* @media only screen and (max-width: 390px) {
     font-size: 26px;
-  }
+  } */
 `

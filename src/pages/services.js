@@ -7,7 +7,7 @@ import WhatWeDo from "../components/molecules/Services/WhatWeDo"
 const Services = () => {
   return (
     <div>
-      <HeroContent content="Good design makes life better" />
+      <HeroContent content="Good design<br/>makes life better" />
       <HeroImage />
       <WhatWeDo />
     </div>

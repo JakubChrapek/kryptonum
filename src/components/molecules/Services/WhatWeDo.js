@@ -6,6 +6,7 @@ import OurWorkflow from "./OurWorkflow"
 import { StyledWhatWeDoSection } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoSection"
 import { StyledWhatWeDoP } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoP"
 import { StyledWhatWeDoH3 } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoH3"
+import { StyledH3Wrapper } from "../../atoms/Services/WhatWeDo/StyledH3Wrapper"
 import { StyledWhatWeDoInfoTextWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoInfoTextWrapper"
 import { StyledWhatWeDoContentWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoContentWrapper"
 
@@ -13,17 +14,19 @@ const WhatWeDo = () => {
   return (
     <StyledWhatWeDoSection>
       <StyledWhatWeDoInfoTextWrapper>
-        <StyledWhatWeDoH3
-          fontFamily="Poppins"
-          fontSize="40px"
-          lineHeight="1.28"
-          letterSpacing="2px"
-          color="var(--black)"
-          declaredDisplay="block"
-          letterSpacing="normal"
-        >
-          What we do
-        </StyledWhatWeDoH3>
+        <StyledH3Wrapper>
+          <StyledWhatWeDoH3
+            fontFamily="Poppins"
+            fontSize="40px"
+            lineHeight="1.28"
+            letterSpacing="2px"
+            color="var(--black)"
+            declaredDisplay="block"
+            letterSpacing="normal"
+          >
+            What we do
+          </StyledWhatWeDoH3>
+        </StyledH3Wrapper>
         <StyledWhatWeDoP
           fontFamily="JetBrains Mono"
           fontSize="18px"
@@ -47,6 +50,7 @@ const WhatWeDo = () => {
           keeping deadlines and promises. Our work gets results and 
           we never hide behind paperwork."
           swap={false}
+          design
         />
         <WhatWeDoElement
           title="Development"

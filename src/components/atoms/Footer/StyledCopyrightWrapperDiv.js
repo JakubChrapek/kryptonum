@@ -14,7 +14,7 @@ export const StyledCopyrightWrapperDiv = styled.div`
       margin-top: 66px;
     }
     > span {
-      &::after {
+      &:after {
         display: none;
       }
     }

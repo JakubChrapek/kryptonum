@@ -7,7 +7,7 @@ import { StyledWhatWeDoElementRightBar } from "../../atoms/Services/WhatWeDoElem
 import { StyledWhatWeDoElementRightBarH3 } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementRightBarH3"
 import { StyledWhatWeDoElementWrapper } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementWrapper"
 
-const WhatWeDoElement = ({ title, image, content, swap }) => {
+const WhatWeDoElement = ({ title, image, content, swap, design }) => {
   return (
     <StyledWhatWeDoElementWrapper>
       <StyledWhatWeDoElementH2
@@ -16,7 +16,7 @@ const WhatWeDoElement = ({ title, image, content, swap }) => {
         textAlign="center"
         lineHeight="1.51"
         color="var(--black)"
-        declaredMargin="0 0 114px 0"
+        declaredMargin={design ? "0 0 114px 0" : "0 0 63px 0"}
         letterSpacing="normal"
         declaredDisplay="block"
       >

@@ -14,9 +14,8 @@ const HeroContent = ({ content, variant }) => {
           lineHeight="1.5"
           color="var(--black)"
           variant={variant}
-        >
-          {content}
-        </StyledHeroContentH1>
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </StyledHeroWrapper>
     </StyledHeroSection>
   )
