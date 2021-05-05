@@ -43,14 +43,14 @@ export const DownArrow = () => (
 export const LeftArrowPagination = ({ color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="40.681"
+    width="52.681"
     height="13.232"
-    viewBox="0 0 40.681 13.232"
+    viewBox="0 0 52.681 13.232"
   >
-    <g id="arrow-left" transform="translate(-395.819 -294.826)">
+    <g transform="translate(-395.819 -294.826)">
       <line
         id="arrow-body"
-        x2="39"
+        x2="51"
         transform="translate(397.5 301.651)"
         fill="none"
         stroke={color ? color : "#171717"}
@@ -71,14 +71,14 @@ export const LeftArrowPagination = ({ color }) => (
 export const RightArrowPagination = ({ color }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="40.681"
+    width="53.609"
     height="13.232"
-    viewBox="0 0 40.681 13.232"
+    viewBox="0 0 53.609 13.232"
   >
-    <g id="arrow-right" transform="translate(436.5 308.059) rotate(180)">
+    <g id="arrow-right" transform="translate(449.428 308.059) rotate(180)">
       <line
         id="arrow-body"
-        x2="39"
+        x2="51.928"
         transform="translate(397.5 301.651)"
         fill="none"
         stroke={color ? color : "#171717"}

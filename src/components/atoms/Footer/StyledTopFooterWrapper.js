@@ -2,14 +2,13 @@ import styled from "styled-components"
 
 export const StyledTopFooterWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   position: relative;
 
   @media (max-width: 767px) {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
   @media (max-width: 520px) {
-    align-items: flex-start;
+    /* align-items: flex-start; */
   }
 `

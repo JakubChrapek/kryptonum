@@ -4,7 +4,7 @@ export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 41px;
-  @media only screen and (max-width: 759px) {
+  @media only screen and (max-width: 767px) {
     padding-left: ${({ howWeWorkHeader }) => (howWeWorkHeader ? "20px" : "0")};
     margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
   }
@@ -15,7 +15,7 @@ export const StyledFeaturedWrapper = styled.div`
     @media only screen and (max-width: 1183px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "36px")};
     }
-    @media only screen and (max-width: 759px) {
+    @media only screen and (max-width: 767px) {
       font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "32px")};
     }
     @media only screen and (max-width: 559px) {

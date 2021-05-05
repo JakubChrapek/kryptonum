@@ -9,7 +9,7 @@ export const StyledFooterSectionStyles = styled.div`
   @media only screen and (max-width: 808px) {
     padding: 74px 40px 40px 40px;
   }
-  @media only screen and (max-width: 508px) {
-    padding: 74px 20px 40px 20px;
+  @media only screen and (max-width: 767px) {
+    padding: 40px 28px 60px;
   }
 `

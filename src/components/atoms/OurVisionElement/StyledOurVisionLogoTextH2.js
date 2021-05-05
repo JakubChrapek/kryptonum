@@ -10,14 +10,24 @@ export const StyledOurVisionLogoTextH2 = styled(TextStyles)`
     font-size: 36px;
   }
   @media only screen and (max-width: 767px) {
+    font-size: 64px;
+    width: 100%;
+  }
+  @media only screen and (max-width: 657px) {
+    font-size: 58px;
+    width: 100%;
+  }
+  @media only screen and (max-width: 586px) {
     font-size: 50px;
     width: 100%;
-    max-width: 440px;
   }
-  @media only screen and (max-width: 481px) {
+  @media only screen and (max-width: 518px) {
     font-size: 40px;
   }
   @media only screen and (max-width: 401px) {
-    font-size: 32px;
+    margin-left: -20px;
+  }
+  @media only screen and (max-width: 401px) {
+    font-size: 35px;
   }
 `

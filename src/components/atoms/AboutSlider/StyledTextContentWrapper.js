@@ -9,7 +9,7 @@ export const StyledTextContentWrapper = styled.div`
     grid-gap: 50px;
     grid-template-columns: 2fr 3fr;
   }
-  @media only screen and (max-width: 706px) {
+  @media only screen and (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-gap: 0;
   }

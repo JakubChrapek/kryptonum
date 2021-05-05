@@ -16,7 +16,7 @@ export const StyledBestWayWrapper = styled.div`
   @media only screen and (max-width: 890px) {
     padding: 89px 90px 90px 90px;
   }
-  @media only screen and (max-width: 759px) {
+  @media only screen and (max-width: 767px) {
     padding: 59px 28px 40px 28px;
   }
 `

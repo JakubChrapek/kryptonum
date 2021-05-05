@@ -116,8 +116,11 @@ const Footer = () => {
               color="var(--white)"
               lineHeight="2.14"
             >
-              Got interested? Have any questions? Or do you want to get straight
-              to work? No matter the reason, we can’t wait to hear from you!
+              Got interested?
+              <br />
+              Have any questions? <br />
+              Or do you want to get straight to work? No matter the reason, we
+              can’t wait to hear from you!
             </TextStyles>
           </StyledInTouchColumn>
           <StyledMenuColumn>

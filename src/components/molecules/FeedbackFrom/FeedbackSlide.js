@@ -7,6 +7,9 @@ import { render as toPlainText } from "datocms-structured-text-to-plain-text"
 const TextWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  > p {
+    max-width: 50ch;
+  }
 `
 
 const Line = styled(motion.span)`
@@ -64,6 +67,7 @@ const FeedbackSlide = ({ slide }) => {
         fontSize="28px"
         fontWeight="400"
         lineHeight="1.71"
+        slideText
         color="var(--black-font)"
         declaredMargin="36px 0 0"
         initial={{ opacity: 0 }}

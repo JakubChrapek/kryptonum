@@ -34,7 +34,7 @@ export const TextStyles = styled(motion.p)`
     font-size: ${({ slideText, fontSize }) => (slideText ? "20px" : fontSize)};
     margin: ${({ slideText }) => slideText && "18px 0 0"};
   }
-  @media only screen and (max-width: 759px) {
+  @media only screen and (max-width: 767px) {
     font-size: ${({ slideText, styledAboutBestWayWrapper, fontSize }) =>
       slideText ? "22px" : styledAboutBestWayWrapper ? "20px" : fontSize};
     line-height: ${({ styledAboutBestWayWrapper, lineHeight }) =>
@@ -60,7 +60,21 @@ export const TextStyles = styled(motion.p)`
   }
   @media only screen and (max-width: 500px) {
     display: ${({ howWeWorkSection }) => (howWeWorkSection ? "none" : "block")};
-    font-size: ${({ slideText, name, specialty, fontSize }) =>
-      name ? "15px" : specialty ? "12px" : slideText ? "16px" : fontSize};
+    font-size: ${({
+      slideText,
+      name,
+      specialty,
+      fontSize,
+      styledAboutBestWayWrapper,
+    }) =>
+      name
+        ? "15px"
+        : specialty
+        ? "12px"
+        : slideText
+        ? "16px"
+        : styledAboutBestWayWrapper
+        ? "16px"
+        : fontSize};
   }
 `

@@ -1,5 +1,4 @@
 import React from "react"
-
 import { HeroImageWrapper } from "../../atoms/HeroImage/StyledHeroImage"
 
 const HeroImage = ({ image, onMouseEnter }) => {

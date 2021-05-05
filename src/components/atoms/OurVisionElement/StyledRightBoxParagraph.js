@@ -3,6 +3,5 @@ import { TextStyles } from "../Text/Text"
 export const StyledRightBoxParagraph = styled(TextStyles)`
   @media (max-width: 767px) {
     width: 100%;
-    max-width: 440px;
   }
 `

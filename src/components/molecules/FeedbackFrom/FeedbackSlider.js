@@ -11,6 +11,9 @@ const SlidesStyles = styled(motion.section)`
   justify-content: flex-start;
   width: 100%;
   grid-area: content;
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
 `
 const FeedbackSlider = ({ slides }) => {
   const width = useWindowSize()

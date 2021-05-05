@@ -21,8 +21,8 @@ const SlideWrapper = styled(motion.div)`
   @media (max-width: 880px) {
     grid-gap: 40px;
   }
-  @media (max-width: 760px) {
-    grid-gap: 10px;
+  @media (max-width: 767px) {
+    grid-gap: 14px;
     grid-template-columns: 1fr;
   }
 `
@@ -39,7 +39,7 @@ const ImageWrapper = styled(motion.div)`
       max-height: 246px;
       height: 246px;
     }
-    @media (max-width: 760px) {
+    @media (max-width: 767px) {
       max-height: unset;
       height: auto;
     }
@@ -58,7 +58,7 @@ const Line = styled(motion.span)`
   display: inline-block;
   margin-right: 22px;
   margin-bottom: 20px;
-  @media (max-width: 760px) {
+  @media (max-width: 767px) {
     width: 47px;
   }
 `

@@ -11,9 +11,10 @@ const SlidesStyles = styled(motion.section)`
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 767px) {
     flex-direction: column;
     align-items: center;
+    margin-top: 96px;
   }
 `
 

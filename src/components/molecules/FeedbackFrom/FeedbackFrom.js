@@ -17,17 +17,17 @@ const FeedbackFromWrapper = styled.div`
   padding: 142px 139px;
   margin: 0 auto;
   @media only screen and (max-width: 1121px) {
-    padding: 104px 28px 50px 28px;
+    padding: 134px 28px 128px 28px;
   }
-  @media only screen and (max-width: 600px) {
-    padding-bottom: 0;
+  @media only screen and (max-width: 767px) {
+    padding: 84px 28px;
   }
 `
 
 const FeedbackWrapper = styled.section`
   display: grid;
-  height: 576px;
-  max-height: 80vh;
+  /* height: 576px;
+  max-height: 80vh; */
   background-color: var(--white);
   grid-template-areas:
     "title content content content content"
@@ -40,6 +40,16 @@ const FeedbackWrapper = styled.section`
   margin: 0 auto;
   @media (max-width: 1024px) {
     grid-gap: 12px 40px;
+  }
+  @media (max-width: 767px) {
+    grid-gap: 32px 0px;
+    grid-template-areas:
+      "title"
+      "content"
+      "content"
+      "content"
+      "content"
+      "pagination";
   }
 `
 
