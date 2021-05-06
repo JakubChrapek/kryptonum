@@ -6643,7 +6643,7 @@ gatsby-plugin-google-analytics@^3.2.0:
     "@babel/runtime" "^7.12.5"
     minimatch "3.0.4"
 
-gatsby-plugin-image@^1.2.0:
+gatsby-plugin-image@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-image/-/gatsby-plugin-image-1.4.0.tgz#4271f3d6e6824b4f631833591931fb9fd3f15aa9"
   integrity sha512-SmJcKzS9Dd2Crx4EqUC7MLhB2s3i5+datJdxZYOrqNuCNmLKyperUmS+BhSYBqQMxJ1lAt7xgziSZ5wx9IIm9g==
@@ -6718,7 +6718,7 @@ gatsby-plugin-react-helmet@^4.2.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-plugin-sharp@^3.2.0:
+gatsby-plugin-sharp@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.4.1.tgz#5ada8704367136df3096888146af720ce385d90a"
   integrity sha512-zPVe3s0NivQ8MwmujUUGZwyX1MhgBn3Zm0x8CtvLWEPGN9lqoqt+xKglkeRr7qmBEZJOMyge+viKPQyJPQOyDg==
@@ -6882,7 +6882,7 @@ gatsby-source-datocms@^2.6.10:
     regenerator-runtime "^0.13.3"
     unist-util-visit "^2.0.3"
 
-gatsby-source-filesystem@^3.2.0:
+gatsby-source-filesystem@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-3.4.0.tgz#31d9dd15a382c0abd315f38bc772ac1e25b456e6"
   integrity sha512-kw55JXz6xA99/4pI0JClJre+be5GQA0mpUhuslY9Bg/VVatFmEcxnmirrWzpEIE8OF0jtUlfZHSZu68aB5UnLQ==
@@ -6921,7 +6921,7 @@ gatsby-telemetry@^2.4.1:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-transformer-sharp@^3.2.0:
+gatsby-transformer-sharp@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-3.4.0.tgz#2ff5c941af262f659b552c98c9df6d2543ae7fe0"
   integrity sha512-Hdohyzeef8lRV7D/UK/WWZL2PfPe3FcMW4/MPAuZvRskPPkKcdLm0Qo3XXugt8KyfzaWzJSi0ltvpRpxA7aj9g==

@@ -10,7 +10,7 @@ import { StyledH3Wrapper } from "../../atoms/Services/WhatWeDo/StyledH3Wrapper"
 import { StyledWhatWeDoInfoTextWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoInfoTextWrapper"
 import { StyledWhatWeDoContentWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoContentWrapper"
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ imagesData }) => {
   return (
     <StyledWhatWeDoSection>
       <StyledWhatWeDoInfoTextWrapper>
@@ -44,7 +44,7 @@ const WhatWeDo = () => {
       <StyledWhatWeDoContentWrapper>
         <WhatWeDoElement
           title="Design"
-          image="images"
+          image={imagesData.designImage}
           content="A strategic and tactical approach is essential 
           for long-term goals, but what’s even more important is 
           keeping deadlines and promises. Our work gets results and 
@@ -54,7 +54,7 @@ const WhatWeDo = () => {
         />
         <WhatWeDoElement
           title="Development"
-          image="images"
+          image={imagesData.developmentImage}
           content="Developing websites is about so 
           much more than marketing. It’s also about 
           aesthetics. For us, your site is the face of 
@@ -63,7 +63,7 @@ const WhatWeDo = () => {
         />
         <WhatWeDoElement
           title="Marketing"
-          image="images"
+          image={imagesData.marketingImage}
           content="Developing websites is about 
           so much more than marketing. It’s also about aesthetics
           . For us, your site is the face of your company. Let’s make it stunning."
@@ -71,7 +71,7 @@ const WhatWeDo = () => {
         />
         <WhatWeDoElement
           title="Strategy"
-          image="images"
+          image={imagesData.strategyImage}
           content="Developing websites is about so much more than marketing. 
           It’s also about aesthetics. For us, your site is the face of your company. 
           Let’s make it stunning."

@@ -5,7 +5,6 @@ export const StyledLearnTextWrapperUl = styled.ul`
     text-align: center;
   }
   li {
-    max-width: 198px;
     font-family: Poppins;
     font-size: 12px;
     font-weight: normal;
@@ -14,8 +13,9 @@ export const StyledLearnTextWrapperUl = styled.ul`
     line-height: 1.5;
     letter-spacing: 2px;
     color: var(--black);
+    margin-top: 6px;
     &:first-child {
-      padding-top: 38px;
+      padding-top: 32px;
     }
   }
 `

@@ -1,4 +1,5 @@
 import React from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { StyledWhatWeDoElementH2 } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementH2"
 import { StyledWhatWeDoElementImageWrapper } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementImageWrapper"
@@ -24,7 +25,7 @@ const WhatWeDoElement = ({ title, image, content, swap, design }) => {
       </StyledWhatWeDoElementH2>
       <StyledWhatWeDoElementImageWrapper>
         <StyledWhatWeDoElementLeftBar swap={swap}>
-          <img src={image} />
+          <GatsbyImage image={image.gatsbyImageData} />
         </StyledWhatWeDoElementLeftBar>
         <StyledWhatWeDoElementRightBar swap={swap}>
           <StyledWhatWeDoElementRightBarH3

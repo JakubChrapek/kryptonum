@@ -27,7 +27,7 @@ const Learn = () => {
             fontSize="18px"
             lineHeight="1.28"
             color="var(--accent)"
-            letterSpacing="2.57px"
+            letterSpacing="1px"
             fontWeight="500"
           >
             (01)
@@ -37,7 +37,6 @@ const Learn = () => {
             fontSize="70px"
             lineHeight="1.24"
             color="var(--gray)"
-            letterSpacing="-1.75px"
             fontWeight="500"
             fontStretch="normal"
             declaredDisplay="block"
@@ -66,11 +65,11 @@ const Learn = () => {
             <li>Content Requirements</li>
           </StyledLearnTextWrapperUl>
         </StyledLearnTextWrapper>
-        <StyledElipseWrapper>
+        {/* <StyledElipseWrapper>
           <StyledElipseWrapperSpan>
             <span></span>
           </StyledElipseWrapperSpan>
-        </StyledElipseWrapper>
+        </StyledElipseWrapper> */}
       </StyledLearnWrapper>
       <StyledArrowWrapper>
         <IoIosArrowRoundDown
