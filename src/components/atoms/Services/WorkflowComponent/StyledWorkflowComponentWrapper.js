@@ -24,8 +24,4 @@ export const StyledWorkflowComponentWrapper = styled.div`
     /* align-items: flex-start; */
     /* padding-top: 0; */
   }
-
-  > div:first-of-type {
-    flex: 1 1 47.5%;
-  }
 `

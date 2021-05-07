@@ -2,10 +2,10 @@ import styled from "styled-components"
 import { TextStyles } from "../../Text/Text"
 
 export const StyledLongLastingWrapperP = styled(TextStyles)`
-  transform: translateY(-20px);
+  margin-top: -12px;
+  align-self: flex-end;
   @media only screen and (max-width: 1336px) {
     font-size: 34px;
-    transform: translateY(-10px);
   }
   @media only screen and (max-width: 1264px) {
     padding: 0 0 163px 0;

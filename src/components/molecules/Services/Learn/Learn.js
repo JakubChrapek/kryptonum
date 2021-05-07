@@ -34,7 +34,7 @@ const Learn = () => {
           </StyledWorkflowComponentGreenSpan>
           <StyledWorkflowComponentHeading
             fontFamily="LibreBaskerville"
-            fontSize="70px"
+            fontSize="88px"
             lineHeight="1.24"
             color="var(--gray)"
             fontWeight="500"
@@ -47,7 +47,7 @@ const Learn = () => {
         <StyledLearnTextWrapper>
           <StyledLearnTextWrapperH3
             fontFamily="LibreBaskerville"
-            fontSize="36px"
+            fontSize="45px"
             lineHeight="1.25"
             color="var(--gray)"
             declaredPadding="43px 0 0 0"

@@ -10,6 +10,7 @@ import { StyledThinkTextWrapper } from "../../../atoms/Services/Think/StyledThin
 import { StyledThinkTextWrapperH3 } from "../../../atoms/Services/Think/StyledThinkTextWrapperH3"
 import { TextStyles } from "../../../atoms/Text/Text"
 import { StyledThinkTextParagraph } from "../../../atoms/Services/Think/StyledThinkTextParagraph"
+import { ThinkWrapper } from "./ThinkWrapper"
 
 const Think = () => {
   return (
@@ -21,7 +22,7 @@ const Think = () => {
       mediaQueriesDirection={true}
       mediaQueriesAlign={true}
     >
-      <div>
+      <ThinkWrapper>
         <StyledWorkflowComponentGreenSpan
           fontFamily="JetBrains Mono"
           fontSize="18px"
@@ -34,7 +35,7 @@ const Think = () => {
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
-          fontSize="70px"
+          fontSize="88px"
           lineHeight="1.24"
           color="var(--gray)"
           fontWeight="500"
@@ -43,7 +44,7 @@ const Think = () => {
         >
           Think
         </StyledWorkflowComponentHeading>
-      </div>
+      </ThinkWrapper>
       <StyledIdeaBox>
         <StyledIdeaBoxP
           fontFamily="Poppins"
@@ -57,7 +58,7 @@ const Think = () => {
       <StyledThinkTextWrapper>
         <StyledThinkTextWrapperH3
           fontFamily="LibreBaskerville"
-          fontSize="36px"
+          fontSize="45px"
           lineHeight="1.25"
           color="var(--gray)"
           letterSpacing="-0.94px"

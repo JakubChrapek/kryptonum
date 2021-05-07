@@ -19,7 +19,7 @@ const Implementation = () => {
     <StyledWorkflowComponentWrapper
       mediaQueriesDirection={true}
       hasAlignItems={true}
-      hasPaddingTop={78}
+      hasPaddingTop={183}
       mediaQueriesAlign={true}
     >
       <div>
@@ -36,7 +36,7 @@ const Implementation = () => {
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
-          fontSize="70px"
+          fontSize="88px"
           lineHeight="1.24"
           color="var(--gray)"
           letterSpacing="-1.75px"
@@ -73,17 +73,17 @@ const Implementation = () => {
         <StyledLongLastingWrapper>
           <StyledArrowWrapper>
             <StyledArrow
-              size="92px"
+              size="76px"
               title="Arrow pointing down"
               color="#00EF8B"
             />
             <StyledArrow
-              size="92px"
+              size="76px"
               title="Arrow pointing down"
               color="#00EF8B"
             />
             <StyledArrow
-              size="92px"
+              size="76px"
               title="Arrow pointing down"
               color="#00EF8B"
             />

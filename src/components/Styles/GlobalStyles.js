@@ -33,6 +33,12 @@ const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  h1,h2,h3,h4, li, p, a,b,strong,span {
+
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
   body {
     font-size: 1.6rem;
     font-family: "Poppins";

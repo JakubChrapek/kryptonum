@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { TextStyles } from "../../Text/Text"
 
 export const StyledCreateTextP = styled(TextStyles)`
-  max-width: 413px;
+  width: 72%;
 
   @media only screen and (max-width: 1000px) {
     padding: 0 0 58px 0;

@@ -11,6 +11,7 @@ import { StyledCreateTextWrapper } from "../../../atoms/Services/Create/StyledCr
 import { StyledSpanElipse } from "../../../atoms/Services/Create/StyledSpanElipse"
 import { StyledSpanElipseP } from "../../../atoms/Services/Create/StyledSpanElipseP"
 import { StyledSpanElipseWrapper } from "../../../atoms/Services/Create/StyledSpanElipseWrapper"
+import { CreateWrapper } from "./CreateWrapper"
 
 const Create = () => {
   return (
@@ -22,7 +23,7 @@ const Create = () => {
       mediaQueriesDirection={true}
       mediaQueriesAlign={true}
     >
-      <div>
+      <CreateWrapper>
         <StyledWorkflowComponentGreenSpan
           fontFamily="JetBrains Mono"
           fontSize="18px"
@@ -35,7 +36,7 @@ const Create = () => {
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
-          fontSize="70px"
+          fontSize="88px"
           lineHeight="1.24"
           color="var(--gray)"
           letterSpacing="-1.75px"
@@ -45,16 +46,15 @@ const Create = () => {
         >
           Create
         </StyledWorkflowComponentHeading>
-      </div>
+      </CreateWrapper>
       <StyledCreateTextWrapper>
         <StyledCreateTextH3
           fontFamily="LibreBaskerville"
-          declaredPadding="0 84px 42px 0"
-          fontSize="36px"
+          declaredPadding="0 0 42px 0"
+          fontSize="45px"
           lineHeight="1.25"
           letterSpacing="-0.94px"
           color="var(--gray)"
-          declaredMargin="0 auto"
           declaredDisplay="block"
         >
           Digital, Brand, Content, UX Strategy
@@ -67,7 +67,7 @@ const Create = () => {
         </StyledCreateTextH3>
 
         <StyledCreateTextP
-          declaredPadding="0 60px 58px 0"
+          declaredPadding="0 0 58px 0"
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"
