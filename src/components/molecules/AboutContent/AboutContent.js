@@ -10,7 +10,7 @@ import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 import HeroContent from "../HeroContent/HeroContent"
 import HeroImage from "../HeroImage/HeroImage"
 
-const AboutContent = () => {
+const AboutContent = ({ heroImage }) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <>
@@ -34,6 +34,7 @@ const AboutContent = () => {
         <HeroContent content="Kim są nasi superbohaterowie?" />
       </BgColourWrapper>
       <HeroImage
+        image={heroImage}
         onMouseEnter={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
