@@ -17,7 +17,7 @@ export const StyledEbookColumn = styled(StyledContentColumn)`
     @media only screen and (max-width: 912px) {
       width: 400px;
     }
-    @media only screen and (max-width: 816px) {
+    @media only screen and (max-width: 767px) {
       width: 320px;
     }
     @media only screen and (max-width: 767px) {
@@ -33,7 +33,7 @@ export const StyledEbookColumn = styled(StyledContentColumn)`
     @media only screen and (max-width: 912px) {
       object-fit: fill;
     }
-    @media only screen and (max-width: 816px) {
+    @media only screen and (max-width: 767px) {
       object-fit: contain;
     }
   }

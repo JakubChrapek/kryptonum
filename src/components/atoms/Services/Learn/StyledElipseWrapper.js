@@ -6,7 +6,7 @@ export const StyledElipseWrapper = styled.div`
   @media only screen and (max-width: 1204px) {
     padding-right: 0;
   }
-  @media only screen and (max-width: 816px) {
+  @media only screen and (max-width: 767px) {
     transform: translateX(80px);
   }
   @media only screen and (max-width: 710px) {

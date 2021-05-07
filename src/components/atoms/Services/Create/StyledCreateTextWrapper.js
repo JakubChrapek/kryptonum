@@ -7,7 +7,7 @@ export const StyledCreateTextWrapper = styled.div`
   @media only screen and (max-width: 892px) {
     transform: translateX(0);
   }
-  @media only screen and (max-width: 816px) {
+  @media only screen and (max-width: 767px) {
     text-align: center;
   }
 `

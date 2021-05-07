@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyledWorkflowComponentWrapper = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: ${({ notFlexDirection }) =>
     notFlexDirection ? "row" : "column"};
@@ -12,11 +13,19 @@ export const StyledWorkflowComponentWrapper = styled.div`
   padding-top: ${({ hasPaddingTop }) =>
     hasPaddingTop ? `${hasPaddingTop}px` : 0};
 
-  @media only screen and (max-width: 816px) {
+  @media only screen and (max-width: 767px) {
     flex-direction: ${({ mediaQueriesDirection }) =>
       mediaQueriesDirection ? "column" : "row"};
     align-items: ${({ mediaQueriesAlign }) =>
       mediaQueriesAlign ? "center" : "flex-start"};
     padding-top: 0;
+  }
+  @media only screen and (max-width: 420px) {
+    /* align-items: flex-start; */
+    /* padding-top: 0; */
+  }
+
+  > div:first-of-type {
+    flex: 1 1 47.5%;
   }
 `

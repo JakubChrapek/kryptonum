@@ -9,6 +9,7 @@ import { StyledIdeaBoxP } from "../../../atoms/Services/Think/StyledIdeaBoxP"
 import { StyledThinkTextWrapper } from "../../../atoms/Services/Think/StyledThinkTextWrapper"
 import { StyledThinkTextWrapperH3 } from "../../../atoms/Services/Think/StyledThinkTextWrapperH3"
 import { TextStyles } from "../../../atoms/Text/Text"
+import { StyledThinkTextParagraph } from "../../../atoms/Services/Think/StyledThinkTextParagraph"
 
 const Think = () => {
   return (
@@ -29,14 +30,13 @@ const Think = () => {
           letterSpacing="2.57px"
           fontWeight="500"
         >
-          (01)
+          (02)
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
           fontSize="70px"
           lineHeight="1.24"
           color="var(--gray)"
-          letterSpacing="-1.75px"
           fontWeight="500"
           fontStretch="normal"
           declaredDisplay="block"
@@ -65,7 +65,7 @@ const Think = () => {
           Thinking <span>Process</span>
         </StyledThinkTextWrapperH3>
 
-        <TextStyles
+        <StyledThinkTextParagraph
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"
@@ -77,8 +77,8 @@ const Think = () => {
           Our ultimate goal with every project us to come up with a solution
           based design approach to help our clients solve real cases and achieve
           business needs.
-        </TextStyles>
-        <TextStyles
+        </StyledThinkTextParagraph>
+        <StyledThinkTextParagraph
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"
@@ -90,7 +90,7 @@ const Think = () => {
           For this to happen, many ideas and hypotheses need to be generated and
           integrated upon. Creative thinking inspires ideas while ideas empower
           change.
-        </TextStyles>
+        </StyledThinkTextParagraph>
       </StyledThinkTextWrapper>
     </StyledWorkflowComponentWrapper>
   )

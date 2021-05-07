@@ -88,7 +88,7 @@ const Create = () => {
             lineHeight="1.71"
             color="#090909"
           >
-            Product creating
+            Product creation
           </StyledSpanElipseP>
         </StyledSpanElipseWrapper>
       </StyledCreateTextWrapper>

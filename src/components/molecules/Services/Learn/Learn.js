@@ -1,5 +1,5 @@
 import React from "react"
-import { IoIosArrowRoundDown } from "react-icons/io"
+import { VscArrowDown } from "react-icons/vsc"
 
 import { StyledWorkflowComponentWrapper } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentWrapper"
 import { StyledWorkflowComponentHeading } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentHeading"
@@ -27,7 +27,7 @@ const Learn = () => {
             fontSize="18px"
             lineHeight="1.28"
             color="var(--accent)"
-            letterSpacing="1px"
+            letterSpacing="2.57px"
             fontWeight="500"
           >
             (01)
@@ -72,11 +72,7 @@ const Learn = () => {
         </StyledElipseWrapper> */}
       </StyledLearnWrapper>
       <StyledArrowWrapper>
-        <IoIosArrowRoundDown
-          size="82px"
-          title="Arrow pointing down"
-          color="#f7f7f7"
-        />
+        <VscArrowDown size="92px" title="Arrow pointing down" color="#f7f7f7" />
       </StyledArrowWrapper>
     </StyledWorkflowComponentWrapper>
   )

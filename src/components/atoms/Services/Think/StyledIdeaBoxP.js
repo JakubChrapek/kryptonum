@@ -10,14 +10,14 @@ export const StyledIdeaBoxP = styled(TextStyles)`
   border-radius: 50%;
   background-color: var(--accent);
   @media only screen and (max-width: 1200px) {
-    width: 209px;
-    height: 209px;
+    width: 189px;
+    height: 189px;
   }
   @media only screen and (max-width: 892px) {
     width: 269px;
     height: 269px;
   }
-  @media only screen and (max-width: 816px) {
+  @media only screen and (max-width: 767px) {
     margin: 35px 0 57px 0;
   }
   @media only screen and (max-width: 400px) {

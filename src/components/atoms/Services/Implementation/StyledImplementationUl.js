@@ -5,7 +5,7 @@ export const StyledImplementationUl = styled.ul`
   display: flex;
   justify-content: space-between;
   padding-top: 33px;
-  @media only screen and (max-width: 816px) {
+  @media only screen and (max-width: 767px) {
     flex-direction: column;
     align-items: center;
   }
@@ -18,7 +18,7 @@ export const StyledImplementationUl = styled.ul`
     line-height: 1.5;
     letter-spacing: 2px;
     color: var(--black);
-    @media only screen and (max-width: 816px) {
+    @media only screen and (max-width: 767px) {
       padding-bottom: 17px;
       &:last-child {
         padding-bottom: 0;
