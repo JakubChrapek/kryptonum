@@ -39,7 +39,7 @@ const Implementation = () => {
           fontSize="88px"
           lineHeight="1.24"
           color="var(--gray)"
-          letterSpacing="-1.75px"
+          letterSpacing="-0.94px"
           fontWeight="500"
           fontStretch="normal"
           declaredDisplay="block"

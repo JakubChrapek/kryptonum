@@ -52,7 +52,7 @@ const Create = () => {
           fontFamily="LibreBaskerville"
           declaredPadding="0 0 42px 0"
           fontSize="45px"
-          lineHeight="1.25"
+          lineHeight="1.2"
           letterSpacing="-0.94px"
           color="var(--gray)"
           declaredDisplay="block"
@@ -81,7 +81,7 @@ const Create = () => {
           close contact with the client and address every project holistically.
         </StyledCreateTextP>
         <StyledSpanElipseWrapper>
-          <StyledSpanElipse></StyledSpanElipse>
+          <StyledSpanElipse />
           <StyledSpanElipseP
             fontFamily="Poppins"
             fontSize="28px"

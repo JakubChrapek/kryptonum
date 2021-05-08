@@ -13,6 +13,7 @@ import { StyledHeadingWrapper } from "../../../atoms/Services/Learn/StyledHeadin
 import { StyledLearnTextWrapper } from "../../../atoms/Services/Learn/StyledLearnTextWrapper"
 import { StyledLearnTextWrapperH3 } from "../../../atoms/Services/Learn/StyledLearnTextWrapperH3"
 import { StyledLearnTextWrapperUl } from "../../../atoms/Services/Learn/StyledLearnTextWrapperUl"
+import { StyledLearnHeadingWrapper } from "./StyledLearnHeadingWrapper"
 
 const Learn = () => {
   return (
@@ -21,7 +22,7 @@ const Learn = () => {
       mediaQueriesDirection={true}
     >
       <StyledLearnWrapper>
-        <StyledHeadingWrapper>
+        <StyledLearnHeadingWrapper>
           <StyledWorkflowComponentGreenSpan
             fontFamily="JetBrains Mono"
             fontSize="18px"
@@ -43,7 +44,7 @@ const Learn = () => {
           >
             Learn
           </StyledWorkflowComponentHeading>
-        </StyledHeadingWrapper>
+        </StyledLearnHeadingWrapper>
         <StyledLearnTextWrapper>
           <StyledLearnTextWrapperH3
             fontFamily="LibreBaskerville"

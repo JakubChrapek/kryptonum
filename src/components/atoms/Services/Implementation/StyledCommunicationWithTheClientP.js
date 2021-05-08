@@ -9,6 +9,9 @@ export const StyledCommunicationWithTheClientP = styled(TextStyles)`
     margin: 0 auto;
     text-align: center;
   }
+  @media (max-width: 767px) {
+    max-width: 353px;
+  }
   @media only screen and (max-width: 522px) {
     font-size: 16px;
   }

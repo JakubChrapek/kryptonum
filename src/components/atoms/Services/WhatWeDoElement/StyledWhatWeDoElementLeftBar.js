@@ -14,11 +14,17 @@ export const StyledWhatWeDoElementLeftBar = styled.div`
   margin: ${({ swap }) => (swap ? "0" : "0 63px 0 0")};
   order: ${({ swap }) => (swap ? 2 : 1)};
 
+  @media only screen and (max-width: 1024px) {
+    max-height: 415px;
+    height: 415px;
+  }
+
   @media only screen and (max-width: 767px) {
     width: 100%;
     max-height: 455px;
     height: 455px;
     margin: 0;
+    order: ${({ swap }) => swap && 1};
   }
   @media only screen and (max-width: 600px) {
     width: 100%;

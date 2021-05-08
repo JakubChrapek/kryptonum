@@ -59,7 +59,7 @@ const Think = () => {
         <StyledThinkTextWrapperH3
           fontFamily="LibreBaskerville"
           fontSize="45px"
-          lineHeight="1.25"
+          lineHeight="1.2"
           color="var(--gray)"
           letterSpacing="-0.94px"
         >

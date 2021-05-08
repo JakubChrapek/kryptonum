@@ -7,8 +7,6 @@ export const StyledSpanElipseWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 37px;
-  }
-  @media only screen and (max-width: 500px) {
-    transform: translateX(0);
+    align-self: flex-end;
   }
 `

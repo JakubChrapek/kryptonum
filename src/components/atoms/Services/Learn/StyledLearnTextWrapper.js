@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledLearnTextWrapper = styled.div`
   flex: 1 1 52.5%;
-  @media only screen and (max-width: 767px) {
-    padding-bottom: 79px;
+  @media (max-width: 767px) {
+    flex: 1 1 60%;
   }
 `

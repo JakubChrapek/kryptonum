@@ -8,11 +8,12 @@ export const StyledLongLastingWrapperP = styled(TextStyles)`
     font-size: 34px;
   }
   @media only screen and (max-width: 1264px) {
-    padding: 0 0 163px 0;
-  }
-  @media only screen and (max-width: 522px) {
-    font-size: 30px;
+    padding: 0px 0 163px 0;
     text-align: center;
+    align-self: center;
+  }
+  @media only screen and (max-width: 592px) {
+    font-size: 30px;
     line-height: 1.67;
   }
 `

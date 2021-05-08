@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const StyledLearnTextWrapperUl = styled.ul`
   margin-left: 8px;
-  @media only screen and (max-width: 510px) {
+  @media only screen and (max-width: 588px) {
     text-align: center;
   }
   li {
