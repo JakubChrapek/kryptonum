@@ -24,6 +24,9 @@ const Global = createGlobalStyle`
     --transition-bezier-curve: cubic-bezier(0.6, -0.05, 0.01, 0.99);
     --cursor-full: var(--dark-bg);
     --cursor-light: var(--lightest-gray);
+    --out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000);
+    --out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000);
+    --out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000);
     font-size: 10px;
   }
   *,

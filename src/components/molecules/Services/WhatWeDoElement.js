@@ -8,9 +8,9 @@ import { StyledWhatWeDoElementRightBar } from "../../atoms/Services/WhatWeDoElem
 import { StyledWhatWeDoElementRightBarH3 } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementRightBarH3"
 import { StyledWhatWeDoElementWrapper } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementWrapper"
 
-const WhatWeDoElement = ({ title, image, content, swap, design }) => {
+const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
   return (
-    <StyledWhatWeDoElementWrapper>
+    <StyledWhatWeDoElementWrapper id={id}>
       <StyledWhatWeDoElementH2
         fontFamily="Poppins"
         fontSize="76px"

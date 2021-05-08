@@ -8,18 +8,73 @@ import { StyledQuestion } from "../../../atoms/FAQ/QuestionAndAnswerElement/Styl
 import { StyledQuestionAndAnswerElementDiv } from "../../../atoms/FAQ/QuestionAndAnswerElement/StyledQuestionAndAnswerElementDiv"
 import { TextStyles } from "../../../atoms/Text/Text"
 
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../../contexts/cursorContext"
+
 const QuestionAndAnswerElement = ({ question, answer }) => {
   const [openAnswer, setOpenAnswer] = useState(false)
+  const dispatchCursor = useCursorDispatchContext()
+  const handleOnMouseEnterForQuestion = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+  const handleOnMouseEnterForIcon = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+  const handleOnMouseLeave = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
 
   return (
     <StyledQuestionAndAnswerElement>
-      <StyledQuestionAndAnswerElementDiv>
+      <StyledQuestionAndAnswerElementDiv
+        onClick={() => setOpenAnswer(!openAnswer)}
+        onMouseEnter={handleOnMouseEnterForQuestion}
+        onMouseLeave={handleOnMouseLeave}
+      >
         <StyledQuestion>{question}</StyledQuestion>
         <StyledAddIcon
           open={openAnswer}
-          onClick={() => setOpenAnswer(!openAnswer)}
+          onMouseEnter={handleOnMouseEnterForIcon}
+          onMouseLeave={handleOnMouseLeave}
         >
-          <StyledAddIconSpan></StyledAddIconSpan>
+          <StyledAddIconSpan open={openAnswer}></StyledAddIconSpan>
         </StyledAddIcon>
       </StyledQuestionAndAnswerElementDiv>
       <motion.div
@@ -30,6 +85,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
             : { height: "0", opacity: 0 }
         }
         transition={{ ease: "easeOut", duration: 0.1 }}
+        onMouseEnter={handleOnMouseLeave}
       >
         <TextStyles
           fontSize="16px"

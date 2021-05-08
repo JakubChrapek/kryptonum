@@ -43,6 +43,7 @@ const WhatWeDo = ({ imagesData }) => {
       </StyledWhatWeDoInfoTextWrapper>
       <StyledWhatWeDoContentWrapper>
         <WhatWeDoElement
+          id="design"
           title="Design"
           image={imagesData.designImage}
           content="A strategic and tactical approach is essential 
@@ -53,6 +54,7 @@ const WhatWeDo = ({ imagesData }) => {
           design
         />
         <WhatWeDoElement
+          id="development"
           title="Development"
           image={imagesData.developmentImage}
           content="Developing websites is about so 
@@ -62,6 +64,7 @@ const WhatWeDo = ({ imagesData }) => {
           swap={true}
         />
         <WhatWeDoElement
+          id="marketing"
           title="Marketing"
           image={imagesData.marketingImage}
           content="Developing websites is about 
@@ -70,6 +73,7 @@ const WhatWeDo = ({ imagesData }) => {
           swap={false}
         />
         <WhatWeDoElement
+          id="strategy"
           title="Strategy"
           image={imagesData.strategyImage}
           content="Developing websites is about so much more than marketing. 

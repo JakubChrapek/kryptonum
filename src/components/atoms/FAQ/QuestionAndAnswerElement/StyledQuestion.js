@@ -9,8 +9,7 @@ export const StyledQuestion = styled.h4`
   line-height: 2.14;
   letter-spacing: normal;
   color: var(--black);
-  padding-left: 8px;
-  padding-right: 2px;
+  padding: 28px 16px 28px 14px;
   @media only screen and (max-width: 400px) {
     padding-left: 0;
   }
