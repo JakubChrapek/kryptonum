@@ -8,7 +8,11 @@ export const StyledFAQWrapper = styled.div`
   justify-content: space-between;
   margin: 0 auto;
 
-  @media only screen and (max-width: 975px) {
+  @media only screen and (max-width: 1280px) {
+    padding: 183px 90px;
+  }
+
+  @media only screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
   }

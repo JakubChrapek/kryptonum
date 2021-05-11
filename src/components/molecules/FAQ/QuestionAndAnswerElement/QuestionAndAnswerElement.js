@@ -65,10 +65,13 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
     <StyledQuestionAndAnswerElement>
       <StyledQuestionAndAnswerElementDiv
         onClick={() => setOpenAnswer(!openAnswer)}
-        onMouseEnter={handleOnMouseEnterForQuestion}
-        onMouseLeave={handleOnMouseLeave}
       >
-        <StyledQuestion>{question}</StyledQuestion>
+        <StyledQuestion
+          onMouseEnter={handleOnMouseEnterForQuestion}
+          onMouseLeave={handleOnMouseLeave}
+        >
+          {question}
+        </StyledQuestion>
         <StyledAddIcon
           open={openAnswer}
           onMouseEnter={handleOnMouseEnterForIcon}
@@ -84,15 +87,15 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
             ? { height: "100%", opacity: 1 }
             : { height: "0", opacity: 0 }
         }
-        transition={{ ease: "easeOut", duration: 0.1 }}
-        onMouseEnter={handleOnMouseLeave}
+        transition={{ ease: "circOut", duration: 0.2 }}
+        style={{ pointerEvents: "none" }}
       >
         <TextStyles
           fontSize="16px"
           fontFamily="Poppins"
           lineHeight="1.88"
           color="var(--dark-bg)"
-          declaredPadding="39px 0 0 0"
+          declaredPadding="0 0 44px 14px"
         >
           {answer}
         </TextStyles>

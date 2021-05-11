@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyledAddIcon = styled.div`
   width: 20px;
   height: 20px;
+  margin-bottom: 18px;
   transform: ${({ open }) => (open ? "rotate(-180deg)" : "rotate(0)")};
   transition: transform 200ms var(--out-quart);
   cursor: pointer;
