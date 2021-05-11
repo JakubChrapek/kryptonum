@@ -12,6 +12,9 @@ export const StyledQuestion = styled.h4`
   color: var(--black);
   padding: 28px 16px 46px 14px;
   flex: 1 1 100%;
+  @media only screen and (max-width: 767px) {
+    padding: 28px 16px 40px 14px;
+  }
   @media only screen and (max-width: 400px) {
     padding-left: 0;
   }

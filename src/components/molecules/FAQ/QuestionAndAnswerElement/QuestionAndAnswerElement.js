@@ -7,6 +7,7 @@ import { StyledAddIconSpan } from "../../../atoms/FAQ/QuestionAndAnswerElement/S
 import { StyledQuestion } from "../../../atoms/FAQ/QuestionAndAnswerElement/StyledQuestion"
 import { StyledQuestionAndAnswerElementDiv } from "../../../atoms/FAQ/QuestionAndAnswerElement/StyledQuestionAndAnswerElementDiv"
 import { TextStyles } from "../../../atoms/Text/Text"
+import { AnswerText } from "./AnswerText"
 
 import {
   CURSOR_COLORS,
@@ -90,7 +91,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
         transition={{ ease: "circOut", duration: 0.2 }}
         style={{ pointerEvents: "none" }}
       >
-        <TextStyles
+        <AnswerText
           fontSize="16px"
           fontFamily="Poppins"
           lineHeight="1.88"
@@ -98,7 +99,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
           declaredPadding="0 0 44px 14px"
         >
           {answer}
-        </TextStyles>
+        </AnswerText>
       </motion.div>
     </StyledQuestionAndAnswerElement>
   )
