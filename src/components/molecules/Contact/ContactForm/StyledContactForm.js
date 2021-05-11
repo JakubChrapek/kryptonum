@@ -8,6 +8,14 @@ export const StyledForm = styled.form`
   @media only screen and (max-width: 934px) {
     width: 320px;
   }
+  @media only screen and (max-width: 870px) {
+    width: 364px;
+  }
+  @media only screen and (max-width: 520px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 24px;
+  }
   > label {
     display: block;
     font-family: Poppins;
@@ -18,12 +26,12 @@ export const StyledForm = styled.form`
     line-height: 1.5;
     letter-spacing: 2.33px;
     color: var(--black);
-    padding-bottom: 2px;
+    padding-bottom: 6px;
   }
   > input {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
     width: 100%;
-    padding: 20px;
+    padding: 16px;
     border: solid 1px #707070;
     outline: none;
     font-family: "Poppins";
@@ -49,7 +57,7 @@ export const StyledForm = styled.form`
     }
   }
   > p {
-    margin: 31px 0;
+    margin: 24px 0 31px;
     font-family: Poppins;
     font-size: 12px;
     font-weight: normal;

@@ -29,8 +29,8 @@ const ContactMain = () => {
           <ContactForm />
           <StyledContactInfo>
             <TextStyles
-              declaredPadding="0 0 24px 0"
-              fontFamily="Poppins"
+              declaredPadding="0 0 36px 0"
+              fontFamily="JetBrains Mono"
               fontSize="16px"
               lineHeight="1.38"
               color="var(--dark-bg)"
@@ -44,8 +44,8 @@ const ContactMain = () => {
             </StyledContactInfoList>
 
             <TextStyles
-              declaredPadding="0 0 24px 0"
-              fontFamily="Poppins"
+              declaredPadding="0 0 36px 0"
+              fontFamily="JetBrains Mono"
               fontSize="16px"
               lineHeight="1.38"
               color="var(--dark-bg)"
@@ -59,8 +59,8 @@ const ContactMain = () => {
             </StyledContactInfoList>
 
             <TextStyles
-              declaredPadding="0 0 24px 0"
-              fontFamily="Poppins"
+              declaredPadding="0 0 36px 0"
+              fontFamily="JetBrains Mono"
               fontSize="16px"
               lineHeight="1.38"
               color="var(--dark-bg)"
