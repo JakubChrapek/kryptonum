@@ -32,19 +32,51 @@ export const StyledForm = styled.form`
     margin-bottom: 30px;
     width: 100%;
     padding: 16px;
-    border: solid 1px #707070;
+    border: 1px solid #707070;
     outline: none;
     font-family: "Poppins";
     font-size: 16px;
+    transition: border-color 0.1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--black);
+    }
+
+    &:focus {
+      outline: 1px solid var(--black);
+    }
+    &.error {
+      border-color: var(--error);
+      &:focus {
+        outline-color: var(--error);
+      }
+    }
   }
   > textarea {
     resize: none;
     width: 100%;
     height: 115px;
-    border: solid 1px #707070;
+    border: 1px solid #707070;
     padding: 15px;
     font-family: "Poppins";
     font-size: 16px;
+    transition: border-color 0.1s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--black);
+    }
+
+    &:focus {
+      outline: 1px solid var(--black);
+    }
+    &.error {
+      border-color: var(--error);
+      &:focus {
+        outline-color: var(--error);
+      }
+    }
     &::placeholder {
       font-family: Poppins;
       font-size: 15px;
@@ -79,5 +111,14 @@ export const StyledForm = styled.form`
     font-style: normal;
     line-height: 1.28;
     letter-spacing: 2.57px;
+    &:focus,
+    &:active,
+    &:hover {
+      outline: none;
+    }
+    &:focus {
+      outline-offset: 2px;
+      outline: 2px solid var(--accent);
+    }
   }
 `

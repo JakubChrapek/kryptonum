@@ -4,5 +4,16 @@ import { Link } from "gatsby"
 export const StyledContactLink = styled(Link)`
   color: #606060;
   text-decoration: none;
-  padding-left: 3px;
+  margin-left: 3px;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none;
+  }
+  &:focus {
+    color: var(--black);
+    outline-offset: 2px;
+    outline: 2px solid var(--black);
+  }
 `
