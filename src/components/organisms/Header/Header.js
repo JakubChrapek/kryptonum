@@ -153,12 +153,22 @@ const Header = ({ theme }) => {
           whileTap={{ scale: 0.9 }}
           color={theme === "light" ? "var(--white)" : "var(--black)"}
           onMouseEnter={handleOnMouseEnterForLink}
-          onMouseLeave={() =>
+          onMouseLeave={() => {
             dispatchCursor({
               type: "CHANGE_CURSOR_COLOR",
-              cursorColor: show ? CURSOR_COLORS.DARK : CURSOR_COLORS.LIGHT,
+              cursorColor: show
+                ? CURSOR_COLORS.DARK
+                : pathname === "/faq"
+                ? CURSOR_COLORS.DARK
+                : pathname === "/"
+                ? CURSOR_COLORS.LIGHT
+                : CURSOR_COLORS.DARK,
             })
-          }
+            dispatchCursor({
+              type: "CHANGE_CURSOR_SIZE",
+              cursorSize: CURSOR_SIZES.SMALLER,
+            })
+          }}
         >
           <StyledNavBurgerSpan color={theme} mobile={show} />
           <StyledNavBurgerSpan color={theme} mobile={show} />
