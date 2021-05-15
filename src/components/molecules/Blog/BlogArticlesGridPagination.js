@@ -1,8 +1,15 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import React from "react"
 import styled from "styled-components"
 import { VscArrowRight, VscArrowLeft } from "react-icons/vsc"
 import useWindowSize from "../../../utils/getWindowSize"
+import { scroller as scroll } from "react-scroll"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const PaginationStyles = styled(motion.div)`
   display: flex;
@@ -59,8 +66,7 @@ const PaginationList = styled(motion.ul)`
         transform: scaleX(1);
       }
 
-      &:focus,
-      &:active {
+      &:focus-visible {
         outline: 2px solid var(--accent-lighter);
         outline-offset: 1px;
       }
@@ -106,14 +112,56 @@ const BlogArticlesGridPagination = ({
   currentPage,
   setCurrentPage,
 }) => {
+  function alignScroll() {
+    scroll.scrollTo("blog-container", {
+      duration: 0,
+      delay: 0,
+      smooth: true,
+      offset: 0, // Scrolls to element + 50 pixels down the page
+    })
+  }
+
   function handleNextPageClick(e) {
     e.preventDefault()
     setCurrentPage(currentPage + 1)
+    alignScroll()
   }
 
   function handlePrevPageClick(e) {
     e.preventDefault()
     setCurrentPage(currentPage - 1)
+    alignScroll()
+  }
+  const dispatchCursor = useCursorDispatchContext()
+
+  const handleOnMouseEnterForLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+
+  const handleOnMouseLeaveForLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
   }
 
   let width = useWindowSize()
@@ -135,6 +183,8 @@ const BlogArticlesGridPagination = ({
               whileTap={currentPage !== 1 && { scale: 0.98, x: -6 }}
               className="arrow"
               style={width > 500 ? { marginRight: 24 } : { marginRight: 18 }}
+              onMouseEnter={currentPage !== 1 && handleOnMouseEnterForLink}
+              onMouseLeave={currentPage !== 1 && handleOnMouseLeaveForLink}
             >
               <VscArrowLeft
                 size={width > 500 ? "30px" : "24px"}
@@ -145,7 +195,22 @@ const BlogArticlesGridPagination = ({
               <motion.button
                 role="button"
                 className={currentPage === pageNumber + 1 && "active"}
-                onClick={() => setCurrentPage(pageNumber + 1)}
+                onMouseEnter={
+                  currentPage !== pageNumber + 1
+                    ? handleOnMouseEnterForLink
+                    : () => {}
+                }
+                onMouseLeave={
+                  currentPage !== pageNumber + 1
+                    ? handleOnMouseLeaveForLink
+                    : () => {}
+                }
+                onClick={() => {
+                  if (currentPage !== pageNumber + 1) {
+                    setCurrentPage(pageNumber + 1)
+                    alignScroll()
+                  }
+                }}
               >
                 <li>{pageNumber + 1}</li>
               </motion.button>
@@ -154,6 +219,8 @@ const BlogArticlesGridPagination = ({
               role="button"
               disabled={currentPage >= pages}
               onClick={handleNextPageClick}
+              onMouseEnter={currentPage < pages && handleOnMouseEnterForLink}
+              onMouseLeave={currentPage < pages && handleOnMouseLeaveForLink}
               whileHover={currentPage < pages && { x: 4 }}
               whileTap={currentPage < pages && { scale: 0.98, x: 6 }}
               className="arrow"

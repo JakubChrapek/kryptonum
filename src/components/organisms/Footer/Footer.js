@@ -96,7 +96,39 @@ const Footer = () => {
     >
       <StyledFooterSectionStyles>
         <StyledTopFooterWrapper>
-          <StyledRotatedLogo to="/">Kryptonum</StyledRotatedLogo>
+          <StyledRotatedLogo
+            onMouseEnter={() => {
+              dispatchCursor({
+                type: "CHANGE_CURSOR_TYPE",
+                cursorType: CURSOR_TYPES.FULL_CURSOR,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_COLOR",
+                cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_SIZE",
+                cursorSize: CURSOR_SIZES.DEFAULT,
+              })
+            }}
+            onMouseLeave={() => {
+              dispatchCursor({
+                type: "CHANGE_CURSOR_TYPE",
+                cursorType: CURSOR_TYPES.FULL_CURSOR,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_COLOR",
+                cursorColor: CURSOR_COLORS.LIGHT,
+              })
+              dispatchCursor({
+                type: "CHANGE_CURSOR_SIZE",
+                cursorSize: CURSOR_SIZES.SMALLER,
+              })
+            }}
+            to="/"
+          >
+            Kryptonum
+          </StyledRotatedLogo>
           <StyledInTouchColumn>
             <TextStyles
               fontFamily="Poppins"

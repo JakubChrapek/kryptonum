@@ -11,7 +11,7 @@ export const StyledContactLink = styled(Link)`
   &:hover {
     outline: none;
   }
-  &:focus {
+  &:focus-visible {
     color: var(--black);
     outline-offset: 2px;
     outline: 2px solid var(--black);

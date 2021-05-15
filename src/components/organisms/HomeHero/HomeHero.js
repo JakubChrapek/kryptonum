@@ -105,7 +105,7 @@ const HomeHero = ({ bg }) => {
             onMouseEnter={handleOnMouseEnterForLink}
             onMouseLeave={handleOnMouseLeaveForLink}
           >
-            <motion.p whileHover={{ scale: 1.05, cursor: "pointer" }}>
+            <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
               See what
               <br />
               we're up to
@@ -113,7 +113,7 @@ const HomeHero = ({ bg }) => {
               <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
                 <RightArrow />
               </motion.span>
-            </motion.p>
+            </motion.button>
           </StyledScrollLink>
         )}
       </Wrapper>

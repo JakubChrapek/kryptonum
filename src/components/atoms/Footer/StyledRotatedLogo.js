@@ -17,4 +17,9 @@ export const StyledRotatedLogo = styled(Link)`
   @media (max-width: 918px) {
     display: none;
   }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid var(--white);
+  }
 `

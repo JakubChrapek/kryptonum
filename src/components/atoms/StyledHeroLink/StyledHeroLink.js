@@ -40,7 +40,7 @@ export const StyledScrollLink = styled(ScrollLink)`
     border-color: var(--accent);
   }
 
-  p {
+  button {
     text-align: left;
     text-transform: uppercase;
     font-size: 14px;
@@ -49,6 +49,12 @@ export const StyledScrollLink = styled(ScrollLink)`
     font-weight: 500;
     color: var(--white);
     font-family: "JetBrains Mono";
+    background-color: transparent;
+    border: none;
+    &:focus-visible {
+      outline-offset: 4px;
+      outline: 2px solid var(--white);
+    }
     @media only screen and (min-width: 1920px) {
       font-size: 18px;
     }

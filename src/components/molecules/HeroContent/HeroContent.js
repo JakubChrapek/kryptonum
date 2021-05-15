@@ -4,22 +4,55 @@ import { StyledHeroWrapper } from "../../atoms/HeroContent/StyledHeroWrapper"
 import { StyledHeroSection } from "../../atoms/HeroContent/StyledHeroSection"
 import { StyledHeroContentH1 } from "../../atoms/HeroContent/StyledHeroContentH1"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
-const BlogLinks = () => (
-  <StyledFeaturedWrapper
-    mainHeader
-    firstSpanLength="145%"
-    secondSpanLength="190%"
-    hasSmalFontSize
-  >
-    <span>Blog</span>
-    <span>Posts</span>
-  </StyledFeaturedWrapper>
+const BlogLinks = ({ content }) => (
+  <>
+    {content ? (
+      <StyledFeaturedWrapper
+        mainHeader
+        firstSpanLength="145%"
+        secondSpanLength="190%"
+        hasSmalFontSize
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    ) : (
+      <StyledFeaturedWrapper
+        mainHeader
+        firstSpanLength="145%"
+        secondSpanLength="190%"
+        hasSmalFontSize
+      >
+        <span>Blog</span>
+        <span>Posts</span>
+      </StyledFeaturedWrapper>
+    )}
+  </>
 )
 
 const HeroContent = ({ content, variant }) => {
+  const dispatchCursor = useCursorDispatchContext()
+  const handleOnMouseEnterForBlogSection = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
   return (
-    <StyledHeroSection>
+    <StyledHeroSection onMouseEnter={handleOnMouseEnterForBlogSection}>
       <StyledHeroWrapper variant={variant}>
         <StyledHeroContentH1
           fontSize="76px"
@@ -28,7 +61,7 @@ const HeroContent = ({ content, variant }) => {
           color="var(--black)"
           variant={variant}
         >
-          <BlogLinks />
+          <BlogLinks content={content} />
         </StyledHeroContentH1>
       </StyledHeroWrapper>
     </StyledHeroSection>

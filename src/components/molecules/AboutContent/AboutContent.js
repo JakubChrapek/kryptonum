@@ -33,23 +33,7 @@ const AboutContent = ({ heroImage }) => {
       >
         <HeroContent content="Kim są nasi superbohaterowie?" />
       </BgColourWrapper>
-      <HeroImage
-        image={heroImage}
-        onMouseEnter={() => {
-          dispatchCursor({
-            type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.FULL_CURSOR,
-          })
-          dispatchCursor({
-            type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.LIGHT,
-          })
-          dispatchCursor({
-            type: "CHANGE_CURSOR_SIZE",
-            cursorSize: CURSOR_SIZES.SMALLER,
-          })
-        }}
-      />
+      <HeroImage image={heroImage} />
     </>
   )
 }

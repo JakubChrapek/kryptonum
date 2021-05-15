@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
   font-size: 56px;
   line-height: 1.07;
   color: var(--black);
@@ -10,6 +12,10 @@ export const StyledLink = styled(Link)`
   height: 100%;
   position: relative;
   text-decoration: none;
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 4px solid var(--black);
+  }
   @media only screen and (max-width: 540px) {
     font-size: 50px;
     margin-bottom: 16px;

@@ -27,7 +27,7 @@ export const StyledContactStyles = styled(Link)`
     background-color: ${({ color }) => (color ? color : "var(--black)")};
   }
 
-  &:focus {
+  &:focus-visible {
     outline-offset: 1px;
     outline: 2px solid ${({ color }) => (color ? color : "var(--black)")};
   }

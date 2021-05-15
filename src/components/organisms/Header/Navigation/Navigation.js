@@ -34,6 +34,7 @@ import {
 
 const Navigation = ({ mobile, width, pointerEvents }) => {
   const dispatchCursor = useCursorDispatchContext()
+  let pathname = useLocation().pathname
   const navItems = [
     {
       number: "01",
@@ -69,7 +70,30 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
 
   const dispatch = useMenuDispatch()
   const menuWrapperRef = useRef(null)
-  useOutsideRefClick(menuWrapperRef, () => dispatch({ type: "CLOSE_MENU" }))
+  useOutsideRefClick(menuWrapperRef, () => {
+    if (pathname === "/") {
+      console.log(pathname)
+      dispatchCursor({
+        type: "CHANGE_CURSOR_COLOR",
+        cursorColor: CURSOR_COLORS.LIGHT,
+      })
+    } else {
+      console.log(pathname)
+      dispatchCursor({
+        type: "CHANGE_CURSOR_COLOR",
+        cursorColor: CURSOR_COLORS.DARK,
+      })
+    }
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+    dispatch({ type: "CLOSE_MENU" })
+  })
 
   useEffect(() => {
     function handleKeyPress(event) {
@@ -81,7 +105,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     return () => document.removeEventListener("keydown", handleKeyPress)
   }, [])
 
-  let pathname = useLocation().pathname
   const handleOnMouseEnterForLink = () => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",

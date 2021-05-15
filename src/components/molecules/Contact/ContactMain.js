@@ -46,7 +46,7 @@ const StyledLink = styled.a`
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline-offset: 2px;
     outline: 2px solid #727272;
   }

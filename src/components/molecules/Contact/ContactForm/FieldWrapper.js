@@ -28,5 +28,13 @@ export const FieldWrapper = styled.div`
         margin: 0 16px 0 0;
         width: auto;
       }
+      @media (max-width: 767px) {
+        input {
+          width: auto;
+        }
+        ${StyledErrorMessage} {
+          bottom: -40px;
+        }
+      }
     `}
 `

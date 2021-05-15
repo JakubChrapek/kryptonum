@@ -55,7 +55,7 @@ export const StyledMenuColumnLink = styled(Link)`
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline-offset: 2px;
     outline: 2px solid var(--white);
   }

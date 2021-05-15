@@ -94,7 +94,7 @@ const Global = createGlobalStyle`
       border: 1px solid var(--black);
       padding: 31px 20px;
       background-color: var(--black);
-      &:focus {
+      &:focus-visible {
         outline-offset: 2px;
         outline: 2px solid var(--black);
       }
@@ -103,7 +103,8 @@ const Global = createGlobalStyle`
     &__light {
       color: var(--black);
       background-color: var(--white);
-      border-color: var(--white);&:focus {
+      border-color: var(--white);
+      &:focus-visible {
         outline-offset: 2px;
         outline: 2px solid var(--white);
       }

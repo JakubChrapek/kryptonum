@@ -25,8 +25,8 @@ export const StyledArticleStyles = styled(Link)`
       margin-top: ${({ full }) => full && "0"};
     }
   }
-  &:focus {
-    outline-offset: 0px;
+  &:focus-visible {
+    outline-offset: 8px;
     outline: 2px solid var(--black);
   }
 `

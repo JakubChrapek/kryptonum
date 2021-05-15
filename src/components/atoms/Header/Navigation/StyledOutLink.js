@@ -9,6 +9,11 @@ export const StyledOutLink = styled(motion.a)`
   position: relative;
   text-decoration: none;
 
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid var(--black);
+  }
+
   @media only screen and (max-width: 800px) {
     padding: 0 8px;
   }

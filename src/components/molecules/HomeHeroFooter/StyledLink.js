@@ -47,7 +47,7 @@ const LinkStyles = styled(Link)`
       transform: scaleY(1);
     }
   }
-  &:focus {
+  &:focus-visible {
     outline-offset: 1px;
     outline: 2px solid
       ${({ declaredFontColor }) =>

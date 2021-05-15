@@ -15,7 +15,7 @@ export const StyledForm = styled(Form)`
   @media only screen and (max-width: 520px) {
     width: 100%;
     max-width: 100%;
-    padding: 0 24px;
+    padding: 0;
   }
   label {
     display: block;
@@ -130,6 +130,9 @@ export const StyledForm = styled(Form)`
     &:focus {
       outline-offset: 2px;
       outline: 2px solid var(--accent);
+    }
+    @media (max-width: 767px) {
+      margin-top: 32px;
     }
   }
 `

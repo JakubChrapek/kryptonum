@@ -8,9 +8,9 @@ export const StyledContactFormWrapper = styled.div`
     padding: 97px 60px 51px 60px;
   }
   @media only screen and (max-width: 870px) {
-    padding: 97px 26px 51px 26px;
+    padding: 97px 26px 80px 26px;
   }
   @media only screen and (max-width: 520px) {
-    padding: 47px 0 16px;
+    padding: 47px 24px 97px;
   }
 `

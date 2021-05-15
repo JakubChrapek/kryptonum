@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { StyledForm } from "./StyledContactForm"
 import { FieldWrapper } from "./FieldWrapper"
 import StyledErrorMessage from "./StyledErrorMessage"
@@ -13,6 +13,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import { AnimatePresence, motion } from "framer-motion"
 
 function ContactForm() {
+  const [feedback, setFeedback] = useState(null)
   const dispatchCursor = useCursorDispatchContext()
   const encode = data => {
     return Object.keys(data)
@@ -35,11 +36,20 @@ function ContactForm() {
             body: encode({ "form-name": "contact-form", ...values }),
           })
             .then(() => {
-              alert("Success")
-              actions.resetForm()
+              setFeedback(
+                "Wielkie dzięki za wiadomość 🤗. Odpiszemy jak najszybciej! 🚀"
+              )
+              setTimeout(() => {
+                actions.resetForm()
+                setFeedback(null)
+              }, 8000)
             })
             .catch(() => {
-              alert("Error")
+              setFeedback("Coś poszło nie tak! Spróbuj jeszcze raz, proszę. 😕")
+              setTimeout(() => {
+                actions.resetForm()
+                setFeedback(null)
+              }, 8000)
             })
             .finally(() => actions.setSubmitting(false))
         }}
@@ -270,6 +280,18 @@ function ContactForm() {
             >
               Send your request
             </button>
+            <AnimatePresence>
+              {feedback && (
+                <motion.p
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
+                  exit={{ opacity: 0, y: 6, transition: { duration: 0.1 } }}
+                  key="feedback-msg"
+                >
+                  {feedback}
+                </motion.p>
+              )}
+            </AnimatePresence>
           </StyledForm>
         )}
       </Formik>
