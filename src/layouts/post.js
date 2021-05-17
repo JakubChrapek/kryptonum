@@ -73,7 +73,9 @@ const PostWrapper = styled.div`
   h3 + ul,
   h3 + ol,
   h4 + ul,
-  h4 + ol {
+  h4 + ol,
+  p + ol,
+  p + ul {
     margin-top: 16px;
   }
 
@@ -105,6 +107,14 @@ const PostWrapper = styled.div`
     font-family: "JetBrains Mono";
     background-color: var(--gray);
     color: var(--white);
+  }
+
+  mark {
+    background-color: var(--gray);
+    color: var(--white);
+    font-size: 0.85em;
+    padding: 0.075em 0.3em;
+    border-radius: 4px;
   }
 `
 
