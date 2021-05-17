@@ -30,7 +30,7 @@ const blogSectionQuery = graphql`
   }
 `
 
-const BlogSection = () => {
+const BlogSection = ({ bg, blogPosts, headerText }) => {
   const dispatchCursor = useCursorDispatchContext()
   const {
     allDatoCmsArticle: { nodes },
@@ -51,7 +51,7 @@ const BlogSection = () => {
           cursorSize: CURSOR_SIZES.SMALLER,
         })
       }}
-      bg="var(--white)"
+      bg={bg ? bg : "var(--white)"}
     >
       <SectionStyles>
         <div>
@@ -60,11 +60,21 @@ const BlogSection = () => {
             secondSpanLength="140%"
             hasMarginLeft={true}
           >
-            <span>New on</span>
-            <span>the blog</span>
+            {headerText ? (
+              <span>{headerText}</span>
+            ) : (
+              <>
+                <span>New on</span>
+                <span>the blog</span>
+              </>
+            )}
           </StyledFeaturedWrapper>
         </div>
-        <ArticlesGrid posts={nodes} />
+        <ArticlesGrid
+          posts={
+            blogPosts && blogPosts.nodes.length > 0 ? blogPosts.nodes : nodes
+          }
+        />
       </SectionStyles>
     </BgColourWrapper>
   )

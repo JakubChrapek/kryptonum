@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
       articles: allDatoCmsArticle {
         nodes {
           articleSlug
+          articleCategory
           id
         }
       }
@@ -30,7 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `blog/${slugifiedTitle}`,
       component: blogPostTemplate,
       context: {
-        articleId: article.id,
+        id: article.id,
+        category: article.articleCategory,
       },
     })
   })
