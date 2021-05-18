@@ -5,6 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { StructuredText } from "react-datocms"
 import { TextStyles } from "../components/atoms/Text/Text"
 import BlogSection from "../components/organisms/BlogSection/BlogSection"
+import { getMonth } from "../utils/dateUtils"
+import ellipsize from "ellipsize"
 
 const ArticleImage = styled(GatsbyImage)`
   width: 100%;
@@ -356,6 +358,11 @@ const FooterAuthorBio = styled.p`
 
 const Post = ({ data }) => {
   const { datoCmsArticle: article, similarArticles, newArticles } = data
+  const year = article.dateOfPublication.split("-")[0].slice(2)
+  const month = article.dateOfPublication.split("-")[1]
+  const monthName = getMonth(month)
+  const day = article.dateOfPublication.split("-")[2]
+
   const relatedArticles =
     similarArticles.length > 0 ? similarArticles : newArticles
   return (
@@ -368,9 +375,9 @@ const Post = ({ data }) => {
               image={article.author.photo.gatsbyImageData}
             />
             <ArticleTextContentBox>
-              <AuthorName>Jo Edwards</AuthorName>
+              <AuthorName>{article.author.name}</AuthorName>
               <ArticleFadedText>
-                Updated on 07 lis 2021 • 5 min
+                {`Opublikowano ${day} ${monthName} ${year} • 5 min`}
               </ArticleFadedText>
             </ArticleTextContentBox>
           </AuthorBox>
@@ -402,11 +409,10 @@ const Post = ({ data }) => {
               image={article.author.photo.gatsbyImageData}
             />
             <ArticleTextContentBox>
-              <ArticleFadedText>Written by</ArticleFadedText>
-              <AuthorName>Jo Edwards</AuthorName>
+              <ArticleFadedText>Napisane przez</ArticleFadedText>
+              <AuthorName>{article.author.name}</AuthorName>
               <FooterAuthorBio>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam
+                {ellipsize(article.author.biography, 60)}
               </FooterAuthorBio>
             </ArticleTextContentBox>
           </ArticleFooter>
