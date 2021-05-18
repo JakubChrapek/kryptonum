@@ -38,7 +38,6 @@ const ProjectFeaturedImage = styled(GatsbyImage)`
 `
 
 const StructuredContentWrapper = styled.div`
-  background-color: green;
   max-width: 1366px;
   padding: 0 140px;
   @media (max-width: 1024px) {
@@ -53,11 +52,46 @@ const StructuredContentWrapper = styled.div`
   align-items: center;
 `
 
-const ProjectWideImage = () => <>tralala</>
-const ProjectChallengeSection = () => <>tralala</>
+const ImageWrapper = styled.div`
+  width: 100%;
+  padding: 103px 155px;
+  background-color: var(--light-gray);
+`
+
+const StyledProjectWideImage = styled(GatsbyImage)``
+
+const ProjectWideImage = ({ image }) => (
+  <ImageWrapper>
+    <StyledProjectWideImage image={image} />
+  </ImageWrapper>
+)
+
+const ChallengeWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  padding-left: 75px;
+`
+
+const FeaturedColumn = styled.div``
+
+const ContentColumn = styled.div``
+
+const ProjectChallengeSection = ({ headerText, paragraph, linkToProject }) => (
+  <ChallengeWrapper>
+    <FeaturedColumn>{headerText}</FeaturedColumn>
+    <ContentColumn>
+      <StructuredText data={paragraph} />
+      {linkToProject}
+    </ContentColumn>
+  </ChallengeWrapper>
+)
+
 const ProjectTestimonialSection = () => <>tralala</>
+
 const ProjectTwoColumnImage = () => <>tralala</>
+
 const ProjectTwoColumnSection = () => <>tralala</>
+
 const ProjectHeader = () => <>tralala</>
 
 const Project = ({ data }) => {
