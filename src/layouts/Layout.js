@@ -54,8 +54,8 @@ const Layout = ({ children }) => {
       <SkipNavLink />
       <SEO />
       <ScrollToTop />
-      <Header theme={getThemeFromPathname(pathname)} />
-      <StyledMain key={pathname}>
+      <Header theme={getThemeFromPathname(pathname) || "light"} />
+      <StyledMain key={pathname || "/"}>
         {children}
         {pathname !== "/projects" && <Footer />}
       </StyledMain>

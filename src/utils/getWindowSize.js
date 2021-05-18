@@ -7,7 +7,8 @@ const getWidth = () =>
     document.documentElement.clientWidth) ||
   (typeof document !== "undefined" &&
     document.body &&
-    document.body.clientWidth)
+    document.body.clientWidth) ||
+  1200
 
 /**
  * React hook to calculate the window width.

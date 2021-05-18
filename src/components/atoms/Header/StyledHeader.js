@@ -13,7 +13,10 @@ export const StyledHeader = styled(motion.header)`
   z-index: 3;
 
   @media only screen and (max-width: 800px) {
-    padding: 23px;
+    padding: 23px 28px;
     justify-content: center;
+  }
+  @media only screen and (max-width: 767px) {
+    justify-content: flex-start;
   }
 `

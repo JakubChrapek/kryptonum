@@ -13,11 +13,12 @@ import CtaSection from "../components/molecules/CtaSection/CtaSection"
 import BlogSection from "../components/organisms/BlogSection/BlogSection"
 import TheUltimateSection from "../components/organisms/TheUltimateSection/TheUltimateSection"
 import Footer from "../components/organisms/Footer/Footer"
+import { graphql } from "gatsby"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <>
     <SEO title="Kryptonum" />
-    <HomeHero bg={heroBg} />
+    <HomeHero bg={data.datoCmsPageHome.heroSectionBgImage.gatsbyImageData} />
     <MainServices />
     <WhatIsKryptonum />
     <FeaturedSection />
@@ -28,5 +29,15 @@ const IndexPage = () => (
     <TheUltimateSection />
   </>
 )
+
+export const homeQuery = graphql`
+  query homeBg {
+    datoCmsPageHome {
+      heroSectionBgImage {
+        gatsbyImageData(width: 1920, placeholder: BLURRED)
+      }
+    }
+  }
+`
 
 export default IndexPage

@@ -7,7 +7,7 @@ const website = require("./config/website")
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
 
 module.exports = {
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  flags: { PRESERVE_WEBPACK_CACHE: false },
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
     pathPrefix,
@@ -34,7 +34,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        ssr: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

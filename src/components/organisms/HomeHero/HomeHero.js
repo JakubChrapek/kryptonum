@@ -119,7 +119,7 @@ const HomeHero = ({ bg }) => {
       </Wrapper>
       <HeroFooter />
 
-      {width >= 683 && <StyledFullPageResponsieImage src={bg} />}
+      {width >= 683 && <StyledFullPageResponsieImage image={bg} />}
     </HomeHeroSection>
   )
 }

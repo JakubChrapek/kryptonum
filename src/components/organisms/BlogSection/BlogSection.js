@@ -30,7 +30,7 @@ const blogSectionQuery = graphql`
   }
 `
 
-const BlogSection = ({ bg, blogPosts, headerText }) => {
+const BlogSection = ({ bg, blogPosts, headerFirstLine, headerSecondLine }) => {
   const dispatchCursor = useCursorDispatchContext()
   const {
     allDatoCmsArticle: { nodes },
@@ -60,8 +60,11 @@ const BlogSection = ({ bg, blogPosts, headerText }) => {
             secondSpanLength="140%"
             hasMarginLeft={true}
           >
-            {headerText ? (
-              <span>{headerText}</span>
+            {headerFirstLine ? (
+              <>
+                <span>{headerFirstLine}</span>
+                {headerSecondLine && <span>{headerSecondLine}</span>}
+              </>
             ) : (
               <>
                 <span>New on</span>

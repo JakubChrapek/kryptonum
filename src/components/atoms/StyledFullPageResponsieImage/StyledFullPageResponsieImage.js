@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-export const StyledFullPageResponsieImage = styled.img`
+export const StyledFullPageResponsieImage = styled(GatsbyImage)`
   position: absolute;
   left: 0;
   top: 0;

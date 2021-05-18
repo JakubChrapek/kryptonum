@@ -26,6 +26,9 @@ const PostWrapper = styled.div`
   h1 + ul,
   h1 + ol {
     margin-top: 72px;
+    @media (max-width: 767px) {
+      margin-top: 48px;
+    }
   }
 
   p + ${ArticleImage} {
@@ -101,6 +104,41 @@ const PostWrapper = styled.div`
     color: var(--black-font);
   }
 
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 122px;
+    h2 + p,
+    h3 + p,
+    h4 + p,
+    ul + p,
+    ol + p {
+      margin-top: 18px;
+    }
+    p + h2,
+    p + h3,
+    p + h4,
+    pre + p,
+    pre + h2,
+    pre + h3,
+    pre + h4,
+    pre + ol,
+    pre + ul,
+    pre + .gatsby-image-wrapper {
+      margin-top: 48px;
+    }
+  }
+
   pre {
     padding: 1.4em 1.6em;
     font-size: 14px;
@@ -121,6 +159,12 @@ const PostWrapper = styled.div`
 const PostContentWrapper = styled.div`
   max-width: 1366px;
   padding: 0 82px;
+  @media (max-width: 1024px) {
+    padding: 0 60px;
+  }
+  @media (max-width: 767px) {
+    padding: 0 28px;
+  }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -154,11 +198,16 @@ const BackToPostsLink = styled(Link)`
   line-height: 1.29;
   letter-spacing: 2px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--black);
   position: relative;
   padding: 6px 8px;
   margin-left: -8px;
+
+  @media (max-width: 767px) {
+    letter-spacing: 1.71px;
+    font-size: 12px;
+  }
 
   &:after {
     content: "";
@@ -192,6 +241,9 @@ const AuthorBox = styled.div`
   max-width: 717px;
   width: 100%;
   margin-top: 40px;
+  @media (max-width: 767px) {
+    margin-top: 48px;
+  }
 `
 
 const ArticleAuthorProfilePic = styled(GatsbyImage)`
@@ -199,6 +251,14 @@ const ArticleAuthorProfilePic = styled(GatsbyImage)`
   height: 62px;
   border-radius: 50%;
   margin-right: 1rem;
+  overflow: visible;
+  > div {
+    width: 62px;
+    height: 62px;
+  }
+  img {
+    border-radius: 50%;
+  }
 `
 
 const ArticleTextContentBox = styled.div`
@@ -228,6 +288,15 @@ const ArticleFadedText = styled.span`
 
 const WideImage = styled(GatsbyImage)`
   width: 85%;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    width: calc(100% + 56px);
+    margin-left: -28px;
+    margin-right: -28px;
+  }
 `
 
 const ArticleTitle = styled.h1`
@@ -238,6 +307,15 @@ const ArticleTitle = styled.h1`
   line-height: 1.26;
   letter-spacing: -1.3px;
   font-family: "Libre Baskerville";
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+  @media (max-width: 767px) {
+    font-size: 28px;
+    letter-spacing: -0.73px;
+    line-height: 1.25;
+  }
 `
 
 const ArticleFooter = styled.div`
@@ -245,6 +323,9 @@ const ArticleFooter = styled.div`
   justify-content: center;
   margin: 72px auto;
 
+  @media (max-width: 767px) {
+    margin: 49px auto;
+  }
   > .gatsby-image-wrapper {
     margin-right: 18px;
   }
@@ -277,7 +358,6 @@ const Post = ({ data }) => {
   const { datoCmsArticle: article, similarArticles, newArticles } = data
   const relatedArticles =
     similarArticles.length > 0 ? similarArticles : newArticles
-  console.log(relatedArticles)
   return (
     <>
       <PostWrapper>
@@ -290,7 +370,7 @@ const Post = ({ data }) => {
             <ArticleTextContentBox>
               <AuthorName>Jo Edwards</AuthorName>
               <ArticleFadedText>
-                Updated on 07 lis 2021 • Czas czytania 5 min
+                Updated on 07 lis 2021 • 5 min
               </ArticleFadedText>
             </ArticleTextContentBox>
           </AuthorBox>
@@ -335,7 +415,8 @@ const Post = ({ data }) => {
       <BlogSection
         bg="var(--light-gray)"
         blogPosts={relatedArticles}
-        headerText="Related posts"
+        headerFirstLine="Related"
+        headerSecondLine="posts"
       />
     </>
   )
@@ -358,7 +439,12 @@ export const articleQuery = graphql`
         biography
         id
         photo {
-          gatsbyImageData
+          gatsbyImageData(
+            width: 62
+            height: 62
+            placeholder: BLURRED
+            aspectRatio: 1
+          )
         }
       }
       articleSlug

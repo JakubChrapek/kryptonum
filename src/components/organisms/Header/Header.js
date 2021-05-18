@@ -22,7 +22,7 @@ import {
 } from "../../../contexts/cursorContext"
 
 const Header = ({ theme }) => {
-  let pathname = useLocation().pathname
+  let pathname = useLocation().pathname || "/"
   const dispatch = useMenuDispatch()
   const dispatchCursor = useCursorDispatchContext()
   const { show, disabled } = useMenuState()
@@ -76,7 +76,7 @@ const Header = ({ theme }) => {
   return (
     <StyledHeaderWrapper>
       <StyledHeader>
-        {width > 800 && (
+        {width && width > 800 && (
           <Contact
             color={
               pathname === "/projects"

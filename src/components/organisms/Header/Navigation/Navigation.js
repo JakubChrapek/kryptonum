@@ -179,7 +179,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
         animate="animate"
         exit="exit"
       >
-        {width > 800 && (
+        {width && width > 800 && (
           <StyledNavigationFlexDiv
             direction="column"
             alignItems="flex-start"
@@ -257,7 +257,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
               </StyledLink>
             ))}
           </StyledList>
-          {width <= 800 && (
+          {width && width <= 800 && (
             <>
               <StyledTextP margin="0 0 9px 0">Get in touch</StyledTextP>
               <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
