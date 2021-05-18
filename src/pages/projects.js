@@ -47,23 +47,22 @@ const Projects = ({ data }) => {
   useEffect(() => {
     // if (typeof window !== "undefined") {
     gsap.utils.toArray("section").forEach(section => {
-      ScrollTrigger.create({
-        trigger: section,
-        onEnter: () => goToSection(section, false),
-      })
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: "bottom bottom",
-        onEnterBack: () => goToSection(section, true),
-      })
+      // ScrollTrigger.create({
+      //   trigger: section,
+      //   onEnter: () => goToSection(section, false),
+      // })
+      // ScrollTrigger.create({
+      //   trigger: section,
+      //   start: "bottom bottom",
+      //   onEnterBack: () => goToSection(section, true),
+      // })
     })
     // }
     setActiveSection(0)
 
     return () => {
-      ScrollTrigger.kill()
-      ScrollToPlugin.kill()
+      // ScrollTrigger.kill()
+      // ScrollToPlugin.kill()
     }
   }, [])
 
