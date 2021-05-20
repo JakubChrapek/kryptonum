@@ -31,6 +31,10 @@ const ProjectContentWrapper = styled.div`
 const TitleWrapper = styled.span`
   display: inline-block;
   margin-top: 100px;
+  @media (max-width: 1024px) {
+    margin-top: 60px;
+    align-self: flex-start;
+  }
 `
 
 const ProjectTitle = styled.h1`
@@ -40,6 +44,9 @@ const ProjectTitle = styled.h1`
   color: var(--gray);
   font-family: "Libre Baskerville";
   font-weight: normal;
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
 `
 
 const ProjectFeaturedImage = styled(GatsbyImage)`
@@ -48,6 +55,11 @@ const ProjectFeaturedImage = styled(GatsbyImage)`
   min-height: 395px;
   max-height: 600px;
   margin: 88px 0 140px;
+  @media (max-width: 1024px) {
+    margin: 72px 0;
+    height: 90vh;
+    max-height: 747px;
+  }
 `
 
 const StructuredContentWrapper = styled.div`
@@ -92,7 +104,7 @@ const FeaturedColumn = styled.div`
   > h2 {
     font-family: Poppins;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.5;
     letter-spacing: normal;
     color: var(--black-font);
