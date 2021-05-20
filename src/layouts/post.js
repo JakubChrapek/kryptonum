@@ -21,6 +21,37 @@ const PostWrapper = styled.div`
   width: 100%;
   padding-top: 204px;
 
+  blockquote {
+    padding: 12px 0 12px 28px;
+    position: relative;
+    color: var(--black-font);
+    font-size: 28px;
+    margin: 64px 0 72px;
+    @media (max-width: 767px) {
+      margin: 48px 0 56px;
+      font-size: 24px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      height: 100%;
+      width: 8px;
+      background-color: var(--accent);
+    }
+    > footer {
+      margin-top: 32px;
+      color: var(--text-gray);
+      position: relative;
+      font-size: 16px;
+      font-family: "JetBrains Mono";
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+  }
+
   h1 + p,
   h1 + h2,
   h1 + h3,
@@ -52,13 +83,28 @@ const PostWrapper = styled.div`
   .gatsby-image-wrapper + h2,
   .gatsby-image-wrapper + h3,
   .gatsby-image-wrapper + h4,
+  .gatsby-image-wrapper + ul,
+  .gatsby-image-wrapper + ol,
+  .gatsby-image-wrapper + p,
   p + .gatsby-image-wrapper,
   pre {
     margin-top: 49px;
   }
+
+  hr {
+    margin: 6rem 0;
+    height: 1px;
+    width: 100%;
+    max-width: 717px;
+    background-color: var(--line-gray);
+    border: none;
+  }
+
   h2 + p,
   h3 + p,
   h4 + p,
+  ul + p,
+  ol + p,
   ul + p,
   ol + p,
   p + h2,
@@ -70,7 +116,21 @@ const PostWrapper = styled.div`
   pre + h4,
   pre + ol,
   pre + ul,
-  pre + .gatsby-image-wrapper {
+  pre + .gatsby-image-wrapper,
+  ul + ul,
+  ul + ol,
+  ol + ol,
+  ol + ul,
+  h2 + ul,
+  h3 + ul,
+  h4 + ul,
+  h2 + ol,
+  h3 + ol,
+  h4 + ol,
+  p + ol,
+  p + ul,
+  ul + p,
+  ol + p {
     margin-top: 33px;
   }
 
@@ -179,9 +239,40 @@ const PostContentWrapper = styled.div`
   p,
   ol,
   ul,
-  pre {
+  pre,
+  blockquote {
     width: 100%;
     max-width: 717px;
+  }
+
+  a {
+    color: var(--black);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      transform-origin: center bottom;
+      transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+        transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      background-color: var(--black);
+    }
+
+    &:focus-visible {
+      outline-offset: 1px;
+      outline: 2px solid var(--black);
+    }
+
+    &:hover:after {
+      transform: scaleY(2);
+      opacity: 1;
+    }
   }
 
   li {

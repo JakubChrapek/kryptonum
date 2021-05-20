@@ -25,7 +25,10 @@ const HeroImage = ({ image }) => {
       onMouseEnter={handleOnMouseEnterForHeroImage}
       onMouseLeave={handleOnMouseLeaveForHeroImage}
     >
-      <GatsbyImage image={image.gatsbyImageData} />
+      <GatsbyImage
+        style={{ pointerEvents: "none" }}
+        image={image.gatsbyImageData}
+      />
     </HeroImageWrapper>
   )
 }

@@ -7,8 +7,25 @@ import { StyledWhatWeDoElementLeftBar } from "../../atoms/Services/WhatWeDoEleme
 import { StyledWhatWeDoElementRightBar } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementRightBar"
 import { StyledWhatWeDoElementRightBarH3 } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementRightBarH3"
 import { StyledWhatWeDoElementWrapper } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementWrapper"
+import {
+  CURSOR_COLORS,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
+  const dispatchCursor = useCursorDispatchContext()
+  const handleOnMouseEnterForHeroImage = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+  }
+  const handleOnMouseLeaveForHeroImage = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+  }
   return (
     <StyledWhatWeDoElementWrapper id={id}>
       <StyledWhatWeDoElementH2
@@ -24,8 +41,15 @@ const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
         {title}
       </StyledWhatWeDoElementH2>
       <StyledWhatWeDoElementImageWrapper>
-        <StyledWhatWeDoElementLeftBar swap={swap}>
-          <GatsbyImage image={image.gatsbyImageData} />
+        <StyledWhatWeDoElementLeftBar
+          onMouseEnter={handleOnMouseEnterForHeroImage}
+          onMouseLeave={handleOnMouseLeaveForHeroImage}
+          swap={swap}
+        >
+          <GatsbyImage
+            style={{ pointerEvents: "none" }}
+            image={image.gatsbyImageData}
+          />
         </StyledWhatWeDoElementLeftBar>
         <StyledWhatWeDoElementRightBar swap={swap}>
           <StyledWhatWeDoElementRightBarH3

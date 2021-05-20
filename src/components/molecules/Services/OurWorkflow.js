@@ -8,10 +8,22 @@ import Implementation from "./Implementation/Implementation"
 import { StyledOurWorkflowWrapper } from "../../atoms/Services/OurWorkflow/StyledOurWorkflowWrapper"
 import { StyledOurWorkflowWrapperDiv } from "../../atoms/Services/OurWorkflow/StyledOurWorkflowWrapperDiv"
 import { StyledOurWorkflowWrapperH2 } from "../../atoms/Services/OurWorkflow/StyledOurWorkflowWrapperH2"
+import {
+  CURSOR_COLORS,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
+import styled from "styled-components"
 
 const OurWorkflow = () => {
+  const dispatchCursor = useCursorDispatchContext()
+  const handleOnMouseEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+  }
   return (
-    <StyledOurWorkflowWrapper>
+    <StyledOurWorkflowWrapper onMouseEnter={handleOnMouseEnter}>
       <StyledOurWorkflowWrapperH2
         fontFamily="Poppins"
         fontSize="40px"

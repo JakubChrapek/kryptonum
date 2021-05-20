@@ -5,6 +5,10 @@ import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BackLink } from "../components/atoms/BackLink/BackLink"
 
+const PageWrapper = styled.div`
+  background-color: var(--white);
+`
+
 const ProjectWrapper = styled.div`
   background-color: var(--white);
   margin: 0 auto;
@@ -180,9 +184,10 @@ const ContentColumn = styled.div`
     }
 
     a {
-      color: var(--accent);
+      color: var(--black);
       text-decoration: none;
       position: relative;
+      font-weight: 500;
 
       &:after {
         content: "";
@@ -190,22 +195,20 @@ const ContentColumn = styled.div`
         bottom: -2px;
         left: 0;
         width: 100%;
-        height: 2px;
+        height: 1px;
         transform-origin: center bottom;
-        opacity: 0;
-        transform: scaleY(0);
         transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
           transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-        background-color: var(--accent);
+        background-color: var(--black);
       }
 
       &:focus-visible {
         outline-offset: 1px;
-        outline: 2px solid var(--accent);
+        outline: 2px solid var(--black);
       }
 
       &:hover:after {
-        transform: scaleY(1);
+        transform: scaleY(2);
         opacity: 1;
       }
     }
@@ -513,7 +516,7 @@ const NextCaseLink = styled(Link)`
 const Project = ({ data }) => {
   const { datoCmsProject } = data
   return (
-    <>
+    <PageWrapper>
       <ProjectWrapper>
         <ProjectContentWrapper>
           <BackLink to="/projects">Powrót do projektów</BackLink>
@@ -584,7 +587,7 @@ const Project = ({ data }) => {
           </NextCaseLink>
         </NextCaseWrapper>
       </StructuredContentWrapper>
-    </>
+    </PageWrapper>
   )
 }
 

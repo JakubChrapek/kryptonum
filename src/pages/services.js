@@ -1,18 +1,22 @@
 import { graphql } from "gatsby"
 import React from "react"
+import styled from "styled-components"
 
 import HeroContent from "../components/molecules/HeroContent/HeroContent"
 import HeroImage from "../components/molecules/HeroImage/HeroImage"
 import WhatWeDo from "../components/molecules/Services/WhatWeDo"
 
+const PageWrapper = styled.div`
+  background-color: var(--white);
+`
 const Services = ({ data }) => {
   const { heroImage } = data.datoCmsPageService
   return (
-    <div>
+    <PageWrapper>
       <HeroContent content="Good design<br/>makes life better" />
       <HeroImage image={heroImage} />
       <WhatWeDo imagesData={data.datoCmsPageService} />
-    </div>
+    </PageWrapper>
   )
 }
 
