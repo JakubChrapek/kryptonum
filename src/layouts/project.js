@@ -560,7 +560,6 @@ const Project = ({ data }) => {
                 return (
                   <ProjectTwoColumnSection
                     featuredParagraph={record.featuredParagraph}
-                    normalParagraph={record.normalParagraph}
                     normalParagraphContent={record.normalParagraphContent.value}
                   />
                 )
