@@ -10,6 +10,12 @@ const ProjectWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   padding-top: 204px;
+  @media (max-width: 1024px) {
+    padding-top: 140px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 122px;
+  }
 `
 
 const ProjectContentWrapper = styled.div`
@@ -47,9 +53,14 @@ const ProjectTitle = styled.h1`
   @media (max-width: 1024px) {
     font-size: 48px;
   }
+  @media (max-width: 767px) {
+    font-size: 28px;
+    letter-spacing: -0.73px;
+  }
 `
 
 const ProjectFeaturedImage = styled(GatsbyImage)`
+  background-color: var(--white);
   width: 100%;
   height: 60vh;
   min-height: 395px;
@@ -60,9 +71,13 @@ const ProjectFeaturedImage = styled(GatsbyImage)`
     height: 90vh;
     max-height: 747px;
   }
+  @media (max-width: 767px) {
+    margin: 64px 0;
+  }
 `
 
 const StructuredContentWrapper = styled.div`
+  background-color: var(--white);
   max-width: 1366px;
   padding: 0 140px;
   @media (max-width: 1024px) {
@@ -70,6 +85,9 @@ const StructuredContentWrapper = styled.div`
   }
   @media (max-width: 767px) {
     padding: 0 28px;
+    > div:first-of-type {
+      margin-top: 0;
+    }
   }
   margin: 0 auto;
   display: flex;
@@ -78,10 +96,22 @@ const StructuredContentWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
+  background-color: var(--white);
   width: 100%;
   padding: 103px 155px;
   margin: 130px 0 106px;
   background-color: var(--light-gray);
+
+  @media (max-width: 1024px) {
+    width: calc(100% + 160px);
+    margin: 110px 0 92px;
+    padding: 60px 90px;
+  }
+  @media (max-width: 767px) {
+    width: calc(100% + 56px);
+    padding: 32px 40px;
+    margin: 100px 0 78px;
+  }
 `
 
 const StyledProjectWideImage = styled(GatsbyImage)``
@@ -93,11 +123,20 @@ const ProjectWideImage = ({ image }) => (
 )
 
 const ChallengeWrapper = styled.div`
+  background-color: var(--white);
   width: 100%;
   display: grid;
   grid-template-columns: 25% auto;
   grid-column-gap: 32px;
   padding-left: 75px;
+  @media (max-width: 1024px) {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: 40px;
+  }
+  @media (max-width: 767px) {
+    grid-row-gap: 28px;
+  }
 `
 
 const FeaturedColumn = styled.div`
@@ -108,6 +147,12 @@ const FeaturedColumn = styled.div`
     line-height: 1.5;
     letter-spacing: normal;
     color: var(--black-font);
+    @media (max-width: 1024px) {
+      font-size: 28px;
+    }
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
   }
 `
 
@@ -119,6 +164,13 @@ const ContentColumn = styled.div`
     line-height: 1.71;
     letter-spacing: normal;
     color: var(--black-font);
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.38;
+    }
+    + p {
+      margin-top: 12px;
+    }
     mark {
       background-color: var(--gray);
       color: var(--white);
@@ -164,6 +216,13 @@ const ContentColumn = styled.div`
     margin-top: 44px;
     font-family: "JetBrains Mono";
     font-size: 14px;
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      margin: 36px 0;
+    }
     font-weight: 500;
     line-height: 2.14;
     letter-spacing: 5px;
@@ -200,7 +259,12 @@ const ContentColumn = styled.div`
   }
 `
 
-const ProjectChallengeSection = ({ headerText, paragraph, linkToProject }) => (
+const ProjectChallengeSection = ({
+  headerText,
+  paragraph,
+  linkText,
+  linkToProject,
+}) => (
   <ChallengeWrapper>
     <FeaturedColumn>
       <h2>{headerText}</h2>
@@ -208,7 +272,7 @@ const ProjectChallengeSection = ({ headerText, paragraph, linkToProject }) => (
     <ContentColumn>
       <StructuredText data={paragraph} />
       <a rel="noreferrer noopener" target="_blank" href={linkToProject}>
-        Launch project
+        {linkText ? linkText : "Sprawdź projekt"}
       </a>
     </ContentColumn>
   </ChallengeWrapper>
@@ -216,8 +280,15 @@ const ProjectChallengeSection = ({ headerText, paragraph, linkToProject }) => (
 
 const TestimonialWrapper = styled.div`
   margin: 0 0 210px;
+  background-color: var(--white);
   max-width: 506px;
   align-self: flex-start;
+  @media (max-width: 1024px) {
+    margin: 0 0 120px;
+  }
+  @media (max-width: 767px) {
+    margin: 0 0 80px;
+  }
 `
 
 const TestimonialContent = styled.p`
@@ -227,6 +298,9 @@ const TestimonialContent = styled.p`
   line-height: 2;
   letter-spacing: normal;
   color: var(--black-font);
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 }
 `
 
@@ -239,6 +313,9 @@ const TestimonialSignatureWrapper = styled.div`
     line-height: 1.1;
     letter-spacing: normal;
     color: var(--black);
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
   span {
     font-weight: 500;
@@ -266,6 +343,15 @@ const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 51px;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 18px;
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    width: calc(100% + 56px);
+  }
 `
 
 const StyledImage = styled(GatsbyImage)``
@@ -282,6 +368,13 @@ const TwoColumnGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 51px;
   margin-top: 210px;
+  @media (max-width: 1024px) {
+    margin-top: 120px;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 36px;
+    width: 100%;
+  }
 `
 
 const FeaturedWrapper = styled.div`
@@ -297,6 +390,10 @@ const FeaturedWrapper = styled.div`
 `
 const NormalWrapper = styled.div`
   padding-left: 12px;
+  max-width: 506px;
+  @media (max-width: 1024px) {
+    padding-left: 0;
+  }
   p {
     font-family: Poppins;
     font-size: 16px;
@@ -341,6 +438,22 @@ const StyledHeaderWrapper = styled.span`
     line-height: 1.65;
     color: var(--black);
   }
+  @media (max-width: 1024px) {
+    margin-top: 120px;
+    h2 {
+      font-size: 40px;
+      max-width: 361px;
+    }
+    + ${ImageWrapper} {
+      margin-top: 72px;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-top: 90px;
+    + ${ImageWrapper} {
+      margin-top: 40px;
+    }
+  }
 `
 
 const ProjectHeader = ({ headerText }) => (
@@ -351,6 +464,12 @@ const ProjectHeader = ({ headerText }) => (
 
 const NextCaseWrapper = styled.div`
   margin: 130px 0 230px;
+  @media (max-width: 1024px) {
+    margin: 60px 0 180px;
+  }
+  @media (max-width: 767px) {
+    margin: 40px 0 150px;
+  }
 `
 
 const NextCaseLink = styled(Link)`
@@ -397,7 +516,7 @@ const Project = ({ data }) => {
     <>
       <ProjectWrapper>
         <ProjectContentWrapper>
-          <BackLink to="/projects">Back to all projects</BackLink>
+          <BackLink to="/projects">Powrót do projektów</BackLink>
           <TitleWrapper>
             <ProjectTitle>{datoCmsProject.projectTitle}</ProjectTitle>
           </TitleWrapper>
@@ -419,6 +538,7 @@ const Project = ({ data }) => {
                     headerText={record.headerText}
                     paragraph={record.paragraphContent.value}
                     linkToProject={record.linkToProject}
+                    linkText={record.linkText}
                   />
                 )
               case "DatoCmsProjectTestimonial":
@@ -510,6 +630,7 @@ export const projectQuery = graphql`
               value
             }
             linkToProject
+            linkText
           }
           ... on DatoCmsProjectTestimonial {
             id: originalId
