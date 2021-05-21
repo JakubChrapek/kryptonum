@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const StyledOurWorkflowWrapper = styled.div`
   display: flex;
-  background-color: var(--white);
   flex-direction: column;
   align-items: flex-start;
   padding: 0 140px;

@@ -73,9 +73,38 @@ const SlideHeaderWrapper = styled(motion.div)`
 `
 
 const TeamSlide = ({ slide }) => {
+  const dispatchCursor = useCursorDispatchContext()
   return (
     <SlideWrapper>
       <ImageWrapper
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+        onMouseLeave={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
         key={slide.id}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

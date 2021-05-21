@@ -190,7 +190,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                 fontSize="15px"
                 lineHeight="1.47em"
                 color="var(--text-gray)"
-                declaredMargin="0 0 0 8px"
               >
                 Social
               </TextStyles>

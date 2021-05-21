@@ -8,6 +8,12 @@ import BlogSection from "../components/organisms/BlogSection/BlogSection"
 import { getMonth } from "../utils/dateUtils"
 import ellipsize from "ellipsize"
 import { BackLink } from "../components/atoms/BackLink/BackLink"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../contexts/cursorContext"
 
 const ArticleImage = styled(GatsbyImage)`
   width: 100%;
@@ -130,10 +136,6 @@ const PostWrapper = styled.div`
   p + ol,
   p + ul,
   ul + p,
-  ol + p {
-    margin-top: 33px;
-  }
-
   h2 + ul,
   h2 + ol,
   h3 + ul,
@@ -141,8 +143,33 @@ const PostWrapper = styled.div`
   h4 + ul,
   h4 + ol,
   p + ol,
-  p + ul {
+  p + ul,
+  p + p ol + p {
+    margin-top: 33px;
+  }
+
+  p + p {
     margin-top: 16px;
+  }
+
+  li + li {
+    margin-top: 12px;
+  }
+
+  li {
+    display: flex;
+    position: relative;
+    padding-left: 32px;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 9px;
+      background-color: var(--black);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
   }
 
   h2,
@@ -410,14 +437,64 @@ const Post = ({ data }) => {
   const month = article.dateOfPublication.split("-")[1]
   const monthName = getMonth(month)
   const day = article.dateOfPublication.split("-")[2]
+  const dispatchCursor = useCursorDispatchContext()
+
+  const handleLinkEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.DEFAULT,
+    })
+  }
+  const handleLinkLeave = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
+  const handleWrapperEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
 
   const relatedArticles =
     similarArticles.length > 0 ? similarArticles : newArticles
   return (
     <>
-      <PostWrapper>
-        <PostContentWrapper>
-          <BackLink to="/blog">Back to all posts</BackLink>
+      <PostWrapper onMouseEnter={handleWrapperEnter}>
+        <PostContentWrapper onMouseEnter={handleWrapperEnter}>
+          <BackLink
+            onMouseEnter={handleLinkEnter}
+            onMouseLeave={handleLinkLeave}
+            to="/blog"
+          >
+            Back to all posts
+          </BackLink>
           <AuthorBox>
             <ArticleAuthorProfilePic
               image={article.author.photo.gatsbyImageData}
@@ -425,7 +502,9 @@ const Post = ({ data }) => {
             <ArticleTextContentBox>
               <AuthorName>{article.author.name}</AuthorName>
               <ArticleFadedText>
-                {`Opublikowano ${day} ${monthName} ${year} • 5 min`}
+                {`Opublikowano ${day} ${monthName} ${year} • ${
+                  article.readingTime ? article.readingTime : "5"
+                } min`}
               </ArticleFadedText>
             </ArticleTextContentBox>
           </AuthorBox>
@@ -486,6 +565,7 @@ export const articleQuery = graphql`
       }
       id
       articleTitle
+      readingTime
       author {
         name
         surname

@@ -4,6 +4,12 @@ import styled from "styled-components"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BackLink } from "../components/atoms/BackLink/BackLink"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../contexts/cursorContext"
 
 const PageWrapper = styled.div`
   background-color: var(--white);
@@ -120,9 +126,13 @@ const ImageWrapper = styled.div`
 
 const StyledProjectWideImage = styled(GatsbyImage)``
 
-const ProjectWideImage = ({ image }) => (
+const ProjectWideImage = ({ image, handleImageEnter, handleNormalLeave }) => (
   <ImageWrapper>
-    <StyledProjectWideImage image={image} />
+    <StyledProjectWideImage
+      onMouseEnter={handleImageEnter}
+      onMouseLeave={handleNormalLeave}
+      image={image}
+    />
   </ImageWrapper>
 )
 
@@ -252,13 +262,6 @@ const ContentColumn = styled.div`
       outline-offset: 1px;
       outline: 2px solid var(--black);
     }
-
-    &:hover {
-      transform: translateX(17px);
-      :after {
-        transform: translateX(-17px);
-      }
-    }
   }
 `
 
@@ -267,6 +270,8 @@ const ProjectChallengeSection = ({
   paragraph,
   linkText,
   linkToProject,
+  handleLinkEnter,
+  handleNormalLeave,
 }) => (
   <ChallengeWrapper>
     <FeaturedColumn>
@@ -274,7 +279,13 @@ const ProjectChallengeSection = ({
     </FeaturedColumn>
     <ContentColumn>
       <StructuredText data={paragraph} />
-      <a rel="noreferrer noopener" target="_blank" href={linkToProject}>
+      <a
+        onMouseEnter={handleLinkEnter}
+        onMouseLeave={handleNormalLeave}
+        rel="noreferrer noopener"
+        target="_blank"
+        href={linkToProject}
+      >
         {linkText ? linkText : "Sprawdź projekt"}
       </a>
     </ContentColumn>
@@ -359,10 +370,23 @@ const ImageGrid = styled.div`
 
 const StyledImage = styled(GatsbyImage)``
 
-const ProjectTwoColumnImage = ({ firstImage, secondImage }) => (
+const ProjectTwoColumnImage = ({
+  firstImage,
+  secondImage,
+  handleImageEnter,
+  handleNormalLeave,
+}) => (
   <ImageGrid>
-    <StyledImage image={firstImage} />
-    <StyledImage image={secondImage} />
+    <StyledImage
+      onMouseEnter={handleImageEnter}
+      onMouseLeave={handleNormalLeave}
+      image={firstImage}
+    />
+    <StyledImage
+      onMouseEnter={handleImageEnter}
+      onMouseLeave={handleNormalLeave}
+      image={secondImage}
+    />
   </ImageGrid>
 )
 
@@ -484,6 +508,7 @@ const NextCaseLink = styled(Link)`
   color: var(--black);
   text-decoration: none;
   position: relative;
+  padding-bottom: 12px;
   color: var(--black);
   transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
     transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -491,7 +516,7 @@ const NextCaseLink = styled(Link)`
   &:after {
     content: "";
     position: absolute;
-    bottom: -12px;
+    bottom: 0;
     left: 0;
     width: calc(100% - 20px);
     height: 3px;
@@ -515,16 +540,83 @@ const NextCaseLink = styled(Link)`
 
 const Project = ({ data }) => {
   const { datoCmsProject } = data
+  const dispatchCursor = useCursorDispatchContext()
+
+  const handleImageEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.LIGHT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.MEDIUM,
+    })
+  }
+
+  const handleLinkEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+  const handleNormalLeave = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
+  const handleWrapperEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
   return (
-    <PageWrapper>
+    <PageWrapper onMouseEnter={handleWrapperEnter}>
       <ProjectWrapper>
-        <ProjectContentWrapper>
-          <BackLink to="/projects">Powrót do projektów</BackLink>
+        <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
+          <BackLink
+            onMouseEnter={handleLinkEnter}
+            onMouseLeave={handleNormalLeave}
+            to="/projects"
+          >
+            Powrót do projektów
+          </BackLink>
           <TitleWrapper>
             <ProjectTitle>{datoCmsProject.projectTitle}</ProjectTitle>
           </TitleWrapper>
         </ProjectContentWrapper>
         <ProjectFeaturedImage
+          onMouseEnter={handleImageEnter}
+          onMouseLeave={handleNormalLeave}
           image={datoCmsProject.projectFeaturedImage.gatsbyImageData}
         />
       </ProjectWrapper>
@@ -534,7 +626,13 @@ const Project = ({ data }) => {
           renderBlock={({ record }) => {
             switch (record.__typename) {
               case "DatoCmsProjectWideImage":
-                return <ProjectWideImage image={record.image.gatsbyImageData} />
+                return (
+                  <ProjectWideImage
+                    handleImageEnter={handleImageEnter}
+                    handleNormalLeave={handleNormalLeave}
+                    image={record.image.gatsbyImageData}
+                  />
+                )
               case "DatoCmsProjectChallengeSection":
                 return (
                   <ProjectChallengeSection
@@ -542,6 +640,8 @@ const Project = ({ data }) => {
                     paragraph={record.paragraphContent.value}
                     linkToProject={record.linkToProject}
                     linkText={record.linkText}
+                    handleLinkEnter={handleLinkEnter}
+                    handleNormalLeave={handleNormalLeave}
                   />
                 )
               case "DatoCmsProjectTestimonial":
@@ -557,6 +657,8 @@ const Project = ({ data }) => {
                   <ProjectTwoColumnImage
                     firstImage={record.firstImage.gatsbyImageData}
                     secondImage={record.firstImage.gatsbyImageData}
+                    handleImageEnter={handleImageEnter}
+                    handleNormalLeave={handleNormalLeave}
                   />
                 )
               case "DatoCmsProject2ColumnHeaderAndParagraph":
@@ -575,6 +677,8 @@ const Project = ({ data }) => {
         />
         <NextCaseWrapper>
           <NextCaseLink
+            onMouseEnter={handleLinkEnter}
+            onMouseLeave={handleNormalLeave}
             to={
               datoCmsProject.nextProject
                 ? `/projects/${datoCmsProject.nextProject.projectSlug}`
