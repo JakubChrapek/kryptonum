@@ -4,6 +4,12 @@ import { motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
 import { Link } from "gatsby"
 import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../../contexts/cursorContext"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
@@ -190,6 +196,36 @@ const StyledProjectsWrapper = ({
   const handleClick = iterator => {
     setActiveProjectId(iterator)
   }
+  const dispatchCursor = useCursorDispatchContext()
+
+  const handleLinkEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+  const handleNormalLeave = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
 
   return (
     <ProjectsStyles lessProjects={projects.length < projectsPerPage - 1}>
@@ -197,15 +233,17 @@ const StyledProjectsWrapper = ({
         <motion.li
           key={project.projectTitle}
           onClick={() => handleClick(project.id)}
-          onMouseOver={() => setActiveProjectId(project.id)}
-          // onMouseOut={() => setActiveProject(0)}
           className={project.id === activeProjectId ? "active" : null}
           whileTap={{
             scale: 0.95,
             transition: { duration: 0.3 },
           }}
         >
-          <Link to={project.projectSlug}>
+          <Link
+            onMouseEnter={handleLinkEnter}
+            onMouseLeave={handleNormalLeave}
+            to={project.projectSlug}
+          >
             <span>{`(${iterator + 1})`}</span>
             <ProjectsTextStyles
               fontSize="86px"

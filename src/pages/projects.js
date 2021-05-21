@@ -9,6 +9,12 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import { TweenLite } from "gsap/gsap-core"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../contexts/cursorContext"
 
 const ProjectsStyles = styled.div`
   /* position: fixed; */
@@ -22,59 +28,36 @@ const ProjectsStyles = styled.div`
 `
 
 const Projects = ({ data }) => {
-  const [activeProjectId, setActiveProjectId] = useState(
-    data?.allDatoCmsProject?.nodes[0]?.id
-  )
-  const [activeSection, setActiveSection] = useState(0)
+  const dispatchCursor = useCursorDispatchContext()
+  const handleWrapperEnter = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_COLOR",
+      cursorColor: CURSOR_COLORS.DARK,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
+  }
+
   const containerRef = useRef()
   const numberOfProjects = data.allDatoCmsProject.nodes.length
   const projectsPerPage = 6
-  const numberOfSections = Math.ceil(numberOfProjects / projectsPerPage)
   const width = useWindowSize()
 
-  function goToSection(section, reverse) {
-    gsap.to(window, {
-      scrollTo: { y: section, autoKill: false },
-      duration: 1,
-    })
-    if (reverse) {
-      setActiveSection(prev => Math.max(0, prev - 1))
-    } else {
-      setActiveSection(prev => Math.min(numberOfSections - 1, prev + 1))
-    }
-  }
-
-  useEffect(() => {
-    // if (typeof window !== "undefined") {
-    gsap.utils.toArray("section").forEach(section => {
-      // ScrollTrigger.create({
-      //   trigger: section,
-      //   onEnter: () => goToSection(section, false),
-      // })
-      // ScrollTrigger.create({
-      //   trigger: section,
-      //   start: "bottom bottom",
-      //   onEnterBack: () => goToSection(section, true),
-      // })
-    })
-    // }
-    setActiveSection(0)
-
-    return () => {
-      // ScrollTrigger.kill()
-      // ScrollToPlugin.kill()
-    }
-  }, [])
-
   return (
-    <ProjectsStyles ref={containerRef}>
+    <ProjectsStyles onMouseEnter={handleWrapperEnter} ref={containerRef}>
       <StyledProjectsWrapper
         projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
-        projectsPerPage={projectsPerPage}
-        activeProjectId={activeProjectId}
-        setActiveProjectId={setActiveProjectId}
+        // projectsPerPage={projectsPerPage}
+        // activeProjectId={activeProjectId}
+        // setActiveProjectId={setActiveProjectId}
       />
-      <StyledProjectsWrapper
+      {/* <StyledProjectsWrapper
         projects={data.allDatoCmsProject.nodes.slice(
           projectsPerPage,
           2 * projectsPerPage
@@ -82,20 +65,20 @@ const Projects = ({ data }) => {
         projectsPerPage={projectsPerPage}
         activeProjectId={activeProjectId}
         setActiveProjectId={setActiveProjectId}
-      />
-      {width > 1100 && (
+      /> */}
+      {/* {width > 1100 && (
         <StyledCaseStudyCard
           projects={data.allDatoCmsProject.nodes}
           activeProjectId={activeProjectId}
         />
-      )}
-      <StyledVerticalLine
+      )} */}
+      {/* <StyledVerticalLine
         activeProject={activeProjectId}
         activeSection={activeSection}
         numberOfSections={numberOfSections}
         numberOfProjects={numberOfProjects}
         ref={containerRef}
-      />
+      /> */}
     </ProjectsStyles>
   )
 }
