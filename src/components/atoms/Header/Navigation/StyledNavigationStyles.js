@@ -2,14 +2,14 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const StyledNavigationStyles = styled(motion.nav)`
-  position: absolute;
+  position: fixed;
   right: 0vw;
   top: 0;
   height: 100vh;
   max-width: 100%;
   background-color: ${({ pointerEvents }) =>
     pointerEvents ? "var(--black)" : "var(--white)"};
-  z-index: 1;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   padding: 94px 116px 38px 104px;

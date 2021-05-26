@@ -8,7 +8,7 @@ const StyledLink = styled.a`
   left: 220px;
   top: 0;
   background-color: var(--white);
-  color: var(--dark);
+  color: var(--black-font);
   padding: 16px 30px;
   font-size: 18px;
   font-weight: bold;
@@ -16,11 +16,10 @@ const StyledLink = styled.a`
   border-radius: 10px;
   text-decoration: none;
   transform: translateY(-100%);
-  z-index: 1;
-  &:focus,
-  &:active {
+  z-index: 4;
+  &:focus-visible {
     outline: none;
-    border-color: var(--dark);
+    border-color: var(--black-font);
     transform: translateY(0);
   }
   @media (max-width: 767px) {

@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -539,8 +539,15 @@ const NextCaseLink = styled(Link)`
 `
 
 const Project = ({ data }) => {
-  const { datoCmsProject } = data
   const dispatchCursor = useCursorDispatchContext()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
+  const { datoCmsProject } = data
 
   const handleImageEnter = () => {
     dispatchCursor({

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import {
   containerTransition,
@@ -31,6 +31,24 @@ import {
   CURSOR_COLORS,
   CURSOR_SIZES,
 } from "../../../../contexts/cursorContext"
+import styled from "styled-components"
+
+// Transition Animation
+const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] }
+// Stagger on menu link
+const parent = {
+  animate: { transition: { staggerChildren: 0.1, delayChildren: 1 } },
+}
+// Menu Title Slide Up
+const titleSlideUp = {
+  initial: { y: 200 },
+  animate: { y: 0 },
+}
+// Menu lines grow
+const lineGrow = {
+  initial: { width: "100%" },
+  animate: { width: 0 },
+}
 
 const Navigation = ({ mobile, width, pointerEvents }) => {
   const dispatchCursor = useCursorDispatchContext()
@@ -134,14 +152,19 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
       cursorSize: CURSOR_SIZES.SMALLER,
     })
   }
+  const [panelComplete, setPanelComplete] = useState(false)
 
   return (
     <>
+      {/* <Panels
+        panelComplete={panelComplete}
+        setPanelComplete={setPanelComplete}
+      /> */}
       <StyledNavigationOverlay
-        variants={overlayTransition}
-        initial="initial"
-        animate="animate"
-        exit="exit"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.2 } }}
+        transition={{ ...transition, duration: 0.4 }}
       />
       <StyledNavigationStyles
         pointerEvents={pointerEvents}
@@ -179,6 +202,24 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
         animate="animate"
         exit="exit"
       >
+        {/* <motion.div
+          style={{
+            background: panelComplete ? "#fff" : "#191919",
+          }}
+          initial={{ height: 0 }}
+          animate={{
+            height: [0, window.innerHeight, 0],
+            bottom: [0, 0, window.innerHeight],
+          }}
+          exit={{
+            height: [0, window.innerHeight, 0],
+            bottom: [null, 0, 0],
+          }}
+          transition={{ ...transition, duration: 2, times: [0, 0.5, 1] }}
+          onAnimationComplete={() => {
+            setPanelComplete(!panelComplete)
+          }}
+        /> */}
         {width && width > 800 && (
           <StyledNavigationFlexDiv
             direction="column"
@@ -267,6 +308,42 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
         </StyledNavigationMenuFlex>
       </StyledNavigationStyles>
     </>
+  )
+}
+
+const PanelStyles = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 97;
+  pointer-events: none;
+  > div:nth-of-type(1) {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+  }
+`
+
+export const Panels = ({ panelComplete, setPanelComplete }) => {
+  return (
+    <PanelStyles>
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{
+          height: [0, window.innerHeight, 0],
+          bottom: [null, 0, 0],
+        }}
+        exit={{
+          height: [0, window.innerHeight, 0],
+          top: [null, 0, 0],
+        }}
+        transition={{ ...transition, duration: 2, times: [0, 0.5, 1] }}
+        style={{ background: "#000" }}
+        // onAnimationComplete={() => setPanelComplete(!panelComplete)}
+      ></motion.div>
+    </PanelStyles>
   )
 }
 

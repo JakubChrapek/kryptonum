@@ -29,6 +29,22 @@ const Header = ({ theme }) => {
   const width = useWindowSize()
   const [burgerLoading, setBurgerLoading] = useState(false)
 
+  const getColorForBurgerMenuFromThemeAndNavState = (theme, show) => {
+    console.log(theme, show)
+    if (theme === "light" && !show) {
+      return "var(--white)"
+    }
+    if (theme === "light" && show) {
+      return "var(--white)"
+    }
+    if (theme === "dark" && !show) {
+      return "var(--black)"
+    }
+    if (theme === "dark" && show) {
+      return "var(--white)"
+    }
+  }
+
   const handleOnMouseEnterForLink = () => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
@@ -75,7 +91,7 @@ const Header = ({ theme }) => {
   }
   return (
     <StyledHeaderWrapper>
-      <StyledHeader>
+      <StyledHeader bg={pathname === "/" ? "transparent" : "var(--white)"}>
         {width && width > 800 && (
           <Contact
             color={
@@ -151,7 +167,7 @@ const Header = ({ theme }) => {
           disabled={disabled}
           className={show ? "active" : null}
           whileTap={{ scale: 0.9 }}
-          color={theme === "light" ? "var(--white)" : "var(--black)"}
+          color={getColorForBurgerMenuFromThemeAndNavState(theme, show)}
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={() => {
             dispatchCursor({
@@ -170,10 +186,10 @@ const Header = ({ theme }) => {
             })
           }}
         >
-          <StyledNavBurgerSpan color={theme} mobile={show} />
-          <StyledNavBurgerSpan color={theme} mobile={show} />
+          <StyledNavBurgerSpan mobile={show} />
+          <StyledNavBurgerSpan mobile={show} />
         </StyledNavBurger>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence>
           {show && (
             <Navigation
               pointerEvents={burgerLoading ? "none" : ""}

@@ -3,7 +3,10 @@ import { Link } from "gatsby"
 
 export const StyledHeaderLink = styled(Link)`
   text-decoration: none;
-  transform: translateX(-30%);
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0px 8px;
   @media only screen and (max-width: 800px) {
     transform: translateX(0);

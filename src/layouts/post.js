@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { StructuredText } from "react-datocms"
@@ -432,12 +432,19 @@ const FooterAuthorBio = styled.p`
 `
 
 const Post = ({ data }) => {
+  const dispatchCursor = useCursorDispatchContext()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
   const { datoCmsArticle: article, similarArticles, newArticles } = data
   const year = article.dateOfPublication.split("-")[0].slice(2)
   const month = article.dateOfPublication.split("-")[1]
   const monthName = getMonth(month)
   const day = article.dateOfPublication.split("-")[2]
-  const dispatchCursor = useCursorDispatchContext()
 
   const handleLinkEnter = () => {
     dispatchCursor({

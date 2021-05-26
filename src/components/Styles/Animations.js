@@ -1,24 +1,24 @@
 let easing = [0.6, -0.05, 0.01, 0.99]
 export const containerTransition = {
   initial: {
-    opacity: 0,
+    visibility: "hidden",
+    x: "100%",
   },
   animate: {
-    opacity: 1,
+    visibility: "visible",
+    x: "0%",
     transition: {
-      duration: 0.7,
-      delayChildren: 0.25,
-      staggerChildren: 0.3,
+      duration: 0.4,
+      delay: 0,
       ease: easing,
     },
   },
   exit: {
-    opacity: 0,
+    // visibility: "hidden",
+    x: "100%",
     transition: {
-      staggerChildren: 0.5,
-      duration: 0.7,
-      when: "afterChildren",
-      delay: 0.25,
+      delay: 0,
+      duration: 0.2,
       ease: easing,
     },
   },

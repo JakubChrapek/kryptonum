@@ -46,13 +46,15 @@ const Global = createGlobalStyle`
     font-size: 1.6rem;
     font-family: "Poppins";
     overflow-x: hidden;
-    ${({ mobileMenuShown }) =>
+    ${
+      "" /* ${({ mobileMenuShown }) =>
       mobileMenuShown &&
       css`
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-      `}
+      `} */
+    }
   }
 
   h1,h2 {

@@ -9,9 +9,12 @@ export const StyledNavBurger = styled(motion.button)`
   width: 47px;
   height: 47px;
   padding: 8px;
-  position: relative;
+  position: fixed;
+  top: 28px;
+  right: 70px;
   border: none;
   background-color: transparent;
+  mix-blend-mode: difference;
   z-index: 99;
 
   @media only screen and (max-width: 800px) {
@@ -30,14 +33,18 @@ export const StyledNavBurger = styled(motion.button)`
     box-shadow: 0 0 0 2px ${({ color }) => color};
   }
 
+  span {
+    background-color: ${({ color }) => color};
+  }
+
   &.active {
     &:focus-visible {
       outline: none;
-      box-shadow: 0 0 0 2px var(--black);
+      box-shadow: 0 0 0 2px ${({ color }) => color};
     }
     span {
-      background-color: var(--black);
       margin: 0;
+      background-color: ${({ color }) => color};
       &:first-child {
         transform: rotate(45deg) translate(1px, 0px);
       }
