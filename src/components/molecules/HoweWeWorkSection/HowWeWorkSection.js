@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useRef, useState, useEffect } from "react"
 
+import { StructuredText } from "react-datocms"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import { Cards } from "./StyledCards"
 import { StyledHowWeWorkSection } from "../../atoms/HowWeWorkSection/HowWeWorkSectionStyles"
@@ -29,7 +30,18 @@ const query = graphql`
   }
 `
 
-const HowWeWorkSection = () => {
+const HowWeWorkSection = ({
+  howItWorksTitle,
+  howItWorksBigTitle,
+  howItWorksFirstCardTitle,
+  howItWorksFirstCardParagraph,
+  howItWorksSecondCardTitle,
+  howItWorksSecondCardParagraph,
+  howItWorksThirdCardTitle,
+  howItWorksThirdCardParagraph,
+  howItWorksFourthCardTitle,
+  howItWorksFourthCardParagraph,
+}) => {
   const { datoCmsPageHome } = useStaticQuery(query)
   const x = useMotionValue(0)
   const [sliderWidth, setSliderWidth] = useState(0)
@@ -121,17 +133,16 @@ const HowWeWorkSection = () => {
           fontWeight="500"
           howWeWorkSection={true}
         >
-          How we work
+          {howItWorksTitle}
         </TextStyles>
         <div>
           <StyledFeaturedWrapper
             mainHeader
             howWeWorkHeader
-            firstSpanLength="100%"
-            secondSpanLength="74%"
+            firstSpanLength="62%"
+            secondSpanLength="112%"
           >
-            <span>Our design</span>
-            <span>process</span>
+            <StructuredText data={howItWorksBigTitle.value} />
           </StyledFeaturedWrapper>
         </div>
         <DragSliderWrapper
@@ -154,21 +165,62 @@ const HowWeWorkSection = () => {
           }}
         >
           <Cards ref={sliderRef}>
-            {datoCmsPageHome.cards.map(card => (
-              <li key={card.cardTitle}>
-                <TextStyles
-                  fontSize="28px"
-                  lineHeight="1.5em"
-                  letterSpacing="normal"
-                  fontWeight="normal"
-                  fontFamily="Poppins"
-                  color="#090909"
-                >
-                  {card.cardTitle}
-                </TextStyles>
-                <p>{card.cardDescription}</p>
-              </li>
-            ))}
+            <li key={howItWorksFirstCardTitle}>
+              <TextStyles
+                fontSize="28px"
+                lineHeight="1.5em"
+                letterSpacing="normal"
+                fontWeight="normal"
+                fontFamily="Poppins"
+                color="#090909"
+              >
+                {howItWorksFirstCardTitle}
+              </TextStyles>
+              <StructuredText data={howItWorksFirstCardParagraph.value} />
+              {/* <p>{howItWorksFirstCardParagraph}</p> */}
+            </li>
+            <li key={howItWorksSecondCardTitle}>
+              <TextStyles
+                fontSize="28px"
+                lineHeight="1.5em"
+                letterSpacing="normal"
+                fontWeight="normal"
+                fontFamily="Poppins"
+                color="#090909"
+              >
+                {howItWorksSecondCardTitle}
+              </TextStyles>
+              <StructuredText data={howItWorksSecondCardParagraph.value} />
+              {/* <p>{howItWorksFirstCardParagraph}</p> */}
+            </li>
+            <li key={howItWorksThirdCardTitle}>
+              <TextStyles
+                fontSize="28px"
+                lineHeight="1.5em"
+                letterSpacing="normal"
+                fontWeight="normal"
+                fontFamily="Poppins"
+                color="#090909"
+              >
+                {howItWorksThirdCardTitle}
+              </TextStyles>
+              <StructuredText data={howItWorksThirdCardParagraph.value} />
+              {/* <p>{howItWorksThirdCardParagraph}</p> */}
+            </li>
+            <li key={howItWorksFourthCardTitle}>
+              <TextStyles
+                fontSize="28px"
+                lineHeight="1.5em"
+                letterSpacing="normal"
+                fontWeight="normal"
+                fontFamily="Poppins"
+                color="#090909"
+              >
+                {howItWorksFourthCardTitle}
+              </TextStyles>
+              <StructuredText data={howItWorksFourthCardParagraph.value} />
+              {/* <p>{howItWorksFirstCardParagraph}</p> */}
+            </li>
           </Cards>
         </DragSliderWrapper>
       </ServicesStyles>

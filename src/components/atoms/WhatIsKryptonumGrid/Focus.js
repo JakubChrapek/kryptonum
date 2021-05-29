@@ -4,6 +4,8 @@ import { GridItem } from "./GridItem"
 export const Focus = styled(GridItem)`
   margin: 4% 0 0;
   max-width: 260px;
+  position: absolute;
+  right: 0;
   @media only screen and (max-width: 1035px) {
     max-width: 200px;
   }

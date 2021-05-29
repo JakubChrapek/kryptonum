@@ -24,7 +24,7 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
           letterSpacing="5px"
           color="var(--accent)"
           declaredDisplay="block"
-          declaredPadding="0 9px 0 0"
+          declaredpadding="0 9px 0 0"
           declaredTransform="translateY(-18px)"
         >{`(${elementNumber})`}</TextStyles>
         <span dangerouslySetInnerHTML={{ __html: leftBoxText }} />

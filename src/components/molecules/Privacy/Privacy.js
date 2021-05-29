@@ -28,7 +28,7 @@ const Privacy = () => {
             fontSize="16px"
             lineHeight="1.38"
             color="var(--dark-bg)"
-            declaredPadding="0 0 80px 0"
+            declaredpadding="0 0 80px 0"
           >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
@@ -45,7 +45,7 @@ const Privacy = () => {
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
           </TextStyles>
           <TextStyles
-            declaredPadding="0 0 20px 0"
+            declaredpadding="0 0 20px 0"
             fontFamily="Poppins"
             fontSize="16px"
             lineHeight="1.38"
@@ -66,7 +66,7 @@ const Privacy = () => {
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
           </TextStyles>
           <TextStyles
-            declaredPadding="0 0 20px 0"
+            declaredpadding="0 0 20px 0"
             fontFamily="Poppins"
             fontSize="16px"
             lineHeight="1.38"
@@ -89,7 +89,7 @@ const Privacy = () => {
         </StyledPrivacyMainTextWrapper>
         <StyledPrivacyMainTextWrapper>
           <TextStyles
-            declaredPadding="0 0 20px 0"
+            declaredpadding="0 0 20px 0"
             fontFamily="Poppins"
             fontSize="16px"
             lineHeight="1.38"
@@ -110,7 +110,7 @@ const Privacy = () => {
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
           </TextStyles>
           <TextStyles
-            declaredPadding="0 0 20px 0"
+            declaredpadding="0 0 20px 0"
             fontFamily="Poppins"
             fontSize="16px"
             lineHeight="1.38"
@@ -131,7 +131,7 @@ const Privacy = () => {
             Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
           </TextStyles>
           <TextStyles
-            declaredPadding="0 0 20px 0"
+            declaredpadding="0 0 20px 0"
             fontFamily="Poppins"
             fontSize="16px"
             lineHeight="1.38"

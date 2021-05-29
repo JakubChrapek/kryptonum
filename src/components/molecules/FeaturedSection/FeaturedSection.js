@@ -1,5 +1,6 @@
 import React from "react"
 
+import { StructuredText } from "react-datocms"
 import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
 import { FeaturedSectionWrapper } from "../../atoms/FeaturedSection/FeaturedSectionWrapper"
 import { FeaturedSectionUl } from "../../atoms/FeaturedSection/FeaturedSectionUl"
@@ -14,7 +15,13 @@ import {
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 
-const FeaturedSection = () => {
+const FeaturedSection = ({
+  featuredTitle,
+  featuredBigTitle,
+  featuredFirstElement,
+  featuredSecondElement,
+  featuredThirdElement,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <BgColourWrapper
@@ -44,22 +51,23 @@ const FeaturedSection = () => {
           textTransform="uppercase"
           fontWeight="500"
         >
-          Works
+          {featuredTitle}
         </TextStyles>
         <FeaturedSectionWrapper>
           <StyledFeaturedWrapper
             firstSpanLength="92%"
-            secondSpanLength="125%"
+            secondSpanLength="115%"
             hasMarginLeft={false}
             mainHeader
           >
-            <span>Featured</span>
-            <span>Projects</span>
+            <StructuredText data={featuredBigTitle.value} />
+            {/* <span>Featured</span> */}
+            {/* <span>Projects</span> */}
           </StyledFeaturedWrapper>
           <FeaturedSectionUl>
-            <li>Design</li>
-            <li>Development</li>
-            <li>Strategy</li>
+            <li>{featuredFirstElement}</li>
+            <li>{featuredSecondElement}</li>
+            <li>{featuredThirdElement}</li>
           </FeaturedSectionUl>
         </FeaturedSectionWrapper>
       </ServicesStyles>

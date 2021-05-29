@@ -6,8 +6,8 @@ const LinkStyles = styled(Link)`
   font-size: ${({ declaredFontSize }) =>
     declaredFontSize ? declaredFontSize : "14px"};
   text-decoration: none;
-  padding: ${({ declaredPadding }) =>
-    declaredPadding ? declaredPadding : "6px 8px"};
+  padding: ${({ declaredpadding }) =>
+    declaredpadding ? declaredpadding : "6px 8px"};
   margin-right: ${({ declaredMarginRight }) =>
     declaredMarginRight ? declaredMarginRight : "23px"};
   line-height: ${({ declaredLineHeight }) =>
@@ -64,7 +64,7 @@ const StyledLink = ({
   declaredFontFamily,
   declaredLineHeight,
   declaredMarginRight,
-  declaredPadding,
+  declaredpadding,
   onMouseEnter,
   onMouseLeave,
   to,
@@ -79,7 +79,7 @@ const StyledLink = ({
       declaredFontFamily={declaredFontFamily}
       declaredLineHeight={declaredLineHeight}
       declaredMarginRight={declaredMarginRight}
-      declaredPadding={declaredPadding}
+      declaredpadding={declaredpadding}
       onPointerEnter={onMouseEnter}
       onPointerLeave={onMouseLeave}
     >

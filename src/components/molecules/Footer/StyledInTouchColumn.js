@@ -19,4 +19,9 @@ export const StyledInTouchColumn = styled.div`
       font-size: 38px;
     }
   }
+  mark {
+    background-color: var(--accent);
+    padding: 0.05rem 0.3rem;
+    font-size: 0.9em;
+  }
 `

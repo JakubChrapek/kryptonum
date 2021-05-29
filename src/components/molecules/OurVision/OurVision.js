@@ -38,7 +38,7 @@ const OurVision = () => {
           fontSize="40px"
           lineHeight="1.28"
           color="var(--white)"
-          declaredPadding="0 0 2px 0"
+          declaredpadding="0 0 2px 0"
           fontFamily="Poppins"
         >
           Nasze wartości

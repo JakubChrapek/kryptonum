@@ -1,5 +1,6 @@
 import React from "react"
 import { Link as ScrollLink } from "react-scroll"
+import { StructuredText } from "react-datocms"
 import { SectionStyles } from "../../atoms/WhatIsKryptonumGrid/SectionStyles"
 import { CreativeSection } from "../../atoms/WhatIsKryptonumGrid/CreativeSection"
 import { WhatIsKryptonumWrapper } from "../../atoms/WhatIsKryptonumGrid/WhatIsKryptonumWrapper"
@@ -20,8 +21,23 @@ import {
 } from "../../../contexts/cursorContext"
 import { DownArrow } from "../../atoms/Icons/arrows"
 import tmp from "../../../images/hero-bg.jpeg"
+import {
+  WhatIsKryptonumTitle,
+  WhatIsKryptonumTitleStyles,
+} from "./WhatIsKryptonumTitleStyles"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
-const WhatIsKryptonum = () => {
+const WhatIsKryptonum = ({
+  whatIsKryptonumTitle,
+  whatIsKryptonumParagraph,
+  passionTitle,
+  passionContent,
+  focusTitle,
+  focusContent,
+  creativityTitle,
+  creativityContent,
+  image,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   const width = useWindowSize()
   return (
@@ -58,41 +74,40 @@ const WhatIsKryptonum = () => {
       >
         <WhatIsKryptonumWrapper>
           <FirstRow>
-            <h2>
-              What is
-              <br />
-              Kryptonum
-            </h2>
+            <WhatIsKryptonumTitleStyles>
+              <WhatIsKryptonumTitle data={whatIsKryptonumTitle} />
+            </WhatIsKryptonumTitleStyles>
             <Passion>
-              <span>Pa</span>
+              <span>{passionTitle?.substring(0, 2)}</span>
               <div>
-                <h3>Passion</h3>
-                <p>We treat our job as art. With love and passion.</p>
+                <h3>{passionTitle}</h3>
+                <p>{passionContent}</p>
               </div>
             </Passion>
           </FirstRow>
           <SecondRow>
-            <p>
+            <StructuredText data={whatIsKryptonumParagraph} />
+            {/* <p>
               First of all, Kryptonum is a collective work of passion and
               professionalism. We’re a unique team of like-minded professionals
               from all over the world, all the best specialists in their
               respected fields. Kryptonum is your best choice when it comes to
               complex website design. See for yourself!
-            </p>
+            </p> */}
             <div className="img-wrapper">
-              <img src={tmp} alt="" />
+              <GatsbyImage image={image} />
             </div>
             <Focus>
-              <span>Fo</span>
+              <span>{focusTitle?.substring(0, 2)}</span>
               <div>
-                <h3>Focus</h3>
-                <p>We set the goals and always reach them.</p>
+                <h3>{focusTitle}</h3>
+                <p>{focusContent}</p>
               </div>
             </Focus>
           </SecondRow>
           <ThirdRow>
             <Works>
-              <span>Works</span>
+              <span>Projekty</span>
               <ScrollLink
                 activeClass="active"
                 to="featuredProjects"
@@ -133,9 +148,9 @@ const WhatIsKryptonum = () => {
               </ScrollLink>
             </Works>
             <Creativity hasDeclaredTransform={true}>
-              <span>Cr</span>
+              <span>{creativityTitle?.substring(0, 2)}</span>
               <div>
-                <h3>Creativity</h3>
+                <h3>{creativityTitle}</h3>
               </div>
             </Creativity>
           </ThirdRow>
@@ -161,7 +176,7 @@ const WhatIsKryptonum = () => {
           <CreativeRow>
             <Creativity hasDeclaredTransform={false}>
               <div>
-                <p>Boredom is our worst enemy.</p>
+                <p>{creativityContent}</p>
               </div>
             </Creativity>
           </CreativeRow>

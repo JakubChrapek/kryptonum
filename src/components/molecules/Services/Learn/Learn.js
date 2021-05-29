@@ -51,7 +51,7 @@ const Learn = () => {
             fontSize="45px"
             lineHeight="1.25"
             color="var(--gray)"
-            declaredPadding="43px 0 0 0"
+            declaredpadding="43px 0 0 0"
             letterSpacing="-0.94px"
           >
             <span>Briefing</span> Research

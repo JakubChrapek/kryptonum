@@ -96,7 +96,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
           fontFamily="Poppins"
           lineHeight="1.88"
           color="var(--dark-bg)"
-          declaredPadding="0 0 44px 14px"
+          declaredpadding="0 0 44px 14px"
         >
           {answer}
         </AnswerText>

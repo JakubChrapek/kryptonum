@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import ArticlesGrid from "../ArticleGrid/ArticlesGrid"
+import { StructuredText } from "react-datocms"
 
 import { SectionStyles } from "../../atoms/BlogSection/StyledBlogSection"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
@@ -30,7 +31,13 @@ const blogSectionQuery = graphql`
   }
 `
 
-const BlogSection = ({ bg, blogPosts, headerFirstLine, headerSecondLine }) => {
+const BlogSection = ({
+  bg,
+  blogPosts,
+  headerFirstLine,
+  headerSecondLine,
+  blogTitle,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   const {
     allDatoCmsArticle: { nodes },
@@ -56,20 +63,17 @@ const BlogSection = ({ bg, blogPosts, headerFirstLine, headerSecondLine }) => {
       <SectionStyles>
         <div>
           <StyledFeaturedWrapper
-            firstSpanLength="110%"
-            secondSpanLength="140%"
+            firstSpanLength="70%"
+            secondSpanLength="128%"
             hasMarginLeft={true}
           >
             {headerFirstLine ? (
               <>
-                <span>{headerFirstLine}</span>
-                {headerSecondLine && <span>{headerSecondLine}</span>}
+                <p>{headerFirstLine}</p>
+                {headerSecondLine && <p>{headerSecondLine}</p>}
               </>
             ) : (
-              <>
-                <span>New on</span>
-                <span>the blog</span>
-              </>
+              <StructuredText data={blogTitle.value} />
             )}
           </StyledFeaturedWrapper>
         </div>

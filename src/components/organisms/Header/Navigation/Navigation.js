@@ -90,13 +90,11 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
   const menuWrapperRef = useRef(null)
   useOutsideRefClick(menuWrapperRef, () => {
     if (pathname === "/") {
-      console.log(pathname)
       dispatchCursor({
         type: "CHANGE_CURSOR_COLOR",
         cursorColor: CURSOR_COLORS.LIGHT,
       })
     } else {
-      console.log(pathname)
       dispatchCursor({
         type: "CHANGE_CURSOR_COLOR",
         cursorColor: CURSOR_COLORS.DARK,

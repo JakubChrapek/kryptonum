@@ -1,5 +1,6 @@
 import React from "react"
 
+import { StructuredText } from "react-datocms"
 import { ServicesWrapper } from "../../atoms/Services/ServicesWrapper/ServicesWrapper"
 import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
 import { ServicesStylesH2 } from "../../atoms/Services/ServicesStyles/ServicesStylesH2"
@@ -11,7 +12,11 @@ import {
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 
-const MainServices = () => {
+const MainServices = ({
+  servicesListFirstRow,
+  servicesListSecondRow,
+  servicesTitle,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <BgColourWrapper
@@ -40,35 +45,30 @@ const MainServices = () => {
           textAlign="center"
           letterSpacing="2.29px"
           textTransform="uppercase"
-          declaredPadding="0 0 20px 0"
+          declaredpadding="0 0 20px 0"
           fontWeight="bold"
         >
-          Our main services
+          {servicesTitle}
         </ServicesStylesH2>
         <ServicesWrapper>
-          <li>
-            <h3>Design</h3>
-          </li>
-          <li>
-            <h3>SEO</h3>
-          </li>
-          <li>
-            <h3>Branding</h3>
-          </li>
-          <li>
-            <h3>Media</h3>
-          </li>
+          {servicesListFirstRow.map(service => (
+            <li>
+              <h3>{service.usluga}</h3>
+            </li>
+          ))}
         </ServicesWrapper>
         <ServicesWrapper>
-          <li>
-            <h3>Marketing</h3>
-          </li>
-          <li>
-            <h3>Strategy</h3>
-          </li>
-          <li>
-            <h3 className="underline">Development</h3>
-          </li>
+          {servicesListSecondRow.map((service, iterator) => (
+            <li>
+              <h3
+                className={
+                  iterator === servicesListSecondRow.length - 1 && "underline"
+                }
+              >
+                {service.usluga}
+              </h3>
+            </li>
+          ))}
         </ServicesWrapper>
       </ServicesStyles>
     </BgColourWrapper>

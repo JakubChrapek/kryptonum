@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { useLocation } from "@reach/router"
+import { StructuredText } from "react-datocms"
 
 import useWindowSize from "../../../utils/getWindowSize"
 import HeroFooter from "../../molecules/HomeHeroFooter/HeroFooter"
@@ -9,6 +10,7 @@ import GrayLine from "../../atoms/GrayLine/GrayLine"
 
 import { Wrapper } from "../../atoms/StyledHeroHomeWrapper/StyledHeroHomeWrapper"
 import { HomeHeroSection } from "../../atoms/StyledHomeHeroSection/StyledHomeHeroSection"
+import { HomeHeroTitle, HomeHeroTitleStyles } from "../HomeHero/HomeHeroTitle"
 import { StyledFullPageResponsieImage } from "../../atoms/StyledFullPageResponsieImage/StyledFullPageResponsieImage"
 import { StyledScrollLink } from "../../atoms/StyledHeroLink/StyledHeroLink"
 import {
@@ -19,10 +21,18 @@ import {
 } from "../../../contexts/cursorContext"
 import { RightArrow } from "../../atoms/Icons/arrows"
 
-const HomeHero = ({ bg }) => {
+const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
   const width = useWindowSize()
   const dispatchCursor = useCursorDispatchContext()
   let pathname = useLocation().pathname
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
+
   const handleOnMouseEnterForLink = () => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
@@ -87,13 +97,9 @@ const HomeHero = ({ bg }) => {
       {width >= 683 && <GrayLine />}
       <GreenLine />
       <Wrapper>
-        <span>
-          Join the league
-          <br />
-          of business
-          {width < 683 ? <br /> : null}
-          superheroes
-        </span>
+        <HomeHeroTitleStyles>
+          <HomeHeroTitle data={heroTitle} />
+        </HomeHeroTitleStyles>
 
         {width >= 683 && (
           <StyledScrollLink
@@ -106,10 +112,7 @@ const HomeHero = ({ bg }) => {
             onMouseLeave={handleOnMouseLeaveForLink}
           >
             <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
-              See what
-              <br />
-              we're up to
-              <br />
+              <StructuredText data={heroTekstPrzycisku} />
               <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
                 <RightArrow />
               </motion.span>

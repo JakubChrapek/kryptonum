@@ -37,7 +37,7 @@ const query = graphql`
   }
 `
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ buttonText }) => {
   const width = useWindowSize()
   const data = useStaticQuery(query)
   const dispatchCursor = useCursorDispatchContext()
@@ -144,7 +144,7 @@ const ProjectsSection = () => {
             className="btn btn__dark"
             to="/projects"
           >
-            View all projects
+            {buttonText ? buttonText : "Wszystkie projekty"}
           </Link>
         </StyledProjectsColumn>
         {width > 767 ? (

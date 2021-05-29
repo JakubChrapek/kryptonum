@@ -150,7 +150,7 @@ const ScrollToTop = () => {
             letterSpacing="2px"
             as="p"
           >
-            Go up
+            Na górę
           </TextStyles>
         </ScrollToTopStyles>
       )}

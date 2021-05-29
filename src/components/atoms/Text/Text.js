@@ -13,8 +13,8 @@ export const TextStyles = styled(motion.p)`
   text-transform: ${({ textTransform }) =>
     textTransform ? textTransform : "none"};
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "left")};
-  padding: ${({ declaredPadding }) =>
-    declaredPadding ? declaredPadding : "0"};
+  padding: ${({ declaredpadding }) =>
+    declaredpadding ? declaredpadding : "0"};
   border-top: ${({ declaredBorderTop }) =>
     declaredBorderTop ? declaredBorderTop : "0"};
   margin: ${({ declaredMargin }) => (declaredMargin ? declaredMargin : "0")};

@@ -50,7 +50,7 @@ const Create = () => {
       <StyledCreateTextWrapper>
         <StyledCreateTextH3
           fontFamily="LibreBaskerville"
-          declaredPadding="0 0 42px 0"
+          declaredpadding="0 0 42px 0"
           fontSize="45px"
           lineHeight="1.2"
           letterSpacing="-0.94px"
@@ -67,7 +67,7 @@ const Create = () => {
         </StyledCreateTextH3>
 
         <StyledCreateTextP
-          declaredPadding="0 0 58px 0"
+          declaredpadding="0 0 58px 0"
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"

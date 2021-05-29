@@ -5,6 +5,7 @@ import { useLocation } from "@reach/router"
 import * as qs from "query-string"
 import axios from "axios"
 import { AnimatePresence, motion } from "framer-motion"
+import { StructuredText } from "react-datocms"
 
 import { StyledEbookColumn } from "../../molecules/StyledContentColumnForm/StyledEbookColumn"
 import { StyledUltimateSectionWrapper } from "../../atoms/TheUltimateSection/StyledUltimateSectionWrapper"
@@ -33,7 +34,20 @@ const theUltimateSectionQuery = graphql`
   }
 `
 
-const TheUltimateSection = () => {
+const TheUltimateSection = ({
+  leadMagnetTitleSmaller,
+  leadMagnetTitleBigger,
+  leadMagnetParagraph,
+  leadMagnetTitleButtonText,
+  leadMagnetInputPlaceholder,
+  leadMagnetTitleErrorMessage,
+  leadMagnetTitleSuccessMessage,
+}) => {
+  const leadMagnetSuccessMsg =
+    leadMagnetTitleSuccessMessage.value.document.children[0].children[0].value
+  const leadMagnetErrorMsg =
+    leadMagnetTitleErrorMessage.value.document.children[0].children[0].value
+
   const dispatchCursor = useCursorDispatchContext()
   const {
     datoCmsPageHome: { theUltimateContentChecklistImage },
@@ -59,7 +73,7 @@ const TheUltimateSection = () => {
     setError(false)
     if (inputValue.length === 0) {
       setError(true)
-      setFeedbackMsg("Enter your email, please.")
+      setFeedbackMsg("Wpisz maila, proszę.")
       inputRef.current.focus()
     } else {
       let formData = { email: inputValue }
@@ -73,12 +87,12 @@ const TheUltimateSection = () => {
 
       axios(axiosOptions)
         .then(response => {
-          setFeedbackMsg("Form submitted successfully! 🚀")
+          setFeedbackMsg(leadMagnetSuccessMsg)
           setError(false)
           formRef.current.reset()
         })
         .catch(err => {
-          setFeedbackMsg("Form could not be submitted. 😬")
+          setFeedbackMsg(leadMagnetErrorMsg)
           setError(true)
         })
     }
@@ -108,11 +122,11 @@ const TheUltimateSection = () => {
             fontSize="14px"
             lineHeight="1.58em"
             color="var(--black)"
-            declaredPadding="4px 17px"
+            declaredpadding="4px 17px"
             declaredMargin="0 0 24px 0"
             letterSpacing="normal"
           >
-            Handbook for you
+            {leadMagnetTitleSmaller}
           </StyledContentColumnSpan>
           <StyledContentColumnH2
             fontFamily="Poppins"
@@ -121,7 +135,7 @@ const TheUltimateSection = () => {
             fontSize="62px"
             color="var(--white)"
           >
-            The ultimate content checklist.
+            {leadMagnetTitleBigger}
           </StyledContentColumnH2>
           <StyledContentColumnLastParagraph
             fontFamily="Poppins"
@@ -131,8 +145,7 @@ const TheUltimateSection = () => {
             letterSpacing="normal"
             declaredMargin="28px 0 0 0"
           >
-            Curious about what to look out for in 2021 to stay relevant in the
-            online space? We combined all the useful tips to help you out.
+            <StructuredText data={leadMagnetParagraph.value} />
           </StyledContentColumnLastParagraph>
           <StyledContentColumnForm
             ref={formRef}
@@ -163,7 +176,7 @@ const TheUltimateSection = () => {
               type="email"
               name="email"
               id="email"
-              placeholder="Your e-mail here"
+              placeholder={leadMagnetInputPlaceholder}
               value={inputValue}
               onChange={handleInput}
               className={error ? "error" : ""}
@@ -228,7 +241,7 @@ const TheUltimateSection = () => {
                 })
               }}
             >
-              Get a copy
+              {leadMagnetTitleButtonText}
             </motion.button>
             <AnimatePresence>
               {feedbackMsg && (

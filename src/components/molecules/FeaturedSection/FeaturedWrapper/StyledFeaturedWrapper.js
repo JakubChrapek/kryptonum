@@ -8,7 +8,7 @@ export const StyledFeaturedWrapper = styled.div`
     padding-left: ${({ howWeWorkHeader }) => (howWeWorkHeader ? "20px" : "0")};
     margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
   }
-  span {
+  > p {
     font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
     line-height: ${({ mainHeader }) => (mainHeader ? "1.31em" : "1.5em")};
     position: relative;

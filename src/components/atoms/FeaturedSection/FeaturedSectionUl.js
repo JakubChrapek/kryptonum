@@ -8,7 +8,7 @@ export const FeaturedSectionUl = styled.ul`
     line-height: 3.62;
     letter-spacing: 19.5px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
     font-family: "JetBrains Mono";
   }
   @media only screen and (max-width: 1294px) {

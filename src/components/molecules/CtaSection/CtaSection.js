@@ -1,5 +1,6 @@
 import React from "react"
 
+import { StructuredText } from "react-datocms"
 import { SectionStyles } from "../../atoms/CtaSection/StyledCtaSection"
 import { Wrapper } from "../../atoms/CtaSection/StyledCtaWrapper"
 import { StyledCtaH2 } from "../../atoms/CtaSection/StyledCtaH2"
@@ -11,7 +12,10 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 
-const CtaSection = () => {
+const CtaSection = ({
+  createAWebsiteTogetherCTA,
+  createAWebsiteTogetherButtonText,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <Wrapper
@@ -38,7 +42,7 @@ const CtaSection = () => {
           color="var(--white)"
           fontFamily="Libre Baskerville"
         >
-          Let's make a wonderful <span>website</span> <span>together</span>
+          <StructuredText data={createAWebsiteTogetherCTA.value} />
         </StyledCtaH2>
         <StyledCtaLink
           onMouseEnter={() => {
@@ -72,7 +76,7 @@ const CtaSection = () => {
           to="/contact"
           className="btn btn__small btn__light"
         >
-          Contact us
+          {createAWebsiteTogetherButtonText}
         </StyledCtaLink>
       </SectionStyles>
     </Wrapper>

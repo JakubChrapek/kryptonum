@@ -30,7 +30,6 @@ const Header = ({ theme }) => {
   const [burgerLoading, setBurgerLoading] = useState(false)
 
   const getColorForBurgerMenuFromThemeAndNavState = (theme, show) => {
-    console.log(theme, show)
     if (theme === "light" && !show) {
       return "var(--white)"
     }

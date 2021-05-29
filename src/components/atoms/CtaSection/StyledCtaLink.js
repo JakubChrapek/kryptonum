@@ -10,7 +10,6 @@ export const StyledCtaLink = styled(Link)`
   @media only screen and (max-width: 360px) {
     font-size: 12px;
   }
-  button {
-    min-width: 290px;
-  }
+  width: 100%;
+  max-width: 337px;
 `

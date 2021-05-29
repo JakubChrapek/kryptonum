@@ -29,7 +29,6 @@ const Pagination = ({
   const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
   const nextDisabled = currentPage >= length - 1
-  console.log(length, currentPage)
   return (
     <PaginationStyles
       initial={initial}

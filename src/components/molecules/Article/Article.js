@@ -63,7 +63,7 @@ const Article = ({ article, full, layout }) => {
           fluid={article.articleFeaturedImage.fluid}
         />
         <TextStyles
-          declaredPadding="11px 0 0 0"
+          declaredpadding="11px 0 0 0"
           // declaredBorderTop="2px solid var(--black)"
           declaredMargin="15px 0 0 0"
           declaredWidth="100%"
@@ -83,7 +83,7 @@ const Article = ({ article, full, layout }) => {
           lineHeight="1.3em"
           letterSpaccing="0.8px"
           declaredMargin={full ? "9px 0 0" : "26px 0 0 0"}
-          declaredPadding="0 0 13px 0"
+          declaredpadding="0 0 13px 0"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,

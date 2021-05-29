@@ -14,7 +14,8 @@ export const StyledCtaH2 = styled(TextStyles)`
   @media only screen and (max-width: 360px) {
     font-size: 24px;
   }
-  span {
+  mark {
+    background-color: transparent;
     @media only screen and (max-width: 570px) {
       line-height: 2em;
       min-width: 318px;

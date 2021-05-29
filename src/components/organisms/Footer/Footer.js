@@ -1,5 +1,7 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
+import { graphql, useStaticQuery } from "gatsby"
 import { StyledCopyrightWrapper } from "../../atoms/Footer/StyledCopyrightWrapper"
 import { StyledBottomFooterWrapper } from "../../atoms/Footer/StyledBottomFooterWrapper"
 import { StyledFooterSectionStyles } from "../../atoms/Footer/StyledFooterSectionStyles"
@@ -23,60 +25,80 @@ import {
 } from "../../../contexts/cursorContext"
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      datoCmsStopka {
+        stopkaTytul
+        stopkaAkapit {
+          value
+        }
+        tytulPierwszejKolumnyLinkow
+        linkiWPierwszejKolumnie {
+          linkNazwa
+          linkSlug
+        }
+        tytulDrugiejKolumnyLinkow
+        linkiWDrugiejKolumnie {
+          linkSlug
+          linkNazwa
+        }
+        tytulTrzeciejKolumnyLinkow
+        linkiWTrzeciejKolumnie {
+          linkNazwa
+          linkSlug
+        }
+        stopkaTekstZastrzeEniePraw {
+          value
+        }
+        stopkaTekstCtaDoSociali {
+          value
+        }
+      }
+    }
+  `)
+
+  const [footerTitle, footerParagraph] = [
+    data.datoCmsStopka.stopkaTytul,
+    data.datoCmsStopka.stopkaAkapit,
+  ]
+
+  const {
+    tytulPierwszejKolumnyLinkow: firstColumnTitle,
+    tytulDrugiejKolumnyLinkow: secondColumnTitle,
+    tytulTrzeciejKolumnyLinkow: thirdColumnTitle,
+    linkiWPierwszejKolumnie: firstColumnLinks,
+    linkiWDrugiejKolumnie: secondColumnLinks,
+    linkiWTrzeciejKolumnie: thirdColumnLinks,
+    stopkaTekstZastrzeEniePraw: copyText,
+    stopkaTekstCtaDoSociali: socialText,
+  } = data.datoCmsStopka
+
   const dispatchCursor = useCursorDispatchContext()
-  const footerNavigation = [
+
+  const tmpNavigation = [
     {
-      name: "Explore",
-      items: [
-        {
-          name: "UI Design",
-          link: "/services#design",
-        },
-        {
-          name: "Development",
-          link: "/services#development",
-        },
-        {
-          name: "Marketing",
-          link: "/services#marketing",
-        },
-      ],
+      name: firstColumnTitle,
+      items: firstColumnLinks.map(link => ({
+        name: link.linkNazwa,
+        link: link.linkSlug,
+      })),
     },
     {
-      name: "Learn",
-      items: [
-        {
-          name: "Projects",
-          link: "/projects",
-        },
-        {
-          name: "About",
-          link: "/about",
-        },
-        {
-          name: "Blog",
-          link: "/blog",
-        },
-      ],
+      name: secondColumnTitle,
+      items: secondColumnLinks.map(link => ({
+        name: link.linkNazwa,
+        link: link.linkSlug,
+      })),
     },
     {
-      name: "Studio",
-      items: [
-        {
-          name: "Contact",
-          link: "/contact",
-        },
-        {
-          name: "FAQ",
-          link: "/faq",
-        },
-        {
-          name: "Privacy policy",
-          link: "/privacy-policy",
-        },
-      ],
+      name: thirdColumnTitle,
+      items: thirdColumnLinks.map(link => ({
+        name: link.linkNazwa,
+        link: link.linkSlug,
+      })),
     },
   ]
+
   return (
     <StyledFooterWrapper
       onMouseEnter={() => {
@@ -137,7 +159,7 @@ const Footer = () => {
               color="var(--white)"
               lineHeight="1.5"
             >
-              Get in touch!
+              {footerTitle}
             </TextStyles>
             <TextStyles
               fontFamily="JetBrains Mono"
@@ -148,22 +170,18 @@ const Footer = () => {
               color="var(--white)"
               lineHeight="2.14"
             >
-              Got interested?
-              <br />
-              Have any questions? <br />
-              Or do you want to get straight to work? No matter the reason, we
-              can’t wait to hear from you!
+              <StructuredText data={footerParagraph.value} />
             </TextStyles>
           </StyledInTouchColumn>
           <StyledMenuColumn>
-            {footerNavigation.map(column => (
+            {tmpNavigation.map(column => (
               <StyledMenuColumnUl key={column.name}>
                 <StyledMenuColumnUlP
                   color="var(--text-gray)"
                   fontFamily="Poppins"
                   fontSize="15px"
                   lineHeight="1.47"
-                  declaredPadding="0 8px 39px 8px"
+                  declaredpadding="0 8px 39px 8px"
                 >
                   {column.name}
                 </StyledMenuColumnUlP>
@@ -218,7 +236,7 @@ const Footer = () => {
                 color="var(--light-gray)"
                 letterSpacing="2px"
               >
-                All rights reserved &copy; Kryptonum
+                <StructuredText data={copyText.value} /> &copy; Kryptonum
               </StyledCopyrightWrapperDivSpan>
             </StyledCopyrightWrapperDiv>
             <StyledCopyrightWrapperDiv>
@@ -230,7 +248,7 @@ const Footer = () => {
                 letterSpacing="2px"
                 className="withAfter"
               >
-                Connect with us
+                <StructuredText data={socialText.value} />
               </StyledCopyrightWrapperDivSpan>
               <StyledMenuColumnLink
                 copyrightWrapper={true}

@@ -17,17 +17,17 @@ export const GridItem = styled.div`
       font-size: 110px;
     }
   }
-  h3 {
+  & h3 {
     text-transform: uppercase;
     font-family: "JetBrains Mono";
     font-size: 16px;
-    line-height: 1em;
+    line-height: 1.8em;
     margin: 20px 0 0 16px;
     @media only screen and (max-width: 1035px) {
       font-size: 15px;
     }
   }
-  p {
+  && p {
     font-family: "JetBrains Mono";
     font-size: 13px;
     line-height: 1.67;
