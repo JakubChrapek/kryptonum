@@ -73,7 +73,7 @@ const CtaSection = ({
               cursorSize: CURSOR_SIZES.SMALLER,
             })
           }}
-          to="/contact"
+          to="/kontakt"
           className="btn btn__small btn__light"
         >
           {createAWebsiteTogetherButtonText}

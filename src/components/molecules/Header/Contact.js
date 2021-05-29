@@ -7,9 +7,9 @@ const Contact = ({ color, onMouseEnter, onMouseLeave }) => (
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     color={color}
-    to="/contact"
+    to="/kontakt"
   >
-    Contact
+    Kontakt
   </StyledContactStyles>
 )
 

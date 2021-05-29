@@ -231,7 +231,7 @@ function ContactForm() {
                         cursorSize: CURSOR_SIZES.SMALLER,
                       })
                     }}
-                    to="/privacy-policy"
+                    to="/polityka-prywatnosci"
                   >
                     Privacy Policy
                   </StyledContactLink>{" "}

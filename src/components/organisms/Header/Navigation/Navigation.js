@@ -56,18 +56,18 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
   const navItems = [
     {
       number: "01",
-      name: "Projects",
-      link: "/projects",
+      name: "Projekty",
+      link: "/projekty",
     },
     {
       number: "02",
-      name: "Services",
-      link: "/services",
+      name: "Usługi",
+      link: "/uslugi",
     },
     {
       number: "03",
-      name: "About",
-      link: "/about",
+      name: "O nas",
+      link: "/onas",
     },
     {
       number: "04",
@@ -81,8 +81,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     },
     {
       number: "06",
-      name: "Contact",
-      link: "/contact",
+      name: "Kontakt",
+      link: "/kontakt",
     },
   ]
 
@@ -230,7 +230,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                 lineHeight="1.47em"
                 color="var(--text-gray)"
               >
-                Social
+                Sociale
               </TextStyles>
               <StyledSocialList>
                 <motion.li>
@@ -254,13 +254,13 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
               </StyledSocialList>
             </div>
             <div>
-              <StyledTextP margin="0 0 9px 0">Get in touch</StyledTextP>
+              <StyledTextP margin="0 0 9px 0">Weź zagadaj</StyledTextP>
               <StyledOutLink
                 onPointerEnter={handleOnMouseEnterForLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
                 href="mailto:kuba@kryptonumstudio.com"
               >
-                contact@kryptonum.co.uk
+                kontakt@kryptonum.pl
               </StyledOutLink>
             </div>
           </StyledNavigationFlexDiv>
@@ -299,7 +299,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
             <>
               <StyledTextP margin="0 0 9px 0">Get in touch</StyledTextP>
               <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
-                contact@kryptonum.co.uk
+                kontakt@kryptonum.pl
               </StyledOutLink>
             </>
           )}
