@@ -1,5 +1,6 @@
 import React from "react"
 import { VscArrowDown } from "react-icons/vsc"
+import { StructuredText } from "react-datocms"
 
 import { StyledWorkflowComponentWrapper } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentWrapper"
 import { StyledWorkflowComponentHeading } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentHeading"
@@ -15,7 +16,12 @@ import { StyledLearnTextWrapperH3 } from "../../../atoms/Services/Learn/StyledLe
 import { StyledLearnTextWrapperUl } from "../../../atoms/Services/Learn/StyledLearnTextWrapperUl"
 import { StyledLearnHeadingWrapper } from "./StyledLearnHeadingWrapper"
 
-const Learn = () => {
+const Learn = ({
+  howWeWorkList,
+  howWeWorkLearnTitle,
+  howWeWorkLearnNumber,
+  howWeWorkLearnTitleOverList,
+}) => {
   return (
     <StyledWorkflowComponentWrapper
       mediaQueriesAlign={true}
@@ -31,7 +37,7 @@ const Learn = () => {
             letterSpacing="2.57px"
             fontWeight="500"
           >
-            (01)
+            ({howWeWorkLearnNumber})
           </StyledWorkflowComponentGreenSpan>
           <StyledWorkflowComponentHeading
             fontFamily="LibreBaskerville"
@@ -42,7 +48,7 @@ const Learn = () => {
             fontStretch="normal"
             declaredDisplay="block"
           >
-            Learn
+            <StructuredText data={howWeWorkLearnTitle} />
           </StyledWorkflowComponentHeading>
         </StyledLearnHeadingWrapper>
         <StyledLearnTextWrapper>
@@ -54,16 +60,13 @@ const Learn = () => {
             declaredpadding="43px 0 0 0"
             letterSpacing="-0.94px"
           >
-            <span>Briefing</span> Research
+            <span>
+              <StructuredText data={howWeWorkLearnTitleOverList} />
+            </span>
           </StyledLearnTextWrapperH3>
 
           <StyledLearnTextWrapperUl>
-            <li>Project Goals</li>
-            <li>Target Audience</li>
-            <li>Market</li>
-            <li>Competitors</li>
-            <li>Functional Specifications</li>
-            <li>Content Requirements</li>
+            <StructuredText data={howWeWorkList} />
           </StyledLearnTextWrapperUl>
         </StyledLearnTextWrapper>
         {/* <StyledElipseWrapper>

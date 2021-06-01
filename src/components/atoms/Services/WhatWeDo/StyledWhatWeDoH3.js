@@ -3,7 +3,6 @@ import { TextStyles } from "../../Text/Text"
 
 export const StyledWhatWeDoH3 = styled(TextStyles)`
   position: relative;
-  min-width: 243px;
   @media only screen and (max-width: 600px) {
     width: 100%;
   }

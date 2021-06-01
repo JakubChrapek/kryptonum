@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
   const {
     datoCmsPageHome: {
       heroSectionBgImage,
-      heroTytul,
+      heroTytul: heroTitle,
       heroTekstPrzycisku,
       naszeUslugiTytul: servicesTitle,
       naszeUslugiPierwszyWiersz: servicesListFirstRow,
@@ -65,7 +65,7 @@ const IndexPage = ({ data }) => {
     <>
       <SEO title="Kryptonum" />
       <HomeHero
-        heroTitle={heroTytul}
+        heroTitle={heroTitle}
         heroTekstPrzycisku={heroTekstPrzycisku}
         bg={heroSectionBgImage.gatsbyImageData}
       />

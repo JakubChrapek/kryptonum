@@ -19,4 +19,19 @@ export const StyledWhatWeDoInfoTextWrapper = styled.div`
     flex-direction: column;
     padding: 51px 28px;
   }
+
+  > p {
+    flex: 1 1 50%;
+    font-family: "JetBrains Mono";
+    font-size: 18px;
+    line-height: 1.28;
+    color: var(--dark-bg);
+    letter-spacing: 2.57px;
+    font-weight: 500;
+    @media (max-width: 767px) {
+      max-width: 100%;
+      margin-top: 54px;
+      margin-left: 0;
+    }
+  }
 `

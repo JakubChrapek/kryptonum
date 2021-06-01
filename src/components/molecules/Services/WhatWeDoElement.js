@@ -1,5 +1,6 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { StructuredText } from "react-datocms"
 
 import { StyledWhatWeDoElementH2 } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementH2"
 import { StyledWhatWeDoElementImageWrapper } from "../../atoms/Services/WhatWeDoElement/StyledWhatWeDoElementImageWrapper"
@@ -38,7 +39,7 @@ const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
         letterSpacing="normal"
         declaredDisplay="block"
       >
-        {title}
+        <StructuredText data={title} />
       </StyledWhatWeDoElementH2>
       <StyledWhatWeDoElementImageWrapper>
         <StyledWhatWeDoElementLeftBar
@@ -61,7 +62,7 @@ const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
             letterSpacing="normal"
             declaredDisplay="block"
           >
-            {content}
+            <StructuredText data={content} />
           </StyledWhatWeDoElementRightBarH3>
         </StyledWhatWeDoElementRightBar>
       </StyledWhatWeDoElementImageWrapper>

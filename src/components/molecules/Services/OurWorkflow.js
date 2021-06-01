@@ -4,6 +4,7 @@ import Learn from "./Learn/Learn"
 import Think from "./Think/Think"
 import Create from "./Create/Create"
 import Implementation from "./Implementation/Implementation"
+import { StructuredText } from "react-datocms"
 
 import { StyledOurWorkflowWrapper } from "../../atoms/Services/OurWorkflow/StyledOurWorkflowWrapper"
 import { StyledOurWorkflowWrapperDiv } from "../../atoms/Services/OurWorkflow/StyledOurWorkflowWrapperDiv"
@@ -14,7 +15,18 @@ import {
 } from "../../../contexts/cursorContext"
 import styled from "styled-components"
 
-const OurWorkflow = () => {
+const OurWorkflow = ({
+  howWeWorkSectionTitle,
+  howWeWorkList,
+  howWeWorkLearnTitle,
+  howWeWorkLearnNumber,
+  howWeWorkLearnTitleOverList,
+  howWeWorkThinkingParagraph,
+  howWeWorkThinkingNumber,
+  howWeWorkThinkingTitle,
+  howWeWorkThinkingTextInCircle,
+  howWeWorkThinkingTitleOverText,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnter = () => {
     dispatchCursor({
@@ -31,10 +43,15 @@ const OurWorkflow = () => {
         color="var(--black)"
         declaredMargin="0 0 124px 0"
       >
-        Our workflow
+        <StructuredText data={howWeWorkSectionTitle} />
       </StyledOurWorkflowWrapperH2>
       <StyledOurWorkflowWrapperDiv>
-        <Learn />
+        <Learn
+          howWeWorkList={howWeWorkList}
+          howWeWorkLearnTitle={howWeWorkLearnTitle}
+          howWeWorkLearnNumber={howWeWorkLearnNumber}
+          howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+        />
         <Think />
         <Create />
         <Implementation />

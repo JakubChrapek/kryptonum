@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import { StyledHeroWrapper } from "../../atoms/HeroContent/StyledHeroWrapper"
 import { StyledHeroSection } from "../../atoms/HeroContent/StyledHeroSection"
@@ -16,11 +17,12 @@ const BlogLinks = ({ content }) => (
     {content ? (
       <StyledFeaturedWrapper
         mainHeader
-        firstSpanLength="145%"
-        secondSpanLength="190%"
+        firstSpanLength="0"
+        secondSpanLength="0"
         hasSmalFontSize
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      >
+        <StructuredText data={content} />
+      </StyledFeaturedWrapper>
     ) : (
       <StyledFeaturedWrapper
         mainHeader

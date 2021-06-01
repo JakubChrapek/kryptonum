@@ -10,12 +10,55 @@ const PageWrapper = styled.div`
   background-color: var(--white);
 `
 const Services = ({ data }) => {
-  const { heroImage } = data.datoCmsPageService
+  const {
+    datoCmsPageService: {
+      heroImage,
+      heroTytul: heroTitle,
+      coRobimyTytul: whatWeDoTitle,
+      coRobimyAkapit: whatWeDoParagraph,
+      stronyInternetoweTytul: websitesTitle,
+      stronyInternetoweAkapit: websitesParagraph,
+      marketingTytul: marketingTitle,
+      marketingAkapit: marketingParagraph,
+      strategiaTytul: strategyTitle,
+      strategiaAkapit: strategyParagraph,
+      jakPracujemyTytulNaPoczatku: howWeWorkSectionTitle,
+      jakPracujemyLista: howWeWorkList,
+      jakPracujemyRozmowaTytul: howWeWorkLearnTitle,
+      jakPracujemyRozmowaNumerPierwszy: howWeWorkLearnNumber,
+      jakPracujemyRozmowaTytulNadLista: howWeWorkLearnTitleOverList,
+      jakPracujemyMozdzymyAkapit: howWeWorkThinkingParagraph,
+      jakPracujemyMozdzymyNumer: howWeWorkThinkingNumber,
+      jakPracujemyMozdzymyTytul: howWeWorkThinkingTitle,
+      jakPracujemyMozdzymyTekstWKolku: howWeWorkThinkingTextInCircle,
+      jakPracujemyMozdzymyTytulNadTekstem: howWeWorkThinkingTitleOverText,
+    },
+  } = data
   return (
     <PageWrapper>
-      <HeroContent content="Good design<br/>makes life better" />
+      <HeroContent content={heroTitle} />
       <HeroImage image={heroImage} />
-      <WhatWeDo imagesData={data.datoCmsPageService} />
+      <WhatWeDo
+        whatWeDoTitle={whatWeDoTitle}
+        whatWeDoParagraph={whatWeDoParagraph}
+        imagesData={data.datoCmsPageService}
+        websitesTitle={websitesTitle}
+        websitesParagraph={websitesParagraph}
+        marketingTitle={marketingTitle}
+        marketingParagraph={marketingParagraph}
+        strategyTitle={strategyTitle}
+        strategyParagraph={strategyParagraph}
+        howWeWorkSectionTitle={howWeWorkSectionTitle}
+        howWeWorkList={howWeWorkList}
+        howWeWorkThinkingParagraph={howWeWorkThinkingParagraph}
+        howWeWorkThinkingNumber={howWeWorkThinkingNumber}
+        howWeWorkThinkingTitle={howWeWorkThinkingTitle}
+        howWeWorkThinkingTextInCircle={howWeWorkThinkingTextInCircle}
+        howWeWorkThinkingTitleOverText={howWeWorkThinkingTitleOverText}
+        howWeWorkLearnTitle={howWeWorkLearnTitle}
+        howWeWorkLearnNumber={howWeWorkLearnNumber}
+        howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+      />
     </PageWrapper>
   )
 }
@@ -26,6 +69,58 @@ export const query = graphql`
       heroImage {
         gatsbyImageData(width: 920, placeholder: BLURRED, forceBlurhash: false)
       }
+      heroTytul {
+        value
+      }
+      coRobimyTytul
+      coRobimyAkapit {
+        value
+      }
+      stronyInternetoweTytul {
+        value
+      }
+      stronyInternetoweAkapit {
+        value
+      }
+      marketingTytul {
+        value
+      }
+      marketingAkapit {
+        value
+      }
+      strategiaTytul {
+        value
+      }
+      strategiaAkapit {
+        value
+      }
+
+      jakPracujemyTytulNaPoczatku {
+        value
+      }
+      jakPracujemyLista {
+        value
+      }
+
+      jakPracujemyRozmowaTytul {
+        value
+      }
+      jakPracujemyRozmowaNumerPierwszy
+      jakPracujemyRozmowaTytulNadLista {
+        value
+      }
+      jakPracujemyMozdzymyAkapit {
+        value
+      }
+      jakPracujemyMozdzymyNumer
+      jakPracujemyMozdzymyTytul {
+        value
+      }
+      jakPracujemyMozdzymyTekstWKolku
+      jakPracujemyMozdzymyTytulNadTekstem {
+        value
+      }
+
       designImage {
         gatsbyImageData(width: 600, placeholder: BLURRED, forceBlurhash: false)
       }

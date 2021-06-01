@@ -10,7 +10,27 @@ import { StyledH3Wrapper } from "../../atoms/Services/WhatWeDo/StyledH3Wrapper"
 import { StyledWhatWeDoInfoTextWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoInfoTextWrapper"
 import { StyledWhatWeDoContentWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoContentWrapper"
 
-const WhatWeDo = ({ imagesData }) => {
+const WhatWeDo = ({
+  imagesData,
+  whatWeDoTitle,
+  whatWeDoParagraph,
+  websitesTitle,
+  websitesParagraph,
+  marketingTitle,
+  marketingParagraph,
+  strategyTitle,
+  strategyParagraph,
+  howWeWorkSectionTitle,
+  howWeWorkList,
+  howWeWorkThinkingParagraph,
+  howWeWorkThinkingNumber,
+  howWeWorkThinkingTitle,
+  howWeWorkThinkingTextInCircle,
+  howWeWorkThinkingTitleOverText,
+  howWeWorkLearnTitle,
+  howWeWorkLearnNumber,
+  howWeWorkLearnTitleOverList,
+}) => {
   return (
     <StyledWhatWeDoSection>
       <StyledWhatWeDoInfoTextWrapper>
@@ -24,65 +44,47 @@ const WhatWeDo = ({ imagesData }) => {
             declaredDisplay="block"
             letterSpacing="normal"
           >
-            What we do
+            {whatWeDoTitle}
           </StyledWhatWeDoH3>
         </StyledH3Wrapper>
-        <StyledWhatWeDoP
-          fontFamily="JetBrains Mono"
-          fontSize="18px"
-          lineHeight="1.28"
-          letterSpacing="2px"
-          color="var(--dark-bg)"
-          letterSpacing="2.57px"
-          fontWeight="500"
-        >
-          A strategic and tactical approach is essential for long-term goals,
-          but what’s even more important is keeping deadlines and promises. Our
-          work gets results and we never hide behind paperwork.
-        </StyledWhatWeDoP>
+        <StyledWhatWeDoP data={whatWeDoParagraph} />
       </StyledWhatWeDoInfoTextWrapper>
       <StyledWhatWeDoContentWrapper>
         <WhatWeDoElement
-          id="design"
-          title="Design"
+          id="strony-internetowe"
+          title={websitesTitle}
           image={imagesData.designImage}
-          content="A strategic and tactical approach is essential 
-          for long-term goals, but what’s even more important is 
-          keeping deadlines and promises. Our work gets results and 
-          we never hide behind paperwork."
+          content={websitesParagraph}
           swap={false}
           design
         />
         <WhatWeDoElement
-          id="development"
-          title="Development"
+          id="marketing"
+          title={marketingTitle}
           image={imagesData.developmentImage}
-          content="Developing websites is about so 
-          much more than marketing. It’s also about 
-          aesthetics. For us, your site is the face of 
-          your company. Let’s make it stunning."
+          content={marketingParagraph}
           swap={true}
         />
         <WhatWeDoElement
-          id="marketing"
-          title="Marketing"
+          id="social-media"
+          title={strategyTitle}
           image={imagesData.marketingImage}
-          content="Developing websites is about 
-          so much more than marketing. It’s also about aesthetics
-          . For us, your site is the face of your company. Let’s make it stunning."
+          content={strategyParagraph}
           swap={false}
         />
-        <WhatWeDoElement
-          id="strategy"
-          title="Strategy"
-          image={imagesData.strategyImage}
-          content="Developing websites is about so much more than marketing. 
-          It’s also about aesthetics. For us, your site is the face of your company. 
-          Let’s make it stunning."
-          swap={true}
-        />
       </StyledWhatWeDoContentWrapper>
-      <OurWorkflow />
+      <OurWorkflow
+        howWeWorkSectionTitle={howWeWorkSectionTitle}
+        howWeWorkList={howWeWorkList}
+        howWeWorkThinkingParagraph={howWeWorkThinkingParagraph}
+        howWeWorkThinkingNumber={howWeWorkThinkingNumber}
+        howWeWorkThinkingTitle={howWeWorkThinkingTitle}
+        howWeWorkThinkingTextInCircle={howWeWorkThinkingTextInCircle}
+        howWeWorkThinkingTitleOverText={howWeWorkThinkingTitleOverText}
+        howWeWorkLearnTitle={howWeWorkLearnTitle}
+        howWeWorkLearnNumber={howWeWorkLearnNumber}
+        howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+      />
     </StyledWhatWeDoSection>
   )
 }

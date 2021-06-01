@@ -287,7 +287,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                 to={item.link}
                 key={item.name}
                 onClick={() => dispatch({ type: "CLOSE_MENU" })}
-                onPointerDown={() => dispatch({ type: "CLOSE_MENU" })}
                 onPointerEnter={handleOnMouseEnterForLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
               >

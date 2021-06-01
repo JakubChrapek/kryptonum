@@ -1,11 +1,5 @@
 import styled from "styled-components"
 import { TextStyles } from "../../Text/Text"
+import { StructuredText } from "react-datocms"
 
-export const StyledWhatWeDoP = styled(TextStyles)`
-  flex: 1 1 50%;
-  @media only screen and (max-width: 767px) {
-    max-width: 100%;
-    margin-top: 54px;
-    margin-left: 0;
-  }
-`
+export const StyledWhatWeDoP = styled(StructuredText)``
