@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import ContactForm from "./ContactForm/ContactForm"
 
@@ -52,7 +53,17 @@ const StyledLink = styled.a`
   }
 `
 
-const ContactMain = () => {
+const ContactMain = ({
+  contactPageTitle,
+  contactPageNameLabel,
+  contactPageButtonText,
+  contactPageNamePlaceholder,
+  contactPageEmailLabel,
+  contactPageEmailPlaceholder,
+  contactPageMessageLabel,
+  contactPageMessagePlaceholder,
+  contactPagePrivacyText,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <StyledContactSection>
@@ -78,12 +89,21 @@ const ContactMain = () => {
           lineHeight="1.3"
           color="var(--black)"
         >
-          Let’s start something <br /> Great together
+          <StructuredText data={contactPageTitle} />
         </StyledContactTextWrapperH1>
       </StyledContactTextWrapper>
       <StyledContactFormWrapper>
         <StyledContactFormWrapperDiv>
-          <ContactForm />
+          <ContactForm
+            contactPageNameLabel={contactPageNameLabel}
+            contactPageButtonText={contactPageButtonText}
+            contactPageNamePlaceholder={contactPageNamePlaceholder}
+            contactPageEmailLabel={contactPageEmailLabel}
+            contactPageEmailPlaceholder={contactPageEmailPlaceholder}
+            contactPageMessageLabel={contactPageMessageLabel}
+            contactPageMessagePlaceholder={contactPageMessagePlaceholder}
+            contactPagePrivacyText={contactPagePrivacyText}
+          />
           <StyledContactInfo>
             <TextStyles
               declaredpadding="0 0 36px 0"

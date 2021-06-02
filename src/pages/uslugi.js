@@ -86,7 +86,7 @@ const Services = ({ data }) => {
 }
 
 export const query = graphql`
-  query serviceImages {
+  query serviceData {
     datoCmsPageService {
       heroImage {
         gatsbyImageData(width: 920, placeholder: BLURRED, forceBlurhash: false)

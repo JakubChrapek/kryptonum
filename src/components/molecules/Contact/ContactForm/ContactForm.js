@@ -11,8 +11,18 @@ import {
 } from "../../../../contexts/cursorContext"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import { AnimatePresence, motion } from "framer-motion"
+import { StructuredText } from "react-datocms"
 
-function ContactForm() {
+function ContactForm({
+  contactPageNameLabel,
+  contactPageButtonText,
+  contactPageNamePlaceholder,
+  contactPageEmailLabel,
+  contactPageEmailPlaceholder,
+  contactPageMessageLabel,
+  contactPageMessagePlaceholder,
+  contactPagePrivacyText,
+}) {
   const [feedback, setFeedback] = useState(null)
   const dispatchCursor = useCursorDispatchContext()
   const encode = data => {
@@ -20,6 +30,7 @@ function ContactForm() {
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
   }
+
   return (
     <div>
       <Formik
@@ -72,9 +83,12 @@ function ContactForm() {
         {({ errors }) => (
           <StyledForm name="contact-form" data-netlify={true}>
             <FieldWrapper>
-              <label htmlFor="name">Name* </label>
+              <label htmlFor="name">{contactPageNameLabel}* </label>
               <Field
-                placeholder="What is your name?"
+                placeholder={
+                  contactPageNamePlaceholder.value.document.children[0]
+                    .children[0].value
+                }
                 name="name"
                 className={errors.name && "error"}
                 onMouseEnter={() => {
@@ -117,9 +131,12 @@ function ContactForm() {
             </FieldWrapper>
 
             <FieldWrapper>
-              <label htmlFor="email">Email* </label>
+              <label htmlFor="email">{contactPageEmailLabel}* </label>
               <Field
-                placeholder="youremail@gmail.com"
+                placeholder={
+                  contactPageEmailPlaceholder.value.document.children[0]
+                    .children[0].value
+                }
                 className={errors.email && "error"}
                 name="email"
                 onMouseEnter={() => {
@@ -162,7 +179,7 @@ function ContactForm() {
             </FieldWrapper>
 
             <FieldWrapper>
-              <label htmlFor="message">Message: </label>
+              <label htmlFor="message">{contactPageMessageLabel}</label>
               <Field
                 name="message"
                 component="textarea"
@@ -194,7 +211,10 @@ function ContactForm() {
                     cursorSize: CURSOR_SIZES.SMALLER,
                   })
                 }}
-                placeholder="Let us know about your project and goals…"
+                placeholder={
+                  contactPageMessagePlaceholder.value.document.children[0]
+                    .children[0].value
+                }
               />
             </FieldWrapper>
             <FieldWrapper variant="checkbox">
@@ -278,7 +298,7 @@ function ContactForm() {
               }}
               type="submit"
             >
-              Send your request
+              <StructuredText data={contactPageButtonText} />
             </button>
             <AnimatePresence>
               {feedback && (
