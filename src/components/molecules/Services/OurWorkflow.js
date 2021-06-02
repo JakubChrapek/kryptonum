@@ -26,6 +26,15 @@ const OurWorkflow = ({
   howWeWorkThinkingTitle,
   howWeWorkThinkingTextInCircle,
   howWeWorkThinkingTitleOverText,
+  howWeWorkCreatingNumber,
+  howWeWorkCreatingTitle,
+  howWeWorkCreatingParagraph,
+  howWeWorkCreatingTitleOverParagraph,
+  howWeWorkImplementationNumber,
+  howWeWorkImplementationTitle,
+  howWeWorkImplementationCtaText,
+  howWeWorkImplementationShortParagraph,
+  howWeWorkImplementationList,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnter = () => {
@@ -52,9 +61,30 @@ const OurWorkflow = ({
           howWeWorkLearnNumber={howWeWorkLearnNumber}
           howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
         />
-        <Think />
-        <Create />
-        <Implementation />
+        <Think
+          howWeWorkThinkingParagraph={howWeWorkThinkingParagraph}
+          howWeWorkThinkingNumber={howWeWorkThinkingNumber}
+          howWeWorkThinkingTitle={howWeWorkThinkingTitle}
+          howWeWorkThinkingTextInCircle={howWeWorkThinkingTextInCircle}
+          howWeWorkThinkingTitleOverText={howWeWorkThinkingTitleOverText}
+        />
+        <Create
+          howWeWorkCreatingNumber={howWeWorkCreatingNumber}
+          howWeWorkCreatingTitle={howWeWorkCreatingTitle}
+          howWeWorkCreatingParagraph={howWeWorkCreatingParagraph}
+          howWeWorkCreatingTitleOverParagraph={
+            howWeWorkCreatingTitleOverParagraph
+          }
+        />
+        <Implementation
+          howWeWorkImplementationNumber={howWeWorkImplementationNumber}
+          howWeWorkImplementationTitle={howWeWorkImplementationTitle}
+          howWeWorkImplementationCtaText={howWeWorkImplementationCtaText}
+          howWeWorkImplementationShortParagraph={
+            howWeWorkImplementationShortParagraph
+          }
+          howWeWorkImplementationList={howWeWorkImplementationList}
+        />
       </StyledOurWorkflowWrapperDiv>
     </StyledOurWorkflowWrapper>
   )

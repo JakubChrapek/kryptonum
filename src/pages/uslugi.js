@@ -32,6 +32,15 @@ const Services = ({ data }) => {
       jakPracujemyMozdzymyTytul: howWeWorkThinkingTitle,
       jakPracujemyMozdzymyTekstWKolku: howWeWorkThinkingTextInCircle,
       jakPracujemyMozdzymyTytulNadTekstem: howWeWorkThinkingTitleOverText,
+      jakPracujemyTworzenieNumer: howWeWorkCreatingNumber,
+      jakPracujemyTworzenieTytul: howWeWorkCreatingTitle,
+      jakPracujemyTworzenieAkapit: howWeWorkCreatingParagraph,
+      jakPracujemyTworzenieTytulNadAkapitem: howWeWorkCreatingTitleOverParagraph,
+      jakPracujemyImplementacjaNumer: howWeWorkImplementationNumber,
+      jakPracujemyImplementacjaTytul: howWeWorkImplementationTitle,
+      jakPracujemyImplementacjaTekstCta: howWeWorkImplementationCtaText,
+      jakPracujemyImplementacjaKrotkiAkapit: howWeWorkImplementationShortParagraph,
+      jakPracujemyImplementacjaListaElementow: howWeWorkImplementationList,
     },
   } = data
   return (
@@ -58,6 +67,19 @@ const Services = ({ data }) => {
         howWeWorkLearnTitle={howWeWorkLearnTitle}
         howWeWorkLearnNumber={howWeWorkLearnNumber}
         howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+        howWeWorkCreatingNumber={howWeWorkCreatingNumber}
+        howWeWorkCreatingTitle={howWeWorkCreatingTitle}
+        howWeWorkCreatingParagraph={howWeWorkCreatingParagraph}
+        howWeWorkCreatingTitleOverParagraph={
+          howWeWorkCreatingTitleOverParagraph
+        }
+        howWeWorkImplementationNumber={howWeWorkImplementationNumber}
+        howWeWorkImplementationTitle={howWeWorkImplementationTitle}
+        howWeWorkImplementationCtaText={howWeWorkImplementationCtaText}
+        howWeWorkImplementationShortParagraph={
+          howWeWorkImplementationShortParagraph
+        }
+        howWeWorkImplementationList={howWeWorkImplementationList}
       />
     </PageWrapper>
   )
@@ -118,6 +140,30 @@ export const query = graphql`
       }
       jakPracujemyMozdzymyTekstWKolku
       jakPracujemyMozdzymyTytulNadTekstem {
+        value
+      }
+      jakPracujemyTworzenieNumer
+      jakPracujemyTworzenieTytul {
+        value
+      }
+      jakPracujemyTworzenieAkapit {
+        value
+      }
+      jakPracujemyTworzenieTytulNadAkapitem {
+        value
+      }
+
+      jakPracujemyImplementacjaNumer
+      jakPracujemyImplementacjaTytul {
+        value
+      }
+      jakPracujemyImplementacjaTekstCta {
+        value
+      }
+      jakPracujemyImplementacjaKrotkiAkapit {
+        value
+      }
+      jakPracujemyImplementacjaListaElementow {
         value
       }
 

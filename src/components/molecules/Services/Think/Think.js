@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import { StyledWorkflowComponentWrapper } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentWrapper"
 import { StyledWorkflowComponentHeading } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentHeading"
@@ -12,7 +13,13 @@ import { TextStyles } from "../../../atoms/Text/Text"
 import { StyledThinkTextParagraph } from "../../../atoms/Services/Think/StyledThinkTextParagraph"
 import { ThinkWrapper } from "./ThinkWrapper"
 
-const Think = () => {
+const Think = ({
+  howWeWorkThinkingParagraph,
+  howWeWorkThinkingNumber,
+  howWeWorkThinkingTitle,
+  howWeWorkThinkingTextInCircle,
+  howWeWorkThinkingTitleOverText,
+}) => {
   return (
     <StyledWorkflowComponentWrapper
       notFlexDirection={true}
@@ -31,18 +38,19 @@ const Think = () => {
           letterSpacing="2.57px"
           fontWeight="500"
         >
-          (02)
+          (0{howWeWorkThinkingNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
           fontSize="88px"
+          hasMediaQueryFont
           lineHeight="1.24"
           color="var(--gray)"
           fontWeight="500"
           fontStretch="normal"
           declaredDisplay="block"
         >
-          Think
+          <StructuredText data={howWeWorkThinkingTitle} />
         </StyledWorkflowComponentHeading>
       </ThinkWrapper>
       <StyledIdeaBox>
@@ -52,7 +60,7 @@ const Think = () => {
           lineHeight="2.48"
           color="var(--black)"
         >
-          Idea
+          {howWeWorkThinkingTextInCircle}
         </StyledIdeaBoxP>
       </StyledIdeaBox>
       <StyledThinkTextWrapper>
@@ -63,7 +71,7 @@ const Think = () => {
           color="var(--gray)"
           letterSpacing="-0.94px"
         >
-          Thinking <span>Process</span>
+          <StructuredText data={howWeWorkThinkingTitleOverText} />
         </StyledThinkTextWrapperH3>
 
         <StyledThinkTextParagraph
@@ -75,22 +83,7 @@ const Think = () => {
           declaredMargin="27px 0 0 0"
           declaredDisplay="block"
         >
-          Our ultimate goal with every project us to come up with a solution
-          based design approach to help our clients solve real cases and achieve
-          business needs.
-        </StyledThinkTextParagraph>
-        <StyledThinkTextParagraph
-          fontFamily="Poppins"
-          fontSize="12px"
-          lineHeight="1.5"
-          color="var(--black)"
-          letterSpacing="2px"
-          declaredMargin="27px 0 0 0"
-          declaredDisplay="block"
-        >
-          For this to happen, many ideas and hypotheses need to be generated and
-          integrated upon. Creative thinking inspires ideas while ideas empower
-          change.
+          <StructuredText data={howWeWorkThinkingParagraph} />
         </StyledThinkTextParagraph>
       </StyledThinkTextWrapper>
     </StyledWorkflowComponentWrapper>

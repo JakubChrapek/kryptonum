@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import { StyledWorkflowComponentWrapper } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentWrapper"
 import { StyledWorkflowComponentHeading } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentHeading"
@@ -14,7 +15,13 @@ import { StyledListWrapper } from "../../../atoms/Services/Implementation/Styled
 import { StyledLongLastingWrapper } from "../../../atoms/Services/Implementation/StyledLongLastingWrapper"
 import { StyledLongLastingWrapperP } from "../../../atoms/Services/Implementation/StyledLongLastingWrapperP"
 
-const Implementation = () => {
+const Implementation = ({
+  howWeWorkImplementationNumber,
+  howWeWorkImplementationTitle,
+  howWeWorkImplementationCtaText,
+  howWeWorkImplementationShortParagraph,
+  howWeWorkImplementationList,
+}) => {
   return (
     <StyledWorkflowComponentWrapper
       mediaQueriesDirection={true}
@@ -32,7 +39,7 @@ const Implementation = () => {
           fontWeight="500"
           implementation={true}
         >
-          (01)
+          (0{howWeWorkImplementationNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
@@ -45,18 +52,11 @@ const Implementation = () => {
           declaredDisplay="block"
           hasMediaQueryFont={true}
         >
-          Implementation
+          <StructuredText data={howWeWorkImplementationTitle} />
         </StyledWorkflowComponentHeading>
       </div>
       <StyledListWrapper>
-        <StyledImplementationUl>
-          <li>UX Architecture </li>
-          <li>Visual concepts</li>
-          <li>Interactions</li>
-          <li>Development</li>
-          <li>Testing</li>
-          <li>Project Birth</li>
-        </StyledImplementationUl>
+        <StructuredText data={howWeWorkImplementationList} />
       </StyledListWrapper>
       <StyledImplementationContentWrapper>
         <StyledCommunicationWithTheClient>
@@ -67,7 +67,7 @@ const Implementation = () => {
             color="#090909"
             declaredDisplay="block"
           >
-            Communication with the client during whole process
+            <StructuredText data={howWeWorkImplementationShortParagraph} />
           </StyledCommunicationWithTheClientP>
         </StyledCommunicationWithTheClient>
         <StyledLongLastingWrapper>
@@ -95,7 +95,7 @@ const Implementation = () => {
             color="var(--black)"
             declaredDisplay="block"
           >
-            Long-lasting Collaboration
+            <StructuredText data={howWeWorkImplementationCtaText} />
           </StyledLongLastingWrapperP>
         </StyledLongLastingWrapper>
       </StyledImplementationContentWrapper>

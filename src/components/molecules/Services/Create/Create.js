@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import { StyledWorkflowComponentWrapper } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentWrapper"
 import { StyledWorkflowComponentHeading } from "../../../atoms/Services/WorkflowComponent/StyledWorkflowComponentHeading"
@@ -13,7 +14,12 @@ import { StyledSpanElipseP } from "../../../atoms/Services/Create/StyledSpanElip
 import { StyledSpanElipseWrapper } from "../../../atoms/Services/Create/StyledSpanElipseWrapper"
 import { CreateWrapper } from "./CreateWrapper"
 
-const Create = () => {
+const Create = ({
+  howWeWorkCreatingNumber,
+  howWeWorkCreatingTitle,
+  howWeWorkCreatingParagraph,
+  howWeWorkCreatingTitleOverParagraph,
+}) => {
   return (
     <StyledWorkflowComponentWrapper
       notFlexDirection={true}
@@ -32,11 +38,12 @@ const Create = () => {
           letterSpacing="2.57px"
           fontWeight="500"
         >
-          (01)
+          (0{howWeWorkCreatingNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
           fontFamily="LibreBaskerville"
           fontSize="88px"
+          hasMediaQueryFont
           lineHeight="1.24"
           color="var(--gray)"
           letterSpacing="-1.75px"
@@ -44,7 +51,7 @@ const Create = () => {
           fontStretch="normal"
           declaredDisplay="block"
         >
-          Create
+          <StructuredText data={howWeWorkCreatingTitle} />
         </StyledWorkflowComponentHeading>
       </CreateWrapper>
       <StyledCreateTextWrapper>
@@ -57,7 +64,7 @@ const Create = () => {
           color="var(--gray)"
           declaredDisplay="block"
         >
-          Digital, Brand, Content, UX Strategy
+          <StructuredText data={howWeWorkCreatingTitleOverParagraph} />
           <span>
             <StyledBsTriangle hasMarginLeft={12}></StyledBsTriangle>
           </span>
@@ -75,10 +82,7 @@ const Create = () => {
           color="var(--black)"
           declaredDisplay="block"
         >
-          To succeed, every digital product has to be aesthetically appealing,
-          functional, robust, distinctive and memorable. To ensure that the
-          right balance of these components is maintained we alway stain in
-          close contact with the client and address every project holistically.
+          <StructuredText data={howWeWorkCreatingParagraph} />
         </StyledCreateTextP>
         <StyledSpanElipseWrapper>
           <StyledSpanElipse />

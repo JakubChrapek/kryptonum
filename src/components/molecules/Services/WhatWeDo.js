@@ -30,6 +30,15 @@ const WhatWeDo = ({
   howWeWorkLearnTitle,
   howWeWorkLearnNumber,
   howWeWorkLearnTitleOverList,
+  howWeWorkCreatingNumber,
+  howWeWorkCreatingTitle,
+  howWeWorkCreatingParagraph,
+  howWeWorkCreatingTitleOverParagraph,
+  howWeWorkImplementationNumber,
+  howWeWorkImplementationTitle,
+  howWeWorkImplementationCtaText,
+  howWeWorkImplementationShortParagraph,
+  howWeWorkImplementationList,
 }) => {
   return (
     <StyledWhatWeDoSection>
@@ -84,6 +93,19 @@ const WhatWeDo = ({
         howWeWorkLearnTitle={howWeWorkLearnTitle}
         howWeWorkLearnNumber={howWeWorkLearnNumber}
         howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+        howWeWorkCreatingNumber={howWeWorkCreatingNumber}
+        howWeWorkCreatingTitle={howWeWorkCreatingTitle}
+        howWeWorkCreatingParagraph={howWeWorkCreatingParagraph}
+        howWeWorkCreatingTitleOverParagraph={
+          howWeWorkCreatingTitleOverParagraph
+        }
+        howWeWorkImplementationNumber={howWeWorkImplementationNumber}
+        howWeWorkImplementationTitle={howWeWorkImplementationTitle}
+        howWeWorkImplementationCtaText={howWeWorkImplementationCtaText}
+        howWeWorkImplementationShortParagraph={
+          howWeWorkImplementationShortParagraph
+        }
+        howWeWorkImplementationList={howWeWorkImplementationList}
       />
     </StyledWhatWeDoSection>
   )

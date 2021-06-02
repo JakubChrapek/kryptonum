@@ -37,11 +37,12 @@ const Learn = ({
             letterSpacing="2.57px"
             fontWeight="500"
           >
-            ({howWeWorkLearnNumber})
+            (0{howWeWorkLearnNumber})
           </StyledWorkflowComponentGreenSpan>
           <StyledWorkflowComponentHeading
             fontFamily="LibreBaskerville"
             fontSize="88px"
+            hasMediaQueryFont
             lineHeight="1.24"
             color="var(--gray)"
             fontWeight="500"
