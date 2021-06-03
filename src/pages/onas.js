@@ -6,6 +6,7 @@ import AboutBestWay from "../components/molecules/AboutBestWay/AboutBestWay"
 import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
 import OurVision from "../components/molecules/OurVision/OurVision"
 import { graphql } from "gatsby"
+import website from "../../config/website"
 
 const About = ({ data }) => {
   const {
@@ -23,7 +24,7 @@ const About = ({ data }) => {
   } = data.datoCmsPageAbout
   console.log(heroTitle)
   return (
-    <div style={{ backgroundColor: "var(--white)" }}>
+    <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
       <AboutContent
         heroTitle={heroTitle}
         heroBgImg={heroBgImg}

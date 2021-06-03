@@ -303,17 +303,17 @@ const ProjectItem = ({ project, projectNumber, x, y }) => {
                 .substring(0, maxLettersOfProjectName)}
         </ProjectsTextStyles>
       </Link>
-      {/* <AnimatePresence>
-        {hoverState && ( */}
-      <ProjectFeaturedImageCard
-        projectCTA={project.projectCtaText}
-        projectSlug={project.projectSlug}
-        projectImage={project.projectFeaturedImage}
-        x={x - projectPosition.left - 180}
-        y={y - projectPosition.top - 120}
-      />
-      {/* )}
-      </AnimatePresence> */}
+      <AnimatePresence>
+        {hoverState && (
+          <ProjectFeaturedImageCard
+            projectCTA={project.projectCtaText}
+            projectSlug={project.projectSlug}
+            projectImage={project.projectFeaturedImage}
+            x={x - projectPosition.left - 180}
+            y={y - projectPosition.top - 120}
+          />
+        )}
+      </AnimatePresence>
     </motion.li>
   )
 }

@@ -20,6 +20,7 @@ import {
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 import { RightArrow } from "../../atoms/Icons/arrows"
+import website from "../../../../config/website"
 
 const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
   const width = useWindowSize()
@@ -79,6 +80,7 @@ const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
   }
   return (
     <HomeHeroSection
+      id={website.skipNavId}
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",

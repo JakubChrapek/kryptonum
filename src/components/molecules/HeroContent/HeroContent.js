@@ -11,6 +11,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import website from "../../../../config/website"
 
 const BlogLinks = ({ content }) => (
   <>
@@ -54,7 +55,10 @@ const HeroContent = ({ content, variant }) => {
     })
   }
   return (
-    <StyledHeroSection onMouseEnter={handleOnMouseEnterForBlogSection}>
+    <StyledHeroSection
+      id={website.skipNavId}
+      onMouseEnter={handleOnMouseEnterForBlogSection}
+    >
       <StyledHeroWrapper variant={variant}>
         <StyledHeroContentH1
           fontSize="76px"

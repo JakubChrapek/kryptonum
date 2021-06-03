@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { StructuredText } from "react-datocms"
 
 function ContactForm({
+  id,
   contactPageNameLabel,
   contactPageButtonText,
   contactPageNamePlaceholder,
@@ -32,7 +33,7 @@ function ContactForm({
   }
 
   return (
-    <div>
+    <div id={id}>
       <Formik
         initialValues={{
           name: "",

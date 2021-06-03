@@ -15,6 +15,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../contexts/cursorContext"
+import website from "../../config/website"
 
 const ProjectsStyles = styled.div`
   /* position: fixed; */
@@ -53,7 +54,11 @@ const Projects = ({ data }) => {
   const width = useWindowSize()
 
   return (
-    <ProjectsStyles onMouseEnter={handleWrapperEnter} ref={containerRef}>
+    <ProjectsStyles
+      id={website.skipNavId}
+      onMouseEnter={handleWrapperEnter}
+      ref={containerRef}
+    >
       <StyledProjectsWrapper
         projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
         projectsPerPage={projectsPerPage}

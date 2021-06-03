@@ -11,6 +11,7 @@ import {
   CURSOR_SIZES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import { Link } from "gatsby"
 
 const MaxWidthSlider = ({ dataName, activeProject }) => {
   const dispatchCursor = useCursorDispatchContext()
@@ -20,70 +21,72 @@ const MaxWidthSlider = ({ dataName, activeProject }) => {
         {dataName.nodes
           .filter((_, iterator) => iterator === activeProject)
           .map(project => (
-            <motion.div
-              key={`${project.projectTitle}-${project.projectSlug}`}
-              variants={stagger}
-              onMouseEnter={() => {
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.FULL_CURSOR,
-                })
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                })
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.BIGGER,
-                })
-              }}
-              onMouseLeave={() => {
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_TYPE",
-                  cursorType: CURSOR_TYPES.FULL_CURSOR,
-                })
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.DARK,
-                })
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_SIZE",
-                  cursorSize: CURSOR_SIZES.SMALLER,
-                })
-              }}
-            >
+            <Link to={`/projekty/${project.projectSlug}`}>
               <motion.div
-                key={`${project.projectTitle}-${project.projectSlug}-img-wrapper`}
-                variants={fadeInUp}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                key={`${project.projectTitle}-${project.projectSlug}`}
+                variants={stagger}
+                onMouseEnter={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.BIGGER,
+                  })
+                }}
+                onMouseLeave={() => {
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_TYPE",
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_COLOR",
+                    cursorColor: CURSOR_COLORS.DARK,
+                  })
+                  dispatchCursor({
+                    type: "CHANGE_CURSOR_SIZE",
+                    cursorSize: CURSOR_SIZES.SMALLER,
+                  })
+                }}
               >
-                <Img fluid={project.projectFeaturedImage.fluid} />
+                <motion.div
+                  key={`${project.projectTitle}-${project.projectSlug}-img-wrapper`}
+                  variants={fadeInUp}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <Img fluid={project.projectFeaturedImage.fluid} />
+                </motion.div>
+                <motion.p
+                  key={`${project.projectTitle}-${project.projectSlug}-projectType`}
+                  variants={fadeInUp}
+                  initial="initial"
+                  animate="animate"
+                  exit={{ opacity: 0 }}
+                >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
+                  1
+                )}`}</motion.p>
+                <StyledCategoriesList
+                  key={`${project.projectTitle}-${project.projectSlug}-projectCategories`}
+                  variants={fadeInUp}
+                  initial="initial"
+                  animate="animate"
+                  exit={{ opacity: 0 }}
+                >
+                  <motion.span>
+                    {project.projectCategories
+                      .map(category => category.categoryName)
+                      .join(", ")}
+                  </motion.span>
+                </StyledCategoriesList>
               </motion.div>
-              <motion.p
-                key={`${project.projectTitle}-${project.projectSlug}-projectType`}
-                variants={fadeInUp}
-                initial="initial"
-                animate="animate"
-                exit={{ opacity: 0 }}
-              >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
-                1
-              )}`}</motion.p>
-              <StyledCategoriesList
-                key={`${project.projectTitle}-${project.projectSlug}-projectCategories`}
-                variants={fadeInUp}
-                initial="initial"
-                animate="animate"
-                exit={{ opacity: 0 }}
-              >
-                <motion.span>
-                  {project.projectCategories
-                    .map(category => category.categoryName)
-                    .join(", ")}
-                </motion.span>
-              </StyledCategoriesList>
-            </motion.div>
+            </Link>
           ))}
       </AnimatePresence>
     </StyledImageColumn>

@@ -35,4 +35,8 @@ export const StyledImageColumn = styled.div`
     font-size: 28px;
     line-height: 1.71;
   }
+  a {
+    color: #090909;
+    text-decoration: none;
+  }
 `

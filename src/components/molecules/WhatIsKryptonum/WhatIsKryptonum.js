@@ -115,6 +115,7 @@ const WhatIsKryptonum = ({
                 offset={width <= 767 ? 0 : -122}
                 smooth={true}
                 duration={800}
+                style={{ cursor: "pointer" }}
                 onMouseEnter={() => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",

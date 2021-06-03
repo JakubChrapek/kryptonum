@@ -11,12 +11,13 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import website from "../../../../config/website"
 
 const FAQMain = ({ faqTitle, faqItems }) => {
   const dispatchCursor = useCursorDispatchContext()
 
   return (
-    <StyledFAQMain>
+    <StyledFAQMain id={website.skipNavId}>
       <StyledFAQWrapper>
         <div>
           <StyledFAQH1>

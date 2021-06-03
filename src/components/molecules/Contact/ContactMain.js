@@ -19,6 +19,7 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 import styled from "styled-components"
+import website from "../../../../config/website"
 
 const StyledLink = styled.a`
   color: #727272;
@@ -101,6 +102,7 @@ const ContactMain = ({
       <StyledContactFormWrapper>
         <StyledContactFormWrapperDiv>
           <ContactForm
+            id={website.skipNavId}
             contactPageNameLabel={contactPageNameLabel}
             contactPageButtonText={contactPageButtonText}
             contactPageNamePlaceholder={contactPageNamePlaceholder}
