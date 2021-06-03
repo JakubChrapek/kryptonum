@@ -8,8 +8,8 @@ function QuestionsAndAnswer({ faqItems }) {
     <StyledQuestionsAndAnswerWrapper>
       {faqItems.map(item => (
         <QuestionAndAnswerElement
-          question={item.faqQuestion}
-          answer={item.faqAnswer}
+          question={item.faqPytanie}
+          answer={item.faqOdpowiedz}
         />
       ))}
     </StyledQuestionsAndAnswerWrapper>

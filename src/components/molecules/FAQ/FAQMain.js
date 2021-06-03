@@ -1,5 +1,6 @@
 import React from "react"
 import QuestionsAndAnswer from "./QuestionsAndAnswer"
+import { StructuredText } from "react-datocms"
 
 import { StyledFAQMain } from "../../atoms/FAQ/StyledFAQMain"
 import { StyledFAQH1 } from "../../atoms/FAQ/StyledFAQH1"
@@ -11,14 +12,16 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 
-const FAQMain = ({ faqItems }) => {
+const FAQMain = ({ faqTitle, faqItems }) => {
   const dispatchCursor = useCursorDispatchContext()
 
   return (
     <StyledFAQMain>
       <StyledFAQWrapper>
         <div>
-          <StyledFAQH1>Frequently Asked Questions</StyledFAQH1>
+          <StyledFAQH1>
+            <StructuredText data={faqTitle} />
+          </StyledFAQH1>
         </div>
         <QuestionsAndAnswer faqItems={faqItems} />
       </StyledFAQWrapper>

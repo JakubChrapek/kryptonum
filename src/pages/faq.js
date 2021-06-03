@@ -6,17 +6,27 @@ import FAQMain from "../components/molecules/FAQ/FAQMain"
 const Faq = ({ data }) => {
   return (
     <div>
-      <FAQMain faqItems={data.allDatoCmsFaqEntry.nodes} />
+      <FAQMain
+        faqTitle={data.datoCmsPageFaq.faqTytul}
+        faqItems={data.datoCmsPageFaq.faqItems}
+      />
     </div>
   )
 }
 
 export const data = graphql`
   query faqQuery {
-    allDatoCmsFaqEntry {
-      nodes {
-        faqQuestion
-        faqAnswer
+    datoCmsPageFaq {
+      faqTytul {
+        value
+      }
+      faqItems {
+        faqPytanie {
+          value
+        }
+        faqOdpowiedz {
+          value
+        }
       }
     }
   }

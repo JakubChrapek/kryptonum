@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
+import { StructuredText } from "react-datocms"
 
 import { StyledQuestionAndAnswerElement } from "../../../atoms/FAQ/QuestionAndAnswerElement/StyledQuestionAndAnswerElement"
 import { StyledAddIcon } from "../../../atoms/FAQ/QuestionAndAnswerElement/StyledAddIcon"
@@ -71,7 +72,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
           onMouseEnter={handleOnMouseEnterForQuestion}
           onMouseLeave={handleOnMouseLeave}
         >
-          {question}
+          <StructuredText data={question} />
         </StyledQuestion>
         <StyledAddIcon
           open={openAnswer}
@@ -98,7 +99,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
           color="var(--dark-bg)"
           declaredpadding="0 0 44px 14px"
         >
-          {answer}
+          <StructuredText data={answer} />
         </AnswerText>
       </motion.div>
     </StyledQuestionAndAnswerElement>
