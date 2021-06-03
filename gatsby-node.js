@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
       lower: true,
     })
     createPage({
-      path: `projects/${slugifiedTitle}`,
+      path: `projekty/${slugifiedTitle}`,
       component: projectTemplate,
       context: {
         id: project.id,

@@ -45,5 +45,5 @@ SkipNavLink.propTypes = {
 }
 
 SkipNavLink.defaultProps = {
-  children: "Skip to content",
+  children: "Przejdź do treści",
 }

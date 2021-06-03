@@ -46,7 +46,7 @@ const Services = ({ data }) => {
   return (
     <PageWrapper>
       <HeroContent content={heroTitle} />
-      <HeroImage image={heroImage} />
+      <HeroImage heroBgImg={heroImage} />
       <WhatWeDo
         whatWeDoTitle={whatWeDoTitle}
         whatWeDoParagraph={whatWeDoParagraph}

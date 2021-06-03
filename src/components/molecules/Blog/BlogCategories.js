@@ -150,7 +150,7 @@ const BlogCategories = ({
 
   return (
     <CategoriesStyles>
-      {["All", ...categories].map(category => {
+      {["Wszystkie", ...categories].map(category => {
         const isCategoryActive = activeCategory === category
         return (
           <motion.button

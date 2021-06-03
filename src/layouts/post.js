@@ -500,7 +500,7 @@ const Post = ({ data }) => {
             onMouseLeave={handleLinkLeave}
             to="/blog"
           >
-            Back to all posts
+            Wróć do bloga
           </BackLink>
           <AuthorBox>
             <ArticleAuthorProfilePic
@@ -555,8 +555,8 @@ const Post = ({ data }) => {
       <BlogSection
         bg="var(--light-gray)"
         blogPosts={relatedArticles}
-        headerFirstLine="Related"
-        headerSecondLine="posts"
+        headerFirstLine="Podobne"
+        headerSecondLine="artykuły"
       />
     </>
   )

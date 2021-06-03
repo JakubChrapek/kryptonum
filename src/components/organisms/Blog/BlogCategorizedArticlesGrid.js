@@ -41,8 +41,8 @@ const AllArticlesQuery = graphql`
   }
 `
 
-const BlogCategorizedArticlesGrid = () => {
-  const [activeCategory, setActiveCategory] = useState("All")
+const BlogCategorizedArticlesGrid = ({ articleQuotes }) => {
+  const [activeCategory, setActiveCategory] = useState("Wszystkie")
   const [articleCategories, setArticleCategories] = useState([])
   const [pages, setPages] = useState(1)
   const [currentPage, setCurrentPage] = useState(1)
@@ -70,7 +70,9 @@ const BlogCategorizedArticlesGrid = () => {
 
   useEffect(() => {
     const filteredNodes = nodes.filter(node =>
-      activeCategory !== "All" ? node.articleCategory === activeCategory : true
+      activeCategory !== "Wszystkie"
+        ? node.articleCategory === activeCategory
+        : true
     )
     setFilteredArticles(
       filteredNodes.slice(
@@ -120,6 +122,7 @@ const BlogCategorizedArticlesGrid = () => {
               posts={filteredArticles}
               ArticlesPerPage={ArticlesPerPage}
               activeCategory={activeCategory}
+              articleQuotes={articleQuotes}
             />
             <BlogArticlesGridPagination
               ArticlesPerPage={ArticlesPerPage}

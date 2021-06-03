@@ -27,5 +27,8 @@ export const StyledWhatWeDoSection = styled.section`
       transform: scaleY(2);
       opacity: 1;
     }
+    &:focus-visible {
+      outline: 1px solid var(--black);
+    }
   }
 `

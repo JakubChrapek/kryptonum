@@ -52,8 +52,8 @@ export const CURSOR_COLORS = {
   LIGHT_TRANSPARENT: "#f7f8f7aa",
   DARK: "#171717",
   DARK_TRANSPARENT: "#171717aa",
-  ACCENT: "#00ef8b",
-  ACCENT_TRANSPARENT: "#00ef8baa",
+  ACCENT: "#00EF8B",
+  ACCENT_TRANSPARENT: "#00EF8Baa",
 }
 
 export const CursorProvider = ({ children }) => {

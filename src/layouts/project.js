@@ -613,7 +613,7 @@ const Project = ({ data }) => {
           <BackLink
             onMouseEnter={handleLinkEnter}
             onMouseLeave={handleNormalLeave}
-            to="/projects"
+            to="/projekty"
           >
             Powrót do projektów
           </BackLink>

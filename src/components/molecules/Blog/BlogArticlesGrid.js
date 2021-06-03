@@ -15,11 +15,26 @@ const StyledMasonry = styled(Masonry)`
   }
 `
 
-const BlogArticlesGrid = ({ posts, activeCategory }) => {
+const BlogArticlesGrid = ({ posts, activeCategory, articleQuotes }) => {
   const breakpointColumnsObj = {
     default: 2,
     767: 1,
   }
+
+  console.log(articleQuotes)
+
+  const [firstQuoteText, firstQuoteAuthor, firstQuotePosition] = [
+    articleQuotes[0].cytatTresc.value.document.children[0].children[0].value,
+    articleQuotes[0].cytatAutor,
+    articleQuotes[0].cytatFirmaLubStanowisko.value.document.children[0]
+      .children[0].value,
+  ]
+  const [secondQuoteText, secondQuoteAuthor, secondQuotePosition] = [
+    articleQuotes[1].cytatTresc.value.document.children[0].children[0].value,
+    articleQuotes[1].cytatAutor,
+    articleQuotes[1].cytatFirmaLubStanowisko.value.document.children[0]
+      .children[0].value,
+  ]
   return (
     <motion.div>
       <StyledMasonry
@@ -29,7 +44,7 @@ const BlogArticlesGrid = ({ posts, activeCategory }) => {
       >
         {posts
           .filter(post =>
-            activeCategory !== "All"
+            activeCategory !== "Wszystkie"
               ? post.articleCategory === activeCategory
               : true
           )
@@ -38,9 +53,9 @@ const BlogArticlesGrid = ({ posts, activeCategory }) => {
               return (
                 <>
                   <BlogQuote
-                    text="“Your company shows great design which is important for us at Apple”"
-                    author="Daniel Morrison"
-                    position="Apple"
+                    text={firstQuoteText}
+                    author={firstQuoteAuthor}
+                    position={firstQuotePosition}
                     margin="44px 0 0"
                   />
                   <Article full article={post} key={post.id} />
@@ -51,9 +66,9 @@ const BlogArticlesGrid = ({ posts, activeCategory }) => {
                 <>
                   <Article full article={post} key={post.id} />
                   <BlogQuote
-                    text="“Your company shows great design which is important for us at Apple”"
-                    author="Daniel Morrison"
-                    position="Apple"
+                    text={secondQuoteText}
+                    author={secondQuoteAuthor}
+                    position={secondQuotePosition}
                     margin="66px 0 0"
                   />
                 </>

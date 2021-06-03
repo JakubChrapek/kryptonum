@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "kryptonum-studio-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Gatsby based portfolio website, integration with DatoCMS",
+  "version": "1.0.0",
+  "author": "Kuba Chrapek <kuba@kryptonumstudio.com>",
   "dependencies": {
     "@ashthornton/asscroll": "^1.7.6",
     "@n8tb1t/use-scroll-position": "^2.0.3",

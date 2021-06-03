@@ -85,14 +85,6 @@ export const query = graphql`
       naszeWartosciTytul {
         value
       }
-      feedbackKlientowRecenzje {
-        feedbackKlient {
-          value
-        }
-        feedbackTresc {
-          value
-        }
-      }
       feedbackTytul {
         value
       }

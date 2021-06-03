@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react"
+import React, { createRef, useEffect, useMemo, useRef, useState } from "react"
 import styled from "styled-components"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
 import { Link } from "gatsby"
 import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
@@ -10,6 +10,8 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../../contexts/cursorContext"
+import { GatsbyImage } from "gatsby-plugin-image"
+import useMousePosition from "../../../../utils/useMousePosition"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
@@ -21,6 +23,7 @@ export const ProjectsStyles = styled(motion.section)`
   display: flex;
   align-items: center;
   height: 100vh;
+  min-height: 720px;
   position: sticky;
   top: 0;
 
@@ -39,13 +42,18 @@ export const ProjectsStyles = styled(motion.section)`
   a {
     text-decoration: none;
     position: relative;
+    transition: color 0.15s cubic-bezier(0.6, -0.05, 0.01, 0.99);
   }
 
   li {
+    position: relative;
     a {
       position: relative;
       height: 100%;
       display: inline-flex;
+      p {
+        transition: color 0.15s cubic-bezier(0.6, -0.05, 0.01, 0.99);
+      }
     }
     --gap-width: 80px;
     @media (max-width: 1920px) {
@@ -68,7 +76,7 @@ export const ProjectsStyles = styled(motion.section)`
 
     &:nth-of-type(even) {
       margin-left: var(--gap-width);
-      justify-content: flex-end;
+      /* justify-content: flex-end; */
     }
 
     &:nth-of-type(1),
@@ -89,8 +97,9 @@ export const ProjectsStyles = styled(motion.section)`
     }
 
     &.active {
-      z-index: 2;
-      span {
+      z-index: 5;
+      span,
+      a {
         color: var(--accent);
       }
     }
@@ -193,12 +202,30 @@ const StyledProjectsWrapper = ({
   activeProjectId,
   setActiveProjectId,
 }) => {
-  const handleClick = iterator => {
-    setActiveProjectId(iterator)
-  }
+  const { x, y } = useMousePosition()
+
+  return (
+    <ProjectsStyles lessProjects={projects.length < projectsPerPage - 1}>
+      {projects.map((project, iterator) => (
+        <ProjectItem project={project} projectNumber={iterator} x={x} y={y} />
+      ))}
+    </ProjectsStyles>
+  )
+}
+
+const ProjectItem = ({ project, projectNumber, x, y }) => {
+  const [hoverState, setHoverState] = useState(false)
+  const projectRef = useRef()
+  const [projectPosition, setProjectPosition] = useState({
+    top: 0,
+    left: 0,
+  })
   const dispatchCursor = useCursorDispatchContext()
 
+  const maxLettersOfProjectName = 8
+
   const handleLinkEnter = () => {
+    setHoverState(true)
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
@@ -213,6 +240,7 @@ const StyledProjectsWrapper = ({
     })
   }
   const handleNormalLeave = () => {
+    setHoverState(false)
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
@@ -227,42 +255,136 @@ const StyledProjectsWrapper = ({
     })
   }
 
+  useEffect(() => {
+    setProjectPosition({
+      top: projectRef.current.getBoundingClientRect().top,
+      left: projectRef.current.getBoundingClientRect().left,
+    })
+  }, [hoverState])
+
   return (
-    <ProjectsStyles lessProjects={projects.length < projectsPerPage - 1}>
-      {projects.map((project, iterator) => (
-        <motion.li
-          key={project.projectTitle}
-          onClick={() => handleClick(project.id)}
-          className={project.id === activeProjectId ? "active" : null}
-          whileTap={{
-            scale: 0.95,
-            transition: { duration: 0.3 },
-          }}
+    <motion.li
+      ref={projectRef}
+      key={project.id}
+      className={hoverState ? "active" : null}
+      whileTap={{
+        scale: 0.95,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <Link
+        onMouseEnter={handleLinkEnter}
+        onMouseLeave={handleNormalLeave}
+        to={project.projectSlug}
+      >
+        <span>{`(${projectNumber + 1})`}</span>
+        <ProjectsTextStyles
+          fontSize="86px"
+          lineHeight="1.24em"
+          letterSpacing="-2.2px"
+          color={hoverState ? "var(--accent)" : "var(--light-accent)"}
+          fontFamily="LibreBaskerville"
+          textTransform="uppercase"
         >
-          <Link
-            onMouseEnter={handleLinkEnter}
-            onMouseLeave={handleNormalLeave}
-            to={project.projectSlug}
-          >
-            <span>{`(${iterator + 1})`}</span>
-            <ProjectsTextStyles
-              fontSize="86px"
-              lineHeight="1.24em"
-              letterSpacing="-2.2px"
-              color={
-                project.id === activeProjectId
-                  ? "var(--accent)"
-                  : "var(--light-accent)"
-              }
-              fontFamily="LibreBaskerville"
-              textTransform="uppercase"
+          {project.projectTitle.length <= maxLettersOfProjectName
+            ? project.projectTitle
+            : project.projectTitle.split(" ")[0].length <=
+              maxLettersOfProjectName
+            ? project.projectTitle.split(" ")[0]
+            : project.projectTitle
+                .split(" ")[0]
+                .substring(0, maxLettersOfProjectName)}
+        </ProjectsTextStyles>
+      </Link>
+      <AnimatePresence>
+        {hoverState && (
+          <ProjectFeaturedImageCard
+            projectSlug={project.projectSlug}
+            projectImage={project.projectFeaturedImage}
+            x={x - projectPosition.left - 180}
+            y={y - projectPosition.top - 120}
+          />
+        )}
+      </AnimatePresence>
+    </motion.li>
+  )
+}
+
+const ImageWrapper = styled(motion.div)`
+  position: absolute;
+  z-index: 3;
+  width: 34.4rem;
+  height: 49rem;
+  overflow: hidden;
+  pointer-events: none;
+  .gatsby-image-wrapper,
+  img,
+  picture {
+    width: 100%;
+    height: 100%;
+  }
+  > div {
+    position: relative;
+  }
+`
+
+const CircleStyles = styled(motion.div)`
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  position: absolute;
+  left: 10.2rem;
+  top: 17.5rem;
+  z-index: 2;
+  transform: translateX(-50%);
+  pointer-events: none;
+`
+
+const LinkStyles = styled(Link)`
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const ProjectFeaturedImageCard = ({ projectSlug, projectImage, x, y }) => {
+  return (
+    <ImageWrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, x: x, y: y }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "circOut", duration: 1 }}
+    >
+      <div>
+        <CircleStyles
+          key={`${projectSlug}-link`}
+          initial={{ opacity: 0, scale: 0.7, y: 8 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
+          exit={{ opacity: 0 }}
+        >
+          <LinkStyles to={`/projects/${projectSlug}`}>
+            <TextStyles
+              fontSize="12px"
+              fontWeight="600"
+              color="var(--black)"
+              lineHeight="1.5"
+              letterSpacing="2px"
+              fontFamily="Poppins"
+              textAlign="center"
             >
-              {project.projectTitle}
-            </ProjectsTextStyles>
-          </Link>
-        </motion.li>
-      ))}
-    </ProjectsStyles>
+              View case study
+            </TextStyles>
+          </LinkStyles>
+        </CircleStyles>
+        <GatsbyImage image={projectImage.gatsbyImageData} />
+      </div>
+    </ImageWrapper>
   )
 }
 

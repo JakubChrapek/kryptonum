@@ -9,10 +9,12 @@ export const StyledHeaderLink = styled(Link)`
   transform: translateX(-50%);
   padding: 0px 8px;
   @media only screen and (max-width: 800px) {
-    transform: translateX(0);
+    top: 27px;
   }
-  @media only screen and (max-width: 767px) {
-    margin-left: -8px;
+  @media (max-width: 500px) {
+    top: 27px;
+    left: 28px;
+    transform: none;
   }
   &:focus-visible {
     outline-offset: 1px;

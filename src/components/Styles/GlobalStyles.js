@@ -5,7 +5,7 @@ import { useMenuState } from "../../contexts/menuContext"
 const Global = createGlobalStyle`
   html {
     box-sizing: border-box;
-    --accent: #00EF8B;
+    --accent:#00EF8B;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
     --dark-bg: #171717;
@@ -46,15 +46,15 @@ const Global = createGlobalStyle`
     font-size: 1.6rem;
     font-family: "Poppins";
     overflow-x: hidden;
-    ${
-      "" /* ${({ mobileMenuShown }) =>
-      mobileMenuShown &&
-      css`
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      `} */
-    }
+    
+       ${({ mobileMenuShown }) =>
+         mobileMenuShown &&
+         css`
+           width: 100vw;
+           height: 100vh;
+           overflow: hidden;
+         `}
+    
   }
 
   h1,h2 {
