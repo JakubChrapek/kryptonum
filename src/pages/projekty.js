@@ -89,6 +89,9 @@ export const query = graphql`
         id
         projectTitle
         projectSlug
+        projectCtaText {
+          value
+        }
         projectFeaturedImage {
           gatsbyImageData(width: 518, height: 697, placeholder: BLURRED)
         }

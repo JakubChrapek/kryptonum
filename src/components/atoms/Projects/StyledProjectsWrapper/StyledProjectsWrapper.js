@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { AnimatePresence, motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
 import { Link } from "gatsby"
+import { StructuredText } from "react-datocms"
 import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
 import {
   CURSOR_COLORS,
@@ -22,10 +23,15 @@ export const ProjectsStyles = styled(motion.section)`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  height: 100vh;
-  min-height: 720px;
+  min-height: max(720px, 100vh);
   position: sticky;
   top: 0;
+  @media (max-width: 1101px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: unset;
+  }
 
   span {
     font-size: 14px;
@@ -47,6 +53,9 @@ export const ProjectsStyles = styled(motion.section)`
 
   li {
     position: relative;
+    @media (max-width: 1101px) {
+      width: 100%;
+    }
     a {
       position: relative;
       height: 100%;
@@ -84,7 +93,7 @@ export const ProjectsStyles = styled(motion.section)`
       margin-top: 0;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1101px) {
       --gap-width: 0px;
       flex-basis: unset;
       margin-top: 32px;
@@ -128,12 +137,10 @@ export const ProjectsStyles = styled(motion.section)`
     padding: 140px 70px 80px 86px;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1101px) {
     padding: 120px 70px 120px 160px;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: ${({ lessProjects }) =>
-      lessProjects ? "flex-start" : "center"};
 
     span {
       top: unset;
@@ -142,7 +149,7 @@ export const ProjectsStyles = styled(motion.section)`
     }
   }
   @media (max-width: 778px) {
-    padding: 80px 70px 30px 100px;
+    padding: 120px 70px 30px 100px;
     span {
       font-size: 10px;
       bottom: 4px;
@@ -150,13 +157,13 @@ export const ProjectsStyles = styled(motion.section)`
     }
   }
   @media (max-width: 600px) {
-    padding: 80px 60px 30px 90px;
+    padding: 120px 60px 30px 90px;
   }
   @media (max-width: 500px) {
-    padding: 80px 50px 20px 80px;
+    padding: 120px 50px 20px 80px;
   }
   @media (max-width: 350px) {
-    padding: 80px 40px 20px 70px;
+    padding: 120px 40px 20px 70px;
   }
 `
 
@@ -179,7 +186,7 @@ const ProjectsTextStyles = styled(TextStyles)`
   @media (max-width: 1190px) {
     font-size: 68px;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1101px) {
     font-size: 90px;
   }
   @media (max-width: 778px) {
@@ -296,16 +303,17 @@ const ProjectItem = ({ project, projectNumber, x, y }) => {
                 .substring(0, maxLettersOfProjectName)}
         </ProjectsTextStyles>
       </Link>
-      <AnimatePresence>
-        {hoverState && (
-          <ProjectFeaturedImageCard
-            projectSlug={project.projectSlug}
-            projectImage={project.projectFeaturedImage}
-            x={x - projectPosition.left - 180}
-            y={y - projectPosition.top - 120}
-          />
-        )}
-      </AnimatePresence>
+      {/* <AnimatePresence>
+        {hoverState && ( */}
+      <ProjectFeaturedImageCard
+        projectCTA={project.projectCtaText}
+        projectSlug={project.projectSlug}
+        projectImage={project.projectFeaturedImage}
+        x={x - projectPosition.left - 180}
+        y={y - projectPosition.top - 120}
+      />
+      {/* )}
+      </AnimatePresence> */}
     </motion.li>
   )
 }
@@ -326,6 +334,10 @@ const ImageWrapper = styled(motion.div)`
   > div {
     position: relative;
   }
+  @media (max-width: 767px) {
+    width: 17rem;
+    height: 25rem;
+  }
 `
 
 const CircleStyles = styled(motion.div)`
@@ -339,6 +351,12 @@ const CircleStyles = styled(motion.div)`
   z-index: 2;
   transform: translateX(-50%);
   pointer-events: none;
+  @media (max-width: 767px) {
+    width: 10rem;
+    height: 10rem;
+    left: 3.8rem;
+    top: 12.5rem;
+  }
 `
 
 const LinkStyles = styled(Link)`
@@ -352,7 +370,13 @@ const LinkStyles = styled(Link)`
   align-items: center;
 `
 
-const ProjectFeaturedImageCard = ({ projectSlug, projectImage, x, y }) => {
+const ProjectFeaturedImageCard = ({
+  projectCTA,
+  projectSlug,
+  projectImage,
+  x,
+  y,
+}) => {
   return (
     <ImageWrapper
       initial={{ opacity: 0 }}
@@ -378,7 +402,7 @@ const ProjectFeaturedImageCard = ({ projectSlug, projectImage, x, y }) => {
               fontFamily="Poppins"
               textAlign="center"
             >
-              View case study
+              <StructuredText data={projectCTA} />
             </TextStyles>
           </LinkStyles>
         </CircleStyles>
