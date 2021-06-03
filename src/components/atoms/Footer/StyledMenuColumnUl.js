@@ -17,14 +17,17 @@ export const StyledMenuColumnUl = styled.ul`
 
   @media (max-width: 767px) {
     margin-right: 54px;
-  }
-  @media (max-width: 441px) {
     &:last-of-type {
       margin-top: 55px;
     }
   }
-  @media (max-width: 350px) {
+  @media (max-width: 441px) {
     margin-right: 36px;
+  }
+  @media (max-width: 342px) {
+    &:nth-of-type(2) {
+      margin-top: 55px;
+    }
   }
   @media (max-width: 305px) {
     margin-right: 24px;

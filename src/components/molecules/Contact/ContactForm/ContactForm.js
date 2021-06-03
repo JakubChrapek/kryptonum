@@ -220,43 +220,7 @@ function ContactForm({
             <FieldWrapper variant="checkbox">
               <label>
                 <Field type="checkbox" name="acceptance" />
-                <p>
-                  By submitting this form I accept the
-                  <StyledContactLink
-                    onMouseEnter={() => {
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_TYPE",
-                        cursorType: CURSOR_TYPES.FULL_CURSOR,
-                      })
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_COLOR",
-                        cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                      })
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_SIZE",
-                        cursorSize: CURSOR_SIZES.DEFAULT,
-                      })
-                    }}
-                    onMouseLeave={() => {
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_TYPE",
-                        cursorType: CURSOR_TYPES.FULL_CURSOR,
-                      })
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_COLOR",
-                        cursorColor: CURSOR_COLORS.DARK,
-                      })
-                      dispatchCursor({
-                        type: "CHANGE_CURSOR_SIZE",
-                        cursorSize: CURSOR_SIZES.SMALLER,
-                      })
-                    }}
-                    to="/polityka-prywatnosci"
-                  >
-                    Privacy Policy
-                  </StyledContactLink>{" "}
-                  of this site
-                </p>
+                <StructuredText data={contactPagePrivacyText} />
               </label>
               <AnimatePresence>
                 {errors.acceptance && (

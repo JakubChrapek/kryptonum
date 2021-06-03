@@ -15,6 +15,12 @@ const Contact = ({ data }) => {
       formularzWiadomoscNadTextarea: contactPageMessageLabel,
       formularzWiadomoscPlaceholder: contactPageMessagePlaceholder,
       formularzZgodaNaPrzetwarzanieTekst: contactPagePrivacyText,
+      kontaktPierwszePytanie: contactColumnFirstQuestion,
+      kontaktPierwszeDaneKontaktowe: contactColumnFirstContactDetails,
+      kontaktDrugiePytanie: contactColumnSecondQuestion,
+      kontaktDrugieDaneKontaktowe: contactColumnSecondContactDetails,
+      kontaktSmieszneZdanie: contactColumnFunnySentence,
+      kontaktAdresNaKoncu: contactColumnLastAddress,
     },
   } = data
   return (
@@ -29,6 +35,12 @@ const Contact = ({ data }) => {
         contactPageMessageLabel={contactPageMessageLabel}
         contactPageMessagePlaceholder={contactPageMessagePlaceholder}
         contactPagePrivacyText={contactPagePrivacyText}
+        contactColumnFirstQuestion={contactColumnFirstQuestion}
+        contactColumnFirstContactDetails={contactColumnFirstContactDetails}
+        contactColumnSecondQuestion={contactColumnSecondQuestion}
+        contactColumnSecondContactDetails={contactColumnSecondContactDetails}
+        contactColumnFunnySentence={contactColumnFunnySentence}
+        contactColumnLastAddress={contactColumnLastAddress}
       />
     </div>
   )
@@ -56,6 +68,24 @@ export const query = graphql`
         value
       }
       formularzZgodaNaPrzetwarzanieTekst {
+        value
+      }
+      kontaktPierwszePytanie {
+        value
+      }
+      kontaktPierwszeDaneKontaktowe {
+        value
+      }
+      kontaktDrugiePytanie {
+        value
+      }
+      kontaktDrugieDaneKontaktowe {
+        value
+      }
+      kontaktSmieszneZdanie {
+        value
+      }
+      kontaktAdresNaKoncu {
         value
       }
     }

@@ -112,7 +112,7 @@ export const StyledForm = styled(Form)`
   }
   > button {
     width: 100%;
-    padding: 16px 0;
+    padding: 16px 4px;
     background-color: #25eb98;
     border: none;
     font-family: "JetBrains Mono";

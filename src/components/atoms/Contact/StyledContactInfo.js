@@ -17,4 +17,12 @@ export const StyledContactInfo = styled.div`
     max-width: 100%;
     padding: 32px 24px;
   }
+
+  > p {
+    font-family: JetBrains Mono;
+    font-size: 16px;
+    line-height: 1.38;
+    color: var(--dark-bg);
+    margin-bottom: 3.6rem;
+  }
 `

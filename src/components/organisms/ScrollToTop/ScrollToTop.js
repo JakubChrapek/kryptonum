@@ -31,7 +31,7 @@ const ScrollToTopStyles = styled(motion.button)`
   }
 
   @media (max-width: 1025px) {
-    right: -20px;
+    right: -30px;
     bottom: 80px;
   }
 

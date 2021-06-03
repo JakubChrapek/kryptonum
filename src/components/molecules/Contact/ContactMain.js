@@ -63,6 +63,12 @@ const ContactMain = ({
   contactPageMessageLabel,
   contactPageMessagePlaceholder,
   contactPagePrivacyText,
+  contactColumnFirstQuestion,
+  contactColumnFirstContactDetails,
+  contactColumnSecondQuestion,
+  contactColumnSecondContactDetails,
+  contactColumnFunnySentence,
+  contactColumnLastAddress,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
@@ -105,182 +111,17 @@ const ContactMain = ({
             contactPagePrivacyText={contactPagePrivacyText}
           />
           <StyledContactInfo>
-            <TextStyles
-              declaredpadding="0 0 36px 0"
-              fontFamily="JetBrains Mono"
-              fontSize="16px"
-              lineHeight="1.38"
-              color="var(--dark-bg)"
-            >
-              If you want to talk about design:
-            </TextStyles>
+            <StructuredText data={contactColumnFirstQuestion} />
             <StyledContactInfoList>
-              <li>Michał</li>
-              <li>
-                <StyledLink
-                  onPointerEnter={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.DEFAULT,
-                    })
-                  }}
-                  onPointerLeave={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.DARK,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.SMALLER,
-                    })
-                  }}
-                  href="tel:+48883736548"
-                >
-                  +48 883 73 658
-                </StyledLink>
-              </li>
-              <li>
-                <StyledLink
-                  href="mailto:kuba@kryptonumstudio.com"
-                  onPointerEnter={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.DEFAULT,
-                    })
-                  }}
-                  onPointerLeave={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.DARK,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.SMALLER,
-                    })
-                  }}
-                >
-                  kuba@kryptonumstudio.com
-                </StyledLink>
-              </li>
+              <StructuredText data={contactColumnFirstContactDetails} />
             </StyledContactInfoList>
-
-            <TextStyles
-              declaredpadding="0 0 36px 0"
-              fontFamily="JetBrains Mono"
-              fontSize="16px"
-              lineHeight="1.38"
-              color="var(--dark-bg)"
-            >
-              Or about how the internet works
-            </TextStyles>
+            <StructuredText data={contactColumnSecondQuestion} />
             <StyledContactInfoList>
-              <li>Jacob</li>
-              <StyledLink
-                onPointerEnter={() => {
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_TYPE",
-                    cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_SIZE",
-                    cursorSize: CURSOR_SIZES.DEFAULT,
-                  })
-                }}
-                onPointerLeave={() => {
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_TYPE",
-                    cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.DARK,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_SIZE",
-                    cursorSize: CURSOR_SIZES.SMALLER,
-                  })
-                }}
-                href="tel:+48883736548"
-              >
-                +48 883 73 658
-              </StyledLink>
-              <li>
-                <StyledLink
-                  onPointerEnter={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.DEFAULT,
-                    })
-                  }}
-                  onPointerLeave={() => {
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_TYPE",
-                      cursorType: CURSOR_TYPES.FULL_CURSOR,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_COLOR",
-                      cursorColor: CURSOR_COLORS.DARK,
-                    })
-                    dispatchCursor({
-                      type: "CHANGE_CURSOR_SIZE",
-                      cursorSize: CURSOR_SIZES.SMALLER,
-                    })
-                  }}
-                  href="mailto:kuba@kryptonumstudio.com"
-                >
-                  kuba@kryptonumstudio.com
-                </StyledLink>
-              </li>
+              <StructuredText data={contactColumnSecondContactDetails} />
             </StyledContactInfoList>
-
-            <TextStyles
-              declaredpadding="0 0 36px 0"
-              fontFamily="JetBrains Mono"
-              fontSize="16px"
-              lineHeight="1.38"
-              color="var(--dark-bg)"
-            >
-              You can find us here, but rarely 😉
-            </TextStyles>
+            <StructuredText data={contactColumnFunnySentence} />
             <StyledContactInfoList>
-              <li>Aleja Komisji Edukacji Narodowej</li>
-              <li>Warsaw</li>
+              <StructuredText data={contactColumnLastAddress} />
             </StyledContactInfoList>
           </StyledContactInfo>
         </StyledContactFormWrapperDiv>
