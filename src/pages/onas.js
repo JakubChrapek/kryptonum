@@ -8,18 +8,44 @@ import OurVision from "../components/molecules/OurVision/OurVision"
 import { graphql } from "gatsby"
 
 const About = ({ data }) => {
-  const { heroImage } = data.datoCmsPageAbout
+  const {
+    heroImage,
+    heroTytul: heroTitle,
+    heroZdjecieWtle: heroBgImg,
+    toMaratonNieSprintTytul: marathonTitle,
+    toMaratonNieSprintPierwszyAkapit: marathonFirstParagraph,
+    toMaratonNieSprintAkapitNadSliderem: marathonParagraphOverTitle,
+    naszeWartosciTytul: ourValuesTitle,
+    naszeWartosciCecha: ourValuesFeature,
+    naszeWartosciHasloNaSrodku: ourValuesCenteredClaim,
+    feedbackKlientowRecenzje: feedbackFromClients,
+    feedbackTytul: feedbackTytul,
+  } = data.datoCmsPageAbout
+  console.log(heroTitle)
   return (
     <div style={{ backgroundColor: "var(--white)" }}>
-      <AboutContent heroImage={heroImage} />
-      <AboutBestWay
-        textContent="W&nbsp;Kryptonum polecimy na księżyc i&nbsp;z&nbsp;powrotem, żeby znaleźć najlepszy projekt strony internetowej. A&nbsp;jak starczy czasu, to przyniesiemy Ci w&nbsp;gratisie kamień księżycowy 😉 
-Ale do tego trzeba specjalistów. Właśnie dlatego współpracujemy z&nbsp;zespołem ekspertów w&nbsp;projektowaniu, tworzeniu stron internetowych, marketingu, SEO i&nbsp;nie tylko.
-Zbyt piękne, żeby mogło być prawdziwe? Dopiero się rozgrzewamy!"
+      <AboutContent
+        heroTitle={heroTitle}
+        heroBgImg={heroBgImg}
+        heroImage={heroImage}
       />
-      <AboutSlider />
-      <OurVision />
-      <FeedbackFrom />
+      <AboutBestWay
+        marathonParagraphOverTitle={marathonParagraphOverTitle}
+        textContent={marathonParagraphOverTitle}
+      />
+      <AboutSlider
+        marathonTitle={marathonTitle}
+        marathonFirstParagraph={marathonFirstParagraph}
+      />
+      <OurVision
+        ourValuesTitle={ourValuesTitle}
+        ourValuesFeature={ourValuesFeature}
+        ourValuesCenteredClaim={ourValuesCenteredClaim}
+      />
+      <FeedbackFrom
+        feedbackFromClients={feedbackFromClients}
+        feedbackTytul={feedbackTytul}
+      />
     </div>
   )
 }
@@ -27,8 +53,48 @@ Zbyt piękne, żeby mogło być prawdziwe? Dopiero się rozgrzewamy!"
 export const query = graphql`
   query aboutQuery {
     datoCmsPageAbout {
+      heroTytul {
+        value
+      }
       heroImage {
+        gatsbyImageData(width: 1920, placeholder: BLURRED)
+      }
+      heroZdjecieWTle {
         gatsbyImageData(width: 1200, placeholder: BLURRED)
+      }
+      toMaratonNieSprintTytul {
+        value
+      }
+      toMaratonNieSprintPierwszyAkapit {
+        value
+      }
+      toMaratonNieSprintAkapitNadSliderem {
+        value
+      }
+      naszeWartosciCecha {
+        wartoscTytul {
+          value
+        }
+        wartoscTresc {
+          value
+        }
+      }
+      naszeWartosciHasloNaSrodku {
+        value
+      }
+      naszeWartosciTytul {
+        value
+      }
+      feedbackKlientowRecenzje {
+        feedbackKlient {
+          value
+        }
+        feedbackTresc {
+          value
+        }
+      }
+      feedbackTytul {
+        value
       }
     }
   }

@@ -36,6 +36,7 @@ const FeedbackSlider = ({ slides }) => {
           length={Math.ceil(slides?.length / pageLength)}
           gridArea="pagination"
           layout="position"
+          feedback
         />
       )}
     </AnimatePresence>

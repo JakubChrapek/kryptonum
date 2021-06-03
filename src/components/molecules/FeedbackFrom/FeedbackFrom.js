@@ -1,5 +1,6 @@
 import { AnimateSharedLayout, motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
+import { StructuredText } from "react-datocms"
 import React from "react"
 import styled from "styled-components"
 import {
@@ -15,9 +16,21 @@ const FeedbackFromWrapper = styled.div`
   width: 100%;
   background-color: var(--white);
   padding: 142px 139px;
+  height: 100vh;
+  position: relative;
   margin: 0 auto;
-  @media only screen and (max-width: 1121px) {
-    padding: 134px 28px 128px 28px;
+
+  @media only screen and (min-width: 1920px) {
+    max-height: 860px;
+  }
+  @media only screen and (min-width: 1600px) {
+    max-height: 760px;
+  }
+  @media only screen and (max-width: 1366px) {
+    padding: 104px 82px 108px 82px;
+  }
+  @media only screen and (max-width: 1168px) {
+    max-height: 820px;
   }
   @media only screen and (max-width: 767px) {
     padding: 84px 28px;
@@ -26,15 +39,13 @@ const FeedbackFromWrapper = styled.div`
 
 const FeedbackWrapper = styled.section`
   display: grid;
-  /* height: 576px;
-  max-height: 80vh; */
+  height: 100%;
   background-color: var(--white);
   grid-template-areas:
     "title content content content content"
     "title content content content content"
     "title content content content content"
-    "title content content content content"
-    "pagination pagination pagination pagination pagination";
+    "title content content content content";
   grid-gap: 20px 100px;
   max-width: 1366px;
   margin: 0 auto;
@@ -48,8 +59,7 @@ const FeedbackWrapper = styled.section`
       "content"
       "content"
       "content"
-      "content"
-      "pagination";
+      "content";
   }
 `
 
@@ -58,7 +68,7 @@ const TitleWrapper = styled(motion.div)`
   grid-area: title;
 `
 
-const FeedbackFrom = () => {
+const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
   const dispatchCursor = useCursorDispatchContext()
   const data = useStaticQuery(graphql`
     query FeedbackQuery {
@@ -104,9 +114,7 @@ const FeedbackFrom = () => {
               as="h3"
               fontFamily="JetBrains Mono"
             >
-              Feedback from
-              <br />
-              Our Clients
+              <StructuredText data={feedbackTytul} />
             </TextStyles>
           </TitleWrapper>
           <FeedbackSlider slides={data.allDatoCmsFeedbackFromClient.nodes} />

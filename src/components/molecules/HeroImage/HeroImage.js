@@ -6,7 +6,7 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 
-const HeroImage = ({ image }) => {
+const HeroImage = ({ heroBgImg }) => {
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnterForHeroImage = () => {
     dispatchCursor({
@@ -27,7 +27,7 @@ const HeroImage = ({ image }) => {
     >
       <GatsbyImage
         style={{ pointerEvents: "none" }}
-        image={image.gatsbyImageData}
+        image={heroBgImg.gatsbyImageData}
       />
     </HeroImageWrapper>
   )

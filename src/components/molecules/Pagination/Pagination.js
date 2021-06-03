@@ -25,6 +25,7 @@ const Pagination = ({
   exit,
   transition,
   variant,
+  feedback,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   const prevDisabled = currentPage === 0
@@ -37,6 +38,7 @@ const Pagination = ({
       transition={transition}
       layout={layout}
       gridArea={gridArea}
+      feedback={feedback}
     >
       <StyledButtonPagination
         type="button"

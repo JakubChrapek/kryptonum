@@ -10,7 +10,7 @@ import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 import HeroContent from "../HeroContent/HeroContent"
 import HeroImage from "../HeroImage/HeroImage"
 
-const AboutContent = ({ heroImage }) => {
+const AboutContent = ({ heroImage, heroBgImg, heroTitle }) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
     <>
@@ -31,9 +31,9 @@ const AboutContent = ({ heroImage }) => {
         }}
         bg="var(--white)"
       >
-        <HeroContent content="Kim są nasi superbohaterowie?" />
+        <HeroContent content={heroTitle} />
       </BgColourWrapper>
-      <HeroImage image={heroImage} />
+      <HeroImage heroBgImg={heroImage} />
     </>
   )
 }

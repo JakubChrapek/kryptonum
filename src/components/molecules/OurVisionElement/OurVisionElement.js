@@ -1,4 +1,5 @@
 import React from "react"
+import { StructuredText } from "react-datocms"
 
 import { StyledOurVisionElement } from "../../atoms/OurVisionElement/StyledOurVisionElement"
 import { StyledOurVisionLogoTextH2 } from "../../atoms/OurVisionElement/StyledOurVisionLogoTextH2"
@@ -27,7 +28,9 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
           declaredpadding="0 9px 0 0"
           declaredTransform="translateY(-18px)"
         >{`(${elementNumber})`}</TextStyles>
-        <span dangerouslySetInnerHTML={{ __html: leftBoxText }} />
+        <span>
+          <StructuredText data={leftBoxText} />
+        </span>
       </StyledOurVisionLogoTextH2>
       <StyledRightBoxParagraph
         fontFamily="Poppins"
@@ -36,7 +39,7 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
         letterSpacing="2.67px"
         color="var(--white)"
       >
-        {rightBoxText}
+        <StructuredText data={rightBoxText} />
       </StyledRightBoxParagraph>
     </StyledOurVisionElement>
   )

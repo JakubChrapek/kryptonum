@@ -6,12 +6,18 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 import useWindowSize from "../../../utils/getWindowSize"
+import { StructuredText } from "react-datocms"
 
 import { StyledBestWayWrapper } from "../../atoms/AboutBestWay/StyledBestWayWrapper"
 import { TextStyles } from "../../atoms/Text/Text"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 
-const AboutBestWay = ({ textContent }) => {
+const AboutBestWay = ({
+  marathonTitle,
+  marathonFirstParagraph,
+  marathonParagraphOverTitle,
+  textContent,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
   const width = useWindowSize()
   return (
@@ -42,7 +48,7 @@ const AboutBestWay = ({ textContent }) => {
           fontFamily="Poppins"
           styledAboutBestWayWrapper={true}
         >
-          {textContent}
+          <StructuredText data={textContent} />
         </TextStyles>
       </StyledBestWayWrapper>
     </BgColourWrapper>
