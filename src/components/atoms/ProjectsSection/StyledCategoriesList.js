@@ -9,4 +9,7 @@ export const StyledCategoriesList = styled(motion.ul)`
     line-height: 2.67;
     color: #090909;
   }
+  span {
+    color: #090909;
+  }
 `
