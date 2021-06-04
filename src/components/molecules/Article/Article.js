@@ -11,6 +11,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import ellipsize from "ellipsize"
 
 const Article = ({ article, full, layout }) => {
   const dispatchCursor = useCursorDispatchContext()
@@ -76,7 +77,7 @@ const Article = ({ article, full, layout }) => {
           }}
           exit={{ opacity: 0 }}
         >
-          {article.articleTitle}
+          {ellipsize(article.articleTitle, 50)}
         </TextStyles>
         <TextStyles
           fontSize="10px"

@@ -3,11 +3,23 @@ import React from "react"
 import ErrorMain from "../components/organisms/404/ErrorMain"
 
 const FourOFourPage = ({ data }) => {
+  const {
+    datoCmsPage404: {
+      errorTitle,
+      errorInfoOBledzie: errorMessage,
+      errorTekstPrzycisku: errorButtonText,
+      errorObrazek: errorImage,
+    },
+  } = data
   return (
     <>
       <div>
-        <ErrorMain />
-        <h1>404. Sadness</h1>
+        <ErrorMain
+          errorTitle={errorTitle}
+          errorMessage={errorMessage}
+          errorButtonText={errorButtonText}
+          errorImage={errorImage}
+        />
       </div>
     </>
   )

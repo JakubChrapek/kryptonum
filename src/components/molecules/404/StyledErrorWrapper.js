@@ -1,15 +1,24 @@
 import styled from "styled-components"
 
 export const StyledErrorWrapper = styled.div`
-  padding: 158px 120px 51px 120px;
-  max-width: 1330px;
+  padding: 177px 120px 80px 120px;
+  max-width: 1300px;
   margin: 0 auto;
-  border: 2px solid;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
 
   @media only screen and (max-width: 1024px) {
-    padding: 132px 60px 51px 60px;
+    padding: 150px 60px 60px 60px;
   }
-  @media only screen and (max-width: 767px) {
-    padding: 132px 26px 51px 26px;
+  @media only screen and (max-width: 911px) {
+    min-height: unset;
+    padding: 120px 70px 141px 70px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  @media only screen and (max-width: 640px) {
+    padding: 120px 28px 141px 28px;
   }
 `

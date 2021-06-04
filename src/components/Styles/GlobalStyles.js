@@ -6,6 +6,7 @@ const Global = createGlobalStyle`
   html {
     box-sizing: border-box;
     --accent:#00EF8B;
+    --button-accent: #25eb98;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
     --dark-bg: #171717;
