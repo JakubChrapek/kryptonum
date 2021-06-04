@@ -18,18 +18,6 @@ import {
 } from "../../../contexts/cursorContext"
 import { DragSliderWrapper } from "../../atoms/DragSliderWrapper/DragSliderWrapper"
 
-const query = graphql`
-  query {
-    datoCmsPageHome {
-      cards {
-        cardTitle
-        cardDescription
-        id
-      }
-    }
-  }
-`
-
 const HowWeWorkSection = ({
   howItWorksTitle,
   howItWorksBigTitle,
@@ -42,7 +30,6 @@ const HowWeWorkSection = ({
   howItWorksFourthCardTitle,
   howItWorksFourthCardParagraph,
 }) => {
-  const { datoCmsPageHome } = useStaticQuery(query)
   const x = useMotionValue(0)
   const [sliderWidth, setSliderWidth] = useState(0)
   const [sliderChildrenWidth, setSliderChildrenWidth] = useState(0)

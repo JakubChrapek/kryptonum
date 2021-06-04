@@ -29,26 +29,18 @@ export const SecondRow = styled.div`
     }
     @media only screen and (max-width: 767px) {
       max-width: 357px;
-      margin: 80px 0 100px 0;
+      margin: 8rem 0 0;
     }
     @media only screen and (max-width: 540px) {
-      margin: 72px 0 24px 0;
+      margin: 7.2rem 0 0;
     }
   }
 
   > ul {
-    font-size: 0.9em;
-    margin-top: 0;
-    /* list-style-type: circle;
-    list-style-position: inside; */
-    /* li {
-      margin-top: 8px;
-    }
+    margin-top: 2rem;
     p {
-      display: inline;
-      font-size: 0.85em;
-      letter-spacing: 1px;
-    } */
+      font-size: 1em;
+    }
   }
   .img-wrapper {
     z-index: 0;

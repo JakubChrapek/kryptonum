@@ -26,18 +26,16 @@ export const StyledCtaH2 = styled(TextStyles)`
       &:after {
         content: "";
         position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 105%;
+        left: 4px;
+        bottom: -4px;
+        width: 95%;
         height: 2px;
         background-color: var(--accent);
       }
     }
 
     :last-child {
-      @media only screen and (max-width: 570px) {
-        display: block;
-      }
+      display: inline;
     }
   }
 `
