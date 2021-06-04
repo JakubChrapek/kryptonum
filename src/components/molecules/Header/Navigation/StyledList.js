@@ -10,7 +10,10 @@ export const StyledList = styled.ul`
     display: inline-flex;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1366px) {
+    margin-top: 24px;
+  }
+  @media only screen and (max-width: 640px) {
     justify-content: flex-start;
     height: unset;
     margin: 24px 0 50px;

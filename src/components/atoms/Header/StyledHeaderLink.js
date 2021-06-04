@@ -8,7 +8,7 @@ export const StyledHeaderLink = styled(Link)`
   left: 50%;
   transform: translateX(-50%);
   padding: 0px 8px;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 640px) {
     top: 27px;
   }
   @media (max-width: 500px) {

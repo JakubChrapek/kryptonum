@@ -688,8 +688,8 @@ const Project = ({ data }) => {
             onMouseLeave={handleNormalLeave}
             to={
               datoCmsProject.nextProject
-                ? `/projects/${datoCmsProject.nextProject.projectSlug}`
-                : `/projects`
+                ? `/projekty/${datoCmsProject.nextProject.projectSlug}`
+                : `/projekty`
             }
           >
             {datoCmsProject.nextProject

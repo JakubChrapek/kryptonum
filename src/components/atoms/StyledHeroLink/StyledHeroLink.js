@@ -11,7 +11,7 @@ export const StyledScrollLink = styled(ScrollLink)`
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  margin-top: -100px;
+  margin-top: -160px;
   margin-right: -50px;
   width: 296px;
   height: 296px;

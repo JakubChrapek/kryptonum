@@ -175,7 +175,7 @@ const WhatIsKryptonum = ({
       >
         <WhatIsKryptonumWrapper>
           <CreativeRow>
-            <Creativity hasDeclaredTransform={false}>
+            <Creativity bottomSection hasDeclaredTransform={false}>
               <div>
                 <p>{creativityContent}</p>
               </div>

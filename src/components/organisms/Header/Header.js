@@ -91,10 +91,10 @@ const Header = ({ theme }) => {
   return (
     <StyledHeaderWrapper>
       <StyledHeader bg={pathname === "/" ? "transparent" : "var(--white)"}>
-        {width && width > 800 && (
+        {width && width > 640 && (
           <Contact
             color={
-              pathname === "/projects"
+              pathname === "/projekty"
                 ? "var(--black)"
                 : theme === "light"
                 ? "var(--lightest-gray)"

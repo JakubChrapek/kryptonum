@@ -16,6 +16,9 @@ export const StyledLink = styled(Link)`
     outline-offset: 2px;
     outline: 4px solid var(--black);
   }
+  @media only screen and (max-width: 1366px) {
+    font-size: 48px;
+  }
   @media only screen and (max-width: 540px) {
     font-size: 50px;
     margin-bottom: 16px;

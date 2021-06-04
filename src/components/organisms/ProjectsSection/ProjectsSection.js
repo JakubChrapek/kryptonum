@@ -142,7 +142,7 @@ const ProjectsSection = ({ buttonText }) => {
               })
             }}
             className="btn btn__dark"
-            to="/projects"
+            to="/projekty"
           >
             {buttonText ? buttonText : "Wszystkie projekty"}
           </Link>

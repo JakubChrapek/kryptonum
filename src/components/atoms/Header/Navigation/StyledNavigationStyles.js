@@ -15,7 +15,7 @@ export const StyledNavigationStyles = styled(motion.nav)`
   padding: 94px 116px 38px 104px;
   pointer-events: ${({ pointerEvents }) => pointerEvents};
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 640px) {
     height: 100vh;
     width: 100vw;
     overflow: hidden;

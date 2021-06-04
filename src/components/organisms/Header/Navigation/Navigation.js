@@ -218,7 +218,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
             setPanelComplete(!panelComplete)
           }}
         /> */}
-        {width && width > 800 && (
+        {width && width > 640 && (
           <StyledNavigationFlexDiv
             direction="column"
             alignItems="flex-start"
@@ -294,9 +294,9 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
               </StyledLink>
             ))}
           </StyledList>
-          {width && width <= 800 && (
+          {width && width <= 640 && (
             <>
-              <StyledTextP margin="0 0 9px 0">Get in touch</StyledTextP>
+              <StyledTextP margin="0 0 9px 0">Napisz do nas</StyledTextP>
               <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
                 kontakt@kryptonum.pl
               </StyledOutLink>

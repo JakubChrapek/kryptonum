@@ -101,7 +101,7 @@ const StyledCaseStudyCard = ({ projects, activeProjectId }) => {
             transition={{ duration: 1.2, ease: [0.6, -0.05, 0.01, 0.99] }}
             className="card"
           >
-            <ImageLink to={`/projects/${project.projectSlug}`}>
+            <ImageLink to={`/projekty/${project.projectSlug}`}>
               <Img
                 fluid={project.projectFeaturedImage.fluid}
                 alt={project.projectTitle}
@@ -122,7 +122,7 @@ const StyledCaseStudyCard = ({ projects, activeProjectId }) => {
               transition={{ duration: 0.4, delay: 0.4 }}
               exit={{ opacity: 0, scale: 0, y: 40 }}
             >
-              <LinkStyles to={`/projects/${project.projectSlug}`}>
+              <LinkStyles to={`/projekty/${project.projectSlug}`}>
                 <TextStyles
                   fontSize="12px"
                   fontWeight="600"
@@ -132,7 +132,7 @@ const StyledCaseStudyCard = ({ projects, activeProjectId }) => {
                   fontFamily="Poppins"
                   textAlign="center"
                 >
-                  View case study
+                  Zobacz projekt
                 </TextStyles>
               </LinkStyles>
             </CircleStyles>

@@ -5,6 +5,9 @@ export const Creativity = styled(GridItem)`
   justify-self: flex-end;
   width: 275px;
   margin-right: 10%;
+
+  padding-bottom: ${({ bottomSection }) => bottomSection && "6rem"};
+
   h3 {
     margin-top: 90px;
   }

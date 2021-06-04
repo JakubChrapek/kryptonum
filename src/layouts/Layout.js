@@ -118,7 +118,7 @@ const Layout = ({ children }) => {
           key={pathname || "/"}
         >
           {children}
-          {pathname !== "/projects" && <Footer />}
+          {pathname !== "/projekty" && <Footer />}
         </StyledMain>
       </AnimatePresence>
     </MenuProvider>

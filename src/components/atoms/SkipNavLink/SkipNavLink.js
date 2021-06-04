@@ -13,7 +13,7 @@ const StyledLink = styled.a`
   font-size: 18px;
   font-weight: bold;
   border: 3px solid transparent;
-  border-radius: 10px;
+  border-radius: 0px;
   text-decoration: none;
   transform: translateY(-100%);
   z-index: 4;

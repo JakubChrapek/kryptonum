@@ -1,14 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef } from "react"
 import StyledProjectsWrapper from "../components/atoms/Projects/StyledProjectsWrapper/StyledProjectsWrapper"
-import StyledCaseStudyCard from "../components/atoms/Projects/StyledCaseStudyCard/StyledCaseStudyCard"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import StyledVerticalLine from "../components/atoms/Projects/StyledVerticalLine/StyledVerticalLine"
-import useWindowSize from "../utils/getWindowSize"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"
-import { TweenLite } from "gsap/gsap-core"
 import {
   CURSOR_COLORS,
   CURSOR_SIZES,
@@ -30,9 +23,6 @@ const ProjectsStyles = styled.div`
 
 const Projects = ({ data }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const [activeProjectId, setActiveProjectId] = useState(
-    data?.allDatoCmsProject?.nodes[0].id
-  )
   const handleWrapperEnter = () => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
@@ -49,9 +39,7 @@ const Projects = ({ data }) => {
   }
 
   const containerRef = useRef()
-  const numberOfProjects = data.allDatoCmsProject.nodes.length % 7
   const projectsPerPage = 6
-  const width = useWindowSize()
 
   return (
     <ProjectsStyles
@@ -62,8 +50,6 @@ const Projects = ({ data }) => {
       <StyledProjectsWrapper
         projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
         projectsPerPage={projectsPerPage}
-        activeProjectId={activeProjectId}
-        setActiveProjectId={setActiveProjectId}
       />
       {/* {width > 1100 && (
         <StyledCaseStudyCard
@@ -71,11 +57,11 @@ const Projects = ({ data }) => {
           activeProjectId={activeProjectId}
         />
       )} */}
-      <StyledVerticalLine
+      {/* <StyledVerticalLine
         activeProject={activeProjectId}
         numberOfProjects={numberOfProjects}
         ref={containerRef}
-      />
+      /> */}
     </ProjectsStyles>
   )
 }

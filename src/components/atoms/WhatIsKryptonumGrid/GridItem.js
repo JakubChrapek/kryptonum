@@ -34,6 +34,7 @@ export const GridItem = styled.div`
     letter-spacing: 4.29px;
     color: var(--black);
     margin: 6px 22px 16px 16px;
+
     @media only screen and (max-width: 1035px) {
       font-size: 10px;
     }

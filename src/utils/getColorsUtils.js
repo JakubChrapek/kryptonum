@@ -1,7 +1,7 @@
 // TODO: utils for colors based on path, theme etc.
 export const getColorFromPath = path => {
   switch (path) {
-    case "/projects":
+    case "/projekty":
     case "/blog":
       return "light"
     case "/blog":

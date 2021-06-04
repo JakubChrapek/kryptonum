@@ -11,24 +11,26 @@ const ImageColumnSmallWidth = ({ dataName }) => {
     <StyledImageColumnSmallWidth>
       {dataName.nodes.map(project => (
         <StyledImageColumnSmallWidthPost>
-          <div
-            key={`${project.projectTitle}-${project.projectSlug}-img-wrapper`}
-            variants={fadeInUp}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <Img fluid={project.projectFeaturedImage.fluid} />
-          </div>
-          <p
-            key={`${project.projectTitle}-${project.projectSlug}-projectType`}
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            exit={{ opacity: 0 }}
-          >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
-            1
-          )}`}</p>
+          <Link to={`/projekty/${project.projectSlug}`}>
+            <div
+              key={`${project.projectTitle}-${project.projectSlug}-img-wrapper`}
+              variants={fadeInUp}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Img fluid={project.projectFeaturedImage.fluid} />
+            </div>
+            <p
+              key={`${project.projectTitle}-${project.projectSlug}-projectType`}
+              variants={fadeInUp}
+              initial="initial"
+              animate="animate"
+              exit={{ opacity: 0 }}
+            >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
+              1
+            )}`}</p>
+          </Link>
           <StyledCategoriesListSmallWidth
             key={`${project.projectTitle}-${project.projectSlug}-projectCategories`}
             variants={fadeInUp}
@@ -44,8 +46,8 @@ const ImageColumnSmallWidth = ({ dataName }) => {
           </StyledCategoriesListSmallWidth>
         </StyledImageColumnSmallWidthPost>
       ))}
-      <Link className="btn" to="/projects">
-        View all projects
+      <Link className="btn" to="/projekty">
+        Zobacz wszystkie projekty
       </Link>
     </StyledImageColumnSmallWidth>
   )

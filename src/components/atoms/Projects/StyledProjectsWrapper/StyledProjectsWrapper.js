@@ -1,10 +1,9 @@
-import React, { createRef, useEffect, useMemo, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import { AnimatePresence, motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
 import { Link } from "gatsby"
 import { StructuredText } from "react-datocms"
-import StyledVerticalLine from "../StyledVerticalLine/StyledVerticalLine"
 import {
   CURSOR_COLORS,
   CURSOR_SIZES,
@@ -13,6 +12,8 @@ import {
 } from "../../../../contexts/cursorContext"
 import { GatsbyImage } from "gatsby-plugin-image"
 import useMousePosition from "../../../../utils/useMousePosition"
+import useWindowSize from "../../../../utils/getWindowSize"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
@@ -60,6 +61,15 @@ export const ProjectsStyles = styled(motion.section)`
       position: relative;
       height: 100%;
       display: inline-flex;
+      /* width: 100%; */
+      &:focus-visible {
+        outline-offset: 18px;
+        outline: 4px solid var(--accent);
+        > span,
+        p {
+          color: var(--accent);
+        }
+      }
       p {
         transition: color 0.15s cubic-bezier(0.6, -0.05, 0.01, 0.99);
       }
@@ -203,26 +213,40 @@ const ProjectsTextStyles = styled(TextStyles)`
   }
 `
 
-const StyledProjectsWrapper = ({
-  projects,
-  projectsPerPage,
-  activeProjectId,
-  setActiveProjectId,
-}) => {
+const StyledProjectsWrapper = ({ projects, projectsPerPage }) => {
   const { x, y } = useMousePosition()
+  const [elementPosition, setElementPosition] = useState({ x: 0, y: 0 })
+
+  useScrollPosition(
+    ({ currPos }) => {
+      setElementPosition(currPos)
+      console.log(currPos)
+    },
+    [],
+    window.scroll,
+    true,
+    150
+  )
 
   return (
     <ProjectsStyles lessProjects={projects.length < projectsPerPage - 1}>
       {projects.map((project, iterator) => (
-        <ProjectItem project={project} projectNumber={iterator} x={x} y={y} />
+        <ProjectItem
+          scrollPosition={elementPosition}
+          project={project}
+          projectNumber={iterator}
+          x={x}
+          y={y}
+        />
       ))}
     </ProjectsStyles>
   )
 }
 
-const ProjectItem = ({ project, projectNumber, x, y }) => {
+const ProjectItem = ({ scrollPosition, project, projectNumber, x, y }) => {
   const [hoverState, setHoverState] = useState(false)
   const projectRef = useRef()
+  let width = useWindowSize()
   const [projectPosition, setProjectPosition] = useState({
     top: 0,
     left: 0,
@@ -264,7 +288,7 @@ const ProjectItem = ({ project, projectNumber, x, y }) => {
 
   useEffect(() => {
     setProjectPosition({
-      top: projectRef.current.getBoundingClientRect().top,
+      top: projectRef.current.getBoundingClientRect().top + scrollPosition.y,
       left: projectRef.current.getBoundingClientRect().left,
     })
   }, [hoverState])
@@ -304,13 +328,13 @@ const ProjectItem = ({ project, projectNumber, x, y }) => {
         </ProjectsTextStyles>
       </Link>
       <AnimatePresence>
-        {hoverState && (
+        {width > 1024 && hoverState && (
           <ProjectFeaturedImageCard
             projectCTA={project.projectCtaText}
             projectSlug={project.projectSlug}
             projectImage={project.projectFeaturedImage}
-            x={x - projectPosition.left - 180}
-            y={y - projectPosition.top - 120}
+            x={x - projectPosition.left + 60}
+            y={y - projectPosition.top - 245}
           />
         )}
       </AnimatePresence>
