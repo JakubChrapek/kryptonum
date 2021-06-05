@@ -9,7 +9,7 @@ export const StyledNavBurger = styled(motion.button)`
   width: 47px;
   height: 47px;
   padding: 8px;
-  position: sticky;
+  position: absolute;
   top: 28px;
   right: 70px;
   border: none;

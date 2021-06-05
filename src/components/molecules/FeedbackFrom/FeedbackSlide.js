@@ -36,7 +36,7 @@ const FeedbackSlide = ({ slide }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{
-        duration: 0.4,
+        duration: 0.3,
         ease: [0.6, -0.05, 0.01, 0.99],
       }}
     >
@@ -45,7 +45,7 @@ const FeedbackSlide = ({ slide }) => {
           initial={{ opacity: 0, scaleX: 0, originX: 0 }}
           animate={{ opacity: 1, scaleX: 1, originX: 0 }}
           exit={{ opacity: 0, originX: 1 }}
-          transition={{ delay: 0.38, duration: 0.4 }}
+          transition={{ delay: 0.28, duration: 0.3 }}
         />
         <motion.div>
           <TextStyles
@@ -56,7 +56,7 @@ const FeedbackSlide = ({ slide }) => {
             initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, filter: "blur(3px)" }}
-            transition={{ delay: 0.65, duration: 0.4 }}
+            transition={{ delay: 0.5, duration: 0.3 }}
           >
             {slide.clientName}
           </TextStyles>
@@ -74,8 +74,8 @@ const FeedbackSlide = ({ slide }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{
-          delay: 1.25,
-          duration: 0.7,
+          delay: 0.6,
+          duration: 0.5,
           ease: [0.5, -0.04, 0.36, 0.93],
         }}
       >

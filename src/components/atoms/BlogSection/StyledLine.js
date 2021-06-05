@@ -24,6 +24,6 @@ export const StyledLine = styled(motion.span)`
     z-index: 1;
     transform-origin: left center;
     transform: ${({ width }) => (width ? `scaleX(${width})` : `scaleX(0)`)};
-    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: transform 0.6s 0.05s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
 `
