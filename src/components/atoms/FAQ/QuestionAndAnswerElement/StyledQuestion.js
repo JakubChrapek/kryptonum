@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { StyledAddIcon } from "./StyledAddIcon"
 
 export const StyledQuestion = styled.button`
-  font-family: "JetBrains Mono";
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;

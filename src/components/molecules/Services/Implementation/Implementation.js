@@ -31,7 +31,6 @@ const Implementation = ({
     >
       <div>
         <StyledWorkflowComponentGreenSpan
-          fontFamily="JetBrains Mono"
           fontSize="18px"
           lineHeight="1.28"
           color="var(--accent)"
@@ -42,7 +41,6 @@ const Implementation = ({
           (0{howWeWorkImplementationNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
-          fontFamily="LibreBaskerville"
           fontSize="88px"
           lineHeight="1.24"
           color="var(--gray)"

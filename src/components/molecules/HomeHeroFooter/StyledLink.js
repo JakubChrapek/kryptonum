@@ -9,11 +9,9 @@ const LinkStyles = styled(Link)`
   padding: ${({ declaredpadding }) =>
     declaredpadding ? declaredpadding : "6px 8px"};
   margin-right: ${({ declaredMarginRight }) =>
-    declaredMarginRight ? declaredMarginRight : "23px"};
+    declaredMarginRight ? declaredMarginRight : "4px"};
   line-height: ${({ declaredLineHeight }) =>
     declaredLineHeight ? declaredLineHeight : "1.31em"};
-  font-family: ${({ declaredFontFamily }) =>
-    declaredFontFamily ? declaredFontFamily : "JetBrains Mono"};
   color: ${({ declaredFontColor }) =>
     declaredFontColor ? declaredFontColor : "var(--lightest-gray)"};
   position: relative;

@@ -1,16 +1,24 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { GridItem } from "./GridItem"
 
 export const Creativity = styled(GridItem)`
   justify-self: flex-end;
   width: 275px;
   margin-right: 10%;
-
-  padding-bottom: ${({ bottomSection }) => bottomSection && "6rem"};
-
+  padding: 1rem 0 0;
+  > span {
+    margin-bottom: 4rem;
+  }
   h3 {
     margin-top: 90px;
   }
+  ${({ bottomSection }) =>
+    bottomSection &&
+    css`
+      h3 {
+        margin-top: 0;
+      }
+    `}
   p {
     margin: 10px 61px 70px 16px;
     @media only screen and (max-width: 1035px) {

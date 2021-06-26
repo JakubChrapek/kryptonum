@@ -66,7 +66,6 @@ const HeroFooter = () => {
           declaredFontSize="14px"
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
-          declaredFontFamily="JetBrains Mono"
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={handleOnMouseLeaveForLink}
         >
@@ -79,7 +78,6 @@ const HeroFooter = () => {
           declaredFontSize="14px"
           declaredLineHeight="1.3"
           declaredFontColor="var(--white)"
-          declaredFontFamily="JetBrains Mono"
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={handleOnMouseLeaveForLink}
         >
@@ -91,7 +89,6 @@ const HeroFooter = () => {
         declaredFontSize="14px"
         declaredLineHeight="1.3"
         declaredFontColor="var(--white)"
-        declaredFontFamily="JetBrains Mono"
         declaredMarginRight="0"
         onMouseEnter={handleOnMouseEnterForLink}
         onMouseLeave={handleOnMouseLeaveForLink}

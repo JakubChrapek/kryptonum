@@ -55,7 +55,6 @@ const BlogQuote = ({ text, author, position, margin, layout }) => {
       <TextStyles
         fontSize="24px"
         fontWeight="300"
-        fontFamily="Libre Baskerville"
         lineHeight="48px"
         color="var(--black-font)"
         className="quote--content"

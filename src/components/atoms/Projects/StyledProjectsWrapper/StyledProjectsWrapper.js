@@ -43,7 +43,6 @@ export const ProjectsStyles = styled(motion.section)`
     color: var(--light-accent);
     left: -16px;
     top: -20px;
-    font-family: "JetBrains Mono";
   }
 
   a {
@@ -314,7 +313,6 @@ const ProjectItem = ({ scrollPosition, project, projectNumber, x, y }) => {
           lineHeight="1.24em"
           letterSpacing="-2.2px"
           color={hoverState ? "var(--accent)" : "var(--light-accent)"}
-          fontFamily="LibreBaskerville"
           textTransform="uppercase"
         >
           {project.projectTitle.length <= maxLettersOfProjectName

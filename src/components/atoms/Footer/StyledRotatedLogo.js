@@ -8,7 +8,7 @@ export const StyledRotatedLogo = styled(Link)`
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: "Big Caslon";
+
   color: var(--white);
   position: absolute;
   transform: rotate(-90deg);

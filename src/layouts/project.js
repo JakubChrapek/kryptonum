@@ -58,7 +58,7 @@ const ProjectTitle = styled.h1`
   line-height: 1.24;
   letter-spacing: -1.75px;
   color: var(--gray);
-  font-family: "Libre Baskerville";
+
   font-weight: normal;
   @media (max-width: 1024px) {
     font-size: 48px;
@@ -227,7 +227,7 @@ const ContentColumn = styled.div`
   > a {
     display: inline-block;
     margin-top: 44px;
-    font-family: "JetBrains Mono";
+
     font-size: 14px;
     @media (max-width: 1024px) {
       font-size: 18px;
@@ -306,7 +306,6 @@ const TestimonialWrapper = styled.div`
 `
 
 const TestimonialContent = styled.p`
-  font-family: 'Libre Baskerville';
   font-size: 24px;
   font-weight: normal;
   line-height: 2;
@@ -624,29 +623,29 @@ const Project = ({ data }) => {
         <ProjectFeaturedImage
           onMouseEnter={handleImageEnter}
           onMouseLeave={handleNormalLeave}
-          image={datoCmsProject.projectFeaturedImage.gatsbyImageData}
+          image={datoCmsProject.projectFeaturedImage?.gatsbyImageData}
         />
       </ProjectWrapper>
       <StructuredContentWrapper>
         <StructuredText
           data={datoCmsProject.projectContent}
           renderBlock={({ record }) => {
-            switch (record.__typename) {
+            switch (record?.__typename) {
               case "DatoCmsProjectWideImage":
                 return (
                   <ProjectWideImage
                     handleImageEnter={handleImageEnter}
                     handleNormalLeave={handleNormalLeave}
-                    image={record.image.gatsbyImageData}
+                    image={record?.image?.gatsbyImageData}
                   />
                 )
               case "DatoCmsProjectChallengeSection":
                 return (
                   <ProjectChallengeSection
-                    headerText={record.headerText}
-                    paragraph={record.paragraphContent.value}
-                    linkToProject={record.linkToProject}
-                    linkText={record.linkText}
+                    headerText={record?.headerText}
+                    paragraph={record?.paragraphContent?.value}
+                    linkToProject={record?.linkToProject}
+                    linkText={record?.linkText}
                     handleLinkEnter={handleLinkEnter}
                     handleNormalLeave={handleNormalLeave}
                   />
@@ -654,16 +653,18 @@ const Project = ({ data }) => {
               case "DatoCmsProjectTestimonial":
                 return (
                   <ProjectTestimonialSection
-                    testimonialContent={record.testimonialContent}
-                    testimonialAuthor={record.testimonialAuthor}
-                    testimonialAdditionalInfo={record.testimonialAdditionalInfo}
+                    testimonialContent={record?.testimonialContent}
+                    testimonialAuthor={record?.testimonialAuthor}
+                    testimonialAdditionalInfo={
+                      record?.testimonialAdditionalInfo
+                    }
                   />
                 )
               case "DatoCmsProjectTwoColumnImage":
                 return (
                   <ProjectTwoColumnImage
-                    firstImage={record.firstImage.gatsbyImageData}
-                    secondImage={record.firstImage.gatsbyImageData}
+                    firstImage={record?.firstImage?.gatsbyImageData}
+                    secondImage={record?.firstImage?.gatsbyImageData}
                     handleImageEnter={handleImageEnter}
                     handleNormalLeave={handleNormalLeave}
                   />
@@ -671,12 +672,14 @@ const Project = ({ data }) => {
               case "DatoCmsProject2ColumnHeaderAndParagraph":
                 return (
                   <ProjectTwoColumnSection
-                    featuredParagraph={record.featuredParagraph}
-                    normalParagraphContent={record.normalParagraphContent.value}
+                    featuredParagraph={record?.featuredParagraph}
+                    normalParagraphContent={
+                      record?.normalParagraphContent.value
+                    }
                   />
                 )
               case "DatoCmsProjectFinalHeader":
-                return <ProjectHeader headerText={record.headerText} />
+                return <ProjectHeader headerText={record?.headerText} />
               default:
                 return null
             }

@@ -3,15 +3,11 @@ import { StructuredText } from "react-datocms"
 
 export const HomeHeroTitleStyles = styled.div`
   > p {
-    font-family: "Libre Baskerville";
-    font-size: 80px;
-    font-weight: normal;
-    line-height: 1;
+    font-size: clamp(40px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 1.5;
     color: var(--lightest-gray);
-    @media only screen and (min-width: 1920px) {
-      font-size: 92px;
-    }
-    @media (max-width: 1101px) {
+    /* @media (max-width: 1101px) {
       font-size: 64px;
     }
     @media (max-width: 868px) {
@@ -32,7 +28,7 @@ export const HomeHeroTitleStyles = styled.div`
     }
     @media (max-width: 349px) {
       font-size: 36px;
-    }
+    } */
   }
 `
 

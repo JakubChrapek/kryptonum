@@ -26,7 +26,7 @@ const LeftColumn = styled.div`
 
 const StyledLink = styled(Link)`
   width: fit-content;
-  font-family: "JetBrains Mono";
+
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -98,7 +98,7 @@ const StyledMessage = styled.p`
 `
 
 const StyledInfo = styled.p`
-  font-family: 'JetBrains Mono';
+  
   font-size: 18px;
   display: inline-block;
   font-weight: normal;

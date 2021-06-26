@@ -162,7 +162,6 @@ const Footer = () => {
               {footerTitle}
             </TextStyles>
             <TextStyles
-              fontFamily="JetBrains Mono"
               declaredMargin="40px 0 0 0"
               declaredDisplay="block"
               fontSize="14px"

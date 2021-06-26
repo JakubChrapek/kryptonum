@@ -18,9 +18,11 @@ export const Works = styled.div`
   span {
     color: var(--accent);
     text-transform: uppercase;
-    font-size: 8px;
-    line-height: 1.5em;
-    letter-spacing: 1.33px;
-    margin-bottom: 43px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  > a {
+    margin-bottom: 3rem;
   }
 `

@@ -2,29 +2,35 @@ import styled from "styled-components"
 
 export const ServicesWrapper = styled.ul`
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 40px;
   align-self: flex-start;
   @media only screen and (max-width: 874px) {
     max-width: 796px;
     align-self: center;
   }
   li {
-    margin: 27px 70px 0 0;
+    margin: 0 70px 0 0;
     @media only screen and (max-width: 1366px) {
-      margin: 27px 50px 0 0;
+      margin: 0 50px 0 0;
     }
     @media only screen and (max-width: 1090px) {
-      margin: 27px 40px 0 0;
+      margin: 0 40px 0 0;
     }
     @media only screen and (max-width: 480px) {
-      margin: 27px 20px 0 0;
+      margin: 0 20px 0 0;
     }
     &:last-child {
-      margin: 27px 0 0 0;
+      margin: 0 0 0 0;
     }
   }
   h3 {
-    font-size: 60px;
+    font-size: 73px;
+    line-height: 1.5;
+    color: var(--black-font);
+    font-weight: normal;
+
     @media only screen and (max-width: 1366px) {
       font-size: 50px;
     }
@@ -34,11 +40,6 @@ export const ServicesWrapper = styled.ul`
     @media only screen and (max-width: 614px) {
       font-size: 30px;
     }
-    line-height: 1.23;
-    letter-spacing: -1.56px;
-    color: var(--gray);
-    font-family: "Libre Baskerville";
-    font-weight: normal;
     &.underline {
       position: relative;
       &:after {
@@ -52,5 +53,8 @@ export const ServicesWrapper = styled.ul`
         /* z-index: -1; */
       }
     }
+  }
+  .box {
+    text-align: center;
   }
 `

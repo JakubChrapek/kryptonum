@@ -18,7 +18,6 @@ import { graphql } from "gatsby"
 const IndexPage = ({ data }) => {
   const {
     datoCmsPageHome: {
-      heroSectionBgImage,
       heroTytul: heroTitle,
       heroTekstPrzycisku,
       naszeUslugiTytul: servicesTitle,
@@ -64,11 +63,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Kryptonum" />
-      <HomeHero
-        heroTitle={heroTitle}
-        heroTekstPrzycisku={heroTekstPrzycisku}
-        bg={heroSectionBgImage.gatsbyImageData}
-      />
+      <HomeHero heroTitle={heroTitle} heroTekstPrzycisku={heroTekstPrzycisku} />
       <MainServices
         servicesListFirstRow={servicesListFirstRow}
         servicesListSecondRow={servicesListSecondRow}
@@ -126,9 +121,6 @@ const IndexPage = ({ data }) => {
 export const homeQuery = graphql`
   query homeBg {
     datoCmsPageHome {
-      heroSectionBgImage {
-        gatsbyImageData(width: 1920, placeholder: BLURRED)
-      }
       heroTytul {
         value
       }

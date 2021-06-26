@@ -15,7 +15,7 @@ import FeedbackSlider from "./FeedbackSlider"
 const FeedbackFromWrapper = styled.div`
   width: 100%;
   background-color: var(--white);
-  padding: 142px 139px;
+  padding: 142px 112px;
   height: 100vh;
   position: relative;
   margin: 0 auto;
@@ -112,7 +112,6 @@ const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
               lineHeight="1.28"
               letterSpacing="2.57px"
               as="h3"
-              fontFamily="JetBrains Mono"
             >
               <StructuredText data={feedbackTytul} />
             </TextStyles>

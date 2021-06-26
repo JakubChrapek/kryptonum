@@ -3,9 +3,7 @@ import styled from "styled-components"
 export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 41px;
   @media only screen and (max-width: 767px) {
-    padding-left: ${({ howWeWorkHeader }) => (howWeWorkHeader ? "20px" : "0")};
     margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
   }
   > p {

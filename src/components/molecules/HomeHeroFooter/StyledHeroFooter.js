@@ -9,7 +9,7 @@ export const HeroFooterStyles = styled.div`
   left: 0;
   bottom: 0;
   z-index: 2;
-  padding: 0 112px 32px 97px;
+  padding: 0 32px 40px 30px;
   @media only screen and (max-width: 1280px) {
     padding: 0 62px 32px 62px;
   }

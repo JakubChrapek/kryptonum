@@ -111,13 +111,12 @@ const HowWeWorkSection = ({
     >
       <ServicesStyles howWeWorkSection={true}>
         <TextStyles
-          fontSize="9px"
+          fontSize="13px"
           lineHeight="1.33em"
           letterSpacing="2.57px"
-          declaredMargin="0 0 53px 41px"
-          fontFamily="JetBrains Mono"
+          declaredMargin="0 0 26px 0"
           textTransform="uppercase"
-          fontWeight="500"
+          fontWeight="400"
           howWeWorkSection={true}
         >
           {howItWorksTitle}
@@ -126,8 +125,8 @@ const HowWeWorkSection = ({
           <StyledFeaturedWrapper
             mainHeader
             howWeWorkHeader
-            firstSpanLength="62%"
-            secondSpanLength="112%"
+            firstSpanLength="70%"
+            secondSpanLength="116%"
           >
             <StructuredText data={howItWorksBigTitle.value} />
           </StyledFeaturedWrapper>

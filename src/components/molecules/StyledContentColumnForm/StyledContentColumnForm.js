@@ -21,7 +21,7 @@ export const StyledContentColumnForm = styled.form`
   label {
     position: absolute;
     top: -20px;
-    font-family: "JetBrains Mono";
+
     font-size: 11px;
     line-height: 1em;
     left: 18px;
@@ -32,7 +32,7 @@ export const StyledContentColumnForm = styled.form`
     padding: 18px;
     width: 310px;
     margin-right: 15px;
-    font-family: "JetBrains Mono";
+
     font-size: 18px;
     font-weight: 500;
     line-height: 1.22;
@@ -97,7 +97,7 @@ export const StyledContentColumnForm = styled.form`
   button {
     border: 2px solid var(--accent);
     padding: 18px;
-    font-family: "JetBrains Mono";
+
     font-size: 18px;
     font-weight: 500;
     line-height: 1.22;

@@ -9,7 +9,7 @@ export const StyledContactStyles = styled(Link)`
   line-height: 1.29em;
   font-weight: 500;
   padding: 6px 8px;
-  font-family: "JetBrains Mono";
+
   position: relative;
   text-decoration: none;
   &:after {

@@ -9,7 +9,7 @@ export const StyledHeader = styled(motion.header)`
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 35px 70px;
+  padding: 38px 40px 38px 60px;
   z-index: 6;
 
   /* @media only screen and (max-width: 767px) {

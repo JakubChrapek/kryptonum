@@ -1,52 +1,46 @@
 import styled from "styled-components"
 
 export const StyledProjectsColumn = styled.ul`
-  width: 50%;
+  flex: 1 1 55%;
+  width: 55%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 124px;
-  padding-right: 40px;
-  @media only screen and (max-width: 1041px) {
-    padding-right: 0;
-  }
-  @media only screen and (max-width: 971px) {
-    width: 45%;
-    padding-left: 20px;
-  }
   @media only screen and (max-width: 767px) {
     display: none;
   }
   li {
-    font-family: "Libre Baskerville";
-    font-size: 70px;
-    line-height: 1.24em;
-    font-weight: normal;
-    letter-spacing: -1.75px;
+    font-size: 60px;
+    line-height: 1.5em;
+    font-weight: 400;
     position: relative;
     padding-left: 8px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     text-transform: uppercase;
     cursor: pointer;
-    color: #030303;
+    color: var(--text-light-gray);
     @media only screen and (max-width: 1357px) {
-      font-size: 64px;
-    }
-    @media only screen and (max-width: 1292px) {
-      font-size: 60px;
-    }
-    @media only screen and (max-width: 1217px) {
       font-size: 54px;
     }
+    @media only screen and (max-width: 1292px) {
+      font-size: 50px;
+    }
+    @media only screen and (max-width: 1217px) {
+      font-size: 44px;
+    }
     @media only screen and (max-width: 994px) {
-      font-size: 48px;
+      font-size: 42px;
     }
     @media only screen and (max-width: 902px) {
-      font-size: 36px;
+      font-size: 34px;
     }
     &.active {
       color: var(--accent);
+      font-weight: 500;
+      span {
+        color: var(--accent);
+      }
     }
   }
 
@@ -54,16 +48,19 @@ export const StyledProjectsColumn = styled.ul`
     font-size: 14px;
     font-weight: normal;
     line-height: 2.14;
-    letter-spacing: 5px;
+    letter-spacing: 0.35em;
     position: absolute;
     left: -16px;
     top: -32px;
-    font-family: "JetBrains Mono";
+    color: var(--black-font);
   }
 
   a {
     margin: 25px 0 0;
     left: -12px;
+    &.btn {
+      margin-top: 120px;
+    }
     @media only screen and (max-width: 902px) {
       padding: 20px;
     }

@@ -31,7 +31,6 @@ const Create = ({
     >
       <CreateWrapper>
         <StyledWorkflowComponentGreenSpan
-          fontFamily="JetBrains Mono"
           fontSize="18px"
           lineHeight="1.28"
           color="var(--accent)"
@@ -41,7 +40,6 @@ const Create = ({
           (0{howWeWorkCreatingNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
-          fontFamily="LibreBaskerville"
           fontSize="88px"
           hasMediaQueryFont
           lineHeight="1.24"
@@ -56,7 +54,6 @@ const Create = ({
       </CreateWrapper>
       <StyledCreateTextWrapper>
         <StyledCreateTextH3
-          fontFamily="LibreBaskerville"
           declaredpadding="0 0 42px 0"
           fontSize="45px"
           lineHeight="1.2"

@@ -1,5 +1,6 @@
-import React from "react"
-
+import React, { useEffect } from "react"
+import gsap from "gsap"
+import Marquee from "react-fast-marquee"
 import { StructuredText } from "react-datocms"
 import { ServicesWrapper } from "../../atoms/Services/ServicesWrapper/ServicesWrapper"
 import { ServicesStyles } from "../../atoms/Services/ServicesStyles/ServicesStyles"
@@ -18,6 +19,7 @@ const MainServices = ({
   servicesTitle,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
+
   return (
     <BgColourWrapper
       onMouseOver={() => {
@@ -38,38 +40,34 @@ const MainServices = ({
     >
       <ServicesStyles id="whatwereupto">
         <ServicesStylesH2
-          fontFamily="JetBrains Mono"
           fontSize="14px"
           lineHeight="1.25"
           color="var(--black)"
           textAlign="center"
-          letterSpacing="2.29px"
           textTransform="uppercase"
-          declaredpadding="0 0 20px 0"
-          fontWeight="bold"
+          declaredpadding="0 0 46px 0"
+          fontWeight="500"
         >
           {servicesTitle}
         </ServicesStylesH2>
-        <ServicesWrapper>
-          {servicesListFirstRow.map(service => (
-            <li>
-              <h3>{service.usluga}</h3>
-            </li>
-          ))}
-        </ServicesWrapper>
-        <ServicesWrapper>
-          {servicesListSecondRow.map((service, iterator) => (
-            <li>
-              <h3
-                className={
-                  iterator === servicesListSecondRow.length - 1 && "underline"
-                }
-              >
-                {service.usluga}
-              </h3>
-            </li>
-          ))}
-        </ServicesWrapper>
+        <Marquee gradient={false} speed="50">
+          <ServicesWrapper>
+            {servicesListFirstRow.map(service => (
+              <li key={service.usluga} className="box">
+                <h3>{service.usluga}</h3>
+              </li>
+            ))}
+          </ServicesWrapper>
+        </Marquee>
+        <Marquee gradient={false} speed="50" direction="right">
+          <ServicesWrapper>
+            {servicesListSecondRow.map((service, iterator) => (
+              <li key={service.usluga} className="box">
+                <h3>{service.usluga}</h3>
+              </li>
+            ))}
+          </ServicesWrapper>
+        </Marquee>
       </ServicesStyles>
     </BgColourWrapper>
   )

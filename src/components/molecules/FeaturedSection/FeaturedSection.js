@@ -47,7 +47,6 @@ const FeaturedSection = ({
           fontSize="9px"
           lineHeight="1.33em"
           letterSpacing="2.57px"
-          fontFamily="JetBrains Mono"
           textTransform="uppercase"
           fontWeight="500"
         >
@@ -55,8 +54,8 @@ const FeaturedSection = ({
         </TextStyles>
         <FeaturedSectionWrapper>
           <StyledFeaturedWrapper
-            firstSpanLength="92%"
-            secondSpanLength="115%"
+            firstSpanLength="90%"
+            secondSpanLength="135%"
             hasMarginLeft={false}
             mainHeader
           >

@@ -22,7 +22,7 @@ export const StyledWhatWeDoInfoTextWrapper = styled.div`
 
   > p {
     flex: 1 1 50%;
-    font-family: "JetBrains Mono";
+
     font-size: 18px;
     line-height: 1.28;
     color: var(--dark-bg);

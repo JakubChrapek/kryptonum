@@ -4,7 +4,7 @@ import styled, { css } from "styled-components"
 export const ButtonStyles = styled(motion.button)`
   width: 100%;
   max-width: 387px;
-  font-family: "JetBrains Mono";
+
   font-size: 18px;
   font-weight: 500;
   line-height: 1.28;

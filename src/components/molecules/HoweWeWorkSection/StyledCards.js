@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 export const Cards = styled(motion.ul)`
   margin: 78px 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(246px, 1fr));
   grid-gap: 56px;
   width: 100%;
   @media only screen and (max-width: 1379px) {
@@ -28,7 +28,7 @@ export const Cards = styled(motion.ul)`
     grid-template-columns: 1fr;
     grid-template-rows: 92px 1fr;
     background-color: var(--light-gray);
-    padding: 56px 36px;
+    padding: 30px 20px 48px 30px;
     &:last-child {
       margin-right: 0;
     }

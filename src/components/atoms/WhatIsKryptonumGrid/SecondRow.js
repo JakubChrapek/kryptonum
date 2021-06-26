@@ -13,15 +13,18 @@ export const SecondRow = styled.div`
   }
   > p,
   > ul {
-    margin: 12% 0 0 18%;
+    margin: 12% 0 0 13%;
     z-index: 1;
-    max-width: 386px;
+    max-width: 284px;
     color: var(--white);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0;
     @media only screen and (max-width: 1261px) {
       margin: 12% 0 0 12%;
     }
     @media only screen and (max-width: 1035px) {
-      margin: 12% 0 0 18%;
+      margin: 12% 0 0 13%;
       font-size: 14px;
     }
     @media only screen and (max-width: 871px) {
@@ -47,7 +50,7 @@ export const SecondRow = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 22%;
+    width: 28%;
     filter: brightness(0.7);
     @media only screen and (max-width: 767px) {
       display: none;

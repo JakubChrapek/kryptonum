@@ -22,7 +22,7 @@ import {
 import { RightArrow } from "../../atoms/Icons/arrows"
 import website from "../../../../config/website"
 
-const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
+const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
   const width = useWindowSize()
   const dispatchCursor = useCursorDispatchContext()
   let pathname = useLocation().pathname
@@ -96,8 +96,7 @@ const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
         })
       }}
     >
-      {width >= 683 && <GrayLine />}
-      <GreenLine />
+      {/* <GreenLine /> */}
       <Wrapper>
         <HomeHeroTitleStyles>
           <HomeHeroTitle data={heroTitle} />
@@ -123,8 +122,6 @@ const HomeHero = ({ bg, heroTitle, heroTekstPrzycisku }) => {
         )}
       </Wrapper>
       <HeroFooter />
-
-      {width >= 683 && <StyledFullPageResponsieImage image={bg} />}
     </HomeHeroSection>
   )
 }

@@ -5,28 +5,32 @@ export const ServicesStyles = styled.section`
   flex-direction: column;
   justify-content: center;
   max-width: 1366px;
+  margin-top: -2rem;
   margin: 0 auto;
   overflow: hidden;
   align-items: ${({ featuredSection, howWeWorkSection }) =>
     featuredSection || howWeWorkSection ? "flex-start" : "center"};
   padding: ${({ featuredSection }) =>
-    featuredSection ? "0 123px 133px 141px" : "88px 82px 133px 82px"};
+    featuredSection ? "0 123px 53px 112px" : "88px 112px 140px 100px"};
 
+  .marquee-container {
+    overflow: hidden;
+  }
   @media only screen and (max-width: 1366px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 93px 133px 111px" : "36px 82px 133px 82px"};
+      featuredSection ? "0 93px 53px 111px" : "36px 0 82px 0"};
   }
   @media only screen and (max-width: 1090px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 60px 110px 80px" : "36px 60px 110px 80px"};
+      featuredSection ? "0 60px 53px 80px" : "36px 0 82px 0"};
   }
   @media only screen and (max-width: 874px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "0 60px 110px 80px" : "36px 0 110px 0"};
+      featuredSection ? "0 60px 53px 80px" : "36px 0 82px 0"};
   }
   @media only screen and (max-width: 767px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "55px 60px 80px 80px" : "36px 0 110px 0"};
+      featuredSection ? "55px 60px 53px 80px" : "36px 0 82px 0"};
     > p {
       display: ${({ featuredSection, howWeWorkSection }) =>
         featuredSection || howWeWorkSection ? "none" : "block"};
@@ -34,7 +38,7 @@ export const ServicesStyles = styled.section`
   }
   @media only screen and (max-width: 540px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "55px 60px 80px 80px" : "36px 0 77px 0"};
+      featuredSection ? "55px 60px 53px 80px" : "36px 0 77px 0"};
   }
   @media only screen and (max-width: 500px) {
     padding: ${({ featuredSection }) =>

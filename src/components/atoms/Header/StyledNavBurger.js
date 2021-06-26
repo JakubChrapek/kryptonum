@@ -3,15 +3,7 @@ import { motion } from "framer-motion"
 
 export const StyledNavBurger = styled(motion.button)`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 47px;
-  height: 47px;
-  padding: 8px;
-  position: absolute;
-  top: 28px;
-  right: 70px;
   border: none;
   background-color: transparent;
   mix-blend-mode: difference;
@@ -33,8 +25,20 @@ export const StyledNavBurger = styled(motion.button)`
     box-shadow: 0 0 0 2px ${({ color }) => color};
   }
 
-  span {
+  .hamburger--menu {
+    color: ${({ color }) => color};
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 400;
+    margin: 0 19px 2px;
+  }
+
+  span:not(.hamburger--menu) {
     background-color: ${({ color }) => color};
+    margin-bottom: 1px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &.active {
@@ -42,13 +46,13 @@ export const StyledNavBurger = styled(motion.button)`
       outline: none;
       box-shadow: 0 0 0 2px ${({ color }) => color};
     }
-    span {
+    span:not(.hamburger--menu) {
       margin: 0;
       background-color: ${({ color }) => color};
-      &:first-child {
+      &:first-of-type {
         transform: rotate(45deg) translate(1px, 0px);
       }
-      &:last-child {
+      &:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
       }
     }

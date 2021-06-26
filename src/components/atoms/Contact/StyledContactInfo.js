@@ -19,7 +19,6 @@ export const StyledContactInfo = styled.div`
   }
 
   > p {
-    font-family: JetBrains Mono;
     font-size: 16px;
     line-height: 1.38;
     color: var(--dark-bg);

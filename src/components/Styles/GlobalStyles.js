@@ -5,7 +5,7 @@ import { useMenuState } from "../../contexts/menuContext"
 const Global = createGlobalStyle`
   html {
     box-sizing: border-box;
-    --accent:#00EF8B;
+    --accent:#2fbc79;
     --button-accent: #25eb98;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
@@ -58,10 +58,8 @@ const Global = createGlobalStyle`
     
   }
 
-  h1,h2 {
-    font-family: "Libre Baskerville"
-  }
   button {
+    font-family: "Poppins";
     cursor: pointer;
   }
   ul {
@@ -78,11 +76,10 @@ const Global = createGlobalStyle`
   .btn {
     width: 100%;
     max-width: 387px;
-    font-family: "JetBrains Mono";
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.28;
-    letter-spacing: 2.57px;
+    letter-spacing: 0.35em;
     color: var(--white);
     border: 1px solid var(--black);
     padding: 31px 20px;

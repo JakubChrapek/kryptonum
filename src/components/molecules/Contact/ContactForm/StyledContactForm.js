@@ -115,7 +115,7 @@ export const StyledForm = styled(Form)`
     padding: 16px 4px;
     background-color: #25eb98;
     border: none;
-    font-family: "JetBrains Mono";
+
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;

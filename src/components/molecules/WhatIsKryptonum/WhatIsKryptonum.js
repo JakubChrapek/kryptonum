@@ -78,22 +78,15 @@ const WhatIsKryptonum = ({
               <WhatIsKryptonumTitle data={whatIsKryptonumTitle} />
             </WhatIsKryptonumTitleStyles>
             <Passion>
-              <span>{passionTitle?.substring(0, 2)}</span>
+              <span>{creativityTitle?.substring(0, 2)}</span>
               <div>
-                <h3>{passionTitle}</h3>
-                <p>{passionContent}</p>
+                <h3>{creativityTitle}</h3>
+                <p>{creativityContent}</p>
               </div>
             </Passion>
           </FirstRow>
           <SecondRow>
             <StructuredText data={whatIsKryptonumParagraph} />
-            {/* <p>
-              First of all, Kryptonum is a collective work of passion and
-              professionalism. We’re a unique team of like-minded professionals
-              from all over the world, all the best specialists in their
-              respected fields. Kryptonum is your best choice when it comes to
-              complex website design. See for yourself!
-            </p> */}
             <div className="img-wrapper">
               <GatsbyImage image={image} />
             </div>
@@ -149,10 +142,7 @@ const WhatIsKryptonum = ({
               </ScrollLink>
             </Works>
             <Creativity hasDeclaredTransform={true}>
-              <span>{creativityTitle?.substring(0, 2)}</span>
-              <div>
-                <h3>{creativityTitle}</h3>
-              </div>
+              <span>{passionTitle?.substring(0, 2)}</span>
             </Creativity>
           </ThirdRow>
         </WhatIsKryptonumWrapper>
@@ -177,7 +167,8 @@ const WhatIsKryptonum = ({
           <CreativeRow>
             <Creativity bottomSection hasDeclaredTransform={false}>
               <div>
-                <p>{creativityContent}</p>
+                <h3>{passionTitle}</h3>
+                <p>{passionContent}</p>
               </div>
             </Creativity>
           </CreativeRow>

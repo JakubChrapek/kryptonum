@@ -5,7 +5,7 @@ export const SectionStyles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 102px 151px;
+  padding: 102px 112px;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;

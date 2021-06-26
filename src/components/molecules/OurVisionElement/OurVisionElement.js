@@ -11,7 +11,6 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
   return (
     <StyledOurVisionElement>
       <StyledOurVisionLogoTextH2
-        fontFamily="LibreBaskerville"
         fontSize="50px"
         lineHeight="1.26"
         letterSpacing="-1.3px"
@@ -19,7 +18,6 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
         accentedHeading
       >
         <TextStyles
-          fontFamily="JetBrains Mono"
           fontSize="14px"
           lineHeight="2.14px"
           letterSpacing="5px"

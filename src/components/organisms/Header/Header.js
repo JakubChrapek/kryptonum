@@ -20,6 +20,17 @@ import {
   CURSOR_COLORS,
   CURSOR_TYPES,
 } from "../../../contexts/cursorContext"
+import styled from "styled-components"
+
+const LinesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  padding: 9px;
+  width: 47px;
+  height: 47px;
+`
 
 const Header = ({ theme }) => {
   let pathname = useLocation().pathname || "/"
@@ -91,26 +102,16 @@ const Header = ({ theme }) => {
   return (
     <StyledHeaderWrapper>
       <StyledHeader bg={pathname === "/" ? "transparent" : "var(--white)"}>
-        {width && width > 640 && (
-          <Contact
-            color={
-              pathname === "/projekty"
-                ? "var(--black)"
-                : theme === "light"
-                ? "var(--lightest-gray)"
-                : "var(--black)"
-            }
-            onMouseEnter={handleOnMouseEnterForLink}
-            onMouseLeave={handleOnMouseLeaveForLink}
-          />
-        )}
         <StyledHeaderLink
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={handleOnMouseLeaveForLink}
           to="/"
           color={theme === "light" ? "var(--white)" : "var(--black)"}
         >
-          <Logo color={theme === "light" ? "var(--white)" : "var(--black)"} />
+          <Logo
+            sygnetVariant={theme}
+            color={theme === "light" ? "var(--white)" : "var(--black)"}
+          />
         </StyledHeaderLink>
         <StyledNavBurger
           id="menuHamburgerBtn"
@@ -165,7 +166,6 @@ const Header = ({ theme }) => {
           }}
           disabled={disabled}
           className={show ? "active" : null}
-          whileTap={{ scale: 0.9 }}
           color={getColorForBurgerMenuFromThemeAndNavState(theme, show)}
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={() => {
@@ -185,8 +185,11 @@ const Header = ({ theme }) => {
             })
           }}
         >
-          <StyledNavBurgerSpan mobile={show} />
-          <StyledNavBurgerSpan mobile={show} />
+          <span className="hamburger--menu">menu</span>
+          <LinesWrapper>
+            <StyledNavBurgerSpan mobile={show} />
+            <StyledNavBurgerSpan mobile={show} />
+          </LinesWrapper>
         </StyledNavBurger>
         <AnimatePresence>
           {show && (

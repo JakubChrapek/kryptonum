@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const BackLink = styled(Link)`
   align-self: flex-start;
-  font-family: "JetBrains Mono";
+
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: 2px;

@@ -145,7 +145,6 @@ const TeamSlide = ({ slide }) => {
               {slide.name}
             </TextStyles>
             <TextStyles
-              fontFamily="JetBrains Mono"
               fontSize="14px"
               fontWeight="500"
               lineHeight="1.29"

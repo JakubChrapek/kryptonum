@@ -1,4 +1,7 @@
-import React from "react"
+import React, { useRef, useState, useEffect } from "react"
+import SplitText from "../../../utils/split3.min.js"
+import gsap from "gsap"
+import cn from "classnames"
 
 import { StructuredText } from "react-datocms"
 import { SectionStyles } from "../../atoms/CtaSection/StyledCtaSection"
@@ -11,12 +14,41 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import useOnScreen from "../../../utils/useOnScreen"
 
 const CtaSection = ({
   createAWebsiteTogetherCTA,
   createAWebsiteTogetherButtonText,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
+  const ref = useRef(null)
+
+  const [reveal, setReveal] = useState(false)
+  const onScreen = useOnScreen(ref)
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen)
+    console.log("ONSCREEN")
+  }, [onScreen])
+
+  useEffect(() => {
+    if (reveal) {
+      const dur = 1.2
+      const split = new SplitText(".service--parent mark", { type: "lines" })
+      for (let i = 0; i < split.lines.length; i++) {
+        let tl = gsap.timeline({
+          delay: i * dur * 2,
+          repeat: -1,
+          repeatDelay: dur,
+        })
+        tl.fromTo(split.lines[i], dur, { autoAlpha: 0 }, { autoAlpha: 0.2 })
+        tl.to(split.lines[i], dur, { autoAlpha: 1, y: -120 }, "+=" + dur)
+        tl.to(split.lines[i], dur, { y: -240, autoAlpha: 1 }, "+=" + dur)
+        tl.to(split.lines[i], dur, { autoAlpha: 0, y: -360 }, "+=" + dur)
+      }
+    }
+  }, [reveal])
+
   return (
     <Wrapper
       onMouseEnter={() => {
@@ -34,15 +66,22 @@ const CtaSection = ({
         })
       }}
     >
-      <SectionStyles>
+      <SectionStyles ref={ref}>
         <StyledCtaH2
           fontSize="70px"
           lineHeight="1.38"
           letterSpacing="-1.75px"
           color="var(--white)"
-          fontFamily="Libre Baskerville"
         >
-          <StructuredText data={createAWebsiteTogetherCTA.value} />
+          Stwórzmy razem{" "}
+          <div className="service--parent">
+            <mark>markę</mark>
+            <mark>stronę</mark>
+            <mark>branding</mark>
+            <mark>strategię</mark>
+          </div>
+          <br />
+          która wywala z butów!
         </StyledCtaH2>
         <StyledCtaLink
           onMouseEnter={() => {

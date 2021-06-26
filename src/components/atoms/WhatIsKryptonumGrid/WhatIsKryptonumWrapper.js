@@ -18,7 +18,7 @@ export const WhatIsKryptonumWrapper = styled.div`
     font-weight: 400;
     text-transform: uppercase;
     line-height: 76px;
-    font-family: "JetBrains Mono";
+
     letter-spacing: 21px;
   }
 

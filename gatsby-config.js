@@ -75,18 +75,6 @@ module.exports = {
             /* URL to the font CSS file with @font-face definition */
             file: "https://fonts.googleapis.com/css2?family=Poppins",
           },
-          {
-            /* Exact name of the font as defined in @font-face CSS rule */
-            name: "Libre Baskerville",
-            /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Libre+Baskerville",
-          },
-          {
-            /* Exact name of the font as defined in @font-face CSS rule */
-            name: "JetBrains Mono",
-            /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=JetBrains+Mono",
-          },
         ],
       },
     },

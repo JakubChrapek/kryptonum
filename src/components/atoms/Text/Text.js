@@ -7,8 +7,6 @@ export const TextStyles = styled(motion.p)`
   letter-spacing: ${({ letterSpacing }) =>
     letterSpacing ? letterSpacing : "0"};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : "1.3em")};
-  font-family: ${({ fontFamily }) =>
-    fontFamily ? fontFamily : "JetBrains Mono"};
   color: ${({ color }) => (color ? color : "var(--black)")};
   text-transform: ${({ textTransform }) =>
     textTransform ? textTransform : "none"};

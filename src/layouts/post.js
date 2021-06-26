@@ -51,7 +51,7 @@ const PostWrapper = styled.div`
       color: var(--text-gray);
       position: relative;
       font-size: 16px;
-      font-family: "JetBrains Mono";
+
       @media (max-width: 767px) {
         font-size: 14px;
       }
@@ -232,7 +232,7 @@ const PostWrapper = styled.div`
   pre {
     padding: 1.4em 1.6em;
     font-size: 14px;
-    font-family: "JetBrains Mono";
+
     background-color: var(--gray);
     color: var(--white);
   }
@@ -383,7 +383,6 @@ const ArticleTitle = styled.h1`
   font-weight: 400;
   line-height: 1.26;
   letter-spacing: -1.3px;
-  font-family: "Libre Baskerville";
 
   @media (max-width: 1024px) {
     font-size: 36px;

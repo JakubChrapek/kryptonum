@@ -14,11 +14,11 @@ export const StyledErrorWrapper = styled.div`
   }
   @media only screen and (max-width: 911px) {
     min-height: unset;
-    padding: 120px 70px 141px 70px;
+    padding: 120px 70px 112px 70px;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
   @media only screen and (max-width: 640px) {
-    padding: 120px 28px 141px 28px;
+    padding: 120px 28px 112px 28px;
   }
 `

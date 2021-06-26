@@ -30,7 +30,6 @@ const Learn = ({
       <StyledLearnWrapper>
         <StyledLearnHeadingWrapper>
           <StyledWorkflowComponentGreenSpan
-            fontFamily="JetBrains Mono"
             fontSize="18px"
             lineHeight="1.28"
             color="var(--accent)"
@@ -40,7 +39,6 @@ const Learn = ({
             (0{howWeWorkLearnNumber})
           </StyledWorkflowComponentGreenSpan>
           <StyledWorkflowComponentHeading
-            fontFamily="LibreBaskerville"
             fontSize="88px"
             hasMediaQueryFont
             lineHeight="1.24"
@@ -54,7 +52,6 @@ const Learn = ({
         </StyledLearnHeadingWrapper>
         <StyledLearnTextWrapper>
           <StyledLearnTextWrapperH3
-            fontFamily="LibreBaskerville"
             fontSize="45px"
             lineHeight="1.25"
             color="var(--gray)"

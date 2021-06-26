@@ -7,8 +7,7 @@ export const GridItem = styled.div`
   background-color: var(--accent);
   z-index: 1;
   span {
-    font-family: "Libre Baskerville";
-    font-size: 130px;
+    font-size: 140px;
     line-height: 0.95em;
     color: transparent;
     -webkit-text-stroke: 1px var(--black);
@@ -19,19 +18,18 @@ export const GridItem = styled.div`
   }
   & h3 {
     text-transform: uppercase;
-    font-family: "JetBrains Mono";
+
     font-size: 16px;
-    line-height: 1.8em;
-    margin: 20px 0 0 16px;
+    line-height: 1.5em;
+    margin: 8px 0 0 16px;
     @media only screen and (max-width: 1035px) {
       font-size: 15px;
     }
   }
   && p {
-    font-family: "JetBrains Mono";
     font-size: 13px;
-    line-height: 1.67;
-    letter-spacing: 4.29px;
+    line-height: 2.2;
+    letter-spacing: 0.1em;
     color: var(--black);
     margin: 6px 22px 16px 16px;
 

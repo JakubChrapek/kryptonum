@@ -4,6 +4,9 @@ export const StyledImageColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-left: 120px;
+  flex: 1 1 45%;
+  width: 45%;
   .gatsby-image-wrapper {
     width: 524px;
     height: 617px;
