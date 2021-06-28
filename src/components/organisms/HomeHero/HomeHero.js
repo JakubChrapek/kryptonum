@@ -21,6 +21,7 @@ import {
 } from "../../../contexts/cursorContext"
 import { RightArrow } from "../../atoms/Icons/arrows"
 import website from "../../../../config/website"
+import HeroCanvas from "./HeroCanvas"
 
 const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
   const width = useWindowSize()
@@ -79,50 +80,53 @@ const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
     }
   }
   return (
-    <HomeHeroSection
-      id={website.skipNavId}
-      onMouseEnter={() => {
-        dispatchCursor({
-          type: "CHANGE_CURSOR_TYPE",
-          cursorType: CURSOR_TYPES.FULL_CURSOR,
-        })
-        dispatchCursor({
-          type: "CHANGE_CURSOR_COLOR",
-          cursorColor: CURSOR_COLORS.LIGHT,
-        })
-        dispatchCursor({
-          type: "CHANGE_CURSOR_SIZE",
-          cursorSize: CURSOR_SIZES.SMALLER,
-        })
-      }}
-    >
-      {/* <GreenLine /> */}
-      <Wrapper>
-        <HomeHeroTitleStyles>
-          <HomeHeroTitle data={heroTitle} />
-        </HomeHeroTitleStyles>
+    <>
+      <HeroCanvas />
+      <HomeHeroSection
+        id={website.skipNavId}
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+      >
+        {/* <GreenLine /> */}
+        <Wrapper>
+          <HomeHeroTitleStyles>
+            <HomeHeroTitle data={heroTitle} />
+          </HomeHeroTitleStyles>
 
-        {width >= 683 && (
-          <StyledScrollLink
-            activeClass="active"
-            to="whatwereupto"
-            spy={true}
-            smooth={true}
-            duration={800}
-            onMouseEnter={handleOnMouseEnterForLink}
-            onMouseLeave={handleOnMouseLeaveForLink}
-          >
-            <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
-              <StructuredText data={heroTekstPrzycisku} />
-              <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
-                <RightArrow />
-              </motion.span>
-            </motion.button>
-          </StyledScrollLink>
-        )}
-      </Wrapper>
-      <HeroFooter />
-    </HomeHeroSection>
+          {width >= 683 && (
+            <StyledScrollLink
+              activeClass="active"
+              to="whatwereupto"
+              spy={true}
+              smooth={true}
+              duration={800}
+              onMouseEnter={handleOnMouseEnterForLink}
+              onMouseLeave={handleOnMouseLeaveForLink}
+            >
+              <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
+                <StructuredText data={heroTekstPrzycisku} />
+                <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
+                  <RightArrow />
+                </motion.span>
+              </motion.button>
+            </StyledScrollLink>
+          )}
+        </Wrapper>
+        <HeroFooter />
+      </HomeHeroSection>
+    </>
   )
 }
 

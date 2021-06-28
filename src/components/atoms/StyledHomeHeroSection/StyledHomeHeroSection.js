@@ -8,8 +8,7 @@ export const HomeHeroSection = styled.section`
   height: 100vh;
   overflow: hidden;
   padding-top: 77px;
-  z-index: 0;
-  background-color: var(--black);
+  z-index: 1;
 
   @media (max-width: 683px) {
     align-items: flex-start;
