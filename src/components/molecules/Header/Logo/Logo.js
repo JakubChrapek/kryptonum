@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { StyledLogoTitle } from "../../../atoms/Header/Logo/StyledLogoTitle"
-import { KryptonumLogoSygnet } from "../../../atoms/icons/Icons"
+import { KryptonumLogoSygnet } from "../../../atoms/Icons/Icons"
 
 const LogoWrapper = styled.div`
   display: flex;
