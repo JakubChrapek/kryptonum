@@ -4,14 +4,14 @@ export const ServicesStyles = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1366px;
   margin-top: -2rem;
+  max-width: ${({ howWeWorkSection }) => howWeWorkSection && "1366px"};
   margin: 0 auto;
   overflow: hidden;
   align-items: ${({ featuredSection, howWeWorkSection }) =>
     featuredSection || howWeWorkSection ? "flex-start" : "center"};
   padding: ${({ featuredSection }) =>
-    featuredSection ? "0 123px 53px 112px" : "88px 112px 140px 100px"};
+    featuredSection ? "0 123px 53px 112px" : "88px 0 140px 0"};
 
   .marquee-container {
     overflow: hidden;

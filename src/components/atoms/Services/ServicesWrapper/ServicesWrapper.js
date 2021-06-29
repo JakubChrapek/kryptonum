@@ -12,6 +12,9 @@ export const ServicesWrapper = styled.ul`
   }
   li {
     margin: 0 70px 0 0;
+    &:last-child {
+      margin: 0 0 0 0;
+    }
     @media only screen and (max-width: 1366px) {
       margin: 0 50px 0 0;
     }
@@ -21,22 +24,18 @@ export const ServicesWrapper = styled.ul`
     @media only screen and (max-width: 480px) {
       margin: 0 20px 0 0;
     }
-    &:last-child {
-      margin: 0 0 0 0;
-    }
   }
   h3 {
-    font-size: 73px;
+    font-size: clamp(60px, 5vw, 150px);
     line-height: 1.5;
     color: var(--black-font);
     font-weight: normal;
+    white-space: nowrap;
 
-    @media only screen and (max-width: 1366px) {
-      font-size: 50px;
+    @media only screen and (max-width: 897px) {
+      font-size: clamp(40px, 5vw, 60px);
     }
-    @media only screen and (max-width: 1090px) {
-      font-size: 42px;
-    }
+
     @media only screen and (max-width: 614px) {
       font-size: 30px;
     }
