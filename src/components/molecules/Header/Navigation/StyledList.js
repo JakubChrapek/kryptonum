@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   margin: 32px 0 0;
   li {

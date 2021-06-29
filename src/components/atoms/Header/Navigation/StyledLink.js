@@ -9,7 +9,6 @@ export const StyledLink = styled(Link)`
   color: var(--black);
   padding: 12px 8px;
   margin-bottom: 12px;
-  height: 100%;
   position: relative;
   text-decoration: none;
   &:focus-visible {

@@ -12,7 +12,7 @@ export const StyledNavigationStyles = styled(motion.nav)`
   z-index: 3;
   display: flex;
   justify-content: space-between;
-  padding: 94px 116px 38px 104px;
+  padding: 108px 116px 38px 67px;
   pointer-events: ${({ pointerEvents }) => pointerEvents};
 
   @media only screen and (max-width: 640px) {

@@ -14,6 +14,16 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import styled from "styled-components"
+
+const StyledVisionElementsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 2px solid white;
+`
+
+const StyledFeedbackWrapper = styled.div``
 
 const OurVision = ({
   ourValuesTitle,
@@ -39,15 +49,6 @@ const OurVision = ({
       }}
     >
       <StyledOurVisionWrapper>
-        <StyledOurVisionH2
-          fontSize="40px"
-          lineHeight="1.28"
-          color="var(--white)"
-          declaredpadding="0 0 2px 0"
-          fontFamily="Poppins"
-        >
-          <StructuredText data={ourValuesTitle} />
-        </StyledOurVisionH2>
         <StyledOurVisionHeroTextWrapper>
           <StyledOurVisionHeroTextP
             fontFamily="Poppins"
@@ -59,16 +60,26 @@ const OurVision = ({
             <StructuredText data={ourValuesCenteredClaim} />
           </StyledOurVisionHeroTextP>
         </StyledOurVisionHeroTextWrapper>
-        <div>
-          {ourValuesFeature.map((feature, i) => (
-            <OurVisionElement
-              leftBoxText={feature.wartoscTytul}
-              rightBoxText={feature.wartoscTresc}
-              elementNumber={i + 1}
-            />
-          ))}
-        </div>
+        <StyledVisionElementsWrapper>
+          {ourValuesFeature
+            .slice(0, ourValuesFeature.length - 1)
+            .map((feature, i) => (
+              <OurVisionElement
+                leftBoxText={feature.wartoscTytul}
+                rightBoxText={feature.wartoscTresc}
+                elementNumber={i + 1}
+              />
+            ))}
+        </StyledVisionElementsWrapper>
       </StyledOurVisionWrapper>
+      <StyledFeedbackWrapper>
+        <StructuredText
+          data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTytul}
+        />
+        <StructuredText
+          data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTresc}
+        />
+      </StyledFeedbackWrapper>
     </StyledOurVisionSection>
   )
 }

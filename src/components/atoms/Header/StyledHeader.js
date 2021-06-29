@@ -7,7 +7,6 @@ export const StyledHeader = styled(motion.header)`
   align-items: center;
   height: 88px;
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   padding: 38px 40px 38px 60px;
   z-index: 6;

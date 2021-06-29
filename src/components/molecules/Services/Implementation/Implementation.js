@@ -73,17 +73,17 @@ const Implementation = ({
             <StyledArrow
               size="76px"
               title="Arrow pointing down"
-              color="#00EF8B"
+              color="#2fbc79"
             />
             <StyledArrow
               size="76px"
               title="Arrow pointing down"
-              color="#00EF8B"
+              color="#2fbc79"
             />
             <StyledArrow
               size="76px"
               title="Arrow pointing down"
-              color="#00EF8B"
+              color="#2fbc79"
             />
           </StyledArrowWrapper>
           <StyledLongLastingWrapperP

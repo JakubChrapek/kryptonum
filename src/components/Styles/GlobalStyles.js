@@ -9,7 +9,7 @@ const Global = createGlobalStyle`
     --button-accent: #25eb98;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
-    --dark-bg: #171717;
+    --dark-bg: #0c0c0c;
     --black: #000;
     --black-font: #090909;
     --white: #fff;

@@ -22,65 +22,12 @@ const Services = ({ data }) => {
       marketingAkapit: marketingParagraph,
       strategiaTytul: strategyTitle,
       strategiaAkapit: strategyParagraph,
-      jakPracujemyTytulNaPoczatku: howWeWorkSectionTitle,
-      jakPracujemyLista: howWeWorkList,
-      jakPracujemyRozmowaTytul: howWeWorkLearnTitle,
-      jakPracujemyRozmowaNumerPierwszy: howWeWorkLearnNumber,
-      jakPracujemyRozmowaTytulNadLista: howWeWorkLearnTitleOverList,
-      jakPracujemyMozdzymyAkapit: howWeWorkThinkingParagraph,
-      jakPracujemyMozdzymyNumer: howWeWorkThinkingNumber,
-      jakPracujemyMozdzymyTytul: howWeWorkThinkingTitle,
-      jakPracujemyMozdzymyTekstWKolku: howWeWorkThinkingTextInCircle,
-      jakPracujemyMozdzymyTytulNadTekstem: howWeWorkThinkingTitleOverText,
-      jakPracujemyTworzenieNumer: howWeWorkCreatingNumber,
-      jakPracujemyTworzenieTytul: howWeWorkCreatingTitle,
-      jakPracujemyTworzenieAkapit: howWeWorkCreatingParagraph,
-      jakPracujemyTworzenieTytulNadAkapitem: howWeWorkCreatingTitleOverParagraph,
-      jakPracujemyImplementacjaNumer: howWeWorkImplementationNumber,
-      jakPracujemyImplementacjaTytul: howWeWorkImplementationTitle,
-      jakPracujemyImplementacjaTekstCta: howWeWorkImplementationCtaText,
-      jakPracujemyImplementacjaKrotkiAkapit: howWeWorkImplementationShortParagraph,
-      jakPracujemyImplementacjaListaElementow: howWeWorkImplementationList,
     },
   } = data
   return (
     <PageWrapper>
       <HeroContent content={heroTitle} />
       <HeroImage heroBgImg={heroImage} />
-      <WhatWeDo
-        whatWeDoTitle={whatWeDoTitle}
-        whatWeDoParagraph={whatWeDoParagraph}
-        imagesData={data.datoCmsPageService}
-        websitesTitle={websitesTitle}
-        websitesParagraph={websitesParagraph}
-        marketingTitle={marketingTitle}
-        marketingParagraph={marketingParagraph}
-        strategyTitle={strategyTitle}
-        strategyParagraph={strategyParagraph}
-        howWeWorkSectionTitle={howWeWorkSectionTitle}
-        howWeWorkList={howWeWorkList}
-        howWeWorkThinkingParagraph={howWeWorkThinkingParagraph}
-        howWeWorkThinkingNumber={howWeWorkThinkingNumber}
-        howWeWorkThinkingTitle={howWeWorkThinkingTitle}
-        howWeWorkThinkingTextInCircle={howWeWorkThinkingTextInCircle}
-        howWeWorkThinkingTitleOverText={howWeWorkThinkingTitleOverText}
-        howWeWorkLearnTitle={howWeWorkLearnTitle}
-        howWeWorkLearnNumber={howWeWorkLearnNumber}
-        howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
-        howWeWorkCreatingNumber={howWeWorkCreatingNumber}
-        howWeWorkCreatingTitle={howWeWorkCreatingTitle}
-        howWeWorkCreatingParagraph={howWeWorkCreatingParagraph}
-        howWeWorkCreatingTitleOverParagraph={
-          howWeWorkCreatingTitleOverParagraph
-        }
-        howWeWorkImplementationNumber={howWeWorkImplementationNumber}
-        howWeWorkImplementationTitle={howWeWorkImplementationTitle}
-        howWeWorkImplementationCtaText={howWeWorkImplementationCtaText}
-        howWeWorkImplementationShortParagraph={
-          howWeWorkImplementationShortParagraph
-        }
-        howWeWorkImplementationList={howWeWorkImplementationList}
-      />
     </PageWrapper>
   )
 }
@@ -114,56 +61,6 @@ export const query = graphql`
         value
       }
       strategiaAkapit {
-        value
-      }
-
-      jakPracujemyTytulNaPoczatku {
-        value
-      }
-      jakPracujemyLista {
-        value
-      }
-
-      jakPracujemyRozmowaTytul {
-        value
-      }
-      jakPracujemyRozmowaNumerPierwszy
-      jakPracujemyRozmowaTytulNadLista {
-        value
-      }
-      jakPracujemyMozdzymyAkapit {
-        value
-      }
-      jakPracujemyMozdzymyNumer
-      jakPracujemyMozdzymyTytul {
-        value
-      }
-      jakPracujemyMozdzymyTekstWKolku
-      jakPracujemyMozdzymyTytulNadTekstem {
-        value
-      }
-      jakPracujemyTworzenieNumer
-      jakPracujemyTworzenieTytul {
-        value
-      }
-      jakPracujemyTworzenieAkapit {
-        value
-      }
-      jakPracujemyTworzenieTytulNadAkapitem {
-        value
-      }
-
-      jakPracujemyImplementacjaNumer
-      jakPracujemyImplementacjaTytul {
-        value
-      }
-      jakPracujemyImplementacjaTekstCta {
-        value
-      }
-      jakPracujemyImplementacjaKrotkiAkapit {
-        value
-      }
-      jakPracujemyImplementacjaListaElementow {
         value
       }
 

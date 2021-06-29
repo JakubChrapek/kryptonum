@@ -61,26 +61,21 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     },
     {
       number: "02",
-      name: "Usługi",
-      link: "/uslugi",
-    },
-    {
-      number: "03",
       name: "O nas",
       link: "/onas",
     },
     {
-      number: "04",
+      number: "03",
       name: "Blog",
       link: "/blog",
     },
     {
-      number: "05",
+      number: "04",
       name: "FAQ",
       link: "/faq",
     },
     {
-      number: "06",
+      number: "05",
       name: "Kontakt",
       link: "/kontakt",
     },

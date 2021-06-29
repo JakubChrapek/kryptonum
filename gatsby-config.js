@@ -46,8 +46,8 @@ module.exports = {
         name: `Web Designers from Outer Space`,
         short_name: `Kryptonum`,
         start_url: `/`,
-        background_color: `#171717`,
-        theme_color: `#00EF8B`,
+        background_color: `#0c0c0c`,
+        theme_color: `#2fbc79`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

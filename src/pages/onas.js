@@ -7,6 +7,7 @@ import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
 import OurVision from "../components/molecules/OurVision/OurVision"
 import { graphql } from "gatsby"
 import website from "../../config/website"
+import WhatWeDo from "../components/molecules/Services/WhatWeDo"
 
 const About = ({ data }) => {
   const {
@@ -22,6 +23,29 @@ const About = ({ data }) => {
     feedbackKlientowRecenzje: feedbackFromClients,
     feedbackTytul: feedbackTytul,
   } = data.datoCmsPageAbout
+  const {
+    datoCmsPageService: {
+      jakPracujemyTytulNaPoczatku: howWeWorkSectionTitle,
+      jakPracujemyLista: howWeWorkList,
+      jakPracujemyRozmowaTytul: howWeWorkLearnTitle,
+      jakPracujemyRozmowaNumerPierwszy: howWeWorkLearnNumber,
+      jakPracujemyRozmowaTytulNadLista: howWeWorkLearnTitleOverList,
+      jakPracujemyMozdzymyAkapit: howWeWorkThinkingParagraph,
+      jakPracujemyMozdzymyNumer: howWeWorkThinkingNumber,
+      jakPracujemyMozdzymyTytul: howWeWorkThinkingTitle,
+      jakPracujemyMozdzymyTekstWKolku: howWeWorkThinkingTextInCircle,
+      jakPracujemyMozdzymyTytulNadTekstem: howWeWorkThinkingTitleOverText,
+      jakPracujemyTworzenieNumer: howWeWorkCreatingNumber,
+      jakPracujemyTworzenieTytul: howWeWorkCreatingTitle,
+      jakPracujemyTworzenieAkapit: howWeWorkCreatingParagraph,
+      jakPracujemyTworzenieTytulNadAkapitem: howWeWorkCreatingTitleOverParagraph,
+      jakPracujemyImplementacjaNumer: howWeWorkImplementationNumber,
+      jakPracujemyImplementacjaTytul: howWeWorkImplementationTitle,
+      jakPracujemyImplementacjaTekstCta: howWeWorkImplementationCtaText,
+      jakPracujemyImplementacjaKrotkiAkapit: howWeWorkImplementationShortParagraph,
+      jakPracujemyImplementacjaListaElementow: howWeWorkImplementationList,
+    },
+  } = data
   console.log(heroTitle)
   return (
     <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
@@ -34,10 +58,6 @@ const About = ({ data }) => {
         marathonParagraphOverTitle={marathonParagraphOverTitle}
         textContent={marathonParagraphOverTitle}
       />
-      <AboutSlider
-        marathonTitle={marathonTitle}
-        marathonFirstParagraph={marathonFirstParagraph}
-      />
       <OurVision
         ourValuesTitle={ourValuesTitle}
         ourValuesFeature={ourValuesFeature}
@@ -46,6 +66,35 @@ const About = ({ data }) => {
       <FeedbackFrom
         feedbackFromClients={feedbackFromClients}
         feedbackTytul={feedbackTytul}
+      />
+      <WhatWeDo
+        howWeWorkSectionTitle={howWeWorkSectionTitle}
+        howWeWorkList={howWeWorkList}
+        howWeWorkThinkingParagraph={howWeWorkThinkingParagraph}
+        howWeWorkThinkingNumber={howWeWorkThinkingNumber}
+        howWeWorkThinkingTitle={howWeWorkThinkingTitle}
+        howWeWorkThinkingTextInCircle={howWeWorkThinkingTextInCircle}
+        howWeWorkThinkingTitleOverText={howWeWorkThinkingTitleOverText}
+        howWeWorkLearnTitle={howWeWorkLearnTitle}
+        howWeWorkLearnNumber={howWeWorkLearnNumber}
+        howWeWorkLearnTitleOverList={howWeWorkLearnTitleOverList}
+        howWeWorkCreatingNumber={howWeWorkCreatingNumber}
+        howWeWorkCreatingTitle={howWeWorkCreatingTitle}
+        howWeWorkCreatingParagraph={howWeWorkCreatingParagraph}
+        howWeWorkCreatingTitleOverParagraph={
+          howWeWorkCreatingTitleOverParagraph
+        }
+        howWeWorkImplementationNumber={howWeWorkImplementationNumber}
+        howWeWorkImplementationTitle={howWeWorkImplementationTitle}
+        howWeWorkImplementationCtaText={howWeWorkImplementationCtaText}
+        howWeWorkImplementationShortParagraph={
+          howWeWorkImplementationShortParagraph
+        }
+        howWeWorkImplementationList={howWeWorkImplementationList}
+      />
+      <AboutSlider
+        marathonTitle={marathonTitle}
+        marathonFirstParagraph={marathonFirstParagraph}
       />
     </div>
   )
@@ -87,6 +136,57 @@ export const query = graphql`
         value
       }
       feedbackTytul {
+        value
+      }
+    }
+    datoCmsPageService {
+      jakPracujemyTytulNaPoczatku {
+        value
+      }
+      jakPracujemyLista {
+        value
+      }
+
+      jakPracujemyRozmowaTytul {
+        value
+      }
+      jakPracujemyRozmowaNumerPierwszy
+      jakPracujemyRozmowaTytulNadLista {
+        value
+      }
+      jakPracujemyMozdzymyAkapit {
+        value
+      }
+      jakPracujemyMozdzymyNumer
+      jakPracujemyMozdzymyTytul {
+        value
+      }
+      jakPracujemyMozdzymyTekstWKolku
+      jakPracujemyMozdzymyTytulNadTekstem {
+        value
+      }
+      jakPracujemyTworzenieNumer
+      jakPracujemyTworzenieTytul {
+        value
+      }
+      jakPracujemyTworzenieAkapit {
+        value
+      }
+      jakPracujemyTworzenieTytulNadAkapitem {
+        value
+      }
+
+      jakPracujemyImplementacjaNumer
+      jakPracujemyImplementacjaTytul {
+        value
+      }
+      jakPracujemyImplementacjaTekstCta {
+        value
+      }
+      jakPracujemyImplementacjaKrotkiAkapit {
+        value
+      }
+      jakPracujemyImplementacjaListaElementow {
         value
       }
     }

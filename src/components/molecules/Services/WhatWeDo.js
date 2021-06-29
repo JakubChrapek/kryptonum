@@ -11,15 +11,6 @@ import { StyledWhatWeDoInfoTextWrapper } from "../../atoms/Services/WhatWeDo/Sty
 import { StyledWhatWeDoContentWrapper } from "../../atoms/Services/WhatWeDo/StyledWhatWeDoContentWrapper"
 
 const WhatWeDo = ({
-  imagesData,
-  whatWeDoTitle,
-  whatWeDoParagraph,
-  websitesTitle,
-  websitesParagraph,
-  marketingTitle,
-  marketingParagraph,
-  strategyTitle,
-  strategyParagraph,
   howWeWorkSectionTitle,
   howWeWorkList,
   howWeWorkThinkingParagraph,
@@ -42,46 +33,6 @@ const WhatWeDo = ({
 }) => {
   return (
     <StyledWhatWeDoSection>
-      <StyledWhatWeDoInfoTextWrapper>
-        <StyledH3Wrapper>
-          <StyledWhatWeDoH3
-            fontFamily="Poppins"
-            fontSize="40px"
-            lineHeight="1.28"
-            letterSpacing="2px"
-            color="var(--black)"
-            declaredDisplay="block"
-            letterSpacing="normal"
-          >
-            {whatWeDoTitle}
-          </StyledWhatWeDoH3>
-        </StyledH3Wrapper>
-        <StyledWhatWeDoP data={whatWeDoParagraph} />
-      </StyledWhatWeDoInfoTextWrapper>
-      <StyledWhatWeDoContentWrapper>
-        <WhatWeDoElement
-          id="strony-internetowe"
-          title={websitesTitle}
-          image={imagesData.designImage}
-          content={websitesParagraph}
-          swap={false}
-          design
-        />
-        <WhatWeDoElement
-          id="marketing"
-          title={marketingTitle}
-          image={imagesData.developmentImage}
-          content={marketingParagraph}
-          swap={true}
-        />
-        <WhatWeDoElement
-          id="social-media"
-          title={strategyTitle}
-          image={imagesData.marketingImage}
-          content={strategyParagraph}
-          swap={false}
-        />
-      </StyledWhatWeDoContentWrapper>
       <OurWorkflow
         howWeWorkSectionTitle={howWeWorkSectionTitle}
         howWeWorkList={howWeWorkList}

@@ -53,7 +53,7 @@ export const LeftArrowPagination = ({ color }) => (
         x2="51"
         transform="translate(397.5 301.651)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
       <path
@@ -61,7 +61,7 @@ export const LeftArrowPagination = ({ color }) => (
         d="M404.782,297.019l-7.353,6.077,7.353,5.588"
         transform="translate(0 -1.422)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
     </g>
@@ -81,7 +81,7 @@ export const RightArrowPagination = ({ color }) => (
         x2="51.928"
         transform="translate(397.5 301.651)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
       <path
@@ -89,7 +89,7 @@ export const RightArrowPagination = ({ color }) => (
         d="M404.782,297.019l-7.353,6.077,7.353,5.588"
         transform="translate(0 -1.422)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
     </g>
@@ -110,7 +110,7 @@ export const TopArrowGoUp = ({ color }) => (
         x2="39"
         transform="translate(397.5 301.651)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
       <path
@@ -118,7 +118,7 @@ export const TopArrowGoUp = ({ color }) => (
         d="M404.782,297.019l-7.353,6.077,7.353,5.588"
         transform="translate(0 -1.422)"
         fill="none"
-        stroke={color ? color : "#171717"}
+        stroke={color ? color : "#0c0c0c"}
         stroke-width="2"
       />
     </g>

@@ -50,10 +50,10 @@ export const CURSOR_SIZES = {
 export const CURSOR_COLORS = {
   LIGHT: "#f7f8f7",
   LIGHT_TRANSPARENT: "#f7f8f7aa",
-  DARK: "#171717",
-  DARK_TRANSPARENT: "#171717aa",
-  ACCENT: "#00EF8B",
-  ACCENT_TRANSPARENT: "#00EF8Baa",
+  DARK: "#0c0c0c",
+  DARK_TRANSPARENT: "#0c0c0caa",
+  ACCENT: "#2fbc79",
+  ACCENT_TRANSPARENT: "#2fbc79aa",
 }
 
 export const CursorProvider = ({ children }) => {

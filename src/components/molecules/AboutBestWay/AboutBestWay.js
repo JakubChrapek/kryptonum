@@ -12,12 +12,7 @@ import { StyledBestWayWrapper } from "../../atoms/AboutBestWay/StyledBestWayWrap
 import { TextStyles } from "../../atoms/Text/Text"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 
-const AboutBestWay = ({
-  marathonTitle,
-  marathonFirstParagraph,
-  marathonParagraphOverTitle,
-  textContent,
-}) => {
+const AboutBestWay = ({ textContent }) => {
   const dispatchCursor = useCursorDispatchContext()
   const width = useWindowSize()
   return (
