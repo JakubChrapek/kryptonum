@@ -25,27 +25,26 @@ const Think = ({
       notFlexDirection={true}
       hasAlignItems={true}
       hasJustifyContent={true}
-      hasPaddingTop={94}
+      hasPaddingTop={84}
       mediaQueriesDirection={true}
       mediaQueriesAlign={true}
     >
       <ThinkWrapper>
         <StyledWorkflowComponentGreenSpan
-          fontSize="18px"
-          lineHeight="1.28"
+          fontSize="14px"
+          lineHeight="2.12"
           color="var(--accent)"
-          letterSpacing="2.57px"
-          fontWeight="500"
+          letterSpacing="0.35em"
+          fontWeight="400"
         >
-          (0{howWeWorkThinkingNumber})
+          ({howWeWorkThinkingNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
-          fontSize="88px"
+          fontSize="76px"
           hasMediaQueryFont
           lineHeight="1.24"
-          color="var(--gray)"
-          fontWeight="500"
-          fontStretch="normal"
+          color="var(--dark-bg)"
+          fontWeight="400"
           declaredDisplay="block"
         >
           <StructuredText data={howWeWorkThinkingTitle} />
@@ -54,9 +53,9 @@ const Think = ({
       <StyledIdeaBox>
         <StyledIdeaBoxP
           fontFamily="Poppins"
-          fontSize="40px"
-          lineHeight="2.48"
-          color="var(--black)"
+          fontSize="24px"
+          lineHeight="1"
+          color="var(--dark-bg)"
         >
           {howWeWorkThinkingTextInCircle}
         </StyledIdeaBoxP>

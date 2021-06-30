@@ -48,9 +48,9 @@ const OurWorkflow = ({
       <StyledOurWorkflowWrapperH2
         fontFamily="Poppins"
         fontSize="40px"
-        lineHeight="1.28"
+        lineHeight="1.5"
         color="var(--black)"
-        declaredMargin="0 0 124px 0"
+        declaredMargin="0 0 120px 0"
       >
         <StructuredText data={howWeWorkSectionTitle} />
       </StyledOurWorkflowWrapperH2>

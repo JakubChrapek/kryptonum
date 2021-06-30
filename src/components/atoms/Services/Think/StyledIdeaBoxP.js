@@ -2,17 +2,13 @@ import styled from "styled-components"
 import { TextStyles } from "../../Text/Text"
 
 export const StyledIdeaBoxP = styled(TextStyles)`
-  width: 269px;
-  height: 269px;
+  width: 183px;
+  height: 183px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: var(--accent);
-  @media only screen and (max-width: 1200px) {
-    width: 189px;
-    height: 189px;
-  }
   @media only screen and (max-width: 892px) {
     width: 269px;
     height: 269px;

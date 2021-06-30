@@ -19,6 +19,7 @@ const About = ({ data }) => {
     toMaratonNieSprintAkapitNadSliderem: marathonParagraphOverTitle,
     naszeWartosciTytul: ourValuesTitle,
     naszeWartosciCecha: ourValuesFeature,
+    naszeWartosciFotka: ourValuesPhoto,
     naszeWartosciHasloNaSrodku: ourValuesCenteredClaim,
     feedbackKlientowRecenzje: feedbackFromClients,
     feedbackTytul: feedbackTytul,
@@ -61,6 +62,7 @@ const About = ({ data }) => {
       <OurVision
         ourValuesTitle={ourValuesTitle}
         ourValuesFeature={ourValuesFeature}
+        ourValuesPhoto={ourValuesPhoto}
         ourValuesCenteredClaim={ourValuesCenteredClaim}
       />
       <FeedbackFrom
@@ -134,6 +136,9 @@ export const query = graphql`
       }
       naszeWartosciTytul {
         value
+      }
+      naszeWartosciFotka {
+        gatsbyImageData
       }
       feedbackTytul {
         value

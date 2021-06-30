@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const StyledIdeaBox = styled.div`
   /* margin-left: 140px; */
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, 10px);
+  left: 47.5%;
+  transform: translate(-50%, 114px);
   display: block;
   @media (max-width: 1168px) and (min-width: 768px) {
     display: none;

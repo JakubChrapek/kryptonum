@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledLearnTextWrapperUl = styled.ul`
-  margin-left: 8px;
+  margin-left: 2px;
   @media only screen and (max-width: 588px) {
     text-align: center;
   }
@@ -12,11 +12,11 @@ export const StyledLearnTextWrapperUl = styled.ul`
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
-    letter-spacing: 2px;
+    letter-spacing: 0.16em;
     color: var(--black);
-    margin-top: 8px;
+    margin-top: 18px;
     &:first-child {
-      padding-top: 32px;
+      padding-top: 12px;
     }
   }
 `

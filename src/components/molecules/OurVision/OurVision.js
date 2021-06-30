@@ -15,20 +15,43 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 import styled from "styled-components"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const StyledVisionElementsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  border: 2px solid white;
 `
 
-const StyledFeedbackWrapper = styled.div``
+const StyledFeedbackWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  max-width: 1366px;
+  margin: 113px auto 0;
+`
+
+const TitleWrapper = styled.div`
+  > p {
+    color: var(--accent);
+    font-size: 14px;
+    line-height: 2.12;
+    letter-spacing: 0.35em;
+  }
+`
+const TextWrapper = styled.div`
+  max-width: 664px;
+  > p {
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+`
 
 const OurVision = ({
   ourValuesTitle,
   ourValuesFeature,
   ourValuesCenteredClaim,
+  ourValuesPhoto,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   return (
@@ -53,9 +76,8 @@ const OurVision = ({
           <StyledOurVisionHeroTextP
             fontFamily="Poppins"
             fontSize="40px"
-            lineHeight="2.48"
-            color="var(--white)"
-            textAlign="center"
+            lineHeight="1.5"
+            color="var(--light-gray)"
           >
             <StructuredText data={ourValuesCenteredClaim} />
           </StyledOurVisionHeroTextP>
@@ -68,17 +90,23 @@ const OurVision = ({
                 leftBoxText={feature.wartoscTytul}
                 rightBoxText={feature.wartoscTresc}
                 elementNumber={i + 1}
+                marginBottom={i === ourValuesFeature.length - 2 && "66px"}
               />
             ))}
+          <GatsbyImage image={ourValuesPhoto.gatsbyImageData} />
         </StyledVisionElementsWrapper>
       </StyledOurVisionWrapper>
       <StyledFeedbackWrapper>
-        <StructuredText
-          data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTytul}
-        />
-        <StructuredText
-          data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTresc}
-        />
+        <TitleWrapper>
+          <StructuredText
+            data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTytul}
+          />
+        </TitleWrapper>
+        <TextWrapper>
+          <StructuredText
+            data={ourValuesFeature[ourValuesFeature.length - 1].wartoscTresc}
+          />
+        </TextWrapper>
       </StyledFeedbackWrapper>
     </StyledOurVisionSection>
   )

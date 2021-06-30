@@ -3,6 +3,7 @@ import { StyledHeadingWrapper } from "../../../atoms/Services/Learn/StyledHeadin
 
 export const StyledLearnHeadingWrapper = styled(StyledHeadingWrapper)`
   align-self: flex-start;
+  flex: unset;
   @media (max-width: 767px) {
     align-self: center;
     flex: 1 1 40%;

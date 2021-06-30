@@ -8,13 +8,18 @@ export const StyledOurWorkflowWrapperH2 = styled(TextStyles)`
     margin-bottom: 55px;
     font-size: 30px;
   }
-  &:after {
-    content: "";
-    height: 2.8px;
-    width: 104%;
-    background-color: var(--black);
-    position: absolute;
-    left: 0;
-    bottom: -10px;
+  mark {
+    color: var(--accent);
+    position: relative;
+    background-color: transparent;
+    &:after {
+      content: "";
+      height: 2.8px;
+      width: 125%;
+      background-color: var(--accent);
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+    }
   }
 `

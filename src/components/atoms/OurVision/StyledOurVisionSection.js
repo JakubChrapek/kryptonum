@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const StyledOurVisionSection = styled.div`
   width: 100%;
   background-color: var(--dark-bg);
-  padding: 113px 103px 96px 112px;
+  padding: 113px 112px 96px 112px;
   margin: 0 auto;
   @media only screen and (max-width: 1232px) {
     padding: 104px 60px 50px 60px;

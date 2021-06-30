@@ -7,25 +7,21 @@ import { StyledRightBoxParagraph } from "../../atoms/OurVisionElement/StyledRigh
 
 import { TextStyles } from "../../atoms/Text/Text"
 
-const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
+const OurVisionElement = ({
+  leftBoxText,
+  rightBoxText,
+  elementNumber,
+  marginBottom,
+}) => {
   return (
-    <StyledOurVisionElement>
+    <StyledOurVisionElement marginBottom={marginBottom}>
       <StyledOurVisionLogoTextH2
-        fontSize="50px"
-        lineHeight="1.26"
-        letterSpacing="-1.3px"
+        fontSize="14px"
+        lineHeight="2.12"
+        letterSpacing="0.35em"
         color="var(--accent)"
         accentedHeading
       >
-        <TextStyles
-          fontSize="14px"
-          lineHeight="2.14px"
-          letterSpacing="5px"
-          color="var(--accent)"
-          declaredDisplay="block"
-          declaredpadding="0 9px 0 0"
-          declaredTransform="translateY(-18px)"
-        >{`(${elementNumber})`}</TextStyles>
         <span>
           <StructuredText data={leftBoxText} />
         </span>
@@ -34,7 +30,6 @@ const OurVisionElement = ({ leftBoxText, rightBoxText, elementNumber }) => {
         fontFamily="Poppins"
         fontSize="16px"
         lineHeight="1.5"
-        letterSpacing="2.67px"
         color="var(--white)"
       >
         <StructuredText data={rightBoxText} />

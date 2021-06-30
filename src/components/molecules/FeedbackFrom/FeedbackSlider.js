@@ -10,7 +10,8 @@ const SlidesStyles = styled(motion.section)`
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  grid-area: content;
+  min-height: 360px;
+  height: 360px;
   @media (max-width: 767px) {
     margin-top: 0;
   }
@@ -34,8 +35,6 @@ const FeedbackSlider = ({ slides }) => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           length={Math.ceil(slides?.length / pageLength)}
-          gridArea="pagination"
-          layout="position"
           feedback
         />
       )}

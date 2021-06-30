@@ -30,21 +30,20 @@ const Learn = ({
       <StyledLearnWrapper>
         <StyledLearnHeadingWrapper>
           <StyledWorkflowComponentGreenSpan
-            fontSize="18px"
-            lineHeight="1.28"
+            fontSize="14px"
+            lineHeight="2.12"
             color="var(--accent)"
-            letterSpacing="2.57px"
-            fontWeight="500"
+            letterSpacing="0.35em"
+            fontWeight="400"
           >
-            (0{howWeWorkLearnNumber})
+            ({howWeWorkLearnNumber})
           </StyledWorkflowComponentGreenSpan>
           <StyledWorkflowComponentHeading
-            fontSize="88px"
+            fontSize="76px"
             hasMediaQueryFont
             lineHeight="1.24"
-            color="var(--gray)"
-            fontWeight="500"
-            fontStretch="normal"
+            color="var(--dark-bg)"
+            fontWeight="400"
             declaredDisplay="block"
           >
             <StructuredText data={howWeWorkLearnTitle} />
@@ -52,11 +51,9 @@ const Learn = ({
         </StyledLearnHeadingWrapper>
         <StyledLearnTextWrapper>
           <StyledLearnTextWrapperH3
-            fontSize="45px"
-            lineHeight="1.25"
-            color="var(--gray)"
+            fontSize="40px"
+            lineHeight="1.5"
             declaredpadding="43px 0 0 0"
-            letterSpacing="-0.94px"
           >
             <span>
               <StructuredText data={howWeWorkLearnTitleOverList} />
@@ -67,15 +64,7 @@ const Learn = ({
             <StructuredText data={howWeWorkList} />
           </StyledLearnTextWrapperUl>
         </StyledLearnTextWrapper>
-        {/* <StyledElipseWrapper>
-          <StyledElipseWrapperSpan>
-            <span></span>
-          </StyledElipseWrapperSpan>
-        </StyledElipseWrapper> */}
       </StyledLearnWrapper>
-      <StyledArrowWrapper>
-        <VscArrowDown size="92px" title="Arrow pointing down" color="#f7f7f7" />
-      </StyledArrowWrapper>
     </StyledWorkflowComponentWrapper>
   )
 }

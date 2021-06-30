@@ -66,7 +66,7 @@ const FeedbackSlide = ({ slide }) => {
         fontFamily="Poppins"
         fontSize="28px"
         fontWeight="400"
-        lineHeight="1.71"
+        lineHeight="1.5"
         slideText
         color="var(--black-font)"
         declaredMargin="36px 0 0"

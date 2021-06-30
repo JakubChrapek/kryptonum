@@ -15,12 +15,11 @@ import FeedbackSlider from "./FeedbackSlider"
 const FeedbackFromWrapper = styled.div`
   width: 100%;
   background-color: var(--white);
-  padding: 142px 112px;
-  height: 100vh;
+  padding: 113px 112px 141px 112px;
   position: relative;
   margin: 0 auto;
 
-  @media only screen and (min-width: 1920px) {
+  /* @media only screen and (min-width: 1920px) {
     max-height: 860px;
   }
   @media only screen and (min-width: 1600px) {
@@ -34,38 +33,21 @@ const FeedbackFromWrapper = styled.div`
   }
   @media only screen and (max-width: 767px) {
     padding: 84px 28px;
-  }
+  } */
 `
 
 const FeedbackWrapper = styled.section`
   display: grid;
   height: 100%;
   background-color: var(--white);
-  grid-template-areas:
-    "title content content content content"
-    "title content content content content"
-    "title content content content content"
-    "title content content content content";
-  grid-gap: 20px 100px;
+  grid-template-columns: 280px 1fr;
   max-width: 1366px;
   margin: 0 auto;
-  @media (max-width: 1024px) {
-    grid-gap: 12px 40px;
-  }
-  @media (max-width: 767px) {
-    grid-gap: 32px 0px;
-    grid-template-areas:
-      "title"
-      "content"
-      "content"
-      "content"
-      "content";
-  }
 `
 
 const TitleWrapper = styled(motion.div)`
   display: flex;
-  grid-area: title;
+  /* grid-area: title; */
 `
 
 const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
@@ -103,22 +85,20 @@ const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
         })
       }}
     >
-      <AnimateSharedLayout type="crossfade">
-        <FeedbackWrapper>
-          <TitleWrapper>
-            <TextStyles
-              fontSize="18px"
-              fontWeight="500"
-              lineHeight="1.28"
-              letterSpacing="2.57px"
-              as="h3"
-            >
-              <StructuredText data={feedbackTytul} />
-            </TextStyles>
-          </TitleWrapper>
-          <FeedbackSlider slides={data.allDatoCmsFeedbackFromClient.nodes} />
-        </FeedbackWrapper>
-      </AnimateSharedLayout>
+      <FeedbackWrapper>
+        <TitleWrapper>
+          <TextStyles
+            fontSize="16px"
+            fontWeight="400"
+            lineHeight="2.12"
+            letterSpacing="0.35em"
+            as="h3"
+          >
+            <StructuredText data={feedbackTytul} />
+          </TextStyles>
+        </TitleWrapper>
+        <FeedbackSlider slides={data.allDatoCmsFeedbackFromClient.nodes} />
+      </FeedbackWrapper>
     </FeedbackFromWrapper>
   )
 }
