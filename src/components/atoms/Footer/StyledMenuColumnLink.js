@@ -33,27 +33,6 @@ export const StyledMenuColumnLink = styled(Link)`
       margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "0" : "0")};
     }
   }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 8px;
-    height: 1px;
-    background-color: ${({ copyrightWrapper }) =>
-      copyrightWrapper ? "var(--light-gray)" : "var(--white)"};
-    width: calc(100% - 16px);
-    transform: scaleY(0);
-    transform-origin: center bottom;
-    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    &:after {
-      transform: scaleY(1);
-    }
-  }
 
   &:focus-visible {
     outline-offset: 2px;

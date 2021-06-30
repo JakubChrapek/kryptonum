@@ -38,6 +38,7 @@ const CursorReducer = (state, action) => {
 export const CURSOR_TYPES = {
   FULL_CURSOR: "full",
   OUTLINED_CURSOR: "outline",
+  FIRE_CURSOR: "fire",
   INPUT_CURSOR: "input",
 }
 
@@ -45,6 +46,7 @@ export const CURSOR_SIZES = {
   DEFAULT: "default",
   SMALLER: "small",
   BIGGER: "bigger",
+  HUGE: "huge",
 }
 
 export const CURSOR_COLORS = {
@@ -52,8 +54,8 @@ export const CURSOR_COLORS = {
   LIGHT_TRANSPARENT: "#f7f8f7aa",
   DARK: "#0c0c0c",
   DARK_TRANSPARENT: "#0c0c0caa",
-  ACCENT: "#2fbc79",
-  ACCENT_TRANSPARENT: "#2fbc79aa",
+  ACCENT: "#30BB78",
+  ACCENT_TRANSPARENT: "#30BB78aa",
 }
 
 export const CursorProvider = ({ children }) => {

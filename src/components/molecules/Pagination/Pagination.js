@@ -3,16 +3,17 @@ import React from "react"
 import { PaginationStyles } from "../../atoms/BlogSection/StyledPagination"
 import { StyledLine } from "../../atoms/BlogSection/StyledLine"
 import { StyledButtonPagination } from "../../atoms/BlogSection/StyledButtonPagination"
-import {
-  CURSOR_COLORS,
-  CURSOR_SIZES,
-  CURSOR_TYPES,
-  useCursorDispatchContext,
-} from "../../../contexts/cursorContext"
+
 import {
   LeftArrowPagination,
   RightArrowPagination,
 } from "../../atoms/Icons/arrows"
+import {
+  useCursorDispatchContext,
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+} from "../../../contexts/cursorContext"
 
 const Pagination = ({
   length,
@@ -64,7 +65,7 @@ const Pagination = ({
         onMouseLeave={() => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
-            cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_COLOR",
@@ -72,7 +73,7 @@ const Pagination = ({
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",
-            cursorSize: CURSOR_SIZES.DEFAULT,
+            cursorSize: CURSOR_SIZES.SMALLER,
           })
         }}
       >

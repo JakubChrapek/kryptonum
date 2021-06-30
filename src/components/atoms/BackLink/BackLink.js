@@ -19,28 +19,8 @@ export const BackLink = styled(Link)`
     font-size: 12px;
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 8px;
-    width: calc(100% - 16px);
-    height: 1px;
-    transform-origin: center bottom;
-    opacity: 0;
-    transform: scaleY(0);
-    transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
-      transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    background-color: ${({ color }) => (color ? color : "var(--black)")};
-  }
-
   &:focus-visible {
     outline-offset: 1px;
     outline: 2px solid ${({ color }) => (color ? color : "var(--black)")};
-  }
-
-  &:hover:after {
-    transform: scaleY(1);
-    opacity: 1;
   }
 `

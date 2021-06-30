@@ -12,6 +12,12 @@ import { StyledThinkTextWrapperH3 } from "../../../atoms/Services/Think/StyledTh
 import { TextStyles } from "../../../atoms/Text/Text"
 import { StyledThinkTextParagraph } from "../../../atoms/Services/Think/StyledThinkTextParagraph"
 import { ThinkWrapper } from "./ThinkWrapper"
+import {
+  CURSOR_COLORS,
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../../contexts/cursorContext"
 
 const Think = ({
   howWeWorkThinkingParagraph,
@@ -20,6 +26,8 @@ const Think = ({
   howWeWorkThinkingTextInCircle,
   howWeWorkThinkingTitleOverText,
 }) => {
+  const dispatchCursor = useCursorDispatchContext()
+
   return (
     <StyledWorkflowComponentWrapper
       notFlexDirection={true}
@@ -50,7 +58,36 @@ const Think = ({
           <StructuredText data={howWeWorkThinkingTitle} />
         </StyledWorkflowComponentHeading>
       </ThinkWrapper>
-      <StyledIdeaBox>
+      <StyledIdeaBox
+        onMouseEnter={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.LIGHT,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+        onMouseLeave={() => {
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TYPE",
+            cursorType: CURSOR_TYPES.FULL_CURSOR,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_COLOR",
+            cursorColor: CURSOR_COLORS.DARK,
+          })
+          dispatchCursor({
+            type: "CHANGE_CURSOR_SIZE",
+            cursorSize: CURSOR_SIZES.SMALLER,
+          })
+        }}
+      >
         <StyledIdeaBoxP
           fontFamily="Poppins"
           fontSize="24px"

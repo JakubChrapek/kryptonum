@@ -28,7 +28,7 @@ const MaxWidthSlider = ({ dataName, activeProject }) => {
                 onMouseEnter={() => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
-                    cursorType: CURSOR_TYPES.FULL_CURSOR,
+                    cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_COLOR",
@@ -36,7 +36,7 @@ const MaxWidthSlider = ({ dataName, activeProject }) => {
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
-                    cursorSize: CURSOR_SIZES.BIGGER,
+                    cursorSize: CURSOR_SIZES.HUGE,
                   })
                 }}
                 onMouseLeave={() => {
