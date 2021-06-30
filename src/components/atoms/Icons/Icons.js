@@ -34,3 +34,21 @@ export const KryptonumLogoSygnet = ({ variant = "light" }) => (
     />
   </LogoStyles>
 )
+const ArrowStyles = styled.svg`
+  margin: ${({ margin }) => (margin ? margin : "undefined")};
+  path {
+    fill: var(--accent);
+  }
+`
+export const ArrowDown = ({ margin }) => (
+  <ArrowStyles
+    margin={margin}
+    width="43"
+    height="62"
+    viewBox="0 0 43 62"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M42.665 40.946L39.528 38.287C39.528 38.287 28.234 49.455 23.842 54.241C24.017 37.449 23.842 0 23.842 0L20.077 0C20.077 0 20.214 37.46 20.077 54.241C15.058 49.455 3.76504 38.287 3.76504 38.287L3.8147e-05 40.946L21.96 61.153L42.665 40.946Z" />
+  </ArrowStyles>
+)

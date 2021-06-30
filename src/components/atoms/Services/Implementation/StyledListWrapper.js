@@ -6,7 +6,7 @@ export const StyledListWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 33px;
+    padding-top: 86px;
     @media only screen and (max-width: 767px) {
       flex-direction: column;
       align-items: center;

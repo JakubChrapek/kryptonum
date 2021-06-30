@@ -58,7 +58,7 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
         <StyledTextContentWrapper>
           <StyledFeaturedWrapper
             firstSpanLength="100%"
-            secondSpanLength="110%"
+            secondSpanLength="75%"
             hasMarginLeft={false}
             hasSmalFontSize={true}
             style={{ paddingLeft: "0" }}
@@ -71,10 +71,10 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
           <StyledAboutSliderHeroText>
             <StyledAboutSliderHeroParagraph
               color="var(--dark-bg)"
-              fontSize="18px"
-              fontWeight="500"
-              lineHeight="1.28"
-              letterSpacing="2.57px"
+              fontSize="13px"
+              lineHeight="2.3"
+              fontWeight="400"
+              letterSpacing="0.1em"
               declaredDisplay="block"
             >
               <StructuredText data={marathonFirstParagraph} />

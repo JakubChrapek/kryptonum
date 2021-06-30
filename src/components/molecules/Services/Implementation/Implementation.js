@@ -14,6 +14,7 @@ import { StyledImplementationUl } from "../../../atoms/Services/Implementation/S
 import { StyledListWrapper } from "../../../atoms/Services/Implementation/StyledListWrapper"
 import { StyledLongLastingWrapper } from "../../../atoms/Services/Implementation/StyledLongLastingWrapper"
 import { StyledLongLastingWrapperP } from "../../../atoms/Services/Implementation/StyledLongLastingWrapperP"
+import { ArrowDown } from "../../../atoms/icons/Icons"
 
 const Implementation = ({
   howWeWorkImplementationNumber,
@@ -26,29 +27,26 @@ const Implementation = ({
     <StyledWorkflowComponentWrapper
       mediaQueriesDirection={true}
       hasAlignItems={true}
-      hasPaddingTop={183}
+      hasPaddingTop={112}
       mediaQueriesAlign={true}
     >
       <div>
         <StyledWorkflowComponentGreenSpan
-          fontSize="18px"
-          lineHeight="1.28"
+          fontSize="14px"
+          lineHeight="2.12"
           color="var(--accent)"
-          letterSpacing="2.57px"
-          fontWeight="500"
-          implementation={true}
+          letterSpacing="0.35em"
+          fontWeight="400"
         >
-          (0{howWeWorkImplementationNumber})
+          ({howWeWorkImplementationNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
-          fontSize="88px"
+          fontSize="76px"
+          hasMediaQueryFont
           lineHeight="1.24"
-          color="var(--gray)"
-          letterSpacing="-0.94px"
-          fontWeight="500"
-          fontStretch="normal"
+          color="var(--dark-bg)"
+          fontWeight="400"
           declaredDisplay="block"
-          hasMediaQueryFont={true}
         >
           <StructuredText data={howWeWorkImplementationTitle} />
         </StyledWorkflowComponentHeading>
@@ -61,8 +59,8 @@ const Implementation = ({
           <StyledCommunicationWithTheClientP
             fontFamily="Poppins"
             fontSize="28px"
-            lineHeight="1.71"
-            color="#090909"
+            lineHeight="1.5"
+            color="var(--dark-bg)"
             declaredDisplay="block"
           >
             <StructuredText data={howWeWorkImplementationShortParagraph} />
@@ -70,27 +68,15 @@ const Implementation = ({
         </StyledCommunicationWithTheClient>
         <StyledLongLastingWrapper>
           <StyledArrowWrapper>
-            <StyledArrow
-              size="76px"
-              title="Arrow pointing down"
-              color="#2fbc79"
-            />
-            <StyledArrow
-              size="76px"
-              title="Arrow pointing down"
-              color="#2fbc79"
-            />
-            <StyledArrow
-              size="76px"
-              title="Arrow pointing down"
-              color="#2fbc79"
-            />
+            <ArrowDown margin="0 13px 0 0" title="Arrow pointing down" />
+            <ArrowDown margin="0 13px" title="Arrow pointing down" />
+            <ArrowDown margin="0 0 0 13px" title="Arrow pointing down" />
           </StyledArrowWrapper>
           <StyledLongLastingWrapperP
             fontFamily="Poppins"
             fontSize="40px"
-            lineHeight="2.48"
-            color="var(--black)"
+            lineHeight="1.5"
+            color="var(--dark-bg)"
             declaredDisplay="block"
           >
             <StructuredText data={howWeWorkImplementationCtaText} />

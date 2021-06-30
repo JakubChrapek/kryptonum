@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { TextStyles } from "../../Text/Text"
 
 export const StyledCommunicationWithTheClientP = styled(TextStyles)`
+  max-width: 453px;
   @media only screen and (max-width: 1336px) {
     font-size: 22px;
   }

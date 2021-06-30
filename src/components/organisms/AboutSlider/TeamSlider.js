@@ -7,7 +7,7 @@ import useWindowSize from "../../../utils/getWindowSize"
 import TeamSlide from "./TeamSlide"
 
 const SlidesStyles = styled(motion.section)`
-  margin-top: 130px;
+  margin-top: 110px;
   display: flex;
   justify-content: flex-start;
   width: 100%;

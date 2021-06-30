@@ -1,10 +1,14 @@
 import styled from "styled-components"
 
 export const StyledTextContentWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 64px;
+  display: flex;
   width: 100%;
+  > div {
+    flex: 1 1 52.5%;
+    &:last-of-type {
+      flex: 1 1 47.5%;
+    }
+  }
   @media (max-width: 1080px) {
     grid-gap: 50px;
     grid-template-columns: 2fr 3fr;

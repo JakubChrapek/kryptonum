@@ -12,22 +12,14 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 const SlideWrapper = styled(motion.div)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 64px;
-  @media (max-width: 1080px) {
-    grid-gap: 50px;
-  }
-  @media (max-width: 880px) {
-    grid-gap: 40px;
-  }
-  @media (max-width: 767px) {
-    grid-gap: 14px;
-    grid-template-columns: 1fr;
+  display: flex;
+  > div {
+    flex: 1 1 50%;
   }
 `
 
 const ImageWrapper = styled(motion.div)`
+  padding-right: 73px;
   > .gatsby-image-wrapper {
     max-height: 326px;
     height: 326px;
@@ -57,7 +49,7 @@ const Line = styled(motion.span)`
   background-color: var(--black);
   display: inline-block;
   margin-right: 22px;
-  margin-bottom: 20px;
+  margin-top: 10px;
   @media (max-width: 767px) {
     width: 47px;
   }
@@ -65,7 +57,6 @@ const Line = styled(motion.span)`
 
 const SlideHeaderWrapper = styled(motion.div)`
   display: flex;
-  align-items: center;
   > div {
     display: flex;
     flex-direction: column;
@@ -135,7 +126,7 @@ const TeamSlide = ({ slide }) => {
               fontFamily="Poppins"
               fontSize="16px"
               fontWeight="400"
-              lineHeight="1.38"
+              lineHeight="1.5"
               initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
@@ -145,11 +136,11 @@ const TeamSlide = ({ slide }) => {
               {slide.name}
             </TextStyles>
             <TextStyles
-              fontSize="14px"
-              fontWeight="500"
-              lineHeight="1.29"
+              fontSize="13px"
+              fontWeight="400"
+              lineHeight="2.3"
+              letterSpacing="0.1em"
               color="var(--slide-specialty)"
-              declaredMargin="2px 0 0"
               initial={{ opacity: 0, y: 2, filter: "blur(3px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, filter: "blur(3px)" }}
@@ -162,11 +153,11 @@ const TeamSlide = ({ slide }) => {
         </SlideHeaderWrapper>
         <TextStyles
           fontFamily="Poppins"
-          fontSize="28px"
+          fontSize="24px"
+          lineHeight="1.5"
           fontWeight="400"
-          lineHeight="1.71"
-          color="var(--black-font)"
-          declaredMargin="36px 0 0"
+          color="var(--dark-bg)"
+          declaredMargin="30px 0 0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

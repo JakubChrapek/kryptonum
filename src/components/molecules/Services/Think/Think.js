@@ -25,7 +25,7 @@ const Think = ({
       notFlexDirection={true}
       hasAlignItems={true}
       hasJustifyContent={true}
-      hasPaddingTop={84}
+      hasPaddingTop={117}
       mediaQueriesDirection={true}
       mediaQueriesAlign={true}
     >
@@ -62,10 +62,9 @@ const Think = ({
       </StyledIdeaBox>
       <StyledThinkTextWrapper>
         <StyledThinkTextWrapperH3
-          fontSize="45px"
-          lineHeight="1.2"
-          color="var(--gray)"
-          letterSpacing="-0.94px"
+          fontSize="40px"
+          lineHeight="1.5"
+          color="var(--accent)"
         >
           <StructuredText data={howWeWorkThinkingTitleOverText} />
         </StyledThinkTextWrapperH3>
@@ -74,9 +73,9 @@ const Think = ({
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"
-          color="var(--black)"
-          letterSpacing="2px"
-          declaredMargin="27px 0 0 0"
+          color="var(--dark-bg)"
+          letterSpacing="0.16em"
+          declaredMargin="24px 0 0 0"
           declaredDisplay="block"
         >
           <StructuredText data={howWeWorkThinkingParagraph} />

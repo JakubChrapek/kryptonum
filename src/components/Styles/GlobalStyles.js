@@ -5,7 +5,7 @@ import { useMenuState } from "../../contexts/menuContext"
 const Global = createGlobalStyle`
   html {
     box-sizing: border-box;
-    --accent:#08a057;
+    --accent:#30BB78;
     --button-accent: #25eb98;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);

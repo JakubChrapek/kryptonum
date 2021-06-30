@@ -24,29 +24,27 @@ const Create = ({
     <StyledWorkflowComponentWrapper
       notFlexDirection={true}
       hasAlignItems={true}
-      hasPaddingTop={156}
+      hasPaddingTop={165}
       hasJustifyContent={true}
       mediaQueriesDirection={true}
       mediaQueriesAlign={true}
     >
       <CreateWrapper>
         <StyledWorkflowComponentGreenSpan
-          fontSize="18px"
-          lineHeight="1.28"
+          fontSize="14px"
+          lineHeight="2.12"
           color="var(--accent)"
-          letterSpacing="2.57px"
-          fontWeight="500"
+          letterSpacing="0.35em"
+          fontWeight="400"
         >
-          (0{howWeWorkCreatingNumber})
+          ({howWeWorkCreatingNumber})
         </StyledWorkflowComponentGreenSpan>
         <StyledWorkflowComponentHeading
-          fontSize="88px"
+          fontSize="76px"
           hasMediaQueryFont
           lineHeight="1.24"
-          color="var(--gray)"
-          letterSpacing="-1.75px"
-          fontWeight="500"
-          fontStretch="normal"
+          color="var(--dark-bg)"
+          fontWeight="400"
           declaredDisplay="block"
         >
           <StructuredText data={howWeWorkCreatingTitle} />
@@ -54,11 +52,8 @@ const Create = ({
       </CreateWrapper>
       <StyledCreateTextWrapper>
         <StyledCreateTextH3
-          declaredpadding="0 0 42px 0"
-          fontSize="45px"
-          lineHeight="1.2"
-          letterSpacing="-0.94px"
-          color="var(--gray)"
+          fontSize="40px"
+          lineHeight="1.5"
           declaredDisplay="block"
         >
           <StructuredText data={howWeWorkCreatingTitleOverParagraph} />
@@ -71,7 +66,7 @@ const Create = ({
         </StyledCreateTextH3>
 
         <StyledCreateTextP
-          declaredpadding="0 0 58px 0"
+          declaredpadding="24px 0 0 0"
           fontFamily="Poppins"
           fontSize="12px"
           lineHeight="1.5"
