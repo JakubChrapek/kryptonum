@@ -14,7 +14,7 @@ import { StyledImplementationUl } from "../../../atoms/Services/Implementation/S
 import { StyledListWrapper } from "../../../atoms/Services/Implementation/StyledListWrapper"
 import { StyledLongLastingWrapper } from "../../../atoms/Services/Implementation/StyledLongLastingWrapper"
 import { StyledLongLastingWrapperP } from "../../../atoms/Services/Implementation/StyledLongLastingWrapperP"
-import { ArrowDown } from "../../../atoms/icons/Icons"
+import { ArrowDown } from "../../../atoms/Icons/Icons"
 
 const Implementation = ({
   howWeWorkImplementationNumber,
