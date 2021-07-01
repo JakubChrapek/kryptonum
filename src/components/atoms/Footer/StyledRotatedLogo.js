@@ -4,9 +4,8 @@ import styled from "styled-components"
 
 export const StyledRotatedLogo = styled(Link)`
   font-size: 20px;
-  line-height: 1.2em;
-  font-weight: 500;
-  text-transform: uppercase;
+  line-height: 1.25;
+  font-weight: 600;
   text-decoration: none;
 
   color: var(--white);

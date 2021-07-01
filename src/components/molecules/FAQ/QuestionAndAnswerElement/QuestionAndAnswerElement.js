@@ -13,6 +13,7 @@ import { AnswerText } from "./AnswerText"
 import {
   CURSOR_COLORS,
   CURSOR_SIZES,
+  CURSOR_TEXT,
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../../contexts/cursorContext"
@@ -21,6 +22,15 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
   const [openAnswer, setOpenAnswer] = useState(false)
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnterForQuestion = () => {
+    openAnswer
+      ? dispatchCursor({
+          type: "CHANGE_CURSOR_TEXT",
+          cursorText: CURSOR_TEXT.COLLAPSE,
+        })
+      : dispatchCursor({
+          type: "CHANGE_CURSOR_TEXT",
+          cursorText: CURSOR_TEXT.EXPAND,
+        })
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
@@ -31,10 +41,19 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
-      cursorSize: CURSOR_SIZES.BIGGER,
+      cursorSize: CURSOR_SIZES.HUGE,
     })
   }
   const handleOnMouseEnterForIcon = () => {
+    openAnswer
+      ? dispatchCursor({
+          type: "CHANGE_CURSOR_TEXT",
+          cursorText: CURSOR_TEXT.COLLAPSE,
+        })
+      : dispatchCursor({
+          type: "CHANGE_CURSOR_TEXT",
+          cursorText: CURSOR_TEXT.EXPAND,
+        })
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
@@ -45,7 +64,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
-      cursorSize: CURSOR_SIZES.BIGGER,
+      cursorSize: CURSOR_SIZES.HUGE,
     })
   }
   const handleOnMouseLeave = () => {
@@ -66,7 +85,13 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
   return (
     <StyledQuestionAndAnswerElement>
       <StyledQuestionAndAnswerElementDiv
-        onClick={() => setOpenAnswer(!openAnswer)}
+        onClick={() => {
+          setOpenAnswer(prevState => !prevState)
+          dispatchCursor({
+            type: "CHANGE_CURSOR_TEXT",
+            cursorText: openAnswer ? CURSOR_TEXT.EXPAND : CURSOR_TEXT.COLLAPSE,
+          })
+        }}
       >
         <StyledQuestion
           onMouseEnter={handleOnMouseEnterForQuestion}

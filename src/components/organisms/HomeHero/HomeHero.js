@@ -18,6 +18,7 @@ import {
   CURSOR_TYPES,
   CURSOR_COLORS,
   CURSOR_SIZES,
+  CURSOR_TEXT,
 } from "../../../contexts/cursorContext"
 import { RightArrow } from "../../atoms/Icons/arrows"
 import website from "../../../../config/website"
@@ -38,15 +39,19 @@ const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
   const handleOnMouseEnterForLink = () => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
-      cursorType: CURSOR_TYPES.FULL_CURSOR,
+      cursorType: CURSOR_TYPES.TRANSPARENT_TEXT,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+      cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
-      cursorSize: CURSOR_SIZES.BIGGER,
+      cursorSize: CURSOR_SIZES.HUGE,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TEXT",
+      cursorText: CURSOR_TEXT.VIEW,
     })
   }
 

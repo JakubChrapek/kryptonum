@@ -11,6 +11,7 @@ import { StyledCtaLink } from "../../atoms/CtaSection/StyledCtaLink"
 import {
   CURSOR_COLORS,
   CURSOR_SIZES,
+  CURSOR_TEXT,
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
@@ -87,15 +88,19 @@ const CtaSection = ({
           onMouseEnter={() => {
             dispatchCursor({
               type: "CHANGE_CURSOR_TYPE",
-              cursorType: CURSOR_TYPES.FULL_CURSOR,
+              cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
             })
             dispatchCursor({
               type: "CHANGE_CURSOR_COLOR",
-              cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+              cursorColor: CURSOR_COLORS.ACCENT,
             })
             dispatchCursor({
               type: "CHANGE_CURSOR_SIZE",
-              cursorSize: CURSOR_SIZES.BIGGER,
+              cursorSize: CURSOR_SIZES.HUGE,
+            })
+            dispatchCursor({
+              type: "CHANGE_CURSOR_TEXT",
+              cursorText: CURSOR_TEXT.VIEW,
             })
           }}
           onMouseLeave={() => {

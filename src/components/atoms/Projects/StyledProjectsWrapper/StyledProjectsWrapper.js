@@ -23,8 +23,7 @@ export const ProjectsStyles = styled(motion.section)`
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
-  min-height: max(720px, 100vh);
+  align-items: flex-start;
   position: sticky;
   top: 0;
   @media (max-width: 1101px) {
@@ -94,7 +93,7 @@ export const ProjectsStyles = styled(motion.section)`
 
     &:nth-of-type(even) {
       margin-left: var(--gap-width);
-      /* justify-content: flex-end; */
+      justify-content: flex-end;
     }
 
     &:nth-of-type(1),

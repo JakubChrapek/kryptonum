@@ -14,6 +14,8 @@ import ScrollToTop from "../components/organisms/ScrollToTop/ScrollToTop"
 import useMousePosition from "../utils/useMousePosition"
 import useWindowSize from "../utils/getWindowSize"
 import {
+  CURSOR_SIZES,
+  CURSOR_TYPES,
   useCursorDispatchContext,
   useCursorStateContext,
 } from "../contexts/cursorContext"
@@ -28,11 +30,13 @@ const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
 const Layout = ({ children }) => {
   const {
+    cursorText,
     cursorShow,
     cursorType,
     cursorColor,
     cursorSize,
   } = useCursorStateContext()
+  const dispatchCursor = useCursorDispatchContext()
   let pathname = useLocation().pathname
   const [routeChange, setRouteChange] = useState(false)
   const [panelComplete, setPanelComplete] = useState(false)
@@ -41,10 +45,19 @@ const Layout = ({ children }) => {
   useEffect(() => {
     setRouteChange(!routeChange)
     setPanelComplete(false)
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
+    })
+    dispatchCursor({
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.SMALLER,
+    })
   }, [pathname])
   useEffect(() => {
     setHasMounted(true)
   }, [])
+
   if (!hasMounted) {
     return null
   }
@@ -66,6 +79,7 @@ const Layout = ({ children }) => {
     <MenuProvider>
       <GlobalStyles />
       <Cursor
+        text={cursorText}
         show={cursorShow}
         type={cursorType}
         color={cursorColor}

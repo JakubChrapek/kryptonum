@@ -29,15 +29,29 @@ const CursorReducer = (state, action) => {
         cursorColor: action.cursorColor,
       }
     }
+    case "CHANGE_CURSOR_TEXT": {
+      return {
+        ...state,
+        cursorText: action.cursorText,
+      }
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`)
     }
   }
 }
 
+export const CURSOR_TEXT = {
+  VIEW: "zobacz",
+  EXPAND: "rozwiń",
+  COLLAPSE: "zwiń",
+  SEND: "szyfruję",
+}
+
 export const CURSOR_TYPES = {
   FULL_CURSOR: "full",
   OUTLINED_CURSOR: "outline",
+  TRANSPARENT_TEXT: "transparentText",
   FIRE_CURSOR: "fire",
   INPUT_CURSOR: "input",
 }
@@ -64,6 +78,7 @@ export const CursorProvider = ({ children }) => {
     cursorColor: CURSOR_COLORS.LIGHT,
     cursorSize: CURSOR_SIZES.SMALLER,
     cursorType: CURSOR_TYPES.FULL_CURSOR,
+    cursorText: CURSOR_TEXT.VIEW,
     cursorTypes: CURSOR_TYPES,
     cursorSizes: CURSOR_SIZES,
   })

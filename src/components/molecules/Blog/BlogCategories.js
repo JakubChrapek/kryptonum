@@ -50,19 +50,6 @@ const CategoriesStyles = styled(motion.ul)`
       font-size: 12px;
     }
 
-    &:hover:after,
-    &:focus:after,
-    &:active:after {
-      transform: scaleX(1);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      outline: none;
-      transform: translateY(-4px);
-    }
-
     &.active {
       color: var(--accent-lighter);
       transform: translateY(-4px);
@@ -156,7 +143,6 @@ const BlogCategories = ({
           <motion.button
             role="button"
             key={category}
-            whileHover={{ y: -4 }}
             whileTap={!isCategoryActive && { scale: 0.98 }}
             transition={{ ease: [0.6, -0.05, 0.01, 0.99], duration: 0.3 }}
             className={isCategoryActive ? "active" : undefined}
