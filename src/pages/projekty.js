@@ -66,10 +66,6 @@ const Projects = ({ data }) => {
   )
 }
 
-const Project = () => {
-  return <li>tralala</li>
-}
-
 export const query = graphql`
   query ProjectsListingQuery {
     allDatoCmsProject(
