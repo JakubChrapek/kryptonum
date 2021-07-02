@@ -36,10 +36,6 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
       cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.HUGE,
     })
@@ -59,10 +55,6 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
       cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.HUGE,
     })
@@ -71,10 +63,6 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
-    })
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",

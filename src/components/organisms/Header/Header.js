@@ -61,10 +61,6 @@ const Header = ({ theme }) => {
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.BIGGER,
     })
@@ -77,10 +73,6 @@ const Header = ({ theme }) => {
         cursorType: CURSOR_TYPES.FULL_CURSOR,
       })
       dispatchCursor({
-        type: "CHANGE_CURSOR_COLOR",
-        cursorColor: CURSOR_COLORS.LIGHT,
-      })
-      dispatchCursor({
         type: "CHANGE_CURSOR_SIZE",
         cursorSize: CURSOR_SIZES.SMALLER,
       })
@@ -88,10 +80,6 @@ const Header = ({ theme }) => {
       dispatchCursor({
         type: "CHANGE_CURSOR_TYPE",
         cursorType: CURSOR_TYPES.FULL_CURSOR,
-      })
-      dispatchCursor({
-        type: "CHANGE_CURSOR_COLOR",
-        cursorColor: CURSOR_COLORS.DARK,
       })
       dispatchCursor({
         type: "CHANGE_CURSOR_SIZE",
@@ -126,10 +114,6 @@ const Header = ({ theme }) => {
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
                   })
                   dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.DARK,
-                  })
-                  dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
                     cursorSize: CURSOR_SIZES.SMALLER,
                   })
@@ -137,10 +121,6 @@ const Header = ({ theme }) => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.LIGHT,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
@@ -151,10 +131,6 @@ const Header = ({ theme }) => {
                 dispatchCursor({
                   type: "CHANGE_CURSOR_TYPE",
                   cursorType: CURSOR_TYPES.FULL_CURSOR,
-                })
-                dispatchCursor({
-                  type: "CHANGE_CURSOR_COLOR",
-                  cursorColor: CURSOR_COLORS.DARK,
                 })
                 dispatchCursor({
                   type: "CHANGE_CURSOR_SIZE",
@@ -169,16 +145,6 @@ const Header = ({ theme }) => {
           color={getColorForBurgerMenuFromThemeAndNavState(theme, show)}
           onMouseEnter={handleOnMouseEnterForLink}
           onMouseLeave={() => {
-            dispatchCursor({
-              type: "CHANGE_CURSOR_COLOR",
-              cursorColor: show
-                ? CURSOR_COLORS.DARK
-                : pathname === "/faq"
-                ? CURSOR_COLORS.DARK
-                : pathname === "/"
-                ? CURSOR_COLORS.LIGHT
-                : CURSOR_COLORS.DARK,
-            })
             dispatchCursor({
               type: "CHANGE_CURSOR_SIZE",
               cursorSize: CURSOR_SIZES.SMALLER,

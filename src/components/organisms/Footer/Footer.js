@@ -107,10 +107,6 @@ const Footer = () => {
           cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
-          type: "CHANGE_CURSOR_COLOR",
-          cursorColor: CURSOR_COLORS.LIGHT,
-        })
-        dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
           cursorSize: CURSOR_SIZES.SMALLER,
         })
@@ -125,22 +121,14 @@ const Footer = () => {
                 cursorType: CURSOR_TYPES.FULL_CURSOR,
               })
               dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-              })
-              dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
-                cursorSize: CURSOR_SIZES.DEFAULT,
+                cursorSize: CURSOR_SIZES.BIGGER,
               })
             }}
             onMouseLeave={() => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
                 cursorType: CURSOR_TYPES.FULL_CURSOR,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.LIGHT,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
@@ -193,22 +181,14 @@ const Footer = () => {
                           cursorType: CURSOR_TYPES.FULL_CURSOR,
                         })
                         dispatchCursor({
-                          type: "CHANGE_CURSOR_COLOR",
-                          cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                        })
-                        dispatchCursor({
                           type: "CHANGE_CURSOR_SIZE",
-                          cursorSize: CURSOR_SIZES.DEFAULT,
+                          cursorSize: CURSOR_SIZES.BIGGER,
                         })
                       }}
                       onMouseLeave={() => {
                         dispatchCursor({
                           type: "CHANGE_CURSOR_TYPE",
                           cursorType: CURSOR_TYPES.FULL_CURSOR,
-                        })
-                        dispatchCursor({
-                          type: "CHANGE_CURSOR_COLOR",
-                          cursorColor: CURSOR_COLORS.LIGHT,
                         })
                         dispatchCursor({
                           type: "CHANGE_CURSOR_SIZE",
@@ -261,22 +241,14 @@ const Footer = () => {
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
                   })
                   dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                  })
-                  dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
-                    cursorSize: CURSOR_SIZES.DEFAULT,
+                    cursorSize: CURSOR_SIZES.BIGGER,
                   })
                 }}
                 onPointerLeave={() => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.LIGHT,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
@@ -298,22 +270,14 @@ const Footer = () => {
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
                   })
                   dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-                  })
-                  dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
-                    cursorSize: CURSOR_SIZES.DEFAULT,
+                    cursorSize: CURSOR_SIZES.BIGGER,
                   })
                 }}
                 onPointerLeave={() => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.LIGHT,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",

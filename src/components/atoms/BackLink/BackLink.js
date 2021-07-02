@@ -5,10 +5,10 @@ export const BackLink = styled(Link)`
   align-self: flex-start;
 
   font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: 2px;
+  line-height: 2.12;
+  letter-spacing: 0.35em;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--black);
   position: relative;
   padding: 6px 8px;

@@ -15,18 +15,6 @@ import {
 
 const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const handleOnMouseEnterForHeroImage = () => {
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-    })
-  }
-  const handleOnMouseLeaveForHeroImage = () => {
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
-    })
-  }
   return (
     <StyledWhatWeDoElementWrapper id={id}>
       <StyledWhatWeDoElementH2
@@ -42,11 +30,7 @@ const WhatWeDoElement = ({ title, image, content, swap, design, id }) => {
         <StructuredText data={title} />
       </StyledWhatWeDoElementH2>
       <StyledWhatWeDoElementImageWrapper>
-        <StyledWhatWeDoElementLeftBar
-          onMouseEnter={handleOnMouseEnterForHeroImage}
-          onMouseLeave={handleOnMouseLeaveForHeroImage}
-          swap={swap}
-        >
+        <StyledWhatWeDoElementLeftBar swap={swap}>
           <GatsbyImage
             style={{ pointerEvents: "none" }}
             image={image.gatsbyImageData}

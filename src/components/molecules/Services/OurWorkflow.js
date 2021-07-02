@@ -37,14 +37,8 @@ const OurWorkflow = ({
   howWeWorkImplementationList,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const handleOnMouseEnter = () => {
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
-    })
-  }
   return (
-    <StyledOurWorkflowWrapper onMouseEnter={handleOnMouseEnter}>
+    <StyledOurWorkflowWrapper>
       <StyledOurWorkflowWrapperH2
         fontFamily="Poppins"
         fontSize="40px"

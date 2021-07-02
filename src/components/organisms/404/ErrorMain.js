@@ -136,10 +136,6 @@ const ErrorMain = ({
             cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
-            type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.DARK,
-          })
-          dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",
             cursorSize: CURSOR_SIZES.SMALLER,
           })
@@ -161,10 +157,6 @@ const ErrorMain = ({
                 cursorType: CURSOR_TYPES.FULL_CURSOR,
               })
               dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.DARK_TRANSPARENT,
-              })
-              dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
                 cursorSize: CURSOR_SIZES.BIGGER,
               })
@@ -173,10 +165,6 @@ const ErrorMain = ({
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
                 cursorType: CURSOR_TYPES.FULL_CURSOR,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.DARK,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",

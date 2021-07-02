@@ -84,17 +84,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
   const dispatch = useMenuDispatch()
   const menuWrapperRef = useRef(null)
   useOutsideRefClick(menuWrapperRef, () => {
-    if (pathname === "/") {
-      dispatchCursor({
-        type: "CHANGE_CURSOR_COLOR",
-        cursorColor: CURSOR_COLORS.LIGHT,
-      })
-    } else {
-      dispatchCursor({
-        type: "CHANGE_CURSOR_COLOR",
-        cursorColor: CURSOR_COLORS.DARK,
-      })
-    }
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
@@ -122,12 +111,19 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
+      type: "CHANGE_CURSOR_SIZE",
+      cursorSize: CURSOR_SIZES.BIGGER,
+    })
+  }
+
+  const handleOnMouseEnterForBiggerLink = () => {
+    dispatchCursor({
+      type: "CHANGE_CURSOR_TYPE",
+      cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
-      cursorSize: CURSOR_SIZES.BIGGER,
+      cursorSize: CURSOR_SIZES.HUGE,
     })
   }
 
@@ -135,10 +131,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
-    })
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
@@ -167,10 +159,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
             cursorType: CURSOR_TYPES.FULL_CURSOR,
           })
           dispatchCursor({
-            type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.DARK,
-          })
-          dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",
             cursorSize: CURSOR_SIZES.SMALLER,
           })
@@ -179,10 +167,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
           dispatchCursor({
             type: "CHANGE_CURSOR_TYPE",
             cursorType: CURSOR_TYPES.FULL_CURSOR,
-          })
-          dispatchCursor({
-            type: "CHANGE_CURSOR_COLOR",
-            cursorColor: CURSOR_COLORS.LIGHT,
           })
           dispatchCursor({
             type: "CHANGE_CURSOR_SIZE",
@@ -282,7 +266,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                 to={item.link}
                 key={item.name}
                 onClick={() => dispatch({ type: "CLOSE_MENU" })}
-                onPointerEnter={handleOnMouseEnterForLink}
+                onPointerEnter={handleOnMouseEnterForBiggerLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
               >
                 <StyledItem key={item.name}>{item.name}</StyledItem>

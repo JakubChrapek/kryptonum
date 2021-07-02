@@ -253,10 +253,6 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.BIGGER,
     })
@@ -266,10 +262,6 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
-    })
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
@@ -329,6 +321,7 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
       <AnimatePresence>
         {width > 1024 && hoverState && (
           <ProjectFeaturedImageCard
+            projectNumber={projectNumber}
             ref={projectCardRef}
             projectCTA={project.projectCtaText}
             projectSlug={project.projectSlug}
@@ -383,12 +376,14 @@ const ProjectFeaturedImageCard = ({
   projectCTA,
   projectSlug,
   projectImage,
+  projectNumber,
   x,
   y,
 }) => {
   return (
     <ImageWrapper
       style={{ originX: "50%", originY: "100%" }}
+      even={projectNumber % 2 === 0}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, x: x, y: y }}
       exit={{ opacity: 0, transition: { duration: 0.4 } }}

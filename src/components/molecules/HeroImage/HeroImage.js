@@ -8,23 +8,9 @@ import {
 
 const HeroImage = ({ heroBgImg }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const handleOnMouseEnterForHeroImage = () => {
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.LIGHT,
-    })
-  }
-  const handleOnMouseLeaveForHeroImage = () => {
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
-    })
-  }
+
   return (
-    <HeroImageWrapper
-      onMouseEnter={handleOnMouseEnterForHeroImage}
-      onMouseLeave={handleOnMouseLeaveForHeroImage}
-    >
+    <HeroImageWrapper>
       <GatsbyImage
         style={{ pointerEvents: "none" }}
         image={heroBgImg.gatsbyImageData}

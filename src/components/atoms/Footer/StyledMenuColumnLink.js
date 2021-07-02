@@ -15,10 +15,10 @@ export const StyledMenuColumnLink = styled(Link)`
   display: inline-block;
   padding: ${({ copyrightWrapper }) => (copyrightWrapper ? "0 8px" : "0 8px")};
   margin-left: ${({ copyrightWrapper }) => (copyrightWrapper ? "21px" : "0")};
-  /* transition: transform 0.2s linear;
+  transition: transform 0.2s linear;
   &:hover {
     transform: translateY(-3px);
-  } */
+  }
 
   @media only screen and (max-width: 822px) {
     padding-right: 0;

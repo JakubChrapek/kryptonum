@@ -10,6 +10,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../contexts/cursorContext"
+import FeaturedVideo from "../components/molecules/CaseStudyComponents/FeaturedVideo"
 
 const PageWrapper = styled.div`
   background-color: var(--white);
@@ -19,7 +20,7 @@ const ProjectWrapper = styled.div`
   background-color: var(--white);
   margin: 0 auto;
   width: 100%;
-  padding-top: 204px;
+  padding-top: 184px;
   @media (max-width: 1024px) {
     padding-top: 140px;
   }
@@ -46,7 +47,7 @@ const ProjectContentWrapper = styled.div`
 
 const TitleWrapper = styled.span`
   display: inline-block;
-  margin-top: 100px;
+  margin-top: 76px;
   @media (max-width: 1024px) {
     margin-top: 60px;
     align-self: flex-start;
@@ -54,10 +55,9 @@ const TitleWrapper = styled.span`
 `
 
 const ProjectTitle = styled.h1`
-  font-size: 70px;
-  line-height: 1.24;
-  letter-spacing: -1.75px;
-  color: var(--gray);
+  font-size: 76px;
+  line-height: 1.5;
+  color: var(--dark-bg);
 
   font-weight: normal;
   @media (max-width: 1024px) {
@@ -72,14 +72,12 @@ const ProjectTitle = styled.h1`
 const ProjectFeaturedImage = styled(GatsbyImage)`
   background-color: var(--white);
   width: 100%;
-  height: 60vh;
-  min-height: 395px;
-  max-height: 600px;
-  margin: 88px 0 140px;
+  height: 90vh;
+  min-height: 560px;
+  max-height: 960px;
+  margin: 60px 0 100px;
   @media (max-width: 1024px) {
     margin: 72px 0;
-    height: 90vh;
-    max-height: 747px;
   }
   @media (max-width: 767px) {
     margin: 64px 0;
@@ -89,7 +87,7 @@ const ProjectFeaturedImage = styled(GatsbyImage)`
 const StructuredContentWrapper = styled.div`
   background-color: var(--white);
   max-width: 1366px;
-  padding: 0 140px;
+  padding: 0 112px;
   @media (max-width: 1024px) {
     padding: 0 80px;
   }
@@ -141,8 +139,8 @@ const ChallengeWrapper = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 25% auto;
-  grid-column-gap: 32px;
-  padding-left: 75px;
+  grid-column-gap: 15%;
+  padding-left: 70px;
   @media (max-width: 1024px) {
     padding: 0;
     grid-template-columns: 1fr;
@@ -156,11 +154,10 @@ const ChallengeWrapper = styled.div`
 const FeaturedColumn = styled.div`
   > h2 {
     font-family: Poppins;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: var(--black-font);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.66;
+    color: var(--black);
     @media (max-width: 1024px) {
       font-size: 28px;
     }
@@ -173,11 +170,10 @@ const FeaturedColumn = styled.div`
 const ContentColumn = styled.div`
   > p {
     font-family: Poppins;
-    font-size: 28px;
-    font-weight: normal;
-    line-height: 1.71;
-    letter-spacing: normal;
-    color: var(--black-font);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--dark-bg);
     @media (max-width: 767px) {
       font-size: 16px;
       line-height: 1.38;
@@ -226,31 +222,27 @@ const ContentColumn = styled.div`
 
   > a {
     display: inline-block;
-    margin-top: 44px;
-
-    font-size: 14px;
-    @media (max-width: 1024px) {
-      font-size: 18px;
-    }
+    margin-top: 34px;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    padding: 4px 0 8px;
+    color: var(--black);
+    transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
+      transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     @media (max-width: 767px) {
       font-size: 14px;
       margin: 36px 0;
     }
-    font-weight: 500;
-    line-height: 2.14;
-    letter-spacing: 5px;
-    text-decoration: none;
-    position: relative;
-    color: var(--black);
-    transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
-      transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
     &:after {
       content: "";
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: calc(100% + 13px);
+      bottom: 0;
+      left: -1px;
+      width: calc(100% + 2px);
       height: 2px;
       transform-origin: center bottom;
       transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53),
@@ -553,10 +545,7 @@ const Project = ({ data }) => {
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.LIGHT,
-    })
+
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.MEDIUM,
@@ -569,10 +558,6 @@ const Project = ({ data }) => {
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.ACCENT_TRANSPARENT,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.BIGGER,
     })
@@ -583,10 +568,6 @@ const Project = ({ data }) => {
       cursorType: CURSOR_TYPES.FULL_CURSOR,
     })
     dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
-    })
-    dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.SMALLER,
     })
@@ -595,10 +576,6 @@ const Project = ({ data }) => {
     dispatchCursor({
       type: "CHANGE_CURSOR_TYPE",
       cursorType: CURSOR_TYPES.FULL_CURSOR,
-    })
-    dispatchCursor({
-      type: "CHANGE_CURSOR_COLOR",
-      cursorColor: CURSOR_COLORS.DARK,
     })
     dispatchCursor({
       type: "CHANGE_CURSOR_SIZE",
@@ -625,6 +602,7 @@ const Project = ({ data }) => {
           onMouseLeave={handleNormalLeave}
           image={datoCmsProject.projectFeaturedImage?.gatsbyImageData}
         />
+        <FeaturedVideo />
       </ProjectWrapper>
       <StructuredContentWrapper>
         <StructuredText

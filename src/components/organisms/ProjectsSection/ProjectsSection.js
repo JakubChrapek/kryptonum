@@ -56,10 +56,6 @@ const ProjectsSection = ({ buttonText }) => {
           cursorType: CURSOR_TYPES.FULL_CURSOR,
         })
         dispatchCursor({
-          type: "CHANGE_CURSOR_COLOR",
-          cursorColor: CURSOR_COLORS.DARK,
-        })
-        dispatchCursor({
           type: "CHANGE_CURSOR_SIZE",
           cursorSize: CURSOR_SIZES.SMALLER,
         })
@@ -78,10 +74,6 @@ const ProjectsSection = ({ buttonText }) => {
                     cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
                   })
                   dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.ACCENT,
-                  })
-                  dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
                     cursorSize: CURSOR_SIZES.HUGE,
                   })
@@ -94,10 +86,6 @@ const ProjectsSection = ({ buttonText }) => {
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
                     cursorType: CURSOR_TYPES.FULL_CURSOR,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_COLOR",
-                    cursorColor: CURSOR_COLORS.DARK,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
@@ -115,11 +103,7 @@ const ProjectsSection = ({ buttonText }) => {
             onMouseEnter={() => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.LIGHT,
+                cursorType: CURSOR_TYPES.TRANSPARENT_TEXT,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
@@ -134,10 +118,6 @@ const ProjectsSection = ({ buttonText }) => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
                 cursorType: CURSOR_TYPES.FULL_CURSOR,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_COLOR",
-                cursorColor: CURSOR_COLORS.DARK,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
