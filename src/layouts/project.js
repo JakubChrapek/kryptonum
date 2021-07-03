@@ -88,6 +88,9 @@ const StructuredContentWrapper = styled.div`
   background-color: var(--white);
   max-width: 1366px;
   padding: 0 112px;
+  a {
+    color: inherit;
+  }
   @media (max-width: 1024px) {
     padding: 0 80px;
   }
@@ -383,9 +386,11 @@ const ProjectTwoColumnImage = ({
 
 const TwoColumnGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 51px;
-  margin-top: 210px;
+  grid-template-columns: 280px 1fr;
+  grid-column-gap: 118px;
+  margin-top: 178px;
+  padding: 0 70px;
+  width: 100%;
   @media (max-width: 1024px) {
     margin-top: 120px;
     grid-template-columns: 1fr;
@@ -400,23 +405,22 @@ const FeaturedWrapper = styled.div`
     font-family: Poppins;
     font-size: 28px;
     font-weight: normal;
-    line-height: 1.71;
+    line-height: 1.5;
     letter-spacing: normal;
     color: var(--black-font);
     max-width: 410px;
   }
 `
 const NormalWrapper = styled.div`
-  padding-left: 12px;
-  max-width: 506px;
+  max-width: 635px;
   @media (max-width: 1024px) {
     padding-left: 0;
   }
   p {
     font-family: Poppins;
-    font-size: 16px;
-    line-height: 1.38;
-    color: var(--black);
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--dark-bg);
     + p {
       margin-top: 6px;
     }
@@ -444,9 +448,42 @@ const ProjectTwoColumnSection = ({
   </TwoColumnGrid>
 )
 
+const StyledHeaderParagraphWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-top: 157px;
+  width: 100%;
+`
+
+const VerticalHeaderStyles = styled.h2`
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--black);
+`
+const VerticalTextStyles = styled.p`
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--dark-bg);
+  max-width: 729px;
+  margin-top: 28px;
+`
+
+const HeaderParagraphVertical = ({ title, content }) => (
+  <StyledHeaderParagraphWrapper>
+    <VerticalHeaderStyles>
+      <StructuredText className="title" data={title} />
+    </VerticalHeaderStyles>
+    <VerticalTextStyles>
+      <StructuredText className="content" data={content} />
+    </VerticalTextStyles>
+  </StyledHeaderParagraphWrapper>
+)
+
 const StyledHeaderWrapper = styled.span`
   display: inline-block;
-  margin-top: 210px;
+  margin-top: 178px;
   align-self: flex-start;
   h2 {
     max-width: 506px;
@@ -473,6 +510,106 @@ const StyledHeaderWrapper = styled.span`
     }
   }
 `
+
+const GalleryWrapper = styled.section`
+  display: grid;
+  margin-top: 157px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12.2vw;
+`
+
+const ItemWrapper = styled.div`
+  margin-top: ${({ number }) =>
+    number === 1 ? "127px" : number === 4 ? "-127px" : undefined};
+`
+
+const GalleryItemImageWrapper = styled.div``
+
+const GalleryItemDescriptionWrapper = styled.div`
+  margin-top: 51px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--black);
+  text-align: center;
+`
+
+const GalleryItem = ({ number, image, description }) => (
+  <ItemWrapper number={number}>
+    <GalleryItemImageWrapper>
+      <GatsbyImage image={image.gatsbyImageData} />
+    </GalleryItemImageWrapper>
+    <GalleryItemDescriptionWrapper>
+      <StructuredText data={description} />
+    </GalleryItemDescriptionWrapper>
+  </ItemWrapper>
+)
+
+const ProjectGallery = ({
+  firstImage,
+  firstDescription,
+  secondImage,
+  secondDescription,
+  thirdImage,
+  thirdDescription,
+  fourthImage,
+  fourthDescription,
+}) => (
+  <GalleryWrapper>
+    <GalleryItem number={1} image={firstImage} description={firstDescription} />
+    <GalleryItem
+      number={2}
+      image={secondImage}
+      description={secondDescription}
+    />
+    <GalleryItem number={3} image={thirdImage} description={thirdDescription} />
+    <GalleryItem
+      number={4}
+      image={fourthImage}
+      description={fourthDescription}
+    />
+  </GalleryWrapper>
+)
+
+const ProjectFullscreenImageWrapper = styled.section`
+  max-width: 100vw;
+  width: 100vw;
+  background-color: var(--white);
+  margin-top: 116px;
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 90vh;
+    min-height: 560px;
+    max-height: 960px;
+    @media (max-width: 1024px) {
+      margin: 72px 0;
+    }
+    @media (max-width: 767px) {
+      margin: 64px 0;
+    }
+  }
+`
+const ProjectFullScreenImage = ({ image }) => (
+  <ProjectFullscreenImageWrapper>
+    <GatsbyImage image={image.gatsbyImageData} />
+  </ProjectFullscreenImageWrapper>
+)
+
+const TestimonialStyles = styled.section``
+
+const ClientWrapper = styled.div``
+const Testimonial = styled.div``
+
+const ProjectTestimonial = ({ clientName, clientRole, clientTestimonial }) => (
+  <TestimonialStyles>
+    <ClientWrapper>
+      <span>{clientName},</span>
+      <span className="role">{clientRole}</span>
+    </ClientWrapper>
+    <Testimonial>
+      <StructuredText data={clientTestimonial} />
+    </Testimonial>
+  </TestimonialStyles>
+)
 
 const ProjectHeader = ({ headerText }) => (
   <StyledHeaderWrapper>
@@ -602,7 +739,6 @@ const Project = ({ data }) => {
           onMouseLeave={handleNormalLeave}
           image={datoCmsProject.projectFeaturedImage?.gatsbyImageData}
         />
-        <FeaturedVideo />
       </ProjectWrapper>
       <StructuredContentWrapper>
         <StructuredText
@@ -658,6 +794,45 @@ const Project = ({ data }) => {
                 )
               case "DatoCmsProjectFinalHeader":
                 return <ProjectHeader headerText={record?.headerText} />
+
+              case "DatoCmsProjectVideoSection":
+                return (
+                  <FeaturedVideo
+                    url={record.videoLink}
+                    previewImage={record.videoPreviewImage}
+                    bg={record.videoBackgroundColor.hex}
+                  />
+                )
+              case "DatoCmsProjectHeaderParagraphVertical":
+                return (
+                  <HeaderParagraphVertical
+                    title={record.sectionTitle}
+                    content={record.sectionContent}
+                  />
+                )
+              case "DatoCmsProjectGallerySection":
+                return (
+                  <ProjectGallery
+                    firstImage={record.galleryItemImageFirst}
+                    firstDescription={record.galleryItemShortDescriptionFirst}
+                    secondImage={record.galleryItemImageSecond}
+                    secondDescription={record.galleryItemShortDescriptionSecond}
+                    thirdImage={record.galleryItemImageThird}
+                    thirdDescription={record.galleryItemShortDescriptionThird}
+                    fourthImage={record.galleryItemImageFourth}
+                    fourthDescription={record.galleryItemShortDescriptionFourth}
+                  />
+                )
+              case "DatoCmsProjectFullscreenImage":
+                return <ProjectFullScreenImage image={record.image} />
+              case "DatoCmsProjectTestimonialSection":
+                return (
+                  <ProjectTestimonial
+                    clientName={record.clientName}
+                    clientRole={record.clientRole}
+                    clientTestimonial={record.testimonial}
+                  />
+                )
               default:
                 return null
             }
@@ -751,6 +926,66 @@ export const projectQuery = graphql`
           ... on DatoCmsProjectFinalHeader {
             id: originalId
             headerText
+          }
+          ... on DatoCmsProjectVideoSection {
+            id: originalId
+            videoLink
+            videoPreviewImage {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+            videoBackgroundColor {
+              hex
+            }
+          }
+          ... on DatoCmsProjectHeaderParagraphVertical {
+            id: originalId
+            sectionTitle {
+              value
+            }
+            sectionContent {
+              value
+            }
+          }
+          ... on DatoCmsProjectGallerySection {
+            id: originalId
+            galleryItemImageFirst {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+            galleryItemShortDescriptionFirst {
+              value
+            }
+            galleryItemImageSecond {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+            galleryItemShortDescriptionSecond {
+              value
+            }
+            galleryItemImageThird {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+            galleryItemShortDescriptionThird {
+              value
+            }
+            galleryItemImageFourth {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+            galleryItemShortDescriptionFourth {
+              value
+            }
+          }
+          ... on DatoCmsProjectFullscreenImage {
+            id: originalId
+            image {
+              gatsbyImageData(width: 1920, placeholder: BLURRED)
+            }
+          }
+          ... on DatoCmsProjectTestimonialSection {
+            id: originalId
+            clientName
+            clientRole
+            testimonial {
+              value
+            }
           }
         }
       }

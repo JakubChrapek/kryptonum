@@ -76,7 +76,7 @@ export const query = graphql`
           value
         }
         projectFeaturedImage {
-          gatsbyImageData(width: 518, height: 697, placeholder: BLURRED)
+          gatsbyImageData(placeholder: BLURRED)
         }
       }
     }
