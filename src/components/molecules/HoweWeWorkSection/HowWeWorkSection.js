@@ -17,6 +17,11 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 import { DragSliderWrapper } from "../../atoms/DragSliderWrapper/DragSliderWrapper"
+import styled from "styled-components"
+
+const HowWeWorkSectionStyles = styled(ServicesStyles)`
+  padding: 90px 100px 140px;
+`
 
 const HowWeWorkSection = ({
   howItWorksTitle,
@@ -106,7 +111,7 @@ const HowWeWorkSection = ({
       }}
       bg="var(--white)"
     >
-      <ServicesStyles howWeWorkSection={true}>
+      <HowWeWorkSectionStyles howWeWorkSection={true}>
         <TextStyles
           fontSize="13px"
           lineHeight="1.33em"
@@ -206,7 +211,7 @@ const HowWeWorkSection = ({
             </li>
           </Cards>
         </DragSliderWrapper>
-      </ServicesStyles>
+      </HowWeWorkSectionStyles>
     </BgColourWrapper>
   )
 }

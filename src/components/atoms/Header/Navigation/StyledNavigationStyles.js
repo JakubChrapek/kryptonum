@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export const StyledNavigationStyles = styled(motion.nav)`
   position: fixed;
-  right: 0vw;
+  right: 0;
   top: 0;
   height: 100vh;
   max-width: 100%;
@@ -19,14 +19,14 @@ export const StyledNavigationStyles = styled(motion.nav)`
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    padding: 90px 60px 0 60px;
+    padding: 90px 60px 90px 60px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   @media only screen and (max-width: 540px) {
-    padding: 60px 40px 0 40px;
+    padding: 90px 40px 90px 40px;
   }
   @media only screen and (max-width: 374px) {
-    padding: 40px 30px 0 30px;
+    padding: 100px 30px 100px 30px;
   }
 `

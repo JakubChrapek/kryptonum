@@ -76,15 +76,11 @@ const ProjectsSection = ({ buttonText }) => {
                   handleClick(iterator)
                   dispatchCursor({
                     type: "CHANGE_CURSOR_TYPE",
-                    cursorType: CURSOR_TYPES.OUTLINED_CURSOR,
+                    cursorType: CURSOR_TYPES.FULL_CURSOR,
                   })
                   dispatchCursor({
                     type: "CHANGE_CURSOR_SIZE",
                     cursorSize: CURSOR_SIZES.HUGE,
-                  })
-                  dispatchCursor({
-                    type: "CHANGE_CURSOR_TEXT",
-                    cursorText: CURSOR_TEXT.VIEW,
                   })
                 }}
                 onMouseLeave={() => {
@@ -108,15 +104,11 @@ const ProjectsSection = ({ buttonText }) => {
             onMouseEnter={() => {
               dispatchCursor({
                 type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.TRANSPARENT_TEXT,
+                cursorType: CURSOR_TYPES.FULL_CURSOR,
               })
               dispatchCursor({
                 type: "CHANGE_CURSOR_SIZE",
                 cursorSize: CURSOR_SIZES.HUGE,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_TEXT",
-                cursorText: CURSOR_TEXT.VIEW,
               })
             }}
             onMouseLeave={() => {

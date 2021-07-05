@@ -7,6 +7,10 @@ export const StyledProjectsColumn = styled.ul`
   align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  @media (max-width: 1142px) {
+    flex: 1 1 50%;
+    width: 50%;
+  }
   @media only screen and (max-width: 767px) {
     display: none;
   }

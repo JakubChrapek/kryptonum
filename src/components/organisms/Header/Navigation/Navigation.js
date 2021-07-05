@@ -50,6 +50,14 @@ const lineGrow = {
   animate: { width: 0 },
 }
 
+const NavigationWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+`
+
 const Navigation = ({ mobile, width, pointerEvents }) => {
   const dispatchCursor = useCursorDispatchContext()
   let pathname = useLocation().pathname
@@ -140,7 +148,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
   const [panelComplete, setPanelComplete] = useState(false)
 
   return (
-    <>
+    <NavigationWrapper>
       {/* <Panels
         panelComplete={panelComplete}
         setPanelComplete={setPanelComplete}
@@ -202,6 +210,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
             direction="column"
             alignItems="flex-start"
             justifyContent="space-between"
+            margin="16px 0 0"
           >
             <div>
               <TextStyles
@@ -250,14 +259,6 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
           justifyContent="flex-start"
           margin="0 0 0 56px"
         >
-          <TextStyles
-            fontSize="15px"
-            lineHeight="1.47em"
-            color="var(--text-gray)"
-            declaredMargin="0 0 0 8px"
-          >
-            Menu
-          </TextStyles>
           <StyledList>
             {navItems.map(item => (
               <StyledLink
@@ -283,7 +284,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
           )}
         </StyledNavigationMenuFlex>
       </StyledNavigationStyles>
-    </>
+    </NavigationWrapper>
   )
 }
 

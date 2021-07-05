@@ -3,7 +3,7 @@ import { TextStyles } from "../Text/Text"
 
 export const StyledCtaH2 = styled(TextStyles)`
   display: inline;
-  @media only screen and (max-width: 970px) {
+  @media only screen and (max-width: 1142px) {
     font-size: 6vw;
   }
   @media only screen and (max-width: 857px) {
@@ -47,6 +47,12 @@ export const StyledCtaH2 = styled(TextStyles)`
     width: 34rem;
     height: 10rem;
     top: 28px;
+    @media (max-width: 1142px) {
+      top: 30px;
+    }
+    @media (max-width: 1024px) {
+      top: 37px;
+    }
     overflow: hidden;
     mark {
       position: absolute;

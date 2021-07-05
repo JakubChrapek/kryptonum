@@ -19,15 +19,9 @@ export const StyledScrollLink = styled(ScrollLink)`
   z-index: 1;
   transition: border 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
   cursor: pointer;
-  @media (max-width: 1101px) {
-    margin-right: 20px;
-    margin-top: -80px;
-  }
 
-  @media (max-width: 868px) {
-    width: 242px;
-    height: 242px;
-    padding-left: 40px;
+  @media (max-width: 1280px) {
+    margin: 40px 0 0 -36px;
   }
 
   &:hover {

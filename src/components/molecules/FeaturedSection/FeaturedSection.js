@@ -14,6 +14,11 @@ import {
   CURSOR_COLORS,
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
+import styled from "styled-components"
+
+const FeaturedSectionStyles = styled(ServicesStyles)`
+  max-width: 1366px;
+`
 
 const FeaturedSection = ({
   featuredTitle,
@@ -38,7 +43,7 @@ const FeaturedSection = ({
       }}
       bg="var(--white)"
     >
-      <ServicesStyles featuredSection={true}>
+      <FeaturedSectionStyles featuredSection={true}>
         <TextStyles
           fontSize="9px"
           lineHeight="1.33em"
@@ -65,7 +70,7 @@ const FeaturedSection = ({
             <li>{featuredThirdElement}</li>
           </FeaturedSectionUl>
         </FeaturedSectionWrapper>
-      </ServicesStyles>
+      </FeaturedSectionStyles>
     </BgColourWrapper>
   )
 }

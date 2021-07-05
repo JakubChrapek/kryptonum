@@ -17,6 +17,5 @@ export const StyledHeader = styled(motion.header)`
 
   @media only screen and (max-width: 640px) {
     padding: 23px 28px;
-    justify-content: center;
   }
 `

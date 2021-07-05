@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { StructuredText } from "react-datocms"
 
 export const WhatIsKryptonumTitleStyles = styled.h2`
+  z-index: 1;
   > p {
     font-size: 2rem;
     letter-spacing: 3rem;

@@ -30,7 +30,7 @@ export const StyledNavBurger = styled(motion.button)`
     font-size: 18px;
     line-height: 1;
     font-weight: 400;
-    margin: 0 19px 2px;
+    margin: 0 19px 1px;
   }
 
   span:not(.hamburger--menu) {

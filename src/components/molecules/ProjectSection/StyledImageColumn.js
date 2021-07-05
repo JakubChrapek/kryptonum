@@ -7,6 +7,11 @@ export const StyledImageColumn = styled.div`
   padding-left: 120px;
   flex: 1 1 45%;
   width: 45%;
+  @media (max-width: 1142px) {
+    flex: 1 1 50%;
+    width: 50%;
+    padding-left: 80px;
+  }
   .gatsby-image-wrapper {
     width: 524px;
     height: 617px;

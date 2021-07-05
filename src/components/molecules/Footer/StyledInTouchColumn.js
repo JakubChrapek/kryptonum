@@ -1,15 +1,8 @@
 import styled from "styled-components"
 
 export const StyledInTouchColumn = styled.div`
-  padding-left: 112px;
   width: 48ch;
   max-width: 48ch;
-  @media (max-width: 1200px) {
-    padding-left: 100px;
-  }
-  @media (max-width: 918px) {
-    padding-left: 0;
-  }
   @media (max-width: 767px) {
     width: unset;
     max-width: 100%;

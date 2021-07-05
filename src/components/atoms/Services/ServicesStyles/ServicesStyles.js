@@ -10,8 +10,8 @@ export const ServicesStyles = styled.section`
   overflow: hidden;
   align-items: ${({ featuredSection, howWeWorkSection }) =>
     featuredSection || howWeWorkSection ? "flex-start" : "center"};
-  padding: ${({ featuredSection }) =>
-    featuredSection ? "0 123px 53px 112px" : "88px 0 140px 0"};
+  padding: ${({ featuredSection, howWeWorkSection }) =>
+    featuredSection ? "0 123px 53px 112px" : "88px 0px 140px 0px"};
 
   .marquee-container {
     overflow: hidden;

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledFooterSectionStyles = styled.div`
-  padding: 74px 82px 36px 58px;
+  padding: 74px 100px 36px;
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;

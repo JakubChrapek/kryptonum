@@ -20,7 +20,7 @@ const CursorStyles = styled(motion.div)`
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: none !important;
   }
 
