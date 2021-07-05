@@ -46,12 +46,9 @@ const HeroCanvas = () => {
       for (let b = 0; b < particles.length; b++) {
         let distanceX = particles[a].x - particles[b].x
         let distanceY = particles[a].y - particles[b].y
-        let distance = distanceX ** 2 + distanceY ** 2
-        if (
-          distance <
-          ((canvasRef.current.width / 10) * canvasRef.current.height) / 10
-        ) {
-          opacityValue = 1 - distance / 20000
+        let distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
+        if (distance < canvasRef.current.width / 15) {
+          opacityValue = 1 - distance / (canvasRef.current.width / 14)
           canvasRef.current.getContext(
             "2d"
           ).strokeStyle = `rgba(47, 188, 121, ${opacityValue})`
@@ -81,7 +78,7 @@ const HeroCanvas = () => {
     if (!canvasRef.current) return
     setParticles([])
     let numberOfParticles = Math.floor(
-      (window.innerHeight * window.innerWidth) / 35000
+      (window.innerHeight * window.innerWidth) / 10000
     )
     const ctx = canvasRef.current.getContext("2d")
     let ratio = getPixelRatio(ctx)
@@ -91,7 +88,7 @@ const HeroCanvas = () => {
     canvasRef.current.height = height * ratio
     for (let i = 0; i < numberOfParticles; i++) {
       let size =
-        (Math.min(canvasRef.current.width, canvasRef.current.height) / 20) *
+        (Math.min(canvasRef.current.width, canvasRef.current.height) / 40) *
           Math.random() +
         3
       let x =

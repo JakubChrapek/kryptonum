@@ -75,6 +75,9 @@ export const query = graphql`
         projectCtaText {
           value
         }
+        projectPreviewImage {
+          gatsbyImageData(placeholder: BLURRED)
+        }
         projectFeaturedImage {
           gatsbyImageData(placeholder: BLURRED)
         }

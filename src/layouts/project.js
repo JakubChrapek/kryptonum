@@ -594,15 +594,55 @@ const ProjectFullScreenImage = ({ image }) => (
   </ProjectFullscreenImageWrapper>
 )
 
-const TestimonialStyles = styled.section``
+const TestimonialStyles = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 190px;
+`
 
-const ClientWrapper = styled.div``
-const Testimonial = styled.div``
+const ClientWrapper = styled.div`
+  display: flex;
+  > span {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--dark-bg);
+    :not(.role) {
+      position: relative;
+      padding-left: 81px;
+      display: inline-block;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 67px;
+        top: 50%;
+        transform: translateY(-150%);
+        height: 2px;
+        background-color: var(--dark-bg);
+      }
+    }
+    &.role {
+      color: var(--text-gray);
+      margin-left: 6px;
+    }
+  }
+`
+const Testimonial = styled.div`
+  display: flex;
+  max-width: 932px;
+  margin-top: 47px;
+  p {
+    font-size: 28px;
+    line-height: 1.5;
+    color: var(--dark-bg);
+  }
+`
 
 const ProjectTestimonial = ({ clientName, clientRole, clientTestimonial }) => (
   <TestimonialStyles>
     <ClientWrapper>
-      <span>{clientName},</span>
+      <span>{`${clientName},`}</span>
       <span className="role">{clientRole}</span>
     </ClientWrapper>
     <Testimonial>

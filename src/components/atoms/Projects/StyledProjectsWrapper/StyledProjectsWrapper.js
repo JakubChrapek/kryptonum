@@ -60,6 +60,7 @@ export const ProjectsStyles = styled(motion.section)`
       position: relative;
       height: 100%;
       display: inline-flex;
+      width: 100%;
       /* width: 100%; */
       &:focus-visible {
         outline-offset: 18px;
@@ -94,7 +95,9 @@ export const ProjectsStyles = styled(motion.section)`
 
     &:nth-of-type(even) {
       margin-left: var(--gap-width);
-      justify-content: flex-end;
+      a {
+        justify-content: flex-end;
+      }
     }
 
     &:nth-of-type(1),
@@ -244,7 +247,7 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
   })
   const dispatchCursor = useCursorDispatchContext()
 
-  const maxLettersOfProjectName = 15
+  const maxLettersOfProjectName = 22
 
   const handleLinkEnter = () => {
     setHoverState(true)
@@ -325,7 +328,7 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
             ref={projectCardRef}
             projectCTA={project.projectCtaText}
             projectSlug={project.projectSlug}
-            projectImage={project.projectFeaturedImage}
+            projectImage={project.projectPreviewImage}
             x={
               x < width / 2
                 ? projectPosition.width / 2 + (x - width / 2) / 10

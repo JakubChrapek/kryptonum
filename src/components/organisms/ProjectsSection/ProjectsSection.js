@@ -30,6 +30,11 @@ const query = graphql`
             ...GatsbyDatoCmsFluid
           }
         }
+        projectPreviewImage {
+          fluid(maxWidth: 524, maxHeight: 617) {
+            ...GatsbyDatoCmsFluid
+          }
+        }
         projectCategories {
           categoryName
         }

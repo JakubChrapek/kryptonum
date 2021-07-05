@@ -53,7 +53,7 @@ const MaxWidthSlider = ({ dataName, activeProject }) => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
-                  <Img fluid={project.projectFeaturedImage.fluid} />
+                  <Img fluid={project.projectPreviewImage.fluid} />
                 </motion.div>
                 <motion.p
                   key={`${project.projectTitle}-${project.projectSlug}-projectType`}
