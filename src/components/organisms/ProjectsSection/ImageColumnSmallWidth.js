@@ -5,6 +5,16 @@ import { fadeInUp } from "../../Styles/Animations"
 import { StyledImageColumnSmallWidth } from "../../atoms/ProjectsSection/StyledImageColumnSmallWidth"
 import { StyledCategoriesListSmallWidth } from "../../atoms/ProjectsSection/StyledCategoriesListSmallWidth"
 import { StyledImageColumnSmallWidthPost } from "../../atoms/ProjectsSection/StyledImageColumnSmallWidthPost"
+import styled from "styled-components"
+
+const StyledTextWrapper = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 28px;
+`
 
 const ImageColumnSmallWidth = ({ dataName }) => {
   return (
@@ -21,29 +31,31 @@ const ImageColumnSmallWidth = ({ dataName }) => {
             >
               <Img fluid={project.projectFeaturedImage.fluid} />
             </div>
-            <p
-              key={`${project.projectTitle}-${project.projectSlug}-projectType`}
-              variants={fadeInUp}
-              initial="initial"
-              animate="animate"
-              exit={{ opacity: 0 }}
-            >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
-              1
-            )}`}</p>
+            <StyledTextWrapper>
+              <p
+                key={`${project.projectTitle}-${project.projectSlug}-projectType`}
+                variants={fadeInUp}
+                initial="initial"
+                animate="animate"
+                exit={{ opacity: 0 }}
+              >{`${project.projectType[0].toUpperCase()}${project.projectType.slice(
+                1
+              )}`}</p>
+              <StyledCategoriesListSmallWidth
+                key={`${project.projectTitle}-${project.projectSlug}-projectCategories`}
+                variants={fadeInUp}
+                initial="initial"
+                animate="animate"
+                exit={{ opacity: 0 }}
+              >
+                <span>
+                  {project.projectCategories
+                    .map(category => category.categoryName)
+                    .join(", ")}
+                </span>
+              </StyledCategoriesListSmallWidth>
+            </StyledTextWrapper>
           </Link>
-          <StyledCategoriesListSmallWidth
-            key={`${project.projectTitle}-${project.projectSlug}-projectCategories`}
-            variants={fadeInUp}
-            initial="initial"
-            animate="animate"
-            exit={{ opacity: 0 }}
-          >
-            <span>
-              {project.projectCategories
-                .map(category => category.categoryName)
-                .join(", ")}
-            </span>
-          </StyledCategoriesListSmallWidth>
         </StyledImageColumnSmallWidthPost>
       ))}
       <Link className="btn" to="/projekty">

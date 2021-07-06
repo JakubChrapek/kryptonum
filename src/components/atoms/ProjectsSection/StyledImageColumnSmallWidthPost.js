@@ -5,7 +5,19 @@ export const StyledImageColumnSmallWidthPost = styled.div`
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  @media (max-width: 767px) {
+    text-align: center;
+    p {
+      display: inline-block;
+      text-align: left;
+    }
+    &:last-of-type {
+      ul {
+        padding-bottom: 47px;
+      }
+    }
+  }
   @media only screen and (max-width: 530px) {
-    max-width: none;
+    max-width: 100%;
   }
 `

@@ -6,6 +6,7 @@ export const Passion = styled(GridItem)`
 
   @media only screen and (max-width: 1035px) {
     max-width: 160px;
+    margin-left: 3rem;
   }
   @media only screen and (max-width: 767px) {
     display: none;

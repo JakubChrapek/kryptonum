@@ -10,29 +10,17 @@ export const StyledImageColumn = styled.div`
   @media (max-width: 1142px) {
     flex: 1 1 50%;
     width: 50%;
-    padding-left: 40px;
+    padding-left: 0;
   }
   .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
     max-width: 524px;
     max-height: 617px;
-
-    /* @media only screen and (max-width: 1200px) {
-      width: 474px;
-      height: 577px;
+    @media (max-width: 767px) {
+      max-width: 100%;
+      max-height: 100%;
     }
-    @media only screen and (max-width: 1033px) {
-      width: 444px;
-      height: 547px;
-    }
-    @media only screen and (max-width: 821px) {
-      width: 414px;
-      height: 517px;
-    }
-    @media only screen and (max-width: 767px) {
-      width: 100%;
-    } */
     picture,
     img {
       object-fit: cover;

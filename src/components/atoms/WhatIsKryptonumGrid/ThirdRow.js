@@ -8,7 +8,7 @@ export const ThirdRow = styled.div`
   margin-top: 12rem;
 
   @media (max-width: 1024px) {
-    margin-top: 10%;
+    margin-top: 2rem;
   }
 
   @media (max-width: 767px) {

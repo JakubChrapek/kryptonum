@@ -7,6 +7,9 @@ export const SecondRow = styled.div`
   @media only screen and (max-width: 1142px) {
     margin-top: -7%;
   }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 4rem;
+  }
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: flex-start;
@@ -31,14 +34,19 @@ export const SecondRow = styled.div`
     }
     @media only screen and (max-width: 1035px) {
       margin: 12% 0 0 6%;
-      font-size: 14px;
+    }
+    @media only screen and (max-width: 1024px) {
+      max-width: 50%;
+      margin: 6rem 0 0 6%;
     }
     @media only screen and (max-width: 767px) {
-      max-width: 357px;
-      margin: 8rem 0 0;
+      max-width: 35.6rem;
+      margin: 4rem 0 0;
+      font-size: 20px;
+      line-height: 1.81;
     }
     @media only screen and (max-width: 540px) {
-      margin: 7.2rem 0 0;
+      margin: 2rem 0 0;
     }
   }
 
@@ -58,7 +66,7 @@ export const SecondRow = styled.div`
       width: 35%;
     }
     filter: brightness(0.7);
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1024px) {
       display: none;
     }
     img {

@@ -12,12 +12,13 @@ export const StyledImageColumnSmallWidth = styled(StyledImageColumn)`
   a {
     @media only screen and (max-width: 430px) {
       width: calc(100% - 40px);
+      font-size: 16px;
       padding: 32px 9px;
-      font-size: 14px;
+      line-height: 1.78;
     }
     @media only screen and (max-width: 371px) {
       width: 260px;
-      padding: 22px;
+      padding: 22px 12px;
     }
   }
 `

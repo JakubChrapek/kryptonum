@@ -42,6 +42,6 @@ export const ServicesStyles = styled.section`
   }
   @media only screen and (max-width: 500px) {
     padding: ${({ featuredSection }) =>
-      featuredSection ? "55px 60px 55px 20px" : "36px 0 56px 0"};
+      featuredSection ? "55px 60px 55px 28px" : "36px 0 56px 0"};
   }
 `

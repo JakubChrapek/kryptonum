@@ -47,15 +47,13 @@ const HeroCanvas = () => {
         let distanceX = particles[a].x - particles[b].x
         let distanceY = particles[a].y - particles[b].y
         let distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
-        if (distance < canvasRef.current.width / 15) {
+        if (distance < Math.min(canvasRef.current.width / 15, 220)) {
           opacityValue = 1 - distance / (canvasRef.current.width / 14)
           canvasRef.current.getContext(
             "2d"
           ).strokeStyle = `rgba(47, 188, 121, ${opacityValue})`
           canvasRef.current.getContext("2d").save()
-          canvasRef.current.getContext("2d").lineWidth = Math.floor(
-            100 / distance
-          )
+          canvasRef.current.getContext("2d").lineWidth = 2
 
           canvasRef.current.getContext("2d").beginPath()
           canvasRef.current

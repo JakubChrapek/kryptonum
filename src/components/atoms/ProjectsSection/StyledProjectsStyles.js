@@ -17,7 +17,7 @@ export const StyledProjectsStyles = styled.div`
     padding: 76px 0 106px 0;
   }
   @media only screen and (max-width: 500px) {
-    padding: 20px 0 0 0;
+    padding: 0;
   }
   a {
     text-decoration: none;

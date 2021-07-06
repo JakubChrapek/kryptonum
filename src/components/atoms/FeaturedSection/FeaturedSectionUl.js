@@ -10,6 +10,13 @@ export const FeaturedSectionUl = styled.ul`
     text-transform: uppercase;
     font-weight: 400;
   }
+  @media only screen and (max-width: 1024px) {
+    padding-left: 4rem;
+    flex: 1 1 45%;
+    li {
+      letter-spacing: 1em;
+    }
+  }
   @media only screen and (max-width: 767px) {
     display: none;
   }

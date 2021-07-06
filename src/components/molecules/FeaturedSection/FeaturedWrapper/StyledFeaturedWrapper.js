@@ -3,6 +3,9 @@ import styled from "styled-components"
 export const StyledFeaturedWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 1024px) {
+    flex: ${({ mainHeader }) => mainHeader && "1 1 55%"};
+  }
   @media only screen and (max-width: 767px) {
     margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
   }
@@ -12,10 +15,10 @@ export const StyledFeaturedWrapper = styled.div`
     position: relative;
     width: fit-content;
     @media only screen and (max-width: 1183px) {
-      font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "36px")};
+      font-size: ${({ aboutSlider }) => (aboutSlider ? "35px" : "46px")};
     }
     @media only screen and (max-width: 767px) {
-      font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "32px")};
+      font-size: ${({ aboutSlider }) => (aboutSlider ? "30px" : "48px")};
     }
     @media only screen and (max-width: 559px) {
       margin-left: ${({ hasMarginLeft }) => (hasMarginLeft ? "27px" : "0")};

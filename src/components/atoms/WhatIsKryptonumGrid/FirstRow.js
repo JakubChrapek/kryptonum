@@ -12,11 +12,12 @@ export const FirstRow = styled.div`
   @media only screen and (max-width: 767px) {
     margin: 0 auto;
     justify-content: flex-start;
-    width: 357px;
-    padding-left: 14px;
+    padding-left: 0;
+    width: 100%;
+    max-width: 37.6rem;
+    padding-left: 2rem;
   }
   @media only screen and (max-width: 389px) {
-    width: 280px;
     padding-left: 0;
   }
 `
