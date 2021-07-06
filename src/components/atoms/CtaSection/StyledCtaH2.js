@@ -6,14 +6,8 @@ export const StyledCtaH2 = styled(TextStyles)`
   @media only screen and (max-width: 1142px) {
     font-size: 6vw;
   }
-  @media only screen and (max-width: 857px) {
-    text-align: center;
-  }
-  @media only screen and (max-width: 670px) {
-    font-size: 30px;
-  }
-  @media only screen and (max-width: 360px) {
-    font-size: 24px;
+  @media only screen and (max-width: 640px) {
+    font-size: clamp(32px, 6vw, 46px);
   }
   p {
     display: inline;
@@ -50,14 +44,24 @@ export const StyledCtaH2 = styled(TextStyles)`
     @media (max-width: 1142px) {
       top: 30px;
     }
-    @media (max-width: 1024px) {
-      top: 37px;
+    @media (max-width: 1040px) {
+      top: 0;
+      height: 8vw;
+    }
+
+    @media only screen and (max-width: 640px) {
+      height: clamp(6.2rem, 8vw, 9rem);
+      width: 100%;
     }
     overflow: hidden;
     mark {
       position: absolute;
       left: 0;
       top: 120px;
+      @media (max-width: 767px) {
+        min-width: unset;
+        width: 100%;
+      }
     }
   }
 `

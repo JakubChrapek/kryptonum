@@ -7,9 +7,6 @@ export const DragSliderWrapper = styled(motion.div)`
     cursor: grab;
   }
   @media (max-width: 874px) {
-    padding: 0 41px;
-  }
-  @media (max-width: 540px) {
-    padding: 0 20px;
+    padding: 0;
   }
 `

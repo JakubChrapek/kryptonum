@@ -11,9 +11,12 @@ export const SectionStyles = styled.div`
   margin: 0 auto;
 
   @media only screen and (max-width: 1090px) {
-    padding: 102px 90px;
+    padding: 102px 80px;
   }
-  @media only screen and (max-width: 857px) {
-    align-items: center;
+  @media only screen and (max-width: 767px) {
+    padding: 114px 40px 106px;
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 114px 28px 106px;
   }
 `

@@ -73,5 +73,11 @@ export const StyledProjectsColumn = styled.ul`
     @media only screen and (max-width: 902px) {
       padding: 20px;
     }
+    @media only screen and (max-width: 1024px) {
+      left: 0;
+      &.btn {
+        margin-top: 40px;
+      }
+    }
   }
 `

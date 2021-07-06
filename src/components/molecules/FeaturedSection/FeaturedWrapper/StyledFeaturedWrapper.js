@@ -7,7 +7,7 @@ export const StyledFeaturedWrapper = styled.div`
     flex: ${({ mainHeader }) => mainHeader && "1 1 55%"};
   }
   @media only screen and (max-width: 767px) {
-    margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "40px"};
+    margin-top: ${({ howWeWorkHeader }) => howWeWorkHeader && "77px"};
   }
   > p {
     font-size: ${({ mainHeader }) => (mainHeader ? "52px" : "40px")};
@@ -33,11 +33,19 @@ export const StyledFeaturedWrapper = styled.div`
     }
     @media only screen and (max-width: 399px) {
       font-size: ${({ hasSmalFontSize, mainHeader }) =>
-        hasSmalFontSize ? "26px" : mainHeader ? "46px" : "40px"};
+        hasSmalFontSize
+          ? "26px"
+          : mainHeader
+          ? "46px"
+          : "clamp(32px, 10vw, 50px)"};
     }
     @media only screen and (max-width: 360px) {
       font-size: ${({ hasSmalFontSize, mainHeader }) =>
-        hasSmalFontSize ? "26px" : mainHeader ? "46px" : "38px"};
+        hasSmalFontSize
+          ? "26px"
+          : mainHeader
+          ? "46px"
+          : "clamp(32px, 10vw, 50px)"};
     }
     &:after {
       content: "";

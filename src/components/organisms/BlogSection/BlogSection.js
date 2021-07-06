@@ -58,11 +58,7 @@ const BlogSection = ({
     >
       <SectionStyles>
         <div>
-          <StyledFeaturedWrapper
-            firstSpanLength="100%"
-            secondSpanLength="105%"
-            hasMarginLeft={true}
-          >
+          <StyledFeaturedWrapper firstSpanLength="100%" secondSpanLength="105%">
             {headerFirstLine ? (
               <>
                 <p>{headerFirstLine}</p>

@@ -18,8 +18,10 @@ export const StyledImageColumn = styled.div`
     max-width: 524px;
     max-height: 617px;
     @media (max-width: 767px) {
-      max-width: 100%;
+      max-width: calc(100% + 56px);
       max-height: 100%;
+      margin: 0 -28px 0 -28px;
+      width: calc(100% + 56px);
     }
     picture,
     img {

@@ -8,7 +8,13 @@ export const SectionStyles = styled.section`
   padding: 109px 100px 94px;
   max-width: 1366px;
   margin: 0 auto;
-  @media only screen and (max-width: 890px) {
-    padding: 76px 20px 60px 20px;
+  @media (max-width: 1090px) {
+    padding: 109px 80px 94px;
+  }
+  @media (max-width: 890px) {
+    padding: 76px 40px 60px;
+  }
+  @media (max-width: 500px) {
+    padding: 76px 28px 60px;
   }
 `

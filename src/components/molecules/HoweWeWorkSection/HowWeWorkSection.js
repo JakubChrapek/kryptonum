@@ -18,11 +18,18 @@ import {
 } from "../../../contexts/cursorContext"
 import { DragSliderWrapper } from "../../atoms/DragSliderWrapper/DragSliderWrapper"
 import styled from "styled-components"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const HowWeWorkSectionStyles = styled(ServicesStyles)`
   padding: 90px 100px 140px;
   @media (max-width: 1090px) {
-    padding: 90px 80px 140px;
+    padding: 0px 80px 140px;
+  }
+  @media (max-width: 767px) {
+    padding: 0px 40px 140px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 28px 140px;
   }
 `
 
@@ -44,6 +51,7 @@ const HowWeWorkSection = ({
   const [sliderConstraint, setSliderConstraint] = useState(0)
   const sliderRef = useRef(null)
   const dispatchCursor = useCursorDispatchContext()
+  let width = useWindowSize()
 
   const getElementsWidth = () => {
     let sum = 0
@@ -131,7 +139,7 @@ const HowWeWorkSection = ({
             mainHeader
             howWeWorkHeader
             firstSpanLength="70%"
-            secondSpanLength="116%"
+            secondSpanLength={width < 450 ? "98%" : "116%"}
           >
             <StructuredText data={howItWorksBigTitle.value} />
           </StyledFeaturedWrapper>
