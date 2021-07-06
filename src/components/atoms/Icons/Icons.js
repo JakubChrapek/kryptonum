@@ -3,6 +3,9 @@ import styled from "styled-components"
 
 const LogoStyles = styled.svg`
   height: 4rem;
+  @media (max-width: 653px) {
+    height: 3.2rem;
+  }
 `
 
 export const KryptonumLogoSygnet = ({ variant = "light" }) => (

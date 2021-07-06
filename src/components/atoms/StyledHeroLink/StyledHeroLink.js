@@ -25,6 +25,17 @@ export const StyledScrollLink = styled(ScrollLink)`
   @media (max-width: 1280px) {
     margin: 40px 0 0 -36px;
   }
+  @media (max-width: 767px) {
+    padding-left: 40px;
+    margin: 64px 0 0;
+  }
+  @media (max-width: 653px) {
+    padding-left: 24px;
+    padding-top: 8px;
+    width: 55vw;
+    height: 55vw;
+    margin: 28px 0 0;
+  }
 
   &:hover {
     border-color: var(--accent);

@@ -12,7 +12,7 @@ export const StyledNavBurger = styled(motion.button)`
   @media only screen and (max-width: 640px) {
     position: absolute;
     right: 22px;
-    top: 20px;
+    top: 21px;
   }
 
   &:focus,

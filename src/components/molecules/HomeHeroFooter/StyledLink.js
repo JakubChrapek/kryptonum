@@ -21,6 +21,8 @@ const LinkStyles = styled(Link)`
   }
   @media only screen and (max-width: 684px) {
     padding-left: 0;
+    margin-right: ${({ declaredMarginRight }) =>
+      declaredMarginRight ? declaredMarginRight : "16px"};
   }
   @media only screen and (max-width: 475px) {
     padding-right: 0;

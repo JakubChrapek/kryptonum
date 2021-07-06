@@ -11,12 +11,12 @@ export const HeroFooterStyles = styled.div`
   z-index: 2;
   padding: 0 32px 40px 30px;
   @media only screen and (max-width: 1280px) {
-    padding: 0 62px 32px 62px;
+    padding: 0 62px 46px 62px;
   }
   @media (max-width: 684px) {
     justify-content: center;
   }
   @media only screen and (max-width: 455px) {
-    padding: 0 48px 32px 48px;
+    padding: 0 28px 46px 28px;
   }
 `
