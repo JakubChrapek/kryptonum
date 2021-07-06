@@ -94,24 +94,22 @@ const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
             <HomeHeroTitle data={heroTitle} />
           </HomeHeroTitleStyles>
 
-          {width >= 683 && (
-            <StyledScrollLink
-              activeClass="active"
-              to="whatwereupto"
-              spy={true}
-              smooth={true}
-              duration={800}
-              onMouseEnter={handleOnMouseEnterForLink}
-              onMouseLeave={handleOnMouseLeaveForLink}
-            >
-              <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
-                <StructuredText data={heroTekstPrzycisku} />
-                <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
-                  <RightArrow />
-                </motion.span>
-              </motion.button>
-            </StyledScrollLink>
-          )}
+          <StyledScrollLink
+            activeClass="active"
+            to="whatwereupto"
+            spy={true}
+            smooth={true}
+            duration={800}
+            onMouseEnter={handleOnMouseEnterForLink}
+            onMouseLeave={handleOnMouseLeaveForLink}
+          >
+            <motion.button whileHover={{ scale: 1.05, cursor: "pointer" }}>
+              <StructuredText data={heroTekstPrzycisku} />
+              <motion.span style={{ fontSize: "32px", lineHeight: "0.7" }}>
+                <RightArrow />
+              </motion.span>
+            </motion.button>
+          </StyledScrollLink>
         </Wrapper>
         <HeroFooter />
       </HomeHeroSection>

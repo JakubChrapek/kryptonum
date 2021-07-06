@@ -1,44 +1,34 @@
 import styled from "styled-components"
 
 export const ServicesWrapper = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  --gap: 15rem;
+  grid-column-gap: var(--gap);
   width: 100%;
-  justify-content: space-around;
-  padding: 0 40px;
-  align-self: flex-start;
-  @media only screen and (max-width: 874px) {
-    max-width: 796px;
-    align-self: center;
+  padding-right: ${({ first }) => first && "var(--gap)"};
+
+  @media (max-width: 1024px) {
+    --gap: 10rem;
   }
-  li {
-    margin: 0 70px 0 0;
-    &:last-child {
-      margin: 0 0 0 0;
-    }
-    @media only screen and (max-width: 1366px) {
-      margin: 0 50px 0 0;
-    }
-    @media only screen and (max-width: 1090px) {
-      margin: 0 40px 0 0;
-    }
-    @media only screen and (max-width: 480px) {
-      margin: 0 20px 0 0;
-    }
+
+  @media (max-width: 767px) {
+    --gap: 8rem;
   }
+  @media (max-width: 520px) {
+    --gap: 5rem;
+  }
+
   h3 {
-    font-size: clamp(60px, 5vw, 150px);
+    font-size: clamp(50px, 5vw, 150px);
+    @media (max-width: 767px) {
+      font-size: clamp(32px, 6vw, 60px);
+    }
     line-height: 1.5;
     color: var(--black-font);
     font-weight: normal;
     white-space: nowrap;
 
-    @media only screen and (max-width: 897px) {
-      font-size: clamp(40px, 5vw, 60px);
-    }
-
-    @media only screen and (max-width: 614px) {
-      font-size: 30px;
-    }
     &.underline {
       position: relative;
       &:after {

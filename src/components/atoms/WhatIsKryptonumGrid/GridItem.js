@@ -6,6 +6,9 @@ export const GridItem = styled.div`
   justify-content: space-between;
   background-color: var(--accent);
   z-index: 1;
+  @media (max-width: 767px) {
+    display: none;
+  }
   span {
     font-size: 140px;
     line-height: 0.95em;

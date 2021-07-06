@@ -12,6 +12,7 @@ import {
   CURSOR_COLORS,
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
+import useWindowSize from "../../../utils/getWindowSize"
 
 const MainServices = ({
   servicesListFirstRow,
@@ -19,6 +20,7 @@ const MainServices = ({
   servicesTitle,
 }) => {
   const dispatchCursor = useCursorDispatchContext()
+  let width = useWindowSize()
 
   return (
     <BgColourWrapper
@@ -47,8 +49,8 @@ const MainServices = ({
         >
           {servicesTitle}
         </ServicesStylesH2>
-        <Marquee gradient={false} speed="50">
-          <ServicesWrapper>
+        <Marquee gradient={false} speed={width > 1140 ? "40" : "25"}>
+          <ServicesWrapper first>
             {servicesListFirstRow.map(service => (
               <li key={service.usluga} className="box">
                 <h3>{service.usluga}</h3>
@@ -56,7 +58,11 @@ const MainServices = ({
             ))}
           </ServicesWrapper>
         </Marquee>
-        <Marquee gradient={false} speed="50" direction="right">
+        <Marquee
+          gradient={false}
+          speed={width > 1140 ? "40" : "25"}
+          direction="right"
+        >
           <ServicesWrapper>
             {servicesListSecondRow.map((service, iterator) => (
               <li key={service.usluga} className="box">

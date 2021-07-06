@@ -12,7 +12,7 @@ export const StyledNavBurger = styled(motion.button)`
   @media only screen and (max-width: 640px) {
     position: absolute;
     right: 22px;
-    top: 18px;
+    top: 20px;
   }
 
   &:focus,
@@ -31,6 +31,9 @@ export const StyledNavBurger = styled(motion.button)`
     line-height: 1;
     font-weight: 400;
     margin: 0 19px 1px;
+    @media only screen and (max-width: 640px) {
+      display: none;
+    }
   }
 
   span:not(.hamburger--menu) {

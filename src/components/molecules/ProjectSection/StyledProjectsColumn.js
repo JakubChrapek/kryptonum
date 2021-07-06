@@ -7,15 +7,20 @@ export const StyledProjectsColumn = styled.ul`
   align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  padding-right: 60px;
   @media (max-width: 1142px) {
     flex: 1 1 50%;
     width: 50%;
+    padding-right: 40px;
+  }
+  @media (max-width: 1024px) {
+    padding-right: 0;
   }
   @media only screen and (max-width: 767px) {
     display: none;
   }
   li {
-    font-size: 60px;
+    font-size: clamp(48px, 2.84vw, 60px);
     line-height: 1.5em;
     font-weight: 400;
     position: relative;

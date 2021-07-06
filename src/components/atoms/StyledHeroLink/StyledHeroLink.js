@@ -14,6 +14,8 @@ export const StyledScrollLink = styled(ScrollLink)`
   margin: 112px 0 0 -36px;
   width: 296px;
   height: 296px;
+  max-width: 80vw;
+  max-height: 80vw;
   padding-left: 70px;
   text-decoration: none;
   z-index: 1;

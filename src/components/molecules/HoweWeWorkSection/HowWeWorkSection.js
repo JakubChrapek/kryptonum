@@ -21,6 +21,9 @@ import styled from "styled-components"
 
 const HowWeWorkSectionStyles = styled(ServicesStyles)`
   padding: 90px 100px 140px;
+  @media (max-width: 1090px) {
+    padding: 90px 80px 140px;
+  }
 `
 
 const HowWeWorkSection = ({

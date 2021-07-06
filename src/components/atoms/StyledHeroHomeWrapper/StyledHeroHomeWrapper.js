@@ -16,5 +16,6 @@ export const Wrapper = styled.div`
   @media (max-width: 683px) {
     width: unset;
     margin-top: 0;
+    padding-right: 0px;
   }
 `

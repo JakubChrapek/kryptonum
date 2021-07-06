@@ -12,9 +12,6 @@ export const HomeHeroSection = styled.section`
 
   @media (max-width: 683px) {
     align-items: flex-start;
-    padding: 197px 84px 0 44px;
-  }
-  @media (max-width: 500px) {
-    padding: 197px 82px 0 42px;
+    padding: 197px 28px 0 36px;
   }
 `

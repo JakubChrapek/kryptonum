@@ -4,18 +4,21 @@ export const StyledImageColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 120px;
+  padding-left: 60px;
   flex: 1 1 45%;
   width: 45%;
   @media (max-width: 1142px) {
     flex: 1 1 50%;
     width: 50%;
-    padding-left: 80px;
+    padding-left: 40px;
   }
   .gatsby-image-wrapper {
-    width: 524px;
-    height: 617px;
-    @media only screen and (max-width: 1200px) {
+    width: 100%;
+    height: 100%;
+    max-width: 524px;
+    max-height: 617px;
+
+    /* @media only screen and (max-width: 1200px) {
       width: 474px;
       height: 577px;
     }
@@ -29,7 +32,7 @@ export const StyledImageColumn = styled.div`
     }
     @media only screen and (max-width: 767px) {
       width: 100%;
-    }
+    } */
     picture,
     img {
       object-fit: cover;

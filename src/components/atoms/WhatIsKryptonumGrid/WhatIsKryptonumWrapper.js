@@ -8,7 +8,7 @@ export const WhatIsKryptonumWrapper = styled.div`
   margin: 0 auto;
   @media (max-width: 768px) {
     height: auto;
-    padding: 40px 29px 29px 29px;
+    padding: 0px 29px 0 29px;
   }
   h2 {
     grid-column: 7/22;

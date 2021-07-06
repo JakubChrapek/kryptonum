@@ -90,18 +90,6 @@ const Cursor = ({ show, type, text, color, size }) => {
       transition={{
         ease: "linear",
         duration: 0.1,
-        width: {
-          ease: "easeInOut",
-          duration: 0.3,
-        },
-        height: {
-          ease: "easeInOut",
-          duration: 0.3,
-        },
-        scale: {
-          ease: "easeInOut",
-          duration: 0.3,
-        },
       }}
       type={type}
       color={color}
