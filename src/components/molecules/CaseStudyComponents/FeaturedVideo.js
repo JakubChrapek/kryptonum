@@ -8,6 +8,9 @@ const VideoWrapper = styled.div`
   overflow: hidden;
   padding-top: 47%;
   margin-top: 192px;
+  @media (max-width: 767px) {
+    margin-top: 102px;
+  }
   position: relative;
   pointer-events: none;
   > * {
@@ -18,6 +21,15 @@ const VideoWrapper = styled.div`
     height: 100%;
     background: ${({ bg }) => bg};
     padding: 103px 155px;
+    @media (max-width: 1140px) {
+      padding: 50px 81px;
+    }
+    @media (max-width: 1024px) {
+      padding: 40px 65px;
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
   }
 `
 
@@ -33,6 +45,7 @@ const FeaturedVideo = ({ url, previewImage, bg }) => {
         width="100%"
         height="100%"
         url={url}
+        playsinline={true}
       />
     </VideoWrapper>
   )

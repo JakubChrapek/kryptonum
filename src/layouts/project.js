@@ -80,7 +80,9 @@ const ProjectFeaturedImage = styled(GatsbyImage)`
     margin: 72px 0;
   }
   @media (max-width: 767px) {
-    margin: 64px 0;
+    margin: 48px 0;
+    min-height: 320px;
+    height: 40vh;
   }
 `
 
@@ -180,6 +182,7 @@ const ContentColumn = styled.div`
     @media (max-width: 767px) {
       font-size: 16px;
       line-height: 1.38;
+      max-width: 420px;
     }
     + p {
       margin-top: 12px;
@@ -398,6 +401,12 @@ const TwoColumnGrid = styled.div`
     grid-row-gap: 36px;
     width: 100%;
   }
+  @media (max-width: 767px) {
+    padding: 0;
+    max-width: 460px;
+    margin-right: auto;
+    margin-top: 90px;
+  }
 `
 
 const FeaturedWrapper = styled.div`
@@ -452,6 +461,12 @@ const StyledHeaderParagraphWrapper = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 157px;
+  @media (max-width: 767px) {
+    margin-top: 132px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 92px;
+  }
   width: 100%;
 `
 
@@ -460,6 +475,9 @@ const VerticalHeaderStyles = styled.h2`
   font-weight: 400;
   line-height: 1.5;
   color: var(--black);
+  @media (max-width: 767px) {
+    font-size: clamp(32px, 6.5vw, 46px);
+  }
 `
 const VerticalTextStyles = styled.p`
   font-size: 24px;
@@ -468,6 +486,9 @@ const VerticalTextStyles = styled.p`
   color: var(--dark-bg);
   max-width: 729px;
   margin-top: 28px;
+  @media (max-width: 767px) {
+    font-size: clamp(20px, 4.5vw, 24px);
+  }
 `
 
 const HeaderParagraphVertical = ({ title, content }) => (
@@ -509,6 +530,12 @@ const StyledHeaderWrapper = styled.span`
       margin-top: 40px;
     }
   }
+  @media (max-width: 567px) {
+    margin-top: 70px;
+    + ${ImageWrapper} {
+      margin-top: 32px;
+    }
+  }
 `
 
 const GalleryWrapper = styled.section`
@@ -516,11 +543,22 @@ const GalleryWrapper = styled.section`
   margin-top: 157px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 12.2vw;
+  @media (max-width: 767px) {
+    margin-top: 132px;
+    grid-template-columns: 1fr;
+    grid-gap: 64px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 102px;
+  }
 `
 
 const ItemWrapper = styled.div`
   margin-top: ${({ number }) =>
     number === 1 ? "127px" : number === 4 ? "-127px" : undefined};
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
 `
 
 const GalleryItemImageWrapper = styled.div``
@@ -531,6 +569,9 @@ const GalleryItemDescriptionWrapper = styled.div`
   line-height: 1.5;
   color: var(--black);
   text-align: center;
+  @media (max-width: 767px) {
+    margin-top: 24px;
+  }
 `
 
 const GalleryItem = ({ number, image, description }) => (
@@ -584,7 +625,9 @@ const ProjectFullscreenImageWrapper = styled.section`
       margin: 72px 0;
     }
     @media (max-width: 767px) {
-      margin: 64px 0;
+      margin: 0;
+      height: 40vh;
+      min-height: 320px;
     }
   }
 `
@@ -599,10 +642,17 @@ const TestimonialStyles = styled.section`
   flex-direction: column;
   width: 100%;
   margin-top: 190px;
+  @media (max-width: 1024px) {
+    margin-top: 80px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 60px;
+  }
 `
 
 const ClientWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   > span {
     font-size: 16px;
     line-height: 1.5;
@@ -625,6 +675,9 @@ const ClientWrapper = styled.div`
     &.role {
       color: var(--text-gray);
       margin-left: 6px;
+      @media (max-width: 371px) {
+        margin-left: 81px;
+      }
     }
   }
 `
@@ -636,6 +689,12 @@ const Testimonial = styled.div`
     font-size: 28px;
     line-height: 1.5;
     color: var(--dark-bg);
+  }
+  @media (max-width: 767px) {
+    margin-top: 32px;
+    p {
+      font-size: clamp(20px, 3vw, 28px);
+    }
   }
 `
 
@@ -663,7 +722,10 @@ const NextCaseWrapper = styled.div`
     margin: 60px 0 180px;
   }
   @media (max-width: 767px) {
-    margin: 40px 0 150px;
+    margin: 60px 0 150px;
+  }
+  @media (max-width: 567px) {
+    margin: 60px 0 120px;
   }
 `
 
@@ -671,6 +733,9 @@ const NextCaseLink = styled(Link)`
   display: inline-block;
   font-family: Poppins;
   font-size: 40px;
+  @media (max-width: 767px) {
+    font-size: clamp(32px, 7vw, 40px);
+  }
   font-weight: normal;
   line-height: 1.28;
   color: var(--black);
