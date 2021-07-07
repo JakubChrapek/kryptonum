@@ -19,11 +19,14 @@ import styled from "styled-components"
 
 const AboutBgWrapper = styled(BgColourWrapper)`
   padding: 152px 112px 128px;
-  @media only screen and (max-width: 1140px) {
-    padding: 60px;
+  @media only screen and (max-width: 1242px) {
+    padding: 112px 60px 102px;
   }
-  @media only screen and (max-width: 574px) {
-    padding: 30px 28px 60px 28px;
+  @media only screen and (max-width: 1140px) {
+    padding: 112px 40px 102px;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 84px 28px 80px 28px;
   }
 `
 

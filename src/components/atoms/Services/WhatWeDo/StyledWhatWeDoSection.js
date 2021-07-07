@@ -8,6 +8,9 @@ export const StyledWhatWeDoSection = styled.section`
   @media (max-width: 1140px) {
     padding: 104px 40px;
   }
+  @media (max-width: 600px) {
+    padding: 84px 28px;
+  }
   background-color: var(--light-gray);
   a {
     color: var(--black);

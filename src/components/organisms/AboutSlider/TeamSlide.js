@@ -16,10 +16,19 @@ const SlideWrapper = styled(motion.div)`
   > div {
     flex: 1 1 50%;
   }
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const ImageWrapper = styled(motion.div)`
   padding-right: 73px;
+  @media (max-width: 1024px) {
+    padding-right: 60px;
+  }
+  @media (max-width: 767px) {
+    padding-right: 0;
+  }
   > .gatsby-image-wrapper {
     max-height: 326px;
     height: 326px;
@@ -41,6 +50,9 @@ const ImageWrapper = styled(motion.div)`
 const TextWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+  }
 `
 
 const Line = styled(motion.span)`
@@ -60,6 +72,15 @@ const SlideHeaderWrapper = styled(motion.div)`
   > div {
     display: flex;
     flex-direction: column;
+  }
+`
+
+const StyledTitle = styled(TextStyles)`
+  @media (max-width: 340px) {
+    font-size: 11px;
+  }
+  @media (max-width: 320px) {
+    font-size: 10px;
   }
 `
 
@@ -127,7 +148,7 @@ const TeamSlide = ({ slide }) => {
             >
               {slide.name}
             </TextStyles>
-            <TextStyles
+            <StyledTitle
               fontSize="13px"
               fontWeight="400"
               lineHeight="2.3"
@@ -140,7 +161,7 @@ const TeamSlide = ({ slide }) => {
               specialty
             >
               {slide.specialty}
-            </TextStyles>
+            </StyledTitle>
           </div>
         </SlideHeaderWrapper>
         <TextStyles

@@ -47,17 +47,6 @@ const Projects = ({ data }) => {
         projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
         projectsPerPage={projectsPerPage}
       />
-      {/* {width > 1100 && (
-        <StyledCaseStudyCard
-          projects={data.allDatoCmsProject.nodes}
-          activeProjectId={activeProjectId}
-        />
-      )} */}
-      {/* <StyledVerticalLine
-        activeProject={activeProjectId}
-        numberOfProjects={numberOfProjects}
-        ref={containerRef}
-      /> */}
     </ProjectsStyles>
   )
 }

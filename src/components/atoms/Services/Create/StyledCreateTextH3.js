@@ -6,7 +6,7 @@ export const StyledCreateTextH3 = styled(TextStyles)`
     max-width: 364px;
   }
   @media (max-width: 1024px) {
-    font-size: clamp(36px, 4vw, 40px);
+    font-size: clamp(34px, 4vw, 40px);
   }
   @media only screen and (max-width: 767px) {
     padding-right: 0;
@@ -15,8 +15,14 @@ export const StyledCreateTextH3 = styled(TextStyles)`
     text-align: center;
     width: 100%;
   }
+  @media only screen and (max-width: 411px) {
+    font-size: 7.5vw;
+  }
+  @media only screen and (max-width: 347px) {
+    font-size: 7vw;
+  }
   @media only screen and (max-width: 330px) {
-    font-size: 13vw;
+    font-size: clamp(28px, 4vw, 40px);
   }
   > p {
     display: inline;

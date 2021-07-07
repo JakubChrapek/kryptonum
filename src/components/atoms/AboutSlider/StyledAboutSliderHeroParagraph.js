@@ -15,7 +15,7 @@ export const StyledAboutSliderHeroParagraph = styled(TextStyles)`
     line-height: 1.33;
     font-size: 18px;
   }
-  @media only screen and (max-width: 574px) {
+  @media only screen and (max-width: 600px) {
     line-height: 1.33;
     font-size: 15px;
   }

@@ -97,6 +97,9 @@ export const ProjectsStyles = styled(motion.section)`
       margin-left: var(--gap-width);
       a {
         justify-content: flex-end;
+        @media (max-width: 1101px) {
+          justify-content: flex-start;
+        }
       }
     }
 
@@ -154,14 +157,17 @@ export const ProjectsStyles = styled(motion.section)`
     flex-direction: column;
     align-items: flex-start;
   }
+  @media (max-width: 902px) {
+    padding: 110px 60px 110px 120px;
+  }
   @media (max-width: 778px) {
-    padding: 120px 70px 30px 100px;
+    padding: 120px 60px 30px 90px;
     span {
       font-size: 11px;
       top: 20px;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 627px) {
     padding: 120px 60px 30px 90px;
   }
   @media (max-width: 500px) {
@@ -190,10 +196,7 @@ const ProjectsTextStyles = styled(TextStyles)`
     font-size: 38px;
   }
   @media (max-width: 486px) {
-    font-size: 34px;
-  }
-  @media (max-width: 350px) {
-    font-size: 28px;
+    font-size: clamp(24px, 8vw, 30px);
   }
 `
 
@@ -247,7 +250,7 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
   })
   const dispatchCursor = useCursorDispatchContext()
 
-  const maxLettersOfProjectName = 22
+  const maxLettersOfProjectName = 25
 
   const handleLinkEnter = () => {
     setHoverState(true)
@@ -330,8 +333,18 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
             projectSlug={project.projectSlug}
             projectImage={project.projectPreviewImage}
             x={
-              x < width / 2
+              width <= 1101
                 ? projectPosition.width / 2 + (x - width / 2) / 10
+                : width < 1540
+                ? x < width / 2
+                  ? projectPosition.width -
+                    projectPosition.left +
+                    (x - width / 2) / 10
+                  : -projectPosition.width / 2 + (x - width / 2) / 10
+                : x < width / 2
+                ? projectPosition.width / 2 +
+                  projectPosition.left +
+                  (x - width / 2) / 10
                 : -projectPosition.width / 2 + (x - width / 2) / 10
             }
             y={0 - projectPosition.top / 2 + (y - height / 2) / 10}

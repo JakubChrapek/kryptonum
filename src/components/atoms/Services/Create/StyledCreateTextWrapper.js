@@ -12,5 +12,6 @@ export const StyledCreateTextWrapper = styled.div`
     flex-direction: column;
     flex: 1 1 100%;
     align-items: center;
+    margin-left: 0;
   }
 `
