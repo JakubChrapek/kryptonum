@@ -5,4 +5,7 @@ export const StyledLongLastingWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 1264px) {
+    margin-top: 40px;
+  }
 `

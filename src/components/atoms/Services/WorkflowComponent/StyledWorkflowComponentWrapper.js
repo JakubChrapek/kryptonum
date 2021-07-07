@@ -12,6 +12,9 @@ export const StyledWorkflowComponentWrapper = styled.div`
     hasJustifyContent ? "space-between" : "unsafe"};
   padding-top: ${({ hasPaddingTop }) =>
     hasPaddingTop ? `${hasPaddingTop}px` : 0};
+  @media (max-width: 1242px) {
+    padding-top: ${({ hasPaddingTop }) => (hasPaddingTop ? `117px` : 0)};
+  }
 
   @media only screen and (max-width: 767px) {
     flex-direction: ${({ mediaQueriesDirection }) =>

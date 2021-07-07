@@ -19,21 +19,16 @@ const FeedbackFromWrapper = styled.div`
   position: relative;
   margin: 0 auto;
 
-  /* @media only screen and (min-width: 1920px) {
-    max-height: 860px;
+  @media (max-width: 1242px) {
+    padding: 113px 60px 141px 60px;
   }
-  @media only screen and (min-width: 1600px) {
-    max-height: 760px;
+
+  @media (max-width: 1140px) {
+    padding: 84px 40px 103px 40px;
   }
-  @media only screen and (max-width: 1366px) {
-    padding: 104px 82px 108px 82px;
+  @media (max-width: 600px) {
+    padding: 84px 28px 84px 28px;
   }
-  @media only screen and (max-width: 1168px) {
-    max-height: 820px;
-  }
-  @media only screen and (max-width: 767px) {
-    padding: 84px 28px;
-  } */
 `
 
 const FeedbackWrapper = styled.section`
@@ -41,13 +36,18 @@ const FeedbackWrapper = styled.section`
   height: 100%;
   background-color: var(--white);
   grid-template-columns: 280px 1fr;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
   max-width: 1366px;
   margin: 0 auto;
 `
 
 const TitleWrapper = styled(motion.div)`
   display: flex;
-  /* grid-area: title; */
+  @media (max-width: 767px) {
+    grid-column: 1/3;
+  }
 `
 
 const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {

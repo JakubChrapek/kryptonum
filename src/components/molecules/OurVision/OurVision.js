@@ -21,6 +21,26 @@ const StyledVisionElementsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
+  @media (max-width: 1024px) {
+    margin-top: 15%;
+    padding-left: 25%;
+  }
+  @media (max-width: 942px) {
+    margin-top: 15%;
+    padding-left: 0%;
+    .gatsby-image-wrapper {
+      margin: 40px -40px 0 -40px;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-top: 64px;
+  }
+  @media (max-width: 600px) {
+    .gatsby-image-wrapper {
+      margin: 24px -28px 0 -28px;
+    }
+  }
 `
 
 const StyledFeedbackWrapper = styled.div`
@@ -28,6 +48,14 @@ const StyledFeedbackWrapper = styled.div`
   grid-template-columns: 280px 1fr;
   max-width: 1366px;
   margin: 113px auto 0;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    margin: 80px 0 0;
+    span > p {
+      display: inline;
+    }
+  }
 `
 
 const TitleWrapper = styled.div`
@@ -36,6 +64,9 @@ const TitleWrapper = styled.div`
     font-size: 14px;
     line-height: 2.12;
     letter-spacing: 0.35em;
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
   }
 `
 const TextWrapper = styled.div`

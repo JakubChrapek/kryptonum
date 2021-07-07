@@ -13,31 +13,6 @@ import {
 } from "../../../contexts/cursorContext"
 import website from "../../../../config/website"
 
-const BlogLinks = ({ content }) => (
-  <>
-    {content ? (
-      <StyledFeaturedWrapper
-        mainHeader
-        firstSpanLength="0"
-        secondSpanLength="0"
-        hasSmalFontSize
-      >
-        <StructuredText data={content} />
-      </StyledFeaturedWrapper>
-    ) : (
-      <StyledFeaturedWrapper
-        mainHeader
-        firstSpanLength="145%"
-        secondSpanLength="190%"
-        hasSmalFontSize
-      >
-        <span>Blog</span>
-        <span>Posts</span>
-      </StyledFeaturedWrapper>
-    )}
-  </>
-)
-
 const HeroContent = ({ content, variant }) => {
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnterForBlogSection = () => {
@@ -63,7 +38,7 @@ const HeroContent = ({ content, variant }) => {
           color="var(--black)"
           variant={variant}
         >
-          <BlogLinks content={content} />
+          <StructuredText data={content} />
         </StyledHeroContentH1>
       </StyledHeroWrapper>
     </StyledHeroSection>

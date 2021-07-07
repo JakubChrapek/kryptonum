@@ -5,7 +5,7 @@ export const StyledCreateTextP = styled(TextStyles)`
   width: 72%;
 
   @media only screen and (max-width: 1024px) {
-    padding: 0 0 54px 0;
+    padding: 24px 0 54px 0;
   }
   @media only screen and (max-width: 767px) {
     margin: 0 auto;

@@ -10,10 +10,14 @@ const SlidesStyles = styled(motion.section)`
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  min-height: 360px;
-  height: 360px;
+  min-height: 394px;
+  @media (max-width: 1024px) {
+    min-height: 370px;
+  }
   @media (max-width: 767px) {
-    margin-top: 0;
+    margin-top: 48px;
+    grid-column: 1/3;
+    min-height: 376px;
   }
 `
 const FeedbackSlider = ({ slides }) => {

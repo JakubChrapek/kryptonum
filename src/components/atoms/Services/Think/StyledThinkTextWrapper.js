@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const StyledThinkTextWrapper = styled.div`
   /* max-width: 300px; */
   flex: 1 1 26%;
-  @media (max-width: 1168px) and (min-width: 768px) {
-    flex: 1 1 52.5%;
+  @media (max-width: 1224px) {
+    flex: 1 1 57.5%;
   }
 
   @media only screen and (max-width: 767px) {

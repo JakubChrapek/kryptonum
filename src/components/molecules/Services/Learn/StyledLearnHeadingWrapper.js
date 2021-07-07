@@ -7,7 +7,7 @@ export const StyledLearnHeadingWrapper = styled(StyledHeadingWrapper)`
   @media (max-width: 767px) {
     align-self: center;
     flex: 1 1 40%;
-    margin-right: 40px;
+    margin-right: 0;
   }
   @media (max-width: 588px) {
     align-self: flex-start;

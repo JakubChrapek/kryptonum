@@ -15,6 +15,17 @@ import {
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
+import styled from "styled-components"
+
+const AboutBgWrapper = styled(BgColourWrapper)`
+  padding: 152px 112px 128px;
+  @media only screen and (max-width: 1140px) {
+    padding: 60px;
+  }
+  @media only screen and (max-width: 574px) {
+    padding: 30px 28px 60px 28px;
+  }
+`
 
 const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
   const dispatchCursor = useCursorDispatchContext()
@@ -37,7 +48,7 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
     }
   `)
   return (
-    <BgColourWrapper
+    <AboutBgWrapper
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",
@@ -79,7 +90,7 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
         </StyledTextContentWrapper>
         <TeamSlider members={data.allDatoCmsAuthor.nodes} />
       </StyledAboutSliderWrapper>
-    </BgColourWrapper>
+    </AboutBgWrapper>
   )
 }
 

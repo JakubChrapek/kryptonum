@@ -7,7 +7,7 @@ export const StyledIdeaBox = styled.div`
   border-radius: 50%;
   transform: translate(-50%, 114px);
   display: block;
-  @media (max-width: 1168px) and (min-width: 768px) {
+  @media (max-width: 1224px) and (min-width: 768px) {
     display: none;
   }
   @media (max-width: 767px) {

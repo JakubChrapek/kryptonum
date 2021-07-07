@@ -13,15 +13,15 @@ export const StyledHeroWrapper = styled.div`
   }
   @media only screen and (max-width: 892px) {
     padding: ${({ variant }) =>
-      variant === "blog" ? "" : "185px 28px 68px 28px"};
+      variant === "blog" ? "" : "185px 28px 68px 40px"};
   }
   @media only screen and (max-width: 714px) {
     padding: ${({ variant }) =>
-      variant === "blog" ? "" : "137px 28px 38px 28px"};
+      variant === "blog" ? "" : "137px 28px 38px 40px"};
   }
   @media only screen and (max-width: 500px) {
     padding: ${({ variant }) =>
-      variant === "blog" ? "102px 0 25px 36px" : ""};
+      variant === "blog" ? "102px 0 25px 36px" : "137px 28px 38px 28px"};
   }
   @media only screen and (max-width: 446px) {
     padding-right: ${({ variant }) => (variant === "blog" ? "" : "28px")};

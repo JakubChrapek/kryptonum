@@ -2,6 +2,12 @@ import styled from "styled-components"
 
 export const StyledWhatWeDoSection = styled.section`
   padding: 130px 112px;
+  @media (max-width: 1242px) {
+    padding: 104px 60px;
+  }
+  @media (max-width: 1140px) {
+    padding: 104px 40px;
+  }
   background-color: var(--light-gray);
   a {
     color: var(--black);
