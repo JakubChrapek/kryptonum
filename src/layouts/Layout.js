@@ -89,14 +89,13 @@ const Layout = ({ children }) => {
       <SEO />
       <ScrollToTop />
       <Header theme={getThemeFromPathname(pathname) || "light"} />
-      <AnimatePresence>
-        {/* {routeChange && (
+      {/* {routeChange && (
           <Panels
             panelComplete={routeChange}
             setPanelComplete={setRouteChange}
           />
         )} */}
-        {/* {routeChange && (
+      {/* {routeChange && (
           <StyledNavigationOverlay
             initial={{ height: 0 }}
             animate={{
@@ -120,21 +119,21 @@ const Layout = ({ children }) => {
             }}
           />
         )} */}
-        <StyledMain
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // exit={{ opacity: 0 }}
-          // transition={{
-          //   ...transition,
-          //   duration: 1,
-          //   delay: 0.5,
-          // }}
-          key={pathname || "/"}
-        >
-          {children}
-          {pathname !== "/projekty" && <Footer />}
-        </StyledMain>
-      </AnimatePresence>
+      <StyledMain
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+          type: "spring",
+          mass: 0.35,
+          stiffness: 75,
+          duration: 0.2,
+        }}
+        key={pathname || "/"}
+      >
+        {children}
+        {pathname !== "/projekty" && <Footer />}
+      </StyledMain>
     </MenuProvider>
   )
 }
