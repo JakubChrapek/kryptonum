@@ -20,7 +20,7 @@ import MaxWidthSlider from "./MaxWidthSlider"
 
 const query = graphql`
   query ProjectsQuery {
-    allDatoCmsProject(limit: 5, filter: { locale: { eq: "pl" } }) {
+    allDatoCmsProject(limit: 5, filter: { showProject: { eq: true } }) {
       nodes {
         projectTitle
         projectType

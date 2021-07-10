@@ -56,6 +56,7 @@ export const query = graphql`
     allDatoCmsProject(
       limit: 6
       sort: { fields: meta___createdAt, order: DESC }
+      filter: { showProject: { eq: true } }
     ) {
       nodes {
         id
