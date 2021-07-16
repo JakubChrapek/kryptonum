@@ -30,8 +30,8 @@ const ImageWrapper = styled(motion.div)`
     padding-right: 0;
   }
   > .gatsby-image-wrapper {
-    max-height: 326px;
-    height: 326px;
+    max-height: 407px;
+    height: 407px;
     @media (max-width: 1080px) {
       max-height: 286px;
       height: 286px;

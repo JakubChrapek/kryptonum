@@ -65,7 +65,6 @@ export const SecondRow = styled.div`
     @media only screen and (max-width: 1142px) {
       width: 35%;
     }
-    filter: brightness(0.7);
     @media only screen and (max-width: 1024px) {
       display: none;
     }

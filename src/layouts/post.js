@@ -565,6 +565,7 @@ export const articleQuery = graphql`
         surname
         specialty
         biography
+        showInSlider
         id
         photo {
           gatsbyImageData(

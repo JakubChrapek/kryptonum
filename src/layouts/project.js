@@ -698,17 +698,21 @@ const Testimonial = styled.div`
   }
 `
 
-const ProjectTestimonial = ({ clientName, clientRole, clientTestimonial }) => (
-  <TestimonialStyles>
-    <ClientWrapper>
-      <span>{`${clientName},`}</span>
-      <span className="role">{clientRole}</span>
-    </ClientWrapper>
-    <Testimonial>
-      <StructuredText data={clientTestimonial} />
-    </Testimonial>
-  </TestimonialStyles>
-)
+const ProjectTestimonial = ({ clientName, clientRole, clientTestimonial }) => {
+  if (clientName == "no") return null
+
+  return (
+    <TestimonialStyles>
+      <ClientWrapper>
+        <span>{`${clientName},`}</span>
+        <span className="role">{clientRole}</span>
+      </ClientWrapper>
+      <Testimonial>
+        <StructuredText data={clientTestimonial} />
+      </Testimonial>
+    </TestimonialStyles>
+  )
+}
 
 const ProjectHeader = ({ headerText }) => (
   <StyledHeaderWrapper>

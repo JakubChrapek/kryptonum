@@ -34,7 +34,9 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
   const dispatchCursor = useCursorDispatchContext()
   const data = useStaticQuery(graphql`
     query AboutTeamSlider {
-      allDatoCmsAuthor(filter: { locale: { eq: "pl" } }) {
+      allDatoCmsAuthor(
+        filter: { locale: { eq: "pl" }, showInSlider: { eq: true } }
+      ) {
         nodes {
           name
           specialty
