@@ -6,7 +6,7 @@ const VideoWrapper = styled.div`
   height: 0;
   width: 100%;
   overflow: hidden;
-  padding-top: 47%;
+  padding-top: 59%;
   margin-top: 192px;
   @media (max-width: 767px) {
     margin-top: 102px;
@@ -42,10 +42,12 @@ const FeaturedVideo = ({ url, previewImage, bg }) => {
         playing={true}
         volume={0}
         controls={false}
+        onContextMenu={e => e.preventDefault()}
         width="100%"
         height="100%"
         url={url}
         playsinline={true}
+        config={{ youtube: { playerVars: { disablekb: 1 } } }}
       />
     </VideoWrapper>
   )
