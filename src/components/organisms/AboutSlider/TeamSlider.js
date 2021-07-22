@@ -19,7 +19,6 @@ const SlidesStyles = styled(motion.section)`
 `
 
 const TeamSlider = ({ members }) => {
-  const width = useWindowSize()
   const [currentPage, setCurrentPage] = useState(0)
   const pageLength = 1
   return (

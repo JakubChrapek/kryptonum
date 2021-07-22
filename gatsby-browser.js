@@ -30,13 +30,21 @@ export const shouldUpdateScroll = ({
   // * 2 for exit + enter animation
   const TRANSITION_DELAY = 0.2 * 1000 * 2
   // if it's a "normal" route
-  if (location.action === "PUSH") {
-    window.setTimeout(() => window.scrollTo(0, 0), TRANSITION_DELAY)
-  }
-  // if we used the browser's forwards or back button
-  else {
-    const savedPosition = getSavedScrollPosition(location) || [0, 0]
-    window.setTimeout(() => window.scrollTo(...savedPosition), TRANSITION_DELAY)
+  console.log("Scr")
+  if (!location.hash) {
+    if (location.action === "PUSH") {
+      window.setTimeout(() => window.scrollTo(0, 0), TRANSITION_DELAY)
+    }
+    // if we used the browser's forwards or back button
+    else {
+      const savedPosition = getSavedScrollPosition(location) || [0, 0]
+      window.setTimeout(
+        () => window.scrollTo(...savedPosition),
+        TRANSITION_DELAY
+      )
+    }
+  } else {
+    return true
   }
   return false
 }

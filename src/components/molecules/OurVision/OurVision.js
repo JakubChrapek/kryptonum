@@ -87,6 +87,7 @@ const OurVision = ({
   const dispatchCursor = useCursorDispatchContext()
   return (
     <StyledOurVisionSection
+      id="warsztaty"
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",

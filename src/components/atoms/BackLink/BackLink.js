@@ -13,10 +13,19 @@ export const BackLink = styled(Link)`
   position: relative;
   padding: 6px 8px;
   margin-left: -8px;
+  display: inline-block;
+  transition: transform 0.2s linear;
 
   @media (max-width: 767px) {
     letter-spacing: 1.71px;
     font-size: 12px;
+  }
+
+  &&:after {
+    content: none;
+  }
+  &&:hover {
+    transform: translateY(-3px);
   }
 
   &:focus-visible {

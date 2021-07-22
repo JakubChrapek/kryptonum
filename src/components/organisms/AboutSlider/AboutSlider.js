@@ -41,6 +41,9 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
           name
           specialty
           biography
+          biographyFull {
+            value
+          }
           id
           photo {
             alt

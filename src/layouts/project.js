@@ -683,12 +683,16 @@ const ClientWrapper = styled.div`
 `
 const Testimonial = styled.div`
   display: flex;
+  flex-direction: column;
   max-width: 932px;
   margin-top: 47px;
   p {
     font-size: 28px;
     line-height: 1.5;
     color: var(--dark-bg);
+  }
+  p + ul {
+    margin-top: 0.6em;
   }
   @media (max-width: 767px) {
     margin-top: 32px;

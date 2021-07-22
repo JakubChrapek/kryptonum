@@ -10,6 +10,7 @@ import {
 import { TextStyles } from "../../atoms/Text/Text"
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import { StructuredText } from "react-datocms"
 
 const SlideWrapper = styled(motion.div)`
   display: flex;
@@ -181,7 +182,7 @@ const TeamSlide = ({ slide }) => {
           }}
           slideText
         >
-          {slide.biography}
+          <StructuredText data={slide.biographyFull} />
         </TextStyles>
       </TextWrapper>
     </SlideWrapper>

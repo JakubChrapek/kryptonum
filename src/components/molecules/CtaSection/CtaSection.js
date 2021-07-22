@@ -34,7 +34,7 @@ const CtaSection = ({
 
   useEffect(() => {
     if (reveal) {
-      const dur = 1.2
+      const dur = 1
       const split = new SplitText(".service--parent mark", { type: "lines" })
       for (let i = 0; i < split.lines.length; i++) {
         let tl = gsap.timeline({
@@ -74,7 +74,7 @@ const CtaSection = ({
           <div className="service--parent">
             <mark>markę</mark>
             <mark>stronę</mark>
-            <mark>branding</mark>
+            <mark>animację</mark>
             <mark>strategię</mark>
           </div>
           <br />

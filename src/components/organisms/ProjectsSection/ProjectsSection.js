@@ -55,6 +55,7 @@ const ProjectsSection = ({ buttonText }) => {
 
   return (
     <StyledProjectSectionWrapper
+      id="strony-internetowe"
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",

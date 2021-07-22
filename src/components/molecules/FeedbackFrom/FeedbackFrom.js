@@ -58,6 +58,7 @@ const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
         nodes {
           id
           clientName
+          linkToClientPage
           feedback {
             blocks
             links

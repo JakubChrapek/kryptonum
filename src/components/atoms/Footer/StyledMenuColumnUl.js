@@ -24,7 +24,7 @@ export const StyledMenuColumnUl = styled.ul`
   @media (max-width: 441px) {
     margin-right: 36px;
   }
-  @media (max-width: 342px) {
+  @media (max-width: 354px) {
     &:nth-of-type(2) {
       margin-top: 55px;
     }

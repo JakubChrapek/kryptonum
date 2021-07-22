@@ -75,8 +75,9 @@ const HeroCanvas = () => {
   const init = () => {
     if (!canvasRef.current) return
     setParticles([])
-    let numberOfParticles = Math.floor(
-      (window.innerHeight * window.innerWidth) / 10000
+    let numberOfParticles = Math.max(
+      Math.floor(window.innerHeight / 12),
+      Math.floor((window.innerHeight * window.innerWidth) / 22000)
     )
     const ctx = canvasRef.current.getContext("2d")
     let ratio = getPixelRatio(ctx)
@@ -86,7 +87,7 @@ const HeroCanvas = () => {
     canvasRef.current.height = height * ratio
     for (let i = 0; i < numberOfParticles; i++) {
       let size =
-        (Math.min(canvasRef.current.width, canvasRef.current.height) / 40) *
+        (Math.min(canvasRef.current.width, canvasRef.current.height) / 25) *
           Math.random() +
         3
       let x =
