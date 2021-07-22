@@ -84,7 +84,7 @@ const Create = ({
             lineHeight="1.71"
             color="#090909"
           >
-            Product creation
+            Epicka strona
           </StyledSpanElipseP>
         </StyledSpanElipseWrapper>
       </StyledCreateTextWrapper>
