@@ -16,6 +16,14 @@ export const StyledPrivacyMainTextWrapper = styled.div`
     margin-top: 4rem;
   }
 
+  p + h3 {
+    margin-top: 5rem;
+  }
+
+  h3 + p {
+    margin-top: 2.5rem;
+  }
+
   a {
     color: var(--black);
     text-decoration: none;
