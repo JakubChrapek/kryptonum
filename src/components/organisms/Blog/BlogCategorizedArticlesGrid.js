@@ -2,7 +2,6 @@ import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -17,7 +16,7 @@ import BlogCategories from "../../molecules/Blog/BlogCategories"
 
 const AllArticlesQuery = graphql`
   query AllArticlesAndCategoriesQuery {
-    allDatoCmsArticle(filter: { locale: { eq: "pl" } }) {
+    allDatoCmsArticle(sort: { fields: dateOfPublication, order: DESC }) {
       nodes {
         articleTitle
         articleCategory
@@ -31,7 +30,7 @@ const AllArticlesQuery = graphql`
         }
       }
     }
-    allDatoCmsArticlecategory(filter: { locale: { eq: "pl" } }) {
+    allDatoCmsArticlecategory {
       nodes {
         categoryName
         forbloglisting

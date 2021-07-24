@@ -50,11 +50,11 @@ const TitleWrapper = styled(motion.div)`
   }
 `
 
-const FeedbackFrom = ({ feedbackFromClients, feedbackTytul }) => {
+const FeedbackFrom = ({ feedbackTytul }) => {
   const dispatchCursor = useCursorDispatchContext()
   const data = useStaticQuery(graphql`
     query FeedbackQuery {
-      allDatoCmsFeedbackFromClient(filter: { locale: { eq: "pl" } }) {
+      allDatoCmsFeedbackFromClient {
         nodes {
           id
           clientName

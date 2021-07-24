@@ -7,7 +7,6 @@ import { SectionStyles } from "../../atoms/BlogSection/StyledBlogSection"
 import { StyledFeaturedWrapper } from "../../molecules/FeaturedSection/FeaturedWrapper/StyledFeaturedWrapper"
 import { BgColourWrapper } from "../../atoms/Wrapper/Wrapper"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -15,7 +14,10 @@ import {
 
 const blogSectionQuery = graphql`
   query LastArticles {
-    allDatoCmsArticle(limit: 10, filter: { locale: { eq: "pl" } }) {
+    allDatoCmsArticle(
+      limit: 10
+      sort: { fields: dateOfPublication, order: DESC }
+    ) {
       nodes {
         articleTitle
         dateOfPublication

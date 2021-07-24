@@ -246,9 +246,9 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
               <StyledOutLink
                 onPointerEnter={handleOnMouseEnterForLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
-                href="mailto:kuba@kryptonumstudio.com"
+                href="mailto:michal@kryptonumstudio.com"
               >
-                kontakt@kryptonum.pl
+                michal@kryptonumstudio.com
               </StyledOutLink>
             </div>
           </StyledNavigationFlexDiv>
@@ -277,8 +277,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
           {width && width <= 640 && (
             <>
               <StyledTextP margin="0 0 9px 0">Napisz do nas</StyledTextP>
-              <StyledOutLink href="mailto:kuba@kryptonumstudio.com">
-                kontakt@kryptonum.pl
+              <StyledOutLink href="mailto:michal@kryptonumstudio.com">
+                michal@kryptonumstudio.com
               </StyledOutLink>
             </>
           )}
