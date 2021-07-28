@@ -21,8 +21,6 @@ const BlogArticlesGrid = ({ posts, activeCategory, articleQuotes }) => {
     767: 1,
   }
 
-  console.log(articleQuotes)
-
   const [firstQuoteText, firstQuoteAuthor, firstQuotePosition] = [
     articleQuotes[0].cytatTresc.value.document.children[0].children[0].value,
     articleQuotes[0].cytatAutor,

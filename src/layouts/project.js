@@ -11,6 +11,7 @@ import {
   useCursorDispatchContext,
 } from "../contexts/cursorContext"
 import FeaturedVideo from "../components/molecules/CaseStudyComponents/FeaturedVideo"
+import SEO from "../components/SEO/SEO"
 
 const PageWrapper = styled.div`
   background-color: var(--white);
@@ -833,141 +834,151 @@ const Project = ({ data }) => {
     })
   }
   return (
-    <PageWrapper onMouseEnter={handleWrapperEnter}>
-      <ProjectWrapper>
-        <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
-          <BackLink
-            onMouseEnter={handleLinkEnter}
+    <>
+      <SEO
+        title={datoCmsProject.projectTitle}
+        banner={datoCmsProject.projectFeaturedImage.fluid.src}
+      />
+      <PageWrapper onMouseEnter={handleWrapperEnter}>
+        <ProjectWrapper>
+          <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
+            <BackLink
+              onMouseEnter={handleLinkEnter}
+              onMouseLeave={handleNormalLeave}
+              to="/projekty"
+            >
+              Powrót do projektów
+            </BackLink>
+            <TitleWrapper>
+              <ProjectTitle>{datoCmsProject.projectTitle}</ProjectTitle>
+            </TitleWrapper>
+          </ProjectContentWrapper>
+          <ProjectFeaturedImage
+            onMouseEnter={handleImageEnter}
             onMouseLeave={handleNormalLeave}
-            to="/projekty"
-          >
-            Powrót do projektów
-          </BackLink>
-          <TitleWrapper>
-            <ProjectTitle>{datoCmsProject.projectTitle}</ProjectTitle>
-          </TitleWrapper>
-        </ProjectContentWrapper>
-        <ProjectFeaturedImage
-          onMouseEnter={handleImageEnter}
-          onMouseLeave={handleNormalLeave}
-          image={datoCmsProject.projectFeaturedImage?.gatsbyImageData}
-        />
-      </ProjectWrapper>
-      <StructuredContentWrapper>
-        <StructuredText
-          data={datoCmsProject.projectContent}
-          renderBlock={({ record }) => {
-            switch (record?.__typename) {
-              case "DatoCmsProjectWideImage":
-                return (
-                  <ProjectWideImage
-                    handleImageEnter={handleImageEnter}
-                    handleNormalLeave={handleNormalLeave}
-                    image={record?.image?.gatsbyImageData}
-                  />
-                )
-              case "DatoCmsProjectChallengeSection":
-                return (
-                  <ProjectChallengeSection
-                    headerText={record?.headerText}
-                    paragraph={record?.paragraphContent?.value}
-                    linkToProject={record?.linkToProject}
-                    linkText={record?.linkText}
-                    handleLinkEnter={handleLinkEnter}
-                    handleNormalLeave={handleNormalLeave}
-                  />
-                )
-              case "DatoCmsProjectTestimonial":
-                return (
-                  <ProjectTestimonialSection
-                    testimonialContent={record?.testimonialContent}
-                    testimonialAuthor={record?.testimonialAuthor}
-                    testimonialAdditionalInfo={
-                      record?.testimonialAdditionalInfo
-                    }
-                  />
-                )
-              case "DatoCmsProjectTwoColumnImage":
-                return (
-                  <ProjectTwoColumnImage
-                    firstImage={record?.firstImage?.gatsbyImageData}
-                    secondImage={record?.firstImage?.gatsbyImageData}
-                    handleImageEnter={handleImageEnter}
-                    handleNormalLeave={handleNormalLeave}
-                  />
-                )
-              case "DatoCmsProject2ColumnHeaderAndParagraph":
-                return (
-                  <ProjectTwoColumnSection
-                    featuredParagraph={record?.featuredParagraph}
-                    normalParagraphContent={
-                      record?.normalParagraphContent.value
-                    }
-                  />
-                )
-              case "DatoCmsProjectFinalHeader":
-                return <ProjectHeader headerText={record?.headerText} />
+            image={datoCmsProject.projectFeaturedImage?.gatsbyImageData}
+          />
+        </ProjectWrapper>
+        <StructuredContentWrapper>
+          <StructuredText
+            data={datoCmsProject.projectContent}
+            renderBlock={({ record }) => {
+              switch (record?.__typename) {
+                case "DatoCmsProjectWideImage":
+                  return (
+                    <ProjectWideImage
+                      handleImageEnter={handleImageEnter}
+                      handleNormalLeave={handleNormalLeave}
+                      image={record?.image?.gatsbyImageData}
+                    />
+                  )
+                case "DatoCmsProjectChallengeSection":
+                  return (
+                    <ProjectChallengeSection
+                      headerText={record?.headerText}
+                      paragraph={record?.paragraphContent?.value}
+                      linkToProject={record?.linkToProject}
+                      linkText={record?.linkText}
+                      handleLinkEnter={handleLinkEnter}
+                      handleNormalLeave={handleNormalLeave}
+                    />
+                  )
+                case "DatoCmsProjectTestimonial":
+                  return (
+                    <ProjectTestimonialSection
+                      testimonialContent={record?.testimonialContent}
+                      testimonialAuthor={record?.testimonialAuthor}
+                      testimonialAdditionalInfo={
+                        record?.testimonialAdditionalInfo
+                      }
+                    />
+                  )
+                case "DatoCmsProjectTwoColumnImage":
+                  return (
+                    <ProjectTwoColumnImage
+                      firstImage={record?.firstImage?.gatsbyImageData}
+                      secondImage={record?.firstImage?.gatsbyImageData}
+                      handleImageEnter={handleImageEnter}
+                      handleNormalLeave={handleNormalLeave}
+                    />
+                  )
+                case "DatoCmsProject2ColumnHeaderAndParagraph":
+                  return (
+                    <ProjectTwoColumnSection
+                      featuredParagraph={record?.featuredParagraph}
+                      normalParagraphContent={
+                        record?.normalParagraphContent.value
+                      }
+                    />
+                  )
+                case "DatoCmsProjectFinalHeader":
+                  return <ProjectHeader headerText={record?.headerText} />
 
-              case "DatoCmsProjectVideoSection":
-                return (
-                  <FeaturedVideo
-                    url={record.videoLink}
-                    previewImage={record.videoPreviewImage}
-                    bg={record.videoBackgroundColor.hex}
-                  />
-                )
-              case "DatoCmsProjectHeaderParagraphVertical":
-                return (
-                  <HeaderParagraphVertical
-                    title={record.sectionTitle}
-                    content={record.sectionContent}
-                  />
-                )
-              case "DatoCmsProjectGallerySection":
-                return (
-                  <ProjectGallery
-                    firstImage={record.galleryItemImageFirst}
-                    firstDescription={record.galleryItemShortDescriptionFirst}
-                    secondImage={record.galleryItemImageSecond}
-                    secondDescription={record.galleryItemShortDescriptionSecond}
-                    thirdImage={record.galleryItemImageThird}
-                    thirdDescription={record.galleryItemShortDescriptionThird}
-                    fourthImage={record.galleryItemImageFourth}
-                    fourthDescription={record.galleryItemShortDescriptionFourth}
-                  />
-                )
-              case "DatoCmsProjectFullscreenImage":
-                return <ProjectFullScreenImage image={record.image} />
-              case "DatoCmsProjectTestimonialSection":
-                return (
-                  <ProjectTestimonial
-                    clientName={record.clientName}
-                    clientRole={record.clientRole}
-                    clientTestimonial={record.testimonial}
-                  />
-                )
-              default:
-                return null
-            }
-          }}
-        />
-        <NextCaseWrapper>
-          <NextCaseLink
-            onMouseEnter={handleLinkEnter}
-            onMouseLeave={handleNormalLeave}
-            to={
-              datoCmsProject.nextProject
-                ? `/projekty/${datoCmsProject.nextProject.projectSlug}`
-                : `/projekty`
-            }
-          >
-            {datoCmsProject.nextProject
-              ? datoCmsProject.nextProject.projectTitle
-              : "Wszystkie projekty"}
-          </NextCaseLink>
-        </NextCaseWrapper>
-      </StructuredContentWrapper>
-    </PageWrapper>
+                case "DatoCmsProjectVideoSection":
+                  return (
+                    <FeaturedVideo
+                      url={record.videoLink}
+                      previewImage={record.videoPreviewImage}
+                      bg={record.videoBackgroundColor.hex}
+                    />
+                  )
+                case "DatoCmsProjectHeaderParagraphVertical":
+                  return (
+                    <HeaderParagraphVertical
+                      title={record.sectionTitle}
+                      content={record.sectionContent}
+                    />
+                  )
+                case "DatoCmsProjectGallerySection":
+                  return (
+                    <ProjectGallery
+                      firstImage={record.galleryItemImageFirst}
+                      firstDescription={record.galleryItemShortDescriptionFirst}
+                      secondImage={record.galleryItemImageSecond}
+                      secondDescription={
+                        record.galleryItemShortDescriptionSecond
+                      }
+                      thirdImage={record.galleryItemImageThird}
+                      thirdDescription={record.galleryItemShortDescriptionThird}
+                      fourthImage={record.galleryItemImageFourth}
+                      fourthDescription={
+                        record.galleryItemShortDescriptionFourth
+                      }
+                    />
+                  )
+                case "DatoCmsProjectFullscreenImage":
+                  return <ProjectFullScreenImage image={record.image} />
+                case "DatoCmsProjectTestimonialSection":
+                  return (
+                    <ProjectTestimonial
+                      clientName={record.clientName}
+                      clientRole={record.clientRole}
+                      clientTestimonial={record.testimonial}
+                    />
+                  )
+                default:
+                  return null
+              }
+            }}
+          />
+          <NextCaseWrapper>
+            <NextCaseLink
+              onMouseEnter={handleLinkEnter}
+              onMouseLeave={handleNormalLeave}
+              to={
+                datoCmsProject.nextProject
+                  ? `/projekty/${datoCmsProject.nextProject.projectSlug}`
+                  : `/projekty`
+              }
+            >
+              {datoCmsProject.nextProject
+                ? datoCmsProject.nextProject.projectTitle
+                : "Wszystkie projekty"}
+            </NextCaseLink>
+          </NextCaseWrapper>
+        </StructuredContentWrapper>
+      </PageWrapper>
+    </>
   )
 }
 
@@ -977,6 +988,9 @@ export const projectQuery = graphql`
       projectTitle
       projectFeaturedImage {
         gatsbyImageData(width: 1920, placeholder: BLURRED)
+        fluid {
+          src
+        }
       }
       id
       projectSlug

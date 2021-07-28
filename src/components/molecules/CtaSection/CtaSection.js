@@ -29,7 +29,6 @@ const CtaSection = ({
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen)
-    console.log("ONSCREEN")
   }, [onScreen])
 
   useEffect(() => {

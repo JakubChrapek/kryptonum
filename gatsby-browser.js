@@ -30,7 +30,6 @@ export const shouldUpdateScroll = ({
   // * 2 for exit + enter animation
   const TRANSITION_DELAY = 0.2 * 1000 * 2
   // if it's a "normal" route
-  console.log("Scr")
   if (!location.hash) {
     if (location.action === "PUSH") {
       window.setTimeout(() => window.scrollTo(0, 0), TRANSITION_DELAY)

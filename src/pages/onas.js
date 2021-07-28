@@ -47,7 +47,6 @@ const About = ({ data }) => {
       jakPracujemyImplementacjaListaElementow: howWeWorkImplementationList,
     },
   } = data
-  console.log(heroTitle)
   return (
     <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
       <AboutContent

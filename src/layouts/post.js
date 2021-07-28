@@ -14,6 +14,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../contexts/cursorContext"
+import SEO from "../components/SEO/SEO"
 
 const ArticleImage = styled(GatsbyImage)`
   width: 100%;
@@ -480,6 +481,10 @@ const Post = ({ data }) => {
     similarArticles.length > 0 ? similarArticles : newArticles
   return (
     <>
+      <SEO
+        title={article.articleTitle}
+        banner={article.articleFeaturedImage.fluid.src}
+      />
       <PostWrapper onMouseEnter={handleWrapperEnter}>
         <PostContentWrapper onMouseEnter={handleWrapperEnter}>
           <BackLink

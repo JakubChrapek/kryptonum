@@ -1,7 +1,5 @@
 import { graphql } from "gatsby"
 import React from "react"
-import website from "../../config/website"
-
 import ContactMain from "../components/molecules/Contact/ContactMain"
 
 const Contact = ({ data }) => {

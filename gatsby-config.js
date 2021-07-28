@@ -41,18 +41,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Web Designers from Outer Space`,
-        short_name: `Kryptonum`,
-        start_url: `/`,
-        background_color: `#0c0c0c`,
-        theme_color: `#2fbc79`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
       /* Include plugin */
       resolve: "gatsby-omni-font-loader",
 
@@ -93,11 +81,12 @@ module.exports = {
         name: website.title,
         short_name: website.titleAlt,
         description: website.description,
-        start_url: pathPrefix || "/",
+        lang: website.siteLanguage,
+        start_url: "/",
         background_color: website.backgroundColor,
         theme_color: website.themeColor,
         display: "standalone",
-        icon: "./src/images/gatsby-icon.png",
+        icon: "src/images/Sygnet_kolor_PNG.png",
       },
     },
     {

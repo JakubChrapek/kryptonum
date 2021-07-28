@@ -34,7 +34,6 @@ const HeroCanvas = () => {
   const handleResize = e => {
     if (!canvasRef.current) return
     let ratio = getPixelRatio(canvasRef.current.getContext("2d"))
-    console.log("RATIO: ", ratio)
     canvasRef.current.width = e.target.innerWidth * ratio
     canvasRef.current.height = e.target.innerHeight * ratio
     init()
