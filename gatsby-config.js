@@ -68,10 +68,12 @@ module.exports = {
     },
     // For google analytics add UA tag to ./config/website.js file
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: website.googleAnalyticsID,
-        head: true,
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.G_KRYPTONUM_MEASUREMENT_STREAM_ID, // Google Analytics / GA
+        ],
       },
     },
     "gatsby-plugin-sitemap",

@@ -481,10 +481,7 @@ const Post = ({ data }) => {
     similarArticles.length > 0 ? similarArticles : newArticles
   return (
     <>
-      <SEO
-        title={article.articleTitle}
-        banner={article.articleFeaturedImage.fluid.src}
-      />
+      <SEO meta={article.seoMetaTags} />
       <PostWrapper onMouseEnter={handleWrapperEnter}>
         <PostContentWrapper onMouseEnter={handleWrapperEnter}>
           <BackLink
@@ -557,6 +554,9 @@ const Post = ({ data }) => {
 export const articleQuery = graphql`
   query article($id: String!, $category: String!) {
     datoCmsArticle(id: { eq: $id }) {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       articleFeaturedImage {
         fluid {
           src

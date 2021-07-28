@@ -1,10 +1,12 @@
 import { graphql } from "gatsby"
 import React from "react"
 import ContactMain from "../components/molecules/Contact/ContactMain"
+import SEO from "../components/SEO/SEO"
 
 const Contact = ({ data }) => {
   const {
     datoCmsPageContact: {
+      seoMetaTags,
       heroTytul: contactPageTitle,
       formularzImieNadInputem: contactPageNameLabel,
       formularzTekstPrzycisku: contactPageButtonText,
@@ -24,6 +26,7 @@ const Contact = ({ data }) => {
   } = data
   return (
     <div>
+      <SEO meta={seoMetaTags} />
       <ContactMain
         contactPageTitle={contactPageTitle}
         contactPageNameLabel={contactPageNameLabel}
@@ -48,6 +51,9 @@ const Contact = ({ data }) => {
 export const query = graphql`
   query contactData {
     datoCmsPageContact {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroTytul {
         value
       }

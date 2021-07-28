@@ -8,6 +8,7 @@ import OurVision from "../components/molecules/OurVision/OurVision"
 import { graphql } from "gatsby"
 import website from "../../config/website"
 import WhatWeDo from "../components/molecules/Services/WhatWeDo"
+import SEO from "../components/SEO/SEO"
 
 const About = ({ data }) => {
   const {
@@ -26,6 +27,7 @@ const About = ({ data }) => {
   } = data.datoCmsPageAbout
   const {
     datoCmsPageService: {
+      seoMetaTags,
       jakPracujemyTytulNaPoczatku: howWeWorkSectionTitle,
       jakPracujemyLista: howWeWorkList,
       jakPracujemyRozmowaTytul: howWeWorkLearnTitle,
@@ -49,6 +51,7 @@ const About = ({ data }) => {
   } = data
   return (
     <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
+      <SEO meta={seoMetaTags} />
       <AboutContent
         heroTitle={heroTitle}
         heroBgImg={heroBgImg}
@@ -104,6 +107,9 @@ const About = ({ data }) => {
 export const query = graphql`
   query aboutQuery {
     datoCmsPageAbout {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroTytul {
         value
       }

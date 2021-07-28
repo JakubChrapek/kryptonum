@@ -835,10 +835,7 @@ const Project = ({ data }) => {
   }
   return (
     <>
-      <SEO
-        title={datoCmsProject.projectTitle}
-        banner={datoCmsProject.projectFeaturedImage.fluid.src}
-      />
+      <SEO meta={datoCmsProject.seoMetaTags} />
       <PageWrapper onMouseEnter={handleWrapperEnter}>
         <ProjectWrapper>
           <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
@@ -985,6 +982,9 @@ const Project = ({ data }) => {
 export const projectQuery = graphql`
   query project($id: String!) {
     datoCmsProject(id: { eq: $id }) {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       projectTitle
       projectFeaturedImage {
         gatsbyImageData(width: 1920, placeholder: BLURRED)
@@ -997,9 +997,6 @@ export const projectQuery = graphql`
       projectType
       projectCategories {
         categoryName
-      }
-      seoMetaTags {
-        tags
       }
       nextProject {
         projectTitle

@@ -3,10 +3,12 @@ import React from "react"
 import website from "../../config/website"
 
 import Privacy from "../components/molecules/Privacy/Privacy"
+import SEO from "../components/SEO/SEO"
 
 const PrivacyPolicy = ({ data }) => {
   return (
     <div id={website.skipNavId}>
+      <SEO meta={data.datoCmsPagePrivacyPolicy.seoMetaTags} />
       <Privacy
         title={data.datoCmsPagePrivacyPolicy.heroTitle}
         content={data.datoCmsPagePrivacyPolicy.privacyPolicyContent}
@@ -18,6 +20,9 @@ const PrivacyPolicy = ({ data }) => {
 export const query = graphql`
   query privacyQuery {
     datoCmsPagePrivacyPolicy {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroTitle {
         value
       }

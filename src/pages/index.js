@@ -14,6 +14,7 @@ import { graphql } from "gatsby"
 const IndexPage = ({ data }) => {
   const {
     datoCmsPageHome: {
+      seoMetaTags,
       heroTytul: heroTitle,
       heroTekstPrzycisku,
       naszeUslugiTytul: servicesTitle,
@@ -58,7 +59,7 @@ const IndexPage = ({ data }) => {
   } = data
   return (
     <>
-      <SEO title="Kryptonum" />
+      <SEO meta={seoMetaTags} />
       <HomeHero heroTitle={heroTitle} heroTekstPrzycisku={heroTekstPrzycisku} />
       <MainServices
         servicesListFirstRow={servicesListFirstRow}
@@ -117,6 +118,9 @@ const IndexPage = ({ data }) => {
 export const homeQuery = graphql`
   query homeBg {
     datoCmsPageHome {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroTytul {
         value
       }

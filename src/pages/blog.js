@@ -10,11 +10,15 @@ import { graphql } from "gatsby"
 
 const Blog = ({ data }) => {
   const {
-    datoCmsPageBlog: { heroTytul: heroTitle, artykulyCytaty: articleQuotes },
+    datoCmsPageBlog: {
+      seoMetaTags,
+      heroTytul: heroTitle,
+      artykulyCytaty: articleQuotes,
+    },
   } = data
   return (
     <>
-      <SEO title="Blog" />
+      <SEO meta={seoMetaTags} />
       <HeroContent content={heroTitle} variant="blog" />
       <BlogCategorizedArticlesGrid articleQuotes={articleQuotes} />
     </>
@@ -24,6 +28,9 @@ const Blog = ({ data }) => {
 export const query = graphql`
   query blogQuery {
     datoCmsPageBlog {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
       heroTytul {
         value
       }

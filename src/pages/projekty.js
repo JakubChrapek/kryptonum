@@ -9,6 +9,7 @@ import {
   useCursorDispatchContext,
 } from "../contexts/cursorContext"
 import website from "../../config/website"
+import SEO from "../components/SEO/SEO"
 
 const ProjectsStyles = styled.div`
   /* position: fixed; */
@@ -43,6 +44,7 @@ const Projects = ({ data }) => {
       onMouseEnter={handleWrapperEnter}
       ref={containerRef}
     >
+      <SEO meta={data.datoCmsPageProject.seoMetaTags} />
       <StyledProjectsWrapper
         projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
         projectsPerPage={projectsPerPage}
@@ -53,6 +55,11 @@ const Projects = ({ data }) => {
 
 export const query = graphql`
   query ProjectsListingQuery {
+    datoCmsPageProject {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+    }
     allDatoCmsProject(
       limit: 6
       sort: { fields: meta___createdAt, order: DESC }

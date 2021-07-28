@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import Header from "../components/organisms/Header/Header"
-import { Panels } from "../components/organisms/Header/Navigation/Navigation"
-import SEO from "../components//SEO"
 import GlobalStyles from "../components/Styles/GlobalStyles"
 import SkipNavLink from "../components/atoms/SkipNavLink/SkipNavLink"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { useLocation } from "@reach/router"
 import styled from "styled-components"
 import { MenuProvider } from "../contexts/menuContext"
 import Footer from "../components/organisms/Footer/Footer"
 import ScrollToTop from "../components/organisms/ScrollToTop/ScrollToTop"
-import useMousePosition from "../utils/useMousePosition"
-import useWindowSize from "../utils/getWindowSize"
 import {
   CURSOR_SIZES,
   CURSOR_TYPES,
@@ -20,13 +16,10 @@ import {
   useCursorStateContext,
 } from "../contexts/cursorContext"
 import Cursor from "../components/organisms/Cursor/Cursor"
-import { StyledNavigationOverlay } from "../components/atoms/Header/Navigation/StyledNavigationOverlay"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
 `
-
-const transition = { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.9] }
 
 const Layout = ({ children }) => {
   const {
@@ -86,7 +79,6 @@ const Layout = ({ children }) => {
         size={cursorSize}
       />
       <SkipNavLink />
-      <SEO />
       <ScrollToTop />
       <Header theme={getThemeFromPathname(pathname) || "light"} />
       {/* {routeChange && (
