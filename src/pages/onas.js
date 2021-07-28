@@ -13,6 +13,7 @@ import SEO from "../components/SEO/SEO"
 const About = ({ data }) => {
   const {
     heroImage,
+    seoMetaTags,
     heroTytul: heroTitle,
     heroZdjecieWtle: heroBgImg,
     toMaratonNieSprintTytul: marathonTitle,
@@ -27,7 +28,6 @@ const About = ({ data }) => {
   } = data.datoCmsPageAbout
   const {
     datoCmsPageService: {
-      seoMetaTags,
       jakPracujemyTytulNaPoczatku: howWeWorkSectionTitle,
       jakPracujemyLista: howWeWorkList,
       jakPracujemyRozmowaTytul: howWeWorkLearnTitle,
