@@ -3,7 +3,7 @@
   "private": true,
   "description": "Gatsby based portfolio website, integration with DatoCMS",
   "version": "1.0.0",
-  "author": "Kuba Chrapek <kuba@kryptonumstudio.com>",
+  "author": "Kuba Chrapek <kuba@kryptonum.eu>",
   "dependencies": {
     "@ashthornton/asscroll": "^1.7.6",
     "@n8tb1t/use-scroll-position": "^2.0.3",

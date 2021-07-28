@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
-import {
-  containerTransition,
-  itemTransition,
-  overlayTransition,
-} from "../../../Styles/Animations"
+import { containerTransition } from "../../../Styles/Animations"
 
 import { useLocation } from "@reach/router"
 import { StyledNavigationStyles } from "../../../atoms/Header/Navigation/StyledNavigationStyles"
@@ -246,9 +242,9 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
               <StyledOutLink
                 onPointerEnter={handleOnMouseEnterForLink}
                 onPointerLeave={handleOnMouseLeaveForLink}
-                href="mailto:michal@kryptonumstudio.com"
+                href="mailto:michal@kryptonum.eu"
               >
-                michal@kryptonumstudio.com
+                michal@kryptonum.eu
               </StyledOutLink>
             </div>
           </StyledNavigationFlexDiv>
@@ -277,8 +273,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
           {width && width <= 640 && (
             <>
               <StyledTextP margin="0 0 9px 0">Napisz do nas</StyledTextP>
-              <StyledOutLink href="mailto:michal@kryptonumstudio.com">
-                michal@kryptonumstudio.com
+              <StyledOutLink href="mailto:michal@kryptonum.eu">
+                michal@kryptonum.eu
               </StyledOutLink>
             </>
           )}
