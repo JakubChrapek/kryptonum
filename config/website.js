@@ -19,6 +19,5 @@ module.exports = {
   backgroundColor: "#0c0c0c",
   twitter: "@kryptonum", // Twitter Username
   facebook: "kryptonum", // Facebook Site Name
-  googleAnalyticsID: "UA-143585485-1",
   skipNavId: "tresc", // ID for the "Skip to content" a11y feature
 }
