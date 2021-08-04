@@ -87,6 +87,15 @@ const Header = ({ theme }) => {
       })
     }
   }
+
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
+
   return (
     <StyledHeaderWrapper>
       <StyledHeader bg={pathname === "/" ? "transparent" : "var(--white)"}>
