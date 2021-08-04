@@ -11,10 +11,7 @@ export const wrapPageElement = ({ element, props }) => (
 )
 
 export const wrapRootElement = ({ element }) => (
-  <>
-    <SEO />
-    <CursorProvider>{element}</CursorProvider>
-  </>
+  <CursorProvider>{element}</CursorProvider>
 )
 
 export const shouldUpdateScroll = ({

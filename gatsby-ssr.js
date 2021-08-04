@@ -8,10 +8,7 @@ exports.wrapPageElement = ({ element, props }) => (
 )
 
 exports.wrapRootElement = ({ element }) => (
-  <>
-    <SEO />
-    <CursorProvider>{element}</CursorProvider>
-  </>
+  <CursorProvider>{element}</CursorProvider>
 )
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
