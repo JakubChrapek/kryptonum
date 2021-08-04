@@ -1,5 +1,6 @@
 const React = require("react")
 const Layout = require("./src/layouts/Layout").default
+const SEO = require("./src/components/SEO/SEO").default
 const CursorProvider = require("./src/contexts/cursorContext").CursorProvider
 
 exports.wrapPageElement = ({ element, props }) => (
@@ -7,7 +8,10 @@ exports.wrapPageElement = ({ element, props }) => (
 )
 
 exports.wrapRootElement = ({ element }) => (
-  <CursorProvider>{element}</CursorProvider>
+  <>
+    <SEO />
+    <CursorProvider>{element}</CursorProvider>
+  </>
 )
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {

@@ -1,11 +1,7 @@
 import { AnimatePresence } from "framer-motion"
-
 const React = require("react")
 const Layout = require("./src/layouts/Layout").default
-const gsap = require("gsap").gsap
-const ScrollTrigger = require("gsap/ScrollTrigger")
-const ScrollToPlugin = require("gsap/ScrollToPlugin")
-const CSSPlugin = require("gsap/CSSPlugin")
+const SEO = require("./src/components/SEO/SEO").default
 const CursorProvider = require("./src/contexts/cursorContext").CursorProvider
 
 export const wrapPageElement = ({ element, props }) => (
@@ -14,12 +10,11 @@ export const wrapPageElement = ({ element, props }) => (
   </AnimatePresence>
 )
 
-// export const wrapPageElement = ({ element }) => (
-//   <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
-// )
-
 export const wrapRootElement = ({ element }) => (
-  <CursorProvider>{element}</CursorProvider>
+  <>
+    <SEO />
+    <CursorProvider>{element}</CursorProvider>
+  </>
 )
 
 export const shouldUpdateScroll = ({

@@ -433,13 +433,7 @@ const FooterAuthorBio = styled.p`
 
 const Post = ({ data }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  if (!hasMounted) {
-    return null
-  }
+
   const { datoCmsArticle: article, similarArticles, newArticles } = data
   const year = article.dateOfPublication.split("-")[0].slice(2)
   const month = article.dateOfPublication.split("-")[1]
@@ -479,6 +473,14 @@ const Post = ({ data }) => {
 
   const relatedArticles =
     similarArticles.length > 0 ? similarArticles : newArticles
+
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
   return (
     <>
       <SEO meta={article.seoMetaTags} />

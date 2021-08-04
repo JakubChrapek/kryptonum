@@ -782,13 +782,7 @@ const NextCaseLink = styled(Link)`
 
 const Project = ({ data }) => {
   const dispatchCursor = useCursorDispatchContext()
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  if (!hasMounted) {
-    return null
-  }
+
   const { datoCmsProject } = data
 
   const handleImageEnter = () => {
@@ -832,6 +826,14 @@ const Project = ({ data }) => {
       type: "CHANGE_CURSOR_SIZE",
       cursorSize: CURSOR_SIZES.SMALLER,
     })
+  }
+
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
   }
   return (
     <>
