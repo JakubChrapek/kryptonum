@@ -828,13 +828,13 @@ const Project = ({ data }) => {
     })
   }
 
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  if (!hasMounted) {
-    return null
-  }
+  // const [hasMounted, setHasMounted] = useState(false)
+  // useEffect(() => {
+  //   setHasMounted(true)
+  // }, [])
+  // if (!hasMounted) {
+  //   return null
+  // }
   return (
     <>
       <SEO meta={datoCmsProject.seoMetaTags} />
