@@ -28,13 +28,13 @@ const HomeHero = ({ heroTitle, heroTekstPrzycisku }) => {
   const width = useWindowSize()
   const dispatchCursor = useCursorDispatchContext()
   let pathname = useLocation().pathname
-  // const [hasMounted, setHasMounted] = useState(false)
-  // useEffect(() => {
-  //   setHasMounted(true)
-  // }, [])
-  // if (!hasMounted) {
-  //   return null
-  // }
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
 
   const handleOnMouseEnterForLink = () => {
     dispatchCursor({
