@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useLocation } from "@reach/router"
 import { AnimatePresence } from "framer-motion"
