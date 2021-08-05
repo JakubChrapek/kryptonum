@@ -474,13 +474,6 @@ const Post = ({ data }) => {
   const relatedArticles =
     similarArticles.length > 0 ? similarArticles : newArticles
 
-  // const [hasMounted, setHasMounted] = useState(false)
-  // useEffect(() => {
-  //   setHasMounted(true)
-  // }, [])
-  // if (!hasMounted) {
-  //   return null
-  // }
   return (
     <>
       <SEO meta={article.seoMetaTags} />

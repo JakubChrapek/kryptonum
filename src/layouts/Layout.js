@@ -45,16 +45,6 @@ const Layout = ({ children }) => {
     })
   }, [pathname])
 
-  // const [hasMounted, setHasMounted] = useState(false)
-
-  // useEffect(() => {
-  //   setHasMounted(true)
-  // }, [])
-
-  // if (!hasMounted) {
-  //   return null
-  // }
-
   const getThemeFromPathname = name => {
     if (name === "/") {
       return "light"
