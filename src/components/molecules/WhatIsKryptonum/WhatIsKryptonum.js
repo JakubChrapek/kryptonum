@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link as ScrollLink } from "react-scroll"
 import { StructuredText } from "react-datocms"
 import { SectionStyles } from "../../atoms/WhatIsKryptonumGrid/SectionStyles"
@@ -16,16 +16,14 @@ import useWindowSize from "../../../utils/getWindowSize"
 import {
   useCursorDispatchContext,
   CURSOR_TYPES,
-  CURSOR_COLORS,
   CURSOR_SIZES,
 } from "../../../contexts/cursorContext"
 import { DownArrow } from "../../atoms/Icons/arrows"
-import tmp from "../../../images/hero-bg.jpeg"
 import {
   WhatIsKryptonumTitle,
   WhatIsKryptonumTitleStyles,
 } from "./WhatIsKryptonumTitleStyles"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const WhatIsKryptonum = ({
   whatIsKryptonumTitle,
@@ -40,6 +38,13 @@ const WhatIsKryptonum = ({
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   const width = useWindowSize()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
   return (
     <>
       <SectionStyles
