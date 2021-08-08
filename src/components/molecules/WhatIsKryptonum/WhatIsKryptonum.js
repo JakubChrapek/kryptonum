@@ -38,13 +38,7 @@ const WhatIsKryptonum = ({
 }) => {
   const dispatchCursor = useCursorDispatchContext()
   const width = useWindowSize()
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  if (!hasMounted) {
-    return null
-  }
+
   return (
     <>
       <SectionStyles

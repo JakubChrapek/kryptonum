@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import SEO from "../components/SEO/SEO"
 import HomeHero from "../components/organisms/HomeHero/HomeHero"
 import MainServices from "../components/molecules/MainServices/MainServices"
@@ -57,6 +57,13 @@ const IndexPage = ({ data }) => {
       leadMagnetInformacjaOSukcesie: leadMagnetTitleSuccessMessage,
     },
   } = data
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+  if (!hasMounted) {
+    return null
+  }
   return (
     <>
       <SEO meta={seoMetaTags} />
