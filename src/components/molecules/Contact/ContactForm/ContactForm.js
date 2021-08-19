@@ -52,6 +52,11 @@ function ContactForm({
               setFeedback(
                 "Wielkie dzięki za wiadomość 🤗. Odpiszemy jak najszybciej! 🚀"
               )
+              if (typeof window !== "undefined") {
+                if (window.fbq != null) {
+                  window.fbq("track", "Contact", { contents: values })
+                }
+              }
               setTimeout(() => {
                 actions.resetForm()
                 setFeedback(null)

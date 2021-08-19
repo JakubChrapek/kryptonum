@@ -1,5 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
+import { useEffect } from "react"
 import ContactMain from "../components/molecules/Contact/ContactMain"
 import SEO from "../components/SEO/SEO"
 
@@ -24,6 +25,16 @@ const Contact = ({ data }) => {
       kontaktAdresNaKoncu: contactColumnLastAddress,
     },
   } = data
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (window.fbq != null) {
+        window.fbq("track", "ViewContent", {
+          content_name: "Wejście na stronę kontakt",
+        })
+      }
+    }
+  }, [])
   return (
     <div>
       <SEO meta={seoMetaTags} />
