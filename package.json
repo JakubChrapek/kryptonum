@@ -21,6 +21,7 @@
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-google-analytics": "^3.2.0",
     "gatsby-plugin-google-gtag": "^3.10.0",
+    "gatsby-plugin-google-tagmanager": "^3.12.0",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-netlify": "^3.2.0",

@@ -13,6 +13,10 @@ const SEO = ({
 }) => {
   return (
     <HelmetDatoCms seo={meta}>
+      <meta
+        name="facebook-domain-verification"
+        content="j96o3vd6mygkwp7iyhla62mog8b4u5"
+      />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
