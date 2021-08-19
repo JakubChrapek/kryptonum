@@ -16,6 +16,7 @@ import {
   useCursorStateContext,
 } from "../contexts/cursorContext"
 import Cursor from "../components/organisms/Cursor/Cursor"
+import SEO from "../components/SEO/SEO"
 
 const StyledMain = styled(motion.main)`
   min-height: 100vh;
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
 
   return (
     <MenuProvider>
+      <SEO />
       <GlobalStyles />
       <Cursor
         text={cursorText}
