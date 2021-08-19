@@ -19,6 +19,7 @@
     "framer-motion": "^4.1.2",
     "gatsby": "^3.2.1",
     "gatsby-image": "^3.2.0",
+    "gatsby-plugin-facebook-pixel": "^1.0.8",
     "gatsby-plugin-google-analytics": "^3.2.0",
     "gatsby-plugin-google-gtag": "^3.10.0",
     "gatsby-plugin-google-tagmanager": "^3.12.0",
