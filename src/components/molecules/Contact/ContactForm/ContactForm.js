@@ -2,15 +2,13 @@ import React, { useState } from "react"
 import { StyledForm } from "./StyledContactForm"
 import { FieldWrapper } from "./FieldWrapper"
 import StyledErrorMessage from "./StyledErrorMessage"
-import { StyledContactLink } from "../../../atoms/Contact/StyledContactLink"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TEXT,
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../../contexts/cursorContext"
-import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Formik, Field, ErrorMessage } from "formik"
 import { AnimatePresence, motion } from "framer-motion"
 import { StructuredText } from "react-datocms"
 
