@@ -18,7 +18,7 @@ const Container = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: clamp(172px, 19.6vw, 283px) 112px 0;
+  padding: clamp(172px, 19.6vw, 283px) clamp(91px, 7.77vw, 112px) 0;
   display: flex;
   justify-content: space-between;
 
@@ -29,6 +29,9 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
   }
+  @media (max-width: 640px) {
+    padding: 172px 16px 0;
+  }
 
   > .gatsby-image-wrapper {
     flex: 1 1 40%;
@@ -38,6 +41,9 @@ const Container = styled.div`
       margin-bottom: 56px;
       order: -1;
     }
+    @media (max-width: 640px) {
+      width: 100%;
+    }
   }
 `
 
@@ -46,13 +52,17 @@ const TextContainer = styled.div`
   padding-right: clamp(80px, 12.22vw, 176px);
   @media (max-width: 1024px) {
     padding-right: 0;
+    width: 100%;
   }
   > p {
     color: var(--black);
     line-height: 1.5;
     max-width: clamp(360px, 38.2vw, 551px);
     @media (max-width: 1024px) {
-      max-width: 551px;
+      max-width: clamp(240px, 77.1vw, 551px);
+    }
+    @media (max-width: 384px) {
+      max-width: 100%;
     }
     :nth-of-type(1) {
       font-size: 13px;
@@ -61,15 +71,22 @@ const TextContainer = styled.div`
     }
     :nth-of-type(2) {
       color: var(--off-black);
-      font-size: 48px;
+      font-size: clamp(32px, 3.33vw, 48px);
+      font-weight: 500;
       @media (max-width: 1024px) {
         font-size: clamp(28px, 6.225vw, 48px);
       }
       margin-bottom: 48px;
+      @media (max-width: 767px) {
+        margin-bottom: 32px;
+      }
     }
   }
   > button {
     width: clamp(340px, 36.1vw, 520px);
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0.72px;
@@ -87,9 +104,6 @@ const TextContainer = styled.div`
     &:focus {
       outline-offset: 2px;
       outline: 2px solid var(--button-accent);
-    }
-    @media (max-width: 767px) {
-      margin-top: 32px;
     }
   }
 `
