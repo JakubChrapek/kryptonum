@@ -140,7 +140,7 @@ const ColumnItem = ({ title, text }) => {
 
 const OfferWhyUsSection = ({ firstColumnItems, secondColumnItems }) => {
   return (
-    <Wrapper>
+    <Wrapper id="dlaczego">
       <Container>
         <ContentGrid>
           <MainHeader>

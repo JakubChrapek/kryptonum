@@ -8,6 +8,7 @@ import OfferHorizontalImageSection from "../components/organisms/OfferHorizontal
 import OfferHowCanWeHelpSection from "../components/organisms/OfferHowCanWeHelpSection/OfferHowCanWeHelpSection"
 import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
 import OfferContactFromSection from "../components/organisms/OfferContactFromSection/OfferContactFromSection"
+import OfferFaqSection from "../components/organisms/OfferFaqSection/OfferFaqSection"
 
 const Oferta = ({ data }) => {
   const {
@@ -32,6 +33,8 @@ const Oferta = ({ data }) => {
     formularzWiadomoscPlaceholder: contactPageMessagePlaceholder,
     formularzZgodaNaPrzetwarzanieTekst: contactPagePrivacyText,
   } = data?.datoCmsPageContact
+
+  const { faqItems } = data?.datoCmsPageFaq
 
   const { feedbackTytul: feedbackTytul } = data.datoCmsPageAbout
 
@@ -58,6 +61,7 @@ const Oferta = ({ data }) => {
       <FeedbackFrom variant="offer" feedbackTytul={feedbackTytul} />
       <OfferContactFromSection
         id={website.skipNavId}
+        variant="offer"
         contactPageNameLabel={contactPageNameLabel}
         contactPageButtonText={contactPageButtonText}
         contactPageNamePlaceholder={contactPageNamePlaceholder}
@@ -67,6 +71,12 @@ const Oferta = ({ data }) => {
         contactPageMessagePlaceholder={contactPageMessagePlaceholder}
         contactPagePrivacyText={contactPagePrivacyText}
         contactFormImage={gatsbyImageData}
+      />
+      <OfferFaqSection
+        faqSubheader="Sekcja FAQ"
+        faqQuestion="Nie jesteś pewny, czy chcesz stronę, której zazdrości nawet konkurencja?"
+        faqCta="Rozwiejemy twoje wątpliwości najczęściej zadawanymi pytaniami"
+        faqItems={faqItems}
       />
     </div>
   )
@@ -126,6 +136,16 @@ export const query = graphql`
       }
       formularzZgodaNaPrzetwarzanieTekst {
         value
+      }
+    }
+    datoCmsPageFaq {
+      faqItems {
+        faqPytanie {
+          value
+        }
+        faqOdpowiedz {
+          value
+        }
       }
     }
   }

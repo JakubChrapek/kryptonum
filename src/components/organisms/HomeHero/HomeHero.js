@@ -5,18 +5,14 @@ import { StructuredText } from "react-datocms"
 
 import useWindowSize from "../../../utils/getWindowSize"
 import HeroFooter from "../../molecules/HomeHeroFooter/HeroFooter"
-import GreenLine from "../../molecules/GreenLine/GreenLine"
-import GrayLine from "../../atoms/GrayLine/GrayLine"
 
 import { Wrapper } from "../../atoms/StyledHeroHomeWrapper/StyledHeroHomeWrapper"
 import { HomeHeroSection } from "../../atoms/StyledHomeHeroSection/StyledHomeHeroSection"
 import { HomeHeroTitle, HomeHeroTitleStyles } from "../HomeHero/HomeHeroTitle"
-import { StyledFullPageResponsieImage } from "../../atoms/StyledFullPageResponsieImage/StyledFullPageResponsieImage"
 import { StyledScrollLink } from "../../atoms/StyledHeroLink/StyledHeroLink"
 import {
   useCursorDispatchContext,
   CURSOR_TYPES,
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TEXT,
 } from "../../../contexts/cursorContext"

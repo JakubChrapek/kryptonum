@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { StyledAddIcon } from "./StyledAddIcon"
 
 export const StyledQuestion = styled.button`
@@ -12,8 +12,8 @@ export const StyledQuestion = styled.button`
   text-align: left;
   background-color: transparent;
   border: none;
-  padding: 28px 16px 46px 14px;
   flex: 1 1 100%;
+  padding: 28px 16px 46px 14px;
   @media only screen and (max-width: 767px) {
     padding: 28px 16px 40px 14px;
   }
@@ -23,6 +23,18 @@ export const StyledQuestion = styled.button`
   @media only screen and (max-width: 330px) {
     padding-right: 0;
   }
+  ${({ variant }) =>
+    variant === "offer" &&
+    css`
+      padding: 28px 16px 28px 0;
+      @media only screen and (max-width: 767px) {
+        padding: 28px 16px 28px 0;
+      }
+      @media only screen and (max-width: 640px) {
+        padding: 28px 16px 28px 0;
+      }
+    `}
+
   &:focus {
     outline: none;
   }

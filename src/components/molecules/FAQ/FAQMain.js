@@ -7,7 +7,7 @@ import { StyledFAQH1 } from "../../atoms/FAQ/StyledFAQH1"
 import { StyledFAQWrapper } from "../../atoms/FAQ/StyledFAQWrapper"
 import website from "../../../../config/website"
 
-const FAQMain = ({ faqTitle, faqItems }) => {
+const FAQMain = ({ faqTitle, faqItems, variant }) => {
   return (
     <StyledFAQMain id={website.skipNavId}>
       <StyledFAQWrapper>
@@ -16,7 +16,7 @@ const FAQMain = ({ faqTitle, faqItems }) => {
             <StructuredText data={faqTitle} />
           </StyledFAQH1>
         </div>
-        <QuestionsAndAnswer faqItems={faqItems} />
+        <QuestionsAndAnswer variant={variant} faqItems={faqItems} />
       </StyledFAQWrapper>
     </StyledFAQMain>
   )

@@ -18,8 +18,13 @@ import {
   useCursorDispatchContext,
 } from "../../../../contexts/cursorContext"
 
-const QuestionAndAnswerElement = ({ question, answer }) => {
-  const [openAnswer, setOpenAnswer] = useState(false)
+const QuestionAndAnswerElement = ({
+  initiallyOpened,
+  variant,
+  question,
+  answer,
+}) => {
+  const [openAnswer, setOpenAnswer] = useState(initiallyOpened ? true : false)
   const dispatchCursor = useCursorDispatchContext()
   const handleOnMouseEnterForQuestion = () => {
     openAnswer
@@ -82,12 +87,14 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
         }}
       >
         <StyledQuestion
+          variant={variant}
           onMouseEnter={handleOnMouseEnterForQuestion}
           onMouseLeave={handleOnMouseLeave}
         >
           <StructuredText data={question} />
         </StyledQuestion>
         <StyledAddIcon
+          variant={variant}
           open={openAnswer}
           onMouseEnter={handleOnMouseEnterForIcon}
           onMouseLeave={handleOnMouseLeave}
@@ -106,6 +113,7 @@ const QuestionAndAnswerElement = ({ question, answer }) => {
         style={{ pointerEvents: "none" }}
       >
         <AnswerText
+          variant={variant}
           fontSize="16px"
           fontFamily="Poppins"
           lineHeight="1.88"

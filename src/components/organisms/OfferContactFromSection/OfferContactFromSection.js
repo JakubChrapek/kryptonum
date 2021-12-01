@@ -34,10 +34,11 @@ const Container = styled.div`
 
     @media (max-width: 1024px) {
       width: calc(100% - clamp(24px, 4.5vw, 47px));
-      margin-bottom: 56px;
+      margin-bottom: 27px;
       order: -1;
     }
     @media (max-width: 640px) {
+      margin-bottom: 48px;
       width: 100%;
     }
   }
@@ -48,14 +49,43 @@ const TextContainer = styled.div`
   @media (max-width: 1024px) {
     padding-right: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
-const FormQuestion = styled.p``
+const FormQuestion = styled.p`
+  font-size: clamp(28px, 2.5vw, 36px);
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--off-black);
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    text-align: center;
+    max-width: 551px;
+  }
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+`
 
-const CtaText = styled.p``
+const CtaText = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--off-black);
+  margin: 8px 0 16px;
+  @media (max-width: 1024px) {
+    text-align: center;
+    margin: 8px 0 48px;
+  }
+  @media (max-width: 640px) {
+    margin: 8px 0 24px;
+  }
+`
 
 const OfferContactFromSection = ({
+  variant,
   contactPageNameLabel,
   contactPageButtonText,
   contactPageNamePlaceholder,
@@ -71,13 +101,14 @@ const OfferContactFromSection = ({
       <Container>
         <TextContainer>
           <FormQuestion>
-            Chcesz mieć stroną internetową, której zazdrości nawet konkurencja?
+            Chcesz mieć stronę internetową, której zazdrości nawet konkurencja?
           </FormQuestion>
           <CtaText>
-            Wypełnij formularz zgłoszeniowy i umów się na bezpłatną rozmowę
+            Wypełnij formularz zgłoszeniowy i umów się na bezpłatną rozmowę
           </CtaText>
           <ContactForm
             id={website.skipNavId}
+            variant={variant}
             contactPageNameLabel={contactPageNameLabel}
             contactPageButtonText={contactPageButtonText}
             contactPageNamePlaceholder={contactPageNamePlaceholder}

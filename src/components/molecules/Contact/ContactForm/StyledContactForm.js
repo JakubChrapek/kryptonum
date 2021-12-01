@@ -1,8 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Form } from "formik"
 
 export const StyledForm = styled(Form)`
   width: 456px;
+  position: relative;
   @media only screen and (max-width: 1034px) {
     width: 380px;
   }
@@ -17,6 +18,17 @@ export const StyledForm = styled(Form)`
     max-width: 100%;
     padding: 0;
   }
+  ${({ variant }) =>
+    variant === "offer" &&
+    css`
+      width: 100% !important;
+      max-width: clamp(328px, 66.66vw, 512px) !important;
+
+      @media (max-width: 640px) {
+        max-width: 100% !important;
+      }
+    `}
+
   label {
     display: block;
     font-family: Poppins;
@@ -100,7 +112,12 @@ export const StyledForm = styled(Form)`
     }
   }
   > p {
-    margin: 24px 0 31px;
+    position: absolute;
+    bottom: -40px;
+    @media (max-width: 640px) {
+      bottom: -32px;
+    }
+    left: 0;
     font-family: Poppins;
     font-size: 12px;
     font-weight: normal;

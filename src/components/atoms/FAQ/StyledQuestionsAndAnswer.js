@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const StyledQuestionsAndAnswerWrapper = styled.div`
   width: 100%;
@@ -6,4 +6,12 @@ export const StyledQuestionsAndAnswerWrapper = styled.div`
   @media (max-width: 767px) {
     padding-top: 50px;
   }
+  ${({ variant }) =>
+    variant === "offer" &&
+    css`
+      padding-top: 0;
+      @media (max-width: 767px) {
+        padding-top: 0;
+      }
+    `}
 `

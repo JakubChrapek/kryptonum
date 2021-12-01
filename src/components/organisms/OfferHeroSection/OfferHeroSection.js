@@ -8,6 +8,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+import { Link as ScrollLink } from "react-scroll"
 
 const Wrapper = styled.section`
   background-color: var(--white);
@@ -82,7 +83,7 @@ const TextContainer = styled.div`
       }
     }
   }
-  > button {
+  > a > button {
     width: clamp(340px, 36.1vw, 520px);
     @media (max-width: 1024px) {
       width: 100%;
@@ -122,35 +123,48 @@ const OfferHeroSection = ({ headerText, claimText, btnText, heroImage }) => {
         <TextContainer>
           <StructuredText data={headerText} />
           <StructuredText data={claimText} />
-          <OfferButton
-            type="submit"
-            onMouseEnter={() => {
-              dispatchCursor({
-                type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.TRANSPARENT_TEXT,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_SIZE",
-                cursorSize: CURSOR_SIZES.HUGE,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_TEXT",
-                cursorText: CURSOR_TEXT.COLLAPSE,
-              })
-            }}
-            onMouseLeave={() => {
-              dispatchCursor({
-                type: "CHANGE_CURSOR_TYPE",
-                cursorType: CURSOR_TYPES.FULL_CURSOR,
-              })
-              dispatchCursor({
-                type: "CHANGE_CURSOR_SIZE",
-                cursorSize: CURSOR_SIZES.SMALLER,
-              })
-            }}
+          <ScrollLink
+            activeClass="active"
+            to="dlaczego"
+            spy={true}
+            smooth={true}
+            duration={800}
           >
-            {btnText}
-          </OfferButton>
+            <OfferButton
+              activeClass="active"
+              to="dlaczego"
+              spy={true}
+              smooth={true}
+              duration={800}
+              type="button"
+              onMouseEnter={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.TRANSPARENT_TEXT,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.HUGE,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TEXT",
+                  cursorText: CURSOR_TEXT.COLLAPSE,
+                })
+              }}
+              onMouseLeave={() => {
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_TYPE",
+                  cursorType: CURSOR_TYPES.FULL_CURSOR,
+                })
+                dispatchCursor({
+                  type: "CHANGE_CURSOR_SIZE",
+                  cursorSize: CURSOR_SIZES.SMALLER,
+                })
+              }}
+            >
+              {btnText}
+            </OfferButton>
+          </ScrollLink>
         </TextContainer>
         <GatsbyImage image={heroImage} />
       </Container>

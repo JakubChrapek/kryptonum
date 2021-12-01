@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { TextStyles } from "../../../atoms/Text/Text"
 
 export const AnswerText = styled(TextStyles)`
@@ -7,11 +7,26 @@ export const AnswerText = styled(TextStyles)`
   }
   display: inline-block;
   p {
-    display: inline;
+    display: inline-block;
     a {
       display: inline;
       color: inherit;
       pointer-events: all;
     }
+    + p {
+      margin-top: 8px;
+    }
   }
+
+  ${({ variant }) =>
+    variant === "offer" &&
+    css`
+      padding: 0 0 28px 0;
+      @media only screen and (max-width: 767px) {
+        padding: 0 0 28px 0;
+      }
+      @media only screen and (max-width: 640px) {
+        padding: 0 0 28px 0;
+      }
+    `}
 `
