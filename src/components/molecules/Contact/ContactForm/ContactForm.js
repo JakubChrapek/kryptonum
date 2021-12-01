@@ -15,6 +15,7 @@ import { StructuredText } from "react-datocms"
 function ContactForm({
   id,
   variant,
+  name,
   contactPageNameLabel,
   contactPageButtonText,
   contactPageNamePlaceholder,
@@ -87,7 +88,11 @@ function ContactForm({
         }}
       >
         {({ errors }) => (
-          <StyledForm variant={variant} name="contact-form" data-netlify={true}>
+          <StyledForm
+            variant={variant}
+            name={name ?? "contact-form"}
+            data-netlify={true}
+          >
             <FieldWrapper>
               <label htmlFor="name">{contactPageNameLabel}* </label>
               <Field

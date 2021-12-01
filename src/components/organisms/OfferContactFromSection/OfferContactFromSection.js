@@ -2,7 +2,7 @@ import React from "react"
 import ContactForm from "../../molecules/Contact/ContactForm/ContactForm"
 import website from "../../../../config/website"
 import styled from "styled-components"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 
 const Wrapper = styled.section`
   background-color: var(--white);
@@ -86,6 +86,9 @@ const CtaText = styled.p`
 
 const OfferContactFromSection = ({
   variant,
+  formName,
+  formImageDesktop,
+  formImageMobile,
   contactPageNameLabel,
   contactPageButtonText,
   contactPageNamePlaceholder,
@@ -94,8 +97,25 @@ const OfferContactFromSection = ({
   contactPageMessageLabel,
   contactPageMessagePlaceholder,
   contactPagePrivacyText,
-  contactFormImage,
 }) => {
+  const images = withArtDirection(getImage(formImageDesktop), [
+    {
+      media: "(max-width: 640px)",
+      image: getImage(formImageMobile),
+    },
+  ])
+
+  const handleSendForm = data => {
+    console.log("FORM DATA: ", data)
+    if (typeof window !== "undefined") {
+      window.gtag("event", "conversion", {
+        send_to: "AW-10816471992/nMKvCPiS64YDELiH2aUo",
+        ...data,
+      })
+      return false
+    }
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -108,7 +128,9 @@ const OfferContactFromSection = ({
           </CtaText>
           <ContactForm
             id={website.skipNavId}
+            name={formName}
             variant={variant}
+            handleSendForm={handleSendForm}
             contactPageNameLabel={contactPageNameLabel}
             contactPageButtonText={contactPageButtonText}
             contactPageNamePlaceholder={contactPageNamePlaceholder}
@@ -119,7 +141,7 @@ const OfferContactFromSection = ({
             contactPagePrivacyText={contactPagePrivacyText}
           />
         </TextContainer>
-        <GatsbyImage image={contactFormImage} />
+        <GatsbyImage image={images} />
       </Container>
     </Wrapper>
   )

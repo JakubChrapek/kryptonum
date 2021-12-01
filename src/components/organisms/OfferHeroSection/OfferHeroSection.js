@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StructuredText } from "react-datocms"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 import {
   CURSOR_SIZES,
   CURSOR_TEXT,
@@ -114,9 +114,20 @@ const TextContainer = styled.div`
 
 const OfferButton = styled.button``
 
-const OfferHeroSection = ({ headerText, claimText, btnText, heroImage }) => {
+const OfferHeroSection = ({
+  headerText,
+  claimText,
+  btnText,
+  heroDesktopImage,
+  heroMobileImage,
+}) => {
   const dispatchCursor = useCursorDispatchContext()
-
+  const images = withArtDirection(getImage(heroDesktopImage), [
+    {
+      media: "(max-width: 640px)",
+      image: getImage(heroMobileImage),
+    },
+  ])
   return (
     <Wrapper>
       <Container>
@@ -166,7 +177,7 @@ const OfferHeroSection = ({ headerText, claimText, btnText, heroImage }) => {
             </OfferButton>
           </ScrollLink>
         </TextContainer>
-        <GatsbyImage image={heroImage} />
+        <GatsbyImage image={images} />
       </Container>
     </Wrapper>
   )

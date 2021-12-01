@@ -16,7 +16,10 @@ const Oferta = ({ data }) => {
     ofertaHeroClaim,
     offerHeroButtonText,
     ofertaHeroNaglowek,
-    ofertaHeroImage: { gatsbyImageData },
+    ofertaHeroImage: { gatsbyImageData: heroDesktopImage },
+    ofertaMobileHeroImage: { gatsbyImageData: heroMobileImage },
+    formImage: { gatsbyImageData: formImageDesktop },
+    formImageMobile: { gatsbyImageData: formImageMobile },
     firstColumnItems,
     secondColumnItems,
     wideImage,
@@ -49,7 +52,8 @@ const Oferta = ({ data }) => {
         headerText={ofertaHeroNaglowek}
         claimText={ofertaHeroClaim}
         btnText={offerHeroButtonText}
-        heroImage={gatsbyImageData}
+        heroDesktopImage={heroDesktopImage}
+        heroMobileImage={heroMobileImage}
       />
       <OfferWhyUsSection
         mainParagraph=""
@@ -62,6 +66,9 @@ const Oferta = ({ data }) => {
       <OfferContactFromSection
         id={website.skipNavId}
         variant="offer"
+        formName="Formularz – oferta"
+        formImageDesktop={formImageDesktop}
+        formImageMobile={formImageMobile}
         contactPageNameLabel={contactPageNameLabel}
         contactPageButtonText={contactPageButtonText}
         contactPageNamePlaceholder={contactPageNamePlaceholder}
@@ -70,7 +77,6 @@ const Oferta = ({ data }) => {
         contactPageMessageLabel={contactPageMessageLabel}
         contactPageMessagePlaceholder={contactPageMessagePlaceholder}
         contactPagePrivacyText={contactPagePrivacyText}
-        contactFormImage={gatsbyImageData}
       />
       <OfferFaqSection
         faqSubheader="Sekcja FAQ"
@@ -96,6 +102,15 @@ export const query = graphql`
         value
       }
       ofertaHeroImage {
+        gatsbyImageData
+      }
+      ofertaMobileHeroImage {
+        gatsbyImageData
+      }
+      formImage {
+        gatsbyImageData
+      }
+      formImageMobile {
         gatsbyImageData
       }
       firstColumnItems: ofertaWhyUs1stColumn {
