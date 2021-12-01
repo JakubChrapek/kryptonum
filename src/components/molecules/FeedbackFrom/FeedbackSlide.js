@@ -36,6 +36,10 @@ const SlideHeaderWrapper = styled(motion.div)`
   a {
     text-decoration: none;
     color: inherit;
+    &:focus-visible {
+      outline-offset: 1px;
+      outline: 2px solid ${({ color }) => (color ? color : "var(--black)")};
+    }
   }
 `
 

@@ -5,6 +5,8 @@ import SEO from "../components/SEO/SEO"
 import { graphql } from "gatsby"
 import OfferWhyUsSection from "../components/organisms/OfferWhyUsSection/OfferWhyUsSection"
 import OfferHorizontalImageSection from "../components/organisms/OfferHorizontalImageSection/OfferHorizontalImageSection"
+import OfferHowCanWeHelpSection from "../components/organisms/OfferHowCanWeHelpSection/OfferHowCanWeHelpSection"
+import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
 
 const Oferta = ({ data }) => {
   const {
@@ -18,6 +20,7 @@ const Oferta = ({ data }) => {
     wideImage,
     ofertaWideImageMobile,
   } = data?.datoCmsPageOffer
+  const { feedbackTytul: feedbackTytul } = data.datoCmsPageAbout
 
   const horizontalImages = {
     largeImage: wideImage.gatsbyImageData,
@@ -38,6 +41,8 @@ const Oferta = ({ data }) => {
         secondColumnItems={secondColumnItems}
       />
       <OfferHorizontalImageSection data={horizontalImages} />
+      <OfferHowCanWeHelpSection />
+      <FeedbackFrom feedbackTytul={feedbackTytul} />
     </div>
   )
 }
@@ -71,6 +76,11 @@ export const query = graphql`
       }
       ofertaWideImageMobile {
         gatsbyImageData
+      }
+    }
+    datoCmsPageAbout {
+      feedbackTytul {
+        value
       }
     }
   }

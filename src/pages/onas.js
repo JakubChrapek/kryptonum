@@ -23,7 +23,6 @@ const About = ({ data }) => {
     naszeWartosciCecha: ourValuesFeature,
     naszeWartosciFotka: ourValuesPhoto,
     naszeWartosciHasloNaSrodku: ourValuesCenteredClaim,
-    feedbackKlientowRecenzje: feedbackFromClients,
     feedbackTytul: feedbackTytul,
   } = data.datoCmsPageAbout
   const {
@@ -67,10 +66,7 @@ const About = ({ data }) => {
         ourValuesPhoto={ourValuesPhoto}
         ourValuesCenteredClaim={ourValuesCenteredClaim}
       />
-      <FeedbackFrom
-        feedbackFromClients={feedbackFromClients}
-        feedbackTytul={feedbackTytul}
-      />
+      <FeedbackFrom feedbackTytul={feedbackTytul} />
       <WhatWeDo
         howWeWorkSectionTitle={howWeWorkSectionTitle}
         howWeWorkList={howWeWorkList}
