@@ -106,10 +106,9 @@ const OfferContactFromSection = ({
   ])
 
   const handleSendForm = data => {
-    console.log("FORM DATA: ", data)
     if (typeof window !== "undefined") {
       window.gtag("event", "conversion", {
-        send_to: "AW-10816471992/nMKvCPiS64YDELiH2aUo",
+        send_to: `${process.env.G_KRYPTONUM_AW_ID}/${process.env.G_KRYPTONUM_AW_LABEL}`,
         ...data,
       })
       return false

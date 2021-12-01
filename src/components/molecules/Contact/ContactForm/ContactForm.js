@@ -24,6 +24,7 @@ function ContactForm({
   contactPageMessageLabel,
   contactPageMessagePlaceholder,
   contactPagePrivacyText,
+  handleSendForm,
 }) {
   const [feedback, setFeedback] = useState(null)
   const dispatchCursor = useCursorDispatchContext()
@@ -52,9 +53,13 @@ function ContactForm({
               setFeedback(
                 "Wielkie dzięki za wiadomość 🤗. Odpiszemy jak najszybciej! 🚀"
               )
-              if (typeof window !== "undefined") {
-                if (window.fbq != null) {
-                  window.fbq("track", "Contact", { contents: values })
+              if (handleSendForm) {
+                handleSendForm(values)
+              } else {
+                if (typeof window !== "undefined") {
+                  if (window.fbq != null) {
+                    window.fbq("track", "Contact", { contents: values })
+                  }
                 }
               }
               setTimeout(() => {
