@@ -1,10 +1,9 @@
-import { AnimateSharedLayout, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { useStaticQuery, graphql } from "gatsby"
 import { StructuredText } from "react-datocms"
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -14,7 +13,7 @@ import FeedbackSlider from "./FeedbackSlider"
 
 const FeedbackFromWrapper = styled.div`
   width: 100%;
-  background-color: var(--white);
+  background-color: ${({ bg }) => bg};
   padding: 113px 112px 141px 112px;
   position: relative;
   margin: 0 auto;
@@ -29,12 +28,31 @@ const FeedbackFromWrapper = styled.div`
   @media (max-width: 600px) {
     padding: 84px 28px 84px 28px;
   }
+  ${({ variant }) =>
+    variant === "offer" &&
+    css`
+      padding: clamp(130px, 16.38vw, 236px) clamp(36px, 7.77vw, 112px)
+        clamp(143px, 14.93vw, 215px);
+      @media (max-width: 1242px) {
+        padding: clamp(130px, 16.38vw, 236px) clamp(36px, 7.77vw, 112px)
+          clamp(143px, 14.93vw, 215px);
+      }
+
+      @media (max-width: 1024px) {
+        padding: clamp(52px, 19.53vw, 150px) clamp(26px, 4.6875vw, 36px)
+          clamp(51px, 18.61vw, 143px);
+      }
+
+      @media (max-width: 640px) {
+        padding: 52px 16px 50px;
+      }
+    `}
 `
 
 const FeedbackWrapper = styled.section`
   display: grid;
   height: 100%;
-  background-color: var(--white);
+  background-color: ${({ bg }) => bg};
   grid-template-columns: 280px 1fr;
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
@@ -50,7 +68,7 @@ const TitleWrapper = styled(motion.div)`
   }
 `
 
-const FeedbackFrom = ({ feedbackTytul }) => {
+const FeedbackFrom = ({ feedbackTytul, variant }) => {
   const dispatchCursor = useCursorDispatchContext()
   const data = useStaticQuery(graphql`
     query FeedbackQuery {
@@ -71,6 +89,8 @@ const FeedbackFrom = ({ feedbackTytul }) => {
 
   return (
     <FeedbackFromWrapper
+      bg={variant === "offer" ? "var(--light-gray)" : "var(--white)"}
+      variant={variant}
       onMouseEnter={() => {
         dispatchCursor({
           type: "CHANGE_CURSOR_TYPE",

@@ -7,6 +7,7 @@ import OfferWhyUsSection from "../components/organisms/OfferWhyUsSection/OfferWh
 import OfferHorizontalImageSection from "../components/organisms/OfferHorizontalImageSection/OfferHorizontalImageSection"
 import OfferHowCanWeHelpSection from "../components/organisms/OfferHowCanWeHelpSection/OfferHowCanWeHelpSection"
 import FeedbackFrom from "../components/molecules/FeedbackFrom/FeedbackFrom"
+import OfferContactFromSection from "../components/organisms/OfferContactFromSection/OfferContactFromSection"
 
 const Oferta = ({ data }) => {
   const {
@@ -20,6 +21,18 @@ const Oferta = ({ data }) => {
     wideImage,
     ofertaWideImageMobile,
   } = data?.datoCmsPageOffer
+
+  const {
+    formularzImieNadInputem: contactPageNameLabel,
+    formularzTekstPrzycisku: contactPageButtonText,
+    formularzImiePlaceholder: contactPageNamePlaceholder,
+    formularzEmailNadInputem: contactPageEmailLabel,
+    formularzEmailPlaceholder: contactPageEmailPlaceholder,
+    formularzWiadomoscNadTextarea: contactPageMessageLabel,
+    formularzWiadomoscPlaceholder: contactPageMessagePlaceholder,
+    formularzZgodaNaPrzetwarzanieTekst: contactPagePrivacyText,
+  } = data?.datoCmsPageContact
+
   const { feedbackTytul: feedbackTytul } = data.datoCmsPageAbout
 
   const horizontalImages = {
@@ -42,7 +55,19 @@ const Oferta = ({ data }) => {
       />
       <OfferHorizontalImageSection data={horizontalImages} />
       <OfferHowCanWeHelpSection />
-      <FeedbackFrom feedbackTytul={feedbackTytul} />
+      <FeedbackFrom variant="offer" feedbackTytul={feedbackTytul} />
+      <OfferContactFromSection
+        id={website.skipNavId}
+        contactPageNameLabel={contactPageNameLabel}
+        contactPageButtonText={contactPageButtonText}
+        contactPageNamePlaceholder={contactPageNamePlaceholder}
+        contactPageEmailLabel={contactPageEmailLabel}
+        contactPageEmailPlaceholder={contactPageEmailPlaceholder}
+        contactPageMessageLabel={contactPageMessageLabel}
+        contactPageMessagePlaceholder={contactPageMessagePlaceholder}
+        contactPagePrivacyText={contactPagePrivacyText}
+        contactFormImage={gatsbyImageData}
+      />
     </div>
   )
 }
@@ -80,6 +105,26 @@ export const query = graphql`
     }
     datoCmsPageAbout {
       feedbackTytul {
+        value
+      }
+    }
+    datoCmsPageContact {
+      formularzImieNadInputem
+      formularzTekstPrzycisku {
+        value
+      }
+      formularzImiePlaceholder {
+        value
+      }
+      formularzEmailNadInputem
+      formularzEmailPlaceholder {
+        value
+      }
+      formularzWiadomoscNadTextarea
+      formularzWiadomoscPlaceholder {
+        value
+      }
+      formularzZgodaNaPrzetwarzanieTekst {
         value
       }
     }

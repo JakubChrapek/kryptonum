@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { TextStyles } from "../../atoms/Text/Text"
 import { render as toPlainText } from "datocms-structured-text-to-plain-text"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
