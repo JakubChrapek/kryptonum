@@ -88,6 +88,9 @@ const TextContainer = styled.div`
       width: 100%;
     }
     font-size: 18px;
+    @media (max-width: 640px) {
+      font-size: 16px;
+    }
     line-height: 1.5;
     letter-spacing: 0.72px;
     color: var(--off-black);

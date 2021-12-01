@@ -12,9 +12,11 @@ const Global = createGlobalStyle`
     --dark-bg: #0c0c0c;
     --black: #000;
     --black-font: #090909;
+    --off-black: #030204;
     --white: #fff;
     --gray: #363636;
     --slide-specialty: #afafaf;
+    --text-list-item: #6B7280;
     --text-gray: #b2b2b2;
     --text-light-gray: #c0c0c0;
     --light-gray: #F7F7F7;
