@@ -129,7 +129,8 @@ const OfferContactFromSection = ({
       <Container>
         <TextContainer>
           <FormQuestion>
-            Chcesz mieć stronę internetową, której zazdrości nawet konkurencja?
+            Chcesz mieć stronę internetową, której pozazdrości Tobie
+            konkurencja?
           </FormQuestion>
           <CtaText>
             Wypełnij formularz zgłoszeniowy i umów się na bezpłatną rozmowę

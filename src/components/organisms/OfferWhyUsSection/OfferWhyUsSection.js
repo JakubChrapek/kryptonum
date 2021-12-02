@@ -143,10 +143,7 @@ const OfferWhyUsSection = ({ firstColumnItems, secondColumnItems }) => {
     <Wrapper id="dlaczego">
       <Container>
         <ContentGrid>
-          <MainHeader>
-            Dlaczego to nas powinieneś wybrać do zbudowania strony internetowej,
-            której pozazdrości ci nawet konkurencja?
-          </MainHeader>
+          <MainHeader>Dlaczego warto wybrać właśnie nas?</MainHeader>
           <Columns>
             {firstColumnItems.map(columnItem => (
               <ColumnItem

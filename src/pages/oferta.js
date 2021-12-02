@@ -80,8 +80,8 @@ const Oferta = ({ data }) => {
       />
       <OfferFaqSection
         faqSubheader="Sekcja FAQ"
-        faqQuestion="Nie jesteś pewny, czy chcesz stronę, której zazdrości nawet konkurencja?"
-        faqCta="Rozwiejemy twoje wątpliwości najczęściej zadawanymi pytaniami"
+        faqQuestion="W Twojej głowie nadal kłębią się pytania?"
+        faqCta="Spójrz na poniższą ściągawkę i skontaktuj się z nami!"
         faqItems={faqItems}
       />
     </div>

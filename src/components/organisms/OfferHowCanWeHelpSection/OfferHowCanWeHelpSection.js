@@ -134,28 +134,28 @@ const OfferHowCanWeHelpSection = () => {
       title:
         "Gwarantujemy, że szybkość Twojej strony konkurencję zostawi daleko w tyle.",
       text:
-        "Dorzucamy do tego jedyny na świecie design – przygotowany specjalnie dla Twojego biznesu. A do pakietu zapewniamy strategiczny  copywriting i układ strony, który skutecznie realizuje cele Twojego biznesu oraz świetnie współpracuje z wyszukiwarką Google.  Gwarantujemy efekt WOW w cenie każdego projektu.",
+        "Dorzucamy do tego jedyny na świecie design – przygotowany specjalnie dla Twojego biznesu. A do pakietu zapewniamy strategiczny  copywriting i układ strony, który skutecznie realizuje cele Twojego biznesu oraz świetnie współpracuje z wyszukiwarką Google. Gwarantujemy efekt WOW w cenie każdego projektu.",
     },
     {
       number: 2,
       title:
-        "Stworzymy sklep online, z którego będziesz dumny Ty, Twoja mama, a nawet wymagająca cioteczka.",
+        "Stworzymy sklep online, z którego będziesz dumny Ty, Twoja mama, a nawet wymagająca cioteczka.",
       text:
-        "Żadnych szablonów i utartych schematów, każdy piksel będzie odzwierciedlał Twój biznes, a zakup produktu będzie maksymalnie prosty. Oryginał jest tylko jeden! W wyniku tego sklep będzie konwertował jak szalony i generował zarobek dla Twojego biznesu. Wspólnie przemyślimy asortyment, wpleciemy w to ciekawy storytelling, pokażemy zalety produktów tak, aby sprzedawały się jak świeże bułeczki 😀",
+        "Żadnych szablonów i utartych schematów, każdy piksel będzie odzwierciedlał Twój biznes, a zakup produktu będzie maksymalnie prosty. Oryginał jest tylko jeden! W wyniku tego sklep będzie konwertował jak szalony i generował zysk dla Twojej firmy. Wspólnie przemyślimy asortyment, wpleciemy w to ciekawy storytelling, pokażemy zalety produktów tak, aby sprzedawały się jak świeże bułeczki 😀",
     },
     {
       number: 3,
       title:
-        "Kompleksowe wsparcie przy projektowaniu identyfikacji wizualnej zgodnej z wartościami i celami Twojego biznesu",
+        "Tworzenie identyfikacji wizualnej zgodnej z wartościami i celami Twojego biznesu",
       text:
-        "Oprócz zbudowania profesjonalnej strony, potrzebujemy jeszcze jeden element układanki - profesjonalną i niepowtarzalną identyfikację wizualną. Jesteśmy! Z przyjemnością zaprosimy Cię na Zooma, gdzie zadamy Tobie pytania. Pozwolą nam one poznać Twoją wizję, którą wdrożymy w życie.",
+        "Identyfikacja wizualna jest ostatnim brakującym ogniwem, by wyróżnić Twoją markę i wystrzelić Twój biznes w kosmos. W tej podróży będziemy z Tobą! Nie przegapimy takiej przygody 😀 Chętnie zaprosimy Cię na Zooma. Ty opowiesz nam o swoich celach, wartościach i strategii na przyszłość, a my z przyjemnością wdrożymy Twoją wizję w życie.",
     },
     {
       number: 4,
       title:
         "Masz pomysł na mega kampanię reklamową i potrzebujesz wsparcia kreatywnego projektanta?",
       text:
-        "Kryptonum melduje gotowość! Oferujemy projektowanie graficzne stron i aplikacji internetowych, grafik na potrzeby social media i postów do kampanii reklamowych. Będzie profesjonalnie, kreatywnie  i nieszablonowo. Gwarantujemy, że wyróżnisz się na rynku. W wyniku naszej współpracy, mina sąsiada spod czwórki wyrazi niesamowite uszanowanko.",
+        "Kryptonum melduje gotowość! Oferujemy projektowanie graficzne stron i aplikacji internetowych, grafik na potrzeby social media i postów do kampanii reklamowych. Będzie profesjonalnie, kreatywnie  i nieszablonowo. Gwarantujemy, że wyróżnisz się na rynku. W wyniku naszej współpracy, mina sąsiada spod czwórki wyrazi niesamowite uszanowanko.",
     },
   ]
 
