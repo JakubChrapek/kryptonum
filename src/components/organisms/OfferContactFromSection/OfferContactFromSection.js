@@ -109,8 +109,12 @@ const OfferContactFromSection = ({
     if (typeof window !== "undefined") {
       window.gtag("event", "conversion", {
         send_to: `${process.env.G_KRYPTONUM_AW_ID}/${process.env.G_KRYPTONUM_AW_LABEL}`,
+        formName: "formularz-oferta",
+        category: "contact",
+        conversionName: "kontakt",
         ...data,
       })
+
       return false
     }
   }
