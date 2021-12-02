@@ -10,10 +10,8 @@ import { StyledContactInfoList } from "../../atoms/Contact/StyledContactInfoList
 import { StyledContactSection } from "../../atoms/Contact/StyledContactSection"
 import { StyledContactTextWrapper } from "../../atoms/Contact/StyledContactTextWrapper"
 import { StyledContactTextWrapperH1 } from "../../atoms/Contact/StyledContactTextWrapperH1"
-import { TextStyles } from "../../atoms/Text/Text"
 
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
