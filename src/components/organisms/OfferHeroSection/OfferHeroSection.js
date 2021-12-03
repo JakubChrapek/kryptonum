@@ -37,14 +37,10 @@ const Container = styled.div`
 
   > .gatsby-image-wrapper {
     flex: 1 1 40%;
-
     @media (max-width: 1024px) {
-      width: calc(100% - clamp(24px, 4.5vw, 47px));
+      width: 100%;
       margin-bottom: 56px;
       order: -1;
-    }
-    @media (max-width: 640px) {
-      width: 100%;
     }
   }
 `

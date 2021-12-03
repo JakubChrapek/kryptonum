@@ -21,6 +21,7 @@ const Container = styled.div`
   padding: clamp(76px, 9.75vw, 144px) clamp(36px, 7.77vw, 112px);
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     max-width: 768px;
@@ -34,6 +35,7 @@ const Container = styled.div`
   }
 
   > .gatsby-image-wrapper {
+    overflow: hidden;
     flex: 1 1 60%;
     margin-left: clamp(16px, 2.29vw, 33px);
     img,
