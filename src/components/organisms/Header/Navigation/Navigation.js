@@ -65,18 +65,18 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     },
     {
       number: "02",
+      name: "Oferta",
+      link: "/oferta",
+    },
+    {
+      number: "03",
       name: "O nas",
       link: "/onas",
     },
     {
-      number: "03",
+      number: "04",
       name: "Blog",
       link: "/blog",
-    },
-    {
-      number: "04",
-      name: "Oferta",
-      link: "/oferta",
     },
     {
       number: "05",
