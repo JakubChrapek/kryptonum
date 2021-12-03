@@ -8,6 +8,7 @@ import {
   CURSOR_TYPES,
   useCursorDispatchContext,
 } from "../../../contexts/cursorContext"
+
 import { Link as ScrollLink } from "react-scroll"
 
 const Wrapper = styled.section`
@@ -129,7 +130,18 @@ const OfferHeroSection = ({
     },
   ])
   return (
-    <Wrapper>
+    <Wrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <Container>
         <TextContainer>
           <StructuredText data={headerText} />

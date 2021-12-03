@@ -2,6 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { StructuredText } from "react-datocms"
 import { CheckMarkIcon } from "../../atoms/Icons/Icons"
+import {
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const Wrapper = styled.section`
   background-color: var(--white);
@@ -139,8 +144,22 @@ const ColumnItem = ({ title, text }) => {
 }
 
 const OfferWhyUsSection = ({ firstColumnItems, secondColumnItems }) => {
+  const dispatchCursor = useCursorDispatchContext()
+
   return (
-    <Wrapper id="dlaczego">
+    <Wrapper
+      id="dlaczego"
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <Container>
         <ContentGrid>
           <MainHeader>Dlaczego warto wybrać właśnie nas?</MainHeader>

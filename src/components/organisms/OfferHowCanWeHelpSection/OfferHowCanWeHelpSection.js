@@ -1,5 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import {
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const Wrapper = styled.section`
   background-color: var(--white);
@@ -127,6 +132,8 @@ const HowWeHelpItem = ({ number, title, text }) => (
 )
 
 const OfferHowCanWeHelpSection = () => {
+  const dispatchCursor = useCursorDispatchContext()
+
   const question = "Ok, to w czym możemy Ci pomóc?"
   const howWeHelpItems = [
     {
@@ -160,7 +167,18 @@ const OfferHowCanWeHelpSection = () => {
   ]
 
   return (
-    <Wrapper>
+    <Wrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <Container>
         <Question>{question}</Question>
         <ItemsList>

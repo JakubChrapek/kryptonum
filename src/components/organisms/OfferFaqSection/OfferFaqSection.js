@@ -1,6 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import QuestionsAndAnswer from "../../molecules/FAQ/QuestionsAndAnswer"
+import {
+  CURSOR_SIZES,
+  CURSOR_TYPES,
+  useCursorDispatchContext,
+} from "../../../contexts/cursorContext"
 
 const Wrapper = styled.section`
   background-color: var(--white);
@@ -56,8 +61,21 @@ const FaqCta = styled.p`
 `
 
 const OfferFaqSection = ({ faqSubheader, faqQuestion, faqCta, faqItems }) => {
+  const dispatchCursor = useCursorDispatchContext()
+
   return (
-    <Wrapper>
+    <Wrapper
+      onMouseEnter={() => {
+        dispatchCursor({
+          type: "CHANGE_CURSOR_TYPE",
+          cursorType: CURSOR_TYPES.FULL_CURSOR,
+        })
+        dispatchCursor({
+          type: "CHANGE_CURSOR_SIZE",
+          cursorSize: CURSOR_SIZES.SMALLER,
+        })
+      }}
+    >
       <Container>
         <FaqSubHeader>{faqSubheader}</FaqSubHeader>
         <FaqQuestion>{faqQuestion}</FaqQuestion>

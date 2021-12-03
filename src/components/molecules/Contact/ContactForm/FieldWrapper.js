@@ -10,8 +10,11 @@ export const FieldWrapper = styled.div`
     variant === "checkbox" &&
     css`
       margin: 32px 0;
+      &:last-of-type {
+        margin: 12px 0 32px;
+      }
       ${StyledErrorMessage} {
-        bottom: -16px;
+        bottom: -24px;
       }
       label {
         display: flex;

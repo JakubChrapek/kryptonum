@@ -19,6 +19,7 @@ const Oferta = ({ data }) => {
     ofertaHeroImage: { gatsbyImageData: heroDesktopImage },
     ofertaMobileHeroImage: { gatsbyImageData: heroMobileImage },
     formImage: { gatsbyImageData: formImageDesktop },
+    formImageTablet: { gatsbyImageData: formImageTablet },
     formImageMobile: { gatsbyImageData: formImageMobile },
     firstColumnItems,
     secondColumnItems,
@@ -68,6 +69,7 @@ const Oferta = ({ data }) => {
         variant="offer"
         formName="Formularz – oferta"
         formImageDesktop={formImageDesktop}
+        formImageTablet={formImageTablet}
         formImageMobile={formImageMobile}
         contactPageNameLabel={contactPageNameLabel}
         contactPageButtonText={contactPageButtonText}
@@ -108,6 +110,9 @@ export const query = graphql`
         gatsbyImageData
       }
       formImage {
+        gatsbyImageData
+      }
+      formImageTablet {
         gatsbyImageData
       }
       formImageMobile {
