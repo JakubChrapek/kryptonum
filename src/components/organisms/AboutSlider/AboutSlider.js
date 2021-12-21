@@ -36,6 +36,7 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
     query AboutTeamSlider {
       allDatoCmsAuthor(
         filter: { locale: { eq: "pl" }, showInSlider: { eq: true } }
+        sort: { fields: position }
       ) {
         nodes {
           name

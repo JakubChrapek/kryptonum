@@ -59,9 +59,10 @@ export const SecondRow = styled.div`
   .img-wrapper {
     z-index: 0;
     position: absolute;
-    left: 50%;
+    width: 50%;
     transform: translateX(-50%);
-    width: 28%;
+    left: 60%;
+    top: 35%;
     @media only screen and (max-width: 1142px) {
       width: 35%;
     }

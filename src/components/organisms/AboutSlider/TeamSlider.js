@@ -1,9 +1,7 @@
 import React, { useState } from "react"
-import Img from "gatsby-image"
 import { AnimatePresence, motion } from "framer-motion"
 import Pagination from "../../molecules/Pagination/Pagination"
 import styled from "styled-components"
-import useWindowSize from "../../../utils/getWindowSize"
 import TeamSlide from "./TeamSlide"
 
 const SlidesStyles = styled(motion.section)`
