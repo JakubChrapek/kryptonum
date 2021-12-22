@@ -59,9 +59,9 @@ export const SecondRow = styled.div`
   .img-wrapper {
     z-index: 0;
     position: absolute;
-    width: clamp(540px, 46.25vw, 666px);
-    bottom: clamp(180px, 13.125vw, 189px);
-    left: clamp(408px, 35.6vw, 513px);
+    width: clamp(591px, 46.25vw, 666px);
+    bottom: clamp(175px, 12.2vw, 189px);
+    left: clamp(328px, 35.6vw, 513px);
     @media only screen and (max-width: 1109px) {
       left: 26.6vw;
       bottom: 10vw;
