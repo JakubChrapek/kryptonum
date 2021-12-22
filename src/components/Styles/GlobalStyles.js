@@ -7,12 +7,13 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     --accent:#30BB78;
     --button-accent: #25eb98;
+    --accent-line: #2BDD88;
     --accent-lighter: #87ceb0;
     --light-accent: rgba(0, 155, 90, 0.45);
-    --dark-bg: #0c0c0c;
     --black: #000;
     --black-font: #090909;
     --off-black: #030204;
+    --dark-bg: var(--off-black);
     --white: #fff;
     --gray: #363636;
     --slide-specialty: #afafaf;

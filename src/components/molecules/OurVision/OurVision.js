@@ -3,13 +3,11 @@ import { StructuredText } from "react-datocms"
 
 import OurVisionElement from "../OurVisionElement/OurVisionElement"
 
-import { StyledOurVisionH2 } from "../../atoms/OurVision/StyledOurVisionH2"
 import { StyledOurVisionHeroTextP } from "../../atoms/OurVision/StyledOurVisionHeroTextP"
 import { StyledOurVisionHeroTextWrapper } from "../../atoms/OurVision/StyledOurVisionHeroTextWrapper"
 import { StyledOurVisionSection } from "../../atoms/OurVision/StyledOurVisionSection"
 import { StyledOurVisionWrapper } from "../../atoms/OurVision/StyledOurVisionWrapper"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -22,6 +20,21 @@ const StyledVisionElementsWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
 
+  .gatsby-image-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    &:after {
+      content: "";
+      background-color: var(--accent-line);
+      width: 150vw;
+      height: 2px;
+      position: absolute;
+      left: -16px;
+      bottom: 0;
+    }
+  }
+
   @media (max-width: 1024px) {
     margin-top: 15%;
     padding-left: 25%;
@@ -30,7 +43,7 @@ const StyledVisionElementsWrapper = styled.div`
     margin-top: 15%;
     padding-left: 0%;
     .gatsby-image-wrapper {
-      margin: 40px -40px 0 -40px;
+      margin: 40px 0 0 0;
     }
   }
   @media (max-width: 767px) {
@@ -38,7 +51,7 @@ const StyledVisionElementsWrapper = styled.div`
   }
   @media (max-width: 600px) {
     .gatsby-image-wrapper {
-      margin: 24px -28px 0 -28px;
+      margin: 24px 0 0 0;
     }
   }
 `
