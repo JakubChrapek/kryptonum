@@ -4,6 +4,7 @@ export const StyledOurVisionSection = styled.div`
   width: 100%;
   background-color: var(--off-black);
   padding: 113px 112px 96px 112px;
+  overflow: hidden;
   margin: 0 auto;
   @media only screen and (max-width: 1232px) {
     padding: 104px 60px 80px 60px;
