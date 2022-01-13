@@ -1,11 +1,10 @@
 import { graphql, Link } from "gatsby"
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BackLink } from "../components/atoms/BackLink/BackLink"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
