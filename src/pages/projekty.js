@@ -3,7 +3,6 @@ import StyledProjectsWrapper from "../components/atoms/Projects/StyledProjectsWr
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -61,7 +60,7 @@ export const query = graphql`
       }
     }
     allDatoCmsProject(
-      limit: 6
+      limit: 12
       sort: { fields: meta___createdAt, order: DESC }
       filter: { showProject: { eq: true } }
     ) {

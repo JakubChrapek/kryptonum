@@ -441,6 +441,10 @@ const NormalWrapper = styled.div`
     padding: 0.025em 0.3em;
     border-radius: 4px;
   }
+
+  ul {
+    margin-top: 0.5em;
+  }
 `
 
 const ProjectTwoColumnSection = ({
