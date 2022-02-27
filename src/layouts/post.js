@@ -508,6 +508,7 @@ const Post = ({ data }) => {
                   return (
                     <WideImage
                       image={record.wideImageContent.gatsbyImageData}
+                      alt={record.wideImageContent.alt}
                     />
                   )
                 case "DatoCmsImage":
@@ -515,6 +516,7 @@ const Post = ({ data }) => {
                     <ArticleImage
                       imagevariant={record.imagevariant}
                       image={record.imageContent.gatsbyImageData}
+                      alt={record.imageContent.alt}
                     />
                   )
                 default:
@@ -530,7 +532,7 @@ const Post = ({ data }) => {
               <ArticleFadedText>Napisane przez</ArticleFadedText>
               <AuthorName>{article.author.name}</AuthorName>
               <FooterAuthorBio>
-                {ellipsize(article.author.biography, 60)}
+                {ellipsize(article.author.biography, 80)}
               </FooterAuthorBio>
             </ArticleTextContentBox>
           </ArticleFooter>
@@ -614,6 +616,7 @@ export const articleQuery = graphql`
         articleSlug
         articleFeaturedImage {
           gatsbyImageData
+          alt
         }
       }
     }

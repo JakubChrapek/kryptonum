@@ -74,7 +74,7 @@ const Article = ({ article, full, layout }) => {
           }}
           exit={{ opacity: 0 }}
         >
-          {ellipsize(article.articleTitle, 50)}
+          {ellipsize(article.articleTitle, 60)}
         </TextStyles>
         <TextStyles
           fontSize="10px"
