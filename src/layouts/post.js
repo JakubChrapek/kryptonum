@@ -509,6 +509,7 @@ const Post = ({ data }) => {
                     <WideImage
                       image={record.wideImageContent.gatsbyImageData}
                       alt={record.wideImageContent.alt}
+                      title={record.wideImageContent.title}
                     />
                   )
                 case "DatoCmsImage":
@@ -517,6 +518,7 @@ const Post = ({ data }) => {
                       imagevariant={record.imagevariant}
                       image={record.imageContent.gatsbyImageData}
                       alt={record.imageContent.alt}
+                      title={record.imageContent.title}
                     />
                   )
                 default:
@@ -593,6 +595,7 @@ export const articleQuery = graphql`
             wideImageContent {
               gatsbyImageData(width: 1087, height: 571, placeholder: BLURRED)
               alt
+              title
             }
           }
           ... on DatoCmsImage {
@@ -601,6 +604,7 @@ export const articleQuery = graphql`
             imageContent {
               gatsbyImageData(width: 717, placeholder: BLURRED)
               alt
+              title
             }
           }
         }
