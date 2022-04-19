@@ -490,6 +490,9 @@ const VerticalTextStyles = styled.p`
   @media (max-width: 767px) {
     font-size: clamp(20px, 4.5vw, 24px);
   }
+  > p + p {
+    margin-top: 0.75em;
+  }
 `
 
 const HeaderParagraphVertical = ({ title, content }) => (
