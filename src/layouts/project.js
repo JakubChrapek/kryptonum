@@ -396,7 +396,6 @@ const TwoColumnGrid = styled.div`
   width: 100%;
   @media (max-width: 1200px) {
     padding: 0;
-
   }
   @media (max-width: 1024px) {
     margin-top: 120px;
@@ -434,16 +433,22 @@ const NormalWrapper = styled.div`
     font-size: 24px;
     line-height: 1.5;
     color: var(--dark-bg);
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
     + p {
       margin-top: 6px;
     }
   }
 
-  ul{
+  ul {
     margin: 32px 0 0 0;
   }
 
-  li{
+  li {
     display: flex;
     position: relative;
     padding-left: 32px;
@@ -456,6 +461,15 @@ const NormalWrapper = styled.div`
       width: 6px;
       height: 6px;
       border-radius: 50%;
+    }
+    @media (max-width: 767px) {
+      padding-left: 24px;
+      &:after {
+        top: 10px;
+      }
+    }
+    + li {
+      margin-top: 10px;
     }
   }
 
@@ -589,7 +603,9 @@ const ItemWrapper = styled.div`
   }
 `
 
-const GalleryItemImageWrapper = styled.div``
+const GalleryItemImageWrapper = styled.div`
+  text-align: center;
+`
 
 const GalleryItemDescriptionWrapper = styled.div`
   margin-top: 51px;
