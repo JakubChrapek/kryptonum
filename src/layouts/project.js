@@ -313,7 +313,6 @@ const TestimonialContent = styled.p`
   @media (max-width: 767px) {
     font-size: 20px;
   }
-}
 `
 
 const TestimonialSignatureWrapper = styled.div`
@@ -391,10 +390,14 @@ const ProjectTwoColumnImage = ({
 const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: 280px 1fr;
-  grid-column-gap: 118px;
+  grid-column-gap: clamp(30px, 6.25vw, 120px);
   margin-top: 178px;
   padding: 0 70px;
   width: 100%;
+  @media (max-width: 1200px) {
+    padding: 0;
+
+  }
   @media (max-width: 1024px) {
     margin-top: 120px;
     grid-template-columns: 1fr;
@@ -435,6 +438,27 @@ const NormalWrapper = styled.div`
       margin-top: 6px;
     }
   }
+
+  ul{
+    margin: 32px 0 0 0;
+  }
+
+  li{
+    display: flex;
+    position: relative;
+    padding-left: 32px;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 15px;
+      background-color: var(--black);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+  }
+
   mark {
     background-color: var(--gray);
     color: var(--white);
