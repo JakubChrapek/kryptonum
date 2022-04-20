@@ -3,7 +3,6 @@ import StyledProjectsWrapper from "../components/atoms/Projects/StyledProjectsWr
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -36,7 +35,6 @@ const Projects = ({ data }) => {
   }
 
   const containerRef = useRef()
-  const projectsPerPage = 6
 
   return (
     <ProjectsStyles
@@ -45,10 +43,7 @@ const Projects = ({ data }) => {
       ref={containerRef}
     >
       <SEO meta={data.datoCmsPageProject.seoMetaTags} />
-      <StyledProjectsWrapper
-        projects={data.allDatoCmsProject.nodes.slice(0, projectsPerPage)}
-        projectsPerPage={projectsPerPage}
-      />
+      <StyledProjectsWrapper projects={data.allDatoCmsProject.nodes} />
     </ProjectsStyles>
   )
 }
@@ -61,7 +56,6 @@ export const query = graphql`
       }
     }
     allDatoCmsProject(
-      limit: 6
       sort: { fields: meta___createdAt, order: DESC }
       filter: { showProject: { eq: true } }
     ) {

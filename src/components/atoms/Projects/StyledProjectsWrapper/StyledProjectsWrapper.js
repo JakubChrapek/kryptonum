@@ -3,9 +3,7 @@ import styled from "styled-components"
 import { AnimatePresence, motion } from "framer-motion"
 import { TextStyles } from "../../Text/Text"
 import { Link } from "gatsby"
-import { StructuredText } from "react-datocms"
 import {
-  CURSOR_COLORS,
   CURSOR_SIZES,
   CURSOR_TYPES,
   useCursorDispatchContext,
@@ -14,7 +12,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import useMousePosition from "../../../../utils/useMousePosition"
 import useWindowSize from "../../../../utils/getWindowSize"
 import useWindowHeight from "../../../../utils/getWindowHeight"
-import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 export const ProjectsStyles = styled(motion.section)`
   display: flex;
@@ -200,7 +197,7 @@ const ProjectsTextStyles = styled(TextStyles)`
   }
 `
 
-const StyledProjectsWrapper = ({ projects, projectsPerPage }) => {
+const StyledProjectsWrapper = ({ projects }) => {
   const { x, y } = useMousePosition()
   const projectListRef = useRef()
   let width = useWindowSize()
@@ -215,10 +212,7 @@ const StyledProjectsWrapper = ({ projects, projectsPerPage }) => {
   }, [width, height])
 
   return (
-    <ProjectsStyles
-      ref={projectListRef}
-      lessProjects={projects.length < projectsPerPage - 1}
-    >
+    <ProjectsStyles ref={projectListRef}>
       {projects.map((project, iterator) => (
         <ProjectItem
           listPosition={listPosition}
