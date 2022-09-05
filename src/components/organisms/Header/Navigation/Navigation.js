@@ -222,6 +222,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                     onPointerEnter={handleOnMouseEnterForLink}
                     onPointerLeave={handleOnMouseLeaveForLink}
                     href="https://facebook.com/kryptonum"
+                    target="_blank"
+                    rel='me noopener noreferrer'
                   >
                     Facebook
                   </StyledOutLink>
@@ -231,6 +233,8 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                     onPointerEnter={handleOnMouseEnterForLink}
                     onPointerLeave={handleOnMouseLeaveForLink}
                     href="https://instagram.com/kryptonum.studio"
+                    target="_blank"
+                    rel='me noopener noreferrer'
                   >
                     Instagram
                   </StyledOutLink>

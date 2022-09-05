@@ -71,10 +71,7 @@ export const ProjectsStyles = styled(motion.section)`
         transition: color 0.15s cubic-bezier(0.6, -0.05, 0.01, 0.99);
       }
     }
-    --gap-width: 80px;
-    @media (max-width: 1920px) {
-      --gap-width: 40px;
-    }
+    --gap-width: 40px;
     @media (max-width: 1366px) {
       --gap-width: 36px;
     }
@@ -176,21 +173,22 @@ export const ProjectsStyles = styled(motion.section)`
 `
 
 const ProjectsTextStyles = styled(TextStyles)`
-  @media (min-width: 1500px) {
-    font-size: clamp(58px, 4vw, 62px);
+  font-size: clamp(51px, ${56 / 1920 * 100}vw, 62px);
+  @media (max-width: 1400px) {
+  font-size: clamp(40px, ${51 / 1400 * 100}vw, 51px);
   }
-  font-size: 4.2vw;
+
   @media (max-width: 1101px) {
-    font-size: 58px;
+    font-size: 56px;
   }
   @media (max-width: 778px) {
     font-size: 46px;
   }
-  @media (max-width: 600px) {
-    font-size: 42px;
-  }
-  @media (max-width: 536px) {
+  @media (max-width: 640px) {
     font-size: 38px;
+  }
+  @media (max-width: 550px) {
+    font-size: 33px;
   }
   @media (max-width: 486px) {
     font-size: clamp(24px, 8vw, 30px);
@@ -312,8 +310,8 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
             ? project.projectTitle
             : project.projectTitle.split(" ")[0].length <=
               maxLettersOfProjectName
-            ? project.projectTitle.split(" ")[0]
-            : project.projectTitle
+              ? project.projectTitle.split(" ")[0]
+              : project.projectTitle
                 .split(" ")[0]
                 .substring(0, maxLettersOfProjectName)}
         </ProjectsTextStyles>
@@ -330,16 +328,16 @@ const ProjectItem = ({ listPosition, project, projectNumber, x, y }) => {
               width <= 1101
                 ? projectPosition.width / 2 + (x - width / 2) / 10
                 : width < 1540
-                ? x < width / 2
-                  ? projectPosition.width -
+                  ? x < width / 2
+                    ? projectPosition.width -
                     projectPosition.left +
                     (x - width / 2) / 10
-                  : -projectPosition.width / 2 + (x - width / 2) / 10
-                : x < width / 2
-                ? projectPosition.width / 2 +
-                  projectPosition.left +
-                  (x - width / 2) / 10
-                : -projectPosition.width / 2 + (x - width / 2) / 10
+                    : -projectPosition.width / 2 + (x - width / 2) / 10
+                  : x < width / 2
+                    ? projectPosition.width / 2 +
+                    projectPosition.left +
+                    (x - width / 2) / 10
+                    : -projectPosition.width / 2 + (x - width / 2) / 10
             }
             y={0 - projectPosition.top / 2 + (y - height / 2) / 10}
           />
