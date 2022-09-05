@@ -165,10 +165,10 @@ export const ProjectsStyles = styled(motion.section)`
     padding: 120px 60px 30px 90px;
   }
   @media (max-width: 500px) {
-    padding: 120px 50px 20px 80px;
+    padding: 120px 50px 40px 80px;
   }
   @media (max-width: 486px) {
-    padding: 120px 20px 20px 20px;
+    padding: 120px 20px 40px 20px;
   }
 `
 

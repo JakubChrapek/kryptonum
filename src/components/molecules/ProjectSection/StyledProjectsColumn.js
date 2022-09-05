@@ -20,7 +20,7 @@ export const StyledProjectsColumn = styled.ul`
     display: none;
   }
   li {
-    font-size: clamp(48px, 2.84vw, 60px);
+    font-size: clamp(48px, 2vw, 50px);
     line-height: 1.5em;
     font-weight: 400;
     position: relative;
