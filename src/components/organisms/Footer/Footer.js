@@ -231,7 +231,7 @@ const Footer = () => {
               </StyledCopyrightWrapperDivSpan>
               <StyledMenuColumnLink
                 copyrightWrapper={true}
-                href="https://facebook.com/kryptonum"
+                href="https://www.facebook.com/kryptonumPL"
                 target="_blank"
                 rel="noreferrer noopener"
                 facebook={true}
@@ -260,7 +260,7 @@ const Footer = () => {
               </StyledMenuColumnLink>
               <StyledMenuColumnLink
                 copyrightWrapper={true}
-                href="https://instagram.com/kryptonum.studio"
+                href="https://www.instagram.com/kryptonum_pl/"
                 target="_blank"
                 rel="noreferrer noopener"
                 instagram={true}

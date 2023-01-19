@@ -49,7 +49,7 @@ const HeroFooter = () => {
     <HeroFooterStyles>
       <div>
         <StyledLink
-          href="https://facebook.com/kryptonum"
+          href="https://www.facebook.com/kryptonumPL"
           target="_blank"
           rel="noreferrer"
           declaredFontSize="14px"
@@ -61,7 +61,7 @@ const HeroFooter = () => {
           Facebook
         </StyledLink>
         <StyledLink
-          href="https://instagram.com/kryptonum.studio"
+          href="https://www.instagram.com/kryptonum_pl/"
           target="_blank"
           rel="noreferrer"
           declaredFontSize="14px"

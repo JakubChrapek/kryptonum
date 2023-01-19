@@ -221,9 +221,9 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                   <StyledOutLink
                     onPointerEnter={handleOnMouseEnterForLink}
                     onPointerLeave={handleOnMouseLeaveForLink}
-                    href="https://facebook.com/kryptonum"
+                    href="https://www.facebook.com/kryptonumPL"
                     target="_blank"
-                    rel='me noopener noreferrer'
+                    rel="me noopener noreferrer"
                   >
                     Facebook
                   </StyledOutLink>
@@ -232,9 +232,9 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
                   <StyledOutLink
                     onPointerEnter={handleOnMouseEnterForLink}
                     onPointerLeave={handleOnMouseLeaveForLink}
-                    href="https://instagram.com/kryptonum.studio"
+                    href="https://www.instagram.com/kryptonum_pl/"
                     target="_blank"
-                    rel='me noopener noreferrer'
+                    rel="me noopener noreferrer"
                   >
                     Instagram
                   </StyledOutLink>
