@@ -37,7 +37,7 @@ const Contact = ({ data }) => {
   }, [])
   return (
     <div>
-      <SEO meta={seoMetaTags} />
+      <SEO url='https://www.kryptonum.eu/kontakt' meta={seoMetaTags} />
       <ContactMain
         contactPageTitle={contactPageTitle}
         contactPageNameLabel={contactPageNameLabel}

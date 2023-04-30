@@ -873,7 +873,7 @@ const Project = ({ data }) => {
 
   return (
     <>
-      <SEO meta={datoCmsProject.seoMetaTags} />
+      <SEO url={`https://www.kryptonum.eu/blog/${datoCmsProject.slug}`} meta={datoCmsProject.seoMetaTags} />
       <PageWrapper onMouseEnter={handleWrapperEnter}>
         <ProjectWrapper>
           <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
@@ -1031,6 +1031,7 @@ export const projectQuery = graphql`
         }
       }
       id
+      slug
       projectSlug
       projectType
       projectCategories {
