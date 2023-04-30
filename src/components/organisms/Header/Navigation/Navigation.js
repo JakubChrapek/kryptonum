@@ -71,7 +71,7 @@ const Navigation = ({ mobile, width, pointerEvents }) => {
     {
       number: "03",
       name: "O nas",
-      link: "/onas",
+      link: "/o-nas",
     },
     {
       number: "04",
