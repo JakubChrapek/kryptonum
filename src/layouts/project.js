@@ -1031,7 +1031,6 @@ export const projectQuery = graphql`
         }
       }
       id
-      slug
       projectSlug
       projectType
       projectCategories {
