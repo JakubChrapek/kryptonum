@@ -8,7 +8,7 @@ import SEO from "../components/SEO/SEO"
 const PrivacyPolicy = ({ data }) => {
   return (
     <div id={website.skipNavId}>
-      <SEO url='https://www.kryptonum.eu/polityka-prywatnosci' meta={data.datoCmsPagePrivacyPolicy.seoMetaTags} />
+      <SEO url='https://www.kryptonum.eu/polityka-prywatnosci/' meta={data.datoCmsPagePrivacyPolicy.seoMetaTags} />
       <Privacy
         title={data.datoCmsPagePrivacyPolicy.heroTitle}
         content={data.datoCmsPagePrivacyPolicy.privacyPolicyContent}

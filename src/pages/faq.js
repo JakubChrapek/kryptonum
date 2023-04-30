@@ -7,7 +7,7 @@ import SEO from "../components/SEO/SEO"
 const Faq = ({ data }) => {
   return (
     <div>
-      <SEO url='https://www.kryptonum.eu/faq' meta={data.datoCmsPageFaq.seoMetaTags} />
+      <SEO url='https://www.kryptonum.eu/faq/' meta={data.datoCmsPageFaq.seoMetaTags} />
       <FAQMain
         faqTitle={data.datoCmsPageFaq.faqTytul}
         faqItems={data.datoCmsPageFaq.faqItems}
