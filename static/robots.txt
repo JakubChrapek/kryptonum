@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://kryptonum.eu/sitemap.xml
+Host: https://kryptonum.eu
