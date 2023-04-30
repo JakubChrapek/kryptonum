@@ -476,7 +476,7 @@ const Post = ({ data }) => {
 
   return (
     <>
-      <SEO url={`https://www.kryptonum.eu/blog/${article.slug}`} meta={article.seoMetaTags} />
+      <SEO url={`https://www.kryptonum.eu/blog/${article.articleSlug}`} meta={article.seoMetaTags} />
       <PostWrapper onMouseEnter={handleWrapperEnter}>
         <PostContentWrapper onMouseEnter={handleWrapperEnter}>
           <BackLink
@@ -562,7 +562,6 @@ export const articleQuery = graphql`
         }
       }
       id
-      slug
       articleTitle
       readingTime
       author {

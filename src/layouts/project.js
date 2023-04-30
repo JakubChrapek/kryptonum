@@ -873,7 +873,7 @@ const Project = ({ data }) => {
 
   return (
     <>
-      <SEO url={`https://www.kryptonum.eu/blog/${datoCmsProject.slug}`} meta={datoCmsProject.seoMetaTags} />
+      <SEO url={`https://www.kryptonum.eu/blog/${datoCmsProject.projectSlug}`} meta={datoCmsProject.seoMetaTags} />
       <PageWrapper onMouseEnter={handleWrapperEnter}>
         <ProjectWrapper>
           <ProjectContentWrapper onMouseEnter={handleWrapperEnter}>
