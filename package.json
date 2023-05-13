@@ -32,7 +32,7 @@
     "gatsby-plugin-sitemap": "^6.9.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-styled-components": "^6.9.0",
-    "gatsby-source-datocms": "2.6.10",
+    "gatsby-source-datocms": "^5.1.1",
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
     "gsap": "^3.11.5",

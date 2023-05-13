@@ -626,7 +626,7 @@ export const articleQuery = graphql`
     }
     newArticles: allDatoCmsArticle(
       filter: { id: { ne: $id } }
-      sort: { fields: dateOfPublication, order: DESC }
+      sort: { dateOfPublication: DESC }
     ) {
       nodes {
         articleTitle

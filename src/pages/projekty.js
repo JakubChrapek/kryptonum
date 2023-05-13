@@ -56,7 +56,7 @@ export const query = graphql`
       }
     }
     allDatoCmsProject(
-      sort: {fields: position, order: DESC}
+      sort: {position: DESC}
       filter: { showProject: { eq: true } }
     ) {
       nodes {

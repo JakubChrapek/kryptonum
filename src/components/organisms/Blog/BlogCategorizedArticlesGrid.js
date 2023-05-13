@@ -16,7 +16,7 @@ import BlogCategories from "../../molecules/Blog/BlogCategories"
 
 const AllArticlesQuery = graphql`
   query AllArticlesAndCategoriesQuery {
-    allDatoCmsArticle(sort: { fields: dateOfPublication, order: DESC }) {
+    allDatoCmsArticle(sort: { dateOfPublication: DESC }) {
       nodes {
         articleTitle
         articleCategory

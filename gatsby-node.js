@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
         }
       }
-      projects: allDatoCmsProject(sort: {fields: position, order: DESC}, filter: { showProject: { eq: true } }) {
+      projects: allDatoCmsProject(sort: {position: DESC}, filter: { showProject: { eq: true } }) {
         nodes {
           projectSlug
           id

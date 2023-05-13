@@ -16,7 +16,7 @@ const blogSectionQuery = graphql`
   query LastArticles {
     allDatoCmsArticle(
       limit: 10
-      sort: { fields: dateOfPublication, order: DESC }
+      sort: { dateOfPublication: DESC }
     ) {
       nodes {
         articleTitle

@@ -35,8 +35,8 @@ const AboutSlider = ({ marathonTitle, marathonFirstParagraph }) => {
   const data = useStaticQuery(graphql`
     query AboutTeamSlider {
       allDatoCmsAuthor(
-        filter: { locale: { eq: "pl" }, showInSlider: { eq: true } }
-        sort: { fields: position }
+        filter: { showInSlider: { eq: true } }
+        sort: { position: ASC }
       ) {
         nodes {
           name
