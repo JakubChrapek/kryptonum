@@ -7,6 +7,7 @@ const website = require("./config/website")
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
 
 module.exports = {
+	trailingSlash: "always",
   flags: { PRESERVE_WEBPACK_CACHE: false },
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
@@ -45,7 +46,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
