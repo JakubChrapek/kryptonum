@@ -9,6 +9,10 @@ export const StyledNavBurger = styled(motion.button)`
   mix-blend-mode: difference;
   z-index: 99;
 
+  *{
+    pointer-events: none;
+  }
+
   @media only screen and (max-width: 640px) {
     position: absolute;
     right: 22px;

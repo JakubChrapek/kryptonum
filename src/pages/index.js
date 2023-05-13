@@ -66,7 +66,7 @@ const IndexPage = ({ data }) => {
   }
   return (
     <>
-      <SEO url='https://www.kryptonum.eu/' meta={seoMetaTags} />
+      <SEO url='https://www.kryptonum.eu' meta={seoMetaTags} />
       <HomeHero heroTitle={heroTitle} heroTekstPrzycisku={heroTekstPrzycisku} />
       <MainServices
         servicesListFirstRow={servicesListFirstRow}
