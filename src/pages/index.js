@@ -8,7 +8,6 @@ import ProjectsSection from "../components/organisms/ProjectsSection/ProjectsSec
 import HowWeWorkSection from "../components/molecules/HoweWeWorkSection/HowWeWorkSection"
 import CtaSection from "../components/molecules/CtaSection/CtaSection"
 import BlogSection from "../components/organisms/BlogSection/BlogSection"
-import TheUltimateSection from "../components/organisms/TheUltimateSection/TheUltimateSection"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
@@ -57,16 +56,10 @@ const IndexPage = ({ data }) => {
       leadMagnetInformacjaOSukcesie: leadMagnetTitleSuccessMessage,
     },
   } = data
-  const [hasMounted, setHasMounted] = useState(false)
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-  if (!hasMounted) {
-    return null
-  }
+
   return (
     <>
-      <SEO url='https://www.kryptonum.eu' meta={seoMetaTags} />
+      <SEO url='https://kryptonum.eu' meta={seoMetaTags} />
       <HomeHero heroTitle={heroTitle} heroTekstPrzycisku={heroTekstPrzycisku} />
       <MainServices
         servicesListFirstRow={servicesListFirstRow}
@@ -121,6 +114,12 @@ const IndexPage = ({ data }) => {
     </>
   )
 }
+
+export const Head = () => (
+  <>
+    <link rel="canonical" href='DZIKOWNIA 2.0' />
+  </>
+)
 
 export const homeQuery = graphql`
   query homeBg {

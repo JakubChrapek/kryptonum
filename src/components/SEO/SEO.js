@@ -4,7 +4,7 @@ import { seoTypes } from "../../types/propTypes"
 
 const SEO = ({
   meta,
-  url = "https://www.kryptonum.eu",
+  url,
   type = "website",
   locale = "pl_PL",
   title = "Kryptonum - tworzymy strony internetowe nie z tej ziemi!",

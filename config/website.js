@@ -6,7 +6,7 @@ module.exports = {
   description:
     "🚀 Tworzymy strony nie z tej Ziemi! ⭐️ Dajemy porady biznesowe! ☄️ Po to, żeby Twój biznes wystrzelił w kosmos!",
   headline: "Kryptonum - projektanci stron internetowych nie z tej Ziemi", // Headline for schema.org JSONLD
-  url: "https://www.kryptonum.eu", // Domain of your site. No trailing slash!
+  url: "https://kryptonum.eu", // Domain of your site. No trailing slash!
   siteLanguage: "pl", // Language Tag on <html> element
   logo: "/images/Logo_horyzontalne_kolor_PNG.png", // Used for SEO
   ogLanguage: "pl_PL", // Facebook Language

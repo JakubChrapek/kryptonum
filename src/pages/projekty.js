@@ -42,7 +42,7 @@ const Projects = ({ data }) => {
       onMouseEnter={handleWrapperEnter}
       ref={containerRef}
     >
-      <SEO url='https://www.kryptonum.eu/projekty/' meta={data.datoCmsPageProject.seoMetaTags} />
+      <SEO url='https://kryptonum.eu/projekty' meta={data.datoCmsPageProject.seoMetaTags} />
       <StyledProjectsWrapper projects={data.allDatoCmsProject.nodes} />
     </ProjectsStyles>
   )

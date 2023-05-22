@@ -18,7 +18,7 @@ const Blog = ({ data }) => {
   } = data
   return (
     <>
-      <SEO url='https://www.kryptonum.eu/blog/' meta={seoMetaTags} />
+      <SEO url='https://kryptonum.eu/blog' meta={seoMetaTags} />
       <HeroContent content={heroTitle} variant="blog" />
       <BlogCategorizedArticlesGrid articleQuotes={articleQuotes} />
     </>

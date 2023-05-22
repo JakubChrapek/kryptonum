@@ -48,7 +48,7 @@ const Oferta = ({ data }) => {
   }
   return (
     <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
-      <SEO url='https://www.kryptonum.eu/oferta/' meta={seoMetaTags} />
+      <SEO url='https://kryptonum.eu/oferta' meta={seoMetaTags} />
       <OfferHeroSection
         headerText={ofertaHeroNaglowek}
         claimText={ofertaHeroClaim}

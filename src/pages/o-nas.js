@@ -50,7 +50,7 @@ const About = ({ data }) => {
   } = data
   return (
     <div id={website.skipNavId} style={{ backgroundColor: "var(--white)" }}>
-      <SEO url='https://www.kryptonum.eu/o-nas/' meta={seoMetaTags} />
+      <SEO url='https://kryptonum.eu/o-nas' meta={seoMetaTags} />
       <AboutContent
         heroTitle={heroTitle}
         heroBgImg={heroBgImg}
