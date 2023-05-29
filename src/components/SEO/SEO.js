@@ -9,7 +9,7 @@ const SEO = ({
   locale = "pl_PL",
   title = "Kryptonum - tworzymy strony internetowe nie z tej ziemi!",
   desc = "W Kryptonum polecimy na księżyc i z powrotem, żeby znaleźć najlepszy projekt strony internetowej. A jak starczy czasu, to przyniesiemy Ci w gratisie kamień księżycowy.",
-  image = "https://www.datocms-assets.com/39614/1628090781-kryptonum.png?w=1000&fit=max&fm=jpg",
+  image = "https://www.datocms-assets.com/39614/1628090781-kryptonum.png?w=1200&fit=max&fm=jpg",
 }) => {
   return (
     <HelmetDatoCms seo={meta}>
