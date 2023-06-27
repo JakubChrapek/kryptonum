@@ -115,12 +115,6 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export const Head = () => (
-  <>
-    <link rel="canonical" href='DZIKOWNIA 2.0' />
-  </>
-)
-
 export const homeQuery = graphql`
   query homeBg {
     datoCmsPageHome {
